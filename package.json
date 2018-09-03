@@ -1,0 +1,21 @@
+{
+  "name": "work-a-api-v2",
+  "version": "1.0.0",
+  "description": "FEok团队开发文档",
+  "main": "index.js",
+  "repository": "https://gitee.com/feok/FEokDoc.git",
+  "author": "nemo",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vuepress dev ./docs",
+    "docs:build": "vuepress build docs"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "^2.1.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
