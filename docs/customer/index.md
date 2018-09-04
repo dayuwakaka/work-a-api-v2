@@ -755,7 +755,7 @@
         "data": null
     }
 
-### 28.事业部查询
+### KH-28.事业部查询
 #### 请求
     GET /v2/customer/businessunit
 #### 参数
@@ -804,7 +804,7 @@
         ]
     }
 
-### 30.新增事业部
+### KH-30.新增事业部
 #### 请求
     POST /v2/customer/businessunit
 #### 参数
@@ -820,7 +820,7 @@
         "data": 67
     }
 
-### 31.修改事业部
+### KH-31.修改事业部
 #### 请求
     PUT /v2/customer/businessunit
 #### 参数
@@ -837,7 +837,7 @@
         "data": null
     }
 
-### 32.删除事业部
+### KH-32.删除事业部
 #### 请求
     DELETE /v2/customer/businessunit/{id}
 #### 参数
@@ -849,7 +849,7 @@
         "data": null
     }
 
-### 33.事业部组查询
+### KH-33.事业部组查询
 #### 请求
     GET /v2/customer/businessunit/group
 #### 参数
@@ -868,7 +868,7 @@
         ]
     }
 
-### 34.新增事业部组
+### KH-34.新增事业部组
 #### 请求
     POST /v2/customer/businessunit/group
 #### 参数
@@ -927,7 +927,7 @@
         ]
     }
 
-### 38.新增客户属性组
+### KH-38.新增客户属性组
 #### 请求
     POST /v2/customer/attr/group
 #### 参数
@@ -953,7 +953,7 @@
     "data": null
 }
 
-### 40. 新增客户属性
+### KH-40. 新增客户属性
 #### 请求
     POST /v2/customer/attr
 #### 参数
@@ -970,7 +970,7 @@
         "data": 4 // 客户属性组ID
     }
 
-### 41.修改客户属性
+### KH-41.修改客户属性
 #### 请求
     PUT /v2/customer/attr/{id}
 #### 参数
@@ -1012,7 +1012,7 @@
         ]
     }
 
-### 43.删除客户属性
+### KH-43.删除客户属性
 #### 请求
     DELETE /v2/customer/attr/{id}
 #### 参数
@@ -1036,7 +1036,7 @@
         "data": null
     }
 
-### 45.客户模糊查询
+### KH-45.客户模糊查询
 #### 请求
     GET /v2/customer/match
 #### 参数
@@ -1050,7 +1050,7 @@
         ]
     }
 
-### 46.产品业态查询
+### KH-46.产品业态查询
 #### 请求
     GET /v2/product/businessType
 #### 参数
