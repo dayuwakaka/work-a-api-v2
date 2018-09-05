@@ -213,24 +213,42 @@
         "code": 100000,
         "msg": "",
         "data": {
-            "accountId": "", // 帐号ID
-            "accountMobile": "18842889150", // 帐号手机号
-            "accountState": "", 
-            "area": "",
-            "areapathid": "",
-            "authTime": "",
-            "authenNo": "",
-            "authenState": "NOPASS", // 认证状态
+            "accountId": "",  // 帐号ID
+            "accountMobile": "", // 帐号手机号
+            "accountState": "",
+            "area": "沙河口区",
+            "areapathid": "060203",
+            "authenNo": "1", // 认证ID
+            "authenState": "PASS",  // 认证状态
+            "authenTime": "2018-08-23 11:32:51", // 认证时间
+            "businessType": "1", // 默认业态ID
+            "businessTypeCode": "01", // 默认业态Code
+            "businessTypeName": "中餐", // 默认业态名
             "businessunit": 1, // 部门ID
-            "businessunitName": "PW", // 部门名
-            "city": "",
-            "companyName": "797", // 公司名
-            "contactMobile": "1213", // 默认联系方式手机号
-            "contactName": "ming", // 默认联系方式联系人
-            "contactPathid": "", 
-            "createRole": 0, 
-            "createRoleName": "",
-            "createTime": "2012-02-28 14:13:17",
+            "businessunitGroupId": 3,
+            "businessunitGroupName": "PW事业组",
+            "businessunitName": "PW",  // 部门名
+            "city": "大连市",
+            "companyName": "dddd", // 公司名 也是认证名
+            "contactId": 3,
+            "contactMobile": "13941131601", // 默认联系方式手机号
+            "contactName": "宋晓波", // 默认联系方式联系人
+            "contactPathid": "",
+            "createRole": 5035,
+            "createRoleName": "ASAV-陈明",
+            "createTime": "2011-06-09 10:20:12",
+            "customer2Attrs": [
+                {
+                    "attrId": 2,
+                    "attrName": "火锅渠道",
+                    "customerId": 149,
+                    "freightFlg": 0,
+                    "freightPrice": 0,
+                    "groupId": 0,
+                    "groupName": "",
+                    "id": 10
+                }
+            ],
             "customerBalance": { //客户账户余额
                 "balance": 0, // 余额
                 "freeze": 0, // 冻结金额
@@ -253,22 +271,23 @@
                     "remarks": "" // 备注
                 }
             ], 
-            "dod": 0,
+            "dod": 1,
             "freight": 1,
-            "id": 797, // id
-            "isParent": 2, // 总分店 0 普通客户 1 总店 2 分店
-            "parentId": 797, // 总公司ID
-            "parentName": "797", // 总公司名
+            "id": 149,
+            "isParent": 0, // 总分店 0 普通客户 1 总店 2 分店
+            "newFlg": 1,
+            "parentId": 0, // 总公司ID
+            "parentName": "", // 总公司名
             "printPrice": 0,
-            "province": "",
-            "shortName": "test1", // 客户名
+            "province": "辽宁",
+            "shortName": "149", // 客户名
             "source": "1",
             "srRoleId": 40, // SRID
             "srRoleName": "高成举-SRM-T", // SR名
             "ssRoleId": 2196, // SSID
             "ssRoleName": "解冰", // SS名
-            "state": "NORMAL", 
-            "type": "P" // 客户类型
+            "state": "NORMAL",
+            "type": "A" // 客户类型
         }
     }
 

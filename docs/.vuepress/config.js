@@ -5,7 +5,8 @@ module.exports = {
     lastUpdated: 'Last Updated',
     nav: [
       {text: '客户', link: '/customer/'},
-      {text: '产品', link: '/product/'}
+      {text: '产品', link: '/product/'},
+      {text: '权限', link: '/auth/'}
     ],
     sidebar: 'auto',
   },

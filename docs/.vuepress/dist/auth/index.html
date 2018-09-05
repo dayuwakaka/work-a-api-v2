@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>权限接口 | ADoc</title>
+    <meta name="description" content="A团队开发文档">
+    
+    
+    <link rel="preload" href="/work-a-api-v2/assets/css/0.styles.7e1d93c3.css" as="style"><link rel="preload" href="/work-a-api-v2/assets/js/app.4e6ceed8.js" as="script"><link rel="preload" href="/work-a-api-v2/assets/js/5.09b29322.js" as="script"><link rel="prefetch" href="/work-a-api-v2/assets/js/2.cda51ec0.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/3.63e61b30.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/4.a28bfb77.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/6.91c6d4cc.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/7.f799cd71.js">
+    <link rel="stylesheet" href="/work-a-api-v2/assets/css/0.styles.7e1d93c3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/work-a-api-v2/" class="home-link router-link-active"><!----> <span class="site-name">ADoc</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/work-a-api-v2/customer/" class="nav-link">客户</a></div><div class="nav-item"><a href="/work-a-api-v2/product/" class="nav-link">产品</a></div><div class="nav-item"><a href="/work-a-api-v2/auth/" class="nav-link router-link-exact-active router-link-active">权限</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/work-a-api-v2/customer/" class="nav-link">客户</a></div><div class="nav-item"><a href="/work-a-api-v2/product/" class="nav-link">产品</a></div><div class="nav-item"><a href="/work-a-api-v2/auth/" class="nav-link router-link-exact-active router-link-active">权限</a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>权限接口</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/work-a-api-v2/auth/#权限接口" class="sidebar-link">权限接口</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-1-开户" class="sidebar-link">QX-1. 开户</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-2-锁定、解锁" class="sidebar-link">QX-2. 锁定、解锁</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-3-用户权限列表" class="sidebar-link">QX-3. 用户权限列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-4-获取用户已分配（未分配）功能权限列表" class="sidebar-link">QX-4. 获取用户已分配（未分配）功能权限列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-5-获取用户已分配（未分配）数据权限列表" class="sidebar-link">QX-5. 获取用户已分配（未分配）数据权限列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-6-用户分配功能权限" class="sidebar-link">QX-6. 用户分配功能权限</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-7-用户取消分配功能权限" class="sidebar-link">QX-7. 用户取消分配功能权限</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-8-用户分配数据权限" class="sidebar-link">QX-8. 用户分配数据权限</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-9-用户取消分配数据权限" class="sidebar-link">QX-9. 用户取消分配数据权限</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-10-重置密码" class="sidebar-link">QX-10. 重置密码</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-11-新增功能权限" class="sidebar-link">QX-11. 新增功能权限</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-12-修改功能权限" class="sidebar-link">QX-12. 修改功能权限</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-13-功能权限列表" class="sidebar-link">QX-13. 功能权限列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-14-功能权限详情" class="sidebar-link">QX-14. 功能权限详情</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-15-获取功能权限绑定（未绑定）的菜单列表" class="sidebar-link">QX-15. 获取功能权限绑定（未绑定）的菜单列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-16-功能权限绑定菜单" class="sidebar-link">QX-16. 功能权限绑定菜单</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-17-功能权限解绑菜单" class="sidebar-link">QX-17. 功能权限解绑菜单</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-18-新增数据权限" class="sidebar-link">QX-18. 新增数据权限</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-19-修改数据权限" class="sidebar-link">QX-19. 修改数据权限</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-20-数据权限列表" class="sidebar-link">QX-20. 数据权限列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-21-删除数据权限" class="sidebar-link">QX-21. 删除数据权限</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-22-新增菜单" class="sidebar-link">QX-22. 新增菜单</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-23-修改菜单" class="sidebar-link">QX-23. 修改菜单</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-24-菜单列表" class="sidebar-link">QX-24. 菜单列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-25-删除菜单" class="sidebar-link">QX-25. 删除菜单</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-26-菜单信息" class="sidebar-link">QX-26. 菜单信息</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-27-操作日志列表" class="sidebar-link">QX-27. 操作日志列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-28-根据ss-sr类型获取角色权限列表" class="sidebar-link">QX-28. 根据SS\SR类型获取角色权限列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-29-用户登陆后获取菜单" class="sidebar-link">QX-29. 用户登陆后获取菜单</a></li></ul></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h2 id="权限接口"><a href="#权限接口" aria-hidden="true" class="header-anchor">#</a> 权限接口</h2> <h3 id="qx-1-开户"><a href="#qx-1-开户" aria-hidden="true" class="header-anchor">#</a> QX-1. 开户</h3> <h4 id="_1-1-请求url"><a href="#_1-1-请求url" aria-hidden="true" class="header-anchor">#</a> 1.1 请求URL</h4> <pre><code>/v2/userpower
+</code></pre> <h4 id="_1-2-请求类型"><a href="#_1-2-请求类型" aria-hidden="true" class="header-anchor">#</a> 1.2 请求类型</h4> <pre><code>POST
+</code></pre> <h4 id="_1-3-请求参数"><a href="#_1-3-请求参数" aria-hidden="true" class="header-anchor">#</a> 1.3 请求参数</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>id</td> <td>用户id</td> <td>必</td></tr> <tr><td>workno</td> <td>用户编号</td> <td>必</td></tr> <tr><td>mobile</td> <td>用户手机号</td> <td></td></tr></tbody></table> <h4 id="_1-4-请求示例"><a href="#_1-4-请求示例" aria-hidden="true" class="header-anchor">#</a> 1.4 请求示例</h4> <pre><code>{
+	&quot;id&quot;:517,
+	&quot;workno&quot;:&quot;0517&quot;,
+	&quot;mobile&quot;:&quot;18666664848&quot;
+}
+</code></pre> <h4 id="_1-5-返回值"><a href="#_1-5-返回值" aria-hidden="true" class="header-anchor">#</a> 1.5 返回值</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>code</td> <td>编号</td> <td>100000成功；0 失败；</td></tr> <tr><td>msg</td> <td>消息</td> <td>异常信息</td></tr> <tr><td>data</td> <td>null</td> <td></td></tr></tbody></table> <h4 id="_1-6-返回示例"><a href="#_1-6-返回示例" aria-hidden="true" class="header-anchor">#</a> 1.6 返回示例</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="qx-2-锁定、解锁"><a href="#qx-2-锁定、解锁" aria-hidden="true" class="header-anchor">#</a> QX-2. 锁定、解锁</h3> <h4 id="_2-1-请求url"><a href="#_2-1-请求url" aria-hidden="true" class="header-anchor">#</a> 2.1 请求URL</h4> <pre><code>/v2/userpower/{id}
+</code></pre> <h4 id="_2-2-请求类型"><a href="#_2-2-请求类型" aria-hidden="true" class="header-anchor">#</a> 2.2 请求类型</h4> <pre><code>PUT
+</code></pre> <h4 id="_2-3-请求参数"><a href="#_2-3-请求参数" aria-hidden="true" class="header-anchor">#</a> 2.3 请求参数</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>id</td> <td>用户id</td> <td></td></tr> <tr><td>oper</td> <td>操作标志</td> <td>lock 锁定； normal 解锁</td></tr></tbody></table> <h4 id="_2-4-请求示例"><a href="#_2-4-请求示例" aria-hidden="true" class="header-anchor">#</a> 2.4 请求示例</h4> <pre><code>{
+	&quot;oper&quot;: &quot;lock&quot;
+}
+</code></pre> <h4 id="_2-5-返回值"><a href="#_2-5-返回值" aria-hidden="true" class="header-anchor">#</a> 2.5 返回值</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>code</td> <td>编号</td> <td>100000成功；0 失败；</td></tr> <tr><td>msg</td> <td>消息</td> <td>异常信息</td></tr> <tr><td>data</td> <td>null</td> <td></td></tr></tbody></table> <h4 id="_2-6-返回示例"><a href="#_2-6-返回示例" aria-hidden="true" class="header-anchor">#</a> 2.6 返回示例</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="qx-3-用户权限列表"><a href="#qx-3-用户权限列表" aria-hidden="true" class="header-anchor">#</a> QX-3. 用户权限列表</h3> <h4 id="_3-1-请求url"><a href="#_3-1-请求url" aria-hidden="true" class="header-anchor">#</a> 3.1 请求URL</h4> <pre><code>/v2/userpower
+</code></pre> <h4 id="_3-2-请求类型"><a href="#_3-2-请求类型" aria-hidden="true" class="header-anchor">#</a> 3.2 请求类型</h4> <pre><code>GET
+</code></pre> <h4 id="_3-3-请求参数"><a href="#_3-3-请求参数" aria-hidden="true" class="header-anchor">#</a> 3.3 请求参数</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>workno</td> <td>工号</td> <td></td></tr> <tr><td>fullname</td> <td>全名</td> <td></td></tr> <tr><td>mobile</td> <td>手机号</td> <td></td></tr> <tr><td>menuid</td> <td>菜单id</td> <td></td></tr> <tr><td>pageNo</td> <td>页码</td> <td>默认1</td></tr> <tr><td>pageSize</td> <td>页条数</td> <td>默认25</td></tr></tbody></table> <h4 id="_3-4-请求示例"><a href="#_3-4-请求示例" aria-hidden="true" class="header-anchor">#</a> 3.4 请求示例</h4> <pre><code>无
+</code></pre> <h4 id="_3-5-返回值"><a href="#_3-5-返回值" aria-hidden="true" class="header-anchor">#</a> 3.5 返回值</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>id</td> <td>用户id</td> <td></td></tr> <tr><td>workno</td> <td>工号</td> <td></td></tr> <tr><td>oper</td> <td>操作标志</td> <td>用不到</td></tr> <tr><td>fullname</td> <td>姓名</td> <td></td></tr> <tr><td>mobile</td> <td>手机号</td> <td></td></tr> <tr><td>email</td> <td>邮箱</td> <td></td></tr> <tr><td>status</td> <td>状态</td> <td>normal 正常 lock 锁定</td></tr> <tr><td>passwordBlake2</td> <td>用不到</td> <td></td></tr> <tr><td>passwordMd5</td> <td>用不到</td> <td></td></tr> <tr><td>createTime</td> <td>创建时间</td> <td></td></tr> <tr><td>modifyTime</td> <td>修改时间</td> <td></td></tr> <tr><td>authDataPowers</td> <td>数据权限列表</td> <td></td></tr> <tr><td>-&gt; name</td> <td>数据权限名称</td> <td></td></tr> <tr><td>authMenuPowers</td> <td>功能权限列表</td> <td></td></tr> <tr><td>-&gt; name</td> <td>功能权限名称</td> <td></td></tr></tbody></table> <h4 id="_3-6-返回示例"><a href="#_3-6-返回示例" aria-hidden="true" class="header-anchor">#</a> 3.6 返回示例</h4> <pre><code>{
+    &quot;code&quot;:100000,
+    &quot;msg&quot;:&quot;&quot;,
+    &quot;data&quot;:{
+        &quot;buttonPermissions&quot;: [
+            {
+                &quot;bindDataPower&quot;: true, // 编订数据权限
+                &quot;lockButton&quot;: true, // 锁定
+                &quot;unlockButton&quot;: false, // 解锁
+                &quot;newAccountButton&quot;: false, // 开户
+                &quot;reset&quot;: true, // 重置密码
+                &quot;bindMenuPower&quot;: true // 绑定功能权限
+            }
+        ],
+        &quot;dataSums&quot;:null,
+        &quot;datas&quot;:[
+            {
+                &quot;id&quot;:275,
+                &quot;workno&quot;:&quot;0289&quot;,
+                &quot;oper&quot;:&quot;&quot;,
+                &quot;fullname&quot;:&quot;刘子阳&quot;,
+                &quot;mobile&quot;:&quot;13591807386&quot;,
+                &quot;email&quot;:&quot;&quot;,
+                &quot;status&quot;:&quot;normal&quot;,
+                &quot;passwordBlake2&quot;:&quot;&quot;,
+                &quot;passwordMd5&quot;:&quot;&quot;,
+                &quot;createTime&quot;:&quot;&quot;,
+                &quot;modifyTime&quot;:&quot;&quot;,
+                &quot;authDataPowers&quot;:[
+                    {
+                        &quot;id&quot;:0,
+                        &quot;name&quot;:&quot;刘子阳&quot;,
+                        &quot;deleteFlg&quot;:0,
+                        &quot;gid&quot;:0,
+                        &quot;createTime&quot;:&quot;&quot;,
+                        &quot;modifyTime&quot;:&quot;&quot;
+                    }
+                ],
+                &quot;authMenuPowers&quot;:[
+                    {
+                        &quot;id&quot;:0,
+                        &quot;gid&quot;:0,
+                        &quot;name&quot;:&quot;销售代表&quot;,
+                        &quot;oldName&quot;:&quot;&quot;,
+                        &quot;status&quot;:&quot;&quot;,
+                        &quot;sys&quot;:&quot;&quot;,
+                        &quot;createTime&quot;:&quot;&quot;
+                    },
+                    {
+                        &quot;id&quot;:0,
+                        &quot;gid&quot;:0,
+                        &quot;name&quot;:&quot;SR&quot;,
+                        &quot;oldName&quot;:&quot;&quot;,
+                        &quot;status&quot;:&quot;&quot;,
+                        &quot;sys&quot;:&quot;&quot;,
+                        &quot;createTime&quot;:&quot;&quot;
+                    }
+                ]
+            }
+        ],
+        &quot;pageNo&quot;:1,
+        &quot;total&quot;:1
+    }
+}
+</code></pre> <h3 id="qx-4-获取用户已分配（未分配）功能权限列表"><a href="#qx-4-获取用户已分配（未分配）功能权限列表" aria-hidden="true" class="header-anchor">#</a> QX-4. 获取用户已分配（未分配）功能权限列表</h3> <h4 id="_4-1-请求url"><a href="#_4-1-请求url" aria-hidden="true" class="header-anchor">#</a> 4.1 请求URL</h4> <pre><code>/v2/userpower/menupower
+</code></pre> <h4 id="_4-2-请求类型"><a href="#_4-2-请求类型" aria-hidden="true" class="header-anchor">#</a> 4.2 请求类型</h4> <pre><code>GET
+</code></pre> <h4 id="_4-3-请求参数"><a href="#_4-3-请求参数" aria-hidden="true" class="header-anchor">#</a> 4.3 请求参数</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>uid</td> <td>用户id</td> <td>必</td></tr> <tr><td>asigned</td> <td>是否分配标志</td> <td>必 yes 已分配；no 未分配</td></tr> <tr><td>sys</td> <td>所属系统</td> <td></td></tr> <tr><td>gid</td> <td>功能权限编号</td> <td></td></tr> <tr><td>name</td> <td>功能权限名称</td> <td></td></tr> <tr><td>pageNo</td> <td>页码</td> <td>默认1</td></tr> <tr><td>pageSize</td> <td>页大小</td> <td>默认25</td></tr></tbody></table> <h4 id="_4-4-请求示例"><a href="#_4-4-请求示例" aria-hidden="true" class="header-anchor">#</a> 4.4 请求示例</h4> <pre><code>无
+</code></pre> <h4 id="_4-5-返回值"><a href="#_4-5-返回值" aria-hidden="true" class="header-anchor">#</a> 4.5 返回值</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>id</td> <td>权限ID</td> <td></td></tr> <tr><td>gid</td> <td>权限编号</td> <td></td></tr> <tr><td>name</td> <td>权限名称</td> <td></td></tr> <tr><td>oldName</td> <td>暂时用不到</td> <td></td></tr> <tr><td>sys</td> <td>所属系统</td> <td></td></tr> <tr><td>status</td> <td>状态</td> <td>normal 正常；lock 锁定</td></tr> <tr><td>createTime</td> <td>创建时间</td> <td></td></tr></tbody></table> <h4 id="_4-6-返回示例"><a href="#_4-6-返回示例" aria-hidden="true" class="header-anchor">#</a> 4.6 返回示例</h4> <pre><code>{
+    &quot;code&quot;:100000,
+    &quot;msg&quot;:&quot;&quot;,
+    &quot;data&quot;:{
+        &quot;dataSums&quot;:null,
+        &quot;datas&quot;:[
+            {
+            &quot;id&quot;:52,
+            &quot;gid&quot;:1533,
+            &quot;name&quot;:&quot;供应商管理&quot;,
+            &quot;oldName&quot;:&quot;&quot;,
+            &quot;status&quot;:&quot;normal&quot;,
+            &quot;sys&quot;:&quot;a&quot;,
+            &quot;createTime&quot;:&quot;2018-04-19 14:56:54.0&quot;,
+            }
+        ],
+        &quot;pageNo&quot;:1,
+        &quot;total&quot;:1
+    }
+}
+</code></pre> <h3 id="qx-5-获取用户已分配（未分配）数据权限列表"><a href="#qx-5-获取用户已分配（未分配）数据权限列表" aria-hidden="true" class="header-anchor">#</a> QX-5. 获取用户已分配（未分配）数据权限列表</h3> <h4 id="_5-1-请求url"><a href="#_5-1-请求url" aria-hidden="true" class="header-anchor">#</a> 5.1 请求URL</h4> <pre><code>/v2/userpower/datapower
+</code></pre> <h4 id="_5-2-请求类型"><a href="#_5-2-请求类型" aria-hidden="true" class="header-anchor">#</a> 5.2 请求类型</h4> <pre><code>GET
+</code></pre> <h4 id="_5-3-请求参数"><a href="#_5-3-请求参数" aria-hidden="true" class="header-anchor">#</a> 5.3 请求参数</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>uid</td> <td>用户id</td> <td>必</td></tr> <tr><td>asigned</td> <td>是否已分配标志</td> <td>必；已绑定列表 yes;未绑定列表 no</td></tr> <tr><td>rid</td> <td>数据权限id</td> <td></td></tr> <tr><td>name</td> <td>数据权限名称</td> <td></td></tr> <tr><td>pageNo</td> <td>页码</td> <td>默认1</td></tr> <tr><td>pageSize</td> <td>每页条数</td> <td>默认25</td></tr></tbody></table> <h4 id="_5-4-请求示例"><a href="#_5-4-请求示例" aria-hidden="true" class="header-anchor">#</a> 5.4 请求示例</h4> <pre><code>无
+</code></pre> <h4 id="_5-5-返回值"><a href="#_5-5-返回值" aria-hidden="true" class="header-anchor">#</a> 5.5 返回值</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>id</td> <td>数据权限编号</td> <td></td></tr> <tr><td>gid</td> <td>功能权限编号</td> <td></td></tr> <tr><td>name</td> <td>数据权限名称</td> <td></td></tr> <tr><td>deleteFlg</td> <td>删除标志， 0 未删除；1 删除</td> <td></td></tr> <tr><td>createTime</td> <td>创建时间</td> <td></td></tr> <tr><td>modifyTime</td> <td>修改时间</td> <td></td></tr></tbody></table> <h4 id="_5-6-返回示例"><a href="#_5-6-返回示例" aria-hidden="true" class="header-anchor">#</a> 5.6 返回示例</h4> <pre><code>{
+    &quot;code&quot;:100000,
+    &quot;msg&quot;:&quot;&quot;,
+    &quot;data&quot;:{
+        &quot;dataSums&quot;:null,
+        &quot;datas&quot;:[
+            {
+                &quot;id&quot;:71,
+                &quot;gid&quot;:41,
+                &quot;name&quot;:&quot;大牛&quot;,
+                &quot;deleteFlg&quot;:0,
+                &quot;createTime&quot;:&quot;2011-07-20 09:38:28.0&quot;,
+                &quot;modifyTime&quot;:&quot;&quot;
+            },
+            {
+                &quot;id&quot;:70,
+                &quot;gid&quot;:41,
+                &quot;name&quot;:&quot;小刘&quot;,
+                &quot;deleteFlg&quot;:0,
+                &quot;createTime&quot;:&quot;2011-07-20 09:38:28.0&quot;,
+                &quot;modifyTime&quot;:&quot;&quot;
+            }
+        ],
+        &quot;pageNo&quot;:1,
+        &quot;total&quot;:2
+    }
+}
+</code></pre> <h3 id="qx-6-用户分配功能权限"><a href="#qx-6-用户分配功能权限" aria-hidden="true" class="header-anchor">#</a> QX-6. 用户分配功能权限</h3> <h4 id="_6-1-请求url"><a href="#_6-1-请求url" aria-hidden="true" class="header-anchor">#</a> 6.1 请求URL</h4> <pre><code>/v2/userpower/menupower
+</code></pre> <h4 id="_6-2-请求类型"><a href="#_6-2-请求类型" aria-hidden="true" class="header-anchor">#</a> 6.2 请求类型</h4> <pre><code>POST
+</code></pre> <h4 id="_6-3-请求参数"><a href="#_6-3-请求参数" aria-hidden="true" class="header-anchor">#</a> 6.3 请求参数</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>id</td> <td>用户id</td> <td>必</td></tr> <tr><td>gid</td> <td>功能权限编号</td> <td>必</td></tr> <tr><td>sys</td> <td>功能权限所属系统</td> <td>必</td></tr></tbody></table> <h4 id="_6-4-请求示例"><a href="#_6-4-请求示例" aria-hidden="true" class="header-anchor">#</a> 6.4 请求示例</h4> <pre><code>{
+    &quot;id&quot;:517,
+    &quot;gid&quot;:21,
+    &quot;sys&quot;:&quot;a&quot;
+}
+</code></pre> <h4 id="_6-5-返回值"><a href="#_6-5-返回值" aria-hidden="true" class="header-anchor">#</a> 6.5 返回值</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>code</td> <td>编号</td> <td>100000成功；0 失败；</td></tr> <tr><td>msg</td> <td>消息</td> <td>异常信息</td></tr> <tr><td>data</td> <td>null</td> <td></td></tr></tbody></table> <h4 id="_6-6-返回示例"><a href="#_6-6-返回示例" aria-hidden="true" class="header-anchor">#</a> 6.6 返回示例</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="qx-7-用户取消分配功能权限"><a href="#qx-7-用户取消分配功能权限" aria-hidden="true" class="header-anchor">#</a> QX-7. 用户取消分配功能权限</h3> <h4 id="_7-1-请求url"><a href="#_7-1-请求url" aria-hidden="true" class="header-anchor">#</a> 7.1 请求URL</h4> <pre><code>/v2/userpower/menupower/{id}
+</code></pre> <h4 id="_7-2-请求类型"><a href="#_7-2-请求类型" aria-hidden="true" class="header-anchor">#</a> 7.2 请求类型</h4> <pre><code>PUT
+</code></pre> <h4 id="_7-3-请求参数"><a href="#_7-3-请求参数" aria-hidden="true" class="header-anchor">#</a> 7.3 请求参数</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>id</td> <td>菜单id</td> <td>必</td></tr> <tr><td>gid</td> <td>功能权限编号</td> <td>必</td></tr> <tr><td>sys</td> <td>功能权限所属系统</td> <td>必</td></tr></tbody></table> <h4 id="_7-4-请求示例"><a href="#_7-4-请求示例" aria-hidden="true" class="header-anchor">#</a> 7.4 请求示例</h4> <pre><code>{
+    
+    &quot;gid&quot;:21,
+    &quot;sys&quot;:&quot;a&quot;
+}
+</code></pre> <h4 id="_7-5-返回值"><a href="#_7-5-返回值" aria-hidden="true" class="header-anchor">#</a> 7.5 返回值</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>code</td> <td>编号</td> <td>100000成功；0 失败；</td></tr> <tr><td>msg</td> <td>消息</td> <td>异常信息</td></tr> <tr><td>data</td> <td>null</td> <td></td></tr></tbody></table> <h4 id="_7-6-返回示例"><a href="#_7-6-返回示例" aria-hidden="true" class="header-anchor">#</a> 7.6 返回示例</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+} 
+</code></pre> <h3 id="qx-8-用户分配数据权限"><a href="#qx-8-用户分配数据权限" aria-hidden="true" class="header-anchor">#</a> QX-8. 用户分配数据权限</h3> <h4 id="_8-1-请求url"><a href="#_8-1-请求url" aria-hidden="true" class="header-anchor">#</a> 8.1 请求URL</h4> <pre><code>/v2/userpower/datapower
+</code></pre> <h4 id="_8-2-请求类型"><a href="#_8-2-请求类型" aria-hidden="true" class="header-anchor">#</a> 8.2 请求类型</h4> <pre><code>POST
+</code></pre> <h4 id="_8-3-请求参数"><a href="#_8-3-请求参数" aria-hidden="true" class="header-anchor">#</a> 8.3 请求参数</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>id</td> <td>用户id</td> <td>必</td></tr> <tr><td>rid</td> <td>数据权限编号</td> <td>必</td></tr></tbody></table> <h4 id="_8-4-请求示例"><a href="#_8-4-请求示例" aria-hidden="true" class="header-anchor">#</a> 8.4 请求示例</h4> <pre><code>{
+    &quot;id&quot;:517,
+    &quot;rid&quot;:23
+}
+</code></pre> <h4 id="_8-5-返回值"><a href="#_8-5-返回值" aria-hidden="true" class="header-anchor">#</a> 8.5 返回值</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>code</td> <td>编号</td> <td>100000成功；0 失败；</td></tr> <tr><td>msg</td> <td>消息</td> <td>异常信息</td></tr> <tr><td>data</td> <td>null</td> <td></td></tr></tbody></table> <h4 id="_8-6-返回示例"><a href="#_8-6-返回示例" aria-hidden="true" class="header-anchor">#</a> 8.6 返回示例</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="qx-9-用户取消分配数据权限"><a href="#qx-9-用户取消分配数据权限" aria-hidden="true" class="header-anchor">#</a> QX-9. 用户取消分配数据权限</h3> <h4 id="_9-1-请求url"><a href="#_9-1-请求url" aria-hidden="true" class="header-anchor">#</a> 9.1 请求URL</h4> <pre><code>/v2/userpower/datapower/{id}
+</code></pre> <h4 id="_9-2-请求类型"><a href="#_9-2-请求类型" aria-hidden="true" class="header-anchor">#</a> 9.2 请求类型</h4> <pre><code>PUT
+</code></pre> <h4 id="_9-3-请求参数"><a href="#_9-3-请求参数" aria-hidden="true" class="header-anchor">#</a> 9.3 请求参数</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>id</td> <td>用户id</td> <td>必</td></tr> <tr><td>rid</td> <td>数据权限编号</td> <td>必</td></tr></tbody></table> <h4 id="_9-4-请求示例"><a href="#_9-4-请求示例" aria-hidden="true" class="header-anchor">#</a> 9.4 请求示例</h4> <pre><code>{
+    &quot;rid&quot;:23
+}
+</code></pre> <h4 id="_9-5-返回值"><a href="#_9-5-返回值" aria-hidden="true" class="header-anchor">#</a> 9.5 返回值</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>code</td> <td>编号</td> <td>100000成功；0 失败；</td></tr> <tr><td>msg</td> <td>消息</td> <td>异常信息</td></tr> <tr><td>data</td> <td>null</td> <td></td></tr></tbody></table> <h4 id="_9-6-返回示例"><a href="#_9-6-返回示例" aria-hidden="true" class="header-anchor">#</a> 9.6 返回示例</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+}    
+</code></pre> <h3 id="qx-10-重置密码"><a href="#qx-10-重置密码" aria-hidden="true" class="header-anchor">#</a> QX-10. 重置密码</h3> <h4 id="_10-1-请求url"><a href="#_10-1-请求url" aria-hidden="true" class="header-anchor">#</a> 10.1 请求URL</h4> <pre><code>/v2/userpower/reset/{id}
+</code></pre> <h4 id="_10-2-请求类型"><a href="#_10-2-请求类型" aria-hidden="true" class="header-anchor">#</a> 10.2 请求类型</h4> <pre><code>PUT
+</code></pre> <h4 id="_10-3-请求参数"><a href="#_10-3-请求参数" aria-hidden="true" class="header-anchor">#</a> 10.3 请求参数</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>id</td> <td>用户id</td> <td></td></tr></tbody></table> <h4 id="_10-4-请求示例"><a href="#_10-4-请求示例" aria-hidden="true" class="header-anchor">#</a> 10.4 请求示例</h4> <pre><code>无
+</code></pre> <h4 id="_10-5-返回值"><a href="#_10-5-返回值" aria-hidden="true" class="header-anchor">#</a> 10.5 返回值</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>code</td> <td>编号</td> <td>100000成功；0 失败；</td></tr> <tr><td>msg</td> <td>消息</td> <td>异常信息</td></tr> <tr><td>data</td> <td>null</td> <td></td></tr></tbody></table> <h4 id="_10-6-返回示例"><a href="#_10-6-返回示例" aria-hidden="true" class="header-anchor">#</a> 10.6 返回示例</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="qx-11-新增功能权限"><a href="#qx-11-新增功能权限" aria-hidden="true" class="header-anchor">#</a> QX-11. 新增功能权限</h3> <h4 id="_11-1-请求url"><a href="#_11-1-请求url" aria-hidden="true" class="header-anchor">#</a> 11.1 请求URL</h4> <pre><code>/v2/menupower
+</code></pre> <h4 id="_11-2-请求类型"><a href="#_11-2-请求类型" aria-hidden="true" class="header-anchor">#</a> 11.2 请求类型</h4> <pre><code>POST
+</code></pre> <h4 id="_11-3-请求参数"><a href="#_11-3-请求参数" aria-hidden="true" class="header-anchor">#</a> 11.3 请求参数</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>sys</td> <td>所属系统</td> <td>必</td></tr> <tr><td>gid</td> <td>权限编号</td> <td>必</td></tr> <tr><td>name</td> <td>权限名称</td> <td>必</td></tr></tbody></table> <h4 id="_11-4-请求示例"><a href="#_11-4-请求示例" aria-hidden="true" class="header-anchor">#</a> 11.4 请求示例</h4> <pre><code>{
+	&quot;sys&quot;: &quot;a&quot;,
+	&quot;gid&quot;: 250,
+	&quot;name&quot;:&quot;测试权限&quot;
+}
+</code></pre> <h4 id="_11-5-返回值"><a href="#_11-5-返回值" aria-hidden="true" class="header-anchor">#</a> 11.5 返回值</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>code</td> <td>编号</td> <td>100000成功；0 失败；</td></tr> <tr><td>msg</td> <td>消息</td> <td>异常信息</td></tr> <tr><td>data</td> <td>null</td> <td></td></tr></tbody></table> <h4 id="_11-6-返回示例"><a href="#_11-6-返回示例" aria-hidden="true" class="header-anchor">#</a> 11.6 返回示例</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="qx-12-修改功能权限"><a href="#qx-12-修改功能权限" aria-hidden="true" class="header-anchor">#</a> QX-12. 修改功能权限</h3> <h4 id="_12-1-请求url"><a href="#_12-1-请求url" aria-hidden="true" class="header-anchor">#</a> 12.1 请求URL</h4> <pre><code>/v2/menupower/{id}
+</code></pre> <h4 id="_12-2-请求类型"><a href="#_12-2-请求类型" aria-hidden="true" class="header-anchor">#</a> 12.2 请求类型</h4> <pre><code>PUT
+</code></pre> <h4 id="_12-3-请求参数"><a href="#_12-3-请求参数" aria-hidden="true" class="header-anchor">#</a> 12.3 请求参数</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>id</td> <td>权限id</td> <td></td></tr> <tr><td>sys</td> <td>所属系统</td> <td></td></tr> <tr><td>gid</td> <td>权限编号</td> <td></td></tr> <tr><td>name</td> <td>权限名称</td> <td></td></tr> <tr><td>status</td> <td>状态</td> <td>normal 正常；lock 锁定</td></tr></tbody></table> <h4 id="_12-4-请求示例"><a href="#_12-4-请求示例" aria-hidden="true" class="header-anchor">#</a> 12.4 请求示例</h4> <pre><code>{
+	&quot;sys&quot;: &quot;a&quot;,
+	&quot;gid&quot;: 250,
+	&quot;name&quot;:&quot;修改测试权限&quot;,
+	&quot;status&quot;:&quot;lock&quot;
+}
+</code></pre> <h4 id="_12-5-返回值"><a href="#_12-5-返回值" aria-hidden="true" class="header-anchor">#</a> 12.5 返回值</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>code</td> <td>编号</td> <td>100000成功；0 失败；</td></tr> <tr><td>msg</td> <td>消息</td> <td>异常信息</td></tr> <tr><td>data</td> <td>null</td> <td></td></tr></tbody></table> <h4 id="_12-6-返回示例"><a href="#_12-6-返回示例" aria-hidden="true" class="header-anchor">#</a> 12.6 返回示例</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="qx-13-功能权限列表"><a href="#qx-13-功能权限列表" aria-hidden="true" class="header-anchor">#</a> QX-13. 功能权限列表</h3> <h4 id="_13-1-请求url"><a href="#_13-1-请求url" aria-hidden="true" class="header-anchor">#</a> 13.1 请求URL</h4> <pre><code>/v2/menupower
+</code></pre> <h4 id="_13-2-请求类型"><a href="#_13-2-请求类型" aria-hidden="true" class="header-anchor">#</a> 13.2 请求类型</h4> <pre><code>GET
+</code></pre> <h4 id="_13-3-请求参数"><a href="#_13-3-请求参数" aria-hidden="true" class="header-anchor">#</a> 13.3 请求参数</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>sys</td> <td>所属系统</td> <td>a A网；sta 统计系统</td></tr> <tr><td>gid</td> <td>功能权限编号</td> <td></td></tr> <tr><td>name</td> <td>功能权限名称</td> <td></td></tr> <tr><td>status</td> <td>状态</td> <td>normal 正常； lock 锁定</td></tr> <tr><td>pageNo</td> <td>页码</td> <td>默认1</td></tr> <tr><td>pageSize</td> <td>页条数</td> <td>默认25</td></tr></tbody></table> <h4 id="_13-4-请求示例"><a href="#_13-4-请求示例" aria-hidden="true" class="header-anchor">#</a> 13.4 请求示例</h4> <pre><code>无
+</code></pre> <h4 id="_13-5-返回值"><a href="#_13-5-返回值" aria-hidden="true" class="header-anchor">#</a> 13.5 返回值</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>id</td> <td>功能权限ID</td> <td></td></tr> <tr><td>gid</td> <td>功能权限编号</td> <td></td></tr> <tr><td>name</td> <td>功能权限名称</td> <td></td></tr> <tr><td>oldName</td> <td>暂时还用不到</td> <td></td></tr> <tr><td>sys</td> <td>所属系统</td> <td>a A网；sta 统计系统</td></tr> <tr><td>status</td> <td>状态</td> <td>normal 正常；lock 锁定</td></tr> <tr><td>createTime</td> <td>创建时间</td> <td></td></tr></tbody></table> <h4 id="_13-6-返回示例"><a href="#_13-6-返回示例" aria-hidden="true" class="header-anchor">#</a> 13.6 返回示例</h4> <pre><code>{
+    &quot;code&quot;:100000,
+    &quot;msg&quot;:&quot;&quot;,
+    &quot;data&quot;:{
+        &quot;buttonPermissions&quot;: [
+            {
+                &quot;lockButton&quot;: false, // 锁定
+                &quot;unlockButton&quot;: true, // 解锁
+                &quot;editButton&quot;: true, // 编辑
+                &quot;bindButton&quot;: false // 绑定菜单
+            }
+        ],
+        &quot;dataSums&quot;:null,
+        &quot;datas&quot;:[
+            {
+                &quot;id&quot;:18,
+                &quot;gid&quot;:42,
+                &quot;name&quot;:&quot;客服&quot;,
+                &quot;oldName&quot;:&quot;&quot;,
+                &quot;sys&quot;:&quot;a&quot;,
+                &quot;status&quot;:&quot;lock&quot;,
+                &quot;createTime&quot;:&quot;2017-05-15 18:20:51.0&quot;
+            }
+        ],
+        &quot;pageNo&quot;:1,
+        &quot;total&quot;:1
+    }
+}
+</code></pre> <h3 id="qx-14-功能权限详情"><a href="#qx-14-功能权限详情" aria-hidden="true" class="header-anchor">#</a> QX-14. 功能权限详情</h3> <h4 id="_14-1-请求url"><a href="#_14-1-请求url" aria-hidden="true" class="header-anchor">#</a> 14.1 请求URL</h4> <pre><code>/v2/menupower/detail
+</code></pre> <h4 id="_14-2-请求类型"><a href="#_14-2-请求类型" aria-hidden="true" class="header-anchor">#</a> 14.2 请求类型</h4> <pre><code>GET
+</code></pre> <h4 id="_14-3-请求参数"><a href="#_14-3-请求参数" aria-hidden="true" class="header-anchor">#</a> 14.3 请求参数</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>id</td> <td>权限ID</td> <td>必</td></tr></tbody></table> <h4 id="_14-4-请求示例"><a href="#_14-4-请求示例" aria-hidden="true" class="header-anchor">#</a> 14.4 请求示例</h4> <pre><code>无
+</code></pre> <h4 id="_14-5-返回值"><a href="#_14-5-返回值" aria-hidden="true" class="header-anchor">#</a> 14.5 返回值</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>id</td> <td>权限ID</td> <td></td></tr> <tr><td>gid</td> <td>权限编号</td> <td></td></tr> <tr><td>name</td> <td>权限名称</td> <td></td></tr> <tr><td>oldName</td> <td>暂时用不到</td> <td></td></tr> <tr><td>sys</td> <td>所属系统</td> <td></td></tr> <tr><td>status</td> <td>状态</td> <td>normal 正常；lock 锁定</td></tr> <tr><td>createTime</td> <td>创建时间</td> <td></td></tr></tbody></table> <h4 id="_14-6-返回示例"><a href="#_14-6-返回示例" aria-hidden="true" class="header-anchor">#</a> 14.6 返回示例</h4> <pre><code>{
+    &quot;code&quot;:100000,
+    &quot;msg&quot;:&quot;&quot;,
+    &quot;data&quot;:{
+        &quot;id&quot;:18,
+        &quot;gid&quot;:42,
+        &quot;name&quot;:&quot;客服&quot;,
+        &quot;oldName&quot;:&quot;&quot;,
+        &quot;sys&quot;:&quot;a&quot;,
+        &quot;status&quot;:&quot;normal&quot;,
+        &quot;createTime&quot;:&quot;2017-05-15 18:20:51.0&quot;
+    }
+}
+</code></pre> <h3 id="qx-15-获取功能权限绑定（未绑定）的菜单列表"><a href="#qx-15-获取功能权限绑定（未绑定）的菜单列表" aria-hidden="true" class="header-anchor">#</a> QX-15. 获取功能权限绑定（未绑定）的菜单列表</h3> <h4 id="_15-1-请求url"><a href="#_15-1-请求url" aria-hidden="true" class="header-anchor">#</a> 15.1 请求URL</h4> <pre><code>/v2/menupower/binding
+</code></pre> <h4 id="_15-2-请求类型"><a href="#_15-2-请求类型" aria-hidden="true" class="header-anchor">#</a> 15.2 请求类型</h4> <pre><code>GET
+</code></pre> <h4 id="_15-3-请求参数"><a href="#_15-3-请求参数" aria-hidden="true" class="header-anchor">#</a> 15.3 请求参数</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>powerid</td> <td>权限编号</td> <td>必</td></tr> <tr><td>asigned</td> <td>是否已分配标志</td> <td>必；已绑定列表 yes;未绑定列表 no</td></tr> <tr><td>sys</td> <td>所属系统</td> <td></td></tr> <tr><td>ctrl</td> <td>控制器</td> <td></td></tr> <tr><td>menuid</td> <td>菜单编号</td> <td></td></tr> <tr><td>name</td> <td>菜单名称</td> <td></td></tr> <tr><td>pageNo</td> <td>页码</td> <td>默认1</td></tr> <tr><td>pageSize</td> <td>每页条数</td> <td>默认25</td></tr></tbody></table> <h4 id="_15-4-请求示例"><a href="#_15-4-请求示例" aria-hidden="true" class="header-anchor">#</a> 15.4 请求示例</h4> <pre><code>无
+</code></pre> <h4 id="_15-5-返回值"><a href="#_15-5-返回值" aria-hidden="true" class="header-anchor">#</a> 15.5 返回值</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>id</td> <td>菜单编号</td> <td></td></tr> <tr><td>sys</td> <td>所属系统</td> <td></td></tr> <tr><td>name</td> <td>菜单名称</td> <td></td></tr> <tr><td>ctrl</td> <td>控制器</td> <td></td></tr> <tr><td>action</td> <td>方法</td> <td></td></tr> <tr><td>params</td> <td>参数</td> <td></td></tr> <tr><td>status</td> <td>状态</td> <td>show 显示； hidden 隐藏</td></tr> <tr><td>level</td> <td>菜单等级</td> <td></td></tr> <tr><td>sort</td> <td>菜单排序</td> <td></td></tr> <tr><td>createTime</td> <td>创建时间</td> <td></td></tr></tbody></table> <h4 id="_15-6-返回示例"><a href="#_15-6-返回示例" aria-hidden="true" class="header-anchor">#</a> 15.6 返回示例</h4> <pre><code>{
+    &quot;code&quot;:100000,
+    &quot;msg&quot;:&quot;&quot;,
+    &quot;data&quot;:{
+        &quot;dataSums&quot;:null,
+        &quot;datas&quot;:[
+            {
+                &quot;id&quot;:213,
+                &quot;sys&quot;:&quot;a&quot;,
+                &quot;name&quot;:&quot;经销商审核&quot;,
+                &quot;ctrl&quot;:&quot;customer&quot;,
+                &quot;action&quot;:&quot;selcheck&quot;,
+                &quot;params&quot;:&quot;&quot;,
+                &quot;status&quot;:&quot;show&quot;,
+                &quot;level&quot;:2,
+                &quot;sort&quot;:2,
+                &quot;createTime&quot;:&quot;&quot;
+            }
+        ],
+        &quot;pageNo&quot;:1,
+    &quot;total&quot;:1
+    }
+}
+</code></pre> <h3 id="qx-16-功能权限绑定菜单"><a href="#qx-16-功能权限绑定菜单" aria-hidden="true" class="header-anchor">#</a> QX-16. 功能权限绑定菜单</h3> <h4 id="_16-1-请求url"><a href="#_16-1-请求url" aria-hidden="true" class="header-anchor">#</a> 16.1 请求URL</h4> <pre><code>/v2/menupower/binding
+</code></pre> <h4 id="_16-2-请求类型"><a href="#_16-2-请求类型" aria-hidden="true" class="header-anchor">#</a> 16.2 请求类型</h4> <pre><code>POST
+</code></pre> <h4 id="_16-3-请求参数"><a href="#_16-3-请求参数" aria-hidden="true" class="header-anchor">#</a> 16.3 请求参数</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>powerid</td> <td>权限编号</td> <td>必</td></tr> <tr><td>menuid</td> <td>菜单id</td> <td>必</td></tr></tbody></table> <h4 id="_16-4-请求示例"><a href="#_16-4-请求示例" aria-hidden="true" class="header-anchor">#</a> 16.4 请求示例</h4> <pre><code>[
+	{
+		&quot;powerid&quot;:111,
+		&quot;menuid&quot;:81
+	},
+	{
+		&quot;powerid&quot;:111,
+		&quot;menuid&quot;:82
+	}
+]
+</code></pre> <h4 id="_16-5-返回值"><a href="#_16-5-返回值" aria-hidden="true" class="header-anchor">#</a> 16.5 返回值</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>code</td> <td>编号</td> <td>100000成功；0 失败；</td></tr> <tr><td>msg</td> <td>消息</td> <td>异常信息</td></tr> <tr><td>data</td> <td>null</td> <td></td></tr></tbody></table> <h4 id="_16-6-返回示例"><a href="#_16-6-返回示例" aria-hidden="true" class="header-anchor">#</a> 16.6 返回示例</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="qx-17-功能权限解绑菜单"><a href="#qx-17-功能权限解绑菜单" aria-hidden="true" class="header-anchor">#</a> QX-17. 功能权限解绑菜单</h3> <h4 id="_17-1-请求url"><a href="#_17-1-请求url" aria-hidden="true" class="header-anchor">#</a> 17.1 请求URL</h4> <pre><code>/v2/menupower/binding/{id}
+</code></pre> <h4 id="_17-2-请求类型"><a href="#_17-2-请求类型" aria-hidden="true" class="header-anchor">#</a> 17.2 请求类型</h4> <pre><code>PUT
+</code></pre> <h4 id="_17-3-请求参数"><a href="#_17-3-请求参数" aria-hidden="true" class="header-anchor">#</a> 17.3 请求参数</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>id</td> <td>功能权限编号</td> <td>必</td></tr> <tr><td>menuid</td> <td>菜单id</td> <td>必</td></tr></tbody></table> <h4 id="_17-4-请求示例"><a href="#_17-4-请求示例" aria-hidden="true" class="header-anchor">#</a> 17.4 请求示例</h4> <pre><code>[
+	{
+		&quot;menuid&quot;:81
+	},
+	{
+		&quot;menuid&quot;:82
+	}
+]
+</code></pre> <h4 id="_17-5-返回值"><a href="#_17-5-返回值" aria-hidden="true" class="header-anchor">#</a> 17.5 返回值</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>code</td> <td>编号</td> <td>100000成功；0 失败；</td></tr> <tr><td>msg</td> <td>消息</td> <td>异常信息</td></tr> <tr><td>data</td> <td>null</td> <td></td></tr></tbody></table> <h4 id="_17-6-返回示例"><a href="#_17-6-返回示例" aria-hidden="true" class="header-anchor">#</a> 17.6 返回示例</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+}    
+</code></pre> <h3 id="qx-18-新增数据权限"><a href="#qx-18-新增数据权限" aria-hidden="true" class="header-anchor">#</a> QX-18. 新增数据权限</h3> <h4 id="_18-1-请求url"><a href="#_18-1-请求url" aria-hidden="true" class="header-anchor">#</a> 18.1 请求URL</h4> <pre><code>/v2/datapower
+</code></pre> <h4 id="_18-2-请求类型"><a href="#_18-2-请求类型" aria-hidden="true" class="header-anchor">#</a> 18.2 请求类型</h4> <pre><code>POST
+</code></pre> <h4 id="_18-3-请求参数"><a href="#_18-3-请求参数" aria-hidden="true" class="header-anchor">#</a> 18.3 请求参数</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>name</td> <td>数据权限名称</td> <td>必</td></tr> <tr><td>gid</td> <td>功能权限编号</td> <td>必</td></tr></tbody></table> <h4 id="_18-4-请求示例"><a href="#_18-4-请求示例" aria-hidden="true" class="header-anchor">#</a> 18.4 请求示例</h4> <pre><code>{
+	&quot;name&quot;:&quot;数据权限名称&quot;,
+    &quot;gid&quot;: 42
+}
+</code></pre> <h4 id="_18-5-返回值"><a href="#_18-5-返回值" aria-hidden="true" class="header-anchor">#</a> 18.5 返回值</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>code</td> <td>编号</td> <td>100000成功；0 失败；</td></tr> <tr><td>msg</td> <td>消息</td> <td>异常信息</td></tr> <tr><td>data</td> <td>null</td> <td></td></tr></tbody></table> <h4 id="_18-6-返回示例"><a href="#_18-6-返回示例" aria-hidden="true" class="header-anchor">#</a> 18.6 返回示例</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="qx-19-修改数据权限"><a href="#qx-19-修改数据权限" aria-hidden="true" class="header-anchor">#</a> QX-19. 修改数据权限</h3> <h4 id="_19-1-请求url"><a href="#_19-1-请求url" aria-hidden="true" class="header-anchor">#</a> 19.1 请求URL</h4> <pre><code>/v2/datapower/{id}
+</code></pre> <h4 id="_19-2-请求类型"><a href="#_19-2-请求类型" aria-hidden="true" class="header-anchor">#</a> 19.2 请求类型</h4> <pre><code>PUT
+</code></pre> <h4 id="_19-3-请求参数"><a href="#_19-3-请求参数" aria-hidden="true" class="header-anchor">#</a> 19.3 请求参数</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>id</td> <td>数据权限编号</td> <td></td></tr> <tr><td>name</td> <td>数据权限名称</td> <td></td></tr> <tr><td>gid</td> <td>功能权限编号</td> <td></td></tr></tbody></table> <h4 id="_19-4-请求示例"><a href="#_19-4-请求示例" aria-hidden="true" class="header-anchor">#</a> 19.4 请求示例</h4> <pre><code>{
+	&quot;name&quot;:&quot;修改数据权限&quot;,
+    &quot;gid&quot;: 11
+}
+</code></pre> <h4 id="_19-5-返回值"><a href="#_19-5-返回值" aria-hidden="true" class="header-anchor">#</a> 19.5 返回值</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>code</td> <td>编号</td> <td>100000成功；0 失败；</td></tr> <tr><td>msg</td> <td>消息</td> <td>异常信息</td></tr> <tr><td>data</td> <td>null</td> <td></td></tr></tbody></table> <h4 id="_19-6-返回示例"><a href="#_19-6-返回示例" aria-hidden="true" class="header-anchor">#</a> 19.6 返回示例</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="qx-20-数据权限列表"><a href="#qx-20-数据权限列表" aria-hidden="true" class="header-anchor">#</a> QX-20. 数据权限列表</h3> <h4 id="_20-1-请求url"><a href="#_20-1-请求url" aria-hidden="true" class="header-anchor">#</a> 20.1 请求URL</h4> <pre><code>/v2/datapower
+</code></pre> <h4 id="_20-2-请求类型"><a href="#_20-2-请求类型" aria-hidden="true" class="header-anchor">#</a> 20.2 请求类型</h4> <pre><code>GET
+</code></pre> <h4 id="_20-3-请求参数"><a href="#_20-3-请求参数" aria-hidden="true" class="header-anchor">#</a> 20.3 请求参数</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>id</td> <td>权限编号</td> <td></td></tr> <tr><td>name</td> <td>权限名称</td> <td></td></tr> <tr><td>pageNo</td> <td>页码</td> <td>默认1</td></tr> <tr><td>pageSize</td> <td>页条数</td> <td>默认25</td></tr></tbody></table> <h4 id="_20-4-请求示例"><a href="#_20-4-请求示例" aria-hidden="true" class="header-anchor">#</a> 20.4 请求示例</h4> <pre><code>无
+</code></pre> <h4 id="_20-5-返回值"><a href="#_20-5-返回值" aria-hidden="true" class="header-anchor">#</a> 20.5 返回值</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>id</td> <td>数据权限编号</td> <td></td></tr> <tr><td>name</td> <td>数据权限名称</td> <td></td></tr> <tr><td>gid</td> <td>功能权限编号</td> <td></td></tr> <tr><td>deleteFlg</td> <td>删除标志</td> <td>0 正常； 1 以删除</td></tr> <tr><td>createTime</td> <td>创建时间</td> <td></td></tr> <tr><td>modifyTime</td> <td>修改时间</td> <td></td></tr></tbody></table> <h4 id="_20-6-返回示例"><a href="#_20-6-返回示例" aria-hidden="true" class="header-anchor">#</a> 20.6 返回示例</h4> <pre><code>{
+    &quot;code&quot;:100000,
+    &quot;msg&quot;:&quot;&quot;,
+    &quot;data&quot;:{
+        &quot;dataSums&quot;:null,
+        &quot;datas&quot;:[
+            {
+                &quot;id&quot;:29161,
+                &quot;name&quot;:&quot;采购管理角色&quot;,
+                &quot;gid&quot;:1533,
+                &quot;deleteFlg&quot;:0,
+                &quot;createTime&quot;:&quot;2018-04-19 15:00:26.0&quot;,
+                &quot;modifyTime&quot;:&quot;&quot;
+            }
+        ],
+        &quot;pageNo&quot;:1,
+        &quot;total&quot;:1
+    }
+}
+</code></pre> <h3 id="qx-21-删除数据权限"><a href="#qx-21-删除数据权限" aria-hidden="true" class="header-anchor">#</a> QX-21. 删除数据权限</h3> <h4 id="_21-1-请求url"><a href="#_21-1-请求url" aria-hidden="true" class="header-anchor">#</a> 21.1 请求URL</h4> <pre><code>/v2/datapower/{id}
+</code></pre> <h4 id="_21-2-请求类型"><a href="#_21-2-请求类型" aria-hidden="true" class="header-anchor">#</a> 21.2 请求类型</h4> <pre><code>DELETE
+</code></pre> <h4 id="_21-3-请求参数"><a href="#_21-3-请求参数" aria-hidden="true" class="header-anchor">#</a> 21.3 请求参数</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>id</td> <td>权限ID</td> <td>必</td></tr></tbody></table> <h4 id="_21-4-请求示例"><a href="#_21-4-请求示例" aria-hidden="true" class="header-anchor">#</a> 21.4 请求示例</h4> <pre><code>无
+</code></pre> <h4 id="_21-5-返回值"><a href="#_21-5-返回值" aria-hidden="true" class="header-anchor">#</a> 21.5 返回值</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>code</td> <td>编号</td> <td>100000成功；0 失败；</td></tr> <tr><td>msg</td> <td>消息</td> <td>异常信息</td></tr> <tr><td>data</td> <td>null</td> <td></td></tr></tbody></table> <h4 id="_21-6-返回示例"><a href="#_21-6-返回示例" aria-hidden="true" class="header-anchor">#</a> 21.6 返回示例</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="qx-22-新增菜单"><a href="#qx-22-新增菜单" aria-hidden="true" class="header-anchor">#</a> QX-22. 新增菜单</h3> <h4 id="_22-1-请求url"><a href="#_22-1-请求url" aria-hidden="true" class="header-anchor">#</a> 22.1 请求URL</h4> <pre><code>/v2/menu
+</code></pre> <h4 id="_22-2-请求类型"><a href="#_22-2-请求类型" aria-hidden="true" class="header-anchor">#</a> 22.2 请求类型</h4> <pre><code>POST
+</code></pre> <h4 id="_22-3-请求参数"><a href="#_22-3-请求参数" aria-hidden="true" class="header-anchor">#</a> 22.3 请求参数</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>sys</td> <td>菜单所属系统</td> <td>必</td></tr> <tr><td>name</td> <td>菜单名称</td> <td>必</td></tr> <tr><td>parentId</td> <td>上级菜单ID</td> <td>必 0 无上级菜单 大于0 上级菜单ID</td></tr> <tr><td>ctrl</td> <td>控制器</td> <td></td></tr> <tr><td>action</td> <td>方法</td> <td></td></tr> <tr><td>params</td> <td>参数</td> <td></td></tr> <tr><td>sort</td> <td>菜单排序</td> <td></td></tr> <tr><td>level</td> <td>菜单等级</td> <td></td></tr></tbody></table> <h4 id="_22-4-请求示例"><a href="#_22-4-请求示例" aria-hidden="true" class="header-anchor">#</a> 22.4 请求示例</h4> <pre><code>{
+	&quot;sys&quot;:&quot;a&quot;,
+	&quot;name&quot;:&quot;一级菜单&quot;,
+	&quot;ctrl&quot;:&quot;first&quot;,
+	&quot;action&quot;:&quot;second&quot;,
+	&quot;params&quot;:&quot;third&quot;,
+	&quot;parentId&quot;:0,
+	&quot;sort&quot;:2,
+	&quot;level&quot;:1
+}
+</code></pre> <h4 id="_22-5-返回值"><a href="#_22-5-返回值" aria-hidden="true" class="header-anchor">#</a> 22.5 返回值</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>code</td> <td>编号</td> <td>100000成功；0 失败；</td></tr> <tr><td>msg</td> <td>消息</td> <td>异常信息</td></tr> <tr><td>data</td> <td>null</td> <td></td></tr></tbody></table> <h4 id="_22-6-返回示例"><a href="#_22-6-返回示例" aria-hidden="true" class="header-anchor">#</a> 22.6 返回示例</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="qx-23-修改菜单"><a href="#qx-23-修改菜单" aria-hidden="true" class="header-anchor">#</a> QX-23. 修改菜单</h3> <h4 id="_23-1-请求url"><a href="#_23-1-请求url" aria-hidden="true" class="header-anchor">#</a> 23.1 请求URL</h4> <pre><code>/v2/menu/{id}
+</code></pre> <h4 id="_23-2-请求类型"><a href="#_23-2-请求类型" aria-hidden="true" class="header-anchor">#</a> 23.2 请求类型</h4> <pre><code>PUT
+</code></pre> <h4 id="_23-3-请求参数"><a href="#_23-3-请求参数" aria-hidden="true" class="header-anchor">#</a> 23.3 请求参数</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>id</td> <td>菜单id</td> <td>必</td></tr> <tr><td>sys</td> <td>菜单所属系统</td> <td></td></tr> <tr><td>parentId</td> <td>上级菜单ID</td> <td>必 0 无上级菜单 大于0 上级菜单ID</td></tr> <tr><td>name</td> <td>菜单名称</td> <td></td></tr> <tr><td>ctrl</td> <td>控制器</td> <td></td></tr> <tr><td>action</td> <td>方法</td> <td></td></tr> <tr><td>params</td> <td>参数</td> <td></td></tr> <tr><td>sort</td> <td>菜单排序</td> <td></td></tr> <tr><td>level</td> <td>菜单等级</td> <td></td></tr> <tr><td>status</td> <td>状态</td> <td>show 显示 hidden 隐藏</td></tr></tbody></table> <h4 id="_23-4-请求示例"><a href="#_23-4-请求示例" aria-hidden="true" class="header-anchor">#</a> 23.4 请求示例</h4> <pre><code>{
+	&quot;sys&quot;:&quot;a&quot;,
+	&quot;name&quot;:&quot;二级菜单&quot;,
+	&quot;ctrl&quot;:&quot;first&quot;,
+	&quot;action&quot;:&quot;second&quot;,
+	&quot;params&quot;:&quot;third&quot;,
+	&quot;parentId&quot;:1,
+	&quot;sort&quot;:2,
+	&quot;level&quot;:2,
+	&quot;status&quot;:&quot;show&quot;
+}
+</code></pre> <h4 id="_23-5-返回值"><a href="#_23-5-返回值" aria-hidden="true" class="header-anchor">#</a> 23.5 返回值</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>code</td> <td>编号</td> <td>100000成功；0 失败；</td></tr> <tr><td>msg</td> <td>消息</td> <td>异常信息</td></tr> <tr><td>data</td> <td>null</td> <td></td></tr></tbody></table> <h4 id="_23-6-返回示例"><a href="#_23-6-返回示例" aria-hidden="true" class="header-anchor">#</a> 23.6 返回示例</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;操作成功&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="qx-24-菜单列表"><a href="#qx-24-菜单列表" aria-hidden="true" class="header-anchor">#</a> QX-24. 菜单列表</h3> <h4 id="_24-1-请求url"><a href="#_24-1-请求url" aria-hidden="true" class="header-anchor">#</a> 24.1 请求URL</h4> <pre><code>/v2/menu
+</code></pre> <h4 id="_24-2-请求类型"><a href="#_24-2-请求类型" aria-hidden="true" class="header-anchor">#</a> 24.2 请求类型</h4> <pre><code>GET
+</code></pre> <h4 id="_24-3-请求参数"><a href="#_24-3-请求参数" aria-hidden="true" class="header-anchor">#</a> 24.3 请求参数</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>sys</td> <td>所属系统</td> <td></td></tr> <tr><td>name</td> <td>菜单名称</td> <td></td></tr> <tr><td>ctrl</td> <td>路由一</td> <td></td></tr> <tr><td>parentId</td> <td>上级菜单ID</td> <td>获取一级菜单时 传0</td></tr> <tr><td>status</td> <td>状态</td> <td></td></tr> <tr><td>level</td> <td>菜单等级</td> <td></td></tr> <tr><td>pageNo</td> <td>页码</td> <td>默认1</td></tr> <tr><td>pageSize</td> <td>页条数</td> <td>默认25</td></tr></tbody></table> <h4 id="_24-4-请求示例"><a href="#_24-4-请求示例" aria-hidden="true" class="header-anchor">#</a> 24.4 请求示例</h4> <pre><code>无
+</code></pre> <h4 id="_24-5-返回值"><a href="#_24-5-返回值" aria-hidden="true" class="header-anchor">#</a> 24.5 返回值</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>id</td> <td>菜单id</td> <td></td></tr> <tr><td>name</td> <td>菜单名称</td> <td></td></tr> <tr><td>sys</td> <td>所属系统</td> <td></td></tr> <tr><td>ctrl</td> <td>路由一</td> <td></td></tr> <tr><td>action</td> <td>路由二</td> <td></td></tr> <tr><td>params</td> <td>参数</td> <td></td></tr> <tr><td>parentId</td> <td>上级菜单ID</td> <td></td></tr> <tr><td>sort</td> <td>排序</td> <td></td></tr> <tr><td>level</td> <td>等级</td> <td></td></tr> <tr><td>status</td> <td>状态</td> <td>show 显示 hidden 隐藏</td></tr> <tr><td>createTime</td> <td>创建时间</td> <td></td></tr></tbody></table> <h4 id="_24-6-返回示例"><a href="#_24-6-返回示例" aria-hidden="true" class="header-anchor">#</a> 24.6 返回示例</h4> <pre><code>{
+    &quot;code&quot;:100000,
+    &quot;msg&quot;:&quot;&quot;,
+    &quot;data&quot;:{
+        &quot;buttonPermissions&quot;: [
+            {
+                &quot;hiddenButton&quot;: true, // 隐藏
+                &quot;editButton&quot;: true, // 编辑
+                &quot;showButton&quot;: false, // 显示
+                &quot;deleteButton&quot;: false // 删除
+            }
+        ],
+        &quot;dataSums&quot;:null,
+        &quot;datas&quot;:[
+            {
+                &quot;id&quot;:308,
+                &quot;name&quot;:&quot;特价管理&quot;,
+                &quot;sys&quot;:&quot;a&quot;,
+                &quot;ctrl&quot;:&quot;rebates&quot;,
+                &quot;action&quot;:&quot;special&quot;,
+                &quot;params&quot;:&quot;&quot;,
+                &quot;parentId&quot;:32,
+                &quot;sort&quot;:5,
+                &quot;level&quot;:2,
+                &quot;status&quot;:&quot;show&quot;,
+                &quot;createTime&quot;:&quot;&quot;
+            }
+        ],
+        &quot;pageNo&quot;:1,
+        &quot;total&quot;:1
+    }
+}
+</code></pre> <h3 id="qx-25-删除菜单"><a href="#qx-25-删除菜单" aria-hidden="true" class="header-anchor">#</a> QX-25. 删除菜单</h3> <h4 id="_25-1-请求url"><a href="#_25-1-请求url" aria-hidden="true" class="header-anchor">#</a> 25.1 请求URL</h4> <pre><code>/v2/menu/{id}
+</code></pre> <h4 id="_25-2-请求类型"><a href="#_25-2-请求类型" aria-hidden="true" class="header-anchor">#</a> 25.2 请求类型</h4> <pre><code>DELETE
+</code></pre> <h4 id="_25-3-请求参数"><a href="#_25-3-请求参数" aria-hidden="true" class="header-anchor">#</a> 25.3 请求参数</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>id</td> <td>菜单ID</td> <td>必</td></tr></tbody></table> <h4 id="_25-4-请求示例"><a href="#_25-4-请求示例" aria-hidden="true" class="header-anchor">#</a> 25.4 请求示例</h4> <pre><code>无
+</code></pre> <h4 id="_25-5-返回值"><a href="#_25-5-返回值" aria-hidden="true" class="header-anchor">#</a> 25.5 返回值</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>code</td> <td>编号</td> <td>100000成功；0 失败；</td></tr> <tr><td>msg</td> <td>消息</td> <td>异常信息</td></tr> <tr><td>data</td> <td>null</td> <td></td></tr></tbody></table> <h4 id="_25-6-返回示例"><a href="#_25-6-返回示例" aria-hidden="true" class="header-anchor">#</a> 25.6 返回示例</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="qx-26-菜单信息"><a href="#qx-26-菜单信息" aria-hidden="true" class="header-anchor">#</a> QX-26. 菜单信息</h3> <h4 id="_26-1-请求url"><a href="#_26-1-请求url" aria-hidden="true" class="header-anchor">#</a> 26.1 请求URL</h4> <pre><code>/v2/menu/detail
+</code></pre> <h4 id="_26-2-请求类型"><a href="#_26-2-请求类型" aria-hidden="true" class="header-anchor">#</a> 26.2 请求类型</h4> <pre><code>GET
+</code></pre> <h4 id="_26-3-请求参数"><a href="#_26-3-请求参数" aria-hidden="true" class="header-anchor">#</a> 26.3 请求参数</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>id</td> <td>菜单id</td> <td>必</td></tr></tbody></table> <h4 id="_26-4-请求示例"><a href="#_26-4-请求示例" aria-hidden="true" class="header-anchor">#</a> 26.4 请求示例</h4> <pre><code>无
+</code></pre> <h4 id="_26-5-返回值"><a href="#_26-5-返回值" aria-hidden="true" class="header-anchor">#</a> 26.5 返回值</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>id</td> <td>菜单id</td> <td></td></tr> <tr><td>name</td> <td>菜单名称</td> <td></td></tr> <tr><td>sys</td> <td>所属系统</td> <td></td></tr> <tr><td>ctrl</td> <td>路由一</td> <td></td></tr> <tr><td>action</td> <td>路由二</td> <td></td></tr> <tr><td>params</td> <td>参数</td> <td></td></tr> <tr><td>parentId</td> <td>上级菜单ID</td> <td></td></tr> <tr><td>sort</td> <td>排序</td> <td></td></tr> <tr><td>level</td> <td>等级</td> <td></td></tr> <tr><td>status</td> <td>状态</td> <td>show 显示 hidden 隐藏</td></tr> <tr><td>createTime</td> <td>创建时间</td> <td></td></tr></tbody></table> <h4 id="_26-6-返回示例"><a href="#_26-6-返回示例" aria-hidden="true" class="header-anchor">#</a> 26.6 返回示例</h4> <pre><code>{
+    &quot;code&quot;:100000,
+    &quot;msg&quot;:&quot;&quot;,
+    &quot;data&quot;:{
+        &quot;id&quot;:318,
+        &quot;name&quot;:&quot;产品管理&quot;,
+        &quot;sys&quot;:&quot;a&quot;,
+        &quot;ctrl&quot;:&quot;supplier&quot;,
+        &quot;action&quot;:&quot;prsupplier&quot;,
+        &quot;params&quot;:&quot;&quot;,
+        &quot;parentId&quot;:32,
+        &quot;sort&quot;:3,
+        &quot;level&quot;:2,
+        &quot;status&quot;:&quot;show&quot;,
+        &quot;createTime&quot;:&quot;&quot;
+    }
+}
+</code></pre> <h3 id="qx-27-操作日志列表"><a href="#qx-27-操作日志列表" aria-hidden="true" class="header-anchor">#</a> QX-27. 操作日志列表</h3> <h4 id="_27-1-请求url"><a href="#_27-1-请求url" aria-hidden="true" class="header-anchor">#</a> 27.1 请求URL</h4> <pre><code>/v2/systemlog
+</code></pre> <h4 id="_27-2-请求类型"><a href="#_27-2-请求类型" aria-hidden="true" class="header-anchor">#</a> 27.2 请求类型</h4> <pre><code>GET
+</code></pre> <h4 id="_27-3-请求参数"><a href="#_27-3-请求参数" aria-hidden="true" class="header-anchor">#</a> 27.3 请求参数</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>type</td> <td>操作类型</td> <td></td></tr></tbody></table> <h4 id="_27-4-请求示例"><a href="#_27-4-请求示例" aria-hidden="true" class="header-anchor">#</a> 27.4 请求示例</h4> <pre><code>无
+</code></pre> <h4 id="_27-5-返回值"><a href="#_27-5-返回值" aria-hidden="true" class="header-anchor">#</a> 27.5 返回值</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>type</td> <td>操作类型</td> <td></td></tr> <tr><td>action</td> <td>操作内容</td> <td></td></tr> <tr><td>uid</td> <td>用户id</td> <td></td></tr> <tr><td>uname</td> <td>用户姓名</td> <td></td></tr> <tr><td>gid</td> <td>功能权限编号</td> <td></td></tr> <tr><td>gname</td> <td>功能权限名称</td> <td></td></tr> <tr><td>sys</td> <td>所属系统</td> <td></td></tr> <tr><td>menuId</td> <td>菜单id</td> <td></td></tr> <tr><td>mname</td> <td>菜单名称</td> <td></td></tr> <tr><td>roleId</td> <td>数据权限编号</td> <td></td></tr> <tr><td>rname</td> <td>数据权限名称</td> <td></td></tr> <tr><td>createRole</td> <td>操作人角色id</td> <td></td></tr> <tr><td>createUser</td> <td>操作人id</td> <td></td></tr> <tr><td>createUserName</td> <td>操作人姓名</td> <td></td></tr> <tr><td>createTime</td> <td>操作时间</td> <td></td></tr></tbody></table> <h4 id="_27-6-返回示例"><a href="#_27-6-返回示例" aria-hidden="true" class="header-anchor">#</a> 27.6 返回示例</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;id&quot;: 0,
+                &quot;type&quot;: &quot;9&quot;,
+                &quot;action&quot;: &quot;功能权限绑定菜单&quot;,
+                &quot;uid&quot;: 0,
+                &quot;uname&quot;: &quot;&quot;,
+                &quot;gid&quot;: 111,
+                &quot;gname&quot;: &quot;测试修改&quot;,
+                &quot;sys&quot;: &quot;&quot;,
+                &quot;menuId&quot;: 82,
+                &quot;mname&quot;: &quot;供应商用户列表&quot;,
+                &quot;roleId&quot;: 0,
+                &quot;rname&quot;: &quot;&quot;,
+                &quot;createRole&quot;: 1,
+                &quot;createTime&quot;: &quot;2018-08-22 14:28:55.0&quot;,
+                &quot;createUser&quot;: 101,
+                &quot;createUserName&quot;: &quot;樊嘉辉&quot;,
+            },
+            {
+                &quot;id&quot;: 0,
+                &quot;type&quot;: &quot;1&quot;,
+                &quot;action&quot;: &quot;用户开户&quot;,
+                &quot;uid&quot;: 517,
+                &quot;uname&quot;: &quot;&quot;,
+                &quot;gid&quot;: 0,
+                &quot;gname&quot;: &quot;&quot;,
+                &quot;sys&quot;: &quot;&quot;,
+                &quot;menuId&quot;: 0,
+                &quot;mname&quot;: &quot;&quot;,
+                &quot;roleId&quot;: 0,
+                &quot;rname&quot;: &quot;&quot;,
+                &quot;createRole&quot;: 1,
+                &quot;createTime&quot;: &quot;2018-08-20 17:08:08.0&quot;,
+                &quot;createUser&quot;: 101,
+                &quot;createUserName&quot;: &quot;樊嘉辉&quot;,
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: 2
+    }
+}
+</code></pre> <h3 id="qx-28-根据ss-sr类型获取角色权限列表"><a href="#qx-28-根据ss-sr类型获取角色权限列表" aria-hidden="true" class="header-anchor">#</a> QX-28. 根据SS\SR类型获取角色权限列表</h3> <h4 id="_28-1-请求url"><a href="#_28-1-请求url" aria-hidden="true" class="header-anchor">#</a> 28.1 请求URL</h4> <pre><code>/v2/datapower/roles
+</code></pre> <h4 id="_28-2-请求类型"><a href="#_28-2-请求类型" aria-hidden="true" class="header-anchor">#</a> 28.2 请求类型</h4> <pre><code>GET
+</code></pre> <h4 id="_28-3-请求参数"><a href="#_28-3-请求参数" aria-hidden="true" class="header-anchor">#</a> 28.3 请求参数</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>type</td> <td>角色类型</td> <td>必 可取值 ss  或  sr</td></tr></tbody></table> <h4 id="_28-4-请求示例"><a href="#_28-4-请求示例" aria-hidden="true" class="header-anchor">#</a> 28.4 请求示例</h4> <pre><code>无
+</code></pre> <h4 id="_28-5-返回值"><a href="#_28-5-返回值" aria-hidden="true" class="header-anchor">#</a> 28.5 返回值</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>rid</td> <td>角色ID</td> <td></td></tr> <tr><td>roleName</td> <td>角色名称</td> <td></td></tr> <tr><td>gid</td> <td>功能权限ID</td> <td></td></tr></tbody></table> <h4 id="_28-6-返回示例"><a href="#_28-6-返回示例" aria-hidden="true" class="header-anchor">#</a> 28.6 返回示例</h4> <pre><code>{
+    &quot;code&quot;:100000,
+    &quot;msg&quot;:&quot;&quot;,
+    &quot;data&quot;:[
+        {
+            &quot;gid&quot;:24,
+            &quot;rid&quot;:40,
+            &quot;roleName&quot;:&quot;高成举-SRM-T&quot;
+        },
+        {
+            &quot;gid&quot;:24,
+            &quot;rid&quot;:479,
+            &quot;roleName&quot;:&quot;王振华&quot;
+        },
+        {
+            &quot;gid&quot;:24,
+            &quot;rid&quot;:856,
+            &quot;roleName&quot;:&quot;SRM-W-冯松&quot;
+        }
+    ]
+}
+</code></pre> <h3 id="qx-29-用户登陆后获取菜单"><a href="#qx-29-用户登陆后获取菜单" aria-hidden="true" class="header-anchor">#</a> QX-29. 用户登陆后获取菜单</h3> <h4 id="_29-1-请求url"><a href="#_29-1-请求url" aria-hidden="true" class="header-anchor">#</a> 29.1 请求URL</h4> <pre><code>/v2/auth/getMenus
+</code></pre> <h4 id="_29-2-请求类型"><a href="#_29-2-请求类型" aria-hidden="true" class="header-anchor">#</a> 29.2 请求类型</h4> <pre><code>GET
+</code></pre> <h4 id="_29-3-请求参数"><a href="#_29-3-请求参数" aria-hidden="true" class="header-anchor">#</a> 29.3 请求参数</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>token</td> <td>必</td> <td></td></tr> <tr><td>source</td> <td>系统类型</td> <td>必 a A网 sta 统计</td></tr> <tr><td>ctrl</td> <td></td> <td></td></tr></tbody></table> <h4 id="_29-4-请求示例"><a href="#_29-4-请求示例" aria-hidden="true" class="header-anchor">#</a> 29.4 请求示例</h4> <pre><code>无
+</code></pre> <h4 id="_29-5-返回值"><a href="#_29-5-返回值" aria-hidden="true" class="header-anchor">#</a> 29.5 返回值</h4> <table><thead><tr><th>参数</th> <th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>id</td> <td>菜单id</td> <td></td></tr> <tr><td>name</td> <td>菜单名称</td> <td></td></tr> <tr><td>sys</td> <td>所属系统</td> <td></td></tr> <tr><td>ctrl</td> <td>路由一</td> <td></td></tr> <tr><td>action</td> <td>路由二</td> <td></td></tr> <tr><td>params</td> <td>参数</td> <td></td></tr> <tr><td>parentId</td> <td>上级菜单ID</td> <td></td></tr> <tr><td>level</td> <td>等级</td> <td></td></tr></tbody></table> <h4 id="_29-6-返回示例"><a href="#_29-6-返回示例" aria-hidden="true" class="header-anchor">#</a> 29.6 返回示例</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;action&quot;: &quot;&quot;,
+            &quot;createTime&quot;: &quot;&quot;,
+            &quot;ctrl&quot;: &quot;oldmppr&quot;,
+            &quot;id&quot;: 151,
+            &quot;level&quot;: 1,
+            &quot;name&quot;: &quot;MPPR&quot;,
+            &quot;params&quot;: &quot;&quot;,
+            &quot;parentId&quot;: 0,
+            &quot;sort&quot;: 0,
+            &quot;status&quot;: &quot;&quot;,
+            &quot;sys&quot;: &quot;a&quot;
+        },
+        {
+            &quot;action&quot;: &quot;&quot;,
+            &quot;createTime&quot;: &quot;&quot;,
+            &quot;ctrl&quot;: &quot;mppr&quot;,
+            &quot;id&quot;: 281,
+            &quot;level&quot;: 1,
+            &quot;name&quot;: &quot;备货管理&quot;,
+            &quot;params&quot;: &quot;&quot;,
+            &quot;parentId&quot;: 0,
+            &quot;sort&quot;: 0,
+            &quot;status&quot;: &quot;&quot;,
+            &quot;sys&quot;: &quot;a&quot;
+        },
+        {
+            &quot;action&quot;: &quot;&quot;,
+            &quot;createTime&quot;: &quot;&quot;,
+            &quot;ctrl&quot;: &quot;user&quot;,
+            &quot;id&quot;: 143,
+            &quot;level&quot;: 1,
+            &quot;name&quot;: &quot;账号管理&quot;,
+            &quot;params&quot;: &quot;&quot;,
+            &quot;parentId&quot;: 0,
+            &quot;sort&quot;: 0,
+            &quot;status&quot;: &quot;&quot;,
+            &quot;sys&quot;: &quot;a&quot;
+        }
+    ]
+}</code></pre></div> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
+    <script src="/work-a-api-v2/assets/js/5.09b29322.js" defer></script><script src="/work-a-api-v2/assets/js/app.4e6ceed8.js" defer></script>
+  </body>
+</html>
