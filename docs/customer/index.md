@@ -3,16 +3,16 @@
 #### 请求
     GET /v2/customer
 #### 参数
-    pageNo:分页
-    keyword: 客户名/登录帐号
-    shortName: 客户名
-    accountMobile: 登录帐号
-    businessunit：事业部ID 
-    ssRoleId：SSID
-    srRoleId：SRID
-    attrId：属性ID
-    sCreateTime：创建时间（开始）
-    eCreateTime：创建时间（结束）
+    pageNo: 1分页
+    keyword: "1" 客户名/登录帐号
+    shortName: "1" 客户名
+    accountMobile: "1" 登录帐号
+    businessunit：1 事业部ID 
+    ssRoleId：1 SSID
+    srRoleId：1 SRID
+    attrId：1 属性ID
+    sCreateTime："2018-01-01 00:00:00" 创建时间（开始）
+    eCreateTime："2018-01-01 23:59:59" 创建时间（结束）
 #### 响应
     {
         "code": 100000,
@@ -20,8 +20,8 @@
         "data": {
             "datas": [
                 {
-                    "accountId": "32856",  //登录帐号
-                    "accountMobile": "15140067518", //登录名称
+                    "accountId": "32856",  //登录帐号ID
+                    "accountMobile": "15140067518", //登录帐号
                     "accountState": "",
                     "area": "浑南区",
                     "areapathid": "060107",
@@ -75,9 +75,9 @@
     *ids: 客户id eg：1,2,3,4
     json body: // *参数3至少有1个
     {
-        ssRoleId: //SSID
-        srRoleId: //SRID
-        businessunit: //部门ID
+        ssRoleId: 1 //SSID
+        srRoleId: 1//SRID
+        businessunit: 1 //部门ID
     }
 #### 响应
     {
@@ -113,7 +113,7 @@
     *ids：客户id eg：1,2,3
     json body
     {
-        *businesstype:"01"
+        *businesstype:1 // 餐饮业态ID
     }
 #### 响应
     {
@@ -204,7 +204,7 @@
 #### 请求
     GET /v2/customer/detail
 #### 参数
-    *id: 客户ID
+    *id: 1 客户ID
     hasContact: true 是否携带联系方式信息（可选，默认false）
     hasFinace: true 是否携带财务信息（可选，默认false）
     hasAttr:true 是否携带属性信息（可选，默认false）
@@ -307,7 +307,7 @@
 #### 请求
     DELETE /v2/customerContact/{id}
 #### 参数
-    *id: 联系人ID
+    *id: 1 联系人ID
 #### 响应
     {
         "code": 100000,
@@ -319,7 +319,7 @@
 #### 请求
     PUT /v2/customerContact/{id}
 #### 参数
-    *id: 联系人ID
+    *id: 1 联系人ID
     json body
     {
         *"name":"222", // 联系人
@@ -417,7 +417,7 @@
 #### 请求
     GET /v2/customerContact
 #### 参数
-    *customerId: 客户ID
+    *customerId: 1 客户ID
     pageNo：1 页码
 #### 响应
     {
@@ -450,7 +450,7 @@
 #### 请求
     GET /v2/customer/log
 #### 参数
-    *customerId: 客户ID
+    *customerId: 1 客户ID
     pageNo：1 页码
 #### 响应
     {
@@ -480,7 +480,7 @@
 #### 请求
     DELETE /v2/customer/{id}
 #### 参数
-    *id: 客户ID
+    *id: 1 客户ID
 #### 响应
     {
         "code": 100000,
@@ -492,9 +492,9 @@
 #### 请求
     GET /v2/price/sign/unsign
 #### 参数
-    *customerId： 客户ID
+    *customerId： 1 客户ID
     pageNo: 1 页码
-    keyword： 关键词过滤
+    keyword： "" 关键词过滤
 #### 响应
     {
         "code": 100000,
@@ -528,9 +528,9 @@
 #### 请求
     GET /v2/price/sign/signed
 #### 参数
-    *customerId： 客户ID
+    *customerId： 1 客户ID
     pageNo: 1 页码
-    keyword： 关键词过滤
+    keyword： "" 关键词过滤
 #### 响应
     {
         "code": 100000,
@@ -565,8 +565,8 @@
 #### 请求
     GET /v2/price/sign/check
 #### 参数
-    *customerId： 客户ID
-    keyword： 关键词过滤
+    *customerId：1 客户ID
+    keyword：""  关键词过滤
     pageNo: 1 页码
 #### 响应
     {
@@ -603,8 +603,8 @@
 #### 请求
     GET /v2/price/sign/log
 #### 参数
-    *customerId： 客户ID
-    keyword： 关键词过滤
+    *customerId：1 客户ID
+    keyword："" 关键词过滤
     pageNo: 1 页码
 #### 响应
     {
@@ -643,9 +643,9 @@
     json body
     [
         {
-            *"customerId":38545,
-            *"productId":4155,
-            *"productunitId":7386,
+            *"customerId":38545, // 客户ID
+            *"productId":4155, // 产品ID
+            *"productunitId":7386, // 产品规格ID
             *"signPrice":99
         }
     ]
@@ -1064,32 +1064,33 @@
     {
         "code": 100000,
         "msg": "",
-        "data": [
-            'aaa','bbb','ccc' // 客户名列表
+        "data": [ //客户名列表
+            {
+                id: 1, // ID
+                shortName: "xxx" // 客户名
+            }
         ]
     }
 
-### KH-46.产品业态查询
+### KH-46.客户个人认证查询
 #### 请求
-    GET /v2/product/businessType
+    GET /v2/customer/auth/personDetail
 #### 参数
-    *parentId: 0 // 拉去根分类传递0
+    *authenNo: 1 // 认证号
 #### 响应
     {
         "code": 100000,
         "msg": "",
-        "data": [
-            {
-                "code": "01",
-                "deleteFlg": 0,
-                "id": 1,
-                "level": 1,
-                "name": "中餐",
-                "parentId": 0,
-                "pyCode": "ZC",
-                "sort": 50
-            }
-        ]
+        "data": {
+            "cardNo": "123", // 身份证号
+            "cardNoBack": "2", // 身份证背面扫描图片地址
+            "cardNoFront": "1", // 身份证前面扫描图片地址
+            "createRole": 1, 
+            "createTime": "2018-08-23 11:14:31.0",
+            "createUser": 101,
+            "id": 1, // ID = authenNo
+            "name": "dddd" // 姓名
+        }
     }
 
 ### 缺失清单指导

@@ -90,6 +90,7 @@
 |workno|工号|
 |fullname|全名|
 |mobile|手机号|
+|sys|菜单所属系统|a A网 sta 统计|
 |menuid|菜单id|
 |buttonPermissionFlg|0 获取按钮权限 默认1不获取|
 |pageNo|页码|默认1|
@@ -152,34 +153,32 @@
                     "modifyTime":"",
                     "authDataPowers":[
                         {
-                            "uid":0,
-                            "rid":0,
+                            "uid":233,
+                            "rid":5962,
                             "name":"刘子阳",
                             "deleteFlg":0,
-                            "gid":0,
+                            "gid":51,
                             "createTime":"",
                             "modifyTime":""
                         }
                     ],
                     "authMenuPowers":[
                         {
-                            "uid":0,
+                            "uid":233,
                             "id":0,
-                            "gid":0,
+                            "gid":50,
                             "name":"销售代表",
-                            "oldName":"",
                             "status":"",
-                            "sys":"",
+                            "sys":"a",
                             "createTime":""
                         },
                         {
-                            "uid":0,
+                            "uid":233,
                             "id":0,
-                            "gid":0,
+                            "gid":50,
                             "name":"SR",
-                            "oldName":"",
                             "status":"",
-                            "sys":"",
+                            "sys":"sta",
                             "createTime":""
                         }
                     ]
@@ -219,8 +218,6 @@
 |gid|权限编号|
 |name|权限名称|
 |sys|所属系统|
-|status|状态|normal 正常；lock 锁定|
-|createTime|创建时间|
 
 
 #### 4.6 返回示例
@@ -231,13 +228,13 @@
             "dataSums":null,
             "datas":[
                 {
-                "uid":0,
+                "uid":11,
                 "id":52,
                 "gid":1533,
                 "name":"供应商管理",
-                "status":"normal",
+                "status":"",
                 "sys":"a",
-                "createTime":"2018-04-19 14:56:54.0",
+                "createTime":"",
                 }
             ],
             "pageNo":1,
@@ -269,6 +266,7 @@
 #### 5.5 返回值
 |参数|名称|描述|
 |---|---|---|
+|uid|用户id|
 |gid|功能权限编号|
 |rid|数据权限编号|
 |name|数据权限名称|
@@ -282,7 +280,7 @@
             "dataSums":null,
             "datas":[
                 {
-                    "uid":0,
+                    "uid":11,
                     "rid":71,
                     "gid":41,
                     "name":"大牛",
@@ -291,6 +289,7 @@
                     "modifyTime":""
                 },
                 {
+                    "uid":11,
                     "rid":70,
                     "gid":41,
                     "name":"小刘",
@@ -318,13 +317,13 @@
 #### 6.3 请求参数
 |参数|名称|描述|
 |---|---|---|
-|uid|用户id|必|
+|id|用户id|必|
 |gid|功能权限编号|必|
 |sys|功能权限所属系统|必|
 
 #### 6.4 请求示例
     {
-        "uid":517,
+        "id":517,
         "gid":21,
         "sys":"a"
     }
@@ -348,7 +347,7 @@
 ### QX-7. 用户取消分配功能权限
 
 #### 7.1 请求URL
-    /v2/userpower/menupower/{uid}
+    /v2/userpower/menupower/{id}
 
 #### 7.2 请求类型
     PUT
@@ -356,7 +355,7 @@
 #### 7.3 请求参数
 |参数|名称|描述|
 |---|---|---|
-|uid|菜单id|必|
+|id|菜单id|必|
 |gid|功能权限编号|必|
 |sys|功能权限所属系统|必|
 
@@ -396,12 +395,12 @@
 #### 8.3 请求参数
 |参数|名称|描述|
 |---|---|---|
-|uid|用户id|必|
+|id|用户id|必|
 |rid|数据权限编号|必|
 
 #### 8.4 请求示例
     {
-        "uid":517,
+        "id":517,
         "rid":23
     }
 
@@ -424,7 +423,7 @@
 ### QX-9. 用户取消分配数据权限
 
 #### 9.1 请求URL
-    /v2/userpower/datapower/{uid}
+    /v2/userpower/datapower/{id}
 
 #### 9.2 请求类型
     PUT
@@ -432,7 +431,7 @@
 #### 9.3 请求参数
 |参数|名称|描述|
 |---|---|---|
-|uid|用户id|必|
+|id|用户id|必|
 |rid|数据权限编号|必|
 
 #### 9.4 请求示例
@@ -663,7 +662,6 @@
 |id|权限ID|
 |gid|权限编号|
 |name|权限名称|
-|oldName|暂时用不到|
 |sys|所属系统|
 |status|状态|normal 正常；lock 锁定|
 |createTime|创建时间|
@@ -674,18 +672,18 @@
         "code":100000,
         "msg":"",
         "data":{
+            "uid":0,
             "id":18,
             "gid":42,
             "name":"客服",
-            "oldName":"",
             "sys":"a",
             "status":"normal",
-            "createTime":"2017-05-15 18:20:51.0"
+            "createTime":""
         }
     }
 
     
-### QX-15. 获取功能权限绑定的菜单列表
+### QX-15. 获取功能权限已绑定的菜单列表
 
 #### 15.1 请求URL
     /v2/menupower/binding
@@ -697,8 +695,8 @@
 |参数|名称|描述|
 |---|---|---|
 |gid|权限编号|必|
-|sys|所属系统|
-|ctrl|控制器|
+|sys|所属系统|必|
+|pid|上级菜单ID|
 |menuid|菜单编号|
 |name|菜单名称|
 |pageNo|页码|默认1|
@@ -710,16 +708,11 @@
 #### 15.5 返回值
 |参数|名称|描述|
 |---|---|---|
+|gid|功能权限编号|
 |id|菜单编号|
 |sys|所属系统|
 |name|菜单名称|
-|ctrl|控制器|
-|action|方法|
-|params|参数|
-|status|状态|show 显示； hidden 隐藏|
 |level|菜单等级|
-|sort|菜单排序|
-|createTime|创建时间|
 
 
 #### 15.6 返回示例
@@ -730,16 +723,11 @@
             "dataSums":null,
             "datas":[
                 {
+                    "gid":11,
                     "id":213,
                     "sys":"a",
                     "name":"经销商审核",
-                    "ctrl":"customer",
-                    "action":"selcheck",
-                    "params":"",
-                    "status":"show",
                     "level":2,
-                    "sort":2,
-                    "createTime":""
                 }
             ],
             "pageNo":1,
@@ -1112,11 +1100,12 @@
 |参数|名称|描述|
 |---|---|---|
 |sys|所属系统|
+|menuid|菜单ID|
 |name|菜单名称|
 |ctrl|路由一|
-|parentId|上级菜单ID|获取一级菜单时 传0|
+|pid|上级菜单ID|
 |status|状态|
-|level|菜单等级|
+|level|菜单等级|获取一级菜单是可以传 1 |
 |buttonPermissionFlg|0 获取按钮权限 默认1不获取|
 |asigned|传 no|功能权限获取未绑定菜单列表使用|
 |gid|功能权限编号|功能权限获取未绑定菜单列表使用|
