@@ -6,7 +6,9 @@ module.exports = {
     nav: [
       {text: '客户', link: '/customer/'},
       {text: '产品', link: '/product/'},
-      {text: '权限', link: '/auth/'}
+      {text: '权限', link: '/auth/'},
+      {text: '销售优惠', link: '/contract/'},
+      {text: '价格', link: '/price/'}
     ],
     sidebar: 'auto',
   },

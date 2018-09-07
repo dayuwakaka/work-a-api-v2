@@ -3,7 +3,8 @@
 #### 请求
     GET /v2/customer
 #### 参数
-    pageNo: 1分页
+    pageNo: 1 分页
+    pageSize: 25 // 默认值
     keyword: "1" 客户名/登录帐号
     shortName: "1" 客户名
     accountMobile: "1" 登录帐号
@@ -166,7 +167,7 @@
                 *"mobile":"18842889150", // 手机号
                 *"areapathid":"0101", // 地区码
                 *"address":"1111", // 地址
-                "remark":"remark", // 备注
+                "remarks":"remarks", // 备注
                 *"isDefault":1 // 是否默认
             },
             {
@@ -174,7 +175,7 @@
                 "mobile":"18842889150", 
                 "areapathid":"0101",
                 "address":"1111",
-                "remark":"",
+                "remarks":"remarks",
                 "isDefault":0
             }
         ]
@@ -326,7 +327,7 @@
         *"mobile":"18842889150", // 联系手机号
         *"areapathid":"0101", // 地址码
         *"address":"3333", // 地址
-        *"remark":"xxxx" // 备注
+        *"remarks":"xxxx" // 备注
         *"isDefault": 1
     }
 #### 响应
@@ -348,7 +349,7 @@
             *"mobile":"18842889150", // 手机号
             *"areapathid":"0101", // 区域码
             *"address":"111", // 地址
-            *"remark":"1111", // 备注
+            *"remarks":"1111", // 备注
             *"isDefault":1 // 是否默认
         },
         {
@@ -357,7 +358,7 @@
             "mobile":"18842889150",
             "areapathid":"0202",
             "address":"222",
-            "remark":"222",
+            "remarks":"222",
             "isDefault":0
         }
     ]
@@ -393,7 +394,7 @@
                 *"mobile":"18842889150", // 手机号
                 *"areapathid":"0101", // 地区码
                 *"address":"1111", // 地址
-                *"remark":"remark", // 备注
+                *"remarks":"remarks", // 备注
                 *"isDefault":1 // 是否默认
             },
             {
@@ -401,7 +402,7 @@
                 "mobile":"18842889150", 
                 "areapathid":"0101",
                 "address":"1111",
-                "remark":"",
+                "remarks":"",
                 "isDefault":0
             }
         ]
@@ -418,32 +419,26 @@
     GET /v2/customerContact
 #### 参数
     *customerId: 1 客户ID
-    pageNo：1 页码
 #### 响应
     {
         "code": 100000,
         "msg": "",
-        "data": {
-            "dataSums": null,
-            "datas": [
-                {
-                    "address": "222", // 地址
-                    "areapathid": "0202", // 区域码
-                    "createRole": 1, 
-                    "createTime": "2018-08-21 15:47:04.0",
-                    "createUser": 101,
-                    "customerId": 32202,
-                    "id": 50668, // 地址ID
-                    "isDefault": 0, // 是否默认
-                    "lastModified": "2018-08-21 15:47:04.0",
-                    "mobile": "18842889150", // 手机号
-                    "name": "222", // 联系人
-                    "remarks": "" // 备注
-                }
-            ],
-            "pageNo": 1, // 页码
-            "total": 1 // 总数
-        }
+        "data": [
+            {
+                "address": "222", // 地址
+                "areapathid": "0202", // 区域码
+                "createRole": 1, 
+                "createTime": "2018-08-21 15:47:04.0",
+                "createUser": 101,
+                "customerId": 32202,
+                "id": 50668, // 地址ID
+                "isDefault": 0, // 是否默认
+                "lastModified": "2018-08-21 15:47:04.0",
+                "mobile": "18842889150", // 手机号
+                "name": "222", // 联系人
+                "remarks": "" // 备注
+            }
+        ]
     }
 
 ### KH-16.客户日志
@@ -778,33 +773,29 @@
 #### 请求
     GET /v2/customer/businessunit
 #### 参数
-     pageNo：页码
+     name:"" // 事业部名模拟匹配
 #### 响应
-{
-    "code": 100000,
-    "msg": "",
-    "data": {
-        "dataSums": null,
-        "datas": [
-            {
-                "groupName": "PT事业组"， // 事业部组名
-                "bcFlg": 0,
-                "groupId": 2, // 部门组ID
-                "id": 2, // 部门ID
-                "name": "PT", // 部门名
-                "platformId": 1, 
-                "sort": 2 // 排序标识
-            }
-        ],
-        "pageNo": 1,
-        "total": 61
+    {
+        "code": 100000,
+        "msg": "",
+        "data":  [
+                {
+                    "groupName": "PT事业组"， // 事业部组名
+                    "bcFlg": 0,
+                    "groupId": 2, // 部门组ID
+                    "id": 2, // 部门ID
+                    "name": "PT", // 部门名
+                    "platformId": 1, 
+                    "sort": 2 // 排序标识
+                }
+        ]
     }
-}
 
 ### KH-29.事业部查询（所有）
 #### 请求
     GET /v2/customer/businessunit/all
 #### 参数
+    groupId: 1 // 事业部组ID（可选）
     ids : 1，2，3  // 事业部ID（可选）
 #### 响应
     {
@@ -1093,10 +1084,53 @@
         }
     }
 
+### KH-47.企业认证查询
+#### 请求
+    GET /v2/customer/auth/search/company
+#### 参数
+    *keyword: "" // 模糊查询 不少于2个字符
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "base": "辽宁", // 所在地
+                "companyType": "1",  // 公司类型 1公司 2香港公司 3社会组织 4律所 5事业单位 6基金会
+                "estiblishTime": "2002-06-11 00:00:00.0", // 开业时间
+                "id": 3064166877, // authenNO 企业号
+                "legalPersonName": "姜晓", // 法人
+                "name": "亚洲渔港股份有限公司", // 公司名
+                "regCapital": "10000万人民币", // 注册资本
+                "type": "1" // 1公司 2人
+            }
+        ]
+    }
+
+### KH-48.个人认证查询
+#### 请求
+    GET /v2/customer/auth/search/person
+#### 参数
+    *keyword: "" // 模糊查询 不少于2个字符
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "cardNo": "123", // 身份证号
+                "cardNoBack": "2", // 身份证后面扫描
+                "cardNoFront": "1", // 身份证前面扫描
+                "createRole": 1, // 创建角色
+                "createTime": "2018-08-23 11:14:31.0", // 创建时间
+                "createUser": 101, // 创建人
+                "id": 1, // authenNo 认证号
+                "name": "dddd" // 人名
+            }
+        ]
+    }
+    
 ### 缺失清单指导
-    SS下拉 权限模块提供 @尹洪明
-    SR下拉 权限模块提供 @尹洪明
-    菜单接口 权限模块提供 @尹洪明
     上传接口 基础功能模块提供 @王德超
     地址基础接口 基础模块提供 @王德超
 

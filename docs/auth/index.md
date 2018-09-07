@@ -1,4 +1,5 @@
 ## 权限接口
+
 ### QX-1. 开户
 
 #### 1.1 请求URL
@@ -1005,6 +1006,7 @@
 |params|参数|
 |sort|菜单排序|
 |level|菜单等级|
+|icon|菜单图标|
 
 #### 22.4 请求示例
     {
@@ -1015,7 +1017,8 @@
     	"params":"third",
     	"parentId":0,
     	"sort":2,
-    	"level":1
+    	"level":1,
+    	"icon":"abcde"
     }
 
 #### 22.5 返回值
@@ -1054,6 +1057,7 @@
 |params|参数|
 |sort|菜单排序|
 |level|菜单等级|
+|icon|菜单图标|
 |status|状态|show 显示 hidden 隐藏|
 
 
@@ -1067,6 +1071,7 @@
     	"parentId":1,
     	"sort":2,
     	"level":2,
+    	"icon":"abcde",
     	"status":"show"
     }
 
@@ -1128,6 +1133,7 @@
 |parentId|上级菜单ID|
 |sort|排序|
 |level|等级|
+|icon|菜单图标|
 |status|状态|show 显示 hidden 隐藏|
 |createTime|创建时间|
 
@@ -1157,6 +1163,7 @@
                     "parentId":32,
                     "sort":5,
                     "level":2,
+                    "icon":"abcde",
                     "status":"show",
                     "createTime":""
                 }
@@ -1231,6 +1238,7 @@
 |parentId|上级菜单ID|
 |sort|排序|
 |level|等级|
+|icon|菜单图标|
 |status|状态|show 显示 hidden 隐藏|
 |createTime|创建时间|
 
@@ -1249,6 +1257,7 @@
             "parentId":32,
             "sort":3,
             "level":2,
+            "icon":"abcde",
             "status":"show",
             "createTime":""
         }
@@ -1397,7 +1406,7 @@
 ### QX-29. 用户登陆后获取菜单
 
 #### 29.1 请求URL
-    /v2/auth/getMenus
+    /v2/auth/getAllMenu
 
 #### 29.2 请求类型
     GET
@@ -1407,7 +1416,6 @@
 |---|---|---|
 |token|必|
 |source|系统类型|必 a A网 sta 统计|
-|ctrl|
 
 #### 29.4 请求示例
     无
@@ -1424,6 +1432,7 @@
 |params|参数|
 |parentId|上级菜单ID|
 |level|等级|
+|icon|菜单图标|
 
 
 #### 29.6 返回示例
@@ -1442,7 +1451,8 @@
                 "parentId": 0,
                 "sort": 0,
                 "status": "",
-                "sys": "a"
+                "sys": "a",
+                "icon":"abcde"
             },
             {
                 "action": "",
@@ -1455,7 +1465,8 @@
                 "parentId": 0,
                 "sort": 0,
                 "status": "",
-                "sys": "a"
+                "sys": "a",
+                "icon":"abcde"
             },
             {
                 "action": "",
@@ -1468,7 +1479,49 @@
                 "parentId": 0,
                 "sort": 0,
                 "status": "",
-                "sys": "a"
+                "sys": "a",
+                "icon":"abcde"
             }
         ]
+    }
+    
+    
+
+### QX-30. 获取登录用户信息
+
+#### 30.1 请求URL
+    /v2/auth/userInfo
+
+#### 30.2 请求类型
+    GET
+
+#### 30.3 请求参数
+|参数|名称|描述|
+|---|---|---|
+|token|必|
+|source|系统类型|必 a A网 sta 统计|
+
+#### 30.4 请求示例
+    无
+
+
+#### 30.5 返回值
+|参数|名称|描述|
+|---|---|---|
+|id|用户ID|
+|fullname|用户全名|
+|workno|工号|
+|mobile|手机|
+
+
+#### 30.6 返回示例   
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "workno": "0101",
+            "mobile": "13478445016",
+            "id": 101,
+            "fullname": "樊嘉辉"
+        }
     }
