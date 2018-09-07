@@ -9,14 +9,14 @@
         "msg": "",
         "data": [
             {
-                "code": "01",
+                "code": "01", // 业态Code
                 "deleteFlg": 0,
-                "id": 1,
+                "id": 1, // 业态ID
                 "level": 1,
-                "name": "中餐",
-                "parentId": 0,
-                "pyCode": "ZC",
-                "sort": 50
+                "name": "中餐", // 业态名
+                "parentId": 0, // 父业态ID
+                "pyCode": "ZC", // 业态拼音
+                "sort": 50 
             }
         ]
     }

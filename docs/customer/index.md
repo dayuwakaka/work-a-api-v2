@@ -832,7 +832,7 @@
 
 ### KH-31.修改事业部
 #### 请求
-    PUT /v2/customer/businessunit
+    PUT /v2/customer/businessunit/{id}
 #### 参数
     *id: 部门ID
     json body
