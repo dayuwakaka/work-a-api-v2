@@ -1,67 +1,134 @@
-## 销售优惠
+## 营销管理
 
 @(Markdown)
 
 
-### XSYH-1. 新增合同
+### YX-1. 新增营销
 
 #### 请求url
-    /v2/contract
+    /v2/promo
 
 #### 请求类型
     POST
 
-#### 请求参数(独立合同、共享合同、P2P合同)
+#### 1.1新增【满折】促销活动
 |参数|名称|类型|描述|
 |---|---|---|---|
-|*contractType|合同类别|String|ALONE-独立合同，SHARE-共享合同，CONTINUE-续接合同，P2P-P2P合同
-|*customerIds|客户ids|String|合同主体客户id排在第一位，其余依次排列
-|*details|合同四个季度及年度明细|Array|[{<br/>rebateNode:"FIRST",<br/>rebateRate:0,<br/>salesPlan:0,<br/>startDate:"2018-03-01 00:00:00",<br/>endDate:"2018-05-31 23:59:59"<br/>},<br/>...]<br/> rebateNode: 返利节点（FIRST、SECOND、THIRD、FOURTH、YEAR），<br/>rebateRate:返点率（0~100），<br/>salesPlan: 目标，<br/>startDate:开始日期时间 日期是客户所选，时间是固定在后面加00:00:00，<br/>endDate:结束日期时间 日期是客户所选 时间是固定在后面加23:59:59
-|*startDate|合同开始日期|String|日期是客户所选，时间是固定在后面加00:00:00
-|*endDate|合同结束日期|String|日期是客户所选，时间是固定在后面加23:59:59
-|*formalUrl|合同附件URL|String|多张合同附件URL以','相隔
-|*subjectName|合同主体名称|String
-|remarks|备注|String|200字符以内|
-|*onlyCode|本次提交携带的唯一码|String|防止重复提交用
+|name|营销名称|String|
+|bannerPic|banner图url|String|
+|type|营销类别|String|COUPON:领券, GIFT: 满赠, REDUCE: 满减, DISCOUNT: 满折, COLUMN: 专栏, SPECIAL: 专题
+|businessunitRangeType|事业部范围类别|String|ALL: 全部事业部; PART: 部分事业部
+|customerRangeType|客户范围类别|String|ALL: 所有; NEW: 新用户
+|effectStime|开始时间|String|日期是客户所选，时间是固定在后面加00:00:00|
+|effectEtime|结束时间|String|日期是客户所选，时间是固定在后面加23:59:59|
+|ruleType|规则类别|String|PRICE: 价格; COUNT: 数量
+|promoActiveGiveRules|活动规则|Array|[{<br/>targetValue: 目标值(Number 可以为两位小数)<br/>actionValue: 执行值(Number) 0.1 ~ 9.9<br/>}<br>...<br/>]
+|promoActiveProductRanges|活动产品范围|Array|[{<br/>productId: 产品id(Number)<br/>productunitId: 产品规格id(Number)<br/>name: 产品名称(String)<br/>pno: 品号(String)<br/>guige: 产品规格(String)<br/>}<br>...<br/>]
+|promoRanges|事业部范围|Array|[{<br/>businessunitId: 事业部id(Number)<br/>extInfo: 事业部名称(String)<br/>}<br>...<br/>]
+|onlyCode|本次提交携带的唯一码|String|防止重复提交用
 
-#### 请求参数(续接合同)
+    以上所有字段均为必填
+
+#### 1.2新增【满减】促销活动
 |参数|名称|类型|描述|
 |---|---|---|---|
-|*contractType|合同类别|String|CONTINUE-续接合同
-|*customerIds|客户ids|String|被续接主体排在第一位，续接主体排在第二位，以","相隔连接
-|*formalUrl|合同附件URL|String|多张合同附件URL以','相隔
-|*continueStartDate|续接合同时，设置的开始时间|String|日期是客户所选，时间是固定在后面加00:00:00
-|*continueEndDate|续接合同时，设置的结束时间|String|日期是客户所选，时间是固定在后面加23:59:59
-|*subjectName|续接合同主体名称|String
-|remarks|备注|String
-|*onlyCode|本次提交携带的唯一码|String|防止重复提交用
+|name|营销名称|String|
+|bannerPic|banner图url|String|
+|type|营销类别|String|COUPON:领券, GIFT: 满赠, REDUCE: 满减, DISCOUNT: 满折, COLUMN: 专栏, SPECIAL: 专题
+|businessunitRangeType|事业部范围类别|String|ALL: 全部事业部; PART: 部分事业部
+|customerRangeType|客户范围类别|String|ALL: 所有; NEW: 新用户
+|effectStime|开始时间|String|日期是客户所选，时间是固定在后面加00:00:00|
+|effectEtime|结束时间|String|日期是客户所选，时间是固定在后面加23:59:59|
+|ruleType|规则类别|String|PRICE: 价格; COUNT: 数量
+|giveType|满减类别|String|LADDER:阶梯, FULL: 每满|
+|promoActiveGiveRules|活动规则|Array|[{<br/>targetValue: 目标值(Number 可以为两位小数)<br/>actionValue: 执行值(Number 正整数)<br/>}<br>...<br/>]
+|promoActiveProductRanges|活动产品范围|Array|[{<br/>productId: 产品id(Number)<br/>productunitId: 产品规格id(Number)<br/>name: 产品名称(String)<br/>pno: 品号(String)<br/>guige: 产品规格(String)<br/>}<br>...<br/>]
+|promoRanges|事业部范围|Array|[{<br/>businessunitId: 事业部id(Number)<br/>extInfo: 事业部名称(String)<br/>}<br>...<br/>]
+|onlyCode|本次提交携带的唯一码|String|防止重复提交用
 
-    请判断好四个季度的起始时间和结束时间，如例：
-    *各季度时间不允许重叠，时间段必须在年度时间段内，各季度之间的时间可以不连贯！各季度时间为用户选择，非固定时间段
-    *返点率可以0 范围：0 ~ 100 两位小数
-    *目标可以为0 范围：0 ~ 1000000000 两位小数
-    *年度目标不能为0
-    *四个季度目标之和必须等于年度目标
-![avatar](http://omgzp8h38.bkt.clouddn.com/Fg_HtWJKA_c0F--3bntTBUOIDPfI)
-![avatar](http://omgzp8h38.bkt.clouddn.com/FsIEEtwAr48sLDKvnzEBP0MZ7g4q)
+    以上所有字段均为必填
+
+#### 1.3新增【满赠】促销活动
+|参数|名称|类型|描述|
+|---|---|---|---|
+|name|营销名称|String|
+|bannerPic|banner图url|String|
+|type|营销类别|String|COUPON:领券, GIFT: 满赠, REDUCE: 满减, DISCOUNT: 满折, COLUMN: 专栏, SPECIAL: 专题
+|businessunitRangeType|事业部范围类别|String|ALL: 全部事业部; PART: 部分事业部
+|customerRangeType|客户范围类别|String|ALL: 所有; NEW: 新用户
+|effectStime|开始时间|String|日期是客户所选，时间是固定在后面加00:00:00|
+|effectEtime|结束时间|String|日期是客户所选，时间是固定在后面加23:59:59|
+|ruleType|规则类别|String|PRICE: 价格; COUNT: 数量
+|giveType|满减类别|String|LADDER:阶梯, FULL: 每满|
+|promoActiveGiveRules|活动规则|Array|[{<br/>targetValue: 目标值(Number)<br/>actionValue: 赠品productunit_id(Number)<br/>actionName: 产品名称(Stirng)<br/>actionNum: 赠品数量(Number，正整数)<br/>guige: 赠品规格(String)<br/>}<br>...<br/>]
+|promoActiveProductRanges|活动产品范围|Array|[{<br/>productId: 产品id(Number)<br/>productunitId: 产品规格id(Number)<br/>name: 产品名称(String)<br/>pno: 品号(String)<br/>guige: 产品规格(String)<br/>}<br>...<br/>]
+|promoRanges|事业部范围|Array|[{<br/>businessunitId: 事业部id(Number)<br/>extInfo: 事业部名称(String)<br/>}<br>...<br/>]
+|onlyCode|本次提交携带的唯一码|String|防止重复提交用
+
+    以上所有字段均为必填
+
+#### 1.4新增【专栏】促销活动
+|参数|名称|类型|描述|
+|---|---|---|---|
+|name|营销名称|String|
+|bannerPic|banner图url|String|
+|type|营销类别|String|COUPON:领券, GIFT: 满赠, REDUCE: 满减, DISCOUNT: 满折, COLUMN: 专栏, SPECIAL: 专题
+|businessunitRangeType|事业部范围类别|String|ALL: 全部事业部; PART: 部分事业部
+|customerRangeType|客户范围类别|String|ALL: 所有; NEW: 新用户
+|effectStime|开始时间|String|日期是客户所选，时间是固定在后面加00:00:00|
+|effectEtime|结束时间|String|日期是客户所选，时间是固定在后面加23:59:59|
+|promoActiveProductRanges|活动产品范围|Array|[{<br/>productId: 产品id(Number)<br/>productunitId: 产品规格id(Number)<br/>name: 产品名称(String)<br/>pno: 品号(String)<br/>guige: 产品规格(String)<br/>}<br>...<br/>]
+|promoRanges|事业部范围|Array|[{<br/>businessunitId: 事业部id(Number)<br/>extInfo: 事业部名称(String)<br/>}<br>...<br/>]
+|onlyCode|本次提交携带的唯一码|String|防止重复提交用
+
+    以上所有字段均为必填
+
+#### 1.5新增【专题】促销活动
+|参数|名称|类型|描述|
+|---|---|---|---|
+|name|营销名称|String|
+|bannerPic|banner图url|String|
+|type|营销类别|String|COUPON:领券, GIFT: 满赠, REDUCE: 满减, DISCOUNT: 满折, COLUMN: 专栏, SPECIAL: 专题
+|businessunitRangeType|事业部范围类别|String|ALL: 全部事业部; PART: 部分事业部
+|customerRangeType|客户范围类别|String|ALL: 所有; NEW: 新用户
+|effectStime|开始时间|String|日期是客户所选，时间是固定在后面加00:00:00|
+|effectEtime|结束时间|String|日期是客户所选，时间是固定在后面加23:59:59|
+|promoImages|图片url|Array|[{<br/>imageUrl: 图片url(String)<br/>}<br>...<br/>]
+|promoRanges|事业部范围|Array|[{<br/>businessunitId: 事业部id(Number)<br/>extInfo: 事业部名称(String)<br/>}<br>...<br/>]
+|onlyCode|本次提交携带的唯一码|String|防止重复提交用
+
+    以上所有字段均为必填
+
+#### 1.6新增【领券】促销活动
+|参数|名称|类型|描述|
+|---|---|---|---|
+|name|营销名称|String|
+|bannerPic|banner图url|String|
+|popPic|弹屏图url|String|非必填|
+|type|营销类别|String|COUPON:领券, GIFT: 满赠, REDUCE: 满减, DISCOUNT: 满折, COLUMN: 专栏, SPECIAL: 专题
+|businessunitRangeType|事业部范围类别|String|ALL: 全部事业部; PART: 部分事业部
+|customerRangeType|客户范围类别|String|ALL: 所有; NEW: 新用户
+|effectStime|开始时间|String|日期是客户所选，时间是固定在后面加00:00:00|
+|effectEtime|结束时间|String|日期是客户所选，时间是固定在后面加23:59:59|
+|receiveNumber|领取限制|Number|1: 领取一次; 0: 用完再领
+|promoImages|图片url|Array|[{<br/>imageUrl: 图片url(String)<br/>}<br>...<br/>]
+|promoCouponRules|优惠券领取信息|Array|[{<br/>couponRuleId: 优惠券规则id(Number)<br/>couponRuleName: 优惠券规则名称(String)<br/>num: 领取数量(Number)<br/>effectStime: 优惠券起始时间(String) - 日期是客户所选，时间是固定在后面加00:00:00<br/>effectEtime: 优惠券结束时间(String) - 日期是客户所选，时间是固定在后面加23:59:59<br/>}<br>...<br/>]|
+|promoRanges|事业部范围|Array|[{<br/>businessunitId: 事业部id(Number)<br/>extInfo: 事业部名称(String)<br/>}<br>...<br/>]
+|onlyCode|本次提交携带的唯一码|String|防止重复提交用
+
+    以上除popPic外，所有字段均为必填
 
 #### 返回值
 |参数|名称|描述|
 |---|---|---|
 |code|编号|100000：成功；0 ~ 99999：失败|
 |msg|消息|新增成功/异常信息|
-|data|数据||
+|data|||
 
-#### 返回示例
-    {
-        "code": "100000",
-        "msg": ""
-    }
-
-### XSYH-2.获取合同列表
+### YX-2.获取营销列表
 
 #### 请求url
-    /v2/contract
+    /v2/promo
 
 #### 请求类型
     GET
@@ -69,33 +136,30 @@
 #### 请求参数
 |参数|名称|类型|描述|
 |---|---|---|---|
-|name|合同主体名称、合同号、创建人名称|String
-|contractType|合同类别|String|default-value: ALL, ALONE: 独立合同, SHARE: 共享合同, CONTINUE: 续接合同, P2P: P2P合同
-|status|合同状态|String|default-value: ALL, DRAFT：草稿;ASKFOR：转正式待审核;FORMAL：正式;CANCELASKFOR：作废待审核;CANCEL：已作废;INVALID：过期|
-|pageNo|当前页|Number|default-value: 1
-|pageSize|页面容量|Number|default-value: 25
+|name|营销名称|String|
+|pageNo|当前页|Number|default-value: 1|
+|pageSize|页面容量|Number|default-value: 25|
 
 #### 返回值
 ##### datas返回值
 |参数|名称|类型|描述|
 |---|---|---|---|
-|id|合同id|Number|
-|contractNum|合同号|String|
-|contractType|合同类别|String|
-|createUserName|创建人|String|
+|id|营销id|Number|
+|name|营销名称|String|
+|type|营销类别|String|COUPON:领券, GIFT: 满赠, REDUCE: 满减, DISCOUNT: 满折, COLUMN: 专栏, SPECIAL: 专题
+|bannerPic|banner图url|String|
+|deleteFlg|营销删除标识符|Number|
+|effectStime|营销开始时间|String|
+|effectEtime|营销结束时间|String|
+|createUserName|创建人名称|Stirng|
 |createTime|创建时间|String|
-|subjectName|合同主体名称|String|
-|status|合同状态|String|DRAFT：草稿;ASKFOR：转正式待审核;FORMAL：正式;CANCELASKFOR：作废待审核;CANCEL：已作废;INVALID：过期|
 
 ##### buttonPermossions返回值
     返回的集合长度和数据集一样，取对应下标数据即可，true 显示；false 不显示
-    deleteButton: 删除按钮 ,
-    changeRegularButton: 转正式,
-    approvalButton: 审批,
-    cancelButton: 作废
+    deleteButton: 作废按钮
 
 #### 请求示例
-    /v2/contract?pageNo=1&pageSize=25&status=&contractType=&name=
+    /v2/promo?pageNo=1&pageSize=25&status=&name=
 
 #### 返回示例
     {
@@ -104,22 +168,13 @@
         data: {
             datas: [
                         {
-                            id: 1,
-                            contractNum: "ASA-c-123456789",
-                            contractType: "ALONE",
-                            createUserName: "苏轼",
-                            createTime: "2018-08-13 00:12:12",
-                            subjectName: "陶渊明",
-                            status: "DRAFT"
+                            ...
                         },
                         ...
             ],
             buttonPermissions:[
                         {
-                            deleteButton: false,
-                            changeRegularButton: false,
-                            approvalButton: false,
-                            cancelButton: false
+                            deleteButton: false
                         },
                         ...
             ],
@@ -128,61 +183,13 @@
         }
     }
 
-### XSYH-3.修改合同状态
+### YX-3.获取营销详情
 
 #### 说明
-    包括合同的转正式申请、作废申请
+    根据营销类别的不同返回值也不同，实在太多了，直接调用接口查看各类别对应的返回体结构，但是返回体内的数据在下面文档有说明，请参照
 
 #### 请求url
-    /v2/contract/{id}
-
-#### 请求类型
-    PUT
-
-#### 请求参数
-|参数|名称|类型|描述|
-|---|---|---|---|
-|*contractNum|合同号|String
-|*result|审核结果|String|草稿状态合同转正式申请传递ASKFOR；正式合同申请作废传递CANCELASKFOR；
-|remarks|备注|String
-|cancelUrl|作废文件URL|String|作废合同时（必传）传递
-
-#### 返回值
-|参数|名称|描述|
-|---|---|---|
-|code|编号|100000：成功；0 ~ 99999：失败|
-|msg|消息|修改成功/异常信息|
-|data|数据|
-
-### XSYH-4.申请审核
-
-#### 说明
-    包括合同转正式审核、作废审核
-
-#### 请求url
-    /v2/contract/approval/{id}
-
-#### 请求类型
-    PUT
-
-#### 请求参数
-|参数|名称|类型|描述|
-|---|---|---|---|
-|*contractNum|合同号|String|
-|*result|审核结果|String|PASS：通过；REFUSE：拒绝
-|remarks|备注|String|200 字符以内
-
-#### 返回值
-|参数|名称|描述|
-|---|---|---|
-|code|编号|100000：成功；0 ~ 99999：失败|
-|msg|消息|修改成功/异常信息|
-|data|数据|
-
-### XSYH-5.获取合同详情
-
-#### 请求url
-    /v2/contract/{contractNum}
+    /v2/promo/{id}
 
 #### 请求类型
     GET
@@ -190,145 +197,173 @@
 #### 请求参数
 |参数|名称|类型|描述|
 |---|---|---|---|
-|*contractNum|合同号|String|
+|*id|营销id|Number
 
 #### 返回值
 |参数|名称|类型|描述|
 |---|---|---|---|
-|contract|合同基本信息|Object|
-|details|合同各季度信息|Array|
-|logs|合同日志|Array|
-|subjects|合同下属客户|Array|
-|continueInfo|续接信息|Object|如果是续接合同会返回此字段否则不会返回
+|baseInfo|营销基本信息|Object|信息如下|
+|ext|营销扩展信息|Array|信息如下|
+|ranges|营销范围|Array|信息如下|
+|rules|营销规则|Array|信息如下|
+|products|营销产品范围|Array|信息如下|
 
-##### contract信息
+##### baseInfo 信息
     {
-         contractNum: "ASA-C-2719934593319936" (合同号) - String,
-         contractType: "ALONE" (合同类别) - String,
-         createUserName: "刘璇" (合同创建人名称) - String,
-         createTime: "2018-05-31 19:16:14" (合同创建时间) - String,
-         startDate: "2018-03-01 00:00:00" (合同开始时间) - String,
-         endDate: "2019-02-28 23:59:59" (合同结束时间) - String,
-         formalUrl: "http://omgzp8h38.bkt.clouddn.com/Fsi9JfiEO2V22wxaEzrL5s0QiPiA" (合同附件url以','相隔) - String
+        bannerPic: "http://omgzp8h38.bkt.clouddn.com/Fk3FI4W_KrdrTndQ7UPmnoddScln" (banner图url),
+        businessunitRangeType: "ALL" (事业部范围类别 ALL: 全部; PART: 部分事业部),
+        createTime: "2018-08-14 15:27:54" (创建时间),
+        createUserName: "" (创建人名称),
+        customerRangeType: "ALL" (客户范围类别 ALL: 全部; NEW: 新用户),
+        deleteFlg: 0 (0: 有效; 1: 无效),
+        effectEtime: "2018-08-29 23:59:59" (营销结束时间),
+        effectStime: "2018-08-09 00:00:00" (营销开始时间),
+        id: 1 (营销id),
+        name: "满折活动大优惠，你，怕了吗" (营销名称),
+        type: "discount" (营销类别 coupon:领券, gift: 满赠, reduce: 满减, discount: 满折, column: 专栏, special: 专题)
     }
-##### details (合同明细)信息
+
+##### ext 信息
     [
         {
-            checkStatus:"NORMAL" (当前季度的状态，NORMAL:初始状态, INVALID:待审核, PASS:审核通过, STOP:禁止申请履约) - String,
-            contractNum:"ASA-C-2719934593319936" (合同号) - String,
-            startDate:"2018-03-01 00:00:00" (当前季度的开始时间) - String,
-            endDate:"2018-05-31 23:59:59" (当前季度的结束时间) - String,
-            id:6541,
-            rebateNode:"FIRST" (季度节点 FIRST:第一季度,SECOND:第二季度,THIRD:第三季度,FOURTH:第四季度,YEAR:年度) - String,
-            rebateRate:2 (返点率，前端展示的时候后面加上'%') - Number
-            salesPlan:100000 (目标) - Number
-        },
-        ...
-     ]
-##### logs (操作日志)信息
-    [
-        {
-            contractNum:"ASA-C-2719934593319936" (合同号) - String,
-            action:"用户：宁丽丽转正式审批通过" (动作行为) - String,
-            createTime:"2018-05-31 20:11:22" (行为时间) - String,
-            remarks: "" (备注) - String
+            giveType: "ladder" (类别: ladder: 阶梯, full: 每满), 
+            ruleType: "price" (条件：price: 按价格, count: 按数量)
         },
         ...
     ]
-##### subjects (附属客户)信息
+
+##### ranges 信息
     [
         {
-            customerId： 1 (客户编号) - Number,
-            name:"苏州工业园区肉食品市场厨多食品经营部" (下属客户名称) - String
+            businessunitId: 1 (事业部id)
+            extInfo: "AN事业部" (事业部名称)
         },
         ...
     ]
-##### * 着重强调 如果合同是续接合同还会传递
-    continueInfo: {
-        startDate: 续接起始时间,
-        endDate: 续接结束时间
+
+##### rules 信息
+    [
+        {
+            actionName: "" (满赠则为赠品名， 其余活动类别用不到此字段，可忽略),
+            actionNum: 0 (执行数量 满赠则为赠品数量，其余活动用不到此字段，可忽略),
+            actionValue: 9.5 (执行值 活动类别为满减，则该值为减金额；满赠则为产品productunit_id；满折则为 折扣比例),
+            guige: "" (满赠则为赠品规格，其余活动类别用不到此字段，可忽略),
+            promoId: 1,
+            targetValue: 100 (目标值，可理解为 “满 1000 减 10” 这里面的 1000 )
+        },
+        ...
+    ]
+
+##### products 信息
+    [
+        {
+            guige: "720g*12袋",
+            name: "海苔贝柱",
+            pno: "0204",
+            productId: 5,
+            productunitId: 14
+        },
+        ...
+    ]
+
+##### coupon 信息
+    {
+        "popPic": "http://omgzp8h38.bkt.clouddn.com/FjIlqIf_XeVSDpR9oV8EDZhmRhKQ" (弹屏图片url),
+        "receiveNumber": 1 (1-仅领一次, 0-用完再领)
     }
+
+##### images 信息
+    [
+        {
+            "imageUrl": "http://omgzp8h38.bkt.clouddn.com/Fk3FI4W_KrdrTndQ7UPmnoddScln" (图片url)
+        },
+        ...
+    ]
+
+##### rules 信息
+    [
+        {
+            "couponRuleName": "小饺丫（荠菜鱿鱼饺）优惠券" (优惠券名称),
+            "effectEtime": "2018-08-29 23:59:59" (优惠券有效期结束时间),
+            "effectStime": "2018-08-09 00:00:00" (优惠券有效期开始时间),
+            "num": 3 (发放数量),
+        },
+        ...
+    ]
+
 
 #### 请求示例
-    /v2/contract/ASA-C-2719934593319936
+    /v2/promo?pageNo=1&pageSize=25&status=&name=
 
-#### 返回值示例
+#### 返回示例
     {
         code: 0,
         msg: "",
         data: {
-            contract: {...},
-            details: [...]
-            logs: [...]
-            subjects: [...]
-            continueInfo: {...}
+            datas: [
+                        {
+                            ...
+                        },
+                        ...
+                    ],
+            total: 1200 (总条数) - Number,
+            pageNo: 6 (对应的页码) - Number
         }
     }
 
-### XSYH-6.删除合同
+### YX-4.作废营销
+
 #### 请求url
-    /v2/contract/{id}
+    /v2/promo
 
 #### 请求类型
-    DELETE
+    PUT
 
 #### 请求参数
 |参数|名称|类型|描述|
 |---|---|---|---|
-|*id|合同id|Number
+|*id|营销id|Number
 
 #### 返回值
 |参数|名称|描述|
 |---|---|---|
-|code|编号|100000：成功；0：失败；|
-|msg|消息|删除成功/异常信息|
-|data|数据||
+|code|编号|100000：成功；0 ~ 99999：失败|
+|msg|消息|修改成功/异常信息|
+|data|数据|
 
-#### 请求示例
-     /v2/contract/66585
-
-### XSYH-7.获取履约列表
+### YX-5.获取优惠券规则列表
 
 #### 请求url
-    /v2/contract/performance
+    /v2/coupon/rules
 
 #### 请求类型
     GET
 
 #### 请求参数
-|参数|名称|类型|描述|
+|参数|名称|类型描述|
 |---|---|---|---|
-|name|合同主体名称、合同号、创建人名称|String
-|checkStatus|履约状态|String|default-value: ALL; NORMAL: 待履约; INVALID:待审核; PASS: 已履约|
-|rebateNode|节点|String|default-value: ALL; FIRST:一季度; SECOND：二季度; THIRD：三季度; FOURTH：四季度; YEAR：年度|
-|reach|达成状态|String|YES: 已达成; NO: 未达成
-|pageNo|当前页|Number|default-value: 1
-|pageSize|页面容量|Number|default-value: 25
+|name|优惠券规则名称|String
+|deleteFlg|券规状态|Number|0: 有效; 1: 无效|
 
 #### 返回值
 ##### datas返回值
 |参数|名称|类型|描述|
 |---|---|---|---|
-|contractNum|合同号|String|
-|contractType|合同类别|String|
-|createUserName|创建人|String|
-|startDate|季度开始时间|String|
-|endDate|季度结束时间|String|
-|subjectName|合同主体名称|String|
-|rebateNode|季度节点|String|FIRST:一季度; SECOND：二季度; THIRD：三季度; FOURTH：四季度; YEAR：年度|
-|performanceStatus|季度履约状态|String|NORMAL:待履约, INVALID:待审核, PASS:已履约, STOP:禁止申请履约|
-|salesPlan|季度目标|Number|
-|rebateRate|季度返点率|Number|前端显示可以直接在此字段后面加%|
-|canUsePreferentialAmt|优惠金额|Number|
-|fileUrl|履约附件url|String|为null 或者 为"" 代表没有附件|
+|id|优惠券规则id|Number|
+|name|券规名称|String|
+|deleteFlg|删除标识（状态）|Number|0: 有效; 1: 无效|
+|createUserName|创建人名称|String|
+|createTime|创建时间|String|
+|targetValue|目标值|Number|即满值|
+|actionValue|执行值|Number|即减值|
 
 ##### buttonPermossions返回值
     返回的集合长度和数据集一样，取对应下标数据即可，true 显示；false 不显示
-    performanceButton: 申请履约,
-    approvalButton: 审批
+    deleteButton: 作废按钮,
+    sendCouponRuleButton: 发送
 
 #### 请求示例
-    /v2/contract/performance?pageNo=1&pageSize=25&checkStatus=&rebateNode=&name=&reach=&name=
+    /v2/coupon/rules?name=&deleteFlg=
 
 #### 返回值示例
     {
@@ -336,25 +371,15 @@
         msg: "",
         data: {
             datas: [
-                        {
-                            contractNum: "ASA-1000000010848751",
-                            startDate: "2017-03-01 00:00:00",
-                            endDate: "2017-05-31 23:59:59",
-                            subjectName: "汕头市金平区木屋食品行",
-                            rebateNode: "FIRST",
-                            performanceStatus: "NORMAL",
-                            salesPlan: 100000,
-                            rebateRate: 2,
-                            canUsePreferentialAmt: 0,
-                            fileUrl: "",
-                            canApply: 0
-                        },
-                        ...
+                {
+                    ...
+                },
+                ...
             ],
-            buttonPermissions: [
+            buttonPermissions:[
                         {
-                            performanceButton: false,
-                            approvalButton: false
+                            deleteButton: false,
+                            sendCouponRuleButton: false
                         },
                         ...
             ],
@@ -363,107 +388,10 @@
         }
     }
 
-### XSYH-8.获取返利详细数据
-
-#### 说明
-    获取返利列表
+### YX-6.新增优惠券规则
 
 #### 请求url
-    /v2/contract/performance/{contractNum}/{rebateNode}
-
-#### 请求类型
-    GET
-
-#### 请求参数
-|参数|名称|类型|描述|
-|---|---|---|---|
-|*contractNum|合同号|String|
-|*rebateNode|季度节点|String|FIRST、SECOND、THIRD、FOURTH、YEAR|
-
-#### 返回值
-|参数|名称|类型|描述|
-|---|---|---|---|
-|contract|合同基本信息|Object|
-|contractDetail|合同季度信息|Object|
-|saleDetail|销售优惠金额确认|Object|
-|saleExists|订购并计入销售优惠客户明细|Array|
-|saleNotExists|订购但不计入销售优惠产品明细|Array|
-
-##### contract信息
-    {
-        contractNum: "ASA-1000000029456196" (合同号) - String,
-        createUserName: "刘璇" (ss客服) - String,
-        startDate: "2017-03-01 00:00:00" (开始时间) - String,
-        endDate: "2018-02-28 23:59:59" (结束时间) - String,
-        subjectName: "南京浩方食品贸易有限公司" (合同主体客户名称) - String
-    }
-
-##### contractDetail信息
-    {
-        rebateNode: "THIRD" (季度节点) - String
-    }
-
-##### saleDetail信息
-    {
-        preferentialAmt: 6047.38 (优惠金额) - Number,
-        rebateRate: 2 (优惠比例) - Number,
-        saleAmt: 306144.64 (总额) - Number,
-        saleNotExistAmt: 3775.8 (不计入优惠金额) - Number,
-        salesPlan: 150000 (任务额) - Number,
-        shouldExistAmt: 302368.84 (应记优惠金额) - Number
-    }
-
-##### salesExists信息
-    [
-        {
-            customerId: 27843 (客户编号) - Number,
-            customerName: "南京浩方食品贸易有限公司" (客户名称) - String,
-            orderAmt: 306144.64 (订单金额) - Number,
-            apAmt: 0 (调价单金额) - Number,
-            refundAmt: 0 (退单金额) - Number,
-            saleAmt: 306144.64 (总额) - Number
-        },
-        ...
-    ]
-
-##### saleNotExists信息
-    [
-        {
-            pno: "A526" (品号) - String,
-            pname: "金装原壳鲍鱼" (品名) - String,
-            specs: "210g(10枚）/袋*12袋" (规格) - String,
-            count: 5 (数量) - Number,
-            amount: 2394 (金额) - Number,
-            saleNotExistRatio: 0.7 (不计入比例) - Number,
-            saleNotExistAmt: 1675.8 (不计入金额) - Number
-        },
-        ...
-    ]
-
-#### 请求示例
-    /v2/contract/performance/ASA-C-1000000029456196/THIRD
-
-#### 返回值示例
-    {
-        code: 0,
-        msg: "",
-        data: {
-            contract: {...},
-            contractDetail: {...},
-            saleDetail: {...},
-            salesExists: {...},
-            saleNotExists: {...}
-        }
-    }
-
-
-### XSYH-9.申请履约
-
-#### 说明
-    客服为客户申请履约
-
-#### 请求url
-    /v2/contract/performance
+    /v2/coupon/rules
 
 #### 请求类型
     POST
@@ -471,41 +399,33 @@
 #### 请求参数
 |参数|名称|类型|描述|
 |---|---|---|---|
-|*contractNum|合同号|String
-|*rebateNode|季度节点|String|FIRST、SECOND、THIRD、FOURTH、YEAR
-|*customerAmt|客户id和发放金额拼接的字符串|String|Example: 93159,10000;93330,8000
-|*fileUrl|履约附件url|String|
+|*ruleType|优惠券规则类别|String|PRICE: 价格; COUNT: 数量
+|*ranges|优惠券产品范围|String|ALL: 不限; PRODUCT: 指定产品
+|*material|是否包含原料品|Number|0: 不包含; 1: 包含|
+|*ruleValues|优惠券规则|Array|信息如下|
+|*rangeValues|优惠券产品范围|Array|信息如下|
 |*onlyCode|本次提交携带的唯一码|String|防止重复提交用
 
-#### 返回值
-|参数|名称|描述|
-|---|---|---|
-|code|编号|100000：成功；0 ~ 99999：失败|
-|msg|消息|修改成功/异常信息|
-|data|数据|
+##### ruleValues信息
+    [
+        {
+            targetValue: 120 (目标值，即满值，可以为两位小数) - Number,
+            value: 20 (执行值，可以为两位小数) - Number
+        },
+        ...
+    ]
 
-
-#### 请求示例
-    /v2/contract/performance
-
-### XSYH-10.履约审批
-
-#### 说明
-    客服SS申请履约后，由财务会计进行审核
-
-#### 请求url
-    /v2/contract/performance/{contractNum}/{rebateNode}
-
-#### 请求类型
-    PUT
-
-#### 请求参数
-|参数|名称|类型|描述|
-|---|---|---|---|
-|*contractNum|合同号|String|
-|*rebateNode|季度节点|String|
-|*result|审核结果|String|PASS: 通过; REFUSE: 拒绝|
-|remarks|备注|String|200字符以内|
+##### rangeValues信息
+    [
+        {
+            productId: 66651 (产品id) - Number,
+            productunitId: 128989 (产品规格id) - Number,
+            pno: "A081210",
+            name: "扛枪保家卫国套餐",
+            guige: "1人/次"
+        },
+        ...
+    ]
 
 #### 返回值
 |参数|名称|描述|
@@ -514,123 +434,80 @@
 |msg|消息|修改成功/异常信息|
 |data|数据|
 
-#### 请求示例
-    /v2/contract/performance/ASA-C-2736619920458752/FIRST
 
-
-### XSYH-11.设置季度能否履约
-
-#### 说明
-    销售会计设置合同的某一季度能否履约
+### YX-7.获取优惠券规则对应的产品范围列表
 
 #### 请求url
-    /v2/contract/performance/disable
-
-#### 请求类型
-    PUT
-
-#### 请求参数
-|参数|名称|类型|描述|
-|---|---|---|---|
-|*contractNum|合同号|String
-|*rebateNode|季度节点|String
-|*status|状态|String|NORMAL: 正常; STOP: 禁止履约
-
-#### 返回值
-|参数|名称|描述|
-|---|---|---|
-|code|编号|100000：成功；0：失败；|
-|msg|消息|删除成功/异常信息|
-|data|数据|null|
-
-#### 请求示例
-    /v2/contract/performance/disable
-
-
-### XSYH-12.获取合同所属的客户群体
-
-#### 说明
-    当申请履约时，要获取该合同下的所属客户
-
-#### 请求url
-    /v2/contract/performance/{contractNum}/customers
+    /v2/coupon/rules/{id}/ranges
 
 #### 请求类型
     GET
-
+        
 #### 请求参数
 |参数|名称|类型|描述|
 |---|---|---|---|
-|*contractNum|合同号|String
-
-#### 返回值
-|参数|名称|类型|描述|
-|---|---|---|---|
-|customerId|客户id|Integer|
-|customerName|客户名称|String|
-
-#### 请求示例
-    /v2/contract/performance/ASA-C-26988888686868/customers
-
-#### 返回值示例
-    {
-        code: 0,
-        msg: "",
-        data: [
-            {
-                customerId: "768",
-                customerName: "韩愈"
-            },
-            ...
-        ]
-    }
-
-### XSYH-13.获取客户返利券列表
-
-#### 请求url
-    /v2/rebates
-
-#### 请求类型
-    GET
-
-#### 请求参数
-|参数|名称|类型|描述|
-|---|---|---|---|
-|name|客户名、返利券名称|String
-|source|返利券来源|String|contract: 合同返利; handwork: 手工发放|
-|status|返利券状态|String|normal: 正常; lock: 锁定|
-|rate|返利券折扣比例|Number|
-|type|返利券类别|String|rebate: 返利, spread: 推广费, freight: 运费, other: 其它|
+|*id|优惠券规则id|Number||
 |pageNo|页码|Number|default-value: 1|
 |pageSize|页面容量|Number|default-value: 25|
 
 #### 返回值
-##### datas返回值
 |参数|名称|类型|描述|
 |---|---|---|---|
-|id|返利券id|Number|
-|name|返利券名称|String|
-|type|返利券类别|String|REBATE: 返利,SPREAD: 推广费,FREIGHT: 运费补,OTHER: 其它
-|source|返利券来源 contract: 合同返利; handwork: 手工发放|String|
-|sourceExt|如果返利券是合同返利生成的，这个字段存储的是合同的季度信息|String|FIRST：一季度 SECOND：二季度 THIRD：三季度 FOURTH：四季度 YEAR：年度|
-|sourceValue|如果返利券是合同返利生成的，这个字段存储的是合同号|String|
-|rate|折扣比率 前端展示直接在此值后面加 % 即可|Number|
-|value|返利券面值|Number|
-|leftValue|返利券剩余金额|Number|
-|effectStime|返利券有效起始日期 yyyy-MM-dd HH:mm:ss|String|
-|effectEtime|返利券有效结束日期 yyyy-MM-dd HH:mm:ss|String|
-|customerName|客户名称|String|
-|createUserName|创建人名称|String|
-|createTime|返利券发放日期 yyyy-MM-dd HH:mm:ss|String|
+|pno|品号|String||
+|name|产品名称|String||
+|guige|产品规格|String||
 
-##### buttonPermossions返回值
-    返回的集合长度和数据集一样，取对应下标数据即可，true 显示；false 不显示
-    deleteButton 作废按钮
-    lockButton 锁定按钮
-    unlockButton 解锁按钮
+### YX-8.作废优惠券规则
+
+#### 请求url
+    /v2/coupon/rules/{id}
+
+#### 请求类型
+    DELETE
+
+#### 请求参数
+|参数|名称|类型|描述|
+|---|---|---|---|
+|*id|优惠券规则id|Number
+
+#### 返回值
+|参数|名称|描述|
+|---|---|---|
+|code|编号|100000：成功；0 ~ 99999：失败|
+|msg|消息|修改成功/异常信息|
+|data|数据|
+
+### YX-9.获取客户优惠券审核列表
+
+#### 请求url
+    /v2/coupon/customer_askfors
+
+#### 请求类型
+    GET
+
+#### 请求参数
+|参数|名称|类型|描述|
+|---|---|---|---|
+|name|优惠券规则名称|String
+|status|券规状态|Stirng|ASKFOR: 申请, PASS: 通过, REFUSE: 拒绝|
+|pageNo|页码|Number|default-value: 1|
+|pageSize|页面容量|Number|default-value: 25|
+
+#### 返回值
+|参数|名称|类型|描述|
+|---|---|---|---|
+|id|客户优惠券申请id|Number|
+|customerName|客户名称|String|
+|ruleName|优惠券规则名称|String|
+|status|申请状态|String|ASKFOR: 申请; PASS: 通过; REFUSE: 拒绝|
+|couponAmount|优惠券发放张数|Number|
+|effectStime|优惠券开始时间|String|
+|effectEtime|优惠券结束时间|String|
+|createUserName|申请人|String|
+|createTime|申请时间|String|
 
 #### 请求示例
-    /v2/rebates?name=&status=&source=&pageNo=&pageSize=
+    /v2/coupon/customer_askfors?pageNo=1&pageSize=25&name=&status=
 
 #### 返回值示例
     {
@@ -643,6 +520,139 @@
                         },
                         ...
                    ],
+            total: 93330 (总条数) - Number,
+            pageNo: 12 (对应的页码) - Number
+        }
+    }
+
+### YX-10.审批客户优惠券申请
+
+#### 请求url
+    /v2/coupon/customer_askfors/{id}
+
+#### 请求类型
+    PUT
+
+#### 请求参数
+|参数|名称|类型|描述|
+|---|---|---|---|
+|*id|客户优惠券申请id|Number|
+|*result|审核结果|Stirng|PASS: 通过, REFUSE: 拒绝|
+
+#### 返回值
+|参数|名称|描述|
+|---|---|---|
+|code|编号|100000：成功；0 ~ 99999：失败|
+|msg|消息|修改成功/异常信息|
+|data|数据|
+
+### YX-11.批量审批客户优惠券申请
+
+#### 请求url
+    /v2/coupon/customer_askfors/batch
+
+#### 请求类型
+    PUT
+
+#### 请求参数
+|参数|名称|类型|描述|
+|---|---|---|---|
+|*ids|客户优惠券申请ids|String|以","相隔拼接而成的ids 例：1,2,3,4
+|*result|审批结果|String|PASS: 通过; REFUSE: 拒绝|
+
+#### 返回值
+|参数|名称|描述|
+|---|---|---|
+|code|编号|100000：成功；0 ~ 99999：失败|
+|msg|消息|修改成功/异常信息|
+|data|数据|
+
+### YX-12.批量新增客户优惠券申请（优惠券规则列表中的发券功能、客户功能模块中的发券功能）
+
+#### 请求url
+    /v2/coupon/customer_askfors/batch
+
+#### 请求类型
+    POST
+
+#### 请求参数
+|参数|名称|类型|描述|
+|---|---|---|---|
+|*customerIds|客户id|Array
+|*couponAmounts|优惠券规则id和发放张数用逗号相隔|Array|例 [{123:3},{567:2} 分号前为优惠券规则id，分号后为发放张数]
+|*effectStime|优惠券有效期开始时间|String|日期为客户所选 时间为自动补全 00:00:00
+|*effectEtime|优惠券有效期结束时间|String|日期为客户所选 时间为自动补全 23:59:59
+|note|备注|String|200字符以内|
+|*onlyCode|本次提交携带的唯一码|String|防止重复提交用
+
+#### 返回值
+|参数|名称|描述|
+|---|---|---|
+|code|编号|100000：成功；0 ~ 99999：失败|
+|msg|消息|修改成功/异常信息|
+|data|数据|
+
+#### 请求体示例
+    {
+        customerIds: [11,33,55],
+        couponAmounts: ["3,3", "5,5"],
+        effectStime: '2018-09-05 00:00:00',
+        effectEtime: '2018-12-12 00:00:00',
+        note: '我就是打个酱油'
+    }
+
+### YX-13.获取客户优惠券列表
+
+#### 请求url
+    /v2/coupon/customers
+
+#### 请求类型
+    GET
+
+#### 请求参数
+|参数|名称|类型|描述|
+|---|---|---|---|
+|name|客户名、优惠券规则名称|String
+|used|优惠券使用状态|String|YES: 已使用; NO: 未使用
+|status|客户优惠券状态|String|NORMAL: 正常; LOCK: 锁定
+|deleteFlg|客户优惠券状态|Number|0: 有效; 1: 无效
+|pageNo|页码|Number|default-value: 1
+|pageSize|页面容量|Number|default-value: 25
+
+#### 返回值
+##### datas返回值
+|参数|名称|类型|描述|
+|---|---|---|---|
+|id|客户优惠券编号(即id)|Number|
+|ruleName|优惠券规则名称|String|
+|customerName|客户名称|String|
+|pageName|发放源(营销名称)|String|
+|status|客户优惠券状态|String|NORMAL: 正常; LOCK: 锁定
+|used|客户优惠券状态|String|YES: 已使用; NO: 未使用
+|effectStime|优惠券开始时间|String|
+|effectEtime|优惠券结束时间|String|
+|createUserName|创建人|String|
+|createTime|创建时间|String|
+##### buttonPermossions返回值
+    返回的集合长度和数据集一样，取对应下标数据即可，true 显示；false 不显示
+    deleteButton: 作废按钮,
+    lockButton：锁定按钮,
+    unlockButton: 解锁按钮
+
+#### 请求示例
+    /v2/coupon/customers?name=&used=&status=&deleteFlg=&pageNo=&pageSize=
+
+#### 返回值示例
+    {
+        code: 0,
+        msg: "",
+        data: {
+            datas: [
+                        {
+                            ...
+                        },
+                        ...
+            ],
             buttonPermissions:[
                         {
                             deleteButton: false,
@@ -656,27 +666,18 @@
         }
     }
 
-### XSYH-14.新增客户返利券
+### YX-14.客户优惠券作废
 
 #### 请求url
-    /v2/rebates
+    /v2/coupon/customers/{id}
 
 #### 请求类型
-    POST
+    DELETE
 
 #### 请求参数
 |参数|名称|类型|描述|
 |---|---|---|---|
-|*name|返利券名称|String|
-|*customerId|客户id|Number|
-|*customerName|客户名称|Stirng|
-|*rate|折扣比率 20% -> 20|Number|
-|*type|返利类别|String|REBATE: 返利, SPREAD: 推广费, FREIGHT: 运费, OTHER: 其它,|
-|*value|面值|Number|
-|*effectStime|返利券有效期起始日期|String|日期为客户所选 时间为自动补全 00:00:00
-|*effectEtime|返利券有效期结束日期|String|日期为客户所选 时间为自动补全 23:59:59
-|note|考虑了一下还是把备注加上吧|String|备注长度不得超过200
-|*onlyCode|本次提交携带的唯一码|String|防止重复提交用
+|*id|客户优惠券id|Number
 
 #### 返回值
 |参数|名称|描述|
@@ -685,10 +686,10 @@
 |msg|消息|修改成功/异常信息|
 |data|数据|
 
-### XSYH-15.客户返利券解锁或锁定
+### YX-15.客户优惠券解锁或锁定
 
 #### 请求url
-    /v2/rebates
+    /v2/coupon/customers/{id}
 
 #### 请求类型
     PUT
@@ -696,7 +697,7 @@
 #### 请求参数
 |参数|名称|类型|描述|
 |---|---|---|---|
-|*id|返利券id|Number|
+|*id|客户优惠券id|Number|
 |*result|操作行为|String|NORMAL: 解锁; LOCK: 锁定|
 
 #### 返回值
@@ -705,67 +706,3 @@
 |code|编号|100000：成功；0 ~ 99999：失败|
 |msg|消息|修改成功/异常信息|
 |data|数据|
-
-### XSYH-16.获取客户返利券去重后的折扣比例列表
-
-#### 请求url
-    /v2/rebates/rates
-
-### 请求类型
-    GET
-
-#### 请求参数
-    无
-
-#### 返回值示例
-    {
-        code: 0,
-        msg: "",
-        data: [
-            100,
-            88,
-            66
-            60,
-            20
-        ]
-    }
-
-
-### XSYH-17.获取返利券日志列表
-
-#### 请求url
-    /v2/rebates/{id}/log
-
-#### 请求类型
-    GET
-
-#### 请求参数
-|参数|名称|类型|描述|
-|---|---|---|---|
-|*id|返利券id|Number|
-
-#### 返回值
-|参数|名称|类型|描述|
-|---|---|---|---|
-|actionValue|订单号|String|
-|action|动作名称|String|
-|createTime|操作时间|String|yyyy-MM-dd HH:mm:ss|
-|createUserName|操作人|String|
-|value|使用金额|Number|
-|leftValue|返利券剩余金额|Number|
-
-### XSYH-18.获取合同新增权限按钮
-
-#### 请求url
-    /v2/contract/buttons
-
-#### 请求类型
-    GET
-
-#### 请求参数
-    无
-
-#### 返回值
-|参数|名称|类型|描述|
-|---|---|---|---|
-|insertButton|新增按钮|Boolean|true - 显示；false - 不显示

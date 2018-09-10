@@ -473,7 +473,7 @@
 |---|---|---|---|
 |*contractNum|合同号|String
 |*rebateNode|季度节点|String|FIRST、SECOND、THIRD、FOURTH、YEAR
-|*customerAmt|客户id和发放金额拼接的字符串|String|Example: 93159,10000;93330,8000
+|*customerAmt|客户id和发放金额拼接的字符串|String|Example: 93159,10000;93330,8000 逗号前为客户id，逗号后为发放金额 两位小数，可以不发但是如果发放，那么发放金额不能为0 做好校验
 |*fileUrl|履约附件url|String|
 |*onlyCode|本次提交携带的唯一码|String|防止重复提交用
 
@@ -505,6 +505,7 @@
 |*contractNum|合同号|String|
 |*rebateNode|季度节点|String|
 |*result|审核结果|String|PASS: 通过; REFUSE: 拒绝|
+|remarks|备注|String|200字符以内|
 
 #### 返回值
 |参数|名称|描述|
@@ -549,7 +550,7 @@
 ### XSYH-12.获取合同所属的客户群体
 
 #### 说明
-    当申请履约时，要获取该合同下的所属客户
+    当申请履约时，要获取该合同下的所属客户以便进行返利券的发放
 
 #### 请求url
     /v2/contract/performance/{contractNum}/customers
