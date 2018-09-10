@@ -10,6 +10,7 @@ module.exports = {
       {text: '销售优惠', link: '/contract/'},
       {text: '价格', link: '/price/'},
       {text: '营销', link: '/market/'},
+      {text: '基础', link: '/common/'}
     ],
     sidebar: 'auto',
   },
