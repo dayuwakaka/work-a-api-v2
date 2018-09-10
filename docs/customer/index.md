@@ -244,7 +244,6 @@
                     "attrName": "火锅渠道",
                     "customerId": 149,
                     "freightFlg": 0,
-                    "freightPrice": 0,
                     "groupId": 0,
                     "groupName": "",
                     "id": 10
@@ -970,8 +969,7 @@
     {
         *"groupId":1, // 客户属性组ID
         *"name":"aaa", // 客户属性名
-        *"freightFlg":1, // 满免运费标识 0 未开启 1 开启 
-        *"freightPrice": 100 // 满免运费金额
+        *"freightFlg":1, // 满免运费标识 0 未开启 1 开启
     }
 #### 响应
     {
@@ -989,8 +987,7 @@
     {
         *"groupId":1, // 客户属性组ID
         *"name":"aaa", // 客户属性名
-        *"freightFlg":1, // 满免运费标识 0 未开启 1 开启 
-        *"freightPrice": 100 // 满免运费金额
+        *"freightFlg":1, // 满免运费标识 0 未开启 1 开启
     }
 #### 响应
     {
@@ -1013,7 +1010,6 @@
         "data": [
             {
                 "freightFlg": 1, // 运费减免标识 0 未开启 1 开启
-                "freightPrice": 100, // 运费减免金额
                 "groupId": 1, // 客户属性组ID
                 "groupName": "", // 客户属性组名
                 "id": 5, // 客户属性ID

@@ -505,6 +505,7 @@
 |*contractNum|合同号|String|
 |*rebateNode|季度节点|String|
 |*result|审核结果|String|PASS: 通过; REFUSE: 拒绝|
+|remarks|备注|String|200字符以内|
 
 #### 返回值
 |参数|名称|描述|

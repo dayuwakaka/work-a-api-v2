@@ -8,7 +8,8 @@ module.exports = {
       {text: '产品', link: '/product/'},
       {text: '权限', link: '/auth/'},
       {text: '销售优惠', link: '/contract/'},
-      {text: '价格', link: '/price/'}
+      {text: '价格', link: '/price/'},
+      {text: '营销', link: '/market/'},
     ],
     sidebar: 'auto',
   },
