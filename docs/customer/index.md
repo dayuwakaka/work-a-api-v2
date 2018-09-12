@@ -772,7 +772,9 @@
 #### 请求
     GET /v2/customer/businessunit
 #### 参数
-     name:"" // 事业部名模拟匹配
+    name:"" // 事业部名模拟匹配（可选）
+    groupId: 1 // 事业部组ID（可选）
+    ids : 1，2，3  // 事业部ID（可选）
 #### 响应
     {
         "code": 100000,
@@ -790,7 +792,7 @@
         ]
     }
 
-### KH-29.事业部查询（所有）
+### KH-29.事业部查询（所有）(废弃,与KH-28合并)
 #### 请求
     GET /v2/customer/businessunit/all
 #### 参数

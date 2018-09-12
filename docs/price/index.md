@@ -27,7 +27,7 @@
 |pno|产品编号|
 |productName|产品名称|
 |productunitId|产品规格id|
-|unitName|单位名称|
+|unitGuige|单位名称|
 |aPrice|A价格|
 |pPrice|P价格|
 |tPrice|T价格|
@@ -36,8 +36,8 @@
 |endDate|结束时间|
 |businessunitType|事业部限制类型|ALL 无限制 PART 部分事业部|
 |businessunit|事业部id列表|
-|customerattrType|客户属性限制类型|ALL 无限制 PART 部分客户属性|
-|customerattr|客户属性列表|
+|customerAttrType|客户属性限制类型|ALL 无限制 PART 部分客户属性|
+|customerAttrList|客户属性列表|
 
 
 #### 1.6 返回示例
@@ -87,8 +87,8 @@
                     "businessunit": [
                         
                     ],
-                    "customerattrType":"ALL",
-                    "customerAttr": [
+                    "customerAttrType":"ALL",
+                    "customerAttrList": [
                         
                     ]
                 },
@@ -109,8 +109,8 @@
                     "businessunit": [
                         
                     ],
-                    "customerattrType":"PART",
-                    "customerAttr": [
+                    "customerAttrType":"PART",
+                    "customerAttrList": [
                         3,
                         1,
                         2
@@ -135,8 +135,8 @@
                         16,
                         27
                     ],
-                    "customerattrType":"ALL",
-                    "customerAttr": [
+                    "customerAttrType":"ALL",
+                    "customerAttrList": [
                         
                     ]
                 }
@@ -179,8 +179,8 @@
 |endDate|结束时间|
 |businessunitType|事业部限制类型|ALL 无限制 PART 部分事业部|
 |businessunit|事业部id列表|
-|customerattrType|客户属性限制类型|ALL 无限制 PART 部分客户属性|
-|customerattr|客户属性列表|
+|customerAttrType|客户属性限制类型|ALL 无限制 PART 部分客户属性|
+|customerAttrList|客户属性列表|
 
 
 #### 2.6 返回示例
@@ -204,8 +204,8 @@
             "businessunit": [
                 
             ],
-            "customerattrType":"PART"
-            "customerAttr": [
+            "customerAttrType":"PART"
+            "customerAttrList": [
                 3,
                 1,
                 2
@@ -230,8 +230,8 @@
 |tprice|特价|必|
 |businessunitType|事业部限制类型|必 ALL 无限制 PART 部分事业部|
 |businessunit|事业部列表|
-|customerattrType|客户属性限制类型|必 ALL 无限制 PART 部分|
-|customerattr|客户属性列表|
+|customerAttrType|客户属性限制类型|必 ALL 无限制 PART 部分|
+|customerAttrList|客户属性列表|
 |startDate|开始时间|必|
 |endDate|结束时间|必|
 
@@ -245,7 +245,7 @@
         "businessunitType":"PART",
         "businessunit":[1,3,2],
         "customerattrType":"PART",
-        "customerattr":[1,3,2],
+        "customerattrList":[1,3,2],
         "startDate":"2018-08-25 08:00:00",
         "endDate":"2018-09-24 20:00:00"
     }
@@ -284,8 +284,8 @@
 |tprice|特价|必|
 |businessunitType|事业部限制类型|必 ALL 无限制 PART 部分事业部|
 |businessunit|事业部列表|
-|customerattrType|客户属性限制类型|必 ALL 无限制 PART 部分|
-|customerattr|客户属性列表|
+|customerAttrType|客户属性限制类型|必 ALL 无限制 PART 部分|
+|customerAttrList|客户属性列表|
 |startDate|开始时间|必|
 |endDate|结束时间|必|
 
@@ -297,8 +297,8 @@
         "tprice":35.2,
         "businessunitType":"PART",
         "businessunit":[1,3,2],
-        "customerattrType":"PART",
-        "customerattr":[1,3,2],
+        "customerAttrType":"PART",
+        "customerAttrList":[1,3,2],
         "startDate":"2018-08-25 08:00:00",
         "endDate":"2018-09-24 20:00:00"
     }
