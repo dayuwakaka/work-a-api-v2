@@ -139,6 +139,7 @@
 |name|营销名称|String|
 |pageNo|当前页|Number|default-value: 1|
 |pageSize|页面容量|Number|default-value: 25|
+|buttonPermissionFlg|按钮权限|Number|0-查询按钮权限 1-不查询|
 
 #### 返回值
 ##### datas返回值
@@ -154,7 +155,7 @@
 |createUserName|创建人名称|Stirng|
 |createTime|创建时间|String|
 
-##### buttonPermossions返回值
+##### buttonPermissions返回值
     返回的集合长度和数据集一样，取对应下标数据即可，true 显示；false 不显示
     deleteButton: 作废按钮
 
@@ -344,6 +345,7 @@
 |---|---|---|---|
 |name|优惠券规则名称|String
 |deleteFlg|券规状态|Number|0: 有效; 1: 无效|
+|buttonPermissionFlg|按钮权限|Number|0-查询按钮权限 1-不查询|
 
 #### 返回值
 ##### datas返回值
@@ -357,7 +359,7 @@
 |targetValue|目标值|Number|即满值|
 |actionValue|执行值|Number|即减值|
 
-##### buttonPermossions返回值
+##### buttonPermissions返回值
     返回的集合长度和数据集一样，取对应下标数据即可，true 显示；false 不显示
     deleteButton: 作废按钮,
     sendCouponRuleButton: 发送
@@ -492,6 +494,11 @@
 |status|券规状态|Stirng|ASKFOR: 申请, PASS: 通过, REFUSE: 拒绝|
 |pageNo|页码|Number|default-value: 1|
 |pageSize|页面容量|Number|default-value: 25|
+|buttonPermissionFlg|按钮权限|Number|0-查询按钮权限 1-不查询|
+
+##### buttonPermissions返回值
+    返回的集合长度和数据集一样，取对应下标数据即可，true 显示；false 不显示
+    approvalButton: 审批按钮
 
 #### 返回值
 |参数|名称|类型|描述|
@@ -520,6 +527,12 @@
                         },
                         ...
                    ],
+            buttonPermissions:[
+                        {
+                            approvalButton: false
+                        },
+                        ...
+            ]
             total: 93330 (总条数) - Number,
             pageNo: 12 (对应的页码) - Number
         }
@@ -579,7 +592,7 @@
 |参数|名称|类型|描述|
 |---|---|---|---|
 |*customerIds|客户id|Array
-|*couponAmounts|优惠券规则id和发放张数用逗号相隔|Array|例 [{123:3},{567:2} 分号前为优惠券规则id，分号后为发放张数]
+|*couponAmounts|优惠券规则id和发放张数用逗号相隔|Array|例 ["3,2"]逗号前为优惠券规则id，逗号后为发放张数]
 |*effectStime|优惠券有效期开始时间|String|日期为客户所选 时间为自动补全 00:00:00
 |*effectEtime|优惠券有效期结束时间|String|日期为客户所选 时间为自动补全 23:59:59
 |note|备注|String|200字符以内|
@@ -618,6 +631,7 @@
 |deleteFlg|客户优惠券状态|Number|0: 有效; 1: 无效
 |pageNo|页码|Number|default-value: 1
 |pageSize|页面容量|Number|default-value: 25
+|buttonPermissionFlg|按钮权限|Number|0-查询按钮权限 1-不查询|
 
 #### 返回值
 ##### datas返回值
@@ -633,7 +647,7 @@
 |effectEtime|优惠券结束时间|String|
 |createUserName|创建人|String|
 |createTime|创建时间|String|
-##### buttonPermossions返回值
+##### buttonPermissions返回值
     返回的集合长度和数据集一样，取对应下标数据即可，true 显示；false 不显示
     deleteButton: 作废按钮,
     lockButton：锁定按钮,

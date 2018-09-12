@@ -184,7 +184,7 @@
     {
         "code": 100000,
         "msg": "",
-        "data": null
+        "data": 1 // 客户ID
     }
 
 ### KH-7.客户名\绑定手机验重
@@ -632,12 +632,12 @@
 
 ### KH-22.批量签约
 #### 请求
-    POST /v2/price/sign/askfor
+    POST /v2/price/sign/askfor/{customerId}
 #### 参数
+    *customerId: 1 // 客户ID
     json body
     [
         {
-            *"customerId":38545, // 客户ID
             *"productId":4155, // 产品ID
             *"productunitId":7386, // 产品规格ID
             *"signPrice":99

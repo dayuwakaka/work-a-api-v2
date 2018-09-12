@@ -7,7 +7,7 @@
     <meta name="description" content="A团队开发文档">
     
     
-    <link rel="preload" href="/work-a-api-v2/assets/css/0.styles.7e1d93c3.css" as="style"><link rel="preload" href="/work-a-api-v2/assets/js/app.fcb3e39c.js" as="script"><link rel="preload" href="/work-a-api-v2/assets/js/8.93372702.js" as="script"><link rel="prefetch" href="/work-a-api-v2/assets/js/5.4f48f296.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/2.cda51ec0.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/3.63e61b30.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/4.3cc0740c.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/6.79534e5a.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/7.6a831b49.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/9.0c57a695.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/10.8459c016.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/11.47de76df.js">
+    <link rel="preload" href="/work-a-api-v2/assets/css/0.styles.7e1d93c3.css" as="style"><link rel="preload" href="/work-a-api-v2/assets/js/app.f49f6c78.js" as="script"><link rel="preload" href="/work-a-api-v2/assets/js/8.ed633fbc.js" as="script"><link rel="prefetch" href="/work-a-api-v2/assets/js/5.4f48f296.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/2.cda51ec0.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/3.63e61b30.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/4.3cc0740c.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/6.79534e5a.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/7.ca04a72d.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/9.9a419fed.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/10.8459c016.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/11.47de76df.js">
     <link rel="stylesheet" href="/work-a-api-v2/assets/css/0.styles.7e1d93c3.css">
   </head>
   <body>
@@ -167,7 +167,7 @@ json body
 </code></pre> <h4 id="响应-6"><a href="#响应-6" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
     &quot;code&quot;: 100000,
     &quot;msg&quot;: &quot;&quot;,
-    &quot;data&quot;: null
+    &quot;data&quot;: 1 // 客户ID
 }
 </code></pre> <h3 id="kh-7-客户名-绑定手机验重"><a href="#kh-7-客户名-绑定手机验重" aria-hidden="true" class="header-anchor">#</a> KH-7.客户名\绑定手机验重</h3> <h4 id="请求-7"><a href="#请求-7" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET v2/customer/exists
 </code></pre> <h4 id="参数-7"><a href="#参数-7" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*attr: 查询属性 shortName 客户名, accountMobile 绑定手机号
@@ -539,11 +539,11 @@ pageNo: 1 页码
         &quot;total&quot;: 1
     }
 }
-</code></pre> <h3 id="kh-22-批量签约"><a href="#kh-22-批量签约" aria-hidden="true" class="header-anchor">#</a> KH-22.批量签约</h3> <h4 id="请求-21"><a href="#请求-21" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /v2/price/sign/askfor
-</code></pre> <h4 id="参数-21"><a href="#参数-21" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>json body
+</code></pre> <h3 id="kh-22-批量签约"><a href="#kh-22-批量签约" aria-hidden="true" class="header-anchor">#</a> KH-22.批量签约</h3> <h4 id="请求-21"><a href="#请求-21" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /v2/price/sign/askfor/{customerId}
+</code></pre> <h4 id="参数-21"><a href="#参数-21" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*customerId: 1 // 客户ID
+json body
 [
     {
-        *&quot;customerId&quot;:38545, // 客户ID
         *&quot;productId&quot;:4155, // 产品ID
         *&quot;productunitId&quot;:7386, // 产品规格ID
         *&quot;signPrice&quot;:99
@@ -902,6 +902,6 @@ name：客户属性名（可选）
 </code></pre> <h3 id="缺失清单指导"><a href="#缺失清单指导" aria-hidden="true" class="header-anchor">#</a> 缺失清单指导</h3> <pre><code>上传接口 基础功能模块提供 @王德超
 地址基础接口 基础模块提供 @王德超
 </code></pre></div> <div class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">9/10/2018, 2:10:31 PM</span></div></div> <!----> </div> <!----></div></div>
-    <script src="/work-a-api-v2/assets/js/8.93372702.js" defer></script><script src="/work-a-api-v2/assets/js/app.fcb3e39c.js" defer></script>
+    <script src="/work-a-api-v2/assets/js/8.ed633fbc.js" defer></script><script src="/work-a-api-v2/assets/js/app.f49f6c78.js" defer></script>
   </body>
 </html>

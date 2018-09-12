@@ -74,6 +74,7 @@
 |status|合同状态|String|default-value: ALL, DRAFT：草稿;ASKFOR：转正式待审核;FORMAL：正式;CANCELASKFOR：作废待审核;CANCEL：已作废;INVALID：过期|
 |pageNo|当前页|Number|default-value: 1
 |pageSize|页面容量|Number|default-value: 25
+|buttonPermissionFlg|按钮权限|Number|0-查询按钮权限 1-不查询|
 
 #### 返回值
 ##### datas返回值
@@ -87,12 +88,13 @@
 |subjectName|合同主体名称|String|
 |status|合同状态|String|DRAFT：草稿;ASKFOR：转正式待审核;FORMAL：正式;CANCELASKFOR：作废待审核;CANCEL：已作废;INVALID：过期|
 
-##### buttonPermossions返回值
+##### buttonPermissions返回值
     返回的集合长度和数据集一样，取对应下标数据即可，true 显示；false 不显示
     deleteButton: 删除按钮 ,
     changeRegularButton: 转正式,
     approvalButton: 审批,
-    cancelButton: 作废
+    cancelButton: 作废,
+    detailButton: 详情查看按钮
 
 #### 请求示例
     /v2/contract?pageNo=1&pageSize=25&status=&contractType=&name=
@@ -304,6 +306,7 @@
 |reach|达成状态|String|YES: 已达成; NO: 未达成
 |pageNo|当前页|Number|default-value: 1
 |pageSize|页面容量|Number|default-value: 25
+|buttonPermissionFlg|按钮权限|Number|0-查询按钮权限 1-不查询|
 
 #### 返回值
 ##### datas返回值
@@ -322,7 +325,7 @@
 |canUsePreferentialAmt|优惠金额|Number|
 |fileUrl|履约附件url|String|为null 或者 为"" 代表没有附件|
 
-##### buttonPermossions返回值
+##### buttonPermissions返回值
     返回的集合长度和数据集一样，取对应下标数据即可，true 显示；false 不显示
     performanceButton: 申请履约,
     approvalButton: 审批
@@ -603,6 +606,7 @@
 |type|返利券类别|String|rebate: 返利, spread: 推广费, freight: 运费, other: 其它|
 |pageNo|页码|Number|default-value: 1|
 |pageSize|页面容量|Number|default-value: 25|
+|buttonPermissionFlg|按钮权限|Number|0-查询按钮权限 1-不查询|
 
 #### 返回值
 ##### datas返回值
@@ -623,11 +627,12 @@
 |createUserName|创建人名称|String|
 |createTime|返利券发放日期 yyyy-MM-dd HH:mm:ss|String|
 
-##### buttonPermossions返回值
+##### buttonPermissions返回值
     返回的集合长度和数据集一样，取对应下标数据即可，true 显示；false 不显示
     deleteButton 作废按钮
     lockButton 锁定按钮
     unlockButton 解锁按钮
+    logButton 日志查看按钮
 
 #### 请求示例
     /v2/rebates?name=&status=&source=&pageNo=&pageSize=
@@ -647,7 +652,8 @@
                         {
                             deleteButton: false,
                             lockButton: false,
-                            unlockButton: false
+                            unlockButton: false,
+                            logButton: false
                         },
                         ...
             ],
