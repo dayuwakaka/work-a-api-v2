@@ -301,7 +301,7 @@
 |参数|名称|类型|描述|
 |---|---|---|---|
 |name|合同主体名称、合同号、创建人名称|String
-|checkStatus|履约状态|String|default-value: ALL; NORMAL: 待履约; INVALID:待审核; PASS: 已履约|
+|performanceStatus|履约状态|String|default-value: ALL; NORMAL: 待履约; INVALID:待审核; PASS: 已履约|
 |rebateNode|节点|String|default-value: ALL; FIRST:一季度; SECOND：二季度; THIRD：三季度; FOURTH：四季度; YEAR：年度|
 |reach|达成状态|String|YES: 已达成; NO: 未达成
 |pageNo|当前页|Number|default-value: 1
