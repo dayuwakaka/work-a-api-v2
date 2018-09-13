@@ -12,7 +12,7 @@
 |---|---|---|
 |keyword|品号/品名|
 |state|产品状态|"" 全部 normal 正常 custom 定制 lock 锁定|
-|pageNum|页码|默认1|
+|pageNo|页码|默认1|
 |pageSize|页条数|默认25|
 
 #### 1.4 请求示例
@@ -79,7 +79,7 @@
 |参数|名称|描述|
 |---|---|---|
 |keyword|品号/品名|
-|pageNum|页码|默认1|
+|pageNo|页码|默认1|
 |pageSize|页条数|默认25|
 
 #### 2.4 请求示例
@@ -197,7 +197,7 @@
 |keyword|品号/品名|
 |state|状态|noramal 正常 lock 锁定 delete 作废 invalid 失效|
 |buttonPermissionFlg|操作按钮开关|0 带操作列表 1 无操作列表 默认 1|
-|pageNum|页码|默认1|
+|pageNo|页码|默认1|
 |pageSize|页条数|默认25|
 
 #### 102.4 请求示例
@@ -430,6 +430,8 @@
 |参数|名称|描述|例子
 |---|---|---|---|
 |lockId|断货ID|
+|pageNo|
+|pageSize|
     
 #### 106.4 请求示例
     无
