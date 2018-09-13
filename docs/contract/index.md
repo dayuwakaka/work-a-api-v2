@@ -330,7 +330,8 @@
 ##### buttonPermissions返回值
     返回的集合长度和数据集一样，取对应下标数据即可，true 显示；false 不显示
     performanceButton: 申请履约,
-    approvalButton: 审批,
+    passButton: 通过按钮,
+    refuseButton: 拒绝按钮,
     detailButton: 详情（优惠明细）,
     startButton: 启用履约按钮,
     stopButton: 禁用履约按钮
@@ -362,7 +363,11 @@
             buttonPermissions: [
                         {
                             performanceButton: false,
-                            approvalButton: false
+                            passButton: false,
+                            refuseButton: false,
+                            detailButton: false,
+                            startButton: false,
+                            stopButton: false
                         },
                         ...
             ],
