@@ -15,10 +15,10 @@
 |参数|名称|类型|描述|
 |---|---|---|---|
 |name|营销名称|String|
-|bannerPic|banner图url|String|
+|bannerPic|banner图（轮播图）url|String|
 |type|营销类别|String|COUPON:领券, GIFT: 满赠, REDUCE: 满减, DISCOUNT: 满折, COLUMN: 专栏, SPECIAL: 专题
-|businessunitRangeType|事业部范围类别|String|ALL: 全部事业部; PART: 部分事业部
-|customerRangeType|客户范围类别|String|ALL: 所有; NEW: 新用户
+|businessunitRangeType|事业部范围限制类别|String|ALL: 全部事业部; PART: 部分事业部
+|customerRangeType|用户范围限制类别|String|ALL: 所有; NEW: 新用户
 |effectStime|开始时间|String|日期是客户所选，时间是固定在后面加00:00:00|
 |effectEtime|结束时间|String|日期是客户所选，时间是固定在后面加23:59:59|
 |ruleType|规则类别|String|PRICE: 价格; COUNT: 数量
@@ -33,10 +33,10 @@
 |参数|名称|类型|描述|
 |---|---|---|---|
 |name|营销名称|String|
-|bannerPic|banner图url|String|
+|bannerPic|banner图（轮播图）url|String|
 |type|营销类别|String|COUPON:领券, GIFT: 满赠, REDUCE: 满减, DISCOUNT: 满折, COLUMN: 专栏, SPECIAL: 专题
-|businessunitRangeType|事业部范围类别|String|ALL: 全部事业部; PART: 部分事业部
-|customerRangeType|客户范围类别|String|ALL: 所有; NEW: 新用户
+|businessunitRangeType|事业部范围限制类别|String|ALL: 全部事业部; PART: 部分事业部
+|customerRangeType|用户范围类别|String|ALL: 所有; NEW: 新用户
 |effectStime|开始时间|String|日期是客户所选，时间是固定在后面加00:00:00|
 |effectEtime|结束时间|String|日期是客户所选，时间是固定在后面加23:59:59|
 |ruleType|规则类别|String|PRICE: 价格; COUNT: 数量
@@ -52,10 +52,10 @@
 |参数|名称|类型|描述|
 |---|---|---|---|
 |name|营销名称|String|
-|bannerPic|banner图url|String|
+|bannerPic|banner图（轮播图）url|String|
 |type|营销类别|String|COUPON:领券, GIFT: 满赠, REDUCE: 满减, DISCOUNT: 满折, COLUMN: 专栏, SPECIAL: 专题
-|businessunitRangeType|事业部范围类别|String|ALL: 全部事业部; PART: 部分事业部
-|customerRangeType|客户范围类别|String|ALL: 所有; NEW: 新用户
+|businessunitRangeType|事业部范围限制类别|String|ALL: 全部事业部; PART: 部分事业部
+|customerRangeType|用户范围限制类别|String|ALL: 所有; NEW: 新用户
 |effectStime|开始时间|String|日期是客户所选，时间是固定在后面加00:00:00|
 |effectEtime|结束时间|String|日期是客户所选，时间是固定在后面加23:59:59|
 |ruleType|规则类别|String|PRICE: 价格; COUNT: 数量
@@ -71,10 +71,10 @@
 |参数|名称|类型|描述|
 |---|---|---|---|
 |name|营销名称|String|
-|bannerPic|banner图url|String|
+|bannerPic|banner图（轮播图）url|String|
 |type|营销类别|String|COUPON:领券, GIFT: 满赠, REDUCE: 满减, DISCOUNT: 满折, COLUMN: 专栏, SPECIAL: 专题
-|businessunitRangeType|事业部范围类别|String|ALL: 全部事业部; PART: 部分事业部
-|customerRangeType|客户范围类别|String|ALL: 所有; NEW: 新用户
+|businessunitRangeType|事业部范围限制类别|String|ALL: 全部事业部; PART: 部分事业部
+|customerRangeType|用户范围限制类别|String|ALL: 所有; NEW: 新用户
 |effectStime|开始时间|String|日期是客户所选，时间是固定在后面加00:00:00|
 |effectEtime|结束时间|String|日期是客户所选，时间是固定在后面加23:59:59|
 |promoActiveProductRanges|活动产品范围|Array|[{<br/>productId: 产品id(Number)<br/>productunitId: 产品规格id(Number)<br/>name: 产品名称(String)<br/>pno: 品号(String)<br/>guige: 产品规格(String)<br/>}<br>...<br/>]
@@ -87,13 +87,13 @@
 |参数|名称|类型|描述|
 |---|---|---|---|
 |name|营销名称|String|
-|bannerPic|banner图url|String|
+|bannerPic|banner图（轮播图）url|String|
 |type|营销类别|String|COUPON:领券, GIFT: 满赠, REDUCE: 满减, DISCOUNT: 满折, COLUMN: 专栏, SPECIAL: 专题
-|businessunitRangeType|事业部范围类别|String|ALL: 全部事业部; PART: 部分事业部
-|customerRangeType|客户范围类别|String|ALL: 所有; NEW: 新用户
+|businessunitRangeType|事业部范围限制类别|String|ALL: 全部事业部; PART: 部分事业部
+|customerRangeType|用户范围限制类别|String|ALL: 所有; NEW: 新用户
 |effectStime|开始时间|String|日期是客户所选，时间是固定在后面加00:00:00|
 |effectEtime|结束时间|String|日期是客户所选，时间是固定在后面加23:59:59|
-|promoImages|图片url|Array|[{<br/>imageUrl: 图片url(String)<br/>}<br>...<br/>]
+|promoImages|详情图url|Array|[{<br/>imageUrl: 图片url(String)<br/>}<br>...<br/>]
 |promoRanges|事业部范围|Array|[{<br/>businessunitId: 事业部id(Number)<br/>extInfo: 事业部名称(String)<br/>}<br>...<br/>]
 |onlyCode|本次提交携带的唯一码|String|防止重复提交用
 
@@ -103,15 +103,15 @@
 |参数|名称|类型|描述|
 |---|---|---|---|
 |name|营销名称|String|
-|bannerPic|banner图url|String|
+|bannerPic|banner图（轮播图）url|String|
 |popPic|弹屏图url|String|非必填|
 |type|营销类别|String|COUPON:领券, GIFT: 满赠, REDUCE: 满减, DISCOUNT: 满折, COLUMN: 专栏, SPECIAL: 专题
-|businessunitRangeType|事业部范围类别|String|ALL: 全部事业部; PART: 部分事业部
-|customerRangeType|客户范围类别|String|ALL: 所有; NEW: 新用户
+|businessunitRangeType|事业部范围限制类别|String|ALL: 全部事业部; PART: 部分事业部
+|customerRangeType|用户范围限制类别|String|ALL: 所有; NEW: 新用户
 |effectStime|开始时间|String|日期是客户所选，时间是固定在后面加00:00:00|
 |effectEtime|结束时间|String|日期是客户所选，时间是固定在后面加23:59:59|
 |receiveNumber|领取限制|Number|1: 领取一次; 0: 用完再领
-|promoImages|图片url|Array|[{<br/>imageUrl: 图片url(String)<br/>}<br>...<br/>]
+|promoImages|营销规则图url|Array|[{<br/>imageUrl: 图片url(String)<br/>}<br>...<br/>]
 |promoCouponRules|优惠券领取信息|Array|[{<br/>couponRuleId: 优惠券规则id(Number)<br/>couponRuleName: 优惠券规则名称(String)<br/>num: 领取数量(Number)<br/>effectStime: 优惠券起始时间(String) - 日期是客户所选，时间是固定在后面加00:00:00<br/>effectEtime: 优惠券结束时间(String) - 日期是客户所选，时间是固定在后面加23:59:59<br/>}<br>...<br/>]|
 |promoRanges|事业部范围|Array|[{<br/>businessunitId: 事业部id(Number)<br/>extInfo: 事业部名称(String)<br/>}<br>...<br/>]
 |onlyCode|本次提交携带的唯一码|String|防止重复提交用
@@ -139,7 +139,7 @@
 |name|营销名称|String|
 |pageNo|当前页|Number|default-value: 1|
 |pageSize|页面容量|Number|default-value: 25|
-|buttonPermissionFlg|按钮权限|Number|0-查询按钮权限 1-不查询|
+|buttonPermissionFlg|按钮权限|Number|1-查询按钮权限 0-不查询|
 
 #### 返回值
 ##### datas返回值
@@ -147,9 +147,9 @@
 |---|---|---|---|
 |id|营销id|Number|
 |name|营销名称|String|
-|type|营销类别|String|COUPON:领券, GIFT: 满赠, REDUCE: 满减, DISCOUNT: 满折, COLUMN: 专栏, SPECIAL: 专题
-|bannerPic|banner图url|String|
-|deleteFlg|营销删除标识符|Number|
+|type|营销类型|String|COUPON:领券, GIFT: 满赠, REDUCE: 满减, DISCOUNT: 满折, COLUMN: 专栏, SPECIAL: 专题
+|bannerPic|banner图（营销图片）url|String|
+|deleteFlg|营销状态|Number|0-正常 1-作废|
 |effectStime|营销开始时间|String|
 |effectEtime|营销结束时间|String|
 |createUserName|创建人名称|Stirng|
@@ -318,7 +318,7 @@
     /v2/promo
 
 #### 请求类型
-    PUT
+    DELETE
 
 #### 请求参数
 |参数|名称|类型|描述|
@@ -345,7 +345,7 @@
 |---|---|---|---|
 |name|优惠券规则名称|String
 |deleteFlg|券规状态|Number|0: 有效; 1: 无效|
-|buttonPermissionFlg|按钮权限|Number|0-查询按钮权限 1-不查询|
+|buttonPermissionFlg|按钮权限|Number|1-查询按钮权限 0-不查询|
 
 #### 返回值
 ##### datas返回值
@@ -353,7 +353,9 @@
 |---|---|---|---|
 |id|优惠券规则id|Number|
 |name|券规名称|String|
-|deleteFlg|删除标识（状态）|Number|0: 有效; 1: 无效|
+|ruleType|满减类别| 'PRICE' 金额 ,'COUNT' 数量|
+|ranges|使用条件|PRODUCT置顶产品  ALL 无限制|
+|deleteFlg|删除标识（状态）|Number|0: 正常; 1: 作废|
 |createUserName|创建人名称|String|
 |createTime|创建时间|String|
 |targetValue|目标值|Number|即满值|
@@ -401,11 +403,10 @@
 #### 请求参数
 |参数|名称|类型|描述|
 |---|---|---|---|
-|*ruleType|优惠券规则类别|String|PRICE: 价格; COUNT: 数量
-|*ranges|优惠券产品范围|String|ALL: 不限; PRODUCT: 指定产品
-|*material|是否包含原料品|Number|0: 不包含; 1: 包含|
+|*ruleType|满减类型|String|PRICE: 价格; COUNT: 数量
+|*ranges|产品范围限制|String|ALL: 不限; PRODUCT: 指定产品
 |*ruleValues|优惠券规则|Array|信息如下|
-|*rangeValues|优惠券产品范围|Array|信息如下|
+|*rangeValues|优惠券产品范围|Array|信息如下，产品范围限制为不限 则不传|
 |*onlyCode|本次提交携带的唯一码|String|防止重复提交用
 
 ##### ruleValues信息
@@ -458,6 +459,7 @@
 |pno|品号|String||
 |name|产品名称|String||
 |guige|产品规格|String||
+|state|产品状态|String|normal 正常 custom 定制 lock 锁定|
 
 ### YX-8.作废优惠券规则
 
@@ -494,7 +496,7 @@
 |status|券规状态|Stirng|ASKFOR: 申请, PASS: 通过, REFUSE: 拒绝|
 |pageNo|页码|Number|default-value: 1|
 |pageSize|页面容量|Number|default-value: 25|
-|buttonPermissionFlg|按钮权限|Number|0-查询按钮权限 1-不查询|
+|buttonPermissionFlg|按钮权限|Number|1-查询按钮权限 0-不查询|
 
 ##### buttonPermissions返回值
     返回的集合长度和数据集一样，取对应下标数据即可，true 显示；false 不显示
@@ -503,10 +505,10 @@
 #### 返回值
 |参数|名称|类型|描述|
 |---|---|---|---|
-|id|客户优惠券申请id|Number|
+|id|客户优惠券申请id（即优惠券编号）|Number|
 |customerName|客户名称|String|
-|ruleName|优惠券规则名称|String|
-|status|申请状态|String|ASKFOR: 申请; PASS: 通过; REFUSE: 拒绝|
+|ruleName|优惠券名称|String|
+|status|审核状态|String|ASKFOR: 申请; PASS: 通过; REFUSE: 拒绝|
 |couponAmount|优惠券发放张数|Number|
 |effectStime|优惠券开始时间|String|
 |effectEtime|优惠券结束时间|String|
@@ -625,24 +627,26 @@
 #### 请求参数
 |参数|名称|类型|描述|
 |---|---|---|---|
-|name|客户名、优惠券规则名称|String
-|used|优惠券使用状态|String|YES: 已使用; NO: 未使用
+|name|优惠券名称|String|
+|customerName|客户名称|String||
+|sourceName|发放源|String|
+|used|优惠券使用情况|String|YES: 已使用; NO: 未使用
 |status|客户优惠券状态|String|NORMAL: 正常; LOCK: 锁定
 |deleteFlg|客户优惠券状态|Number|0: 有效; 1: 无效
 |pageNo|页码|Number|default-value: 1
 |pageSize|页面容量|Number|default-value: 25
-|buttonPermissionFlg|按钮权限|Number|0-查询按钮权限 1-不查询|
+|buttonPermissionFlg|按钮权限|Number|1-查询按钮权限 0-不查询|
 
 #### 返回值
 ##### datas返回值
 |参数|名称|类型|描述|
 |---|---|---|---|
 |id|客户优惠券编号(即id)|Number|
-|ruleName|优惠券规则名称|String|
+|ruleName|优惠券名称|String|
 |customerName|客户名称|String|
-|pageName|发放源(营销名称)|String|
-|status|客户优惠券状态|String|NORMAL: 正常; LOCK: 锁定
-|used|客户优惠券状态|String|YES: 已使用; NO: 未使用
+|pageName|发放源|String|
+|status|优惠券状态|String|NORMAL: 正常; LOCK: 锁定
+|used|优惠券状态|String|YES: 已使用; NO: 未使用
 |effectStime|优惠券开始时间|String|
 |effectEtime|优惠券结束时间|String|
 |createUserName|创建人|String|

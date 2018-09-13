@@ -38,7 +38,7 @@
 |businessunit|事业部id列表|
 |customerAttrType|客户属性限制类型|ALL 无限制 PART 部分客户属性|
 |customerAttrList|客户属性列表|
-
+|buttonPermissionFlg|是否获取列表对应的按钮权限|1- 是 0 - 否|
 
 #### 1.6 返回示例
     {

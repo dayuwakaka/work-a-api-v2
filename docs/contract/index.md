@@ -19,7 +19,7 @@
 |*details|合同四个季度及年度明细|Array|[{<br/>rebateNode:"FIRST",<br/>rebateRate:0,<br/>salesPlan:0,<br/>startDate:"2018-03-01 00:00:00",<br/>endDate:"2018-05-31 23:59:59"<br/>},<br/>...]<br/> rebateNode: 返利节点（FIRST、SECOND、THIRD、FOURTH、YEAR），<br/>rebateRate:返点率（0~100），<br/>salesPlan: 目标，<br/>startDate:开始日期时间 日期是客户所选，时间是固定在后面加00:00:00，<br/>endDate:结束日期时间 日期是客户所选 时间是固定在后面加23:59:59
 |*startDate|合同开始日期|String|日期是客户所选，时间是固定在后面加00:00:00
 |*endDate|合同结束日期|String|日期是客户所选，时间是固定在后面加23:59:59
-|*formalUrl|合同附件URL|String|多张合同附件URL以','相隔
+|*formalUrl|合同扫描件URL|String|多张合同附件URL以','相隔
 |*subjectName|合同主体名称|String
 |remarks|备注|String|200字符以内|
 |*onlyCode|本次提交携带的唯一码|String|防止重复提交用
@@ -70,11 +70,11 @@
 |参数|名称|类型|描述|
 |---|---|---|---|
 |name|合同主体名称、合同号、创建人名称|String
-|contractType|合同类别|String|default-value: ALL, ALONE: 独立合同, SHARE: 共享合同, CONTINUE: 续接合同, P2P: P2P合同
+|contractType|合同类型|String|default-value: ALL, ALONE: 独立合同, SHARE: 共享合同, CONTINUE: 续接合同, P2P: P2P合同
 |status|合同状态|String|default-value: ALL, DRAFT：草稿;ASKFOR：转正式待审核;FORMAL：正式;CANCELASKFOR：作废待审核;CANCEL：已作废;INVALID：过期|
 |pageNo|当前页|Number|default-value: 1
 |pageSize|页面容量|Number|default-value: 25
-|buttonPermissionFlg|按钮权限|Number|0-查询按钮权限 1-不查询|
+|buttonPermissionFlg|按钮权限|Number|1-查询按钮权限 0-不查询|
 
 #### 返回值
 ##### datas返回值
@@ -82,7 +82,7 @@
 |---|---|---|---|
 |id|合同id|Number|
 |contractNum|合同号|String|
-|contractType|合同类别|String|
+|contractType|合同类型|String|ALONE: 独立合同, SHARE: 共享合同, CONTINUE: 续接合同, P2P: P2P合同|
 |createUserName|创建人|String|
 |createTime|创建时间|String|
 |subjectName|合同主体名称|String|
@@ -306,7 +306,7 @@
 |reach|达成状态|String|YES: 已达成; NO: 未达成
 |pageNo|当前页|Number|default-value: 1
 |pageSize|页面容量|Number|default-value: 25
-|buttonPermissionFlg|按钮权限|Number|0-查询按钮权限 1-不查询|
+|buttonPermissionFlg|按钮权限|Number|1-查询按钮权限 0-不查询|
 
 #### 返回值
 ##### datas返回值
@@ -317,6 +317,8 @@
 |createUserName|创建人|String|
 |startDate|季度开始时间|String|
 |endDate|季度结束时间|String|
+|shouldExistAmt|应计入销售总额|Number|
+|salesPercentage|销售达成比（即达成比）|String||
 |subjectName|合同主体名称|String|
 |rebateNode|季度节点|String|FIRST:一季度; SECOND：二季度; THIRD：三季度; FOURTH：四季度; YEAR：年度|
 |performanceStatus|季度履约状态|String|NORMAL:待履约, INVALID:待审核, PASS:已履约, STOP:禁止申请履约|
@@ -328,7 +330,10 @@
 ##### buttonPermissions返回值
     返回的集合长度和数据集一样，取对应下标数据即可，true 显示；false 不显示
     performanceButton: 申请履约,
-    approvalButton: 审批
+    approvalButton: 审批,
+    detailButton: 详情（优惠明细）,
+    startButton: 启用履约按钮,
+    stopButton: 禁用履约按钮
 
 #### 请求示例
     /v2/contract/performance?pageNo=1&pageSize=25&checkStatus=&rebateNode=&name=&reach=&name=
@@ -369,7 +374,7 @@
 ### XSYH-8.获取返利详细数据
 
 #### 说明
-    获取返利列表
+    获取返利详细数据
 
 #### 请求url
     /v2/contract/performance/{contractNum}/{rebateNode}
@@ -392,10 +397,13 @@
 |saleExists|订购并计入销售优惠客户明细|Array|
 |saleNotExists|订购但不计入销售优惠产品明细|Array|
 
+#### 强调
+    销售优惠金额 为 saleDetail 信息里的 preferentialAmt
+
 ##### contract信息
     {
         contractNum: "ASA-1000000029456196" (合同号) - String,
-        createUserName: "刘璇" (ss客服) - String,
+        createUserName: "刘璇" (销售支持) - String,
         startDate: "2017-03-01 00:00:00" (开始时间) - String,
         endDate: "2018-02-28 23:59:59" (结束时间) - String,
         subjectName: "南京浩方食品贸易有限公司" (合同主体客户名称) - String
@@ -476,7 +484,7 @@
 |---|---|---|---|
 |*contractNum|合同号|String
 |*rebateNode|季度节点|String|FIRST、SECOND、THIRD、FOURTH、YEAR
-|*customerAmt|客户id和发放金额拼接的字符串|String|Example: 93159,10000;93330,8000 逗号前为客户id，逗号后为发放金额 两位小数，可以不发但是如果发放，那么发放金额不能为0 做好校验
+|*customerAmt|客户id和发放金额拼接的字符串|String|Example: 93159,10000;93330,8000 逗号前为客户id，逗号后为发放金额，分号为相隔符 两位小数，可以不发但是如果发放，那么发放金额不能为0 做好校验
 |*fileUrl|履约附件url|String|
 |*onlyCode|本次提交携带的唯一码|String|防止重复提交用
 
@@ -599,14 +607,15 @@
 #### 请求参数
 |参数|名称|类型|描述|
 |---|---|---|---|
-|name|客户名、返利券名称|String
-|source|返利券来源|String|contract: 合同返利; handwork: 手工发放|
-|status|返利券状态|String|normal: 正常; lock: 锁定|
-|rate|返利券折扣比例|Number|
-|type|返利券类别|String|rebate: 返利, spread: 推广费, freight: 运费, other: 其它|
+|name|返利券名称|String|
+|customerName|客户名称|String||
+|source|返利券来源|String|CONTRACT: 合同返利; HANDWORK: 手工发放|
+|status|返利券状态|String|NORMAL: 正常; LOCK: 锁定|
+|rate|返利券折扣比率|Number|前端展示直接在后面加%即可|
+|type|返利券类型|String|REBATE: 返利, SPREAD: 推广费, FREIGHT: 运费, OTHER: 其它|
 |pageNo|页码|Number|default-value: 1|
 |pageSize|页面容量|Number|default-value: 25|
-|buttonPermissionFlg|按钮权限|Number|0-查询按钮权限 1-不查询|
+|buttonPermissionFlg|按钮权限|Number|1-查询按钮权限 0-不查询|
 
 #### 返回值
 ##### datas返回值
@@ -626,10 +635,10 @@
 |customerName|客户名称|String|
 |createUserName|创建人名称|String|
 |createTime|返利券发放日期 yyyy-MM-dd HH:mm:ss|String|
+|status|返利券状态|String|NORMAL: 正常; LOCK: 锁定|
 
 ##### buttonPermissions返回值
     返回的集合长度和数据集一样，取对应下标数据即可，true 显示；false 不显示
-    deleteButton 作废按钮
     lockButton 锁定按钮
     unlockButton 解锁按钮
     logButton 日志查看按钮
@@ -650,7 +659,6 @@
                    ],
             buttonPermissions:[
                         {
-                            deleteButton: false,
                             lockButton: false,
                             unlockButton: false,
                             logButton: false
@@ -681,7 +689,7 @@
 |*value|面值|Number|
 |*effectStime|返利券有效期起始日期|String|日期为客户所选 时间为自动补全 00:00:00
 |*effectEtime|返利券有效期结束日期|String|日期为客户所选 时间为自动补全 23:59:59
-|note|考虑了一下还是把备注加上吧|String|备注长度不得超过200
+|note|备注|String|备注长度不得超过200
 |*onlyCode|本次提交携带的唯一码|String|防止重复提交用
 
 #### 返回值
@@ -754,7 +762,7 @@
 |参数|名称|类型|描述|
 |---|---|---|---|
 |actionValue|订单号|String|
-|action|动作名称|String|
+|action|操作内容|String|
 |createTime|操作时间|String|yyyy-MM-dd HH:mm:ss|
 |createUserName|操作人|String|
 |value|使用金额|Number|
