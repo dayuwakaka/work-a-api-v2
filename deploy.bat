@@ -1,7 +1,7 @@
 
 (
 	npm run docs:build 
-	cd c:/github/work-a-api-v2/docs/.vuepress/dist 
+	cd d:/docs/A_api/work-a-api-v2/docs/.vuepress/dist 
 	git init
 	git add -A
 	git commit -m 'deploy'
