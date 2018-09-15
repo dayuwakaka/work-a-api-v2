@@ -3,7 +3,7 @@
 @(Markdown)
 
 
-### XSYH-1. 新增合同
+### XSYH-1. 新增合同（作废）
 
 #### 请求url
     /v2/contract
@@ -130,13 +130,13 @@
         }
     }
 
-### XSYH-3.修改合同状态
+### XSYH-3.修改合同状态（作废）
 
 #### 说明
     包括合同的转正式申请、作废申请
 
 #### 请求url
-    /v2/contract/{id}
+    /v2/contract/{contractNum}
 
 #### 请求类型
     PUT
@@ -156,13 +156,13 @@
 |msg|消息|修改成功/异常信息|
 |data|数据|
 
-### XSYH-4.申请审核
+### XSYH-4.申请审核（作废）
 
 #### 说明
     包括合同转正式审核、作废审核
 
 #### 请求url
-    /v2/contract/approval/{id}
+    /v2/contract/approval/{contractNum}
 
 #### 请求类型
     PUT
@@ -181,7 +181,7 @@
 |msg|消息|修改成功/异常信息|
 |data|数据|
 
-### XSYH-5.获取合同详情
+### XSYH-5.获取合同详情（作废）
 
 #### 请求url
     /v2/contract/{contractNum}
@@ -504,7 +504,7 @@
 #### 请求示例
     /v2/contract/performance
 
-### XSYH-10.履约审批
+### XSYH-10.履约审批（作废）
 
 #### 说明
     客服SS申请履约后，由财务会计进行审核
@@ -534,7 +534,7 @@
     /v2/contract/performance/ASA-C-2736619920458752/FIRST
 
 
-### XSYH-11.设置季度能否履约
+### XSYH-11.设置季度能否履约（作废）
 
 #### 说明
     销售会计设置合同的某一季度能否履约
@@ -563,7 +563,7 @@
     /v2/contract/performance/disable
 
 
-### XSYH-12.获取合同所属的客户群体
+### XSYH-12.获取合同所属的客户群体（作废）
 
 #### 说明
     当申请履约时，要获取该合同下的所属客户以便进行返利券的发放
@@ -730,7 +730,7 @@
 #### 请求url
     /v2/rebates/rates
 
-### 请求类型
+#### 请求类型
     GET
 
 #### 请求参数
@@ -788,3 +788,484 @@
 |参数|名称|类型|描述|
 |---|---|---|---|
 |insertButton|新增按钮|Boolean|true - 显示；false - 不显示
+
+### XSYH-19.合同转正式申请
+
+#### 请求url
+    /v2/contract/formal/{contractNum}
+
+#### 请求类型
+    PUT
+
+#### 请求参数
+|参数|名称|类型|描述|
+|---|---|---|---|
+|*contractNum|合同号|String|
+
+#### 返回值
+|参数|名称|描述|
+|---|---|---|
+|code|编号|100000：成功；0 ~ 99999：失败|
+|msg|消息|修改成功/异常信息|
+|data|数据|
+
+### XSYH-20.合同作废申请
+
+#### 请求url
+    /v2/contract/invalid/{contractNum}
+
+#### 请求类型
+    PUT
+
+#### 请求参数
+|参数|名称|类型|描述|
+|---|---|---|---|
+|*contractNum|合同号|String|
+
+#### 返回值
+|参数|名称|描述|
+|---|---|---|
+|code|编号|100000：成功；0 ~ 99999：失败|
+|msg|消息|修改成功/异常信息|
+|data|数据|
+
+
+### XSYH-21.合同转正式申请 通过
+
+#### 请求url
+    /v2/contract/formal/pass/{contractNum}
+
+#### 请求类型
+    PUT
+
+#### 请求参数
+|参数|名称|类型|描述|
+|---|---|---|---|
+|*contractNum|合同号|String|
+
+#### 返回值
+|参数|名称|描述|
+|---|---|---|
+|code|编号|100000：成功；0 ~ 99999：失败|
+|msg|消息|修改成功/异常信息|
+|data|数据|
+
+### XSYH-22.合同转正式申请 拒绝
+
+#### 请求url
+    /v2/contract/formal/refuse/{contractNum}
+
+#### 请求类型
+    PUT
+
+#### 请求参数
+|参数|名称|类型|描述|
+|---|---|---|---|
+|*contractNum|合同号|String|
+|remarks|备注|Stirng|200字符以内
+
+#### 返回值
+|参数|名称|描述|
+|---|---|---|
+|code|编号|100000：成功；0 ~ 99999：失败|
+|msg|消息|修改成功/异常信息|
+|data|数据|
+
+
+### XSYH-23.合同作废申请 通过
+
+#### 请求url
+    /v2/contract/invalid/pass/{contractNum}
+
+#### 请求类型
+    PUT
+
+#### 请求参数
+|参数|名称|类型|描述|
+|---|---|---|---|
+|*contractNum|合同号|String|
+
+#### 返回值
+|参数|名称|描述|
+|---|---|---|
+|code|编号|100000：成功；0 ~ 99999：失败|
+|msg|消息|修改成功/异常信息|
+|data|数据|
+
+
+### XSYH-24.合同作废申请 拒绝
+
+#### 请求url
+    /v2/contract/invalid/refuse/{contractNum}
+
+#### 请求类型
+    PUT
+
+#### 请求参数
+|参数|名称|类型|描述|
+|---|---|---|---|
+|*contractNum|合同号|String|
+|remarks|备注|Stirng|200字符以内
+
+#### 返回值
+|参数|名称|描述|
+|---|---|---|
+|code|编号|100000：成功；0 ~ 99999：失败|
+|msg|消息|修改成功/异常信息|
+|data|数据|
+
+### XSYH-25.履约申请 通过
+
+#### 请求url
+    /v2/contract/performance/pass/{contractNum}/{rebateNode}
+
+#### 请求类型
+    PUT
+
+#### 请求参数
+|参数|名称|类型|描述|
+|---|---|---|---|
+|*contractNum|合同号|String|
+|*rebateNode|季度节点|String||
+
+#### 返回值
+|参数|名称|描述|
+|---|---|---|
+|code|编号|100000：成功；0 ~ 99999：失败|
+|msg|消息|修改成功/异常信息|
+|data|数据|
+
+
+### XSYH-26.履约申请 拒绝
+
+#### 请求url
+    /v2/contract/performance/refuse/{contractNum}/{rebateNode}
+
+#### 请求类型
+    PUT
+
+#### 请求参数
+|参数|名称|类型|描述|
+|---|---|---|---|
+|*contractNum|合同号|String|
+|*rebateNode|季度节点|String||
+|remarks|备注|Stirng|200字符以内
+
+#### 返回值
+|参数|名称|描述|
+|---|---|---|
+|code|编号|100000：成功；0 ~ 99999：失败|
+|msg|消息|修改成功/异常信息|
+|data|数据|
+
+### XSYH-27.禁用季度履约
+
+#### 请求url
+    /v2/contract/performance/disable/{contractNum}/{rebateNode}
+
+#### 请求类型
+    PUT
+
+#### 请求参数
+|参数|名称|类型|描述|
+|---|---|---|---|
+|*contractNum|合同号|String|
+|*rebateNode|季度节点|String||
+
+#### 返回值
+|参数|名称|描述|
+|---|---|---|
+|code|编号|100000：成功；0 ~ 99999：失败|
+|msg|消息|修改成功/异常信息|
+|data|数据|
+
+
+### XSYH-28.启用季度履约
+
+#### 请求url
+    /v2/contract/performance/able/{contractNum}/{rebateNode}
+
+#### 请求类型
+    PUT
+
+#### 请求参数
+|参数|名称|类型|描述|
+|---|---|---|---|
+|*contractNum|合同号|String|
+|*rebateNode|季度节点|String||
+
+#### 返回值
+|参数|名称|描述|
+|---|---|---|
+|code|编号|100000：成功；0 ~ 99999：失败|
+|msg|消息|修改成功/异常信息|
+|data|数据|
+
+### XSYH-30.获取合同所属的客户群体
+
+#### 说明
+    当申请履约时，要获取该合同下的所属客户以便进行返利券的发放
+
+#### 请求url
+    /v2/contract/performance/{contractNum}/customers
+
+#### 请求类型
+    GET
+
+#### 请求参数
+|参数|名称|类型|描述|
+|---|---|---|---|
+|*contractNum|合同号|String
+
+#### 返回值
+|参数|名称|类型|描述|
+|---|---|---|---|
+|id|客户id|Integer|
+|companyName|客户名称|String|
+
+#### 请求示例
+    /v2/contract/performance/ASA-C-26988888686868/customers
+
+#### 返回值示例
+    {
+        code: 0,
+        msg: "",
+        data: [
+            {
+                id: "768",
+                companyName: "韩愈"
+            },
+            ...
+        ]
+    }
+
+### XSYH-31. 新增合同
+
+#### 请求url
+    /v2/contract
+
+#### 请求类型
+    POST
+
+#### 请求参数(通用基础)
+|参数|名称|类型|描述|
+|---|---|---|---|
+|*contractType|合同类别|String|ALONE-独立合同，SHARE-共享合同，CONTINUE-续接合同，P2P-P2P合同
+|*startDate|合同开始日期|String|日期是客户所选，时间是固定在后面加00:00:00
+|*endDate|合同结束日期|String|日期是客户所选，时间是固定在后面加23:59:59
+|*formalUrl|合同扫描件URL|String|多张合同附件URL以','相隔
+|*subjectName|合同主体名称|String
+|remarks|备注|String|200字符以内|
+|*onlyCode|本次提交携带的唯一码|String|防止重复提交用
+
+#### 独立合同、P2P
+|参数|名称|类型|描述|
+|---|---|---|---|
+|*customerId|客户id|Number||
+|*details|合同四个季度及年度明细|Array|[{<br/>rebateNode:"FIRST",<br/>rebateRate:0,<br/>salesPlan:0,<br/>startDate:"2018-03-01 00:00:00",<br/>endDate:"2018-05-31 23:59:59"<br/>},<br/>...]<br/> rebateNode: 返利节点（FIRST、SECOND、THIRD、FOURTH、YEAR），<br/>rebateRate:返点率（0~100），<br/>salesPlan: 目标，<br/>startDate:开始日期时间 日期是客户所选，时间是固定在后面加00:00:00，<br/>endDate:结束日期时间 日期是客户所选 时间是固定在后面加23:59:59|
+
+#### 共享合同
+|参数|名称|类型|描述|
+|---|---|---|---|
+|*customerId|主体客户id|Number||
+|*customerIds|共享客户id|Array|ex: [1,2,3,4,5]|
+|*details|合同四个季度及年度明细|Array|[{<br/>rebateNode:"FIRST",<br/>rebateRate:0,<br/>salesPlan:0,<br/>startDate:"2018-03-01 00:00:00",<br/>endDate:"2018-05-31 23:59:59"<br/>},<br/>...]<br/> rebateNode: 返利节点（FIRST、SECOND、THIRD、FOURTH、YEAR），<br/>rebateRate:返点率（0~100），<br/>salesPlan: 目标，<br/>startDate:开始日期时间 日期是客户所选，时间是固定在后面加00:00:00，<br/>endDate:结束日期时间 日期是客户所选 时间是固定在后面加23:59:59|
+
+#### 请求参数(续接合同)
+|参数|名称|类型|描述|
+|---|---|---|---|
+|*oldCustomerId|被续接客户id|String|
+|*newCustomerId|续接客户id|String||
+
+    请判断好四个季度的起始时间和结束时间，如例：
+    *各季度时间不允许重叠，时间段必须在年度时间段内，各季度之间的时间可以不连贯！各季度时间为用户选择，非固定时间段
+    *返点率可以0 范围：0 ~ 100 两位小数
+    *目标可以为0 范围：0 ~ 1000000000 两位小数
+    *年度目标不能为0
+    *四个季度目标之和必须等于年度目标
+![avatar](http://omgzp8h38.bkt.clouddn.com/Fg_HtWJKA_c0F--3bntTBUOIDPfI)
+![avatar](http://omgzp8h38.bkt.clouddn.com/FsIEEtwAr48sLDKvnzEBP0MZ7g4q)
+
+#### 返回值
+|参数|名称|描述|
+|---|---|---|
+|code|编号|100000：成功；0 ~ 99999：失败|
+|msg|消息|新增成功/异常信息|
+|data|数据||
+
+#### 返回示例
+    {
+        "code": "100000",
+        "msg": ""
+    }
+
+### XSYH-32.获取独立合同详情 & P2P合同
+
+#### 请求url
+    /v2/contract/alone/{contractNum}
+
+#### 请求类型
+    GET
+
+#### 请求参数
+|参数|名称|类型|描述|
+|---|---|---|---|
+|*contractNum|合同号|String|
+
+#### 返回值
+    {
+        "contractNum": "ASA-C-2672664202232832", // 合同号
+        "contractType": "ALONE", // 合同类型
+        "createTime": "2018-04-28 09:50:19", // 合同创建时间
+        "createUserName": "李欢欢", // 合同创建人
+        "customerName": "3948", // 合同主体客户名
+        "remarks": "2018年销售合同", // 备注
+        "startDate": "2018-03-01 00:00:00", // 合同开始时间
+        "endDate": "2019-02-28 23:59:59", // 合同结束时间
+        "formalUrl": "http://omgzp8h38.bkt.clouddn.com/FqDXF7hibm2saEBxFLp9QcBNWCUh,http://dsafasdfasdfasdfasdf,http://sadfasdfasdfasdf", // 合同附件以逗号相隔
+        "cancelUrl": "", // 合同作废附件以逗号相隔
+        "status": "FORMAL", // 合同状态 DRAFT：草稿;ASKFOR：转正式待审核;FORMAL：正式;CANCELASKFOR：作废待审核;CANCEL：已作废;INVALID:过期
+        "details": [ // 合同明细
+            {
+                "checkStatus":"NORMAL" (当前季度的状态，NORMAL:初始状态, INVALID:待审核, PASS:审核通过, STOP:禁止申请履约) - String,
+                "contractNum":"ASA-C-2719934593319936" (合同号) - String,
+                "startDate":"2018-03-01 00:00:00" (当前季度的开始时间) - String,
+                "endDate":"2018-05-31 23:59:59" (当前季度的结束时间) - String,
+                "rebateNode":"FIRST" (季度节点 FIRST:第一季度,SECOND:第二季度,THIRD:第三季度,FOURTH:第四季度,YEAR:年度) - String,
+                "rebateRate":2 (返点率，前端展示的时候后面加上'%') - Number
+                "salesPlan":100000 (目标) - Number
+            },
+            ......
+        ],
+        "logs": [
+            {
+                contractNum:"ASA-C-2719934593319936" (合同号) - String,
+                action:"用户：宁丽丽转正式审批通过" (动作行为) - String,
+                createTime:"2018-05-31 20:11:22" (行为时间) - String,
+                remarks: "" (备注) - String
+            },
+            ......
+        ]
+    }
+
+### XSYH-33.获取共享合同详情
+
+#### 请求url
+    /v2/contract/share/{contractNum}
+
+#### 请求类型
+    GET
+
+#### 请求参数
+|参数|名称|类型|描述|
+|---|---|---|---|
+|*contractNum|合同号|String|
+
+#### 返回值
+    {
+        "contractNum": "ASA-C-2672664202232832", // 合同号
+        "contractType": "SHARE", // 合同类型
+        "createTime": "2018-04-28 09:50:19", // 合同创建时间
+        "createUserName": "李欢欢", // 合同创建人
+        "customerName": "3948", // 合同主体客户名
+        "remarks": "2018年销售合同", // 备注
+        "startDate": "2018-03-01 00:00:00", // 合同开始时间
+        "endDate": "2019-02-28 23:59:59", // 合同结束时间
+        "formalUrl": "http://omgzp8h38.bkt.clouddn.com/FqDXF7hibm2saEBxFLp9QcBNWCUh,http://dsafasdfasdfasdfasdf,http://sadfasdfasdfasdf", // 合同附件以逗号相隔
+        "cancelUrl": "", // 合同作废附件以逗号相隔
+        "status": "FORMAL", // 合同状态 DRAFT：草稿;ASKFOR：转正式待审核;FORMAL：正式;CANCELASKFOR：作废待审核;CANCEL：已作废;INVALID:过期
+        "customerName": "815", // 合同主体客户名
+        "customerNameList": [ // 共享对象客户名
+            {
+                "companyName": "3883", (客户名称) - String
+                "id": 3883 (客户编号) - Number
+            }
+        ],
+        "details": [
+            {
+                "checkStatus":"NORMAL" (当前季度的状态，NORMAL:初始状态, INVALID:待审核, PASS:审核通过, STOP:禁止申请履约) - String,
+                "contractNum":"ASA-C-2719934593319936" (合同号) - String,
+                "startDate":"2018-03-01 00:00:00" (当前季度的开始时间) - String,
+                "endDate":"2018-05-31 23:59:59" (当前季度的结束时间) - String,
+                "rebateNode":"FIRST" (季度节点 FIRST:第一季度,SECOND:第二季度,THIRD:第三季度,FOURTH:第四季度,YEAR:年度) - String,
+                "rebateRate":2 (返点率，前端展示的时候后面加上'%') - Number
+                "salesPlan":100000 (目标) - Number
+            },
+            ......
+        ],
+        "logs": [
+            {
+                "action": "用户：许晓慧，创建合同",
+                "contractNum": "ASA-C-2689689452200960",
+                "createRole": 4217,
+                "createTime": "2018-05-10 10:29:17",
+                "createUser": 118,
+                "id": 430,
+                "remarks": ""
+            },
+            ......
+        ]
+    }
+
+
+### XSYH-34.获取续接合同详情
+
+#### 请求url
+    /v2/contract/continue/{contractNum}
+
+#### 请求类型
+    GET
+
+#### 请求参数
+|参数|名称|类型|描述|
+|---|---|---|---|
+|*contractNum|合同号|String|
+
+#### 返回值
+    {
+        "contractNum": "ASA-C-2672664202232832", // 合同号
+        "contractType": "CONTINUE", // 合同类型
+        "createTime": "2018-04-28 09:50:19", // 合同创建时间
+        "createUserName": "李欢欢", // 合同创建人
+        "customerName": "3948", // 合同主体客户名
+        "remarks": "2018年销售合同", // 备注
+        "startDate": "2018-03-01 00:00:00", // 合同开始时间
+        "endDate": "2019-02-28 23:59:59", // 合同结束时间
+        "continueEndDate": "2019-02-28 23:59:59", // 续接开始时间
+        "continueStartDate": "2018-03-01 00:00:00", // 续接结束时间
+        "formalUrl": "http://omgzp8h38.bkt.clouddn.com/FqDXF7hibm2saEBxFLp9QcBNWCUh,http://dsafasdfasdfasdfasdf,http://sadfasdfasdfasdf", // 合同附件以逗号相隔
+        "cancelUrl": "", // 合同作废附件以逗号相隔
+        "status": "FORMAL", // 合同状态 DRAFT：草稿;ASKFOR：转正式待审核;FORMAL：正式;CANCELASKFOR：作废待审核;CANCEL：已作废;INVALID:过期
+        "newCustomerName": "30841", // 续接客户名称
+        "oldCustomerName": "27426", // 被续接客户名称
+        "customerNameList": [ // 如果为空则不必显示，不为空则为共享对象客户名
+            {
+                "companyName": "3883", (客户名称) - String
+                "id": 3883 (客户编号) - Number
+            }
+        ],
+        "details": [
+            {
+                "checkStatus":"NORMAL" (当前季度的状态，NORMAL:初始状态, INVALID:待审核, PASS:审核通过, STOP:禁止申请履约) - String,
+                "contractNum":"ASA-C-2719934593319936" (合同号) - String,
+                "startDate":"2018-03-01 00:00:00" (当前季度的开始时间) - String,
+                "endDate":"2018-05-31 23:59:59" (当前季度的结束时间) - String,
+                "rebateNode":"FIRST" (季度节点 FIRST:第一季度,SECOND:第二季度,THIRD:第三季度,FOURTH:第四季度,YEAR:年度) - String,
+                "rebateRate":2 (返点率，前端展示的时候后面加上'%') - Number
+                "salesPlan":100000 (目标) - Number
+            },
+            ......
+        ],
+        "logs": [
+            {
+                "action": "用户：许晓慧，创建合同",
+                "contractNum": "ASA-C-2689689452200960",
+                "createRole": 4217,
+                "createTime": "2018-05-10 10:29:17",
+                "createUser": 118,
+                "id": 430,
+                "remarks": ""
+            },
+            ......
+        ]
+    }

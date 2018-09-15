@@ -1,394 +1,338 @@
 ## 营销管理
-
-@(Markdown)
-
-
 ### YX-1. 新增营销
 
-#### 请求url
-    /v2/promo
-
-#### 请求类型
+#### 1.1 请求URL
+    /v2/market
+    
+#### 1.2 请求类型
     POST
+    
+#### 1.3 请求参数
 
-#### 1.1新增【满折】促销活动
-|参数|名称|类型|描述|
-|---|---|---|---|
-|name|营销名称|String|
-|bannerPic|banner图（轮播图）url|String|
-|type|营销类别|String|COUPON:领券, GIFT: 满赠, REDUCE: 满减, DISCOUNT: 满折, COLUMN: 专栏, SPECIAL: 专题
-|businessunitRangeType|事业部范围限制类别|String|ALL: 全部事业部; PART: 部分事业部
-|customerRangeType|用户范围限制类别|String|ALL: 所有; NEW: 新用户
-|effectStime|开始时间|String|日期是客户所选，时间是固定在后面加00:00:00|
-|effectEtime|结束时间|String|日期是客户所选，时间是固定在后面加23:59:59|
-|ruleType|规则类别|String|PRICE: 价格; COUNT: 数量
-|promoActiveGiveRules|活动规则|Array|[{<br/>targetValue: 目标值(Number 可以为两位小数)<br/>actionValue: 执行值(Number) 0.1 ~ 9.9<br/>}<br>...<br/>]
-|promoActiveProductRanges|活动产品范围|Array|[{<br/>productId: 产品id(Number)<br/>productunitId: 产品规格id(Number)<br/>name: 产品名称(String)<br/>pno: 品号(String)<br/>guige: 产品规格(String)<br/>}<br>...<br/>]
-|promoRanges|事业部范围|Array|[{<br/>businessunitId: 事业部id(Number)<br/>extInfo: 事业部名称(String)<br/>}<br>...<br/>]
-|onlyCode|本次提交携带的唯一码|String|防止重复提交用
-
-    以上所有字段均为必填
-
-#### 1.2新增【满减】促销活动
-|参数|名称|类型|描述|
-|---|---|---|---|
-|name|营销名称|String|
-|bannerPic|banner图（轮播图）url|String|
-|type|营销类别|String|COUPON:领券, GIFT: 满赠, REDUCE: 满减, DISCOUNT: 满折, COLUMN: 专栏, SPECIAL: 专题
-|businessunitRangeType|事业部范围限制类别|String|ALL: 全部事业部; PART: 部分事业部
-|customerRangeType|用户范围类别|String|ALL: 所有; NEW: 新用户
-|effectStime|开始时间|String|日期是客户所选，时间是固定在后面加00:00:00|
-|effectEtime|结束时间|String|日期是客户所选，时间是固定在后面加23:59:59|
-|ruleType|规则类别|String|PRICE: 价格; COUNT: 数量
-|giveType|满减类别|String|LADDER:阶梯, FULL: 每满|
-|promoActiveGiveRules|活动规则|Array|[{<br/>targetValue: 目标值(Number 可以为两位小数)<br/>actionValue: 执行值(Number 正整数)<br/>}<br>...<br/>]
-|promoActiveProductRanges|活动产品范围|Array|[{<br/>productId: 产品id(Number)<br/>productunitId: 产品规格id(Number)<br/>name: 产品名称(String)<br/>pno: 品号(String)<br/>guige: 产品规格(String)<br/>}<br>...<br/>]
-|promoRanges|事业部范围|Array|[{<br/>businessunitId: 事业部id(Number)<br/>extInfo: 事业部名称(String)<br/>}<br>...<br/>]
-|onlyCode|本次提交携带的唯一码|String|防止重复提交用
-
-    以上所有字段均为必填
-
-#### 1.3新增【满赠】促销活动
-|参数|名称|类型|描述|
-|---|---|---|---|
-|name|营销名称|String|
-|bannerPic|banner图（轮播图）url|String|
-|type|营销类别|String|COUPON:领券, GIFT: 满赠, REDUCE: 满减, DISCOUNT: 满折, COLUMN: 专栏, SPECIAL: 专题
-|businessunitRangeType|事业部范围限制类别|String|ALL: 全部事业部; PART: 部分事业部
-|customerRangeType|用户范围限制类别|String|ALL: 所有; NEW: 新用户
-|effectStime|开始时间|String|日期是客户所选，时间是固定在后面加00:00:00|
-|effectEtime|结束时间|String|日期是客户所选，时间是固定在后面加23:59:59|
-|ruleType|规则类别|String|PRICE: 价格; COUNT: 数量
-|giveType|满减类别|String|LADDER:阶梯, FULL: 每满|
-|promoActiveGiveRules|活动规则|Array|[{<br/>targetValue: 目标值(Number)<br/>actionValue: 赠品productunit_id(Number)<br/>actionName: 产品名称(Stirng)<br/>actionNum: 赠品数量(Number，正整数)<br/>guige: 赠品规格(String)<br/>}<br>...<br/>]
-|promoActiveProductRanges|活动产品范围|Array|[{<br/>productId: 产品id(Number)<br/>productunitId: 产品规格id(Number)<br/>name: 产品名称(String)<br/>pno: 品号(String)<br/>guige: 产品规格(String)<br/>}<br>...<br/>]
-|promoRanges|事业部范围|Array|[{<br/>businessunitId: 事业部id(Number)<br/>extInfo: 事业部名称(String)<br/>}<br>...<br/>]
-|onlyCode|本次提交携带的唯一码|String|防止重复提交用
-
-    以上所有字段均为必填
-
-#### 1.4新增【专栏】促销活动
-|参数|名称|类型|描述|
-|---|---|---|---|
-|name|营销名称|String|
-|bannerPic|banner图（轮播图）url|String|
-|type|营销类别|String|COUPON:领券, GIFT: 满赠, REDUCE: 满减, DISCOUNT: 满折, COLUMN: 专栏, SPECIAL: 专题
-|businessunitRangeType|事业部范围限制类别|String|ALL: 全部事业部; PART: 部分事业部
-|customerRangeType|用户范围限制类别|String|ALL: 所有; NEW: 新用户
-|effectStime|开始时间|String|日期是客户所选，时间是固定在后面加00:00:00|
-|effectEtime|结束时间|String|日期是客户所选，时间是固定在后面加23:59:59|
-|promoActiveProductRanges|活动产品范围|Array|[{<br/>productId: 产品id(Number)<br/>productunitId: 产品规格id(Number)<br/>name: 产品名称(String)<br/>pno: 品号(String)<br/>guige: 产品规格(String)<br/>}<br>...<br/>]
-|promoRanges|事业部范围|Array|[{<br/>businessunitId: 事业部id(Number)<br/>extInfo: 事业部名称(String)<br/>}<br>...<br/>]
-|onlyCode|本次提交携带的唯一码|String|防止重复提交用
-
-    以上所有字段均为必填
-
-#### 1.5新增【专题】促销活动
-|参数|名称|类型|描述|
-|---|---|---|---|
-|name|营销名称|String|
-|bannerPic|banner图（轮播图）url|String|
-|type|营销类别|String|COUPON:领券, GIFT: 满赠, REDUCE: 满减, DISCOUNT: 满折, COLUMN: 专栏, SPECIAL: 专题
-|businessunitRangeType|事业部范围限制类别|String|ALL: 全部事业部; PART: 部分事业部
-|customerRangeType|用户范围限制类别|String|ALL: 所有; NEW: 新用户
-|effectStime|开始时间|String|日期是客户所选，时间是固定在后面加00:00:00|
-|effectEtime|结束时间|String|日期是客户所选，时间是固定在后面加23:59:59|
-|promoImages|详情图url|Array|[{<br/>imageUrl: 图片url(String)<br/>}<br>...<br/>]
-|promoRanges|事业部范围|Array|[{<br/>businessunitId: 事业部id(Number)<br/>extInfo: 事业部名称(String)<br/>}<br>...<br/>]
-|onlyCode|本次提交携带的唯一码|String|防止重复提交用
-
-    以上所有字段均为必填
-
-#### 1.6新增【领券】促销活动
-|参数|名称|类型|描述|
-|---|---|---|---|
-|name|营销名称|String|
-|bannerPic|banner图（轮播图）url|String|
-|popPic|弹屏图url|String|非必填|
-|type|营销类别|String|COUPON:领券, GIFT: 满赠, REDUCE: 满减, DISCOUNT: 满折, COLUMN: 专栏, SPECIAL: 专题
-|businessunitRangeType|事业部范围限制类别|String|ALL: 全部事业部; PART: 部分事业部
-|customerRangeType|用户范围限制类别|String|ALL: 所有; NEW: 新用户
-|effectStime|开始时间|String|日期是客户所选，时间是固定在后面加00:00:00|
-|effectEtime|结束时间|String|日期是客户所选，时间是固定在后面加23:59:59|
-|receiveNumber|领取限制|Number|1: 领取一次; 0: 用完再领
-|promoImages|营销规则图url|Array|[{<br/>imageUrl: 图片url(String)<br/>}<br>...<br/>]
-|promoCouponRules|优惠券领取信息|Array|[{<br/>couponRuleId: 优惠券规则id(Number)<br/>couponRuleName: 优惠券规则名称(String)<br/>num: 领取数量(Number)<br/>effectStime: 优惠券起始时间(String) - 日期是客户所选，时间是固定在后面加00:00:00<br/>effectEtime: 优惠券结束时间(String) - 日期是客户所选，时间是固定在后面加23:59:59<br/>}<br>...<br/>]|
-|promoRanges|事业部范围|Array|[{<br/>businessunitId: 事业部id(Number)<br/>extInfo: 事业部名称(String)<br/>}<br>...<br/>]
-|onlyCode|本次提交携带的唯一码|String|防止重复提交用
-
-    以上除popPic外，所有字段均为必填
-
-#### 返回值
+##### 基础参数（六钟类型通用参数）
 |参数|名称|描述|
 |---|---|---|
-|code|编号|100000：成功；0 ~ 99999：失败|
-|msg|消息|新增成功/异常信息|
-|data|||
+|type|营销类型|coupon 领券 gift 满赠 reduce 满减 discount 满折 column 专栏 special 专题|
+|name|营销名称|
+|effectStime|营销开始时间|
+|effectEtime|营销结束时间|
+|customerRange|用户限制|all 全部客户 new 新客户|
+|marketBusinessunitRanges|事业部限制列表|
+|onlyCode|唯一码|每次提交时都不能相同|
 
-### YX-2.获取营销列表
+##### 领券参数
+|参数|名称|描述|
+|---|---|---|
+|marketCouponCondition|领券限制|
+|marketCouponGiveConditions|优惠券限制|
+|marketImages|banner 轮播图 popup 弹屏图 detail 详情图，配合 type 配合position 使用|
 
-#### 请求url
-    /v2/promo
 
-#### 请求类型
-    GET
+##### 满赠、满减、满折参数
+|参数|名称|描述|
+|---|---|---|
+|marketProductRanges|产品限制|
+|marketActiveCondition|满赠条件、类别|
+|marketActiveGiveConditions|满赠规则|
+|marketImages|轮播图|banner 轮播图|
 
-#### 请求参数
-|参数|名称|类型|描述|
-|---|---|---|---|
-|name|营销名称|String|
-|pageNo|当前页|Number|default-value: 1|
-|pageSize|页面容量|Number|default-value: 25|
-|buttonPermissionFlg|按钮权限|Number|1-查询按钮权限 0-不查询|
 
-#### 返回值
-##### datas返回值
-|参数|名称|类型|描述|
-|---|---|---|---|
-|id|营销id|Number|
-|name|营销名称|String|
-|type|营销类型|String|COUPON:领券, GIFT: 满赠, REDUCE: 满减, DISCOUNT: 满折, COLUMN: 专栏, SPECIAL: 专题
-|bannerPic|banner图（营销图片）url|String|
-|deleteFlg|营销状态|Number|0-正常 1-作废|
-|effectStime|营销开始时间|String|
-|effectEtime|营销结束时间|String|
-|createUserName|创建人名称|Stirng|
-|createTime|创建时间|String|
+##### 专栏参数
+|参数|名称|描述|
+|---|---|---|
+|marketProductRanges|产品限制|
+|marketImages|轮播图|banner 轮播图|
 
-##### buttonPermissions返回值
-    返回的集合长度和数据集一样，取对应下标数据即可，true 显示；false 不显示
-    deleteButton: 作废按钮
+##### 专题参数
+|参数|名称|描述|
+|---|---|---|
+|marketImages|轮播图|banner 轮播图 detail 详情图|
 
-#### 请求示例
-    /v2/promo?pageNo=1&pageSize=25&status=&name=
 
-#### 返回示例
+#### 1.4 请求示例
     {
-        code: 0,
-        msg: "",
-        data: {
-            datas: [
-                        {
-                            ...
-                        },
-                        ...
+    	"type":"coupon",
+    	"name":"领券活动名称",
+    	"customerRange":"all",
+    	"effectStime":"2018-09-13 08:40:17",
+    	"effectEtime":"2018-10-13 08:40:17",
+    	"onlyCode":"QWIOEUROIASJDKLFAJLSKDFJALSDKF",
+    	"marketBusinessunitRanges":[
+    		{
+    			"type":"businessunit", // businessunit
+    			"rangeId":3, // 事业部id
+    			"extra":"" // 传空即可
+    		},
+    		{
+    			"type":"businessunit",
+    			"rangeId":16,
+    			"extra":""
+    		}],
+    	"marketCouponCondition":{
+    		"limitNum":1 // 1-仅领一次, 0-用完再领
+    	},
+    	"marketCouponGiveConditions":[
+    		{
+    			"couponRuleId":3, // 券规ID
+    			"num":1,    // 券数量
+    			"effectStime":"2018-09-13 08:40:17", // 券有效开始时间
+    			"effectEtime":"2018-10-13 08:40:17" // 券有效结束时间
+    		},
+    		{
+    			"couponRuleId":4,
+    			"num":2,
+    			"effectStime":"2018-09-13 08:40:17",
+    			"effectEtime":"2018-10-13 08:40:17"	
+    		}],
+    		"marketProductRanges":[
+    			{
+    			"type":"productunit", // productunit
+    			"rangeId":7383, // 产品规格ID
+    			"extra":""	// 传空即可
+    			},
+    			{
+    			"type":"productunit",
+    			"rangeId":7382,
+    			"extra":""	
+    			}],
+    		"marketActiveCondition":{
+    			"accumulative":"ladder", // ladder 阶梯 each 每满赠
+    			"unit":"count" // price 金额 count 数量
+    		},
+    		"marketActiveGiveConditions":[
+    			{
+    				"targetValue":100, // 满多少
+    				"actionValue":2, // 赠多少、减多少、折多少
+    				"extra":"4151:7380" // 满赠时，存赠送产品的id 和规格id 格式为 "产品ID:规格ID"
+    			},
+    			{
+    				"targetValue":200,
+    				"actionValue":5,
+    				"extra":"4151:7380"
+    			}],
+    		"marketImages":[
+    			{
+    				"type":"banner", // 图片类型 banner 轮播图 popup 弹屏图 detail 详情图
+    				"position":"nolimit", // nolimit 无限制 top 上图 middle 中图 bottom 下图
+    				"picUrl":"http://ad.asagroup.cn/asae-h5/v2/activity/index/1200" // 图片url
+    			},
+    			{
+    				"type":"popup",
+    				"position":"nolimit",
+    				"picUrl":"http://ad.asagroup.cn/asae-h5/v2/activity/index/1200"	
+    			},
+    			{
+    				"type":"detail",
+    				"position":"top",
+    				"picUrl":"http://ad.asagroup.cn/asae-h5/v2/activity/index/1200"	
+    			},
+    			{
+    				"type":"detail",
+    				"position":"middle",
+    				"picUrl":"http://ad.asagroup.cn/asae-h5/v2/activity/index/1200"	
+    			},
+    			{
+    				"type":"detail",
+    				"position":"bottom",
+    				"picUrl":"http://ad.asagroup.cn/asae-h5/v2/activity/index/1200"	
+    			}]
+    }
+    
+#### 1.5 返回值
+|参数|名称|描述|
+|---|---|---|
+|code|编号|100000成功；0 失败；|
+|msg|消息|异常信息|
+|data|null|
+
+
+
+#### 1.6 返回示例
+    {
+    	"code": 100000,
+    	"msg": "",
+    	"data": null
+    }
+
+### YX-2. 营销列表
+#### 2.1 请求URL
+    /v2/market
+#### 2.2 请求类型
+    GET
+#### 2.3 请求参数
+|参数|名称|描述|
+|---|---|---|
+|name|营销名称|
+|buttonPermissionFlg|0 无按钮 1 有按钮|
+|pageNo|页码|默认1|
+|pageSize|页条数|默认25|
+
+#### 2.4 请求示例
+    无
+#### 2.5 返回值
+|参数|名称|描述|
+|---|---|---|
+|name|营销名称|
+|type|营销类型|coupon 领券 gift 满赠 reduce 满减 discount 满折 column 专栏 special 专题|
+|deleteFlg|状态|0 正常 1 作废|
+|effectEtime|开始时间|
+|effectStime|结束时间|
+|createUserName|创建人|
+|createTime|创建时间|
+|overdue|是否过期|0 未过期  1 已过期|
+|url|营销图片|起始就是轮播图|
+
+
+#### 2.6 返回示例
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [
+                {
+                    "deleteButton": true // 删除
+                }
             ],
-            buttonPermissions:[
-                        {
-                            deleteButton: false
-                        },
-                        ...
+            "dataSums": null,
+            "datas": [
+                {
+                    "createTime": "2018-09-13 18:25:24",
+                    "createUser": 101,
+                    "createUserName": "樊嘉辉",
+                    "customerRange": "NEW",
+                    "deleteFlg": 0,
+                    "effectEtime": "2018-10-13 08:40:17",
+                    "effectStime": "2018-09-13 08:40:17",
+                    "id": 0,
+                    "name": "1",  
+                    "overdue": 0, 
+                    "type": "COUPON",
+                    "url":"http://....."
+                }
             ],
-            total: 1200 (总条数) - Number,
-            pageNo: 6 (对应的页码) - Number
+            "pageNo": 1,
+            "total": 1
         }
     }
+    
+    
+### YX-4. 营销作废
+#### 4.1 请求URL
+    /v2/market/{id}
 
-### YX-3.获取营销详情
-
-#### 说明
-    根据营销类别的不同返回值也不同，实在太多了，直接调用接口查看各类别对应的返回体结构，但是返回体内的数据在下面文档有说明，请参照
-
-#### 请求url
-    /v2/promo/{id}
-
-#### 请求类型
-    GET
-
-#### 请求参数
-|参数|名称|类型|描述|
-|---|---|---|---|
-|*id|营销id|Number
-
-#### 返回值
-|参数|名称|类型|描述|
-|---|---|---|---|
-|baseInfo|营销基本信息|Object|信息如下|
-|ext|营销扩展信息|Array|信息如下|
-|ranges|营销范围|Array|信息如下|
-|rules|营销规则|Array|信息如下|
-|products|营销产品范围|Array|信息如下|
-
-##### baseInfo 信息
-    {
-        bannerPic: "http://omgzp8h38.bkt.clouddn.com/Fk3FI4W_KrdrTndQ7UPmnoddScln" (banner图url),
-        businessunitRangeType: "ALL" (事业部范围类别 ALL: 全部; PART: 部分事业部),
-        createTime: "2018-08-14 15:27:54" (创建时间),
-        createUserName: "" (创建人名称),
-        customerRangeType: "ALL" (客户范围类别 ALL: 全部; NEW: 新用户),
-        deleteFlg: 0 (0: 有效; 1: 无效),
-        effectEtime: "2018-08-29 23:59:59" (营销结束时间),
-        effectStime: "2018-08-09 00:00:00" (营销开始时间),
-        id: 1 (营销id),
-        name: "满折活动大优惠，你，怕了吗" (营销名称),
-        type: "discount" (营销类别 coupon:领券, gift: 满赠, reduce: 满减, discount: 满折, column: 专栏, special: 专题)
-    }
-
-##### ext 信息
-    [
-        {
-            giveType: "ladder" (类别: ladder: 阶梯, full: 每满), 
-            ruleType: "price" (条件：price: 按价格, count: 按数量)
-        },
-        ...
-    ]
-
-##### ranges 信息
-    [
-        {
-            businessunitId: 1 (事业部id)
-            extInfo: "AN事业部" (事业部名称)
-        },
-        ...
-    ]
-
-##### rules 信息
-    [
-        {
-            actionName: "" (满赠则为赠品名， 其余活动类别用不到此字段，可忽略),
-            actionNum: 0 (执行数量 满赠则为赠品数量，其余活动用不到此字段，可忽略),
-            actionValue: 9.5 (执行值 活动类别为满减，则该值为减金额；满赠则为产品productunit_id；满折则为 折扣比例),
-            guige: "" (满赠则为赠品规格，其余活动类别用不到此字段，可忽略),
-            promoId: 1,
-            targetValue: 100 (目标值，可理解为 “满 1000 减 10” 这里面的 1000 )
-        },
-        ...
-    ]
-
-##### products 信息
-    [
-        {
-            guige: "720g*12袋",
-            name: "海苔贝柱",
-            pno: "0204",
-            productId: 5,
-            productunitId: 14
-        },
-        ...
-    ]
-
-##### coupon 信息
-    {
-        "popPic": "http://omgzp8h38.bkt.clouddn.com/FjIlqIf_XeVSDpR9oV8EDZhmRhKQ" (弹屏图片url),
-        "receiveNumber": 1 (1-仅领一次, 0-用完再领)
-    }
-
-##### images 信息
-    [
-        {
-            "imageUrl": "http://omgzp8h38.bkt.clouddn.com/Fk3FI4W_KrdrTndQ7UPmnoddScln" (图片url)
-        },
-        ...
-    ]
-
-##### rules 信息
-    [
-        {
-            "couponRuleName": "小饺丫（荠菜鱿鱼饺）优惠券" (优惠券名称),
-            "effectEtime": "2018-08-29 23:59:59" (优惠券有效期结束时间),
-            "effectStime": "2018-08-09 00:00:00" (优惠券有效期开始时间),
-            "num": 3 (发放数量),
-        },
-        ...
-    ]
-
-
-#### 请求示例
-    /v2/promo?pageNo=1&pageSize=25&status=&name=
-
-#### 返回示例
-    {
-        code: 0,
-        msg: "",
-        data: {
-            datas: [
-                        {
-                            ...
-                        },
-                        ...
-                    ],
-            total: 1200 (总条数) - Number,
-            pageNo: 6 (对应的页码) - Number
-        }
-    }
-
-### YX-4.作废营销
-
-#### 请求url
-    /v2/promo
-
-#### 请求类型
+#### 4.2 请求类型
     DELETE
 
-#### 请求参数
-|参数|名称|类型|描述|
-|---|---|---|---|
-|*id|营销id|Number
 
-#### 返回值
+#### 4.3 请求参数
 |参数|名称|描述|
 |---|---|---|
-|code|编号|100000：成功；0 ~ 99999：失败|
-|msg|消息|修改成功/异常信息|
-|data|数据|
+|id|营销id|
 
-### YX-5.获取优惠券规则列表
 
-#### 请求url
+#### 4.4 请求示例
+    无
+
+#### 4.5 返回值
+|参数|名称|描述|
+|---|---|---|
+|code|编号|100000成功；0 失败；|
+|msg|消息|异常信息|
+|data|null|
+
+
+#### 4.6 返回示例
+    {
+    	"code": 100000,
+    	"msg": "",
+    	"data": null
+    }
+
+### YX-5 券规列表
+#### 5.1 请求URL
     /v2/coupon/rules
-
-#### 请求类型
+    
+#### 5.2 请求类型
     GET
 
-#### 请求参数
-|参数|名称|类型描述|
-|---|---|---|---|
-|name|优惠券规则名称|String
-|deleteFlg|券规状态|Number|0: 有效; 1: 无效|
-|buttonPermissionFlg|按钮权限|Number|1-查询按钮权限 0-不查询|
+#### 5.3 请求参数
+|参数|名称|描述|
+|---|---|---|
+|name|券规名称|
+|deleteFlg|状态|0 正常 1 作废|
+|buttonPermissionFlg|按钮权限|0 不查询 1 查询|
+|pageNo|页码|默认1|
+|pageSize|页条数|默认25条|
 
-#### 返回值
-##### datas返回值
-|参数|名称|类型|描述|
-|---|---|---|---|
-|id|优惠券规则id|Number|
-|name|券规名称|String|
+#### 5.4 请求示例
+    无
+
+#### 5.5 返回值
+|参数|名称|描述|
+|---|---|---|
+|id|优惠券规则id|
+|name|券规名称|
 |ruleType|满减类别| 'PRICE' 金额 ,'COUNT' 数量|
-|ranges|使用条件|PRODUCT置顶产品  ALL 无限制|
-|deleteFlg|删除标识（状态）|Number|0: 正常; 1: 作废|
-|createUserName|创建人名称|String|
-|createTime|创建时间|String|
-|targetValue|目标值|Number|即满值|
-|actionValue|执行值|Number|即减值|
+|ranges|使用条件|PRODUCT 指定产品  ALL 无限制|
+|deleteFlg|状态|0 正常 1 作废|
+|targetValue|目标值|即满值|
+|actionValue|执行值|即减值|
+|createUserName|创建人名称|
+|createTime|创建时间|
+|rangeValues|产品范围|列表中用到productunitId，去调用产品规格接口|
 
 ##### buttonPermissions返回值
     返回的集合长度和数据集一样，取对应下标数据即可，true 显示；false 不显示
     deleteButton: 作废按钮,
     sendCouponRuleButton: 发送
 
-#### 请求示例
-    /v2/coupon/rules?name=&deleteFlg=
 
-#### 返回值示例
+#### 5.6 返回示例
     {
-        code: 0,
-        msg: "",
-        data: {
-            datas: [
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [
                 {
-                    ...
-                },
-                ...
+                    "deleteButton": true,
+                    "sendCouponRuleButton": true
+                }
             ],
-            buttonPermissions:[
+            "dataSums": null,
+            "datas": [
+                {
+                    "actionValue": 1,
+                    "createRole": 0,
+                    "createTime": "2018-09-14 13:47:58",
+                    "createUser": 0,
+                    "createUserName": "老铁",
+                    "deleteFlg": 0,
+                    "id": 9908,
+                    "material": 0,
+                    "name": "测试名称",
+                    "onlyCode": "",
+                    "rangeValues": [
                         {
-                            deleteButton: false,
-                            sendCouponRuleButton: false
-                        },
-                        ...
+                            "couponId": 9908,
+                            "deleteFlg": 0,
+                            "guige": "1.875kg（25片）/袋*6袋",
+                            "id": 0,
+                            "name": "六和70/80腿肉",
+                            "pno": "LB473",
+                            "productId": 2205,
+                            "productunitId": 3784,
+                            "state": ""
+                        }
+                    ],
+                    "ranges": "PRODUCT",
+                    "rule": "REDUCE",
+                    "ruleType": "COUNT",
+                    "ruleValues": null,
+                    "targetValue": 100
+                }
             ],
-            total: 618 (总条数) - Number,
-            pageNo: 6 (对应页码) - Number
+            "pageNo": 1,
+            "total": 1
         }
     }
 
@@ -496,7 +440,7 @@
 |status|券规状态|Stirng|ASKFOR: 申请, PASS: 通过, REFUSE: 拒绝|
 |pageNo|页码|Number|default-value: 1|
 |pageSize|页面容量|Number|default-value: 25|
-|buttonPermissionFlg|按钮权限|Number|1-查询按钮权限 0-不查询|
+|buttonPermissionFlg|按钮权限|Number|0-查询按钮权限 1-不查询|
 
 ##### buttonPermissions返回值
     返回的集合长度和数据集一样，取对应下标数据即可，true 显示；false 不显示
@@ -635,7 +579,7 @@
 |deleteFlg|客户优惠券状态|Number|0: 有效; 1: 无效
 |pageNo|页码|Number|default-value: 1
 |pageSize|页面容量|Number|default-value: 25
-|buttonPermissionFlg|按钮权限|Number|1-查询按钮权限 0-不查询|
+|buttonPermissionFlg|按钮权限|Number|0-查询按钮权限 1-不查询|
 
 #### 返回值
 ##### datas返回值
@@ -644,7 +588,7 @@
 |id|客户优惠券编号(即id)|Number|
 |ruleName|优惠券名称|String|
 |customerName|客户名称|String|
-|pageName|发放源|String|
+|sourceName|发放源|String|
 |status|优惠券状态|String|NORMAL: 正常; LOCK: 锁定
 |used|优惠券状态|String|YES: 已使用; NO: 未使用
 |effectStime|优惠券开始时间|String|
@@ -724,3 +668,449 @@
 |code|编号|100000：成功；0 ~ 99999：失败|
 |msg|消息|修改成功/异常信息|
 |data|数据|
+
+### YX-16 领券活动详情
+#### 16.1 请求URL
+    /v2/market/coupon/{id}
+#### 16.2 请求类型
+    GET
+#### 16.3 请求参数
+|参数|名称|描述|
+|---|---|---|
+|id|活动id|
+    
+#### 16.4 请求示例
+    无
+
+#### 16.5 返回值
+|参数|名称|描述|
+|---|---|---|
+|createTime|创建时间|
+|createUser|创建人|
+|createUserName|创建人姓名|
+|customerRange|客户类型 all 全部客户 new 新客户|
+|deleteFlg|活动状态|0 正常 1 作废|
+|effectEtime|结束时间|
+|effectStime|开始时间|
+|id|活动ID|
+|marketBusinessunitRanges|事业部范围|
+|marketCouponCondition|领券限制|
+|marketCouponGiveConditions|优惠券限制列表|
+|marketImages|图片列表|
+|name|营销名称|
+|overdue|是否过期|0 未过期  1 已过期|
+|type|营销类型|coupon 领券 gift 满赠 reduce 满减 discount 满折 column 专栏 special 专题|
+
+
+#### 16.6 返回示例
+
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "createTime": "2018-09-13 18:25:24", 
+            "createUser": 101, 
+            "createUserName": "樊嘉辉", 
+            "customerRange": "NEW",
+            "deleteFlg": 0,
+            "effectEtime": "2018-10-13 08:40:17",
+            "effectStime": "2018-09-13 08:40:17",
+            "id": 1,
+            "marketBusinessunitRanges": [
+                {
+                    "extra": "",
+                    "id": 1,
+                    "marketId": 1,
+                    "rangeId": 1, // 事业部id
+                    "type": "BUSINESSUNIT"
+                },
+                {
+                    "extra": "",
+                    "id": 2,
+                    "marketId": 1,
+                    "rangeId": 9,
+                    "type": "BUSINESSUNIT"
+                }
+            ],
+            "marketCouponCondition": {
+                "id": 1,
+                "limitNum": 1, // 1-仅领一次, 0-用完再领
+                "marketId": 1
+            },
+            "marketCouponGiveConditions": [
+                {
+                    "actionValue": 50,
+                    "couponRuleId": 3, // 券规ID
+                    "couponRuleName": "小饺丫（荠菜鱿鱼饺）优惠券",
+                    "effectEtime": "2018-10-13 08:40:17", // 有效结束时间
+                    "effectStime": "2018-09-13 08:40:17", // 有效结束时间
+                    "id": 1,
+                    "marketId": 1,
+                    "num": 1, // 券数量
+                    "targetValue": 50
+                },
+                {
+                    "actionValue": 50,
+                    "couponRuleId": 4,
+                    "couponRuleName": "小饺丫（荠菜鱿鱼饺）优惠券",
+                    "effectEtime": "2018-10-13 08:40:17",
+                    "effectStime": "2018-09-13 08:40:17",
+                    "id": 2,
+                    "marketId": 1,
+                    "num": 2,
+                    "targetValue": 50
+                }
+            ],
+            "marketImages": [
+                {
+                    "id": 1,
+                    "marketId": 1,
+                    "picUrl": "http://ad.asagroup.cn/asae-h5/v2/activity/index/1200",
+                    "position": "NOLIMIT", // nolimit 无限制 top 上部图 middle 中间图 bottom 底部图
+                    "type": "BANNER" // banner 轮播图 popup 弹屏图 detail 详情图
+                },
+                {
+                    "id": 2,
+                    "marketId": 1,
+                    "picUrl": "http://ad.asagroup.cn/asae-h5/v2/activity/index/1200",
+                    "position": "NOLIMIT",
+                    "type": "POPUP"
+                },
+                {
+                    "id": 3,
+                    "marketId": 1,
+                    "picUrl": "http://ad.asagroup.cn/asae-h5/v2/activity/index/1200",
+                    "position": "TOP",
+                    "type": "DETAIL"
+                },
+                {
+                    "id": 4,
+                    "marketId": 1,
+                    "picUrl": "http://ad.asagroup.cn/asae-h5/v2/activity/index/1200",
+                    "position": "MIDDLE",
+                    "type": "DETAIL"
+                },
+                {
+                    "id": 5,
+                    "marketId": 1,
+                    "picUrl": "http://ad.asagroup.cn/asae-h5/v2/activity/index/1200",
+                    "position": "BOTTOM",
+                    "type": "DETAIL"
+                }
+            ],
+            "name": "领券活动名称", 
+            "overdue": 0,
+            "type": "COUPON"
+        }
+    }
+
+
+### YX-17 满赠、满减、满折活动详情
+#### 17.1 请求URL
+    /v2/market/full/{id}
+#### 17.2 请求类型
+    GET
+#### 17.3 请求参数
+|参数|名称|描述|
+|---|---|---|
+|id|活动id|
+
+#### 17.4 请求示例
+    无
+
+#### 17.5 返回值
+|参数|名称|描述|
+|---|---|---|
+|createTime|创建时间|
+|createUser|创建人|
+|createUserName|创建人姓名|
+|customerRange|客户类型 all 全部客户 new 新客户|
+|deleteFlg|活动状态|0 正常 1 作废|
+|effectEtime|结束时间|
+|effectStime|开始时间|
+|id|活动ID|
+|marketBusinessunitRanges|事业部范围|
+|marketActiveCondition|满赠、减条件、满赠类别|
+|marketActiveGiveConditions|满赠、满减、满折规则|
+|marketImages|图片列表|
+|marketProductRanges|产品限制|
+|name|营销名称|
+|overdue|是否过期|0 未过期  1 已过期|
+|type|营销类型|coupon 领券 gift 满赠 reduce 满减 discount 满折 column 专栏 special 专题|
+
+#### 17.6 返回示例
+    
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "createTime": "2018-09-13 18:58:41",
+            "createUser": 101,
+            "createUserName": "樊嘉辉",
+            "customerRange": "ALL",
+            "deleteFlg": 0,
+            "effectEtime": "2018-10-13 08:40:17",
+            "effectStime": "2018-09-13 08:40:17",
+            "id": 6,
+            "marketActiveCondition": {
+                "accumulative": "LADDER",
+                "id": 5,
+                "marketId": 6,
+                "unit": "COUNT"
+            },
+            "marketActiveGiveConditions": [
+                {
+                    "actionValue": 2,
+                    "extra": "4151:7380",
+                    "id": 9,
+                    "marketId": 6,
+                    "targetValue": 100
+                },
+                {
+                    "actionValue": 5,
+                    "extra": "4151:7380",
+                    "id": 10,
+                    "marketId": 6,
+                    "targetValue": 200
+                }
+            ],
+            "marketBusinessunitRanges": [
+                {
+                    "extra": "",
+                    "id": 19,
+                    "marketId": 6,
+                    "rangeId": 3,
+                    "type": "BUSINESSUNIT"
+                },
+                {
+                    "extra": "",
+                    "id": 20,
+                    "marketId": 6,
+                    "rangeId": 16,
+                    "type": "BUSINESSUNIT"
+                }
+            ],
+            "marketImages": [
+                {
+                    "id": 6,
+                    "marketId": 6,
+                    "picUrl": "http://ad.asagroup.cn/asae-h5/v2/activity/index/1200", // 轮播图URL
+                    "position": "NOLIMIT", // 位置无限制
+                    "type": "BANNER" // 轮播图
+                }
+            ],
+            "marketProductRanges": [
+                {
+                    "extra": "",
+                    "id": 21,
+                    "marketId": 6,
+                    "rangeId": 7383, // 产品ID
+                    "type": "PRODUCTUNIT"
+                },
+                {
+                    "extra": "",
+                    "id": 22,
+                    "marketId": 6,
+                    "rangeId": 7382,
+                    "type": "PRODUCTUNIT"
+                }
+            ],
+            "name": "满赠活动名称",
+            "overdue": 0,
+            "type": "GIFT"
+        }
+    }
+
+
+
+
+### YX-18 专栏活动详情
+#### 18.1 请求URL
+    /v2/market/column/{id}
+#### 18.2 请求类型
+    GET
+#### 18.3 请求参数
+|参数|名称|描述|
+|---|---|---|
+|id|活动id|
+
+#### 18.4 请求示例
+    无
+
+#### 18.5 返回值
+|参数|名称|描述|
+|---|---|---|
+|createTime|创建时间|
+|createUser|创建人|
+|createUserName|创建人姓名|
+|customerRange|客户类型 all 全部客户 new 新客户|
+|deleteFlg|活动状态|0 正常 1 作废|
+|effectEtime|结束时间|
+|effectStime|开始时间|
+|id|活动ID|
+|marketBusinessunitRanges|事业部范围|
+|marketImages|图片列表|
+|marketProductRanges|产品限制|
+|name|营销名称|
+|overdue|是否过期|0 未过期  1 已过期|
+|type|营销类型|coupon 领券 gift 满赠 reduce 满减 discount 满折 column 专栏 special 专题|
+
+#### 18.6 返回示例
+    
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "createTime": "2018-09-13 19:01:23",
+            "createUser": 101,
+            "createUserName": "樊嘉辉",
+            "customerRange": "ALL",
+            "deleteFlg": 0,
+            "effectEtime": "2018-10-13 08:40:17",
+            "effectStime": "2018-09-13 08:40:17",
+            "id": 7,
+            "marketBusinessunitRanges": [
+                {
+                    "extra": "",
+                    "id": 23,
+                    "marketId": 7,
+                    "rangeId": 3, // 事业部id
+                    "type": "BUSINESSUNIT"
+                },
+                {
+                    "extra": "",
+                    "id": 24,
+                    "marketId": 7,
+                    "rangeId": 16,
+                    "type": "BUSINESSUNIT"
+                }
+            ],
+            "marketImages": [
+                {
+                    "id": 11,
+                    "marketId": 7,
+                    "picUrl": "http://ad.asagroup.cn/asae-h5/v2/activity/index/1200", // 轮播图URL
+                    "position": "NOLIMIT", // 位置 无限制
+                    "type": "BANNER" // 轮播图
+                }
+            ],
+            "marketProductRanges": [
+                {
+                    "extra": "",
+                    "id": 25,
+                    "marketId": 7,
+                    "rangeId": 7383, // 产品规格ID
+                    "type": "PRODUCTUNIT"
+                },
+                {
+                    "extra": "",
+                    "id": 26,
+                    "marketId": 7,
+                    "rangeId": 7382,
+                    "type": "PRODUCTUNIT"
+                }
+            ],
+            "name": "专栏活动名称",
+            "overdue": 0,
+            "type": "COLUMN"
+        }
+    }
+
+
+
+### YX-19 专题活动详情
+#### 19.1 请求URL
+    /v2/market/special/{id}
+#### 19.2 请求类型
+    GET
+#### 19.3 请求参数
+|参数|名称|描述|
+|---|---|---|
+|id|活动id|
+
+#### 19.4 请求示例
+    无
+
+#### 19.5 返回值
+|参数|名称|描述|
+|---|---|---|
+|createTime|创建时间|
+|createUser|创建人|
+|createUserName|创建人姓名|
+|customerRange|客户类型 all 全部客户 new 新客户|
+|deleteFlg|活动状态|0 正常 1 作废|
+|effectEtime|结束时间|
+|effectStime|开始时间|
+|id|活动ID|
+|marketBusinessunitRanges|事业部范围|
+|marketImages|图片列表|
+|name|营销名称|
+|overdue|是否过期|0 未过期  1 已过期|
+|type|营销类型|coupon 领券 gift 满赠 reduce 满减 discount 满折 column 专栏 special 专题|
+
+#### 19.6 返回示例
+    
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "createTime": "2018-09-13 19:03:14",
+            "createUser": 101,
+            "createUserName": "樊嘉辉",
+            "customerRange": "ALL",
+            "deleteFlg": 0,
+            "effectEtime": "2018-10-13 08:40:17",
+            "effectStime": "2018-09-13 08:40:17",
+            "id": 8,
+            "marketBusinessunitRanges": [
+                {
+                    "extra": "",
+                    "id": 27,
+                    "marketId": 8,
+                    "rangeId": 3, // 事业部id
+                    "type": "BUSINESSUNIT"
+                },
+                {
+                    "extra": "",
+                    "id": 28,
+                    "marketId": 8,
+                    "rangeId": 16,
+                    "type": "BUSINESSUNIT"
+                }
+            ],
+            "marketImages": [
+                {
+                    "id": 16,
+                    "marketId": 8,
+                    "picUrl": "http://ad.asagroup.cn/asae-h5/v2/activity/index/1200",
+                    "position": "NOLIMIT", // 位置无限制
+                    "type": "BANNER" // 轮播图
+                },
+                {
+                    "id": 18,
+                    "marketId": 8,
+                    "picUrl": "http://ad.asagroup.cn/asae-h5/v2/activity/index/1200",
+                    "position": "NOLIMIT",
+                    "type": "DETAIL" // 详情图
+                },
+                {
+                    "id": 19,
+                    "marketId": 8,
+                    "picUrl": "http://ad.asagroup.cn/asae-h5/v2/activity/index/1200",
+                    "position": "NOLIMIT",
+                    "type": "DETAIL"
+                },
+                {
+                    "id": 20,
+                    "marketId": 8,
+                    "picUrl": "http://ad.asagroup.cn/asae-h5/v2/activity/index/1200",
+                    "position": "NOLIMIT",
+                    "type": "DETAIL"
+                }
+            ],
+            "name": "专题活动名称",
+            "overdue": 0,
+            "type": "SPECIAL"
+        }
+    }
+
