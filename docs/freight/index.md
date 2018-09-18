@@ -142,7 +142,7 @@
 
 
 
-### YF-4. 删除运费规则
+### YF-4. 删除运费规则（作废）
 
 #### 4.1 请求URL
     /v2/freight/{id}
@@ -531,6 +531,11 @@
 |total|条数|
 |pageNo|页码|
 
+#### 权限按钮
+    passButton： 通过按钮
+    refuseButton： 拒绝按钮
+    logBtton： 日志查看
+
 #### 11.6 返回示例
     {
         "code":100000,
@@ -538,7 +543,8 @@
         "data":{
             "buttonPermissions": [
                 {
-                    "checkButton": false, // 审核
+                    "passButton：": false,
+                    "refuseButton"： false,
                     "logButton": true // 操作日志
                 }
             ],
@@ -649,5 +655,44 @@
             ],
             "pageNo":1,
             "total":1
+        }
+    }
+
+
+### YF-13. 获取订单详情（免运费审核点击订单号）
+
+#### 请求URL
+    /v2/order/sa/{orderId}
+
+#### 请求类型
+    GET
+
+#### 请求参数
+|参数|名称|描述|
+|---|---|---|
+|orderId|订单ID|必（直接拼在url即可 不用放在"?" 后面再传一遍）|
+
+#### 请求示例
+    无
+
+#### 返回值
+|参数|名称|描述|
+|---|---|---|
+|jian|件数||
+|bulk|散数||
+|totalprice|订单金额||
+|cusotmerName|客户名||
+|fromDepotName|出库仓名称||
+
+#### 返回示例
+    {
+        "code":100000,
+        "msg":"",
+        "data":{
+            "jian": 10,
+            "bulk": 0,
+            "totalprice": 4640,
+            "customerName": "557",
+            "fromDepotName": ""
         }
     }

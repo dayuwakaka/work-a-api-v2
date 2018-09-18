@@ -12,7 +12,7 @@
 |参数|名称|描述|
 |---|---|---|
 |keyword|产品名称/产品号|
-|status|状态|normal 正常 lock 锁定|
+|status|状态|NORMAL 正常 LOCK 锁定 ALL 全部|
 |pageNum|页码|默认1|
 |pageSize|页条数|默认25|
 

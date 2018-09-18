@@ -17,8 +17,8 @@
 |*contractType|合同类别|String|ALONE-独立合同，SHARE-共享合同，CONTINUE-续接合同，P2P-P2P合同
 |*customerIds|客户ids|String|合同主体客户id排在第一位，其余依次排列
 |*details|合同四个季度及年度明细|Array|[{<br/>rebateNode:"FIRST",<br/>rebateRate:0,<br/>salesPlan:0,<br/>startDate:"2018-03-01 00:00:00",<br/>endDate:"2018-05-31 23:59:59"<br/>},<br/>...]<br/> rebateNode: 返利节点（FIRST、SECOND、THIRD、FOURTH、YEAR），<br/>rebateRate:返点率（0~100），<br/>salesPlan: 目标，<br/>startDate:开始日期时间 日期是客户所选，时间是固定在后面加00:00:00，<br/>endDate:结束日期时间 日期是客户所选 时间是固定在后面加23:59:59
-|*startDate|合同开始日期|String|日期是客户所选，时间是固定在后面加00:00:00
-|*endDate|合同结束日期|String|日期是客户所选，时间是固定在后面加23:59:59
+|*startDate|合同开始日期|String|日期是客户所选，时间是固定在后面加00:00:00 （年度起始时间）
+|*endDate|合同结束日期|String|日期是客户所选，时间是固定在后面加23:59:59 （年度结束时间）
 |*formalUrl|合同扫描件URL|String|多张合同附件URL以','相隔
 |*subjectName|合同主体名称|String
 |remarks|备注|String|200字符以内|
@@ -92,7 +92,10 @@
     返回的集合长度和数据集一样，取对应下标数据即可，true 显示；false 不显示
     deleteButton: 删除按钮 ,
     changeRegularButton: 转正式,
-    approvalButton: 审批,
+    changeRegularPassButton： 通过 转正式 按钮,
+    changeRegularRefuseButton:  拒绝 转正式 按钮,
+    cancelPassButton:  通过 作废申请 按钮,
+    cancelRefuseButton: 拒绝 作废申请 按钮,
     cancelButton: 作废,
     detailButton: 详情查看按钮
 
@@ -1103,6 +1106,8 @@
 
 #### 请求url
     /v2/contract/alone/{contractNum}
+    独立合同 - alone
+    P2P合同 - p2p
 
 #### 请求类型
     GET
@@ -1176,10 +1181,7 @@
         "status": "FORMAL", // 合同状态 DRAFT：草稿;ASKFOR：转正式待审核;FORMAL：正式;CANCELASKFOR：作废待审核;CANCEL：已作废;INVALID:过期
         "customerName": "815", // 合同主体客户名
         "customerNameList": [ // 共享对象客户名
-            {
-                "companyName": "3883", (客户名称) - String
-                "id": 3883 (客户编号) - Number
-            }
+            "渭南水产品","民勤食品大海鲜"
         ],
         "details": [
             {
@@ -1239,10 +1241,7 @@
         "newCustomerName": "30841", // 续接客户名称
         "oldCustomerName": "27426", // 被续接客户名称
         "customerNameList": [ // 如果为空则不必显示，不为空则为共享对象客户名
-            {
-                "companyName": "3883", (客户名称) - String
-                "id": 3883 (客户编号) - Number
-            }
+            "渭南水产品","民勤食品大海鲜"
         ],
         "details": [
             {

@@ -1,36 +1,20 @@
 ## 权限接口
-
 ### QX-1. 开户
 
-#### 1.1 请求URL
-    /v2/userpower
+#### 请求
 
-#### 1.2 请求类型
-    POST
+    POST    /v2/userpower
+    
+#### 参数
 
-#### 1.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|id|用户id|必|
-|workno|用户编号|必|
-|mobile|用户手机号|
-
-#### 1.4 请求示例
     {
-    	"id":517,
-    	"workno":"0517",
-    	"mobile":"18666664848"
+    	"id":517,               // * 用户id
+    	"workno":"0517",        // * 工号
+    	"mobile":"18666664848" // * 手机号
     }
 
-#### 1.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|code|编号|100000成功；0 失败；|
-|msg|消息|异常信息|
-|data|null|
+#### 响应
 
-
-#### 1.6 返回示例
     {
     	"code": 100000,
     	"msg": "",
@@ -40,304 +24,126 @@
 
 ### QX-2. 锁定、解锁
 
-#### 2.1 请求URL
-    /v2/userpower/{id}
+#### 请求
 
-#### 2.2 请求类型
-    PUT
+    PUT     /v2/userpower/{id}
+    
+#### 参数
 
-#### 2.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|id|用户id|
-|oper|操作标志|lock 锁定； normal 解锁|
-
-
-
-#### 2.4 请求示例
+    id // * 用户id
     {
-    	"oper": "lock"
+        "status": "lock" // * lock 锁定 normal 解锁
     }
 
+#### 响应
 
-#### 2.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|code|编号|100000成功；0 失败；|
-|msg|消息|异常信息|
-|data|null|
-
-
-#### 2.6 返回示例
     {
     	"code": 100000,
     	"msg": "",
     	"data": null
     }
-
 
 
 ### QX-3. 用户权限列表
+#### 请求
 
-#### 3.1 请求URL
-    /v2/userpower
+    GET     /v2/userpower
 
-#### 3.2 请求类型
-    GET
+#### 参数
 
-#### 3.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|workno|工号|
-|fullname|全名|
-|mobile|手机号|
-|sys|菜单所属系统|a A网 sta 统计|
-|menuid|菜单id|
-|buttonPermissionFlg|0 获取按钮权限 默认1不获取|
-|pageNo|页码|默认1|
-|pageSize|页条数|默认25|
+    keyword // 用户名/手机号
+    status // 状态
+    buttonPermissionFlg // 0 不查询按钮权限 1 查询
+    pageNo  // 页码
+    pageSize // 页条数
 
-#### 3.4 请求示例
-    无
+#### 响应
 
-
-#### 3.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|id|用户id|
-|workno|工号|
-|oper|操作标志|用不到|
-|fullname|姓名|
-|mobile|手机号|
-|email|邮箱|
-|status|状态|normal 正常 lock 锁定|
-|passwordBlake2|用不到|
-|passwordMd5|用不到|
-|createTime|创建时间|
-|modifyTime|修改时间|
-|authDataPowers|数据权限列表|
-|-> rid|数据权限编号|
-|-> name|数据权限名称|
-|authMenuPowers|功能权限列表|
-|-> gid|功能权限编号|
-|-> name|功能权限名称|
-
-
-#### 3.6 返回示例
     {
-        "code":100000,
-        "msg":"",
-        "data":{
+        "code": 100000,
+        "msg": "",
+        "data": {
             "buttonPermissions": [
                 {
-                    "bindDataPower": true, // 编订数据权限
+                    "bindDataPower": true,  // 绑定数据权限
                     "lockButton": true, // 锁定
-                    "unlockButton": false, // 解锁
-                    "newAccountButton": false, // 开户
-                    "reset": true, // 重置密码
-                    "bindMenuPower": true // 绑定功能权限
+                    "unlockButton": false,  // 解锁
+                    "newAccountButton": false,  开户
+                    "reset": true,  // 重置密码
+                    "bindMenuPower": true   绑定功能权限
                 }
             ],
-            "dataSums":null,
-            "datas":[
+            "dataSums": null,
+            "datas": [
                 {
-                    "id":275,
-                    "workno":"0289",
-                    "oper":"",
-                    "fullname":"刘子阳",
-                    "mobile":"13591807386",
-                    "email":"",
-                    "status":"normal",
-                    "passwordBlake2":"",
-                    "passwordMd5":"",
-                    "createTime":"",
-                    "modifyTime":"",
-                    "authDataPowers":[
+                    "authDataPowers": [
                         {
-                            "uid":233,
-                            "rid":5962,
-                            "name":"刘子阳",
-                            "deleteFlg":0,
-                            "gid":51,
-                            "createTime":"",
-                            "modifyTime":""
+                            "gid": 0,
+                            "gname": "",    
+                            "rid": 1,   // 数据权限编号
+                            "rname": "",    // 数据权限名称
+                            "uid": 101
                         }
                     ],
-                    "authMenuPowers":[
+                    "authMenuPowers": [
                         {
-                            "uid":233,
-                            "id":0,
-                            "gid":50,
-                            "name":"销售代表",
-                            "status":"",
-                            "sys":"a",
-                            "createTime":""
-                        },
-                        {
-                            "uid":233,
-                            "id":0,
-                            "gid":50,
-                            "name":"SR",
-                            "status":"",
-                            "sys":"sta",
-                            "createTime":""
+                            "createTime": "",
+                            "gid": 11,  // 功能权限编号
+                            "id": 1,
+                            "isAuto": 0,
+                            "menuIds": null,
+                            "name": "系统管理员",   // 功能权限名称
+                            "remark": "",
+                            "status": "",
+                            "sys": "a",
+                            "uid": 101
                         }
-                    ]
+                    ],
+                    "fullname": "樊嘉辉",   // 用户名
+                    "id": 101,  // 用户ID
+                    "isOpen": "1",  
+                    "mobile": "13478445016",    // 手机号
+                    "status": "normal", // 状态
+                    "workno": "0101"    // 工号
                 }
             ],
-            "pageNo":1,
-            "total":1
+            "pageNo": 1,
+            "total": 1
         }
     }
+   
+### QX-4. 重置密码
+#### 请求
 
-### QX-4. 获取用户已分配功能权限列表
+    PUT     /v2/userpower/reset/{id}
 
-#### 4.1 请求URL
-    /v2/userpower/menupower
-
-#### 4.2 请求类型
-    GET
-
-#### 4.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|uid|用户id|必|
-|sys|所属系统|
-|gid|功能权限编号|
-|name|功能权限名称|
-|pageNo|页码|默认1|
-|pageSize|页大小|默认25|
-
-#### 4.4 请求示例
-    无
-
-#### 4.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|uid|用户id|
-|id|权限ID|
-|gid|权限编号|
-|name|权限名称|
-|sys|所属系统|
-
-
-#### 4.6 返回示例
-    {
-        "code":100000,
-        "msg":"",
-        "data":{
-            "dataSums":null,
-            "datas":[
-                {
-                "uid":11,
-                "id":52,
-                "gid":1533,
-                "name":"供应商管理",
-                "status":"",
-                "sys":"a",
-                "createTime":"",
-                }
-            ],
-            "pageNo":1,
-            "total":1
-        }
-    }
-
+#### 参数
     
-### QX-5. 获取用户已分配数据权限列表
+    id // * 用户id
 
-#### 5.1 请求URL
-    /v2/userpower/datapower
+#### 响应
 
-#### 5.2 请求类型
-    GET
-
-#### 5.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|uid|用户id|必|
-|rid|数据权限id|
-|name|数据权限名称|
-|pageNo|页码|默认1|
-|pageSize|每页条数|默认25|
-
-#### 5.4 请求示例
-    无
-
-#### 5.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|uid|用户id|
-|gid|功能权限编号|
-|rid|数据权限编号|
-|name|数据权限名称|
-
-
-#### 5.6 返回示例
     {
-        "code":100000,
-        "msg":"",
-        "data":{
-            "dataSums":null,
-            "datas":[
-                {
-                    "uid":11,
-                    "rid":71,
-                    "gid":41,
-                    "name":"大牛",
-                    "deleteflg":0,
-                    "createTime":"",
-                    "modifyTime":""
-                },
-                {
-                    "uid":11,
-                    "rid":70,
-                    "gid":41,
-                    "name":"小刘",
-                    "deleteflg":0,
-                    "createTime":"",
-                    "modifyTime":""
-                }
-            ],
-            "pageNo":1,
-            "total":2
-        }
+    	"code": 100000,
+    	"msg": "",
+    	"data": null
     }
 
 
+### QX-5. 用户分配功能权限
+#### 请求
 
+    POST    /v2/userpower/menupower
 
-### QX-6. 用户分配功能权限
-
-#### 6.1 请求URL
-    /v2/userpower/menupower
-
-#### 6.2 请求类型
-    POST
-
-#### 6.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|id|用户id|必|
-|gid|功能权限编号|必|
-|sys|功能权限所属系统|必|
-
-#### 6.4 请求示例
+#### 参数
+    
     {
-        "id":517,
-        "gid":21,
-        "sys":"a"
+        "uid":101,  // * 用户id
+        "gid":82    // * 功能权限id
     }
 
-#### 6.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|code|编号|100000成功；0 失败；|
-|msg|消息|异常信息|
-|data|null|
+#### 响应
 
-
-#### 6.6 返回示例
     {
     	"code": 100000,
     	"msg": "",
@@ -345,37 +151,20 @@
     }
     
 
-### QX-7. 用户取消分配功能权限
+### QX-6. 用户取消分配功能权限
+#### 请求
 
-#### 7.1 请求URL
-    /v2/userpower/menupower/{id}
+    PUT     /v2/userpower/menupower/{id}
 
-#### 7.2 请求类型
-    PUT
-
-#### 7.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|id|菜单id|必|
-|gid|功能权限编号|必|
-|sys|功能权限所属系统|必|
-
-#### 7.4 请求示例
+#### 参数
+    
+    id // * 用户id
     {
-        
-        "gid":21,
-        "sys":"a"
+        "gid":82    // * 功能权限id
     }
 
-#### 7.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|code|编号|100000成功；0 失败；|
-|msg|消息|异常信息|
-|data|null|
+#### 响应
 
-
-#### 7.6 返回示例
     {
     	"code": 100000,
     	"msg": "",
@@ -383,37 +172,20 @@
     } 
     
     
+### QX-7. 用户分配数据权限
+#### 请求
 
+    POST    /v2/userpower/datapower
 
-### QX-8. 用户分配数据权限
+#### 参数
 
-#### 8.1 请求URL
-    /v2/userpower/datapower
-
-#### 8.2 请求类型
-    POST
-
-#### 8.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|id|用户id|必|
-|rid|数据权限编号|必|
-
-#### 8.4 请求示例
     {
-        "id":517,
-        "rid":23
+        "uid":101, // * 用户id
+        "rid":82    // * 数据权限id
     }
 
-#### 8.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|code|编号|100000成功；0 失败；|
-|msg|消息|异常信息|
-|data|null|
+#### 响应
 
-
-#### 8.6 返回示例
     {
     	"code": 100000,
     	"msg": "",
@@ -421,438 +193,318 @@
     }
     
 
-### QX-9. 用户取消分配数据权限
+### QX-8. 用户取消分配数据权限
+#### 请求
 
-#### 9.1 请求URL
-    /v2/userpower/datapower/{id}
+    PUT     /v2/userpower/datapower/{id}
 
-#### 9.2 请求类型
-    PUT
-
-#### 9.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|id|用户id|必|
-|rid|数据权限编号|必|
-
-#### 9.4 请求示例
+#### 参数
+    
+    id // * 用户id
     {
-        "rid":23
+        "rid":82    // * 数据权限id
     }
 
-#### 9.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|code|编号|100000成功；0 失败；|
-|msg|消息|异常信息|
-|data|null|
+#### 响应
 
-
-#### 9.6 返回示例
     {
     	"code": 100000,
     	"msg": "",
     	"data": null
     }    
     
+ 
+
+### QX-9. 功能权限新增
+#### 请求
+
+    POST /v2/menupower
+
+#### 参数
+
+    {
+    	"name":"测试权限",  // * 权限名称
+    	"isAuto":1,         // * 0 非自动生成编号 1 自动生成编号
+    	"gid": 250,         // 权限编号，isAuto=0时，必选
+    	"remark":"备注",    // 备注
+    	"menuIds":[3,5,11]  // 菜单id列表
+    }
+
+#### 响应
+
+    {
+    	"code": 100000,
+    	"msg": "",
+    	"data": null
+    }
+
+
+### QX-10. 功能权限修改
+#### 请求
+
+    PUT /v2/menupower/{id}
+
+#### 参数
+
+    id // * 权限id
+    {
+    	"name":"测试权限",  //  权限名称
+    	"remark":"备注",    // 备注
+    	"gid": 250,         // * 权限编号
+    	"menuIds":[3,5,11]  // 菜单id列表
+    }
     
-### QX-10. 重置密码
+#### 响应
 
-#### 10.1 请求URL
-    /v2/userpower/reset/{id}
+    {
+    	"code": 100000,
+    	"msg": "",
+    	"data": null
+    }
+    
+### QX-11. 功能权限的锁定、解锁  
+#### 请求
 
-#### 10.2 请求类型
-    PUT
+    PUT /v2/menupower/status/{id}
+    
+#### 参数
 
-#### 10.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|id|用户id|
+    id  // * 权限id
+    {
+        "status":"lock" // * lock 锁定 normal 解锁
+    }
 
+#### 响应
 
-
-#### 10.4 请求示例
-    无
-
-
-#### 10.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|code|编号|100000成功；0 失败；|
-|msg|消息|异常信息|
-|data|null|
-
-
-#### 10.6 返回示例
     {
     	"code": 100000,
     	"msg": "",
     	"data": null
     }
 
+### QX-12. 功能权限列表
 
+#### 请求
 
-### QX-11. 新增功能权限
+    GET /v2/menupower
 
-#### 11.1 请求URL
-    /v2/menupower
+#### 参数
 
-#### 11.2 请求类型
-    POST
+    keyword // 权限编号/权限名称
+    status  // 状态 lock 锁定 normal 解锁
+    uid // 用户id，结合asigned使用
+    asigned // yes 已绑定用户的列表 no 未绑定用户列表
+    buttonPermissionFlg // 0 不查询按钮权限 1 查询
+    pageNo  // 页码
+    pageSize    // 页条数
 
-#### 11.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|sys|所属系统|必|
-|gid|权限编号|必|
-|name|权限名称|必|
+#### 响应
 
-#### 11.4 请求示例
     {
-    	"sys": "a",
-    	"gid": 250,
-    	"name":"测试权限"
-    }
-
-#### 11.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|code|编号|100000成功；0 失败；|
-|msg|消息|异常信息|
-|data|null|
-
-
-#### 11.6 返回示例
-    {
-    	"code": 100000,
-    	"msg": "",
-    	"data": null
-    }
-
-
-### QX-12. 修改功能权限
-
-#### 12.1 请求URL
-    /v2/menupower/{id}
-
-#### 12.2 请求类型
-    PUT
-
-#### 12.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|id|权限id|
-|sys|所属系统|
-|gid|权限编号|
-|name|权限名称|
-|status|状态|normal 正常；lock 锁定|
-
-
-
-#### 12.4 请求示例
-    {
-    	"sys": "a",
-    	"gid": 250,
-    	"name":"修改测试权限",
-    	"status":"lock"
-    }
-
-
-#### 12.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|code|编号|100000成功；0 失败；|
-|msg|消息|异常信息|
-|data|null|
-
-
-#### 12.6 返回示例
-    {
-    	"code": 100000,
-    	"msg": "",
-    	"data": null
-    }
-
-
-
-### QX-13. 功能权限管理列表/未分配功能权限列表
-
-#### 13.1 请求URL
-    /v2/menupower
-
-#### 13.2 请求类型
-    GET
-
-#### 13.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|sys|所属系统| a A网；sta 统计系统|
-|gid|功能权限编号|
-|name|功能权限名称|
-|status|状态|normal 正常； lock 锁定|
-|buttonPermissionFlg|0 获取按钮权限 默认1不获取|
-|asigned|传 no |获取用户未分配功能权限使用|
-|uid|用户id|获取用户未分配功能权限使用|
-|pageNo|页码|默认1|
-|pageSize|页条数|默认25|
-
-#### 13.4 请求示例
-    无
-
-
-#### 13.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|id|功能权限ID||
-|gid|功能权限编号|
-|name|功能权限名称|
-|sys|所属系统| a A网；sta 统计系统|
-|status|状态|normal 正常；lock 锁定|
-|createTime|创建时间|
-
-
-#### 13.6 返回示例
-    {
-        "code":100000,
-        "msg":"",
-        "data":{
+        "code": 100000,
+        "msg": "",
+        "data": {
             "buttonPermissions": [
                 {
-                    "lockButton": false, // 锁定
-                    "unlockButton": true, // 解锁
-                    "editButton": true, // 编辑
-                    "bindButton": false // 绑定菜单
+                    "lockButton": false,    // 锁定
+                    "unlockButton": true,   // 解锁
+                    "editButton": true,     // 编辑
                 }
             ],
-            "dataSums":null,
-            "datas":[
+            "dataSums": null,
+            "datas": [
                 {
-                    "uid":0,
-                    "id":18,
-                    "gid":42,
-                    "name":"客服",
-                    "sys":"a",
-                    "status":"lock",
-                    "createTime":""
+                    "createTime": "",
+                    "gid": 1112,    // 权限编号
+                    "id": 37,   // 权限id
+                    "isAuto": 0,
+                    "menuIds": null,
+                    "name": "测试权限新增0",    // 权限名称
+                    "remark": "",
+                    "status": "lock",   // lock 锁定 normal 正常
+                    "sys": "a",
+                    "uid": 0
                 }
             ],
-            "pageNo":1,
-            "total":1
+            "pageNo": 1,
+            "total": 1
         }
     }
+    
+### QX-13. 功能权限详情
+#### 请求
 
-### QX-14. 功能权限详情
+    GET /v2/menupower/detail
 
-#### 14.1 请求URL
-    /v2/menupower/detail
+#### 参数
 
-#### 14.2 请求类型
-    GET
+    id  // * 权限id
 
-#### 14.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|id|权限ID|必|
+#### 响应
 
-#### 14.4 请求示例
-    无
-
-#### 14.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|id|权限ID|
-|gid|权限编号|
-|name|权限名称|
-|sys|所属系统|
-|status|状态|normal 正常；lock 锁定|
-|createTime|创建时间|
-
-
-#### 14.6 返回示例
     {
-        "code":100000,
-        "msg":"",
-        "data":{
-            "uid":0,
-            "id":18,
-            "gid":42,
-            "name":"客服",
-            "sys":"a",
-            "status":"normal",
-            "createTime":""
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "createTime": "",
+            "gid": 42,  // 功能权限编号
+            "id": 18,
+            "isAuto": 0,
+            "menuIds": [    // 已绑定菜单列表
+                37,
+                55,
+                60
+            ],
+            "name": "客服", // 功能权限名称
+            "remark": "",   // 备注
+            "status": "normal",
+            "sys": "a",
+            "uid": 0
         }
     }
 
     
-### QX-15. 获取功能权限已绑定的菜单列表
+### QX-14. 数据权限新增
+#### 请求
 
-#### 15.1 请求URL
-    /v2/menupower/binding
+    POST /v2/datapower
 
-#### 15.2 请求类型
-    GET
+#### 参数
 
-#### 15.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|gid|权限编号|必|
-|sys|所属系统|必|
-|pid|上级菜单ID|
-|menuid|菜单编号|
-|name|菜单名称|
-|pageNo|页码|默认1|
-|pageSize|每页条数|默认25|
-
-#### 15.4 请求示例
-    无
-
-#### 15.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|gid|功能权限编号|
-|id|菜单编号|
-|sys|所属系统|
-|name|菜单名称|
-|level|菜单等级|
-
-
-#### 15.6 返回示例
     {
-        "code":100000,
-        "msg":"",
-        "data":{
-            "dataSums":null,
-            "datas":[
+        "name":"陆贞逸",  // * 数据权限名称
+        "gid":42    // * 功能权限编号
+    }
+
+#### 响应
+
+    {
+    	"code": 100000,
+    	"msg": "",
+    	"data": null
+    }
+
+
+### QX-15. 数据权限修改
+#### 请求
+
+    PUT /v2/datapower/{id}
+
+#### 参数
+
+    id // * 数据权限id
+    {
+        "name":"陆贞逸",    // 数据权限名称
+        "gid":42    // 功能权限编号
+    }
+
+
+#### 响应
+
+    {
+    	"code": 100000,
+    	"msg": "",
+    	"data": null
+    }
+
+
+### QX-16. 数据权限删除
+
+#### 请求
+
+    DELETE  /v2/datapower/{id}
+
+#### 参数
+
+    id // * 数据权限id
+
+#### 响应
+
+    {
+    	"code": 100000,
+    	"msg": "",
+    	"data": null
+    }
+
+
+
+### QX-17. 数据权限列表
+#### 请求
+
+    GET /v2/datapower
+
+#### 参数
+
+    keyword // 权限编号/权限名称
+    uid     // 用户id，结合asigned使用
+    asigned // yes 用户已分配的权限列表 no 用户未分配的权限列表
+    pageNo  // 页码
+    pageSize    // 页条数
+
+#### 响应
+
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": null,
+            "dataSums": null,
+            "datas": [
                 {
-                    "gid":11,
-                    "id":213,
-                    "sys":"a",
-                    "name":"经销商审核",
-                    "level":2,
+                    "gid": 32,              // 功能权限编号
+                    "gname": "销售会计",    // 功能权限名称
+                    "rid": 29001,           // 数据权限编号
+                    "rname": "张晓丹",      // 数据权限名称
+                    "uid": 0
                 }
             ],
-            "pageNo":1,
-        "total":1
+            "pageNo": 1,
+            "total": 1
+        }
+    }
+
+### QX-18. 数据权限详情
+#### 请求
+
+    GET /v2/datapower/detail
+
+#### 参数
+
+    rid // * 数据权限编号
+
+#### 响应
+
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "gid": 32,              // 功能权限编号
+            "gname": "销售会计",    // 功能权限名称
+            "rid": 29001,           // 数据权限编号
+            "rname": "张晓丹",      // 数据权限名称
+            "uid": 0
         }
     }
 
 
+### QX-19. 菜单新增
+#### 请求
 
+    POST    /v2/menu
 
-### QX-16. 功能权限绑定菜单
+#### 参数
 
-#### 16.1 请求URL
-    /v2/menupower/binding
-
-#### 16.2 请求类型
-    POST
-
-#### 16.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|powerid|权限编号|必|
-|menuid|菜单id|必|
-
-#### 16.4 请求示例
-    [
-    	{
-    		"powerid":111,
-    		"menuid":81
-    	},
-    	{
-    		"powerid":111,
-    		"menuid":82
-    	}
-    ]
-
-#### 16.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|code|编号|100000成功；0 失败；|
-|msg|消息|异常信息|
-|data|null|
-
-
-#### 16.6 返回示例
     {
-    	"code": 100000,
-    	"msg": "",
-    	"data": null
-    }
-    
-
-### QX-17. 功能权限解绑菜单
-
-#### 17.1 请求URL
-    /v2/menupower/binding/{id}
-
-#### 17.2 请求类型
-    PUT
-
-#### 17.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|id|功能权限编号|必|
-|menuid|菜单id|必|
-
-#### 17.4 请求示例
-    [
-    	{
-    		"menuid":81
-    	},
-    	{
-    		"menuid":82
-    	}
-    ]
-
-#### 17.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|code|编号|100000成功；0 失败；|
-|msg|消息|异常信息|
-|data|null|
-
-
-#### 17.6 返回示例
-    {
-    	"code": 100000,
-    	"msg": "",
-    	"data": null
-    }    
-    
-    
-    
-    
-
-### QX-18. 新增数据权限
-
-#### 18.1 请求URL
-    /v2/datapower
-
-#### 18.2 请求类型
-    POST
-
-#### 18.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|name|数据权限名称|必|
-|gid|功能权限编号|必|
-
-#### 18.4 请求示例
-    {
-    	"name":"数据权限名称",
-        "gid": 42
+        "name":"商品统计",  // * 菜单名称
+        "level":1,          // * 菜单等级
+        "ctrl":"product",   // * 一级路由
+        "action":"store",   // 二级路由，level=2时，必选
+        "parentId":0,       // 上级菜单id,level=2时，必选
+        "icon":"aware-syn"  // 一级菜单图标，level=1时，必选
     }
 
-#### 18.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|code|编号|100000成功；0 失败；|
-|msg|消息|异常信息|
-|data|null|
+#### 响应
 
-
-#### 18.6 返回示例
     {
     	"code": 100000,
     	"msg": "",
@@ -860,406 +512,165 @@
     }
 
 
-### QX-19. 修改数据权限
+### QX-20. 菜单修改
+#### 请求
 
-#### 19.1 请求URL
-    /v2/datapower/{id}
+    PUT     /v2/menu/{id}
 
-#### 19.2 请求类型
-    PUT
+#### 参数
 
-#### 19.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|id|数据权限编号|
-|name|数据权限名称|
-|gid|功能权限编号|
-
-
-#### 19.4 请求示例
+    id  // * 菜单id
     {
-    	"name":"修改数据权限",
-        "gid": 11
+        "name":"商品统计",  // * 菜单名称
+        "level":1,          // * 菜单等级
+        "ctrl":"product",   // * 一级路由
+        "action":"store",   // 二级路由，level=2时，必选
+        "parentId":0,       // 上级菜单id,level=2时，必选
+        "icon":"aware-syn" // 一级菜单图标，level=1时，必选
     }
 
 
-#### 19.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|code|编号|100000成功；0 失败；|
-|msg|消息|异常信息|
-|data|null|
+#### 响应
 
-
-#### 19.6 返回示例
-    {
-    	"code": 100000,
-    	"msg": "",
-    	"data": null
-    }
-
-
-
-### QX-20. 数据权限管理列表/未分配数据权限列表
-
-#### 20.1 请求URL
-    /v2/datapower
-
-#### 20.2 请求类型
-    GET
-
-#### 20.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|rid|权限编号|
-|name|权限名称|
-|asigned|传 no|获取未分配权限列表使用|
-|uid|用户ID|获取用户未分配权限列表|
-|pageNo|页码|默认1|
-|pageSize|页条数|默认25|
-
-#### 20.4 请求示例
-    无
-
-
-#### 20.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|rid|数据权限编号|
-|name|数据权限名称|
-|gid|功能权限编号|
-
-
-#### 20.6 返回示例
-    {
-        "code":100000,
-        "msg":"",
-        "data":{
-            "dataSums":null,
-            "datas":[
-                {
-                    "uid":0,
-                    "rid":29161,
-                    "name":"采购管理角色",
-                    "gid":1533,
-                    "deleteflg":0,
-                    "createTime":"",
-                    "modifyTime":""
-                }
-            ],
-            "pageNo":1,
-            "total":1
-        }
-    }
-
-
-### QX-21. 删除数据权限
-
-#### 21.1 请求URL
-    /v2/datapower/{id}
-
-#### 21.2 请求类型
-    DELETE
-
-#### 21.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|id|权限ID|必|
-
-#### 21.4 请求示例
-    无
-
-
-#### 21.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|code|编号|100000成功；0 失败；|
-|msg|消息|异常信息|
-|data|null|
-
-
-#### 21.6 返回示例
-    {
-    	"code": 100000,
-    	"msg": "",
-    	"data": null
-    }
-
-
-
-### QX-22. 新增菜单
-
-#### 22.1 请求URL
-    /v2/menu
-
-#### 22.2 请求类型
-    POST
-
-#### 22.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|sys|菜单所属系统|必|
-|name|菜单名称|必|
-|parentId|上级菜单ID|必 0 无上级菜单 大于0 上级菜单ID|
-|ctrl|控制器|
-|action|方法|
-|params|参数|
-|sort|菜单排序|
-|level|菜单等级|
-|icon|菜单图标|
-
-#### 22.4 请求示例
-    {
-    	"sys":"a",
-    	"name":"一级菜单",
-    	"ctrl":"first",
-    	"action":"second",
-    	"params":"third",
-    	"parentId":0,
-    	"sort":2,
-    	"level":1,
-    	"icon":"abcde"
-    }
-
-#### 22.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|code|编号|100000成功；0 失败；|
-|msg|消息|异常信息|
-|data|null|
-
-
-#### 22.6 返回示例
-    {
-    	"code": 100000,
-    	"msg": "",
-    	"data": null
-    }
-
-
-### QX-23. 修改菜单
-
-#### 23.1 请求URL
-    /v2/menu/{id}
-
-#### 23.2 请求类型
-    PUT
-
-#### 23.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|id|菜单id|必|
-|sys|菜单所属系统|
-|parentId|上级菜单ID|必 0 无上级菜单 大于0 上级菜单ID|
-|name|菜单名称|
-|ctrl|控制器|
-|action|方法|
-|params|参数|
-|sort|菜单排序|
-|level|菜单等级|
-|icon|菜单图标|
-|status|状态|show 显示 hidden 隐藏|
-
-
-#### 23.4 请求示例
-    {
-    	"sys":"a",
-    	"name":"二级菜单",
-    	"ctrl":"first",
-    	"action":"second",
-    	"params":"third",
-    	"parentId":1,
-    	"sort":2,
-    	"level":2,
-    	"icon":"abcde",
-    	"status":"show"
-    }
-
-
-#### 23.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|code|编号|100000成功；0 失败；|
-|msg|消息|异常信息|
-|data|null|
-
-
-#### 23.6 返回示例
     {
     	"code": 100000,
     	"msg": "操作成功",
     	"data": null
     }
 
+### QX-21. 菜单显示、隐藏
+#### 请求
 
+    PUT     /v2/menu/status/{id}
 
-### QX-24. 菜单管理列表/功能权限获取未绑定菜单列表
+#### 参数
 
-#### 24.1 请求URL
-    /v2/menu
-
-#### 24.2 请求类型
-    GET
-
-#### 24.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|sys|所属系统|
-|menuid|菜单ID|
-|name|菜单名称|
-|ctrl|路由一|
-|pid|上级菜单ID|
-|status|状态|
-|level|菜单等级|获取一级菜单是可以传 1 |
-|buttonPermissionFlg|0 获取按钮权限 默认1不获取|
-|asigned|传 no|功能权限获取未绑定菜单列表使用|
-|gid|功能权限编号|功能权限获取未绑定菜单列表使用|
-|pageNo|页码|默认1|
-|pageSize|页条数|默认25|
-
-#### 24.4 请求示例
-    无
-
-
-#### 24.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|id|菜单id|
-|name|菜单名称|
-|sys|所属系统|
-|ctrl|路由一|
-|action|路由二|
-|params|参数|
-|parentId|上级菜单ID|
-|sort|排序|
-|level|等级|
-|icon|菜单图标|
-|status|状态|show 显示 hidden 隐藏|
-|createTime|创建时间|
-
-
-#### 24.6 返回示例
+    id  // * 菜单id
     {
-        "code":100000,
-        "msg":"",
-        "data":{
-            "buttonPermissions": [
-                {
-                    "hiddenButton": true, // 隐藏
-                    "editButton": true, // 编辑
-                    "showButton": false, // 显示
-                    "deleteButton": false // 删除
-                }
-            ],
-            "dataSums":null,
-            "datas":[
-                {
-                    "id":308,
-                    "name":"特价管理",
-                    "sys":"a",
-                    "ctrl":"rebates",
-                    "action":"special",
-                    "params":"",
-                    "parentId":32,
-                    "sort":5,
-                    "level":2,
-                    "icon":"abcde",
-                    "status":"show",
-                    "createTime":""
-                }
-            ],
-            "pageNo":1,
-            "total":1
-        }
+        "status":"hidden",  // * show 显示 hidden 隐藏
     }
 
 
+#### 响应
 
-### QX-25. 删除菜单
-
-#### 25.1 请求URL
-    /v2/menu/{id}
-
-#### 25.2 请求类型
-    DELETE
-
-#### 25.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|id|菜单ID|必|
-
-#### 25.4 请求示例
-    无
-
-
-#### 25.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|code|编号|100000成功；0 失败；|
-|msg|消息|异常信息|
-|data|null|
-
-
-#### 25.6 返回示例
     {
     	"code": 100000,
-    	"msg": "",
+    	"msg": "操作成功",
     	"data": null
     }
 
+### QX-22. 菜单排序
+#### 请求
+
+    PUT     /v2/menu/sort/{id}
+
+#### 参数
+
+    id  // * 菜单id
+    {
+        "sort":2,  // * 顺序
+    }
 
 
-### QX-26. 菜单信息
+#### 响应
 
-#### 26.1 请求URL
-    /v2/menu/detail
+    {
+    	"code": 100000,
+    	"msg": "操作成功",
+    	"data": null
+    }
 
-#### 26.2 请求类型
-    GET
+### QX-23. 菜单删除
+#### 请求
 
-#### 26.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|id|菜单id|必|
+    DELETE     /v2/menu/{id}
 
-#### 26.4 请求示例
+#### 参数
+
+    id  // * 菜单id
+
+
+#### 响应
+
+    {
+    	"code": 100000,
+    	"msg": "操作成功",
+    	"data": null
+    }
+
+### QX-24. 菜单列表
+#### 请求
+
+    GET     /v2/menu
+
+#### 参数
+
     无
 
+#### 响应
 
-#### 26.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|id|菜单id|
-|name|菜单名称|
-|sys|所属系统|
-|ctrl|路由一|
-|action|路由二|
-|params|参数|
-|parentId|上级菜单ID|
-|sort|排序|
-|level|等级|
-|icon|菜单图标|
-|status|状态|show 显示 hidden 隐藏|
-|createTime|创建时间|
-
-
-#### 26.6 返回示例
     {
-        "code":100000,
-        "msg":"",
-        "data":{
-            "id":318,
-            "name":"产品管理",
-            "sys":"a",
-            "ctrl":"supplier",
-            "action":"prsupplier",
-            "params":"",
-            "parentId":32,
-            "sort":3,
-            "level":2,
-            "icon":"abcde",
-            "status":"show",
-            "createTime":""
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [
+                {
+                    "deleteButton": false,  // 删除
+                    "editButton": true,     // 编辑
+                }
+            ],
+            "dataSums": null,
+            "datas": [
+                {
+                    "action": "",               // 二级路由
+                    "createTime": "",   
+                    "ctrl": "depotmatchareas",  // 一级路由
+                    "icon": "",         // 图标
+                    "id": 140,          // 菜单id
+                    "level": 1,         // 菜单等级
+                    "name": "仓库管理", // 菜单名称
+                    "params": "",
+                    "parentId": 0,      // 上级菜单id
+                    "sort": 0,          // 排序
+                    "status": "show",   // show 显示 hidden 隐藏
+                    "sys": ""
+                }
+                ......
+            ],
+            "pageNo": 1,
+            "total": 28
+        }
+    }
+
+
+
+### QX-25. 菜单详情
+#### 请求
+
+    GET     /v2/menu/detail
+
+#### 参数
+
+    id // * 菜单id
+
+#### 响应
+
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "action": "",           // 二级路由
+            "createTime": "",
+            "ctrl": "depotmatchareas",  // 一级路由
+            "icon": "",         // 菜单图标
+            "id": 140,          // 菜单id
+            "level": 1,         // 菜单等级
+            "name": "仓库管理", // 菜单名称
+            "params": "",
+            "parentId": 0,  // 上级菜单id
+            "sort": 0,
+            "status": "show",
+            "sys": ""
         }
     }
     
@@ -1267,44 +678,22 @@
     
     
 
-### QX-27. 操作日志列表
+### QX-26. 操作日志列表
+#### 请求
 
-#### 27.1 请求URL
-    /v2/systemlog
+    GET     /v2/systemlog
 
-#### 27.2 请求类型
-    GET
+#### 参数
 
-#### 27.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|type|操作类型|
-
-#### 27.4 请求示例
     无
+    
+#### 响应
 
-
-#### 27.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|type|操作类型|
-|action|操作内容|
-|uid|用户id|
-|uname|用户姓名|
-|gid|功能权限编号|
-|gname|功能权限名称|
-|sys|所属系统|
-|menuId|菜单id|
-|mname|菜单名称|
-|roleId|数据权限编号|
-|rname|数据权限名称|
-|createRole|操作人角色id|
-|createUser|操作人id|
-|createUserName|操作人姓名|
-|createTime|操作时间|
-
-
-#### 27.6 返回示例
+    操作类型说明：
+    1 开户，2 用户锁定，3 用户解锁，4 重置密码，
+    5 用户分配功能权限，6 用户取消分配功能权限，7 用户分配数据权限，
+    8 用户取消分配数据权限，9 功能权限绑定菜单，
+    10 功能权限取消绑定菜单
     {
         "code": 100000,
         "msg": "",
@@ -1313,81 +702,49 @@
             "datas": [
                 {
                     "id": 0,
-                    "type": "9",
-                    "action": "功能权限绑定菜单",
-                    "uid": 0,
-                    "uname": "",
-                    "gid": 111,
-                    "gname": "测试修改",
+                    "type": "9",             // 操作类型  
+                    "action": "功能权限绑定菜单",  
+                    "uid": 0,                   
+                    "uname": "",            // 被操作的用户
+                    "gid": 111,             
+                    "gname": "测试修改",    // 被操作的功能权限
                     "sys": "",
                     "menuId": 82,
-                    "mname": "供应商用户列表",
+                    "mname": "供应商用户列表",// 被操作菜单
                     "roleId": 0,
-                    "rname": "",
+                    "rname": "",            // 被操作数据权限
                     "createRole": 1,
-                    "createTime": "2018-08-22 14:28:55.0",
+                    "createTime": "2018-08-22 14:28:55.0", // 操作时间
                     "createUser": 101,
-                    "createUserName": "樊嘉辉",
-                },
-                {
-                    "id": 0,
-                    "type": "1",
-                    "action": "用户开户",
-                    "uid": 517,
-                    "uname": "",
-                    "gid": 0,
-                    "gname": "",
-                    "sys": "",
-                    "menuId": 0,
-                    "mname": "",
-                    "roleId": 0,
-                    "rname": "",
-                    "createRole": 1,
-                    "createTime": "2018-08-20 17:08:08.0",
-                    "createUser": 101,
-                    "createUserName": "樊嘉辉",
+                    "createUserName": "樊嘉辉", // 操作人
                 }
+                ......
             ],
             "pageNo": 1,
-            "total": 2
+            "total": 28
         }
     }
 
 
 ### QX-28. 根据SS\SR类型获取角色权限列表
+#### 请求
 
-#### 28.1 请求URL
-    /v2/datapower/roles
+    GET     /v2/datapower/roles
 
-#### 28.2 请求类型
-    GET
+#### 参数
 
-#### 28.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|type|角色类型|必 可取值 ss  或  sr|
+    type    // * 角色类型   可取值 ss  或  sr
 
-#### 28.4 请求示例
-    无
+#### 响应
 
-
-#### 28.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|rid|角色ID|
-|roleName|角色名称|
-|gid|功能权限ID|
-
-
-#### 28.6 返回示例
     {
         "code":100000,
         "msg":"",
         "data":[
             {
                 "gid":24,
-                "rid":40,
-                "roleName":"高成举-SRM-T"
+                "rid":40,                   // 角色id
+                "roleName":"高成举-SRM-T"   // 角色名称
             },
             {
                 "gid":24,
@@ -1404,124 +761,64 @@
 
 
 ### QX-29. 用户登陆后获取菜单
+#### 请求
 
-#### 29.1 请求URL
-    /v2/auth/getAllMenu
+    GET     /v2/auth/getAllMenu
 
-#### 29.2 请求类型
-    GET
+#### 参数
 
-#### 29.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|token|必|
-|source|系统类型|必 a A网 sta 统计|
+    token // * 
+    source // * 系统类型 a A网 sta 统计
 
 #### 29.4 请求示例
     无
 
 
-#### 29.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|id|菜单id|
-|name|菜单名称|
-|sys|所属系统|
-|ctrl|路由一|
-|action|路由二|
-|params|参数|
-|parentId|上级菜单ID|
-|level|等级|
-|icon|菜单图标|
+#### 响应
 
-
-#### 29.6 返回示例
     {
         "code": 100000,
         "msg": "",
         "data": [
             {
-                "action": "",
+                "action": "",       // 二级路由
                 "createTime": "",
-                "ctrl": "oldmppr",
-                "id": 151,
-                "level": 1,
-                "name": "MPPR",
-                "params": "",
-                "parentId": 0,
-                "sort": 0,
-                "status": "",
-                "sys": "a",
-                "icon":"abcde"
-            },
-            {
-                "action": "",
-                "createTime": "",
-                "ctrl": "mppr",
-                "id": 281,
-                "level": 1,
-                "name": "备货管理",
-                "params": "",
-                "parentId": 0,
-                "sort": 0,
-                "status": "",
-                "sys": "a",
-                "icon":"abcde"
-            },
-            {
-                "action": "",
-                "createTime": "",
-                "ctrl": "user",
+                "ctrl": "user",     // 一级路由
                 "id": 143,
-                "level": 1,
-                "name": "账号管理",
+                "level": 1,         // 菜单等级
+                "name": "账号管理", // 菜单名称
                 "params": "",
-                "parentId": 0,
-                "sort": 0,
+                "parentId": 0,      // 上级菜单
+                "sort": 0,          
                 "status": "",
                 "sys": "a",
-                "icon":"abcde"
+                "icon":"abcde"      // 图标
             }
+            ......
         ]
     }
     
     
 
 ### QX-30. 获取登录用户信息
+#### 请求
 
-#### 30.1 请求URL
-    /v2/auth/userInfo
+    GET     /v2/auth/userInfo
 
-#### 30.2 请求类型
-    GET
+#### 参数
 
-#### 30.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|token|必|
-|source|系统类型|必 a A网 sta 统计|
+    token // * 
+    source // * 系统类型 a A网 sta 统计
 
-#### 30.4 请求示例
-    无
+#### 响应
 
-
-#### 30.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|id|用户ID|
-|fullname|用户全名|
-|workno|工号|
-|mobile|手机|
-
-
-#### 30.6 返回示例   
     {
         "code": 100000,
         "msg": "",
         "data": {
-            "workno": "0101",
-            "mobile": "13478445016",
-            "id": 101,
-            "fullname": "樊嘉辉"
+            "workno": "0101",       // 工号
+            "mobile": "13478445016",    // 手机
+            "id": 101,              // 用户id
+            "fullname": "樊嘉辉"    // 用户名
         }
     }

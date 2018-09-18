@@ -1,124 +1,82 @@
 ## 产品接口
-### CP-1. 获取产品规格列表
+### CP-1. 产品规格列表
+#### 请求
 
-#### 1.1 请求URL
-    /v2/product/guige
+    GET     /v2/product/guige
 
-#### 1.2 请求类型
-    GET
+#### 参数
 
-#### 1.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|keyword|品号/品名|
-|state|产品状态|"" 全部 normal 正常 custom 定制 lock 锁定|
-|pageNo|页码|默认1|
-|pageSize|页条数|默认25|
+    keyword // 品号/品名
+    state   // 产品状态 "" 全部 normal 正常 custom 定制 lock 锁定
+    productunitIds  // 产品规格id串 3,5,7
+    pageNo  // 页码
+    pageSize    // 页条数
 
-#### 1.4 请求示例
-    无
+#### 响应
 
-#### 1.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|productUnitId|产品规格ID|
-|productId|产品ID|
-|pno|产品编号|
-|productName|产品名称|
-|unitGuige|单位规格|单位：规格|
-|guige|规格|
-|state|产品状态| normal 上架 custom 定制 lock 下架|
-
-
-#### 1.6 返回示例
     {
-        "code": 100000,
-        "msg": "",
-        "data": {
-            "buttonPermissions": null,
-            "dataSums": null,
-            "datas": [
-                {
-                    "guige": "500g(23-25枚）/盒",
-                    "perUnit": 0,
-                    "pno": "B0391",
-                    "productId": 1,
-                    "productName": "测试1",
-                    "productUnitId": 1,
-                    "state": "LOCK",
-                    "unitGuige": "盒：500g(23-25枚）/盒",
-                    "unitId": 0
-                },
-                {
-                    "guige": "500g(23-25枚）/盒*20盒",
-                    "perUnit": 0,
-                    "pno": "B0391",
-                    "productId": 1,
-                    "productName": "测试1",
-                    "productUnitId": 2,
-                    "state": "LOCK",
-                    "unitGuige": "件：500g(23-25枚）/盒*20盒",
-                    "unitId": 0
-                }
-            ],
-            "pageNo": 1,
-            "total": 2
-        }
+    	"code": 100000,
+    	"msg": "",
+    	"data": {
+    		"buttonPermissions": null,
+    		"dataSums": null,
+    		"datas": [{
+    			"aPrice": 802.47,                   // 产品A价格
+    			"guige": "500g(23-25枚）/盒*20盒",  // 产品规格
+    			"pPrice": 650,                      // 蟾皮P价格
+    			"perUnit": 0,                       // 单位转换率
+    			"pno": "B0391",                     // 品号
+    			"productId": 1,                     // 产品id
+    			"productName": "测试1",             // 产品名称
+    			"productUnitId": 2,                 // 产品规格id
+    			"state": "LOCK",                    // 状态 'NORMAL' 正常,'CUSTOM' 定制,'LOCK' 锁定
+    			"unitGuige": "件：500g(23-25枚）/盒*20盒",  // 单位规格 单位：规格
+    			"unitId": 0                         // 单位编号
+    		}],
+    		"pageNo": 1,
+    		"total": 1
+    	}
     }
     
 
-### CP-2. 获取产品列表
+### CP-2. 产品列表
+#### 请求
 
-#### 2.1 请求URL
-    /v2/product
+    GET     /v2/product
 
-#### 2.2 请求类型
-    GET
+#### 参数
 
-#### 2.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|keyword|品号/品名|
-|pageNo|页码|默认1|
-|pageSize|页条数|默认25|
+    keyword // 品号/品名
+    productIds  // 产品规格id串 3,5,7
+    pageNo  // 页码
+    pageSize    // 页条数
 
-#### 2.4 请求示例
-    无
+#### 响应
 
-#### 2.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|productId|产品ID|
-|pno|产品编号|
-|name|产品名称|
-|state|产品状态| normal 上架 custom 定制 lock 下架|
-
-
-#### 2.6 返回示例
     {
-        "code": 100000,
-        "msg": "",
-        "data": {
-            "buttonPermissions": null,
-            "dataSums": null,
-            "datas": [
-                {
-                    "minPerUnit": 20,
-                    "name": "测试1",
-                    "pno": "B0391",
-                    "productBusinessTypes": null,
-                    "productId": 1,
-                    "productTypes": null,
-                    "pyCode": "CS1",
-                    "rename": "",
-                    "state": "LOCK",
-                    "typePathName": "",
-                    "unitGuige": ""
-                }
-            ],
-            "pageNo": 0,
-            "total": 1
-        }
+    	"code": 100000,
+    	"msg": "",
+    	"data": {
+    		"buttonPermissions": null,
+    		"dataSums": null,
+    		"datas": [{
+    			"minPerUnit": 12,               // 小规格产品转化率
+    			"name": "樊嘉辉的82年凯龙",     // 产品名称
+    			"pno": "kailong1982",           // 品号
+    			"productBusinessTypes": null,   // 业态列表
+    			"productId": 4156,              // 产品id
+    			"productTypes": null,           // 产品类型
+    			"pyCode": "FJHD8NKL",           // 拼音简码
+    			"rename": "小凯龙 大连干啤",    // 别名
+    			"state": "NORMAL",              // 状态 'NORMAL' 正常,'CUSTOM' 定制,'LOCK' 锁定
+    			"typePathName": "",             // 分类路径 一级分类/二级分类/三级分类
+    			"unitGuige": ""                 // 大单位：大规格,小单位：小规格
+    		},
+    		......
+    		],
+    		"pageNo": 0,
+    		"total": 1
+    	}
     }
 
 ### CP-100.产品业态查询
@@ -197,7 +155,7 @@
 |keyword|品号/品名|
 |state|状态|noramal 正常 lock 锁定 delete 作废 invalid 失效|
 |buttonPermissionFlg|操作按钮开关|0 带操作列表 1 无操作列表 默认 1|
-|pageNo|页码|默认1|
+|pageNum|页码|默认1|
 |pageSize|页条数|默认25|
 
 #### 102.4 请求示例
@@ -430,8 +388,6 @@
 |参数|名称|描述|例子
 |---|---|---|---|
 |lockId|断货ID|
-|pageNo|
-|pageSize|
     
 #### 106.4 请求示例
     无

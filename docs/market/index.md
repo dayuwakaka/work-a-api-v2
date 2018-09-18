@@ -1,6 +1,5 @@
-## 营销管理
-### YX-1. 新增营销
-
+## 营销
+### YX-1. 营销新增
 #### 1.1 请求URL
     /v2/market
     
@@ -17,7 +16,7 @@
 |effectStime|营销开始时间|
 |effectEtime|营销结束时间|
 |customerRange|用户限制|all 全部客户 new 新客户|
-|marketBusinessunitRanges|事业部限制列表|
+|marketBusinessunitRanges|事业部范围|
 |onlyCode|唯一码|每次提交时都不能相同|
 
 ##### 领券参数
@@ -57,17 +56,13 @@
     	"effectStime":"2018-09-13 08:40:17",
     	"effectEtime":"2018-10-13 08:40:17",
     	"onlyCode":"QWIOEUROIASJDKLFAJLSKDFJALSDKF",
-    	"marketBusinessunitRanges":[
-    		{
+    	"marketBusinessunitRanges":[{
     			"type":"businessunit", // businessunit
     			"rangeId":3, // 事业部id
-    			"extra":"" // 传空即可
+    			"extra":"" // 事业部名称
     		},
-    		{
-    			"type":"businessunit",
-    			"rangeId":16,
-    			"extra":""
-    		}],
+    		......
+    		]
     	"marketCouponCondition":{
     		"limitNum":1 // 1-仅领一次, 0-用完再领
     	},
@@ -163,6 +158,8 @@
 |参数|名称|描述|
 |---|---|---|
 |name|营销名称|
+|type|营销类型|coupon 券规 gift 满赠 reduce 满减 discount 满折 column 专栏 special 专题|
+|deleteFlg|状态|0 正常 1 作废 空 全部 字符串类型|
 |buttonPermissionFlg|0 无按钮 1 有按钮|
 |pageNo|页码|默认1|
 |pageSize|页条数|默认25|
@@ -336,76 +333,49 @@
         }
     }
 
-### YX-6.新增优惠券规则
+### YX-6.券规新增
+#### 请求
 
-#### 请求url
-    /v2/coupon/rules
+    POST    /v2/coupon/rules
 
-#### 请求类型
-    POST
+#### 参数
 
-#### 请求参数
-|参数|名称|类型|描述|
-|---|---|---|---|
-|*ruleType|满减类型|String|PRICE: 价格; COUNT: 数量
-|*ranges|产品范围限制|String|ALL: 不限; PRODUCT: 指定产品
-|*ruleValues|优惠券规则|Array|信息如下|
-|*rangeValues|优惠券产品范围|Array|信息如下，产品范围限制为不限 则不传|
-|*onlyCode|本次提交携带的唯一码|String|防止重复提交用
+    name   // * 券规名称
+    ruleType    // * 满减类型 PRICE: 价格; COUNT: 数量
+    ranges  // * 产品范围限制 ALL: 不限; PRODUCT: 指定产品
+    ruleValues // * 优惠券规则
+    rangeValues // * 优惠券产品范围，ranges=product时，必传
+    onlyCode    // * 本次提交携带的唯一码 防止重复提交用
 
-##### ruleValues信息
-    [
-        {
+    {
+    	"name": "123",
+    	"ruleType": "PRICE",
+    	"ranges": "ALL",
+    	"ruleValues": [{
             targetValue: 120 (目标值，即满值，可以为两位小数) - Number,
             value: 20 (执行值，可以为两位小数) - Number
-        },
-        ...
-    ]
-
-##### rangeValues信息
-    [
-        {
+    	}],
+    	"rangeValues": [{
             productId: 66651 (产品id) - Number,
-            productunitId: 128989 (产品规格id) - Number,
+            productUnitId: 128989 (产品规格id) - Number,
             pno: "A081210",
             name: "扛枪保家卫国套餐",
             guige: "1人/次"
-        },
-        ...
-    ]
-
-#### 返回值
-|参数|名称|描述|
-|---|---|---|
-|code|编号|100000：成功；0 ~ 99999：失败|
-|msg|消息|修改成功/异常信息|
-|data|数据|
+        }],
+    	"onlyCode": "_1537162222240"
+    }
 
 
-### YX-7.获取优惠券规则对应的产品范围列表
+#### 响应
 
-#### 请求url
-    /v2/coupon/rules/{id}/ranges
+    {
+    	"code": 100000,
+    	"msg": "",
+    	"data": null
+    }
 
-#### 请求类型
-    GET
-        
-#### 请求参数
-|参数|名称|类型|描述|
-|---|---|---|---|
-|*id|优惠券规则id|Number||
-|pageNo|页码|Number|default-value: 1|
-|pageSize|页面容量|Number|default-value: 25|
 
-#### 返回值
-|参数|名称|类型|描述|
-|---|---|---|---|
-|pno|品号|String||
-|name|产品名称|String||
-|guige|产品规格|String||
-|state|产品状态|String|normal 正常 custom 定制 lock 锁定|
-
-### YX-8.作废优惠券规则
+### YX-8.券规作废
 
 #### 请求url
     /v2/coupon/rules/{id}
@@ -425,7 +395,7 @@
 |msg|消息|修改成功/异常信息|
 |data|数据|
 
-### YX-9.获取客户优惠券审核列表
+### YX-9.客户优惠券申请列表
 
 #### 请求url
     /v2/coupon/customer_askfors
@@ -484,7 +454,7 @@
         }
     }
 
-### YX-10.审批客户优惠券申请
+### YX-10.客户优惠券申请审批
 
 #### 请求url
     /v2/coupon/customer_askfors/{id}
@@ -505,7 +475,7 @@
 |msg|消息|修改成功/异常信息|
 |data|数据|
 
-### YX-11.批量审批客户优惠券申请
+### YX-11.客户优惠券申请批量审批
 
 #### 请求url
     /v2/coupon/customer_askfors/batch
@@ -526,7 +496,7 @@
 |msg|消息|修改成功/异常信息|
 |data|数据|
 
-### YX-12.批量新增客户优惠券申请（优惠券规则列表中的发券功能、客户功能模块中的发券功能）
+### YX-12.客户优惠券申请批量新增（优惠券规则列表中的发券功能、客户功能模块中的发券功能）
 
 #### 请求url
     /v2/coupon/customer_askfors/batch
@@ -560,114 +530,110 @@
         note: '我就是打个酱油'
     }
 
-### YX-13.获取客户优惠券列表
+### YX-13.客户优惠券列表
+#### 请求
 
-#### 请求url
-    /v2/coupon/customers
+    GET     /v2/coupon/customers
 
-#### 请求类型
-    GET
+#### 参数
 
-#### 请求参数
-|参数|名称|类型|描述|
-|---|---|---|---|
-|name|优惠券名称|String|
-|customerName|客户名称|String||
-|sourceName|发放源|String|
-|used|优惠券使用情况|String|YES: 已使用; NO: 未使用
-|status|客户优惠券状态|String|NORMAL: 正常; LOCK: 锁定
-|deleteFlg|客户优惠券状态|Number|0: 有效; 1: 无效
-|pageNo|页码|Number|default-value: 1
-|pageSize|页面容量|Number|default-value: 25
-|buttonPermissionFlg|按钮权限|Number|0-查询按钮权限 1-不查询|
+    keyword     // 优惠券名称/客户名称
+    source      // 发放源
+    status      // normal 正常 lock 锁定 invalid 作废
+    used        // YES: 已使用; NO: 未使用
+    buttonPermissionFlg     // 0 不查询按钮权限  1 查询
+    pageNo      // 页码
+    pageSize    // 页条数
 
-#### 返回值
-##### datas返回值
-|参数|名称|类型|描述|
-|---|---|---|---|
-|id|客户优惠券编号(即id)|Number|
-|ruleName|优惠券名称|String|
-|customerName|客户名称|String|
-|sourceName|发放源|String|
-|status|优惠券状态|String|NORMAL: 正常; LOCK: 锁定
-|used|优惠券状态|String|YES: 已使用; NO: 未使用
-|effectStime|优惠券开始时间|String|
-|effectEtime|优惠券结束时间|String|
-|createUserName|创建人|String|
-|createTime|创建时间|String|
-##### buttonPermissions返回值
-    返回的集合长度和数据集一样，取对应下标数据即可，true 显示；false 不显示
-    deleteButton: 作废按钮,
-    lockButton：锁定按钮,
-    unlockButton: 解锁按钮
+#### 响应
 
-#### 请求示例
-    /v2/coupon/customers?name=&used=&status=&deleteFlg=&pageNo=&pageSize=
-
-#### 返回值示例
     {
-        code: 0,
-        msg: "",
-        data: {
-            datas: [
-                        {
-                            ...
-                        },
-                        ...
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [
+                {
+                    "invalidButton": false,  // 作废
+                    "lockButton": false,    // 锁定
+                    "unlockButton": false   // 解锁
+                }
             ],
-            buttonPermissions:[
-                        {
-                            deleteButton: false,
-                            lockButton: false,
-                            unlockButton: false
-                        },
-                        ...
+            "dataSums": null,
+            "datas": [
+                {
+                    "businessName": "PDOD", 
+                    "couponId": 0,                          // 优惠券规则id
+                    "createRole": 0,
+                    "createTime": "2018-09-11 09:25:14.0",
+                    "createUser": 0,
+                    "createUserName": "",
+                    "customerId": 0,
+                    "customerName": "946",                  // 客户名称
+                    "effectEtime": "2018-12-12 23:59:59",   // 优惠券结束时间
+                    "effectStime": "2018-09-11 00:00:00",   // 优惠券开始时间
+                    "id": 21995,                            // 客户优惠券编号
+                    "pageId": 0,
+                    "ruleName": "小饺丫（荠菜鱿鱼饺）优惠券",   // 优惠券名称
+                    "ruleType": "REDUCE",
+                    "source": "",
+                    "sourceName": "手工",           // 发放源
+                    "status": "NORMAL",     // 状态 normal 正常 lock 锁定 invalid 作废
+                    "type": 0,
+                    "used": "NO"            // 使用情况 YES 已使用 NO 未使用
+                },
+                ......
             ],
-            total: 93330 (总条数) - Number,
-            pageNo: 12 (对应的页码) - Number
+            "pageNo": 1,
+            "total": 7334
         }
     }
+    
+    
+### YX-14. 客户优惠券批量解锁、批量锁定、批量作废
+#### 请求
 
-### YX-14.客户优惠券作废
+    PUT     /v2/coupon/customers/batch
+    
+#### 参数
 
-#### 请求url
-    /v2/coupon/customers/{id}
+    [{
+    	"id": 8,                // 客户优惠券id
+    	"status": "CANCEL"      // 状态 NORMAL 解锁 LOCK 锁定 CANCEL 作废
+    }, {
+    	"id": 9,
+    	"status": "CANCEL"
+    }, {
+    	"id": 10,
+    	"status": "CANCEL"
+    }]
+    
+#### 响应
 
-#### 请求类型
-    DELETE
+    {
+    	"code": 100000,
+    	"msg": "操作成功",
+    	"data": null
+    }
+    
+    
 
-#### 请求参数
-|参数|名称|类型|描述|
-|---|---|---|---|
-|*id|客户优惠券id|Number
+### YX-15.客户优惠券解锁、锁定、作废
+#### 请求
 
-#### 返回值
-|参数|名称|描述|
-|---|---|---|
-|code|编号|100000：成功；0 ~ 99999：失败|
-|msg|消息|修改成功/异常信息|
-|data|数据|
+    PUT     /v2/coupon/customers/{id}
 
-### YX-15.客户优惠券解锁或锁定
+#### 参数
 
-#### 请求url
-    /v2/coupon/customers/{id}
+    id  // * 优惠券id
+    status  // * 状态 normal 正常 lock 锁定 invalid 作废
 
-#### 请求类型
-    PUT
+#### 响应
 
-#### 请求参数
-|参数|名称|类型|描述|
-|---|---|---|---|
-|*id|客户优惠券id|Number|
-|*result|操作行为|String|NORMAL: 解锁; LOCK: 锁定|
-
-#### 返回值
-|参数|名称|描述|
-|---|---|---|
-|code|编号|100000：成功；0 ~ 99999：失败|
-|msg|消息|修改成功/异常信息|
-|data|数据|
+    {
+    	"code": 100000,
+    	"msg": "操作成功",
+    	"data": null
+    }
 
 ### YX-16 领券活动详情
 #### 16.1 请求URL
@@ -716,22 +682,15 @@
             "effectEtime": "2018-10-13 08:40:17",
             "effectStime": "2018-09-13 08:40:17",
             "id": 1,
-            "marketBusinessunitRanges": [
-                {
-                    "extra": "",
+            "marketBusinessunitRanges": [{
+                    "extra": "A事业部", // 事业部名称
                     "id": 1,
                     "marketId": 1,
                     "rangeId": 1, // 事业部id
                     "type": "BUSINESSUNIT"
                 },
-                {
-                    "extra": "",
-                    "id": 2,
-                    "marketId": 1,
-                    "rangeId": 9,
-                    "type": "BUSINESSUNIT"
-                }
-            ],
+                ......
+                ]
             "marketCouponCondition": {
                 "id": 1,
                 "limitNum": 1, // 1-仅领一次, 0-用完再领
@@ -860,11 +819,13 @@
             },
             "marketActiveGiveConditions": [
                 {
-                    "actionValue": 2,
+                    "actionValue": 2,               // 赠多少、减多少、折多少
                     "extra": "4151:7380",
                     "id": 9,
                     "marketId": 6,
-                    "targetValue": 100
+                    "targetValue": 100,             // 满多少
+                    "productName":"西瓜霜",         // 赠品名称
+                    "guige":"10袋/箱"               // 赠品规格
                 },
                 {
                     "actionValue": 5,
@@ -874,22 +835,15 @@
                     "targetValue": 200
                 }
             ],
-            "marketBusinessunitRanges": [
-                {
-                    "extra": "",
+            "marketBusinessunitRanges": [{
+                    "extra": "",    // 事业部名称
                     "id": 19,
                     "marketId": 6,
-                    "rangeId": 3,
+                    "rangeId": 3,   // 事业部id
                     "type": "BUSINESSUNIT"
                 },
-                {
-                    "extra": "",
-                    "id": 20,
-                    "marketId": 6,
-                    "rangeId": 16,
-                    "type": "BUSINESSUNIT"
-                }
-            ],
+                ......
+                ]
             "marketImages": [
                 {
                     "id": 6,
@@ -904,15 +858,19 @@
                     "extra": "",
                     "id": 21,
                     "marketId": 6,
-                    "rangeId": 7383, // 产品ID
-                    "type": "PRODUCTUNIT"
+                    "rangeId": 7383,                    // 产品ID
+                    "type": "PRODUCTUNIT",
+                    "productName":"粉丝蒜蓉贝",         // 活动产品名称
+                    "guige":"50袋/箱"                   // 活动产品规格
                 },
                 {
                     "extra": "",
                     "id": 22,
                     "marketId": 6,
                     "rangeId": 7382,
-                    "type": "PRODUCTUNIT"
+                    "type": "PRODUCTUNIT",
+                    "productName":"粉丝蒜蓉贝",
+                    "guige":"50袋/箱"               
                 }
             ],
             "name": "满赠活动名称",
@@ -969,22 +927,15 @@
             "effectEtime": "2018-10-13 08:40:17",
             "effectStime": "2018-09-13 08:40:17",
             "id": 7,
-            "marketBusinessunitRanges": [
-                {
-                    "extra": "",
+            "marketBusinessunitRanges": [{
+                    "extra": "",    // 事业部名称
                     "id": 23,
                     "marketId": 7,
                     "rangeId": 3, // 事业部id
                     "type": "BUSINESSUNIT"
                 },
-                {
-                    "extra": "",
-                    "id": 24,
-                    "marketId": 7,
-                    "rangeId": 16,
-                    "type": "BUSINESSUNIT"
-                }
-            ],
+                ......
+                ]
             "marketImages": [
                 {
                     "id": 11,
@@ -1062,22 +1013,15 @@
             "effectEtime": "2018-10-13 08:40:17",
             "effectStime": "2018-09-13 08:40:17",
             "id": 8,
-            "marketBusinessunitRanges": [
-                {
-                    "extra": "",
+            "marketBusinessunitRanges": [{
+                    "extra": "",    // 事业部名称
                     "id": 27,
                     "marketId": 8,
                     "rangeId": 3, // 事业部id
                     "type": "BUSINESSUNIT"
                 },
-                {
-                    "extra": "",
-                    "id": 28,
-                    "marketId": 8,
-                    "rangeId": 16,
-                    "type": "BUSINESSUNIT"
-                }
-            ],
+                ......
+                ]
             "marketImages": [
                 {
                     "id": 16,

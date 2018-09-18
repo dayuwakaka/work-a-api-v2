@@ -9,6 +9,7 @@ module.exports = {
       {text: '权限', link: '/auth/'},
       {text: '销售优惠', link: '/contract/'},
       {text: '价格', link: '/price/'},
+      {text: '其它', link: '/freight/'},
       {text: '营销', link: '/market/'},
       {text: '基础', link: '/common/'},
       {text: '其它', link: '/other/'}
