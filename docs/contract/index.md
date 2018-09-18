@@ -17,8 +17,8 @@
 |*contractType|合同类别|String|ALONE-独立合同，SHARE-共享合同，CONTINUE-续接合同，P2P-P2P合同
 |*customerIds|客户ids|String|合同主体客户id排在第一位，其余依次排列
 |*details|合同四个季度及年度明细|Array|[{<br/>rebateNode:"FIRST",<br/>rebateRate:0,<br/>salesPlan:0,<br/>startDate:"2018-03-01 00:00:00",<br/>endDate:"2018-05-31 23:59:59"<br/>},<br/>...]<br/> rebateNode: 返利节点（FIRST、SECOND、THIRD、FOURTH、YEAR），<br/>rebateRate:返点率（0~100），<br/>salesPlan: 目标，<br/>startDate:开始日期时间 日期是客户所选，时间是固定在后面加00:00:00，<br/>endDate:结束日期时间 日期是客户所选 时间是固定在后面加23:59:59
-|*startDate|合同开始日期|String|日期是客户所选，时间是固定在后面加00:00:00 （年度起始时间）
-|*endDate|合同结束日期|String|日期是客户所选，时间是固定在后面加23:59:59 （年度结束时间）
+|*startDate|合同开始日期|String|日期是客户所选，时间是固定在后面加00:00:00 
+|*endDate|合同结束日期|String|日期是客户所选，时间是固定在后面加23:59:59 
 |*formalUrl|合同扫描件URL|String|多张合同附件URL以','相隔
 |*subjectName|合同主体名称|String
 |remarks|备注|String|200字符以内|
@@ -1054,8 +1054,8 @@
 |参数|名称|类型|描述|
 |---|---|---|---|
 |*contractType|合同类别|String|ALONE-独立合同，SHARE-共享合同，CONTINUE-续接合同，P2P-P2P合同
-|*startDate|合同开始日期|String|日期是客户所选，时间是固定在后面加00:00:00
-|*endDate|合同结束日期|String|日期是客户所选，时间是固定在后面加23:59:59
+|*startDate|合同开始日期|String|日期是客户所选，时间是固定在后面加00:00:00（年度起始时间， 如果合同是续接合同，这个就是续接起始时间）
+|*endDate|合同结束日期|String|日期是客户所选，时间是固定在后面加23:59:59（年度结束时间， 如果合同是续接合同，这个就是续接结束时间）
 |*formalUrl|合同扫描件URL|String|多张合同附件URL以','相隔
 |*subjectName|合同主体名称|String
 |remarks|备注|String|200字符以内|

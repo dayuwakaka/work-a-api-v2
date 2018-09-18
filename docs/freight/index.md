@@ -16,10 +16,10 @@
 |businessunitType|事业部限定|必 ALL 无限定 GROUP 事业组级别 PART 部分事业部|
 |businessunitGroupId|事业组ID|
 |businessunits|事业部ID列表|
-|areaType|区域限定|必|
+|areaType|区域限定|必 ALL 全部 PART部分|
 |areas|区域ID列表|
-|freight|运费基准|必 最小值0|
-|targetValue|免运费标准|必 最小值0|
+|freight|运费基准|必 最小值1|
+|targetValue|免运费标准|必 最小值1|
 
 #### 1.4 请求示例
     {
