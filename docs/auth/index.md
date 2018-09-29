@@ -52,7 +52,7 @@
 #### 参数
 
     keyword // 用户名/手机号
-    status // 状态
+    status // 状态  NORMAL 正常 LOCK 锁定 NOACCOUNT 未开户
     buttonPermissionFlg // 0 不查询按钮权限 1 查询
     pageNo  // 页码
     pageSize // 页条数
@@ -103,7 +103,7 @@
                     "id": 101,  // 用户ID
                     "isOpen": "1",  
                     "mobile": "13478445016",    // 手机号
-                    "status": "normal", // 状态
+                    "status": "normal", // 状态 NOACCOUNT 未开户 LOCK 锁定 NORMAL 解锁
                     "workno": "0101"    // 工号
                 }
             ],
@@ -139,7 +139,7 @@
     
     {
         "uid":101,  // * 用户id
-        "gid":82    // * 功能权限id
+        "gids":[82, 83]    // * 功能权限id列表
     }
 
 #### 响应
@@ -151,26 +151,6 @@
     }
     
 
-### QX-6. 用户取消分配功能权限
-#### 请求
-
-    PUT     /v2/userpower/menupower/{id}
-
-#### 参数
-    
-    id // * 用户id
-    {
-        "gid":82    // * 功能权限id
-    }
-
-#### 响应
-
-    {
-    	"code": 100000,
-    	"msg": "",
-    	"data": null
-    } 
-    
     
 ### QX-7. 用户分配数据权限
 #### 请求
@@ -181,7 +161,7 @@
 
     {
         "uid":101, // * 用户id
-        "rid":82    // * 数据权限id
+        "rids":[82, 83]    // * 数据权限id列表
     }
 
 #### 响应
@@ -193,27 +173,6 @@
     }
     
 
-### QX-8. 用户取消分配数据权限
-#### 请求
-
-    PUT     /v2/userpower/datapower/{id}
-
-#### 参数
-    
-    id // * 用户id
-    {
-        "rid":82    // * 数据权限id
-    }
-
-#### 响应
-
-    {
-    	"code": 100000,
-    	"msg": "",
-    	"data": null
-    }    
-    
- 
 
 ### QX-9. 功能权限新增
 #### 请求
@@ -541,12 +500,12 @@
 ### QX-21. 菜单显示、隐藏
 #### 请求
 
-    PUT     /v2/menu/status/{id}
+    PUT     /v2/menu/status
 
 #### 参数
 
-    id  // * 菜单id
     {
+        "ids":[3,5,7],      // 菜单id列表
         "status":"hidden",  // * show 显示 hidden 隐藏
     }
 
@@ -605,7 +564,8 @@
 
 #### 参数
 
-    无
+    level   // 1：只获取一级菜单 其它：全部获取
+    buttonPermissionFlg //  1 查询按钮权限 0 不查询
 
 #### 响应
 
@@ -637,8 +597,8 @@
                 }
                 ......
             ],
-            "pageNo": 1,
-            "total": 28
+            "pageNo": 0,
+            "total": 0
         }
     }
 
@@ -685,7 +645,7 @@
 
 #### 参数
 
-    无
+    type    // 日志类型 请参考下面操作类型说明
     
 #### 响应
 
@@ -694,6 +654,18 @@
     5 用户分配功能权限，6 用户取消分配功能权限，7 用户分配数据权限，
     8 用户取消分配数据权限，9 功能权限绑定菜单，
     10 功能权限取消绑定菜单
+
+    type 	操作内容
+    1		用户 uname 开户，
+    2		用户 uname 锁定，
+    3		用户 uname 解锁，
+    4		用户 uname 重置密码，
+    5		用户 uname 分配功能权限 gname,
+    6		用户 uname 取消分配功能权限 gname,
+    7		用户 uname 分配数据权限 rname,
+    8		用户 uname 取消分配数据权限 rname,
+    9		功能权限 gname 绑定菜单 mname,
+    10		功能权限 gname 取消绑定菜单 mname,
     {
         "code": 100000,
         "msg": "",
@@ -723,6 +695,37 @@
             "pageNo": 1,
             "total": 28
         }
+    }
+    
+### QX-27. 不分页的功能权限列表
+#### 请求
+
+    GET     /v2/menupower/nopage
+
+#### 参数
+
+    无
+    
+#### 响应
+
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "createTime": "",
+                "gid": 41,              // 功能权限编号
+                "id": 60,               // 功能权限id
+                "isAuto": 0,
+                "menuIds": null,
+                "name": "全部权限",     // 功能权限名称
+                "remark": "",
+                "status": "NORMAL",     // 状态
+                "sys": "a",
+                "uid": 0
+            },
+    .......
+        ]
     }
 
 

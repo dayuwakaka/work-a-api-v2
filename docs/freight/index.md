@@ -18,8 +18,8 @@
 |businessunits|事业部ID列表|
 |areaType|区域限定|必 ALL 全部 PART部分|
 |areas|区域ID列表|
-|freight|运费基准|必 最小值1|
-|targetValue|免运费标准|必 最小值1|
+|freight|运费基准|必 0 < 免值 < 100000000 |
+|targetValue|免运费标准|必 0 < 满值 < 100000000 |
 
 #### 1.4 请求示例
     {
@@ -517,17 +517,12 @@
 |---|---|---|
 |id|申请id|
 |orderId|订单id|
-|freight|订单运费|
+|freight|免运费金额运费|
 |isPass|申请状态|0 待审核； 1 通过； 2 未通过|
 |noReason|拒绝时录入的原因|
-|remark|备注|来自于订单|
-|createTime|操作时间|
-|createUser|操作人id|
-|checkedTime|审核时间|
-|checkedUser|审核人|
-|deleteTime|删除时间|页面不需要删除功能，删除是在后再审核拒绝时自动删除（老逻辑）|
-|deleteUser|操作人|
-|deleteFlg|删除标记|
+|remark|申请原因||
+|createTime|申请时间|
+|createUserName|申请人|
 |total|条数|
 |pageNo|页码|
 
@@ -605,7 +600,7 @@
 ### YF-12. 免运费申请审核日志列表
 
 #### 12.1 请求URL
-    /v2/freight/asklog
+    /v2/freight/ask/log
 
 #### 12.2 请求类型
     GET
@@ -683,16 +678,22 @@
 |totalprice|订单金额||
 |cusotmerName|客户名||
 |fromDepotName|出库仓名称||
+|status|订单状态|INVALID - 订单未生效； RUN - 订单生效； LOCK - 锁定； STOCKUP - 备货完成； SEND - 已发出； COMPLETE - 已签收|
+|isPay|付款状态|0 - 未付款; 1 - 已结款|
 
 #### 返回示例
     {
         "code":100000,
         "msg":"",
         "data":{
-            "jian": 10,
             "bulk": 0,
-            "totalprice": 4640,
-            "customerName": "557",
-            "fromDepotName": ""
+            "customerName": "0惠",
+            "deleteFlg": 0,
+            "freight": 0,
+            "fromDepotName": "DC（大连天联仓）",
+            "isPay": 1,
+            "jian": 20,
+            "status": "INVALID",
+            "totalprice": 4000
         }
     }

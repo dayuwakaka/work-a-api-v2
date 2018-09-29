@@ -245,9 +245,9 @@
     	"data": null
     }
 
-### YX-5 券规列表
+### @@ YX-5 券规列表
 #### 5.1 请求URL
-    /v2/coupon/rules
+    @@ /v2/coupon/rules -> /v2/coupon/rule
     
 #### 5.2 请求类型
     GET
@@ -269,14 +269,14 @@
 |---|---|---|
 |id|优惠券规则id|
 |name|券规名称|
-|ruleType|满减类别| 'PRICE' 金额 ,'COUNT' 数量|
+|@@ ruleType->unit|满减类别| 'PRICE' 金额 ,'COUNT' 数量|
 |ranges|使用条件|PRODUCT 指定产品  ALL 无限制|
 |deleteFlg|状态|0 正常 1 作废|
 |targetValue|目标值|即满值|
 |actionValue|执行值|即减值|
 |createUserName|创建人名称|
 |createTime|创建时间|
-|rangeValues|产品范围|列表中用到productunitId，去调用产品规格接口|
+|@@ rangeValues->ruleRanges|产品范围|列表中用到productunitId，去调用产品规格接口|
 
 ##### buttonPermissions返回值
     返回的集合长度和数据集一样，取对应下标数据即可，true 显示；false 不显示
@@ -308,23 +308,17 @@
                     "material": 0,
                     "name": "测试名称",
                     "onlyCode": "",
-                    "rangeValues": [
+                    "ruleRanges": [ 
                         {
-                            "couponId": 9908,
-                            "deleteFlg": 0,
-                            "guige": "1.875kg（25片）/袋*6袋",
                             "id": 0,
-                            "name": "六和70/80腿肉",
-                            "pno": "LB473",
-                            "productId": 2205,
                             "productunitId": 3784,
-                            "state": ""
+                            "couponRuleId": 0,
+                            "deleteFlg": 0
                         }
                     ],
                     "ranges": "PRODUCT",
-                    "rule": "REDUCE",
-                    "ruleType": "COUNT",
-                    "ruleValues": null,
+                    "type": "REDUCE",
+                    "unit": "COUNT",
                     "targetValue": 100
                 }
             ],
@@ -333,34 +327,30 @@
         }
     }
 
-### YX-6.券规新增
+### @@ YX-6.券规新增
 #### 请求
 
-    POST    /v2/coupon/rules
+    @@ POST    /v2/coupon/rules->/v2/coupon/rule
 
 #### 参数
 
     name   // * 券规名称
-    ruleType    // * 满减类型 PRICE: 价格; COUNT: 数量
-    ranges  // * 产品范围限制 ALL: 不限; PRODUCT: 指定产品
-    ruleValues // * 优惠券规则
-    rangeValues // * 优惠券产品范围，ranges=product时，必传
+    @@ ruleType->unit    // * 满减类型 PRICE: 价格; COUNT: 数量
+    @@ ranges  // * 产品范围限制 ALL: 不限; PRODUCT->PRODUCTUNIT: 指定产品 新增->EXCLUDE: 指定产品
+    @@ ruleValues-> 废弃 // * 优惠券规则
+    @@ 新增->targetValue // * 目标值
+    @@ 新增->actionValue // * 执行值
+    @@ rangeValues->ruleRanges // * 优惠券产品范围，ranges=product时，必传
     onlyCode    // * 本次提交携带的唯一码 防止重复提交用
 
     {
     	"name": "123",
-    	"ruleType": "PRICE",
+    	"unit": "PRICE",
     	"ranges": "ALL",
-    	"ruleValues": [{
-            targetValue: 120 (目标值，即满值，可以为两位小数) - Number,
-            value: 20 (执行值，可以为两位小数) - Number
-    	}],
-    	"rangeValues": [{
-            productId: 66651 (产品id) - Number,
-            productUnitId: 128989 (产品规格id) - Number,
-            pno: "A081210",
-            name: "扛枪保家卫国套餐",
-            guige: "1人/次"
+        "targetValue": 120 (目标值，即满值，可以为两位小数) - Number,
+        "actionValue": 20 (执行值，可以为两位小数) - Number，
+    	"ruleRanges": [{
+            @@ productUnitId-> productunitId: 128989 (产品规格id) - Number
         }],
     	"onlyCode": "_1537162222240"
     }
@@ -375,10 +365,10 @@
     }
 
 
-### YX-8.券规作废
+### @@ YX-8.券规作废
 
 #### 请求url
-    /v2/coupon/rules/{id}
+    @@ /v2/coupon/rules/{id} -> /v2/coupon/rule/{id}
 
 #### 请求类型
     DELETE
@@ -395,111 +385,142 @@
 |msg|消息|修改成功/异常信息|
 |data|数据|
 
-### YX-9.客户优惠券申请列表
+### @@ YX-9.客户优惠券申请列表
 
-#### 请求url
-    /v2/coupon/customer_askfors
+#### 请求
 
-#### 请求类型
-    GET
+    @@ GET    /v2/coupon/customer_askfors -> /v2/coupon/askfor
 
-#### 请求参数
-|参数|名称|类型|描述|
-|---|---|---|---|
-|name|优惠券规则名称|String
-|status|券规状态|Stirng|ASKFOR: 申请, PASS: 通过, REFUSE: 拒绝|
-|pageNo|页码|Number|default-value: 1|
-|pageSize|页面容量|Number|default-value: 25|
-|buttonPermissionFlg|按钮权限|Number|0-查询按钮权限 1-不查询|
+#### 参数
 
-##### buttonPermissions返回值
-    返回的集合长度和数据集一样，取对应下标数据即可，true 显示；false 不显示
-    approvalButton: 审批按钮
+    keyword // 优惠券名称/客户名称
+    buttonPermissionFlg // 按钮权限 1 查询 0 不查询
+    pageNo  // 页码
+    pageSize    // 页条数
 
-#### 返回值
-|参数|名称|类型|描述|
-|---|---|---|---|
-|id|客户优惠券申请id（即优惠券编号）|Number|
-|customerName|客户名称|String|
-|ruleName|优惠券名称|String|
-|status|审核状态|String|ASKFOR: 申请; PASS: 通过; REFUSE: 拒绝|
-|couponAmount|优惠券发放张数|Number|
-|effectStime|优惠券开始时间|String|
-|effectEtime|优惠券结束时间|String|
-|createUserName|申请人|String|
-|createTime|申请时间|String|
+#### 响应
 
-#### 请求示例
-    /v2/coupon/customer_askfors?pageNo=1&pageSize=25&name=&status=
-
-#### 返回值示例
     {
-        code: 0,
-        msg: "",
-        data: {
-            datas: [
-                        {
-                            ...
-                        },
-                        ...
-                   ],
-            buttonPermissions:[
-                        {
-                            approvalButton: false
-                        },
-                        ...
-            ]
-            total: 93330 (总条数) - Number,
-            pageNo: 12 (对应的页码) - Number
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [
+                
+            ],
+            "dataSums": null,
+            "datas": [
+                {
+                    "checkRole": 0,
+                    "checkTime": "2018-09-21 16:48:14.0",
+                    "checkUser": 0,
+                    "checkUserName": "姜晓",
+                    "couponAmount": 1,
+                    @@ "couponCustomerId->couponId": 0,
+                    @@ "couponId->couponRuleId": 0,
+                    "createRole": 0,
+                    "createTime": "2018-09-11 09:18:40.0",      // 创建时间
+                    "createUser": 0,
+                    "createUserName": "",                       // 创建人
+                    "customerId": 946,
+                    "customerName": "946",                      // 客户名称
+                    "effectEtime": "2018-12-12 23:59:59.0",     // 优惠券结束时间
+                    "effectStime": "2018-09-11 00:00:00.0",     // 优惠券开始时间
+                    "id": 87426,                                // 优惠券编号
+                    "note": "",
+                    @@ "pageId->marketId": 0,
+                    @@ "promoName->marketName @@": "",
+                    "ruleName": "小饺丫（荠菜鱿鱼饺）优惠券",   // 优惠券名称
+                    @@ "新增->unit":"PRICE" // 按价 ，按数量
+                    @@ "ruleType->type": "REDUCE",
+                    "status": "PASS"                            // 状态
+                },
+                ......
+            ],
+            "pageNo": 1,
+            "total": 4
         }
     }
 
-### YX-10.客户优惠券申请审批
+
+### @@ YX-10.客户优惠券申请审批(作废) 
+
+#### 请求
+
+    PUT    /v2/coupon/customer_askfors/{id}
+
+#### 参数
+
+    id // * 申请id
+    status // * 状态 PASS 通过 REFUSE 拒绝
+    
+#### 响应
+
+    {
+    	"code": 100000,
+    	"msg": "",
+    	"data": null
+    }
+
+### @@ YX-10.客户优惠券申请审核同意
+
+#### 请求
+
+    PUT    /v2/coupon/askfor/pass
+
+#### 参数
+
+    body json
+    [1, 2, 3] // 申请id列表
+    
+#### 响应
+
+    {
+    	"code": 100000,
+    	"msg": "",
+    	"data": null
+    }
+
+### @@ YX-11.客户优惠券申请批量审批(作废)
+
+#### 请求
+
+    PUT    /v2/coupon/customer_askfors/batch
+
+#### 参数
+
+    ids // * 申请id列表 [3,5,6]
+    status  // * 状态 PASS 通过 REFUSE 拒绝
+    
+#### 响应
+
+    {
+    	"code": 100000,
+    	"msg": "",
+    	"data": null
+    }
+
+### @@ YX-11.客户优惠券申请拒绝
+
+#### 请求
+
+    PUT    /v2/coupon/askfor/refuse
+
+#### 参数
+    josn body
+    [1, 2, 3] // 申请id列表
+    
+#### 响应
+
+    {
+    	"code": 100000,
+    	"msg": "",
+    	"data": null
+    }
+
+### @@ YX-12.客户优惠券申请批量新增（优惠券规则列表中的发券功能、客户功能模块中的发券功能）
 
 #### 请求url
-    /v2/coupon/customer_askfors/{id}
-
-#### 请求类型
-    PUT
-
-#### 请求参数
-|参数|名称|类型|描述|
-|---|---|---|---|
-|*id|客户优惠券申请id|Number|
-|*result|审核结果|Stirng|PASS: 通过, REFUSE: 拒绝|
-
-#### 返回值
-|参数|名称|描述|
-|---|---|---|
-|code|编号|100000：成功；0 ~ 99999：失败|
-|msg|消息|修改成功/异常信息|
-|data|数据|
-
-### YX-11.客户优惠券申请批量审批
-
-#### 请求url
-    /v2/coupon/customer_askfors/batch
-
-#### 请求类型
-    PUT
-
-#### 请求参数
-|参数|名称|类型|描述|
-|---|---|---|---|
-|*ids|客户优惠券申请ids|String|以","相隔拼接而成的ids 例：1,2,3,4
-|*result|审批结果|String|PASS: 通过; REFUSE: 拒绝|
-
-#### 返回值
-|参数|名称|描述|
-|---|---|---|
-|code|编号|100000：成功；0 ~ 99999：失败|
-|msg|消息|修改成功/异常信息|
-|data|数据|
-
-### YX-12.客户优惠券申请批量新增（优惠券规则列表中的发券功能、客户功能模块中的发券功能）
-
-#### 请求url
-    /v2/coupon/customer_askfors/batch
+    @@ /v2/coupon/customer_askfors/batch -> /v2/coupon/askfor
 
 #### 请求类型
     POST
@@ -508,7 +529,7 @@
 |参数|名称|类型|描述|
 |---|---|---|---|
 |*customerIds|客户id|Array
-|*couponAmounts|优惠券规则id和发放张数用逗号相隔|Array|例 ["3,2"]逗号前为优惠券规则id，逗号后为发放张数]
+|@@ *couponAmounts|优惠券规则id和发放张数用逗号相隔|Array|例 ["3,2"]逗号前为优惠券规则id，逗号后为发放张数]
 |*effectStime|优惠券有效期开始时间|String|日期为客户所选 时间为自动补全 00:00:00
 |*effectEtime|优惠券有效期结束时间|String|日期为客户所选 时间为自动补全 23:59:59
 |note|备注|String|200字符以内|
@@ -524,16 +545,19 @@
 #### 请求体示例
     {
         customerIds: [11,33,55],
-        couponAmounts: ["3,3", "5,5"],
+        @@ couponAmounts: ["3,3", "5,5"] ->{ // 结构由arry 变为 map
+            3:3,
+            4:4
+        },
         effectStime: '2018-09-05 00:00:00',
         effectEtime: '2018-12-12 00:00:00',
         note: '我就是打个酱油'
     }
 
-### YX-13.客户优惠券列表
+### @@ YX-13.客户优惠券列表
 #### 请求
 
-    GET     /v2/coupon/customers
+    @@ GET     /v2/coupon/customers -> /v2/coupon
 
 #### 参数
 
@@ -561,8 +585,7 @@
             "dataSums": null,
             "datas": [
                 {
-                    "businessName": "PDOD", 
-                    "couponId": 0,                          // 优惠券规则id
+                    @@ "couponId->couponRuleId": 0,                          // 优惠券规则id
                     "createRole": 0,
                     "createTime": "2018-09-11 09:25:14.0",
                     "createUser": 0,
@@ -572,13 +595,14 @@
                     "effectEtime": "2018-12-12 23:59:59",   // 优惠券结束时间
                     "effectStime": "2018-09-11 00:00:00",   // 优惠券开始时间
                     "id": 21995,                            // 客户优惠券编号
-                    "pageId": 0,
+                    @@ "pageId->marketId": 0,
+                    @@ "新增->marketName": "", //活动名
                     "ruleName": "小饺丫（荠菜鱿鱼饺）优惠券",   // 优惠券名称
-                    "ruleType": "REDUCE",
-                    "source": "",
-                    "sourceName": "手工",           // 发放源
-                    "status": "NORMAL",     // 状态 normal 正常 lock 锁定 invalid 作废
-                    "type": 0,
+                    @@ "ruleType->type": "REDUCE",
+                    "source": "HANDWORK", // HANDWORK 手工 ACITVE 活动
+                    @@ "sourceName->废弃": "手工",           // 发放源
+                    @@ "新增->unit": "PRICE", // PRICE 满额 COUNT 满数量
+                    @@ "status": "NORMAL",     // 状态 normal 正常 lock 锁定 INVALD->CANCEL 作废
                     "used": "NO"            // 使用情况 YES 已使用 NO 未使用
                 },
                 ......
@@ -589,23 +613,17 @@
     }
     
     
-### YX-14. 客户优惠券批量解锁、批量锁定、批量作废
+### @@ YX-14. 客户优惠券批量解锁、批量锁定、批量作废(作废)
 #### 请求
 
     PUT     /v2/coupon/customers/batch
     
 #### 参数
 
-    [{
-    	"id": 8,                // 客户优惠券id
+    {
+    	"ids": [3,4,5],                // 客户优惠券id 列表
     	"status": "CANCEL"      // 状态 NORMAL 解锁 LOCK 锁定 CANCEL 作废
-    }, {
-    	"id": 9,
-    	"status": "CANCEL"
-    }, {
-    	"id": 10,
-    	"status": "CANCEL"
-    }]
+    }
     
 #### 响应
 
@@ -615,9 +633,26 @@
     	"data": null
     }
     
-    
+### @@ YX-14. 客户优惠券锁\解锁
+#### 请求
 
-### YX-15.客户优惠券解锁、锁定、作废
+    PUT     /v2/coupon/lock
+    PUT     /v2/coupon/unlock
+    
+#### 参数
+
+    [3,4,5]               // 客户优惠券id 列表
+    
+#### 响应
+
+    {
+    	"code": 100000,
+    	"msg": "操作成功",
+    	"data": null
+    }
+
+
+### @@ YX-15.客户优惠券解锁、锁定、作废（作废）
 #### 请求
 
     PUT     /v2/coupon/customers/{id}
@@ -625,7 +660,7 @@
 #### 参数
 
     id  // * 优惠券id
-    status  // * 状态 normal 正常 lock 锁定 invalid 作废
+    status  // * 状态 NORMAL 解锁 LOCK 锁定 CANCEL 作废
 
 #### 响应
 
@@ -634,6 +669,24 @@
     	"msg": "操作成功",
     	"data": null
     }
+
+### @@ YX-15.客户优惠券作废
+#### 请求
+
+    PUT     /v2/coupon/cancel
+
+#### 参数
+
+    [3,4,5] // 客户优惠券id 列表
+
+#### 响应
+
+    {
+    	"code": 100000,
+    	"msg": "操作成功",
+    	"data": null
+    }
+
 
 ### YX-16 领券活动详情
 #### 16.1 请求URL

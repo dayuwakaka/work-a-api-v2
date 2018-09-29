@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>app v5 接口 | ADoc</title>
+    <meta name="description" content="A团队开发文档">
+    
+    
+    <link rel="preload" href="/work-a-api-v2/assets/css/0.styles.b3d83912.css" as="style"><link rel="preload" href="/work-a-api-v2/assets/js/app.e6fba923.js" as="script"><link rel="preload" href="/work-a-api-v2/assets/js/5.be861fa0.js" as="script"><link rel="prefetch" href="/work-a-api-v2/assets/js/7.72c59ee5.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/2.cda51ec0.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/3.e260ff61.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/4.b446dd4c.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/6.5cae9cbe.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/8.989bc134.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/9.472c0602.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/10.54b2c00c.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/11.ed287b7d.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/12.0a9686b4.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/13.6bf53493.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/14.6f70e3bc.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/15.071709a6.js">
+    <link rel="stylesheet" href="/work-a-api-v2/assets/css/0.styles.b3d83912.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/work-a-api-v2/" class="home-link router-link-active"><!----> <span class="site-name">ADoc</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/work-a-api-v2/customer/" class="nav-link">客户</a></div><div class="nav-item"><a href="/work-a-api-v2/product/" class="nav-link">产品</a></div><div class="nav-item"><a href="/work-a-api-v2/auth/" class="nav-link">权限</a></div><div class="nav-item"><a href="/work-a-api-v2/contract/" class="nav-link">销售优惠</a></div><div class="nav-item"><a href="/work-a-api-v2/price/" class="nav-link">价格</a></div><div class="nav-item"><a href="/work-a-api-v2/freight/" class="nav-link">运费</a></div><div class="nav-item"><a href="/work-a-api-v2/market/" class="nav-link">营销</a></div><div class="nav-item"><a href="/work-a-api-v2/common/" class="nav-link">基础</a></div><div class="nav-item"><a href="/work-a-api-v2/app/" class="nav-link router-link-exact-active router-link-active">APP</a></div><div class="nav-item"><a href="/work-a-api-v2/other/" class="nav-link">其它</a></div><div class="nav-item"><a href="/work-a-api-v2/changelog/" class="nav-link">变更</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/work-a-api-v2/customer/" class="nav-link">客户</a></div><div class="nav-item"><a href="/work-a-api-v2/product/" class="nav-link">产品</a></div><div class="nav-item"><a href="/work-a-api-v2/auth/" class="nav-link">权限</a></div><div class="nav-item"><a href="/work-a-api-v2/contract/" class="nav-link">销售优惠</a></div><div class="nav-item"><a href="/work-a-api-v2/price/" class="nav-link">价格</a></div><div class="nav-item"><a href="/work-a-api-v2/freight/" class="nav-link">运费</a></div><div class="nav-item"><a href="/work-a-api-v2/market/" class="nav-link">营销</a></div><div class="nav-item"><a href="/work-a-api-v2/common/" class="nav-link">基础</a></div><div class="nav-item"><a href="/work-a-api-v2/app/" class="nav-link router-link-exact-active router-link-active">APP</a></div><div class="nav-item"><a href="/work-a-api-v2/other/" class="nav-link">其它</a></div><div class="nav-item"><a href="/work-a-api-v2/changelog/" class="nav-link">变更</a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>app v5 接口</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/work-a-api-v2/app/#app-v5-接口" class="sidebar-link">app v5 接口</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/work-a-api-v2/app/#app-1-获取客户信息" class="sidebar-link">APP-1 获取客户信息</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/app/#app-2-餐饮业态信息" class="sidebar-link">APP-2 餐饮业态信息</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/app/#app-3-更新客户餐饮业态" class="sidebar-link">APP-3 更新客户餐饮业态</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/app/#app-4-获取联系方式" class="sidebar-link">APP-4 获取联系方式</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/app/#app-5-修改联系方式" class="sidebar-link">APP-5 修改联系方式</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/app/#app-6-删除联系方式" class="sidebar-link">APP-6 删除联系方式</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/app/#app-7-新增联系方式" class="sidebar-link">APP-7 新增联系方式</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/app/#app-8-修改密码" class="sidebar-link">APP-8 修改密码</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/app/#app-9-获取初始化信息" class="sidebar-link">APP-9 获取初始化信息</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/app/#app-10-登录" class="sidebar-link">APP-10 登录</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/app/#app-11-获取验证码" class="sidebar-link">APP-11 获取验证码</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/app/#app-12-重置密码" class="sidebar-link">APP-12 重置密码</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/app/#app-13-获取匿名token" class="sidebar-link">APP-13 获取匿名Token</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/app/#app-14-一键领取优惠券" class="sidebar-link">APP-14 一键领取优惠券</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/app/#app-15-轮播图" class="sidebar-link">APP-15 轮播图</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/app/#app-16-弹屏图" class="sidebar-link">APP-16 弹屏图</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/app/#app-18-获取客户账户" class="sidebar-link">APP-18 获取客户账户</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/app/#模版" class="sidebar-link">模版</a></li></ul></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h2 id="app-v5-接口"><a href="#app-v5-接口" aria-hidden="true" class="header-anchor">#</a> app v5 接口</h2> <h3 id="app-1-获取客户信息"><a href="#app-1-获取客户信息" aria-hidden="true" class="header-anchor">#</a> APP-1 获取客户信息</h3> <h4 id="请求"><a href="#请求" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /router/v5/customer
+</code></pre> <h4 id="参数"><a href="#参数" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*customerId: 0 // 客户ID
+</code></pre> <h4 id="响应"><a href="#响应" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;accountId&quot;: &quot;&quot;,  // 帐号ID
+        &quot;accountMobile&quot;: &quot;&quot;, // 帐号手机号
+        &quot;accountState&quot;: &quot;&quot;, // 帐号状态 NORMAL
+        &quot;action&quot;: &quot;action&quot;,
+        &quot;area&quot;: &quot;沙河口区&quot;,
+        &quot;areapathid&quot;: &quot;060203&quot;,
+        &quot;authenNo&quot;: 0, // 认证号
+        &quot;authenState&quot;: &quot;PASS&quot;, // 认证状态
+        &quot;authenTime&quot;: &quot;2018-08-23 11:32:51&quot;, // 认证时间
+        &quot;authenType&quot;: &quot;&quot;,
+        &quot;businessType&quot;: 38, // 餐饮业态ID
+        &quot;businessTypeCode&quot;: &quot;06&quot;, // 餐饮业态Code
+        &quot;businessTypeName&quot;: &quot;推荐&quot;, // 餐饮业态名称
+        &quot;businessunit&quot;: 1, // 事业部ID
+        &quot;businessunitGroupId&quot;: 3, // 事业部组ID
+        &quot;businessunitGroupName&quot;: &quot;PW事业组&quot;, // 事业部组名
+        &quot;businessunitName&quot;: &quot;PW&quot;, // 事业部名
+        &quot;city&quot;: &quot;大连市&quot;, 
+        &quot;companyName&quot;: &quot;dddd&quot;, // 公司名
+        &quot;contactId&quot;: 1, // 默认联系方式ID
+        &quot;contactMobile&quot;: &quot;18842889150&quot;, // 默认联系方式手机号
+        &quot;contactName&quot;: &quot;222&quot;, // 默认联系人
+        &quot;contactPathid&quot;: &quot;&quot;, 
+        &quot;createRole&quot;: 5035, // 创建角色ID
+        &quot;createRoleName&quot;: &quot;ASAV-陈明&quot;, // 创建角色
+        &quot;createTime&quot;: &quot;2011-06-09 10:20:12&quot;, // 创建时间
+        &quot;createUser&quot;: 0, // 创建人
+        &quot;customer2Attrs&quot;: null,
+        &quot;customerAccount&quot;: null,
+        &quot;customerBalance&quot;: { // 客户余额
+            &quot;balance&quot;: 0, // 余额
+            &quot;freeze&quot;: 0, // 冻结
+            &quot;id&quot;: 0, 
+            &quot;prepaid&quot;: 0 // 订金
+        },
+        &quot;customerContacts&quot;: [ // 客户联系方式
+            { 
+                &quot;address&quot;: &quot;3333&quot;, // 客户
+                &quot;area&quot;: &quot;北京市&quot;,
+                &quot;areapathid&quot;: &quot;0101&quot;,
+                &quot;city&quot;: &quot;北京市&quot;,
+                &quot;createRole&quot;: 5035,
+                &quot;createTime&quot;: &quot;2011-06-09 10:20:12.0&quot;,
+                &quot;createUser&quot;: 0,
+                &quot;customerId&quot;: 149,
+                &quot;id&quot;: 1,
+                &quot;isDefault&quot;: 1,
+                &quot;lastModified&quot;: &quot;2018-09-06 18:00:34.0&quot;,
+                &quot;mobile&quot;: &quot;18842889150&quot;,
+                &quot;name&quot;: &quot;222&quot;,
+                &quot;province&quot;: &quot;北京&quot;,
+                &quot;remarks&quot;: &quot;&quot;
+            }
+        ],
+        &quot;defaultCustomerContact&quot;:{
+            &quot;address&quot;: &quot;3333&quot;, // 客户
+            &quot;area&quot;: &quot;北京市&quot;,
+            &quot;areapathid&quot;: &quot;0101&quot;,
+            &quot;city&quot;: &quot;北京市&quot;,
+            &quot;createRole&quot;: 5035,
+            &quot;createTime&quot;: &quot;2011-06-09 10:20:12.0&quot;,
+            &quot;createUser&quot;: 0,
+            &quot;customerId&quot;: 149,
+            &quot;id&quot;: 1,
+            &quot;isDefault&quot;: 1,
+            &quot;lastModified&quot;: &quot;2018-09-06 18:00:34.0&quot;,
+            &quot;mobile&quot;: &quot;18842889150&quot;,
+            &quot;name&quot;: &quot;222&quot;,
+            &quot;province&quot;: &quot;北京&quot;,
+            &quot;remarks&quot;: &quot;&quot;
+        },
+        &quot;dod&quot;: 1,
+        &quot;freight&quot;: 1,
+        &quot;id&quot;: 149,
+        &quot;isParent&quot;: 0,
+        &quot;newFlg&quot;: 0,
+        &quot;parentId&quot;: 0,
+        &quot;parentName&quot;: &quot;&quot;,
+        &quot;printPrice&quot;: 0,
+        &quot;province&quot;: &quot;辽宁&quot;,
+        &quot;receiverUser&quot;: 0,
+        &quot;shortName&quot;: &quot;149&quot;,
+        &quot;source&quot;: 1,
+        &quot;srRoleId&quot;: 40,
+        &quot;srRoleName&quot;: &quot;高成举-SRM-T&quot;,
+        &quot;ssRoleId&quot;: 2196,
+        &quot;ssRoleName&quot;: &quot;解冰&quot;,
+        &quot;state&quot;: &quot;NORMAL&quot;,
+        &quot;type&quot;: &quot;A&quot;
+    }
+}
+</code></pre> <h3 id="app-2-餐饮业态信息"><a href="#app-2-餐饮业态信息" aria-hidden="true" class="header-anchor">#</a> APP-2 餐饮业态信息</h3> <h4 id="请求-2"><a href="#请求-2" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /router/v5/product/businessType
+</code></pre> <h4 id="参数-2"><a href="#参数-2" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*parentId: 0 // 分类父ID
+</code></pre> <h4 id="响应-2"><a href="#响应-2" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+            {
+                &quot;code&quot;: &quot;0201&quot;, // 餐饮业态Code
+                &quot;deleteFlg&quot;: 0, 
+                &quot;id&quot;: 17, // 餐饮业态ID
+                &quot;image&quot;: &quot;http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/0201.png&quot;, // 餐饮业态图片
+                &quot;level&quot;: 2, // 餐饮业态等级
+                &quot;name&quot;: &quot;汉堡店&quot;, // 餐饮业态名
+                &quot;parentId&quot;: 16, // 餐饮业态父ID
+                &quot;pyCode&quot;: &quot;HBD&quot;, // 餐饮业态拼音
+                &quot;sImage&quot;: &quot;http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s0201.png&quot;, // 餐饮业态选中图
+                &quot;sort&quot;: 0, // 排序
+                &quot;wImage&quot;: &quot;http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g0201.png&quot; // 餐饮业态白图
+            }
+        ]
+}
+</code></pre> <h3 id="app-3-更新客户餐饮业态"><a href="#app-3-更新客户餐饮业态" aria-hidden="true" class="header-anchor">#</a> APP-3 更新客户餐饮业态</h3> <h4 id="请求-3"><a href="#请求-3" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /router/v5/customer/modifyBusinessType/{customerId}
+</code></pre> <h4 id="参数-3"><a href="#参数-3" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*customerId:0 // 客户ID
+jsonBody{
+    *businessTypeId:0 // 餐饮业态ID
+}
+</code></pre> <h4 id="响应-3"><a href="#响应-3" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="app-4-获取联系方式"><a href="#app-4-获取联系方式" aria-hidden="true" class="header-anchor">#</a> APP-4 获取联系方式</h3> <h4 id="请求-4"><a href="#请求-4" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /router/v5/customer/contact
+</code></pre> <h4 id="参数-4"><a href="#参数-4" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*customerId: 0 //客户ID
+</code></pre> <h4 id="响应-4"><a href="#响应-4" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;address&quot;: &quot;555&quot;, // 地址
+            &quot;area&quot;: &quot;上城区&quot;, // 县
+            &quot;areapathid&quot;: &quot;110101&quot;, // 地区Pathid
+            &quot;city&quot;: &quot;杭州市&quot;, // 市
+            &quot;createRole&quot;: 326, // 创建角色
+            &quot;createTime&quot;: &quot;2018-09-19 16:06:59.0&quot;, // 创建时间
+            &quot;createUser&quot;: 1, // 创建人ID
+            &quot;customerId&quot;: 32250, // 客户ID
+            &quot;id&quot;: 50769, // 联系方式ID
+            &quot;isDefault&quot;: 1, // 是否默认
+            &quot;isdefault&quot;: 1, // 不要用！！！！不要用！！！！不要用！！！！
+            &quot;lastModified&quot;: &quot;2018-09-20 09:28:51.0&quot;,
+            &quot;mobile&quot;: &quot;18842889150&quot;, // 手机号
+            &quot;name&quot;: &quot;555&quot;, // 客户名
+            &quot;province&quot;: &quot;浙江&quot;, // 省份
+            &quot;remarks&quot;: &quot;555&quot; // 备注
+        }
+    ]
+}
+</code></pre> <h3 id="app-5-修改联系方式"><a href="#app-5-修改联系方式" aria-hidden="true" class="header-anchor">#</a> APP-5 修改联系方式</h3> <h4 id="请求-5"><a href="#请求-5" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /router/v5/customer/contact/{id}
+</code></pre> <h4 id="参数-5"><a href="#参数-5" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id: 0 // 联系方式ID
+body json
+{
+    *&quot;name&quot;:&quot;777&quot;, // 联系人
+    *&quot;mobile&quot;:&quot;18842889150&quot;, // 联系方式
+    *&quot;areapathid&quot;:&quot;010101&quot;, // 区域Pathid
+    *&quot;address&quot;:&quot;3333&quot;, // 地址
+    *&quot;remark&quot;:&quot;xxxx&quot;, // 备注
+    *&quot;isDefault&quot;:1 // 是否默认，注意驼峰，一定要跟大写的D
+}
+</code></pre> <h4 id="响应-5"><a href="#响应-5" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="app-6-删除联系方式"><a href="#app-6-删除联系方式" aria-hidden="true" class="header-anchor">#</a> APP-6 删除联系方式</h3> <h4 id="请求-6"><a href="#请求-6" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>DELETE /router/v5/customer/contact/{id}
+</code></pre> <h4 id="参数-6"><a href="#参数-6" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id: 0 // 联系方式ID
+</code></pre> <h4 id="响应-6"><a href="#响应-6" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="app-7-新增联系方式"><a href="#app-7-新增联系方式" aria-hidden="true" class="header-anchor">#</a> APP-7 新增联系方式</h3> <h4 id="请求-7"><a href="#请求-7" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /router/v5/customer/contact
+</code></pre> <h4 id="参数-7"><a href="#参数-7" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    *&quot;customerId&quot;:32250,
+    *&quot;name&quot;:&quot;111&quot;,
+    *&quot;mobile&quot;:&quot;18842889150&quot;,
+    *&quot;areapathid&quot;:&quot;0101&quot;,
+    *&quot;address&quot;:&quot;111&quot;,
+    *&quot;remark&quot;:&quot;1111&quot;,
+    *&quot;isDefault&quot;:1
+}
+</code></pre> <h4 id="响应-7"><a href="#响应-7" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="app-8-修改密码"><a href="#app-8-修改密码" aria-hidden="true" class="header-anchor">#</a> APP-8 修改密码</h3> <h4 id="请求-8"><a href="#请求-8" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /router/v5/customer/password/reset/{customerId}
+</code></pre> <h4 id="参数-8"><a href="#参数-8" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*customerId:0 //客户ID
+json body
+{
+    *password: &quot;xxx&quot;, // 新密码
+    *oldPassword: &quot;xxxx&quot; // 旧密码
+}
+</code></pre> <h4 id="响应-8"><a href="#响应-8" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="app-9-获取初始化信息"><a href="#app-9-获取初始化信息" aria-hidden="true" class="header-anchor">#</a> APP-9 获取初始化信息</h3> <h4 id="请求-9"><a href="#请求-9" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /router/v5/auth/initInfo
+</code></pre> <h4 id="参数-9"><a href="#参数-9" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <h4 id="响应-9"><a href="#响应-9" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;flg&quot;: &quot;1&quot;,
+    &quot;code&quot;: &quot;100000&quot;,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;delOrderSecond&quot;: 10800, // 删除订单时间间隔
+        &quot;rechargeTag&quot;: 0, // 充值口 0 不打开， 1 打开
+        &quot;serverTime&quot;: 0, // 订单默认 sendtime 服务器时间 + 1天
+        &quot;businesstype&quot;: 16 //  // 默认餐饮业态  16 西餐西快
+    }
+}
+</code></pre> <h3 id="app-10-登录"><a href="#app-10-登录" aria-hidden="true" class="header-anchor">#</a> APP-10 登录</h3> <h4 id="请求-10"><a href="#请求-10" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /router/v5/auth/appLogin
+</code></pre> <h4 id="参数-10"><a href="#参数-10" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*loginName:&quot;as032250&quot; //登录名
+*password:&quot;222222&quot; // 登录密码
+*ipAddress:&quot;0.0.0.0&quot; // 登录IP
+*cartId:&quot;1&quot; //登录设备号
+</code></pre> <h4 id="响应-10"><a href="#响应-10" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;flg&quot;: &quot;1&quot;,
+    &quot;code&quot;: &quot;100000&quot;,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;customerId&quot;: 32250, // 客户ID
+        &quot;customer_id&quot;: 32250, // 不要用！不要用！不要用！
+        &quot;token&quot;:  &quot;eyJhbGciOiJIUzUxMiJ9.eyJ1aWQiOiIzMjkyMyIsImdpZCI6Ii0xIiwicmlkcyI6Ii0xIiwiY3JlYXRlX3RpbWUiOiIyMDE4LTA5LTIwIDE1OjE2OjExIiwicGlkIjoiMSIsInJpZCI6Ii0xIn0.SQgLPdxNV8UxSa-pmJBpfn1InJxDLqDcwHgWdCo_LJfyjauBiiSNmpWcAJSJv7yVuJV7qRR8eqt8mtIQ-DpSAA&quot; // token
+    }
+}
+</code></pre> <h3 id="app-11-获取验证码"><a href="#app-11-获取验证码" aria-hidden="true" class="header-anchor">#</a> APP-11 获取验证码</h3> <h4 id="请求-11"><a href="#请求-11" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /router/v5/auth/getVerifyCode
+</code></pre> <h4 id="参数-11"><a href="#参数-11" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*loginName: &quot;xxx&quot; //登录名
+*verifyType: &quot;sms&quot; // 验证方式 sms 短信 voice 语音
+</code></pre> <h4 id="响应-11"><a href="#响应-11" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;flg&quot;: &quot;1&quot;,
+    &quot;code&quot;: &quot;100000&quot;,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: &quot;28000e5145cf4bca876fb6d9d0f323a3&quot; // 消息ID
+}
+</code></pre> <h3 id="app-12-重置密码"><a href="#app-12-重置密码" aria-hidden="true" class="header-anchor">#</a> APP-12 重置密码</h3> <h4 id="请求-12"><a href="#请求-12" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /router/v5/auth/resetPwd
+</code></pre> <h4 id="参数-12"><a href="#参数-12" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>json body
+{
+    *loginName:&quot;xxx&quot;, // 登录名
+    *password:&quot;xxx&quot;, // 密码
+    *code:&quot;xxx&quot; // 验证码
+}
+</code></pre> <h4 id="响应-12"><a href="#响应-12" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;flg&quot;: &quot;1&quot;,
+    &quot;code&quot;: &quot;100000&quot;,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="app-13-获取匿名token"><a href="#app-13-获取匿名token" aria-hidden="true" class="header-anchor">#</a> APP-13 获取匿名Token</h3> <h4 id="请求-13"><a href="#请求-13" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /router/v5/auth/anonymous
+</code></pre> <h4 id="参数-13"><a href="#参数-13" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <h4 id="响应-13"><a href="#响应-13" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;flg&quot;: &quot;1&quot;,
+    &quot;code&quot;: &quot;100000&quot;,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: &quot;eyJhbGciOiJIUzUxMiJ9.eyJ1aWQiOiIwIiwiZ2lkIjoiMCIsInJpZHMiOiIwIiwiY3JlYXRlX3RpbWUiOiIyMDE4LTA5LTIwIDE1OjU4OjA4IiwicGlkIjoiMSIsInJpZCI6IjAifQ.gZojhubUvT9w16ATTh4d72yiw_5RXi02LmjygdL-Ue4nEgMDkoI1X3zOs5qKMlqqY-3Wsz902e66d8kNkMxTJA&quot; // 匿名token
+}
+</code></pre> <h3 id="app-14-一键领取优惠券"><a href="#app-14-一键领取优惠券" aria-hidden="true" class="header-anchor">#</a> APP-14 一键领取优惠券</h3> <h4 id="请求-14"><a href="#请求-14" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /router/v5/market/coupon/receive
+</code></pre> <h4 id="参数-14"><a href="#参数-14" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>body json{
+    *customerId: 0 // 客户ID
+    *marketId: 0 // 营销ID
+}
+</code></pre> <h4 id="响应-14"><a href="#响应-14" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;flg&quot;: &quot;1&quot;,
+    &quot;code&quot;: &quot;100000&quot;,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="app-15-轮播图"><a href="#app-15-轮播图" aria-hidden="true" class="header-anchor">#</a> APP-15 轮播图</h3> <h4 id="请求-15"><a href="#请求-15" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /router/v5/market/banner
+</code></pre> <h4 id="参数-15"><a href="#参数-15" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>customerId: 0 //客户ID
+</code></pre> <h4 id="响应-15"><a href="#响应-15" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;accumulative&quot;: &quot;&quot;,
+            &quot;activeConditionId&quot;: 0,
+            &quot;bannerPic&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/20180920160218040-2.jpg&quot;, // 轮播图
+            &quot;couponConditionId&quot;: 0, 
+            &quot;effectEtime&quot;: &quot;&quot;,
+            &quot;effectStime&quot;: &quot;&quot;,
+            &quot;hasBusinessunitRange&quot;: 0,
+            &quot;hasProductunitRange&quot;: 0,
+            &quot;id&quot;: 16,
+            &quot;limitNum&quot;: 0,
+            &quot;name&quot;: &quot;&quot;,
+            &quot;popupPic&quot;: &quot;&quot;,
+            &quot;productunitIds&quot;: [ // 产品规格Ids，数组列表
+                1,2,3
+            ], 
+            &quot;type&quot;: &quot;GIFT&quot;, // 类型 GIFT 买立增 COUPON 发券 REDUCE 买立减 DISCOUNT 买立折 COLUMN 专栏 SPECIAL 专题
+            &quot;unit&quot;: &quot;&quot;，
+            &quot;detailPic&quot;: [
+                {
+                    id: 0 // 图片ID，
+                    marketId: 0 // 营销ID，
+                    type: &quot;DETAIL&quot;，
+                    position: &quot;NOLIMIT&quot; //'NOLIMIT' 无限制, 'TOP' 顶部, 'MIDDLE' 中间, 'BOTTOM' 下面，
+                    picUrl: &quot;xxx&quot; //图片地址
+                }
+            ]
+        }
+    ]
+}
+</code></pre> <h3 id="app-16-弹屏图"><a href="#app-16-弹屏图" aria-hidden="true" class="header-anchor">#</a> APP-16 弹屏图</h3> <h4 id="请求-16"><a href="#请求-16" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /router/v5/market/popup
+</code></pre> <h4 id="参数-16"><a href="#参数-16" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>customerId: 0 //客户ID
+</code></pre> <h4 id="响应-16"><a href="#响应-16" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;accumulative&quot;: &quot;&quot;,
+        &quot;activeConditionId&quot;: 0,
+        &quot;bannerPic&quot;: &quot;&quot;,
+        &quot;couponConditionId&quot;: 0,
+        &quot;effectEtime&quot;: &quot;&quot;,
+        &quot;effectStime&quot;: &quot;&quot;,
+        &quot;hasBusinessunitRange&quot;: 0,
+        &quot;hasProductunitRange&quot;: 0,
+        &quot;id&quot;: 27,
+        &quot;limitNum&quot;: 0,
+        &quot;name&quot;: &quot;&quot;,
+        &quot;popupPic&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/20180920162510140-2.jpg&quot;, // 弹屏图
+        &quot;productunitIds&quot;: [ // 产品规格Ids，数组列表
+            1,2,3
+        ], 
+        &quot;type&quot;: &quot;COUPON&quot;, // 类型 GIFT 买立增 COUPON 发券 REDUCE 买立减 DISCOUNT 买立折 COLUMN 专栏 SPECIAL 专题
+        &quot;unit&quot;: &quot;&quot;
+        &quot;detailPic&quot;: [
+            {
+                id: 0 // 图片ID，
+                marketId: 0 // 营销ID，
+                type: &quot;DETAIL&quot;，
+                position: &quot;NOLIMIT&quot; //'NOLIMIT' 无限制, 'TOP' 顶部, 'MIDDLE' 中间, 'BOTTOM' 下面，
+                picUrl: &quot;xxx&quot; //图片地址
+            }
+        ]
+    }
+}
+</code></pre> <h3 id="app-18-获取客户账户"><a href="#app-18-获取客户账户" aria-hidden="true" class="header-anchor">#</a> APP-18 获取客户账户</h3> <h4 id="请求-17"><a href="#请求-17" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /router/v5/auth/account
+</code></pre> <h4 id="参数-17"><a href="#参数-17" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>mobile: &quot;18842889150&quot; // 手机号
+</code></pre> <h4 id="响应-17"><a href="#响应-17" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;companyName&quot;: &quot;555&quot;, // 公司名
+            &quot;mobile&quot;: &quot;18842889150&quot;, // 手机号
+            &quot;username&quot;: &quot;as032250&quot; // 用户帐号
+        }
+    ]
+}
+</code></pre> <h3 id="模版"><a href="#模版" aria-hidden="true" class="header-anchor">#</a> 模版</h3> <h4 id="请求-18"><a href="#请求-18" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <h4 id="参数-18"><a href="#参数-18" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <h4 id="响应-18"><a href="#响应-18" aria-hidden="true" class="header-anchor">#</a> 响应</h4></div> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
+    <script src="/work-a-api-v2/assets/js/5.be861fa0.js" defer></script><script src="/work-a-api-v2/assets/js/app.e6fba923.js" defer></script>
+  </body>
+</html>

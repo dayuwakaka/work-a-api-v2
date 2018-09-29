@@ -12,7 +12,9 @@ module.exports = {
       {text: '运费', link: '/freight/'},
       {text: '营销', link: '/market/'},
       {text: '基础', link: '/common/'},
-      {text: '其它', link: '/other/'}
+      {text: 'APP', link: '/app/'},
+      {text: '其它', link: '/other/'},
+      {text: '变更', link: '/changelog/'}
     ],
     sidebar: 'auto',
   },

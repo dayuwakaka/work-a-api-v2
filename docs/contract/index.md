@@ -150,7 +150,6 @@
 |*contractNum|合同号|String
 |*result|审核结果|String|草稿状态合同转正式申请传递ASKFOR；正式合同申请作废传递CANCELASKFOR；
 |remarks|备注|String
-|cancelUrl|作废文件URL|String|作废合同时（必传）传递
 
 #### 返回值
 |参数|名称|描述|
@@ -327,7 +326,7 @@
 |performanceStatus|季度履约状态|String|NORMAL:待履约, INVALID:待审核, PASS:已履约, STOP:禁止申请履约|
 |salesPlan|季度目标|Number|
 |rebateRate|季度返点率|Number|前端显示可以直接在此字段后面加%|
-|canUsePreferentialAmt|优惠金额|Number|
+|preferentialAmt|优惠金额|Number|
 |fileUrl|履约附件url|String|为null 或者 为"" 代表没有附件|
 
 ##### buttonPermissions返回值
@@ -357,7 +356,7 @@
                             performanceStatus: "NORMAL",
                             salesPlan: 100000,
                             rebateRate: 2,
-                            canUsePreferentialAmt: 0,
+                            preferentialAmt: 0,
                             fileUrl: "",
                             canApply: 0
                         },
@@ -492,7 +491,7 @@
 |---|---|---|---|
 |*contractNum|合同号|String
 |*rebateNode|季度节点|String|FIRST、SECOND、THIRD、FOURTH、YEAR
-|*customerAmt|客户id和发放金额拼接的字符串|String|Example: 93159,10000;93330,8000 逗号前为客户id，逗号后为发放金额，分号为相隔符 两位小数，可以不发但是如果发放，那么发放金额不能为0 做好校验
+|*customerAmt|最少为一个客户！客户id和发放金额拼接的字符串|String|Example: 93159,10000;93330,8000 逗号前为客户id，逗号后为发放金额，分号为相隔符 两位小数，可以不发但是如果发放，那么发放金额不能为0 做好校验，客户不能重复
 |*fileUrl|履约附件url|String|
 |*onlyCode|本次提交携带的唯一码|String|防止重复提交用
 
@@ -603,178 +602,6 @@
             ...
         ]
     }
-
-### XSYH-13.获取客户返利券列表
-
-#### 请求url
-    /v2/rebates
-
-#### 请求类型
-    GET
-
-#### 请求参数
-|参数|名称|类型|描述|
-|---|---|---|---|
-|name|返利券名称|String|
-|customerName|客户名称|String||
-|source|返利券来源|String|CONTRACT: 合同返利; HANDWORK: 手工发放|
-|status|返利券状态|String|NORMAL: 正常; LOCK: 锁定|
-|rate|返利券折扣比率|Number|前端展示直接在后面加%即可|
-|type|返利券类型|String|REBATE: 返利, SPREAD: 推广费, FREIGHT: 运费, OTHER: 其它|
-|pageNo|页码|Number|default-value: 1|
-|pageSize|页面容量|Number|default-value: 25|
-|buttonPermissionFlg|按钮权限|Number|1-查询按钮权限 0-不查询|
-
-#### 返回值
-##### datas返回值
-|参数|名称|类型|描述|
-|---|---|---|---|
-|id|返利券id|Number|
-|name|返利券名称|String|
-|type|返利券类别|String|REBATE: 返利,SPREAD: 推广费,FREIGHT: 运费补,OTHER: 其它
-|source|返利券来源 contract: 合同返利; handwork: 手工发放|String|
-|sourceExt|如果返利券是合同返利生成的，这个字段存储的是合同的季度信息|String|FIRST：一季度 SECOND：二季度 THIRD：三季度 FOURTH：四季度 YEAR：年度|
-|sourceValue|如果返利券是合同返利生成的，这个字段存储的是合同号|String|
-|rate|折扣比率 前端展示直接在此值后面加 % 即可|Number|
-|value|返利券面值|Number|
-|leftValue|返利券剩余金额|Number|
-|effectStime|返利券有效起始日期 yyyy-MM-dd HH:mm:ss|String|
-|effectEtime|返利券有效结束日期 yyyy-MM-dd HH:mm:ss|String|
-|customerName|客户名称|String|
-|createUserName|创建人名称|String|
-|createTime|返利券发放日期 yyyy-MM-dd HH:mm:ss|String|
-|status|返利券状态|String|NORMAL: 正常; LOCK: 锁定|
-
-##### buttonPermissions返回值
-    返回的集合长度和数据集一样，取对应下标数据即可，true 显示；false 不显示
-    lockButton 锁定按钮
-    unlockButton 解锁按钮
-    logButton 日志查看按钮
-
-#### 请求示例
-    /v2/rebates?name=&status=&source=&pageNo=&pageSize=
-
-#### 返回值示例
-    {
-        code: 0,
-        msg: "",
-        data: {
-            datas: [
-                        {
-                            ...
-                        },
-                        ...
-                   ],
-            buttonPermissions:[
-                        {
-                            lockButton: false,
-                            unlockButton: false,
-                            logButton: false
-                        },
-                        ...
-            ],
-            total: 93330 (总条数) - Number,
-            pageNo: 12 (对应的页码) - Number
-        }
-    }
-
-### XSYH-14.新增客户返利券
-
-#### 请求url
-    /v2/rebates
-
-#### 请求类型
-    POST
-
-#### 请求参数
-|参数|名称|类型|描述|
-|---|---|---|---|
-|*name|返利券名称|String|
-|*customerId|客户id|Number|
-|*customerName|客户名称|Stirng|
-|*rate|折扣比率 20% -> 20|Number|
-|*type|返利类别|String|REBATE: 返利, SPREAD: 推广费, FREIGHT: 运费, OTHER: 其它,|
-|*value|面值|Number|
-|*effectStime|返利券有效期起始日期|String|日期为客户所选 时间为自动补全 00:00:00
-|*effectEtime|返利券有效期结束日期|String|日期为客户所选 时间为自动补全 23:59:59
-|note|备注|String|备注长度不得超过200
-|*onlyCode|本次提交携带的唯一码|String|防止重复提交用
-
-#### 返回值
-|参数|名称|描述|
-|---|---|---|
-|code|编号|100000：成功；0 ~ 99999：失败|
-|msg|消息|修改成功/异常信息|
-|data|数据|
-
-### XSYH-15.客户返利券解锁或锁定
-
-#### 请求url
-    /v2/rebates
-
-#### 请求类型
-    PUT
-
-#### 请求参数
-|参数|名称|类型|描述|
-|---|---|---|---|
-|*id|返利券id|Number|
-|*result|操作行为|String|NORMAL: 解锁; LOCK: 锁定|
-
-#### 返回值
-|参数|名称|描述|
-|---|---|---|
-|code|编号|100000：成功；0 ~ 99999：失败|
-|msg|消息|修改成功/异常信息|
-|data|数据|
-
-### XSYH-16.获取客户返利券去重后的折扣比例列表
-
-#### 请求url
-    /v2/rebates/rates
-
-#### 请求类型
-    GET
-
-#### 请求参数
-    无
-
-#### 返回值示例
-    {
-        code: 0,
-        msg: "",
-        data: [
-            100,
-            88,
-            66
-            60,
-            20
-        ]
-    }
-
-
-### XSYH-17.获取返利券日志列表
-
-#### 请求url
-    /v2/rebates/{id}/log
-
-#### 请求类型
-    GET
-
-#### 请求参数
-|参数|名称|类型|描述|
-|---|---|---|---|
-|*id|返利券id|Number|
-
-#### 返回值
-|参数|名称|类型|描述|
-|---|---|---|---|
-|actionValue|订单号|String|
-|action|操作内容|String|
-|createTime|操作时间|String|yyyy-MM-dd HH:mm:ss|
-|createUserName|操作人|String|
-|value|使用金额|Number|
-|leftValue|返利券剩余金额|Number|
 
 ### XSYH-18.获取合同新增权限按钮
 
@@ -1102,12 +929,11 @@
         "msg": ""
     }
 
-### XSYH-32.获取独立合同详情 & P2P合同
+### XSYH-32.获取独立合同详情
 
 #### 请求url
     /v2/contract/alone/{contractNum}
     独立合同 - alone
-    P2P合同 - p2p
 
 #### 请求类型
     GET
@@ -1128,7 +954,6 @@
         "startDate": "2018-03-01 00:00:00", // 合同开始时间
         "endDate": "2019-02-28 23:59:59", // 合同结束时间
         "formalUrl": "http://omgzp8h38.bkt.clouddn.com/FqDXF7hibm2saEBxFLp9QcBNWCUh,http://dsafasdfasdfasdfasdf,http://sadfasdfasdfasdf", // 合同附件以逗号相隔
-        "cancelUrl": "", // 合同作废附件以逗号相隔
         "status": "FORMAL", // 合同状态 DRAFT：草稿;ASKFOR：转正式待审核;FORMAL：正式;CANCELASKFOR：作废待审核;CANCEL：已作废;INVALID:过期
         "details": [ // 合同明细
             {
@@ -1177,7 +1002,6 @@
         "startDate": "2018-03-01 00:00:00", // 合同开始时间
         "endDate": "2019-02-28 23:59:59", // 合同结束时间
         "formalUrl": "http://omgzp8h38.bkt.clouddn.com/FqDXF7hibm2saEBxFLp9QcBNWCUh,http://dsafasdfasdfasdfasdf,http://sadfasdfasdfasdf", // 合同附件以逗号相隔
-        "cancelUrl": "", // 合同作废附件以逗号相隔
         "status": "FORMAL", // 合同状态 DRAFT：草稿;ASKFOR：转正式待审核;FORMAL：正式;CANCELASKFOR：作废待审核;CANCEL：已作废;INVALID:过期
         "customerName": "815", // 合同主体客户名
         "customerNameList": [ // 共享对象客户名
@@ -1236,7 +1060,6 @@
         "continueEndDate": "2019-02-28 23:59:59", // 续接开始时间
         "continueStartDate": "2018-03-01 00:00:00", // 续接结束时间
         "formalUrl": "http://omgzp8h38.bkt.clouddn.com/FqDXF7hibm2saEBxFLp9QcBNWCUh,http://dsafasdfasdfasdfasdf,http://sadfasdfasdfasdf", // 合同附件以逗号相隔
-        "cancelUrl": "", // 合同作废附件以逗号相隔
         "status": "FORMAL", // 合同状态 DRAFT：草稿;ASKFOR：转正式待审核;FORMAL：正式;CANCELASKFOR：作废待审核;CANCEL：已作废;INVALID:过期
         "newCustomerName": "30841", // 续接客户名称
         "oldCustomerName": "27426", // 被续接客户名称
@@ -1264,6 +1087,353 @@
                 "createUser": 118,
                 "id": 430,
                 "remarks": ""
+            },
+            ......
+        ]
+    }
+
+
+
+### XSYH-35. 返利券申请新增
+#### 请求
+
+    POST    /v2/rebates/askfor
+    
+#### 参数
+
+    {
+    	"type": "REBATE",               // * 返利券类型 REBATE 返利费  SPREAD 推广费   FREIGHT 运费补 OTHER 其它
+    	"name": "2018年返利",           // 返利券名称
+    	"customerId": 31000,            // * 客户id
+    	"rate": 80,                     // * 折扣比率
+    	"value":1000,                   // * 面值
+    	"effectStime":"2018-09-25 00:00:00",    // * 开始时间
+    	"effectEtime":"2018-12-25 23:59:59",    // * 结束时间
+    	"onlyCode":"_2018-09_10-347"            // * 唯一码
+    }
+    
+#### 响应  
+
+    {
+    	"code": 100000,
+    	"msg": "",
+    	"data": null
+    }  
+    
+### XSYH-36. 返利券申请列表
+#### 请求
+
+    GET     /v2/rebates/askfor
+    
+#### 参数    
+
+    keyword                 // 优惠券名称、客户名称
+    buttonPermissionFlg     // 按钮权限 1 查询 0 不查询
+    pageNo                  // 页码
+    pageSize                // 页条数
+    
+#### 响应
+
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [
+                {
+                    "approvalButton": true  // true 显示审批、拒绝按钮 false 不显示
+                }
+            ],
+            "dataSums": null,
+            "datas": [
+                {
+                    "askforType": "",
+                    "checkRole": 0,
+                    "checkTime": "",
+                    "checkUser": 0,
+                    "checkUserName": "",
+                    "createRole": 0,
+                    "createTime": "2018-09-25 20:04:54.0",  // 创建时间
+                    "createUser": 0,
+                    "createUserName": "樊嘉辉",             // 创建人
+                    "customerId": 31000,
+                    "customerName": "31000",                // 客户名称
+                    "effectEtime": "2018-12-25 23:59:59.0", // 结束时间
+                    "effectStime": "2018-09-25 00:00:00.0", // 开始时间
+                    "id": 9909,
+                    "leftValue": 1000,                      // 剩余额
+                    "name": "2018年返利",                   // 返利券名称
+                    "note": "",
+                    "onlyCode": "",
+                    "rangeValue": "",
+                    "ranges": "ALL",
+                    "rate": 80,                             // 折扣率
+                    "source": "HANDWORK",               
+                    "sourceValue": "101",
+                    "status": "ASKFOR",     // 状态 askfor 待审核 PASS 通过 REFUSE 拒绝
+                    "type": "REBATE",  // REBATE 返利费  SPREAD 推广费   FREIGHT 运费补 OTHER 其它
+                    "value": 1000       // 面值
+                }
+            ],
+            "pageNo": 1,
+            "total": 2
+        }
+    }
+    
+### XSYH-37. 返利券通过
+#### 请求
+
+    PUT     /v2/rebates/askfor/pass
+
+#### 参数
+
+    ids // * 数组
+
+#### 响应
+
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+    
+### XSYH-38. 返利券拒绝
+#### 请求
+
+    PUT     /v2/rebates/askfor/refuse
+
+#### 参数
+
+    ids // * 数组
+
+#### 响应
+
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+    
+### XSYH-13. 返利券列表
+#### 请求
+
+    GET     /v2/rebates
+
+#### 参数
+
+    keyword             // 优惠券名称，客户名称
+    type                // 返利券类型 REBATE 返利 SPREAD 推广费 FREIGHT 运费补 OTHER 其它
+    rate                // 折扣率
+    status              // 状态 'NORMAL' 正常 'LOCK' 锁定
+    buttonPermissionFlg // 按钮权限 1 查询权限 0 不查询
+    pageNo              // 页码
+    pageSize            // 页条数
+
+#### 响应
+
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [
+                {
+                    "deleteButton": true,
+                    "lockButton": true,         // 锁定
+                    "unlockButton": false,      // 解锁
+                    "logButton": true           // 日志
+                }
+            ],
+            "dataSums": null,
+            "datas": [
+                {
+                    "createRole": 0,
+                    "createTime": "2018-09-25 21:06:48.0",  // 创建时间
+                    "createUser": 0,    
+                    "createUserName": "樊嘉辉",             // 创建人
+                    "customerId": 31000,
+                    "customerName": "",                     // 客户名称
+                    "effectEtime": "2018-12-25 23:59:59.0", // 结束时间
+                    "effectStime": "2018-09-25 00:00:00.0", // 开始时间
+                    "id": 9913,
+                    "leftValue": 1000,                  // 剩余额
+                    "name": "2018年返利",               // 返利券名称
+                    "note": "",
+                    "ranges": "ALL",    
+                    "rate": 80,                         // 折扣率
+                    "source": "HANDWORK",           
+                    "sourceExt": "",
+                    "sourceValue": "101",           
+                    "status": "NORMAL",     // 状态 NORMAL 正常  LOCK 锁定
+                    "type": "",             // 类型 REBATE 返利 SPREAD 推广费 FREIGHT 运费补 OTHER
+                    "value": 1000           // 面值
+                }
+            ],
+            "pageNo": 1,
+            "total": 2
+        }
+    }
+
+### XSYH-15. 返利券锁定、解锁
+#### 请求
+
+    PUT     /v2/rebates/{id}
+
+#### 参数
+
+    id  // * 返利券id
+    {
+    	"status": "LOCK"    // * NORMAL 解锁 LOCK 锁定
+    }
+
+
+#### 响应
+
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+
+
+### XSYH-16. 客户返利券去重后折扣
+#### 请求
+
+    GET     /v2/rebates/rates
+
+#### 参数
+
+    无
+
+#### 响应
+
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            100,
+            90,
+            80,
+            70,
+            60,
+            50,
+            40,
+            30,
+            20,
+            10
+        ]
+    }
+
+
+### XSYH-17. 返利券日志
+#### 请求
+
+    GET     /v2/rebates/log/{id}
+
+#### 参数
+
+    id      // * 返利券id
+
+#### 响应
+
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": null,
+            "dataSums": null,
+            "datas": [
+                {
+                    "action": "锁定",                       // 操作内容
+                    "actionValue": "101",
+                    "createRole": 0,
+                    "createTime": "2018-09-25 21:55:18.0",  // 操作时间
+                    "createUser": 0,
+                    "createUserName": "樊嘉辉",         // 操作人
+                    "customerId": 31000,
+                    "id": 33043,
+                    "leftValue": 0,
+                    "rebateId": 9915,
+                    "value": 0
+                }
+            ],
+            "pageNo": 1,
+            "total": 2
+        }
+    }
+    
+### XSYH-39. 客户返利券申请去重后折扣
+#### 请求
+
+    GET     /v2/rebates/askfor/rates
+
+#### 参数
+
+    无
+
+#### 响应
+
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            100,
+            90,
+            80,
+            70,
+            60,
+            50,
+            40,
+            30,
+            20,
+            10
+        ]
+    }
+
+### XSYH-40.获取P2P合同详情
+
+#### 请求url
+    /v2/contract/p2p/{contractNum}
+    P2P合同 - p2p
+
+#### 请求类型
+    GET
+
+#### 请求参数
+|参数|名称|类型|描述|
+|---|---|---|---|
+|*contractNum|合同号|String|
+
+#### 返回值
+    {
+        "contractNum": "ASA-C-2672664202232832", // 合同号
+        "contractType": "P2P", // 合同类型
+        "createTime": "2018-04-28 09:50:19", // 合同创建时间
+        "createUserName": "李欢欢", // 合同创建人
+        "customerName": "3948", // 合同主体客户名
+        "remarks": "2018年销售合同", // 备注
+        "startDate": "2018-03-01 00:00:00", // 合同开始时间
+        "endDate": "2019-02-28 23:59:59", // 合同结束时间
+        "formalUrl": "http://omgzp8h38.bkt.clouddn.com/FqDXF7hibm2saEBxFLp9QcBNWCUh,http://dsafasdfasdfasdfasdf,http://sadfasdfasdfasdf", // 合同附件以逗号相隔
+        "status": "FORMAL", // 合同状态 DRAFT：草稿;ASKFOR：转正式待审核;FORMAL：正式;CANCELASKFOR：作废待审核;CANCEL：已作废;INVALID:过期
+        "details": [ // 合同明细
+            {
+                "checkStatus":"NORMAL" (当前季度的状态，NORMAL:初始状态, INVALID:待审核, PASS:审核通过, STOP:禁止申请履约) - String,
+                "contractNum":"ASA-C-2719934593319936" (合同号) - String,
+                "startDate":"2018-03-01 00:00:00" (当前季度的开始时间) - String,
+                "endDate":"2018-05-31 23:59:59" (当前季度的结束时间) - String,
+                "rebateNode":"FIRST" (季度节点 FIRST:第一季度,SECOND:第二季度,THIRD:第三季度,FOURTH:第四季度,YEAR:年度) - String,
+                "rebateRate":2 (返点率，前端展示的时候后面加上'%') - Number
+                "salesPlan":100000 (目标) - Number
+            },
+            ......
+        ],
+        "logs": [
+            {
+                contractNum:"ASA-C-2719934593319936" (合同号) - String,
+                action:"用户：宁丽丽转正式审批通过" (动作行为) - String,
+                createTime:"2018-05-31 20:11:22" (行为时间) - String,
+                remarks: "" (备注) - String
             },
             ......
         ]
