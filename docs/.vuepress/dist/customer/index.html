@@ -7,7 +7,7 @@
     <meta name="description" content="A团队开发文档">
     
     
-    <link rel="preload" href="/work-a-api-v2/assets/css/0.styles.b3d83912.css" as="style"><link rel="preload" href="/work-a-api-v2/assets/js/app.e6fba923.js" as="script"><link rel="preload" href="/work-a-api-v2/assets/js/10.54b2c00c.js" as="script"><link rel="prefetch" href="/work-a-api-v2/assets/js/7.72c59ee5.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/2.cda51ec0.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/3.e260ff61.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/4.b446dd4c.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/5.be861fa0.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/6.5cae9cbe.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/8.989bc134.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/9.472c0602.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/11.ed287b7d.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/12.0a9686b4.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/13.6bf53493.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/14.6f70e3bc.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/15.071709a6.js">
+    <link rel="preload" href="/work-a-api-v2/assets/css/0.styles.b3d83912.css" as="style"><link rel="preload" href="/work-a-api-v2/assets/js/app.e9f673d2.js" as="script"><link rel="preload" href="/work-a-api-v2/assets/js/10.4fcc70de.js" as="script"><link rel="prefetch" href="/work-a-api-v2/assets/js/7.72c59ee5.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/2.cda51ec0.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/3.e260ff61.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/4.b446dd4c.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/5.26b22d74.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/6.07f12fae.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/8.989bc134.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/9.472c0602.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/11.ed287b7d.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/12.806f510b.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/13.6bf53493.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/14.cdfe7e18.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/15.071709a6.js">
     <link rel="stylesheet" href="/work-a-api-v2/assets/css/0.styles.b3d83912.css">
   </head>
   <body>
@@ -23,6 +23,8 @@ srRoleId：1 SRID
 attrId：1 属性ID
 sCreateTime：&quot;2018-01-01 00:00:00&quot; 创建时间（开始）
 eCreateTime：&quot;2018-01-01 23:59:59&quot; 创建时间（结束）
+isParent: -1 查询客户类型 -1 所有 0 普通客户 1 总公司 2 分店 
+ignorePower: false 忽略权限标识，true为不限制任何权限查询客户
 </code></pre> <h4 id="响应"><a href="#响应" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
     &quot;code&quot;: 100000,
     &quot;msg&quot;: &quot;&quot;,
@@ -575,7 +577,8 @@ json body
             &quot;authenType&quot;: &quot;company&quot;, // 认证类型 person 个人 company 公司
             &quot;customerId&quot;: 0, // 客户ID
             &quot;customerName&quot;: &quot;&quot;, // 客户名
-            &quot;name&quot;: &quot;亚洲渔港股份有限公司&quot; // 企业名
+            &quot;name&quot;: &quot;亚洲渔港股份有限公司&quot;， // 企业名
+            &quot;regStatus&quot;: &quot;注销&quot; // 企业状态，若为注销，则列表置为灰色，不可选
         }
     ]
 }
@@ -904,6 +907,6 @@ name：客户属性名（可选）
 }
 </code></pre> <h3 id="缺失清单指导"><a href="#缺失清单指导" aria-hidden="true" class="header-anchor">#</a> 缺失清单指导</h3> <pre><code>上传接口 基础功能模块提供 @王德超
 地址基础接口 基础模块提供 @王德超</code></pre></div> <div class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">9/15/2018, 4:50:42 PM</span></div></div> <!----> </div> <!----></div></div>
-    <script src="/work-a-api-v2/assets/js/10.54b2c00c.js" defer></script><script src="/work-a-api-v2/assets/js/app.e6fba923.js" defer></script>
+    <script src="/work-a-api-v2/assets/js/10.4fcc70de.js" defer></script><script src="/work-a-api-v2/assets/js/app.e9f673d2.js" defer></script>
   </body>
 </html>

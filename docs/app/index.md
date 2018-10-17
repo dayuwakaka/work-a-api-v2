@@ -439,8 +439,104 @@
         ]
     }
 
+### APP-19 获取客户订单数量
+#### 请求
+    GET /router/v5/order/total
+#### 参数
+    *customerId: 0 //客户ID
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": 1 // 订单数量
+    }
 
+### APP-20 获取我的优惠券数量
+#### 请求
+    GET /router/v5/market/coupon/my/total
+#### 参数
+    *customerId: 0 //客户ID
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": 9 // 优惠券数量
+    }
 
+### APP-21 我的优惠券（可用）
+#### 请求
+    GET /router/v5/market/coupon/my/valid
+#### 参数
+    *customerId: 0 //客户ID
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "effectEtime": "2018-10-31 23:59:59", // 开始时间
+                "effectStime": "2018-09-31 23:58:57", // 结束时间
+                "id": 22124, // 优惠券ID
+                "name": "展会活动", // 优惠券名
+                "rebate": 0, // 折扣
+
+                "rangType": "ALL" // 产品范围类型 ALL 全部 PRODUCTUNIT 指定产品 EXCLUDE 排除产品
+                "rangs": [1,2,3] // List列表，存入的是产品规格ID（productunitId）
+
+                "accumulative": "EACH" // 累计方式： EACH 每满， LADDER 阶梯。若不是满减、满增，将为NULL
+                "type": "COUPON", // 类型 COUPON 优惠券 ACTIVE 活动 REBATE 返利
+                "unit": "PRICE", // 执行单位 PRICE 满额 COUNT 满数量
+                "way": "REDUCE"， // 执行方式 REDUCE 满减 DISCOUNT 满折
+
+                "hitGiveConditionId": 0, // 命中的给与条件
+                "giveCondition": { // 给与条件
+                    "0": {
+                        "actionValue": 50, // 执行额
+                        "extra": "",
+                        "guige": "", // 若是满赠，则会携带规格名
+                        "id": 0,
+                        "marketId": 0,
+                        "productName": "", // 若是满赠，则会携带产品名
+                        "targetValue": 1000 // 满足额
+                    }
+                },
+                
+                "giftNum": 0, // 若是满增，赠品数量
+                "productId": 0, // 若是满增，赠品产品ID
+                "productName": "", // 若满增，赠品产品名
+                "productUnitId": 0, // 若满增，赠品产品规格ID
+                "guige": "",  // 若是满增，赠品规格
+
+                "used": "YES" // 使用状态 YES 已用 NO 未使用
+            }
+        ]
+    }
+
+### APP-22 我的优惠券（过期）
+#### 请求
+    GET /router/v5/market/coupon/my/invalid
+#### 参数
+    *customerId:0 // 客户ID
+#### 响应
+    同APP-21
+
+### APP-23 订单获取优惠券
+#### 请求
+    GET /router/v5/market/getCanUse/{customerId}
+#### 参数
+    *customerId: 0 // 客户ID
+    body json  // **注意不要提交赠品信息
+    [
+        {
+            productId: 0 // 产品ID
+            productunitId: 0 // 产品规格ID
+            price: 0 // 价格 浮点数
+            count: 0 // 购买数量
+        }
+    ]
+#### 响应
+    同APP-21
+    
 ### 模版
 #### 请求
 #### 参数

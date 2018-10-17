@@ -14,6 +14,8 @@
     attrId：1 属性ID
     sCreateTime："2018-01-01 00:00:00" 创建时间（开始）
     eCreateTime："2018-01-01 23:59:59" 创建时间（结束）
+    isParent: -1 查询客户类型 -1 所有 0 普通客户 1 总公司 2 分店 
+    ignorePower: false 忽略权限标识，true为不限制任何权限查询客户
 #### 响应
     {
         "code": 100000,
@@ -680,7 +682,8 @@
                 "authenType": "company", // 认证类型 person 个人 company 公司
                 "customerId": 0, // 客户ID
                 "customerName": "", // 客户名
-                "name": "亚洲渔港股份有限公司" // 企业名
+                "name": "亚洲渔港股份有限公司"， // 企业名
+                "regStatus": "注销" // 企业状态，若为注销，则列表置为灰色，不可选
             }
         ]
     }

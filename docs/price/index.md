@@ -31,6 +31,7 @@
 |aPrice|A价格|
 |pPrice|P价格|
 |tPrice|T价格|
+|productState|产品状态|NORMAL:正常,CUSTOM:定制,LOCK:锁定|
 |status|状态|normal 正常 lock 锁定|
 |startDate|开始时间|
 |endDate|结束时间|

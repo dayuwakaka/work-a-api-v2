@@ -251,8 +251,6 @@
 
     keyword // 权限编号/权限名称
     status  // 状态 lock 锁定 normal 解锁
-    uid // 用户id，结合asigned使用
-    asigned // yes 已绑定用户的列表 no 未绑定用户列表
     buttonPermissionFlg // 0 不查询按钮权限 1 查询
     pageNo  // 页码
     pageSize    // 页条数
@@ -395,8 +393,6 @@
 #### 参数
 
     keyword // 权限编号/权限名称
-    uid     // 用户id，结合asigned使用
-    asigned // yes 用户已分配的权限列表 no 用户未分配的权限列表
     pageNo  // 页码
     pageSize    // 页条数
 
@@ -704,7 +700,8 @@
 
 #### 参数
 
-    无
+    asigned     // 是否分配 YES 分配 NO 未分配
+    uid         // 用户id
     
 #### 响应
 
@@ -714,17 +711,28 @@
         "data": [
             {
                 "createTime": "",
-                "gid": 41,              // 功能权限编号
-                "id": 60,               // 功能权限id
+                "gid": 22,
+                "id": 9,
                 "isAuto": 0,
                 "menuIds": null,
-                "name": "全部权限",     // 功能权限名称
+                "name": "事业部总经理",
                 "remark": "",
-                "status": "NORMAL",     // 状态
+                "status": "NORMAL",
                 "sys": "a",
                 "uid": 0
             },
-    .......
+            {
+                "createTime": "",
+                "gid": 21,
+                "id": 8,
+                "isAuto": 0,
+                "menuIds": null,
+                "name": "CEO",
+                "remark": "",
+                "status": "NORMAL",
+                "sys": "a",
+                "uid": 0
+            }
         ]
     }
 
@@ -824,4 +832,46 @@
             "id": 101,              // 用户id
             "fullname": "樊嘉辉"    // 用户名
         }
+    }
+    
+    
+    
+### QX-31. 不分页的数据权限列表
+#### 请求
+
+    GET     /v2/datapower/nopage
+
+#### 参数
+
+    asigned     // 是否分配 YES 分配 NO 未分配
+    uid         // 用户id
+    
+#### 响应
+
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "gid": 21,
+                "gname": "CEO",
+                "rid": 5046,
+                "rname": "宁丽丽",
+                "uid": 0
+            },
+            {
+                "gid": 22,
+                "gname": "事业部总经理",
+                "rid": 4947,
+                "rname": "宁丽丽经理",
+                "uid": 0
+            },
+            {
+                "gid": 21,
+                "gname": "CEO",
+                "rid": 3966,
+                "rname": "宁丽丽",
+                "uid": 0
+            }
+        ]
     }
