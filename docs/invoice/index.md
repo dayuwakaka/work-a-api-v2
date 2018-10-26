@@ -879,75 +879,18 @@
     }
 }
 
-                              
-### FP-40. 发票信息维护
-#### 请求
-
-    PUT    /v2/invoice/info/fill/{id}
-    
-#### 参数
-    
-    *id //发票id
-    // json body    invoiceInfo 必须有，invoiceInfoCompany和invoiceInfoPerson根据客户类型 企业、个体商户、个人选择传递
-    {
-        "invoiceInfo": {
-            *"customerType": "COMPANY",              // 公司类型： COMPANY 公司 INDIVIDUALLY 个体工商 PERSON 个人
-            *"authenNo": "21983712398453245978MM",   // 第三方认证号
-            *"invoiceCompanyId": 3,                  // 开具方公司名头ID
-            *"invoiceType": "SPECIAL",               // 发票类型：NORMAL 普票 SPECIAL 专票
-            *"deliverAddress": "香炉礁物流商贸大厦",     // 邮寄地址
-            *"email": "liang.qitie@yahoo.cn",        // 邮箱
-            "contactName": "liang.qitie",               // 联系人
-            "mobile": "16888889999"                 // 手机号
-        },
-        "invoiceInfoCompany": {
-            *"name":"心有猛虎，细嗅蔷薇，他人勿动",      // 发票名
-            *"taxCode":"234752934758sadk",           // 纳税人识别码
-            "address":"河北秦皇岛。。。",               // 地址
-            "mobile":"16788883333",                 // 手机号
-            "bankName":"中国农业银行",                  // 开户行
-            "bankNo":"62148888373737372723",            // 银行账户
-            *"legalPerson":"梁总"                        // 法人
-        },
-        "invoiceInfoPerson": {
-            *"name":"梁总",                              // 发票名
-            *"cardNo":"125255199012093211"               // 身份证号
-        },
-        // 图片类型  'CARDFRONT' 身份证正面,'CARDBACK' 身份证背面,'CHANGE' 变更附件,'SPECIAL' 专票证明附件
-        "invoiceInfoImgs": [{
-            *"type":"CARDFRONT",   // 客户类型=个人，必传身份证正面
-            *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
-        },{
-            *"type":"CARDBACK",  //客户类型=个人，必传身份证背面
-            *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
-        },{
-            *"type":"CHANGE",  //发票变更，必传变更附件
-            *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
-        },{
-            *"type":"SPECIAL",   //增值税专用发票，必传专票证明附件
-            *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
-        }]
-    }    
-    
-#### 响应
-
-    {
-        "code": 100000,
-        "msg": "",
-        "data": null
-    }
-
                             
-### FP-41. 发票信息变更
+### FP-41. 发票信息变更(维护)
 #### 请求
 
-    PUT    /v2/invoice/info/change/{id}
+    PUT    /v2/invoice/info/modifyAll/{id}
     
 #### 参数
     
     *id //发票id
     // json body    invoiceInfo 必须有，invoiceInfoCompany和invoiceInfoPerson根据客户类型 企业、个体商户、个人选择传递
     {
+        "change":true,                              // true 变更 false 维护
         "invoiceInfo": {
             *"customerType": "COMPANY",              // 公司类型： COMPANY 公司 INDIVIDUALLY 个体工商 PERSON 个人
             *"authenNo": "21983712398453245978MM",   // 第三方认证号
@@ -1007,12 +950,11 @@
     *id //发票id
     // json body
     {
-        "customerType": "COMPANY",                              //客户类型
         "deliverAddress": "香炉礁物流商贸大厦3333",                 //邮寄地址
         "email": "liang.qitieTTTT@yahoo.cn",                        //邮箱
         "contactName": "liang.qitieASDFASDFASDFASD",                //联系人
         "mobile": "16888889999425345",                                 //联系人手机
-        //以下四项是 企业或个体商户信息，客户类型为个人的，无此信息
+            //以下四项是 企业或个体商户信息，客户类型为个人的，无此信息
         "address": "河北秦皇岛新力大街闪客快打抗衰老的浪费了。。。",
         "tel": "16788883333",
         "bankName": "中国农业银行大连香炉礁分行",
