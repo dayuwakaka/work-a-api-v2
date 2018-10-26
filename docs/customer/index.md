@@ -16,6 +16,7 @@
     eCreateTime："2018-01-01 23:59:59" 创建时间（结束）
     isParent: -1 查询客户类型 -1 所有 0 普通客户 1 总公司 2 分店 
     ignorePower: false 忽略权限标识，true为不限制任何权限查询客户
+    states: ['NORMAL', 'DELETE'] NORMAL 正常 DELETE 删除
 #### 响应
     {
         "code": 100000,
