@@ -878,3 +878,610 @@
         "total": 2
     }
 }
+
+                              
+### FP-40. 发票信息维护
+#### 请求
+
+    PUT    /v2/invoice/info/fill/{id}
+    
+#### 参数
+    
+    *id //发票id
+    // json body    invoiceInfo 必须有，invoiceInfoCompany和invoiceInfoPerson根据客户类型 企业、个体商户、个人选择传递
+    {
+        "invoiceInfo": {
+            *"customerType": "COMPANY",              // 公司类型： COMPANY 公司 INDIVIDUALLY 个体工商 PERSON 个人
+            *"authenNo": "21983712398453245978MM",   // 第三方认证号
+            *"invoiceCompanyId": 3,                  // 开具方公司名头ID
+            *"invoiceType": "SPECIAL",               // 发票类型：NORMAL 普票 SPECIAL 专票
+            *"deliverAddress": "香炉礁物流商贸大厦",     // 邮寄地址
+            *"email": "liang.qitie@yahoo.cn",        // 邮箱
+            "contactName": "liang.qitie",               // 联系人
+            "mobile": "16888889999"                 // 手机号
+        },
+        "invoiceInfoCompany": {
+            *"name":"心有猛虎，细嗅蔷薇，他人勿动",      // 发票名
+            *"taxCode":"234752934758sadk",           // 纳税人识别码
+            "address":"河北秦皇岛。。。",               // 地址
+            "mobile":"16788883333",                 // 手机号
+            "bankName":"中国农业银行",                  // 开户行
+            "bankNo":"62148888373737372723",            // 银行账户
+            *"legalPerson":"梁总"                        // 法人
+        },
+        "invoiceInfoPerson": {
+            *"name":"梁总",                              // 发票名
+            *"cardNo":"125255199012093211"               // 身份证号
+        },
+        // 图片类型  'CARDFRONT' 身份证正面,'CARDBACK' 身份证背面,'CHANGE' 变更附件,'SPECIAL' 专票证明附件
+        "invoiceInfoImgs": [{
+            *"type":"CARDFRONT",   // 客户类型=个人，必传身份证正面
+            *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
+        },{
+            *"type":"CARDBACK",  //客户类型=个人，必传身份证背面
+            *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
+        },{
+            *"type":"CHANGE",  //发票变更，必传变更附件
+            *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
+        },{
+            *"type":"SPECIAL",   //增值税专用发票，必传专票证明附件
+            *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
+        }]
+    }    
+    
+#### 响应
+
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+                            
+### FP-41. 发票信息变更
+#### 请求
+
+    PUT    /v2/invoice/info/change/{id}
+    
+#### 参数
+    
+    *id //发票id
+    // json body    invoiceInfo 必须有，invoiceInfoCompany和invoiceInfoPerson根据客户类型 企业、个体商户、个人选择传递
+    {
+        "invoiceInfo": {
+            *"customerType": "COMPANY",              // 公司类型： COMPANY 公司 INDIVIDUALLY 个体工商 PERSON 个人
+            *"authenNo": "21983712398453245978MM",   // 第三方认证号
+            *"invoiceCompanyId": 3,                  // 开具方公司名头ID
+            *"invoiceType": "SPECIAL",               // 发票类型：NORMAL 普票 SPECIAL 专票
+            *"deliverAddress": "香炉礁物流商贸大厦",     // 邮寄地址
+            *"email": "liang.qitie@yahoo.cn",        // 邮箱
+            "contactName": "liang.qitie",               // 联系人
+            "mobile": "16888889999"                 // 手机号
+        },
+        "invoiceInfoCompany": {
+            *"name":"心有猛虎，细嗅蔷薇，他人勿动",      // 发票名
+            *"taxCode":"234752934758sadk",           // 纳税人识别码
+            "address":"河北秦皇岛。。。",               // 地址
+            "mobile":"16788883333",                 // 手机号
+            "bankName":"中国农业银行",                  // 开户行
+            "bankNo":"62148888373737372723",            // 银行账户
+            *"legalPerson":"梁总"                        // 法人
+        },
+        "invoiceInfoPerson": {
+            *"name":"梁总",                              // 发票名
+            *"cardNo":"125255199012093211"               // 身份证号
+        },
+        // 图片类型  'CARDFRONT' 身份证正面,'CARDBACK' 身份证背面,'CHANGE' 变更附件,'SPECIAL' 专票证明附件
+        "invoiceInfoImgs": [{
+            *"type":"CARDFRONT",   // 客户类型=个人，必传身份证正面
+            *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
+        },{
+            *"type":"CARDBACK",  //客户类型=个人，必传身份证背面
+            *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
+        },{
+            *"type":"CHANGE",  //发票变更，必传变更附件
+            *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
+        },{
+            *"type":"SPECIAL",   //增值税专用发票，必传专票证明附件
+            *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
+        }]
+    }    
+    
+#### 响应
+
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }    
+
+
+                            
+### FP-42. 发票信息修改
+#### 请求
+
+    PUT    /v2/invoice/info/modify/{id}
+    
+#### 参数
+    
+    *id //发票id
+    // json body
+    {
+        "customerType": "COMPANY",                              //客户类型
+        "deliverAddress": "香炉礁物流商贸大厦3333",                 //邮寄地址
+        "email": "liang.qitieTTTT@yahoo.cn",                        //邮箱
+        "contactName": "liang.qitieASDFASDFASDFASD",                //联系人
+        "mobile": "16888889999425345",                                 //联系人手机
+        //以下四项是 企业或个体商户信息，客户类型为个人的，无此信息
+        "address": "河北秦皇岛新力大街闪客快打抗衰老的浪费了。。。",
+        "tel": "16788883333",
+        "bankName": "中国农业银行大连香炉礁分行",
+        "bankNo": "62148888373737372723"
+    }
+    
+#### 响应
+
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }        
+
+                          
+### FP-43. 发票开票类型切换
+#### 请求
+
+    PUT    /v2/invoice/info/switch/{id}
+    
+#### 参数
+    
+    *id //发票id
+    // json body
+    {
+        "actionType": "HANDWORK"        //发票开票触发方式： AUTO 自动 HANDWORK 手工
+    }
+    
+#### 响应
+
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }        
+
+
+                          
+### FP-44. 获取第三方认证系统企业列表
+#### 请求
+
+    GET    /v2/invoice/info/auth
+    
+#### 参数
+    
+    *keyword //搜索关键字
+    
+#### 响应
+
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "base": "辽宁",                     //所在省
+                "companyType": "1",
+                "estiblishTime": "2002-06-11 00:00:00.0",
+                "id": 3064166877,                     //第三方系统编号 对应我们系统的 "authenNo"
+                "legalPersonName": "姜晓",          //法人
+                "name": "亚洲渔港股份有限公司",     //公司名称
+                "regCapital": "10000万人民币",
+                "regStatus": "",
+                "type": "1"
+            },
+            {
+                "base": "辽宁",
+                "companyType": "1",
+                "estiblishTime": "2014-11-05 00:00:00.0",
+                "id": 1161403150,
+                "legalPersonName": "孙海贺",
+                "name": "亚洲渔港电子商务（大连）有限公司",
+                "regCapital": "100万人民币",
+                "regStatus": "",
+                "type": "1"
+            },
+            ......
+        ]
+    }    
+
+### FP-45. 获取第三方认证系统企业详情
+#### 请求
+
+    GET    /v2/invoice/info/auth/{id}
+    
+#### 参数
+    
+    *id //企业id
+    
+#### 响应
+
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "actualCapital": "10000万人民币",
+            "alias": "亚洲渔港",
+            "approvedTime": 1498406400000,
+            "base": "ln",
+            "businessScope": "供应链管理；冷冻海产品、预包装食品销售；农副产品收购；国内一般贸易；食品技术开发、技术转让；软件技术开发、技术转让；互联网信息服务；普通货物仓储；国内货运代理。（依法须经批准的项目，经相关部门批准后方可开展经营活动。）",
+            "companyId": 127710579,
+            "companyOrgType": "其他股份有限公司(非上市)",
+            "companyType": 0,
+            "correctCompanyId": "",
+            "creditCode": "91210200736441730M",
+            "estiblishTime": 1522583552,
+            "flag": 1,
+            "fromTime": 1023724800000,
+            "historyNames": "大连美姿克特食品有限公司\t",
+            "id": 3064166877,                                                                           //第三方系统编号 对应我们系统的 "authenNo"
+            "industry": "商务服务业",
+            "legalPersonId": 1873819571,
+            "legalPersonName": "姜晓",                                                                      //法人
+            "logo": "http://img.tianyancha.com/logo/lll/262742baec8e4c4fdd18b6c0df561105.png@!f_200x200",
+            "name": "亚洲渔港股份有限公司",                                                                 //发票名称
+            "orgNumber": "736441730",
+            "percentileScore": 8898,
+            "regCapital": "10000万人民币",
+            "regInstitute": "大连市工商行政管理局",
+            "regLocation": "辽宁省大连市西岗区海达北街91号6层",                                             //地址
+            "regNumber": "210200000128379",
+            "regStatus": "存续",
+            "socialStaffNum": 145,
+            "sourceFlag": "http://qyxy.baic.gov.cn/",
+            "staffNumRange": "100-499人",
+            "taxNumber": "91210200736441730M",                                                             //纳税人识别号
+            "type": "1",
+            "updateTimes": 1540525649000,
+            "updatetime": 1540525651784
+        }
+    }
+
+
+### FP-46. 发票信息(审核)列表
+#### 请求
+
+    GET    /v2/invoice/info
+    
+#### 参数
+    
+    customerType    //公司类型： COMPANY 公司 INDIVIDUALLY 个体工商 PERSON 个人
+    invoiceType     //发票类型：NORMAL 普票 SPECIAL 专票
+    actionType      //发票开票触发方式： AUTO 自动 HANDWORK 手工
+    status          //状态 EMPYT 待维护, NORMAL 正常, ASKFOR 待审核
+    *statuses[]        //状态 EMPYT 待维护, NORMAL 正常, ASKFOR 待审核  发票列表传:EMPTY,NORMAL数组，审核列表传：ASKFOR
+    name            //客户名称
+    buttonPermissionFlg // 0 不查询按钮权限 1查询按钮权限
+
+#### 响应
+    // invoiceInfoCompany 和 invoiceInfoPerson 二者根据customerType返其一
+    // invoiceInfoImgs 附件列表，返回新增时上传的附件
+    // buttonPermissions 只应用在发票信息列表
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [
+                {
+                    "historyButton": true,      //历史版本
+                    "detailButton": true,       //查看
+                    "editButton": true,         //编辑
+                    "logButton": true,          //日志
+                    "emptyButton": false,       //维护
+                    "changeButton": true        //变更
+                }
+            ],
+            "dataSums": null,
+            "datas": [
+                {
+                    "actionType": "AUTO",       //开票类型      AUTO 自动 HANDWORK 手工
+                    "authenNo": "21893745891",  //第三方系统编号             
+                    "change": false,
+                    "checkRole": 0,
+                    "checkTime": "",
+                    "checkUser": 0,
+                    "checkUserName": "",
+                    "contactName": "梁铁骑",        //联系人
+                    "createRole": 0,
+                    "createTime": "2018-10-23",
+                    "createUser": 0,
+                    "createUserName": "庄园园",
+                    "customerId": 29841,                    //客户id
+                    "customerName": "孙健-泊头",            //客户名称
+                    "customerType": "COMPANY",              //公司类型  COMPANY 公司 INDIVIDUALLY 个体工商 PERSON 个人
+                    "deleteFlg": 0,
+                    "deliverAddress": "河北省秦皇岛昌黎县test", //邮寄地址
+                    "email": "liang.qitie@god.com",     //邮箱
+                    "id": 1,                                //发票id
+                    "invoiceCompanyId": 1,                  //开票公司id
+                    "invoiceInfoCompany": {
+                        "address": "河北省秦皇岛昌黎县test",        //公司地址
+                        "bankName": "中国工商银行",                 //开户行
+                        "bankNo": "6214888899996666",               //银行账号
+                        "deleteFlg": 0,
+                        "id": 1,
+                        "invoiceId": 1,
+                        "legalPerson": "liang.qitie",               //法人
+                        "mobile": "13356565656",                    //公司电话
+                        "name": "心有猛虎，细嗅蔷薇，他人勿动",         //发票名称
+                        "taxCode": "23458939458927"                 //税收编号
+                    },
+                    "invoiceInfoImgs": [{
+                            *"type":"CARDFRONT",   // 客户类型=个人
+                            *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
+                        },{
+                            *"type":"CARDBACK",  //客户类型=个人
+                            *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
+                        },{
+                            *"type":"CHANGE",  //发票变更
+                            *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
+                        },{
+                            *"type":"SPECIAL",   //增值税专用发票
+                            *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
+                        }],
+                    "invoiceInfoPerson": {
+                        "id":1,
+                        "invoiceId":1,
+                        "name":"梁铁骑",                            //发票名称
+                        "cardNo":"239124199012121345",              //身份证号
+                        "deleteFlg":0
+                    },
+                    "invoiceType": "NORMAL",        //发票类型：NORMAL 普票 SPECIAL 专票
+                    "mobile": "13356565656",    //联系人电话
+                    "modifyTime": "",
+                    "rollbackId": 0,
+                    "status": "NORMAL"          状态 EMPYT 待维护, NORMAL 正常
+                }
+            ],
+            "pageNo": 1,
+            "total": 1
+        }
+    }
+    
+
+### FP-47. 发票历史版本
+#### 请求
+
+    GET    /v2/invoice/info/history
+    
+#### 参数
+    
+    *customerId //客户id
+
+#### 响应    
+
+{
+    "code": 100000,
+    "msg": "",
+    "data": [
+        {
+            "actionType": "AUTO",       //开票类型      AUTO 自动 HANDWORK 手工
+            "authenNo": "21893745891",  //第三方系统编号             
+            "change": false,
+            "checkRole": 0,
+            "checkTime": "",
+            "checkUser": 0,
+            "checkUserName": "",
+            "contactName": "梁铁骑",        //联系人
+            "createRole": 0,
+            "createTime": "2018-10-23",
+            "createUser": 0,
+            "createUserName": "庄园园",
+            "customerId": 29841,                    //客户id
+            "customerName": "孙健-泊头",            //客户名称
+            "customerType": "COMPANY",              //公司类型  COMPANY 公司 INDIVIDUALLY 个体工商 PERSON 个人
+            "deleteFlg": 0,
+            "deliverAddress": "河北省秦皇岛昌黎县test", //邮寄地址
+            "email": "liang.qitie@god.com",     //邮箱
+            "id": 1,                                //发票id
+            "invoiceCompanyId": 1,                  //开票公司id
+            "invoiceInfoCompany": {
+                "address": "河北省秦皇岛昌黎县test",        //公司地址
+                "bankName": "中国工商银行",                 //开户行
+                "bankNo": "6214888899996666",               //银行账号
+                "deleteFlg": 0,
+                "id": 1,
+                "invoiceId": 1,
+                "legalPerson": "liang.qitie",               //法人
+                "mobile": "13356565656",                    //公司电话
+                "name": "心有猛虎，细嗅蔷薇，他人勿动",         //发票名称
+                "taxCode": "23458939458927"                 //税收编号
+            },
+            "invoiceInfoImgs": [{
+                    *"type":"CARDFRONT",   // 客户类型=个人
+                    *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
+                },{
+                    *"type":"CARDBACK",  //客户类型=个人
+                    *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
+                },{
+                    *"type":"CHANGE",  //发票变更
+                    *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
+                },{
+                    *"type":"SPECIAL",   //增值税专用发票
+                    *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
+                }],
+            "invoiceInfoPerson": {
+                "id":1,
+                "invoiceId":1,
+                "name":"梁铁骑",                            //发票名称
+                "cardNo":"239124199012121345",              //身份证号
+                "deleteFlg":0
+            },
+            "invoiceType": "NORMAL",        //发票类型：NORMAL 普票 SPECIAL 专票
+            "mobile": "13356565656",    //联系人电话
+            "modifyTime": "",
+            "rollbackId": 0,
+            "status": "NORMAL"          状态 EMPYT 待维护, NORMAL 正常
+        }
+    ]
+}
+
+### FP-48. 发票详情
+#### 请求
+
+    GET    /v2/invoice/info/{id}
+    
+#### 参数
+    
+    *id //发票id
+
+#### 响应    
+
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "actionType": "AUTO",       //开票类型      AUTO 自动 HANDWORK 手工
+            "authenNo": "21893745891",  //第三方系统编号             
+            "change": false,
+            "checkRole": 0,
+            "checkTime": "",
+            "checkUser": 0,
+            "checkUserName": "",
+            "contactName": "梁铁骑",        //联系人
+            "createRole": 0,
+            "createTime": "2018-10-23",
+            "createUser": 0,
+            "createUserName": "庄园园",
+            "customerId": 29841,                    //客户id
+            "customerName": "孙健-泊头",            //客户名称
+            "customerType": "COMPANY",              //公司类型  COMPANY 公司 INDIVIDUALLY 个体工商 PERSON 个人
+            "deleteFlg": 0,
+            "deliverAddress": "河北省秦皇岛昌黎县test", //邮寄地址
+            "email": "liang.qitie@god.com",     //邮箱
+            "id": 1,                                //发票id
+            "invoiceCompanyId": 1,                  //开票公司id
+            "invoiceInfoCompany": {
+                "address": "河北省秦皇岛昌黎县test",        //公司地址
+                "bankName": "中国工商银行",                 //开户行
+                "bankNo": "6214888899996666",               //银行账号
+                "deleteFlg": 0,
+                "id": 1,
+                "invoiceId": 1,
+                "legalPerson": "liang.qitie",               //法人
+                "mobile": "13356565656",                    //公司电话
+                "name": "心有猛虎，细嗅蔷薇，他人勿动",         //发票名称
+                "taxCode": "23458939458927"                 //税收编号
+            },
+            "invoiceInfoImgs": [{
+                    *"type":"CARDFRONT",   // 客户类型=个人
+                    *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
+                },{
+                    *"type":"CARDBACK",  //客户类型=个人
+                    *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
+                },{
+                    *"type":"CHANGE",  //发票变更
+                    *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
+                },{
+                    *"type":"SPECIAL",   //增值税专用发票
+                    *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
+                }],
+            "invoiceInfoPerson": {
+                "id":1,
+                "invoiceId":1,
+                "name":"梁铁骑",                            //发票名称
+                "cardNo":"239124199012121345",              //身份证号
+                "deleteFlg":0
+            },
+            "invoiceType": "NORMAL",        //发票类型：NORMAL 普票 SPECIAL 专票
+            "mobile": "13356565656",    //联系人电话
+            "modifyTime": "",
+            "rollbackId": 0,
+            "status": "NORMAL"          状态 EMPYT 待维护, NORMAL 正常
+        }
+    }
+
+    
+### FP-49. 发票日志列表--分页
+#### 请求
+
+    GET    /v2/invoice/info/log
+    
+#### 参数
+    
+    *id //发票id
+
+#### 响应
+
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [],
+            "dataSums": null,
+            "datas": [
+                {
+                    "id": 8,
+                    "invoiceId": 6,
+                    "opInfo": "新增客户发票信息",           //操作信息
+                    "opRole": 1,
+                    "opTime": "2018-10-26 09:46:09.0",      //操作时间
+                    "opUser": 101,
+                    "opUserName": "樊嘉辉"                  操作人
+                },
+                {
+                    "id": 12,
+                    "invoiceId": 6,
+                    "opInfo": "维护发票信息",
+                    "opRole": 1,
+                    "opTime": "2018-10-26 11:31:41.0",
+                    "opUser": 101,
+                    "opUserName": "樊嘉辉"
+                },
+                {
+                    "id": 14,
+                    "invoiceId": 6,
+                    "opInfo": "邮箱：liang.qitie@yahoo.cn->liang.qitieTTTT@yahoo.cn;邮寄地址：香炉礁物流商贸大厦->香炉礁物流商贸大厦3333;开户行：中国农业银行->中国农业银行大连香炉礁分行;",
+                    "opRole": 1,
+                    "opTime": "2018-10-26 13:14:05.0",
+                    "opUser": 101,
+                    "opUserName": "樊嘉辉"
+                }
+            ],
+            "pageNo": 1,
+            "total": 5
+        }
+    }
+
+    
+### FP-50. 发票审核通过
+#### 请求
+
+    PUT    /v2/invoice/info/pass/{id}
+    
+#### 参数
+    
+    无
+
+#### 响应
+
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+    
+### FP-51. 发票审核拒绝
+#### 请求
+
+    PUT    /v2/invoice/info/refuse/{id}
+    
+#### 参数
+    
+    无
+
+#### 响应
+
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }    
