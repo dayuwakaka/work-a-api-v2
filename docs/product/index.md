@@ -79,14 +79,110 @@
     	}
     }
 
-### CP-100.产品业态查询
+### CP-90.产品分类查询
 #### 请求
 
-    GET /v2/product/businessType
+    GET     /v2/product/type
     
 #### 参数
 
-    *parentId: 0 // 拉去根分类传递0
+    无
+    
+#### 响应
+    // 按照编号正序排
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "code": "01",      //编号
+                "deleteFlg": 0,
+                "id": 1,            //id
+                "isStage": 1,
+                "leaf": "N",        //Y 叶子节点 N 不是叶子节点
+                "level": 1,         //等级
+                "name": "海鲜",     //名称
+                "parentId": 0,      //上级id
+                "pyCode": "HX",     //拼音编码
+                "sort": 99,         // 排序
+                "total": 533        // 拥有的产品数量
+            },
+            {
+                "code": "0101",
+                "deleteFlg": 0,
+                "id": 134,
+                "isStage": 1,
+                "leaf": "N",
+                "level": 2,
+                "name": "鱼类",
+                "parentId": 1,
+                "pyCode": "YL",
+                "sort": 1,
+                "total": 115
+            },
+            {
+                "code": "010101",
+                "deleteFlg": 0,
+                "id": 139,
+                "isStage": 1,
+                "leaf": "Y",
+                "level": 3,
+                "name": "生鲜鱼",
+                "parentId": 134,
+                "pyCode": "SXY",
+                "sort": 0,
+                "total": 52
+            },
+            {
+                "code": "02",
+                "deleteFlg": 0,
+                "id": 2,
+                "isStage": 1,
+                "leaf": "N",
+                "level": 1,
+                "name": "牛肉",
+                "parentId": 0,
+                "pyCode": "NR",
+                "sort": 0,
+                "total": 60
+            },
+            {
+                "code": "0201",
+                "deleteFlg": 0,
+                "id": 3,
+                "isStage": 1,
+                "leaf": "Y",
+                "level": 2,
+                "name": "雪龙系列",
+                "parentId": 2,
+                "pyCode": "XLXL",
+                "sort": 0,
+                "total": 39
+            },
+            {
+                "code": "0202",
+                "deleteFlg": 0,
+                "id": 12,
+                "isStage": 1,
+                "leaf": "Y",
+                "level": 2,
+                "name": "牛肉系列",
+                "parentId": 2,
+                "pyCode": "NRXL",
+                "sort": 0,
+                "total": 21
+            }
+        ]
+    }
+
+### CP-100.产品业态查询
+#### 请求
+
+    GET     /v2/product/businessType
+    
+#### 参数
+                // 获取全部业态时，什么都不传
+    parentId: 0 // 获取根分类传递0      
     
 #### 响应
 
@@ -95,14 +191,74 @@
         "msg": "",
         "data": [
             {
-                "code": "01", // 业态Code
+                "code": "01",           // 业态编码
                 "deleteFlg": 0,
-                "id": 1, // 业态ID
+                "id": 1,                // 业态id
+                "image": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/01.png",
+                "leaf": "N",            // 是否叶子节点 Y 是 N 否
+                "level": 1,             // 等级
+                "name": "中餐",         // 业态名称
+                "parentId": 0,          // 上级业态id
+                "pyCode": "ZC23",       // 拼音编码
+                "sImage": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s01.png",
+                "sort": 50,             // 排序
+                "wImage": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g01.png"
+            },
+            {
+                "code": "0103",
+                "deleteFlg": 0,
+                "id": 4,
+                "image": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/0103.png",
+                "leaf": "Y",
+                "level": 2,
+                "name": "苏菜",
+                "parentId": 1,
+                "pyCode": "SC",
+                "sImage": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s0103.png",
+                "sort": 2,
+                "wImage": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g0103.png"
+            },
+            {
+                "code": "02",
+                "deleteFlg": 0,
+                "id": 16,
+                "image": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/02.png",
+                "leaf": "N",
                 "level": 1,
-                "name": "中餐", // 业态名
-                "parentId": 0, // 父业态ID
-                "pyCode": "ZC", // 业态拼音
-                "sort": 50 
+                "name": "西餐",
+                "parentId": 0,
+                "pyCode": "XC",
+                "sImage": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png",
+                "sort": 3,
+                "wImage": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g02.png"
+            },
+            {
+                "code": "0201",
+                "deleteFlg": 0,
+                "id": 17,
+                "image": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/0201.png",
+                "leaf": "Y",
+                "level": 2,
+                "name": "汉堡店",
+                "parentId": 16,
+                "pyCode": "HBD",
+                "sImage": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s0201.png",
+                "sort": 0,
+                "wImage": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g0201.png"
+            },
+            {
+                "code": "0202",
+                "deleteFlg": 0,
+                "id": 18,
+                "image": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/0202.png",
+                "leaf": "Y",
+                "level": 2,
+                "name": "西餐厅",
+                "parentId": 16,
+                "pyCode": "BSD",
+                "sImage": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s0202.png",
+                "sort": 0,
+                "wImage": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g0202.png"
             }
         ]
     }
