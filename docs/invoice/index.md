@@ -847,37 +847,37 @@
     *productId //产品id
     
 #### 响应
-{
-    "code": 100000,
-    "msg": "",
-    "data": {
-        "buttonPermissions": [],
-        "dataSums": null,
-        "datas": [
-            {
-                "id": 0,
-                "opInfo": "新增发票产品",           //操作内容
-                "opRole": 0,
-                "opTime": "2018-10-25 10:48:02",    //操作时间
-                "opUser": 0,
-                "opUserName": "樊嘉辉",             //操作人
-                "productId": 0
-            },
-            {
-                "id": 0,
-                "opInfo": "税率：0.16->0.1700;",
-                "opRole": 0,
-                "opTime": "2018-10-25 11:31:22",
-                "opUser": 0,
-                "opUserName": "樊嘉辉",
-                "productId": 0
-            }
-            ......
-        ],
-        "pageNo": 1,
-        "total": 2
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [],
+            "dataSums": null,
+            "datas": [
+                {
+                    "id": 0,
+                    "opInfo": "新增发票产品",           //操作内容
+                    "opRole": 0,
+                    "opTime": "2018-10-25 10:48:02",    //操作时间
+                    "opUser": 0,
+                    "opUserName": "樊嘉辉",             //操作人
+                    "productId": 0
+                },
+                {
+                    "id": 0,
+                    "opInfo": "税率：0.16->0.1700;",
+                    "opRole": 0,
+                    "opTime": "2018-10-25 11:31:22",
+                    "opUser": 0,
+                    "opUserName": "樊嘉辉",
+                    "productId": 0
+                }
+                ......
+            ],
+            "pageNo": 1,
+            "total": 2
+        }
     }
-}
 
                             
 ### FP-41. 发票信息变更(维护)
