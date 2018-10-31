@@ -819,37 +819,37 @@
     *productId //产品id
     
 #### 响应
-{
-    "code": 100000,
-    "msg": "",
-    "data": {
-        "buttonPermissions": [],
-        "dataSums": null,
-        "datas": [
-            {
-                "id": 0,
-                "opInfo": "新增发票产品",           //操作内容
-                "opRole": 0,
-                "opTime": "2018-10-25 10:48:02",    //操作时间
-                "opUser": 0,
-                "opUserName": "樊嘉辉",             //操作人
-                "productId": 0
-            },
-            {
-                "id": 0,
-                "opInfo": "税率：0.16->0.1700;",
-                "opRole": 0,
-                "opTime": "2018-10-25 11:31:22",
-                "opUser": 0,
-                "opUserName": "樊嘉辉",
-                "productId": 0
-            }
-            ......
-        ],
-        "pageNo": 1,
-        "total": 2
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [],
+            "dataSums": null,
+            "datas": [
+                {
+                    "id": 0,
+                    "opInfo": "新增发票产品",           //操作内容
+                    "opRole": 0,
+                    "opTime": "2018-10-25 10:48:02",    //操作时间
+                    "opUser": 0,
+                    "opUserName": "樊嘉辉",             //操作人
+                    "productId": 0
+                },
+                {
+                    "id": 0,
+                    "opInfo": "税率：0.16->0.1700;",
+                    "opRole": 0,
+                    "opTime": "2018-10-25 11:31:22",
+                    "opUser": 0,
+                    "opUserName": "樊嘉辉",
+                    "productId": 0
+                }
+                ......
+            ],
+            "pageNo": 1,
+            "total": 2
+        }
     }
-}
 
                             
 ### FP-41. 发票信息变更(维护)
@@ -1172,72 +1172,71 @@
     *customerId //客户id
 
 #### 响应    
-
-{
-    "code": 100000,
-    "msg": "",
-    "data": [
-        {
-            "actionType": "AUTO",       //开票类型      AUTO 自动 HANDWORK 手工
-            "authenNo": "21893745891",  //第三方系统编号             
-            "change": false,
-            "checkRole": 0,
-            "checkTime": "",
-            "checkUser": 0,
-            "checkUserName": "",
-            "contactName": "梁铁骑",        //联系人
-            "createRole": 0,
-            "createTime": "2018-10-23",
-            "createUser": 0,
-            "createUserName": "庄园园",
-            "customerId": 29841,                    //客户id
-            "customerName": "孙健-泊头",            //客户名称
-            "customerType": "COMPANY",              //公司类型  COMPANY 公司 INDIVIDUALLY 个体工商 PERSON 个人
-            "deleteFlg": 0,
-            "deliverAddress": "河北省秦皇岛昌黎县test", //邮寄地址
-            "email": "liang.qitie@god.com",     //邮箱
-            "id": 1,                                //发票id
-            "invoiceCompanyId": 1,                  //开票公司id
-            "invoiceInfoCompany": {
-                "address": "河北省秦皇岛昌黎县test",        //公司地址
-                "bankName": "中国工商银行",                 //开户行
-                "bankNo": "6214888899996666",               //银行账号
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "actionType": "AUTO",       //开票类型      AUTO 自动 HANDWORK 手工
+                "authenNo": "21893745891",  //第三方系统编号             
+                "change": false,
+                "checkRole": 0,
+                "checkTime": "",
+                "checkUser": 0,
+                "checkUserName": "",
+                "contactName": "梁铁骑",        //联系人
+                "createRole": 0,
+                "createTime": "2018-10-23",
+                "createUser": 0,
+                "createUserName": "庄园园",
+                "customerId": 29841,                    //客户id
+                "customerName": "孙健-泊头",            //客户名称
+                "customerType": "COMPANY",              //公司类型  COMPANY 公司 INDIVIDUALLY 个体工商 PERSON 个人
                 "deleteFlg": 0,
-                "id": 1,
-                "invoiceId": 1,
-                "legalPerson": "liang.qitie",               //法人
-                "mobile": "13356565656",                    //公司电话
-                "name": "心有猛虎，细嗅蔷薇，他人勿动",         //发票名称
-                "taxCode": "23458939458927"                 //税收编号
-            },
-            "invoiceInfoImgs": [{
-                    *"type":"CARDFRONT",   // 客户类型=个人
-                    *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
-                },{
-                    *"type":"CARDBACK",  //客户类型=个人
-                    *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
-                },{
-                    *"type":"CHANGE",  //发票变更
-                    *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
-                },{
-                    *"type":"SPECIAL",   //增值税专用发票
-                    *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
-                }],
-            "invoiceInfoPerson": {
-                "id":1,
-                "invoiceId":1,
-                "name":"梁铁骑",                            //发票名称
-                "cardNo":"239124199012121345",              //身份证号
-                "deleteFlg":0
-            },
-            "invoiceType": "NORMAL",        //发票类型：NORMAL 普票 SPECIAL 专票
-            "mobile": "13356565656",    //联系人电话
-            "modifyTime": "",
-            "rollbackId": 0,
-            "status": "NORMAL"          状态 EMPYT 待维护, NORMAL 正常
-        }
-    ]
-}
+                "deliverAddress": "河北省秦皇岛昌黎县test", //邮寄地址
+                "email": "liang.qitie@god.com",     //邮箱
+                "id": 1,                                //发票id
+                "invoiceCompanyId": 1,                  //开票公司id
+                "invoiceInfoCompany": {
+                    "address": "河北省秦皇岛昌黎县test",        //公司地址
+                    "bankName": "中国工商银行",                 //开户行
+                    "bankNo": "6214888899996666",               //银行账号
+                    "deleteFlg": 0,
+                    "id": 1,
+                    "invoiceId": 1,
+                    "legalPerson": "liang.qitie",               //法人
+                    "mobile": "13356565656",                    //公司电话
+                    "name": "心有猛虎，细嗅蔷薇，他人勿动",         //发票名称
+                    "taxCode": "23458939458927"                 //税收编号
+                },
+                "invoiceInfoImgs": [{
+                        *"type":"CARDFRONT",   // 客户类型=个人
+                        *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
+                    },{
+                        *"type":"CARDBACK",  //客户类型=个人
+                        *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
+                    },{
+                        *"type":"CHANGE",  //发票变更
+                        *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
+                    },{
+                        *"type":"SPECIAL",   //增值税专用发票
+                        *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
+                    }],
+                "invoiceInfoPerson": {
+                    "id":1,
+                    "invoiceId":1,
+                    "name":"梁铁骑",                            //发票名称
+                    "cardNo":"239124199012121345",              //身份证号
+                    "deleteFlg":0
+                },
+                "invoiceType": "NORMAL",        //发票类型：NORMAL 普票 SPECIAL 专票
+                "mobile": "13356565656",    //联系人电话
+                "modifyTime": "",
+                "rollbackId": 0,
+                "status": "NORMAL"          状态 EMPYT 待维护, NORMAL 正常
+            }
+        ]
+    }
 
 ### FP-48. 发票详情
 #### 请求
@@ -1374,7 +1373,7 @@
     
 #### 参数
     
-    无
+    *id: 发票信息ID
 
 #### 响应
 
@@ -1392,7 +1391,7 @@
     
 #### 参数
     
-    无
+    *id: 发票信息ID
 
 #### 响应
 
