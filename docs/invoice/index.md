@@ -608,39 +608,7 @@
             "total": 5
         }
     }
-
-                               
-### FP-28. 收款人、复核、开票人
-#### 请求
-
-    GET    /v2/invoice/company/employee
-    
-#### 参数
-    
-    keyword     // 员工编号、姓名、手机号
-    
-#### 响应
-
-    {
-        "code": 100000,
-        "msg": "",
-        "data": [
-            {
-                "authDataPowers": null,
-                "authMenuPowers": null,
-                "fullname": "李文英",       //姓名
-                "id": 221,                  //员工id
-                "isOpen": "1",
-                "mobile": "15142359472",    //手机
-                "status": "NORMAL",
-                "workno": "0229"            //工号
-            }
-            ......
-        ]
-    }
-
-
-                               
+                       
 ### FP-30. 产品发票新增（单个品）--此接口PHP产品模块调用
 #### 请求
 
@@ -649,7 +617,8 @@
 #### 参数
     
     {
-        *"productId":17      //产品id
+        *"productId":17,      //产品id
+        *"taxRate":0.16     //税率
     }
     
 #### 响应
@@ -670,13 +639,16 @@
     
     [
         {
-            *"productId":18      //产品id
+            *"productId":18,      //产品id
+            *"taxRate":0.16     //税率
         },
         {
-            *"productId":21
+            *"productId":21,
+            *"taxRate":0.16
         },
         {
-            *"productId":22
+            *"productId":22,
+            *"taxRate":0.16
         }
     ]
     
@@ -958,7 +930,8 @@
         "address": "河北秦皇岛新力大街闪客快打抗衰老的浪费了。。。",
         "tel": "16788883333",
         "bankName": "中国农业银行大连香炉礁分行",
-        "bankNo": "62148888373737372723"
+        "bankNo": "62148888373737372723",
+        "legalPerson":"凉凉"
     }
     
 #### 响应
@@ -1101,6 +1074,7 @@
     *statuses[]        //状态 EMPYT 待维护, NORMAL 正常, ASKFOR 待审核  发票列表传:EMPTY,NORMAL数组，审核列表传：ASKFOR
     name            //客户名称
     buttonPermissionFlg // 0 不查询按钮权限 1查询按钮权限
+    from            // 
 
 #### 响应
     // invoiceInfoCompany 和 invoiceInfoPerson 二者根据customerType返其一
@@ -1429,4 +1403,4 @@
     }    
 
 
-#请把FP-60以内留给我
+# 请把FP-60以内留给我

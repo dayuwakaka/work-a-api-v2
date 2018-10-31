@@ -875,3 +875,34 @@
             }
         ]
     }
+
+
+                               
+### QX-32. 收款人、复核、开票人
+#### 请求
+
+    GET    /v2/userpower/employee
+    
+#### 参数
+    
+    keyword     // 员工编号、姓名、手机号
+    
+#### 响应
+
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "authDataPowers": null,
+                "authMenuPowers": null,
+                "fullname": "李文英",       //姓名
+                "id": 221,                  //员工id
+                "isOpen": "1",
+                "mobile": "15142359472",    //手机
+                "status": "NORMAL",
+                "workno": "0229"            //工号
+            }
+            ......
+        ]
+    }    
