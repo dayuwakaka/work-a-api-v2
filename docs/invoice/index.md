@@ -1402,4 +1402,532 @@
     }    
 
 
-# 请把FP-60以内留给我
+### FP-61 待开发票列表
+#### 请求
+    GET /v2/invoice/wait/orders
+#### 参数
+    keyword 客户名称/订单号
+    sendSTime 订单发出开始时间
+    sendETime 订单发出截止时间
+    orderType 订单类型 ALL：全部，SA：销售订单，SR：销售退单，AP：调价单
+    pageNo 页码默认1
+    pageSize 页面数据条数
+#### 响应
+    {
+        code: 100000,
+        msg: "",
+        data: {
+            pageNo: 1, // 当前页码
+            total: 1, // 总行数
+            datas: [
+                {
+                    "customerName": "孙健-泊头", // 客户名称
+                    "errorInfo": "", // 错误信息（如果存在，说明是自动执行失败的，并且会携带错误信息显示）
+                    "id": 1, // 主键id
+                    "orderId": "SA180501031673", // 订单号
+                    "orderType": "SA", // 订单类型 SA：销售订单，SR：销售退单，AP：调价单
+                    "sendTime": "2018-05-16 16:38:01", // 订单发出时间
+                    "status": "NO",
+                    "totalprice": 150 // 订单实收金额
+                },
+                ...
+            ]
+        }
+    }
+### FP-62 待开票订单 获取待开票销售订单详情
+#### 请求
+    GET /v2/invoice/wait/orders/{id}/sa
+#### 参数
+    id 主键id
+#### 响应
+    {
+    "code": 100000,
+    "msg": "",
+    "data": {
+        "apAmt": 0, // 差价
+        "bulk": 0,  // 散货
+        "businessUnitName": "PDOD", // 事业部
+        "createTime": "2018-10-30 10:46:45",
+        "customerId": 5565,
+        "customerName": "福建省华莱士食品股份有限公司", // 客户名称
+        "deleteFlg": 0,
+        "errorInfo": "",
+        "freight": 0, // 运费
+        "id": 4,
+        "invoiceWaitOrderDetailList": [ // 产品信息
+            {
+                "apAmount": 0, // 差价
+                "askPrice": 0,
+                "finallyPrice": 412.8, // 成交价
+                "giftFlg": 0, // 赠品flg 0:非赠品 1、2:赠品
+                "guige": "1.68kg(24枚）/盒*6盒", // 规格
+                "id": 3,
+                "orderId": "SA180930055002-2",
+                "pcount": 308, // 数量
+                "pno": "0067", // 品号
+                "price": 412.8, // 价格
+                "productId": 302,
+                "productName": "汉堡虾排H",  // 品名
+                "productUnitId": 567,
+                "subtotal": 127142.4, // 小计
+                "taxRate": 0, // 税率
+                "unitName": "件" // 单位
+            }
+        ],
+        "jian": 308, // 总件数
+        "orderId": "SA180930055002-2", // 订单号
+        "orderType": "SA",
+        "price": 127142.4, // 产品总价
+        "rebate": 0, // 折扣
+        "refOrderId": "",
+        "sendTime": "2018-10-30 17:06:33", // 发货时间
+        "ssName": "许翠竹SS", // 客服
+        "status": "NO",
+        "totalprice": 127142.4, // 总计
+        "type": "AUTO"
+        }
+    }
+
+### FP-63 待开票订单 获取待开票销售退单详情
+#### 请求
+    GET /v2/invoice/wait/orders/{id}/sr
+#### 参数
+    *id 主键id
+#### 响应
+    {
+    "code": 100000,
+    "msg": "",
+    "data": {
+        "apAmt": 0,
+        "bulk": 0, // 散货
+        "businessUnitName": "R", // 事业部
+        "createTime": "2018-10-30 10:56:53",
+        "customerId": 32173,
+        "customerName": "天津小蚁科技有限公司-苏州【战略】", // 客户名称
+        "deleteFlg": 0,
+        "errorInfo": "",
+        "freight": 0, // 运费
+        "id": 7,
+        "invoiceWaitOrderDetailList": [ // 产品信息
+            {
+                "apAmount": 0,
+                "askPrice": 0,
+                "finallyPrice": 82.7, // 成交价
+                "giftFlg": 0, // 赠品flg 0:非赠品 1、2:赠品
+                "guige": "10kg/箱", // 规格
+                "id": 6,
+                "orderId": "SR181008000449",
+                "pcount": 4, // 数量
+                "pno": "M038", // 品号
+                "price": 82.7, // 价格
+                "productId": 4472,
+                "productName": "青占鱼150/200  ", // 品名
+                "productUnitId": 7868,
+                "subtotal": 330.8, // 小计
+                "taxRate": 0, // 税率
+                "unitName": "件" // 单位
+            },
+            ...
+        ],
+        "jian": 15, // 总件数
+        "orderId": "SR181008000449", // 退单号
+        "orderType": "SR",
+        "price": 2114, // 产品总价
+        "rebate": 0, // 折扣
+        "refOrderId": "SA180928054690", // 关联订单号
+        "sendTime": "2018-10-30 00:00:00", // 发货时间
+        "ssName": "李嘉欣", // 客服
+        "status": "NO",
+        "totalprice": 2114, // 总价
+        "type": "AUTO"
+        }
+    }
+### FP-64 待开票订单 获取待开票AP单详情
+#### 请求
+    GET /v2/invoice/wait/orders/{id}/sr
+#### 参数
+    *id 主键id
+#### 响应
+    {
+    "code": 100000,
+    "msg": "",
+    "data": {
+        "apAmt": 0,
+        "bulk": 0,
+        "businessUnitName": "R", // 事业部名称
+        "createTime": "2018-10-30 11:51:27",
+        "customerId": 32174,
+        "customerName": "天津小蚁科技有限公司-常州【战略】", // 客户名称
+        "deleteFlg": 0,
+        "errorInfo": "",
+        "freight": 0, // 运费
+        "id": 9,
+        "invoiceWaitOrderDetailList": [ // 产品信息
+            {
+                "apAmount": 0,
+                "askPrice": 0,
+                "finallyPrice": 82.7, // 调整价
+                "giftFlg": 0,
+                "guige": "10kg/箱", // 规格
+                "id": 6,
+                "orderId": "SR181008000449",
+                "pcount": 4, // 数量
+                "pno": "M038", // 品号
+                "price": 82.7,
+                "productId": 4472,
+                "productName": "青占鱼150/200  ", // 品名
+                "productUnitId": 7868,
+                "subtotal": 330.8, // 小计
+                "taxRate": 0, // 税率
+                "unitName": "件" // 单位
+            },
+            ...
+        ],
+        "jian": 0,
+        "orderId": "AP181009002099",  // 调价单号
+        "orderType": "AP",
+        "price": 38,
+        "rebate": 0,
+        "refOrderId": "SA180926054316",
+        "sendTime": "2018-10-30 19:58:18",
+        "ssName": "李嘉欣",
+        "status": "NO",
+        "totalprice": 38, // 总计
+        "type": "AUTO"
+        }
+    }
+### FP-65 待开票订单 专票要冲红，需要选择对应的发票并输入红色发票申请单号，所以这个接口是拉取AP、SR单对应的SA单的发票列表
+#### 请求
+    GET /v2/invoice/wait/orders/{id}/formal
+#### 参数
+    *id 主键id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "callbackInvoiceNo": "20181210120120120", // 发票号码
+                "note": "", // 备注
+                "createTime": "2018-10-31 12:12:12", // 开票时间
+                "totalprice": 618, // 发票金额
+                "id": 1
+            },
+            ...
+        ]
+    }
+### FP-66 待开票订单 普通SA单及非专票的AP、SR单的开具发票接口
+#### 请求
+    POST /v2/invoice/wait/orders/{id}
+#### 参数
+    *id 主键id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+### FP-67 待开票订单 专票的AP、SR单的开具发票接口
+#### 请求
+    POST /v2/invoice/wait/orders/{id}
+#### 参数
+    *id 主键id, // 此参数仅用于url的拼接，body体不存放
+    *{
+        3: "20181210120120120"
+    }
+    *body体存放一个Map 发票id作为key，红色发票申请单号作为value
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+### FP-68 待开票订单 合并开发票
+#### 请求
+    POST /v2/invoice/wait/orders/combo
+#### 参数
+    *[1,2,3,4,5,6,7,8,9] 发票id集合
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+### FP-69 待开票订单 标记为不开票
+#### 请求
+    POST /v2/invoice/wait/orders/ignore
+#### 参数
+    *[1,2,3,4,5,6,7,8,9] 发票id集合
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+### FP-70 待审核发票列表 获取待审核发票列表
+#### 请求
+    GET /V2/invoice/askfor
+#### 参数
+    keyword: // 发票号/发票抬头
+    invoiceType: // 发票类型 NORMAL: 增值税普通发票, SPECIAL: 增值税专用发票, ALL: 全部
+    pageNo: 页码 默认 1
+    pageSize: 页面条数
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "total": 22,
+            "pageNo": 1,
+            "datas": [
+                {
+                    "id: 1,
+                    "invoiceType": "NORMAL", // 增值税普通发票
+                    "totalprice": 22, // 发票金额
+                    "note": "SA1810101200210,SA1809301200210" // 备注
+                    "createTime": "2018-10-31 12:12:12", // 开票时间
+                    "name": "樊家辉的1892年凯子" // 发票抬头
+                }
+            ]
+        }
+    }
+### FP-71 待审核发票列表 通过
+#### 请求
+    PUT /V2/invoice/askfor/{id}/pass
+#### 参数
+    *id 主键id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+### FP-72 待审核发票列表 拒绝
+#### 请求
+    PUT /V2/invoice/askfor/{id}/refuse
+#### 参数
+    *id 主键id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+### FP-73 待审核发票列表 查看发票详情
+#### 请求
+    GET /v2/invoice/formal/{id}
+#### 参数
+    *id 主键id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "customerType": "COMPANY" // COMPANY 企业 INDIVIDUALLY 个体工商 PERSON 个人
+            ....
+            // FBI WARNING 根据customerType的不同，显示不同的值，如下：
+        }
+    }
+    
+    接上
+    一、customerType == 'COMPANY' or cusotmerType == 'INDIVIDUALLY'
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "customerType": "COMPANY",
+            "note": "SA181818181881,SA1231123123", // 订单信息
+            "invoiceInfoBuyer": { // "发票信息"和"接收信息" 混合的
+                "name": "樊家辉的82年凯龙", // 发票名称
+                "customerType": "COMPANY", COMPANY 企业 INDIVIDUALLY 个体工商 PERSON 个人
+                "invoiceType": "NORMAL", // 发票类型 NORMAL增值税普通发票 SECIAL 增值税专用发票
+                "address": "山西省大同市", // 地址
+                "actionType": "AUTO", // AUTO 自动 HANDWORK 手动
+                "taxCode": "2018121200000012", // 纳税人识别号
+                "legalPerson": "凯龙", // 法人或者经营人
+                "mobile": "1333333333", // 电话
+                "bankName": "花旗", // 开户行
+                "bankNo": "123123123", // 开户账号
+                "deliverAddress": "辽宁省大连市甘井子区营城子镇93330部队71分队", // 邮寄地址
+                "email": "dl_xxxx@163.com", // 邮箱
+                "contactName": "82年", // 联系人
+                "contactMobile": "13333338888" // 联系电话
+            },
+            "invoiceInfoSeller": { // 企业信息
+                "name": "地空导弹第一旅八营制导连", // 企业名称
+                "taxCode": "201888881288888", // 纳税人识别号
+                "address": "辽宁省大连市", // 地址
+                "tel": "288336X", // 电话
+                "bankName": "花旗", // 开户行
+                "bankAccount": "20188888888", // 银行账号
+                "payeeUserName": "XX", // 收款人
+                "checkUserName": "YY", // 复核人
+                "actionUserName": "OO" // 开票人
+            },
+            "invoiceDetailList": [ // 货品信息
+                {
+                   // 货物或应税劳务、服务名称 
+                   "categoryName": "方便食品", // 分类名称
+                   "productName": "凤尾虾", // 品名
+                   "taxRate": 0.16, // 税率
+                   "guige": "xxxxx", // 规格
+                   "unitName": "个", // 单位名称
+                   "pcount": 1, // 数量
+                   "rebate": 12.2, // 折扣
+                   "price": "123", // 成交价
+                   "subtotal": "123" // 小计
+                },
+                ...
+            ]
+        }
+    }
+    
+    二、customerType == 'PERSON'
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "customerType": "COMPANY",
+            "note": "SA181818181881,SA1231123123", // 订单信息
+            "invoiceInfoBuyer": { // "发票信息"和"接收信息" 混合的
+                "name": "樊家辉的82年凯龙", // 发票名称
+                "customerType": "COMPANY", COMPANY 企业 INDIVIDUALLY 个体工商 PERSON 个人
+                "invoiceType": "NORMAL", // 发票类型 NORMAL增值税普通发票 SECIAL 增值税专用发票
+                "actionType": "AUTO", // AUTO 自动 HANDWORK 手动
+                "cardNo": "130322199006186688", // 身份证号
+                "deliverAddress": "辽宁省大连市甘井子区营城子镇93330部队71分队", // 邮寄地址
+                "email": "dl_xxxx@163.com", // 邮箱
+                "contactName": "82年", // 联系人
+                "contactMobile": "13333338888" // 联系电话
+            },
+            "invoiceInfoSeller": { // 企业信息
+                "name": "地空导弹第一旅八营制导连", // 企业名称
+                "taxCode": "201888881288888", // 纳税人识别号
+                "address": "辽宁省大连市", // 地址
+                "tel": "288336X", // 电话
+                "bankName": "花旗", // 开户行
+                "bankAccount": "20188888888", // 银行账号
+                "payeeUserName": "XX", // 收款人
+                "checkUserName": "YY", // 复核人
+                "actionUserName": "OO" // 开票人
+            },
+            "invoiceDetailList": [ // 货品信息
+                {
+                   // 货物或应税劳务、服务名称 是categoryName + productName
+                   "categoryName": "方便食品", // 分类名称
+                   "productName": "凤尾虾", // 品名
+                   "taxRate": 0.16, // 税率
+                   "guige": "xxxxx", // 规格
+                   "unitName": "个", // 单位名称
+                   "pcount": 1, // 数量
+                   "rebate": 12.2, // 折扣
+                   "price": "123", // 成交价
+                   "subtotal": "123" // 小计
+                },
+                ...
+            ]
+        }
+    }
+### FP-74 发票列表 获取发票列表
+#### 请求
+    GET /v2/invoice/formal
+#### 参数
+    keyword: 发票抬头/发票号/订单号
+    type: 发票类别 BLUE: 蓝票 RED: 红票 ALL: 全部
+    invoiceType: 发票类型 NORMAL: 增值税普通发票, SPECIAL: 增值税专用发票, ALL: 全部
+    action: 开票状态 WAIT: 等待开票，MAKING: 开具中，DONE: 完成，ERROR: 错误, ALL: 全部
+    pageNo: 页码
+    pageSize: 页面行数
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "total": 12,
+            "pageNo": 1,
+            "buttonPermissions":[
+                {
+                    "detailButton": true, // 查看详情按钮
+                    "cancelButton": false, // 作废按钮
+                    "logButton": true, // 日志查看按钮
+                    "reAddButton": false, // 重开发票按钮
+                    "resubmitButton": false, // 重新提交
+                    "hedButton": false // 发票信息冲红
+                },
+                ...
+            ],
+            "datas": [
+                {
+                    "callbackInvoiceNo": "202012312" // 发票号码
+                    "name": "樊家辉的82年凯龙", // 发票抬头
+                    "action": "MAKING", // 发票状态 WAIT: 等待开票，MAKING: 开具中，DONE: 完成，ERROR: 错误
+                    "invoiceType": 发票类型 NORMAL: 增值税普通发票, SPECIAL: 增值税专用发票
+                    "abandonFlg": 0, // 作废状态 0: 正常, 1: 作废
+                    "totalprice": 123, // 发票金额
+                    "note": "SA1812312312,SA12312312", // 备注
+                    "createTime": "2018-10-10 10:10:10", // 开票时间
+                    "id": 1 // 主键id
+                },
+                ...
+            ]
+        }
+    }
+### FP-75 发票列表 查看发票详情
+    请参阅FP-73接口的请求、参数、响应即可
+### FP-76 发票列表 查看日志
+#### 请求
+    GET /v2/invoice/formal/{id}/logs
+#### 参数
+    *id 主键id
+    pageNo 页码 默认1
+    pageSize 页面行数
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "total": 12,
+            "pageNo": 1,
+            "datas": [
+                {
+                   "opInfo": "新增发票",
+                   "opTime": "操作时间",
+                   "opUserName": "操作人"
+                },
+                ...
+            ]
+        }
+    }
+### FP-76 发票列表 作废发票
+#### 请求
+    DELETE /v2/invoice/formal/{id}
+#### 参数
+    *id 主键id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+### FP-77 发票列表 重开发票
+#### 请求
+    POST /v2/invoice/formal/{id}
+#### 参数
+    *id 主键id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+### FP-78 发票列表 发票信息冲红
+#### 请求
+    PUT /v2/invoice/formal/{id}/hed
+#### 参数
+    *id 主键id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
