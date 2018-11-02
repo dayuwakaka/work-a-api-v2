@@ -1074,7 +1074,6 @@
     *statuses[]        //状态 EMPYT 待维护, NORMAL 正常, ASKFOR 待审核  发票列表传:EMPTY,NORMAL数组，审核列表传：ASKFOR
     name            //客户名称
     buttonPermissionFlg // 0 不查询按钮权限 1查询按钮权限
-    from            // 
 
 #### 响应
     // invoiceInfoCompany 和 invoiceInfoPerson 二者根据customerType返其一
