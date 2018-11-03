@@ -1432,7 +1432,6 @@
             ]
         }
     }
-
 ### FP-62 待开票订单 获取待开票销售订单详情
 #### 请求
     GET /v2/invoice/wait/orders/{id}/sa
@@ -1541,7 +1540,6 @@
         "type": "AUTO"
         }
     }
-
 ### FP-64 待开票订单 获取待开票AP单详情
 #### 请求
     GET /v2/invoice/wait/orders/{id}/sr
@@ -1596,7 +1594,6 @@
         "type": "AUTO"
         }
     }
-
 ### FP-65 待开票订单 专票要冲红，需要选择对应的发票并输入红色发票申请单号，所以这个接口是拉取AP、SR单对应的SA单的发票列表
 #### 请求
     GET /v2/invoice/wait/orders/{id}/formal
@@ -1617,7 +1614,6 @@
             ...
         ]
     }
-
 ### FP-66 待开票订单 普通SA单及非专票的AP、SR单的开具发票接口
 #### 请求
     POST /v2/invoice/wait/orders/{id}
@@ -1629,7 +1625,6 @@
         "msg": "",
         "data": null
     }
-
 ### FP-67 待开票订单 专票的AP、SR单的开具发票接口
 #### 请求
     POST /v2/invoice/wait/orders/{id}
@@ -1645,7 +1640,6 @@
         "msg": "",
         "data": null
     }
-
 ### FP-68 待开票订单 合并开发票
 #### 请求
     POST /v2/invoice/wait/orders/combo
@@ -1657,7 +1651,6 @@
         "msg": "",
         "data": null
     }
-
 ### FP-69 待开票订单 标记为不开票
 #### 请求
     POST /v2/invoice/wait/orders/ignore
@@ -1669,10 +1662,9 @@
         "msg": "",
         "data": null
     }
-
 ### FP-70 待审核发票列表 获取待审核发票列表
 #### 请求
-    GET /V2/invoice/askfor
+    GET /v2/invoice/askfor
 #### 参数
     keyword: // 发票号/发票抬头
     invoiceType: // 发票类型 NORMAL: 增值税普通发票, SPECIAL: 增值税专用发票, ALL: 全部
@@ -1697,10 +1689,9 @@
             ]
         }
     }
-
 ### FP-71 待审核发票列表 通过
 #### 请求
-    PUT /V2/invoice/askfor/{id}/pass
+    PUT /v2/invoice/askfor/{id}/pass
 #### 参数
     *id 主键id
 #### 响应
@@ -1709,10 +1700,9 @@
         "msg": "",
         "data": null
     }
-
 ### FP-72 待审核发票列表 拒绝
 #### 请求
-    PUT /V2/invoice/askfor/{id}/refuse
+    PUT /v2/invoice/askfor/{id}/refuse
 #### 参数
     *id 主键id
 #### 响应
@@ -1721,7 +1711,6 @@
         "msg": "",
         "data": null
     }
-
 ### FP-73 待审核发票列表 查看发票详情
 #### 请求
     GET /v2/invoice/formal/{id}
@@ -1837,7 +1826,6 @@
             ]
         }
     }
-
 ### FP-74 发票列表 获取发票列表
 #### 请求
     GET /v2/invoice/formal
@@ -1882,7 +1870,6 @@
             ]
         }
     }
-
 ### FP-75 发票列表 查看发票详情
     请参阅FP-73接口的请求、参数、响应即可
 ### FP-76 发票列表 查看日志
@@ -1909,7 +1896,6 @@
             ]
         }
     }
-
 ### FP-76 发票列表 作废发票
 #### 请求
     DELETE /v2/invoice/formal/{id}
@@ -1921,7 +1907,6 @@
         "msg": "",
         "data": null
     }
-
 ### FP-77 发票列表 重开发票
 #### 请求
     POST /v2/invoice/formal/{id}
@@ -1933,7 +1918,6 @@
         "msg": "",
         "data": null
     }
-
 ### FP-78 发票列表 发票信息冲红
 #### 请求
     PUT /v2/invoice/formal/{id}/hed
@@ -1945,4 +1929,3 @@
         "msg": "",
         "data": null
     }
-    
