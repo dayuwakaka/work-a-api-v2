@@ -633,7 +633,7 @@
 #### 请求
     GET /router/v5/invoice
 #### 参数
-    *orderId: "SA000XXXX" // 订单ID
+    *orderId: "SA181009055865" // 订单ID
 #### 响应
     {
         "code": 100000,
@@ -656,13 +656,13 @@
 #### 请求
     GET /router/v5/invoice/detail/{id}
 #### 参数
-    *id : 1 //发票ID
+    *id : 252 //发票ID
 #### 响应
     {
         "code": 100000,
         "msg": "",
         "data": {
-            id: 12,
+            id: 252,
             pdfUrl: "xxx" // 发票PDF 文件地址，若为空，则应该有对应的显示提示，比如未找到对应的发票信息
         }
     }
@@ -675,7 +675,7 @@
 #### 请求
     POST /router/v5/invoice/send/{id}
 #### 参数
-    *id: 2 //发票ID
+    *id: 252 //发票ID
 #### 响应
     {
         "code": 100000,
