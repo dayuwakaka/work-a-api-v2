@@ -2256,20 +2256,3 @@
         "msg": "",
         "data": null
     }
-
-### FP-82 发票列表 修改红色发票申请单号
-#### 对接负责人
-    梁铁骐
-#### 模块负责人
-    刘宏宇
-#### 请求
-    PUT /v2/invoice/formal/{id}/invoiceNo/{redAskForInvoiceNo}
-#### 参数
-    *id 主键id
-    *redAskForInvoiceNo 红色发票申请单号
-#### 响应
-    {
-        "code": 100000,
-        "msg": "",
-        "data": null
-    }
