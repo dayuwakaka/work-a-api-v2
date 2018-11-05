@@ -21,6 +21,8 @@
     isParent: -1 查询客户类型 -1 所有 0 普通客户 1 总公司 2 分店 
     ignorePower: false 忽略权限标识，true为不限制任何权限查询客户
     states: ['NORMAL', 'DELETE'] NORMAL 正常 DELETE 删除
+    @@showAttr：是否显示客户属性 true 显示 false 不显示
+    @@showInvoice：是否显示发票状态 true 显示 false 不显示
 #### 响应
     {
         "code": 100000,
@@ -53,6 +55,18 @@
                         "prepaid": 0 //定金金额
                     },
                     "customerContacts": [],
+                    @@"customer2Attrs": [
+                        {
+                            "attrId": 1,                //属性id
+                            "attrName": "彤德莱",       //属性名称
+                            "customerId": 32488,
+                            "freightFlg": 1,
+                            "groupId": 1,
+                            "groupName": "彤德莱体系客户",
+                            "id": 390
+                        }
+                    ],
+                    @@"invoiceInfoStatus": "NORMAL",    //EMPTY 待维护 NORMAL 已维护 ASKFOR 待审核
                     "dod": 0,
                     "freight": 1,
                     "id": 32164, // 客户编号
@@ -154,7 +168,7 @@
     json body
     {
         *"shortName":"test1", //客户名
-        *"type":"P", // 客户类型
+        @@*"type":"P", // 客户类型           // 原来的基础上增加C类型客户，通P客户一样，可以设置“普通”，“分店”，“总店” 
         *"businessunit":1, //部门
         *"srRoleId": 40, //SRID
         *"isParent": 2, //总分店 0 普通客户 1 总店 2 分店
@@ -180,7 +194,7 @@
 #### 参数
     {
         *"shortName":"test2", // 客户名
-        *"type":"P", //客户类型
+        @@*"type":"P", //客户类型                 // 原来的基础上增加C类型客户，通P客户一样，可以设置“普通”，“分店”，“总店” 
         *"businessunit":1, //部门ID
         *"srRoleId": 40, // SRID
         *"isParent": 2, //总分店 0 普通客户 1 总店 2 分店
