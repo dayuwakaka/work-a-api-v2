@@ -1759,7 +1759,7 @@
 #### 模块负责人
     刘宏宇
 #### 请求
-    GET /v2/invoice/wait/orders/{id}/sr
+    GET /v2/invoice/wait/orders/{id}/ap
 #### 参数
     *id 主键id
 #### 响应
@@ -1990,6 +1990,9 @@
         "msg": "",
         "data": {
             "customerType": "COMPANY",
+            "updateRedAskForInvoiceNoButton": false, // 更新红色发票申请单号 true: 显示，false 不显示
+            "urlFLg": 0, // 调用url 0: FP-77, 1:FP-78, 2:FP-79, 3:FP-80
+            "refreshButton": false, // 刷新发票基本信息按钮 true：显示，false：不显示
             "note": "SA181818181881,SA1231123123", // 订单信息
             "invoiceInfoBuyer": { // "发票信息"和"接收信息" 混合的
                 "name": "樊家辉的82年凯龙", // 发票名称
@@ -2043,6 +2046,9 @@
         "data": {
             "customerType": "COMPANY",
             "note": "SA181818181881,SA1231123123", // 订单信息
+            "updateRedAskForInvoiceNoButton": false, // 更新红色发票申请单号 true: 显示，false 不显示
+            "urlFLg": 0, // 调用url 0: FP-77, 1:FP-78, 2:FP-79, 3:FP-80
+            "refreshButton": false, // 刷新发票基本信息按钮 true：显示，false：不显示
             "invoiceInfoBuyer": { // "发票信息"和"接收信息" 混合的
                 "name": "樊家辉的82年凯龙", // 发票名称
                 "customerType": "COMPANY", COMPANY 企业 INDIVIDUALLY 个体工商 PERSON 个人
@@ -2109,9 +2115,6 @@
                     "cancelButton": false, // 作废按钮
                     "logButton": true, // 日志查看按钮
                     "reAddButton": false, // 重开发票按钮
-                    "reSubmitButton": false, // 重新提交按钮
-                    "reApprovalbutton": false, // 提交审核按钮
-                    "reCreateInvoiceByRedButton", // 重新生成蓝票按钮
                     "hedButton": false // 发票信息冲红
                 },
                 ...
@@ -2200,7 +2203,7 @@
 #### 模块负责人
     刘宏宇
 #### 请求
-    POST /v2/invoice/formal/{id}/self
+    PT /v2/invoice/formal/{id}/self
 #### 参数
     #id 主键id
 #### 响应
@@ -2216,7 +2219,7 @@
 #### 模块负责人
     刘宏宇
 #### 请求
-    POST /v2/invoice/formal/{id}/approval
+    PUT /v2/invoice/formal/{id}/approval
 #### 参数
     *id 主键id
 #### 响应
@@ -2231,6 +2234,8 @@
     梁铁骐
 #### 模块负责人
     刘宏宇
+#### 请求
+    POST /v2/invoice/formal/{id}/blue
 #### 参数
     *id 主键id
 #### 响应
@@ -2248,6 +2253,38 @@
     刘宏宇
 #### 请求
     PUT /v2/invoice/formal/{id}/hed
+#### 参数
+    *id 主键id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### FP-82 发票列表 修改红色发票申请单号
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    刘宏宇
+#### 请求
+    PUT /v2/invoice/formal/{id}/invoiceNo/{redAskForInvoiceNo}
+#### 参数
+    *id 主键id
+    *redAskForInvoiceNo 红色发票申请单号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+### FP-83 发票列表 刷新发票基本信息
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    刘宏宇
+#### 请求
+    PUT /{id}/refresh
 #### 参数
     *id 主键id
 #### 响应
