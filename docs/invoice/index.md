@@ -227,6 +227,7 @@
                     "createUser": 0,
                     "createUserName": "樊嘉辉", // 创建人
                     "deleteFlg": 0,
+                    "hasProduct":1,             //是否关联产品 0 无关联 1 有关联
                     "id": 5,                    // 分类id
                     "modifyTime": "",
                     "name": "油炸食品类2"       // 分类名称
@@ -2248,6 +2249,23 @@
     PUT /v2/invoice/formal/{id}/hed
 #### 参数
     *id 主键id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### FP-82 发票列表 修改红色发票申请单号
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    刘宏宇
+#### 请求
+    PUT /v2/invoice/formal/{id}/invoiceNo/{redAskForInvoiceNo}
+#### 参数
+    *id 主键id
+    *redAskForInvoiceNo 红色发票申请单号
 #### 响应
     {
         "code": 100000,
