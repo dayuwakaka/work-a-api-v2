@@ -314,11 +314,12 @@
     刘宏宇
 #### 请求
 
-    DELETE    /v2/invoice/category/{id}
+    DELETE    /v2/invoice/category/{delId}/{toId}
     
 #### 参数
-
-    *id     //版本id
+        // 根据列表接口提供的字段 hasProduct=1 移至，hasProduct=0直接删
+    *delId     //需要删除的分类id
+    *toId       // 移至的分类id ， 无移至，则默认 0 即可
     
 #### 响应
 
