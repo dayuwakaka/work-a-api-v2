@@ -810,7 +810,7 @@
     刘宏宇
 #### 请求
 
-    POST    /v2/invoice/product/{id}
+    PUT    /v2/invoice/product/{id}
     
 #### 参数
     
@@ -971,6 +971,33 @@
             "total": 2
         }
     }
+
+
+### FP-38. 产品发票修改（批量）
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    刘宏宇
+#### 请求
+
+    PUT    /v2/invoice/product/multi
+    
+#### 参数
+    
+    // json body
+    {
+        "ids":[3,4,5],        //id列表
+        "taxRate":0.15,     //税率
+        "taxCategory":6     //税收分类
+    }
+    
+#### 响应
+
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }    
 
                             
 ### FP-41. 发票信息变更(维护)
@@ -1534,6 +1561,9 @@
 #### 参数
     
     *id: 发票信息ID
+    {
+        "actionType":"AUTO"     // AUTO 自动 HANDWORK 手动
+    }
 
 #### 响应
 
@@ -1556,6 +1586,9 @@
 #### 参数
     
     *id: 发票信息ID
+    {
+        "reason":"决绝理由"
+    }
 
 #### 响应
 
