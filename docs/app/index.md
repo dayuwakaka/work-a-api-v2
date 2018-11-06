@@ -693,7 +693,10 @@
 #### 参数
     与原PHP http://app.asagroup.asa/order/my 接口一致，未做改变
 #### 响应
-    与原PHP http://app.asagroup.asa/order/my 接口一致，并且在orderInfo内进行了扩展
+    与原PHP http://app.asagroup.asa/order/my 接口一致。并进行了下列扩展：
+    1.对apAmt与totalprice进行了运算，将apAmt的金额加入了totalprice中；
+    2.并且在orderInfo内进行了扩展，加入2个字段 invoiceTotal, invoiceDoneTotal
+    PHP部分接口略，指出变化结构位置如下：
         {
         "code": 100000,
         "msg": "",
