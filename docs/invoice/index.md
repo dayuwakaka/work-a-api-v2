@@ -1805,7 +1805,7 @@
         "rebate": 0,
         "refOrderId": "SA180926054316",
         "sendTime": "2018-10-30 19:58:18",
-        "ssName": "李嘉欣",
+        "ssName": "李嘉欣", // 客服名称
         "status": "NO",
         "totalprice": 38, // 总计
         "type": "AUTO"
@@ -2031,8 +2031,8 @@
                    "unitName": "个", // 单位名称
                    "pcount": 1, // 数量
                    "rebate": 12.2, // 折扣
-                   "price": "123", // 成交价
-                   "subtotal": "123" // 小计
+                   "price": 123, // 成交价
+                   "subtotal": 123 // 小计
                 },
                 ...
             ]
@@ -2081,8 +2081,8 @@
                    "unitName": "个", // 单位名称
                    "pcount": 1, // 数量
                    "rebate": 12.2, // 折扣
-                   "price": "123", // 成交价
-                   "subtotal": "123" // 小计
+                   "price": 123, // 成交价
+                   "subtotal": 123 // 小计
                 },
                 ...
             ]
@@ -2130,6 +2130,7 @@
                     "abandonFlg": 0, // 作废状态 0: 正常, 1: 作废
                     "status": "AGREE", // 审核状态
                     "totalprice": 123, // 发票金额
+                    "type": "RED", // RED 冲红票 BLUE 普通发票
                     "note": "SA1812312312,SA12312312", // 备注
                     "createTime": "2018-10-10 10:10:10", // 开票时间
                     "id": 1 // 主键id
@@ -2206,7 +2207,7 @@
 #### 模块负责人
     刘宏宇
 #### 请求
-    PT /v2/invoice/formal/{id}/self
+    PUT /v2/invoice/formal/{id}/self
 #### 参数
     #id 主键id
 #### 响应
