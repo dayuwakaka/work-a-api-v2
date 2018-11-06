@@ -173,6 +173,7 @@
         *"srRoleId": 40, //SRID
         *"isParent": 2, //总分店 0 普通客户 1 总店 2 分店
         *"parentId":797, // 总店ID
+        *"printPrice": 0, // 是否打印价格 0 不打印 1打印
         *"customerAccount":{
             *"mobile":"18842889150" //绑定手机号
         }
@@ -198,6 +199,7 @@
         *"businessunit":1, //部门ID
         *"srRoleId": 40, // SRID
         *"isParent": 2, //总分店 0 普通客户 1 总店 2 分店
+        *"printPrice": 0, // 打印价格 0 不打印 1打印
         "parentId":797, // 总店ID
         *"customerAccount":{
             *"mobile":"18842889150" // 绑定手机号
