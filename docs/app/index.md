@@ -683,6 +683,33 @@
         "data":null
     }
 
+### APP-26 订单列表(临时替代PHP接口，将来改造订单后，需要定制新的结构和参数后再重新对接)
+#### 对接负责人
+    刘宏宇
+#### 模块负责人
+    梁铁骑
+#### 请求
+    GET /router/v5/order
+#### 参数
+    与原PHP http://app.asagroup.asa/order/my 接口一致，未做改变
+#### 响应
+    与原PHP http://app.asagroup.asa/order/my 接口一致，并且在orderInfo内进行了扩展
+        {
+        "code": 100000,
+        "msg": "",
+        "data":[
+            {
+                orderInfo:{
+                    ...
+                    invoiceTotal: 0, // 订单对应发票总数量
+                    invoiceDoneTotal: 0, //订单对应发票已开数量
+                }
+            }
+        ]
+    }
+
+
+
 ### 模版
 #### 对接负责人
 #### 模块负责人
