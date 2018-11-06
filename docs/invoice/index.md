@@ -2100,6 +2100,8 @@
     type: 发票类别 BLUE: 蓝票 RED: 红票 ALL: 全部
     invoiceType: 发票类型 NORMAL: 增值税普通发票, SPECIAL: 增值税专用发票, ALL: 全部
     action: 开票状态 WAIT: 等待开票，MAKING: 开具中，DONE: 完成，ERROR: 错误, ALL: 全部
+    abandonFlg: 有效状态  0 - 有效， 1 - 无效，ALL - 全部
+    status: 审核状态 AGREE 同意，REFUSE 拒绝，ALL - 全部 
     pageNo: 页码
     pageSize: 页面行数
 #### 响应
@@ -2126,6 +2128,7 @@
                     "action": "MAKING", // 发票状态 WAIT: 等待开票，MAKING: 开具中，DONE: 完成，ERROR: 错误
                     "invoiceType": 发票类型 NORMAL: 增值税普通发票, SPECIAL: 增值税专用发票
                     "abandonFlg": 0, // 作废状态 0: 正常, 1: 作废
+                    "status": "AGREE", // 审核状态
                     "totalprice": 123, // 发票金额
                     "note": "SA1812312312,SA12312312", // 备注
                     "createTime": "2018-10-10 10:10:10", // 开票时间
