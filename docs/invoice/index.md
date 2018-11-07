@@ -846,11 +846,9 @@
     keyword     // 品号或品名
     productName // 品名
     pno         // 品号
-    producttype // 产品类型id
     businesstype // 餐饮业态id
     taxCategory // 税收分类id
     productStatus   // 产品状态     NORMAL 上架 LOCK 下架   CUSTOM 定制     LACK 断货
-    isStage         // 是否前台显示 0 不显示 1显示
     pageNo          // 页码
     pageSize        // 页大小
     
@@ -867,7 +865,6 @@
                     "createTime": "2018-10-25",           //创建时间
                     "deleteFlg": 0,
                     "id": 10,                               //发票产品id
-                    "isStage": 1,                           //0 不显示 1显示
                     "lackEndTime": "2018-10-15",            //断货结束时间
                     "lackStartTime": "2018-10-15",          //断货开始时间
                     "mainPic": "uploads/product/201803/70b105e1f977ad746777484bb2529695.jpg",   //产品主图
@@ -876,11 +873,39 @@
                     "productId": 4,                         //产品id
                     "productName": "COCO虾(冻裹面包屑虾）",     //产品名称
                     "productStatus": "NORMAL",                  //产品状态  NORMAL 上架 LOCK 下架 CUSTOM 定制 LACK 断货
+                    "productUnits": [
+                        {
+                            "aPrice": 40.12,
+                            "guige": "500g(23-25枚）/盒",           // 规格
+                            "pPrice": 32.5,
+                            "perUnit": 0,
+                            "pno": "0151",
+                            "productId": 1,
+                            "productName": "香草凤尾虾",
+                            "productUnitId": 1,
+                            "state": "NORMAL",
+                            "unitId": 0,
+                            "unitName": "盒"                        // 单位
+                        },
+                        {
+                            "aPrice": 802.47,
+                            "guige": "500g(23-25枚）/盒*20盒",
+                            "pPrice": 650,
+                            "perUnit": 0,
+                            "pno": "0151",
+                            "productId": 1,
+                            "productName": "香草凤尾虾",
+                            "productUnitId": 2,
+                            "state": "NORMAL",
+                            "unitGuige": "件：500g(23-25枚）/盒*20盒",
+                            "unitId": 0,
+                            "unitName": "件"
+                        }
+                    ],
                     "status": null,
                     "taxCategory": 2,                              //税收分类id
                     "taxCategoryName": "方便食品类",               //税收分类名称
-                    "taxRate": 0.17,                               //税率
-                    "unitGuige": "盒:1kg/盒,件:1kg/盒*9盒"      //单位规格
+                    "taxRate": 0.17                              //税率
                 }
             ],
             "pageNo": 1,
@@ -1835,7 +1860,7 @@
             ...
         ]
     }
-### FP-66 待开票订单 普通SA单及非专票的AP、SR单的开具发票接口
+### FP-66 待开票订单 普通SA单及非专票的AP、SR单的开具发票接口(作废)
 #### 对接负责人
     梁铁骐
 #### 模块负责人
@@ -1850,7 +1875,7 @@
         "msg": "",
         "data": null
     }
-### FP-67 待开票订单 专票的AP、SR单的开具发票接口
+### FP-67 待开票订单 专票的AP、SR单的开具发票接口(作废)
 #### 对接负责人
     梁铁骐
 #### 模块负责人
@@ -1993,6 +2018,7 @@
             "updateRedAskForInvoiceNoButton": false, // 更新红色发票申请单号 true: 显示，false 不显示
             "urlFLg": 0, // 调用url 0: FP-77, 1:FP-78, 2:FP-79, 3:FP-80
             "refreshButton": false, // 刷新发票基本信息按钮 true：显示，false：不显示
+            "totalprice": 123.12, // 总价
             "note": "SA181818181881,SA1231123123", // 订单信息
             "invoiceInfoBuyer": { // "发票信息"和"接收信息" 混合的
                 "name": "樊家辉的82年凯龙", // 发票名称
@@ -2023,7 +2049,9 @@
             },
             "invoiceDetailList": [ // 货品信息
                 {
-                   // 货物或应税劳务、服务名称 
+                   // 货物或应税劳务、服务名称
+                   "productId": 1, // 产品id
+                   "productUnitId": 12, // 产品规格id
                    "categoryName": "方便食品", // 分类名称
                    "productName": "凤尾虾", // 品名
                    "taxRate": 0.16, // 税率
@@ -2048,6 +2076,7 @@
             "note": "SA181818181881,SA1231123123", // 订单信息
             "updateRedAskForInvoiceNoButton": false, // 更新红色发票申请单号 true: 显示，false 不显示
             "urlFLg": 0, // 调用url 0: FP-77, 1:FP-78, 2:FP-79, 3:FP-80
+            "totalprice": 123.12, // 总价
             "refreshButton": false, // 刷新发票基本信息按钮 true：显示，false：不显示
             "invoiceInfoBuyer": { // "发票信息"和"接收信息" 混合的
                 "name": "樊家辉的82年凯龙", // 发票名称
@@ -2250,7 +2279,7 @@
     }
 
 
-### FP-81 发票列表 发票信息冲红
+### FP-81 发票列表 发票信息冲红(作废)
 #### 对接负责人
     梁铁骐
 #### 模块负责人
@@ -2288,9 +2317,98 @@
 #### 模块负责人
     刘宏宇
 #### 请求
-    PUT /{id}/refresh
+    PUT /v2/invoice/formal/{id}/refresh
 #### 参数
     *id 主键id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### FP-84 待开票订单 获取对应的发票类型
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    刘宏宇
+#### 说明
+    只有AP、SR单才可以调用此接口
+#### 请求
+    GET /v2/invoice/wait/orders/{id}/type
+#### 参数
+    *id 主键id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": "NORMAL" // NORMAL 普票，SPECIAL 专票
+    }
+### FP-85 发票列表 普通发票信息冲红
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    刘宏宇
+#### 说明
+    根据发票列表返回的字段invoiceType 进行判断调用 NORMAL 调用此接口
+#### 请求
+    PUT /v2/invoice/formal/{id}/hed/normal
+#### 参数
+    *id 主键id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+### FP-86 发票列表 专用发票信息冲红
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    刘宏宇
+#### 说明
+    根据发票列表返回的字段invoiceType 进行判断调用 SPECIAL 调用此接口
+#### 请求
+    PUT /v2/invoice/formal/{id}/hed/special
+#### 参数
+    *id 主键id
+    body {
+        redInvoiceNo: '123123' // 红色发票申请单号
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+### FP-87 待开票订单 普通SA单及非专票的AP、SR单的开具发票接口
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    刘宏宇
+#### 请求
+    POST /v2/invoice/wait/orders/{id}/normal
+#### 参数
+    *id 主键id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+### FP-88 待开票订单 专票的AP、SR单的开具发票接口
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    刘宏宇
+#### 请求
+    POST /v2/invoice/wait/orders/{id}/special
+#### 参数
+    *id 主键id, // 此参数仅用于url的拼接，body体不存放
+    *{
+        3: "20181210120120120"
+    }
+    *body体存放一个Map 发票id作为key，红色发票申请单号作为value
 #### 响应
     {
         "code": 100000,
