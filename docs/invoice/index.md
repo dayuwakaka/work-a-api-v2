@@ -1106,6 +1106,7 @@
     *id //发票id
     // json body
     {
+        "invoiceCompanyId":1,                                   // 所属企业id
         "deliverAddress": "香炉礁物流商贸大厦3333",                 //邮寄地址
         "email": "liang.qitieTTTT@yahoo.cn",                        //邮箱
         "contactName": "liang.qitieASDFASDFASDFASD",                //联系人
@@ -1232,23 +1233,23 @@
             "flag": 1,
             "fromTime": 1023724800000,
             "historyNames": "大连美姿克特食品有限公司\t",
-            "id": 3064166877,                                                                           //第三方系统编号 对应我们系统的 "authenNo"
+            "id": 3064166877,                  //第三方系统编号 对应我们系统的 "authenNo"
             "industry": "商务服务业",
             "legalPersonId": 1873819571,
-            "legalPersonName": "姜晓",                                                                      //法人
+            "legalPersonName": "姜晓",         //法人
             "logo": "http://img.tianyancha.com/logo/lll/262742baec8e4c4fdd18b6c0df561105.png@!f_200x200",
-            "name": "亚洲渔港股份有限公司",                                                                 //发票名称
+            "name": "亚洲渔港股份有限公司",      //发票名称
             "orgNumber": "736441730",
             "percentileScore": 8898,
             "regCapital": "10000万人民币",
             "regInstitute": "大连市工商行政管理局",
-            "regLocation": "辽宁省大连市西岗区海达北街91号6层",                                             //地址
+            "regLocation": "辽宁省大连市西岗区海达北街91号6层",   //地址
             "regNumber": "210200000128379",
             "regStatus": "存续",
             "socialStaffNum": 145,
             "sourceFlag": "http://qyxy.baic.gov.cn/",
             "staffNumRange": "100-499人",
-            "taxNumber": "91210200736441730M",                                                             //纳税人识别号
+            "taxNumber": "91210200736441730M",         //纳税人识别号
             "type": "1",
             "updateTimes": 1540525649000,
             "updatetime": 1540525651784
