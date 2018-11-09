@@ -1627,7 +1627,6 @@
         "data": null
     }    
 
-
 ### FP-61 待开发票列表
 #### 对接负责人
     尹洪明
@@ -2132,7 +2131,9 @@
     invoiceType: 发票类型 NORMAL: 增值税普通发票, SPECIAL: 增值税专用发票, ALL: 全部
     action: 开票状态 WAIT: 等待开票，MAKING: 开具中，DONE: 完成，ERROR: 错误, ALL: 全部
     abandonFlg: 有效状态  0 - 有效， 1 - 无效，ALL - 全部
-    status: 审核状态 AGREE 同意，REFUSE 拒绝，ALL - 全部 
+    status: 审核状态 AGREE 同意，REFUSE 拒绝，ALL - 全部
+    startDate: 开始时间 yyyy-MM-dd 00:00:00
+    endDate: 结束时间 yyyy-MM-dd 23:59:59
     pageNo: 页码
     pageSize: 页面行数
 #### 响应
