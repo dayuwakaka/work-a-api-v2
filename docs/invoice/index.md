@@ -1068,18 +1068,15 @@
         },
         // 图片类型  'CARDFRONT' 身份证正面,'CARDBACK' 身份证背面,'CHANGE' 变更附件,'SPECIAL' 专票证明附件
         "invoiceInfoImgs": [{
-            *"type":"CARDFRONT",   // 客户类型=个人，必传身份证正面
-            *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
-        },{
-            *"type":"CARDBACK",  //客户类型=个人，必传身份证背面
-            *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
-        },{
-            *"type":"CHANGE",  //发票变更，必传变更附件
-            *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
-        },{
-            *"type":"SPECIAL",   //增值税专用发票，必传专票证明附件
-            *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
-        }]
+                            *"type":"INVOICEDATA",   // 开票资料
+                            *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927" 
+                        },{
+                            *"type":"APPLICATION",  //一般纳税人申请表
+                            *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927" 
+                        },{
+                            *"type":"NOTICE",  //工商变更通知
+                            *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"
+                        }]
     }    
     
 #### 响应
@@ -1268,7 +1265,7 @@
     
 #### 参数
     
-    customerType    //公司类型： COMPANY 公司 INDIVIDUALLY 个体工商 PERSON 个人
+    customerType    //公司类型： COMPANY 公司 PERSON 个人
     invoiceType     //发票类型：NORMAL 普票 SPECIAL 专票
     actionType      //发票开票触发方式： AUTO 自动 HANDWORK 手工
     status          //状态 EMPYT 待维护, NORMAL 正常, ASKFOR 待审核
@@ -1278,7 +1275,6 @@
 
 #### 响应
     // invoiceInfoCompany 和 invoiceInfoPerson 二者根据customerType返其一
-    // invoiceInfoImgs 附件列表，返回新增时上传的附件
     // buttonPermissions 只应用在发票信息列表
     {
         "code": 100000,
@@ -1329,19 +1325,7 @@
                         "name": "心有猛虎，细嗅蔷薇，他人勿动",         //发票名称
                         "taxCode": "23458939458927"                 //税收编号
                     },
-                    "invoiceInfoImgs": [{
-                            *"type":"CARDFRONT",   // 客户类型=个人
-                            *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
-                        },{
-                            *"type":"CARDBACK",  //客户类型=个人
-                            *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
-                        },{
-                            *"type":"CHANGE",  //发票变更
-                            *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
-                        },{
-                            *"type":"SPECIAL",   //增值税专用发票
-                            *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
-                        }],
+                    "invoiceInfoImgs": [],
                     "invoiceInfoPerson": {
                         "id":1,
                         "invoiceId":1,
@@ -1413,19 +1397,7 @@
                     "name": "心有猛虎，细嗅蔷薇，他人勿动",         //发票名称
                     "taxCode": "23458939458927"                 //税收编号
                 },
-                "invoiceInfoImgs": [{
-                        *"type":"CARDFRONT",   // 客户类型=个人
-                        *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
-                    },{
-                        *"type":"CARDBACK",  //客户类型=个人
-                        *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
-                    },{
-                        *"type":"CHANGE",  //发票变更
-                        *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
-                    },{
-                        *"type":"SPECIAL",   //增值税专用发票
-                        *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
-                    }],
+                "invoiceInfoImgs": [],
                 "invoiceInfoPerson": {
                     "id":1,
                     "invoiceId":1,
@@ -1494,18 +1466,15 @@
                 "taxCode": "23458939458927"                 //税收编号
             },
             "invoiceInfoImgs": [{
-                    *"type":"CARDFRONT",   // 客户类型=个人
-                    *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
-                },{
-                    *"type":"CARDBACK",  //客户类型=个人
-                    *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
-                },{
-                    *"type":"CHANGE",  //发票变更
-                    *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
-                },{
-                    *"type":"SPECIAL",   //增值税专用发票
-                    *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"    // 图片URL
-                }],
+                            *"type":"INVOICEDATA",   // 开票资料
+                            *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927" 
+                        },{
+                            *"type":"APPLICATION",  //一般纳税人申请表
+                            *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927" 
+                        },{
+                            *"type":"NOTICE",  //工商变更通知
+                            *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927"
+                        }],
             "invoiceInfoPerson": {
                 "id":1,
                 "invoiceId":1,
