@@ -81,7 +81,7 @@
                     "srRoleName": "", // SR名
                     "ssRoleId": 29324,// SSID
                     "ssRoleName": "", // SS名
-                    "state": "NORMAL",
+                    "state": "NORMAL",  // 客户状态 NORMAL 正常 LOCK 休眠
                     "type": "A" // 客户类型
                 }
             ],
@@ -324,7 +324,7 @@
             ], 
             "dod": 1,
             "freight": 1,
-            "id": 149,
+            "id": 149,      // 客户编号
             "isParent": 0, // 总分店 0 普通客户 1 总店 2 分店
             "newFlg": 1,
             "parentId": 0, // 总公司ID
