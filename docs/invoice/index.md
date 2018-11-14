@@ -1986,9 +1986,11 @@
         "data": {
             "customerType": "COMPANY",
             "updateRedAskForInvoiceNoButton": false, // 更新红色发票申请单号 true: 显示，false 不显示
-            "urlFLg": 0, // 调用url 0: FP-77, 1:FP-78, 2:FP-79, 3:FP-80
+            "urlFLg": 0, // 调用url 0: FP-77, 1:FP-78, 2:FP-79, 3:FP-80, 4:FP-77
             "refreshButton": false, // 刷新发票基本信息按钮 true：显示，false：不显示
             "totalprice": 123.12, // 总价
+            "totalbalance": -20.12 // 总差额
+            "redAskForInvoiceNo": "20202020202020", // 红色发票申请单号
             "note": "SA181818181881,SA1231123123", // 订单信息
             "invoiceInfoBuyer": { // "发票信息"和"接收信息" 混合的
                 "name": "樊家辉的82年凯龙", // 发票名称
@@ -2045,8 +2047,10 @@
             "customerType": "COMPANY",
             "note": "SA181818181881,SA1231123123", // 订单信息
             "updateRedAskForInvoiceNoButton": false, // 更新红色发票申请单号 true: 显示，false 不显示
-            "urlFLg": 0, // 调用url 0: FP-77, 1:FP-78, 2:FP-79, 3:FP-80
+            "urlFLg": 0, // 调用url 0: FP-77, 1:FP-78, 2:FP-79, 3:FP-80, 4:FP-77
             "totalprice": 123.12, // 总价
+            "totalbalance": -20.12 // 总差额
+            "redAskForInvoiceNo": "20202020202020", // 红色发票申请单号
             "refreshButton": false, // 刷新发票基本信息按钮 true：显示，false：不显示
             "invoiceInfoBuyer": { // "发票信息"和"接收信息" 混合的
                 "name": "樊家辉的82年凯龙", // 发票名称
