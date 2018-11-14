@@ -1596,6 +1596,8 @@
         "data": null
     }    
 
+
+
 ### FP-61 待开发票列表
 #### 对接负责人
     尹洪明
@@ -1989,7 +1991,7 @@
             "urlFLg": 0, // 调用url 0: FP-77, 1:FP-78, 2:FP-79, 3:FP-80, 4:FP-77
             "refreshButton": false, // 刷新发票基本信息按钮 true：显示，false：不显示
             "totalprice": 123.12, // 总价
-            "totalbalance": -20.12 // 总差额
+            "totalbalance": -20.12 // 差额总计
             "redAskForInvoiceNo": "20202020202020", // 红色发票申请单号
             "note": "SA181818181881,SA1231123123", // 订单信息
             "invoiceInfoBuyer": { // "发票信息"和"接收信息" 混合的
@@ -2049,7 +2051,7 @@
             "updateRedAskForInvoiceNoButton": false, // 更新红色发票申请单号 true: 显示，false 不显示
             "urlFLg": 0, // 调用url 0: FP-77, 1:FP-78, 2:FP-79, 3:FP-80, 4:FP-77
             "totalprice": 123.12, // 总价
-            "totalbalance": -20.12 // 总差额
+            "totalbalance": -20.12 // 差额总计
             "redAskForInvoiceNo": "20202020202020", // 红色发票申请单号
             "refreshButton": false, // 刷新发票基本信息按钮 true：显示，false：不显示
             "invoiceInfoBuyer": { // "发票信息"和"接收信息" 混合的
@@ -2102,7 +2104,7 @@
     keyword: 发票抬头/发票号/订单号
     type: 发票类别 BLUE: 蓝票 RED: 红票 ALL: 全部
     invoiceType: 发票类型 NORMAL: 增值税普通发票, SPECIAL: 增值税专用发票, ALL: 全部
-    action: 开票状态 WAIT: 等待开票，MAKING: 开具中，DONE: 完成，ERROR: 错误, ALL: 全部
+    action: 开票状态 WAIT: 等待开票，MAKING: 开具中，DONE: 完成，ERROR: 错误，BLUE_FAILED：冲红开蓝失败 ALL: 全部
     abandonFlg: 有效状态  0 - 有效， 1 - 无效，ALL - 全部
     status: 审核状态 AGREE 同意，REFUSE 拒绝，ALL - 全部
     startDate: 开始时间 yyyy-MM-dd 00:00:00
