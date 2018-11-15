@@ -1348,7 +1348,7 @@
 #### 模块负责人
     尹洪明
 #### 请求
-    PUT /v2/customer/{id}
+    PUT /v2/customer/modifyState/{id}
 #### 参数
     *id     //客户id
     json body 
