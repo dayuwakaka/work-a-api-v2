@@ -118,13 +118,14 @@
 #### 参数
     *id: 1 // 供应商ID
     {
-        *"name":"供应商2", // 供应商名
-        *"payMode":"INBUY", // 供应商结算方式
+        "name":"供应商2", // 供应商名
+        "payMode":"INBUY", // 供应商结算方式
+        "account":"account" // 供应商帐号
+        
         *"contactName":"contactName", // 供应商联系人
         *"contactMobile":"contactMobile", // 供应商联系人手机号
         *"contactPathId":"0101", // 供应商联系地址PathId
         *"contactAddress":"contactAddress", // 供应商联系详细地址
-        *"account":"account" // 供应商帐号
     }
 #### 响应
     {
