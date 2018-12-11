@@ -17,6 +17,8 @@
     processContent: 0 // 内容信息状态 0 待维护 1 已完善
     processPrice: 0 // 价格信息状态 0 待维护 1 已完善
     processInvoice： 0 // 发票信息状态 0 待维护 1 已完善
+    pageNo:1 // 页码 默认1
+    pageSize: 25 // 页面条数 默认25
 #### 响应
     {
         "code": 100000,
@@ -509,6 +511,8 @@
     GET /v2/product/log/{id}
 #### 参数
     *id: 1 // 产品ID
+    pageNo: 1 // 页码 默认1
+    pageSize: 25 // 页面条数 默认25
 #### 响应
     {
         "code": 100000,
@@ -616,6 +620,8 @@
     pathId: "0101" // 区域ID， 传递区域ID 是在进行产品定价的时候 需要带出产品的区域价格
     supplier: 1 // 供应商ID， 传递供应商ID 是在进行产品定价的时候 需要带出产品的供应商价格
     depotId: 1 // 仓ID， 传递仓ID，是需要产品匹配库存存量
+    pageNo: 1 // 页码 默认 1 
+    pageSize: 25 // 页面条数 默认 25
 #### 响应
     {
         "code": 100000,

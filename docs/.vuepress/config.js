@@ -4,6 +4,7 @@ module.exports = {
   themeConfig: {
     lastUpdated: 'Last Updated',
     nav: [
+      {text: '供应商', link: '/supplier/'},
       {text: '发票', link: '/invoice/'},
       {text: '客户', link: '/customer/'},
       {text: '产品', link: '/product/'},
