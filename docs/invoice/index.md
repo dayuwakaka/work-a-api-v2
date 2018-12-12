@@ -1066,7 +1066,7 @@
             *"name":"梁总",                              // 发票名
             *"cardNo":"125255199012093211"               // 身份证号
         },
-        // 图片类型  'CARD_FRONT' 身份证正面,'CARD_BACK' 身份证背面,'CHANGE' 变更附件,'SPECIAL' 专票证明附件 'BUSINESS' 营业执照 'TAX' 税务证明
+        // 图片新增类型  'CARD_FRONT' 身份证正面,'CARD_BACK' 身份证背面,'NOTICE' 变更附件, 'BUSINESS' 营业执照 'TAX' 税务证明
         "invoiceInfoImgs": [{
                             *"type":"INVOICEDATA",   // 开票资料
                             *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927" 
