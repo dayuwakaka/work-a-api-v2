@@ -1049,7 +1049,7 @@
             *"invoiceCompanyId": 3,                  // 开具方公司名头ID
             *"invoiceType": "SPECIAL",               // 发票类型：NORMAL 普票 SPECIAL 专票
             *"deliverAddress": "香炉礁物流商贸大厦",     // 邮寄地址
-            *"email": "liang.qitie@yahoo.cn",        // 邮箱
+            "email": "liang.qitie@yahoo.cn",        // 邮箱
             "contactName": "liang.qitie",               // 联系人
             "mobile": "16888889999"                 // 手机号
         },
@@ -1066,7 +1066,7 @@
             *"name":"梁总",                              // 发票名
             *"cardNo":"125255199012093211"               // 身份证号
         },
-        // 图片类型  'CARDFRONT' 身份证正面,'CARDBACK' 身份证背面,'CHANGE' 变更附件,'SPECIAL' 专票证明附件
+        // 图片类型  'CARD_FRONT' 身份证正面,'CARD_BACK' 身份证背面,'CHANGE' 变更附件,'SPECIAL' 专票证明附件 'BUSINESS' 营业执照 'TAX' 税务证明
         "invoiceInfoImgs": [{
                             *"type":"INVOICEDATA",   // 开票资料
                             *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927" 
