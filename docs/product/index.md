@@ -678,6 +678,28 @@
         }
     }
 
+### CP-16.批量修改产品业态
+#### 对接负责人
+    刘宏宇
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT /v2/product/businessType
+#### 参数
+    [
+        {
+            "productId": 1, // 产品ID
+            "businessTypeId": 1, // 产品业态ID
+            "businessTypeCode": "|001|002|" // 产品业态码
+        }
+    ]
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
 ### CP-50.产品业态查询
 #### 对接负责人
     刘宏宇
