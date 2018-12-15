@@ -711,7 +711,346 @@
         ]
     }
 
+### APP-27. 产品业态
+#### 对接负责人
+    刘宏宇
+#### 模块负责人
+    刘宏宇
+#### 请求
+    GET /router/v5/product/businessType
+#### 参数
+    parentId : 0 // 父ID， 0 为第一级的餐饮业态
+#### 响应
+ {
+    "code": 100000,
+    "msg": "",
+    "data": [
+        {
+            "code": "|16|", // 餐饮业态Code
+            "deleteFlg": 0,
+            "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g02.png", // 无背景图
+            "hasProductCnt": 6,
+            "id": 16, // 餐饮业态ID
+            "level": 1,
+            "name": "西餐西快", // 餐饮业态名
+            "parentId": 0,
+            "pyCode": "",
+            "sIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png", // 常规图
+            "showFlg": 1,
+            "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w02.png" // 白图
+        }
+    ]
+}
 
+### APP-28. 新品首发
+#### 对接负责人
+    刘宏宇
+#### 模块负责人
+    刘宏宇
+#### 请求
+    GET /router/v5/product
+#### 参数
+    *pathId : '0101' // 区域码
+    *businessTypeCode: '|01|' // 业态Code
+    customerId: 1 // 客户ID
+    *deviceNo: '1' // 设备号
+    keyword: 'xx' // 模糊搜索 品号、品名
+    pageNo: 1 //页码 默认1
+    pageSize: 10 // 页条数 默认10
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "businessTypeIds": null,
+                "createTime": "2018-09-04 08:43:46", // 创建时间
+                "customFlg": 0, // 是否定制品 0 非定制 1 定制
+                "customerIds": null,
+                "deleteFlg": 0,
+                "id": 4538, // 产品名
+                "longName": "", // 产品带广告名
+                "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201809/bf4f1596765356a6bec573ccf302e8d2.jpg", // 产品包装图
+                "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201809/5de6f5e608e5fa07f08e637a8c940f6c.jpg", // 产品图
+                "name": "天妇罗虾（裹粉炸虾）预炸", // 产品名
+                "pno": "1680", // 品号
+                "process": 4, 
+                "processContent": 1,
+                "processInvoice": 1,
+                "processPrice": 1,
+                "productExtra": null,
+                "productImgs": null,
+                "productLack": { // 缺货状态 null 不缺货，有值代表缺货
+                    "productId": 0, // 产品ID
+                    "startTime": "2018-01-01"， // 缺货开始时间
+                    "endTime":"2018-11-30" // 缺货结束时间
+                }, 
+                "productUnits": [ // 产品规格
+                    {
+                        "cubage": 0,
+                        "grossweight": 0.25,
+                        "guige": "230g（10枚）/袋", // 规格名
+                        "height": 0,
+                        "id": 7973, // 规格ID
+                        "length": 35,
+                        "minimum": 0, // 最小起订量值
+                        "minimumType": "NONE", //NONE 无要求 BEGIN 递增 STEP 步增
+                        "netweight": 0.23,
+                        "perunit": 1, // 转化率
+                        "price": { // 价格
+                            "aPrice": 15.9, // A价格
+                            "areaPrice": 0,
+                            "decideType": "A",
+                            "finallyPrice": 15.9, // 执行价格
+                            "pPrice": 12.7,
+                            "productUnitId": 7973,
+                            "rawFlg": "NONE", // 是否原料品 YES 是原料品 其他 不用标记
+                            "signPrice": 0,
+                            "specialPrice": 0
+                        },
+                        "productCart": null, // 是否收纳购物车
+                        "productId": 4538, // 产品ID
+                        "unit": "袋", // 单位
+                        "unitId": 1, 
+                        "width": 23
+                    },
+                    {
+                        "cubage": 0,
+                        "grossweight": 4.65,
+                        "guige": "230g（10枚）/袋*15袋",
+                        "height": 13.5,
+                        "id": 7974,
+                        "length": 56,
+                        "minimum": 0,
+                        "minimumType": null,
+                        "netweight": 3.45,
+                        "perunit": 15,
+                        "price": {
+                            "aPrice": 237.5,
+                            "areaPrice": 0,
+                            "decideType": "A",
+                            "finallyPrice": 237.5,
+                            "pPrice": 190,
+                            "productUnitId": 7974,
+                            "rawFlg": "NONE",
+                            "signPrice": 0,
+                            "specialPrice": 0
+                        },
+                        "productCart": { // 购物车信息，null 为没有加入过购物车
+                            "id":1 // 购物车明细ID
+                            "ownerId": "1" // 货主ID，可能是设备号 也可能是客户ID
+                            "productId": 1 // 产品ID
+                            "productunitId": 1 // 产品规格ID
+                            "pcount": 1 // 购物车数量
+                            "createTime:": "2018-10-01 00:00:00" // 加入购物车时间
+                        },
+                        "productId": 4538,
+                        "unit": "件",
+                        "unitId": 3,
+                        "width": 28.5
+                    }
+                ],
+                "pyAll": "",
+                "pyCode": "",
+                "status": "NORMAL",
+                "stock": { // 库存
+                    "amount": 0, // 最小单位数量，各个规格的实际数量，需要拿这个值 除以自己的perunit 取整
+                    "productId": 0
+                },
+                "taxRate": 0
+            }
+        ]
+    }
+
+### APP-29. 产品特惠推荐
+#### 对接负责人
+    刘宏宇
+#### 模块负责人
+    刘宏宇
+#### 请求
+    GET /router/v5/product/special
+#### 参数
+    *pathId : '0101' // 区域码
+    *businessTypeCode: '|01|' // 业态Code
+    customerId: 1 // 客户ID
+    *deviceNo: '1' // 设备号
+    keyword: 'xx' // 模糊搜索 品号、品名
+    pageNo: 1 //页码 默认1
+    pageSize: 10 // 页条数 默认10
+#### 响应
+    同 APP-28
+
+### APP-30. 产品人气推荐
+#### 对接负责人
+    刘宏宇
+#### 模块负责人
+    刘宏宇
+#### 请求
+    GET /router/v5/product/popular
+#### 参数
+    *pathId : '0101' // 区域码
+    *businessTypeCode: '|01|' // 业态Code
+    customerId: 1 // 客户ID
+    *deviceNo: '1' // 设备号
+    keyword: 'xx' // 模糊搜索 品号、品名
+    pageNo: 1 //页码 默认1
+    pageSize: 10 // 页条数 默认10
+#### 响应
+    同 APP-28
+
+### APP-31. 关键字查询
+#### 对接负责人
+    刘宏宇
+#### 模块负责人
+    刘宏宇
+#### 请求
+    GET /router/v5/product/keyword
+#### 参数
+    *businessTypeCode: '|01|' // 餐饮业态Code
+    *keyword: 'xxx' // 模糊匹配关键字，品名、品号、拼音简写、拼音全称
+    customerId: 1 // 客户ID， 默认0
+    pageNo: 1 // 页码 默认1
+    pageSize: 10 // 页条数  默认10
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "customFlg": 0, // 是否定制
+                "id": 1, // 产品ID
+                "longName": "",
+                "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/f9ce32e007fc796722466531c86d5cd9.jpg",
+                "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg",
+                "name": "香草凤尾虾", // 产品名
+                "pno": "0151", // 品号
+                "productLack": null
+            }
+        ]
+    }
+
+### APP-32. 产品明细
+#### 对接负责人
+    刘宏宇
+#### 模块负责人
+    刘宏宇
+#### 请求
+    GET /router/v5/product/detail
+#### 参数
+    *pathId: "0101" // 区域ID
+    *productId: 1 // 产品ID
+    customerId: 0 // 客户ID 默认0
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "businessTypeIds": null,
+            "createTime": "2014-06-21 11:26:58", // 创建时间
+            "customFlg": 0, // 是否定制 0 非定制 1 定制
+            "customerIds": null, 
+            "deleteFlg": 0,
+            "id": 1, // 产品ID
+            "longName": "香草凤尾虾-专业开背，秘制加工，中西餐厅新食尚~", // 产品带广告名
+            "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/f9ce32e007fc796722466531c86d5cd9.jpg", // 产品包装图
+            "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg", // 产品主图
+            "name": "香草凤尾虾", // 产品名
+            "pno": "0151", // 品号
+            "process": 4,
+            "processContent": 1,
+            "processInvoice": 1,
+            "processPrice": 1,
+            "productExtra": { // 产品扩展信息 
+                "attributeName": "裹面制品 生制冻结品", // 产品标准分类
+                "attributes": 4, // 产品标准分类ID
+                "barCode": "盒上条码：6926603301518；外箱条码：6926603312149", // 产品条码
+                "cookWay": "取本品，无需解冻，175℃油温炸2分钟，至金黄色即可食用。", // 产品烹饪方式
+                "description": "<p>优质面包糠联手浪漫罗勒叶，包裹住南美白虾，带来异域香草风情，&nbsp;</p><p>炸后赤黄凤尾造型引人垂涎，造型美观乖巧，受众广泛，惹人喜爱，&nbsp;</p><p>西餐厅、快餐厅，搭配酱料，与其他食品共同出餐，高效便捷。</p>", // 产品描述
+                "id": 2, // 规格ID
+                "intro": "", // 介绍
+                "material": "南美白虾、面包糠（小麦粉、水、面用酵母、起酥油（精炼植物油、卵磷脂、维生素E)、食用盐、食用葡萄糖、辣椒红）、水、南美白虾仁、裹粉（小麦粉、淀粉、玉米粉、食用盐、黄原胶、碳酸氢钠、焦磷酸二氢二钠、辣椒红、香辛料、脱脂乳粉）、鱿鱼、复合调味料（食用盐、淀粉、白砂糖、谷氨酸钠、二氧化硅、大蒜粉、洋葱粉、水解植物蛋白、白胡椒粉、香辛料、食用香料、酵母提取物）、淀粉、碎紫苏、白胡椒粉、食用盐、复配酸度调节剂（碳酸氢钠、碳酸钠、柠檬酸钠、乙酸钠、谷氨酸钠、麦芽糊精）、柠檬酸、三聚磷酸钠", // 产品原料
+                "place": "辽宁省 大连市", // 产品产地
+                "productId": 1, //  产品ID
+                "saveType": "FROZEN", // 保温方式 NORMAL:常温 FROZEN:冷冻 ALL:常温/冷冻
+                "shelfLife": "12个月", // 保质期
+                "standards": 1, // 标准号ID
+                "standardsName": "SB/T 10379  速冻调制食品", // 标准号
+                "store": "-18℃冷冻储藏" // 保存方法
+            },
+            "productImgs": { // 产品图片 图片类型 PHOTO 产品图 QUALITY 质检图 MAINBG 包装图 DETAIL 详情图
+                "MAINBG": [ // 包装图
+                    {
+                        "id": 0,
+                        "productId": 1,
+                        "type": "MAINBG",
+                        "url": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/f9ce32e007fc796722466531c86d5cd9.jpg"
+                    }
+                ],
+                "MAIN": [ // 主图
+                    {
+                        "id": 0,
+                        "productId": 1,
+                        "type": "MAIN",
+                        "url": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg"
+                    }
+                ],
+                "PHOTO": [ // 产品图
+                    {
+                        "id": 4472,
+                        "productId": 1,
+                        "type": "PHOTO",
+                        "url": "http://asae.oss-cn-beijing.aliyuncs.com/http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201804/9262e06c437f99accdcf5a740dbc8c79.jpg"
+                    }
+                ]
+            },
+            "productLack": {  // 缺货标识 null 不缺货
+                "productId": 1,
+                "startTime": "2018-01-01" // 缺货开始日期
+                "endTime": "2018-11-11" // 缺货结束日期
+            },
+            "productUnits": [ // 规格
+                {
+                    "cubage": 1512, // 体积
+                    "grossweight": 0.55, // 毛重 
+                    "guige": "500g(23-25枚）/盒", // 规格
+                    "height": 5, // 高度
+                    "id": 1, // 规格ID
+                    "length": 19.5, // 长度
+                    "minimum": 0, // 最小起订量
+                    "minimumType": "NONE", // 最小起订量类型 NONE 无 BEGIN 递增 STEP 步增
+                    "netweight": 0.5, // 净重
+                    "perunit": 1, // 转化率
+                    "price": { // 价格
+                        "aPrice": 40.12, // a价格
+                        "areaPrice": 0,
+                        "decideType": "A",
+                        "finallyPrice": 40.12, // 执行价格
+                        "pPrice": 32.5,
+                        "productUnitId": 1,
+                        "rawFlg": "NONE", // 是否原料 YES 为是 NONE NO 为否
+                        "signPrice": 0, 
+                        "specialPrice": 0
+                    },
+                    "productCart": { // 购物车信息 null 为未加入购物车
+                        ...
+                        "pcount": 11 // 已入购物车数量
+                    },
+                    "productId": 1,
+                    "unit": "盒", // 单位
+                    "unitId": 2, 
+                    "width": 15.5 // 宽度
+                }
+            ],
+            "pyAll": "",
+            "pyCode": "",
+            "status": "NORMAL", // 状态 NORMAL 正常
+            "stock": { // 库存
+                "amount": 0, // 最小单位数量 与规格内的perunit相除，取整则是各个规格应该显示的库存数量
+                "productId": 0
+            },
+            "taxRate": 0
+        }
+    }
 
 ### 模版
 #### 对接负责人
