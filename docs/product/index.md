@@ -542,7 +542,7 @@
 #### 模块负责人
     尹洪明
 #### 请求
-    GET /v2/product/dic/attributes
+    GET /v2/product/dic/attribute
 #### 参数
     无
 #### 响应
