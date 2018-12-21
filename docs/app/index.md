@@ -1197,15 +1197,69 @@
     businessTypeCode:"|01|" // 餐饮业态Code
     *deviceNo: "1" // 设备码
     customerId: 1 // 客户ID
-    pageNo: 1 // 页码 默认 1
-    pageSize: 10 // 页条数 默认 10
 #### 响应
     {
         "code": 100000,
         "msg": "",
         "data": {
             "jian": 0, // 总计件数
-            "productUnits": [ // 规格清单
+            "effectProductUnits": [ // 规格清单
+                {
+                    "cubage": 1512, 
+                    "grossweight": 0.55,
+                    "guige": "500g(23-25枚）/盒",
+                    "height": 5,
+                    "id": 1, // 规格ID
+                    "length": 19.5,
+                    "minimum": 0,
+                    "minimumType": "NONE",
+                    "netweight": 0.5,
+                    "perunit": 1, // 规格转化率
+                    "price": { // 价格
+                        "aPrice": 40.12, // a价格
+                        "areaPrice": 0,
+                        "decideType": "A",
+                        "finallyPrice": 40.12, // 决定价格
+                        "pPrice": 32.5,
+                        "productUnitId": 1,
+                        "rawFlg": "NONE",
+                        "signPrice": 0,
+                        "specialPrice": 0
+                    },
+                    "product": { // 产品
+                        "customFlg": 0,
+                        "id": 1, //  产品ID
+                        "longName": "香草凤尾虾-专业开背，秘制加工，中西餐厅新食尚~", // 产品广告名
+                        "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/f9ce32e007fc796722466531c86d5cd9.jpg", // 产品包装图
+                        "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg", // 产品图
+                        "name": "香草凤尾虾", // 产品名
+                        "pno": "0151", // 品号
+                        "productLack": { // 缺货标识, NULL 未不缺货
+                            "productId": 1,
+                            "startTime": "2018-01-01 00:00:00", // 缺货开始时间
+                            "endTime" : "2018-01-01 23:59:59" // 缺货结束时间
+                        }
+                    },
+                    "productCart": { // 购物车信息
+                        "createTime": "2018-12-17 14:05:17", // 创建时间
+                        "id": 66020, // 购物车ID
+                        "ownerId": "149", // 拥有者ID
+                        "pcount": 9, // 数量
+                        "productId": 1,
+                        "productUnitId": 1
+                    },
+                    "productId": 1, // 产品ID
+                    "stock": { // 库存
+                        "amount": 0, // 库存数量，需要与规格表中的perunit 进行相除去整，即为规格对应的可用库存数量
+                        "productId": 0
+                    },
+                    "supplierPrice": null,
+                    "unit": "盒", // 单位
+                    "unitId": 2, 
+                    "width": 15.5
+                }
+            ],
+            "uneffectProductUnits": [ // 规格清单
                 {
                     "cubage": 1512, 
                     "grossweight": 0.55,
