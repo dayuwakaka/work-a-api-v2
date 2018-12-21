@@ -751,7 +751,7 @@
     GET /router/v5/product
 #### 参数
     *pathId : '0101' // 区域码
-    *businessTypeCode: '|01|' // 业态Code
+    businessTypeCode: '|01|' // 业态Code
     customerId: 1 // 客户ID
     *deviceNo: '1' // 设备号
     keyword: 'xx' // 模糊搜索 品号、品名
@@ -871,7 +871,7 @@
     GET /router/v5/product/special
 #### 参数
     *pathId : '0101' // 区域码
-    *businessTypeCode: '|01|' // 业态Code
+    businessTypeCode: '|01|' // 业态Code
     customerId: 1 // 客户ID
     *deviceNo: '1' // 设备号
     keyword: 'xx' // 模糊搜索 品号、品名
@@ -889,7 +889,7 @@
     GET /router/v5/product/popular
 #### 参数
     *pathId : '0101' // 区域码
-    *businessTypeCode: '|01|' // 业态Code
+    businessTypeCode: '|01|' // 业态Code
     customerId: 1 // 客户ID
     *deviceNo: '1' // 设备号
     keyword: 'xx' // 模糊搜索 品号、品名
@@ -906,7 +906,7 @@
 #### 请求
     GET /router/v5/product/keyword
 #### 参数
-    *businessTypeCode: '|01|' // 餐饮业态Code
+    businessTypeCode: '|01|' // 餐饮业态Code
     *keyword: 'xxx' // 模糊匹配关键字，品名、品号、拼音简写、拼音全称
     customerId: 1 // 客户ID， 默认0
     pageNo: 1 // 页码 默认1
@@ -1062,7 +1062,7 @@
 #### 参数
     keyword: "xx" // 模糊查询 品号、品名
     *pathId: "0101" // 地区PathId
-    *businessTypeCode: "|01|" // 餐饮业态Code
+    businessTypeCode: "|01|" // 餐饮业态Code
     *customerId: 1 // 客户ID
 #### 响应
     {
@@ -1070,78 +1070,84 @@
         "msg": "",
         "data": [
             {
-                "createTime": "2017-09-14 09:25:37", // 常订购创建时间 
-                "customerId": 149,
-                "id": 27370, // 常订购ID
-                "product": {
-                    "businessTypeIds": null,
-                    "createTime": "2014-08-02 14:46:48", 
-                    "customFlg": 0,
-                    "customerIds": null,
-                    "deleteFlg": 0,
-                    "id": 246,
-                    "longName": "鱿点Q，Q弹有韧劲~", // 产品广告名
-                    "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/643130529230f29af376829e0c96d208.jpg", // 产品包装图
-                    "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/1f91464a8a09dc642230ad0259074be9.jpg", // 产品主图
-                    "name": "鱿点Q（裹粉鱿鱼）", // 产品名
-                    "pno": "0118", // 品号
-                    "process": 4,
-                    "processContent": 1,
-                    "processInvoice": 1,
-                    "processPrice": 1,
-                    "productExtra": null,
-                    "productImgs": null,
-                    "productLack": { // 是否缺货 未Null，则不缺货
-                        "productId": 1,
-                        "startTime": "2018-01-01 00:00:00", // 缺货开始时间
-                        "endTime": "2018-01-01 23:59:59" // 缺货结束时间
-                    }, 
-                    "productUnits": [ // 产品规格
-                        {
-                            "cubage": 2630,
-                            "grossweight": 1.089,
-                            "guige": "1000g",
-                            "height": 6.4,
-                            "id": 462, // 产品规格ID
-                            "length": 26, 
-                            "minimum": 0,  // 起订量
-                            "minimumType": "NONE", //最小起订量类型 NONE 无 BEGIN 递增 STEP 步增
-                            "netweight": 1,
-                            "perunit": 1, // 转化率
-                            "price": { // 价格
-                                "aPrice": 37.3, // A价格
-                                "areaPrice": 0,
-                                "decideType": "S",
-                                "finallyPrice": 30, // 决定价格
-                                "pPrice": 29.8,
-                                "productUnitId": 462,
-                                "rawFlg": "NONE", // 是否原料品 YES 为是 其他为否
-                                "signPrice": 30,
-                                "specialPrice": 0
+                "businessTypeId": 103,
+                "businessTypeName": "甜品冰点",
+                "productFollows": [
+                    {
+                        "createTime": "2017-09-14 09:25:37", // 常订购创建时间 
+                        "customerId": 149,
+                        "id": 27370, // 常订购ID
+                        "product": {
+                            "businessTypeIds": null,
+                            "createTime": "2014-08-02 14:46:48", 
+                            "customFlg": 0,
+                            "customerIds": null,
+                            "deleteFlg": 0,
+                            "id": 246,
+                            "longName": "鱿点Q，Q弹有韧劲~", // 产品广告名
+                            "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/643130529230f29af376829e0c96d208.jpg", // 产品包装图
+                            "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/1f91464a8a09dc642230ad0259074be9.jpg", // 产品主图
+                            "name": "鱿点Q（裹粉鱿鱼）", // 产品名
+                            "pno": "0118", // 品号
+                            "process": 4,
+                            "processContent": 1,
+                            "processInvoice": 1,
+                            "processPrice": 1,
+                            "productExtra": null,
+                            "productImgs": null,
+                            "productLack": { // 是否缺货 未Null，则不缺货
+                                "productId": 1,
+                                "startTime": "2018-01-01 00:00:00", // 缺货开始时间
+                                "endTime": "2018-01-01 23:59:59" // 缺货结束时间
+                            }, 
+                            "productUnits": [ // 产品规格
+                                {
+                                    "cubage": 2630,
+                                    "grossweight": 1.089,
+                                    "guige": "1000g",
+                                    "height": 6.4,
+                                    "id": 462, // 产品规格ID
+                                    "length": 26, 
+                                    "minimum": 0,  // 起订量
+                                    "minimumType": "NONE", //最小起订量类型 NONE 无 BEGIN 递增 STEP 步增
+                                    "netweight": 1,
+                                    "perunit": 1, // 转化率
+                                    "price": { // 价格
+                                        "aPrice": 37.3, // A价格
+                                        "areaPrice": 0,
+                                        "decideType": "S",
+                                        "finallyPrice": 30, // 决定价格
+                                        "pPrice": 29.8,
+                                        "productUnitId": 462,
+                                        "rawFlg": "NONE", // 是否原料品 YES 为是 其他为否
+                                        "signPrice": 30,
+                                        "specialPrice": 0
+                                    },
+                                    "productCart": { // 购物车， 若未加入购物车，这为Null
+                                        ...
+                                        pcount: 1 // 数量
+                                    },
+                                    "productId": 246,
+                                    "unit": "盒", // 单位
+                                    "unitId": 2,
+                                    "width": 15.8
+                                }
+                            ],
+                            "pyAll": "",
+                            "pyCode": "",
+                            "status": "NORMAL",
+                            "stock": { // 库存
+                                "amount": 0, // 库存数量，需要与规格内的perunit相除 去整，即为实际产品库存余量
+                                "productId": 0
                             },
-                            "productCart": { // 购物车， 若未加入购物车，这为Null
-                                ...
-                                pcount: 1 // 数量
-                            },
-                            "productId": 246,
-                            "unit": "盒", // 单位
-                            "unitId": 2,
-                            "width": 15.8
-                        }
-                    ],
-                    "pyAll": "",
-                    "pyCode": "",
-                    "status": "NORMAL",
-                    "stock": { // 库存
-                        "amount": 0, // 库存数量，需要与规格内的perunit相除 去整，即为实际产品库存余量
-                        "productId": 0
-                    },
-                    "taxRate": 0
-                },
-                "productId": 246,
-                "source": "SYS",
-                "updateTime": "2017-09-14 09:25:37",
-                "weight": 3
+                            "taxRate": 0
+                        },
+                        "productId": 246,
+                        "source": "SYS",
+                        "updateTime": "2017-09-14 09:25:37",
+                        "weight": 3
+                    }
+                ]
             }
         ]
     }
@@ -1188,7 +1194,7 @@
     GET /router/v5/product/cart
 #### 参数
     *pathId:"0101" // 地区PathId
-    *businessTypeCode:"|01|" // 餐饮业态Code
+    businessTypeCode:"|01|" // 餐饮业态Code
     *deviceNo: "1" // 设备码
     customerId: 1 // 客户ID
     pageNo: 1 // 页码 默认 1
@@ -1303,6 +1309,35 @@
         "data":null
     }
 
+
+### APP-39. APP首页，新品首发、特惠推荐、人气推荐
+#### 对接负责人
+    刘宏宇
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /router/v5/product/index
+#### 参数
+    *pathId : '0101' // 区域码
+    businessTypeCode: '|01|' // 业态Code
+    customerId: 1 // 客户ID
+    *deviceNo: '1' // 设备号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "newProduct": [
+                6个json对象，字段结构同APP-28
+            ],
+            "popularProduct": [
+                6个json对象，字段结构同APP-28
+            ],
+            "specialProduct": [
+                6个json对象，字段结构同APP-28
+            ]
+        }
+    }
 
 ### 模版
 #### 对接负责人
