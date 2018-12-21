@@ -1065,6 +1065,8 @@
     businessTypeCode: "|01|" // 餐饮业态Code
     *customerId: 1 // 客户ID
 #### 响应
+
+    // 常订购列表
     {
         "code": 100000,
         "msg": "",
@@ -1148,6 +1150,112 @@
                         "weight": 3
                     }
                 ]
+            }
+        ]
+    }
+
+    // 常订购搜索
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "createTime": "2017-09-14 09:25:37",
+                "customerId": 149,
+                "id": 47670,
+                "product": {
+                    "businessTypeIds": [
+                        101,
+                        88
+                    ],
+                    "createTime": "2014-07-11 13:16:33",
+                    "customFlg": 0,
+                    "customerIds": null,
+                    "deleteFlg": 0,
+                    "id": 705,
+                    "longName": "宝宝贝（蒜蓉粉丝蒸扇贝），平价海鲜大餐， 8分钟明星！",
+                    "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/6da0bffb9f05f4ad08464553c2b2da21.jpg",
+                    "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201501/13/1421138625-qVDJ.jpg",
+                    "name": "宝宝贝（蒜蓉粉丝扇贝）",
+                    "pno": "0004",
+                    "process": 4,
+                    "processContent": 1,
+                    "processInvoice": 1,
+                    "processPrice": 1,
+                    "productExtra": null,
+                    "productImgs": null,
+                    "productLack": null,
+                    "productUnits": [
+                        {
+                            "cubage": 0,
+                            "grossweight": 0.39,
+                            "guige": "200g（6枚）/袋",
+                            "height": 0,
+                            "id": 1226,
+                            "length": 37.5,
+                            "minimum": 0,
+                            "minimumType": "NONE",
+                            "netweight": 0.2,
+                            "perunit": 1,
+                            "price": {
+                                "aPrice": 18.4,
+                                "areaPrice": 18,
+                                "decideType": "Q",
+                                "finallyPrice": 18,
+                                "pPrice": 14.7,
+                                "productUnitId": 1226,
+                                "rawFlg": "NONE",
+                                "signPrice": 0,
+                                "specialPrice": 0
+                            },
+                            "productCart": null,
+                            "productId": 705,
+                            "unit": "袋",
+                            "unitId": 1,
+                            "width": 26.5
+                        },
+                        {
+                            "cubage": 0,
+                            "grossweight": 5.55,
+                            "guige": "200g（6枚）/袋*12袋/件",
+                            "height": 20,
+                            "id": 1227,
+                            "length": 48.2,
+                            "minimum": 0,
+                            "minimumType": "NONE",
+                            "netweight": 2.4,
+                            "perunit": 12,
+                            "price": {
+                                "aPrice": 220,
+                                "areaPrice": 195.6,
+                                "decideType": "Q",
+                                "finallyPrice": 195.6,
+                                "pPrice": 176,
+                                "productUnitId": 1227,
+                                "rawFlg": "NONE",
+                                "signPrice": 0,
+                                "specialPrice": 0
+                            },
+                            "productCart": null,
+                            "productId": 705,
+                            "unit": "件",
+                            "unitId": 3,
+                            "width": 31.2
+                        }
+                    ],
+                    "pyAll": "",
+                    "pyCode": "",
+                    "status": "NORMAL",
+                    "stock": {
+                        "amount": 0,
+                        "productId": 0
+                    },
+                    "taxRate": 0
+                },
+                "productId": 705,
+                "source": "SYS",
+                "updateTime": "2017-09-14 09:25:37",
+                "weight": 1
             }
         ]
     }
