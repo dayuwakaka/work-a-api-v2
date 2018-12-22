@@ -951,6 +951,7 @@
             "customFlg": 0, // 是否定制 0 非定制 1 定制
             "customerIds": null, 
             "deleteFlg": 0,
+            "followFlg": 0,         // 常订购标识 0 非常订购商品，1 常订购商品
             "id": 1, // 产品ID
             "longName": "香草凤尾虾-专业开背，秘制加工，中西餐厅新食尚~", // 产品带广告名
             "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/f9ce32e007fc796722466531c86d5cd9.jpg", // 产品包装图
