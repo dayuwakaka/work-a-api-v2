@@ -1179,7 +1179,11 @@
 #### 请求
     DELETE /router/v5/product/follow
 #### 参数
-    *id: 1 // 删除常订购ID
+    json body
+    {
+        *customerId: 1,          // 客户ID
+        *productIds: [1, 2, 3]  // 产品ID数组
+    }
 #### 响应
     {
         "code": 100000,
