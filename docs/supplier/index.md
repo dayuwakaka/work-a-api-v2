@@ -315,6 +315,941 @@
 
 
 
+
+### CG-51. 采购供货价审核-列表
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/supplier/price/askfor?buttonPermissionFlg=1
+#### 参数
+    keyword // 品名/品号
+    supplierName // 经销商名称
+    status // 审核状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
+    type // 定时类型 NOW-立即执行 HISTORY-追溯历史 FUTURE-定时执行
+    ladderFlg // 定量价格 0-未设置 1-已设置
+    buttonPermissionFlg // 获取权限按钮 0-否 1-是
+    pageNo // 页码
+    pageSize // 行数
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [
+                {
+                    "refuseButton": true, // 拒绝按钮
+                    "passButton": true // 通过按钮
+                }
+            ],
+            "datas": [
+                {
+                    "checkRemark": "", // 审批信息-备注
+                    "checkTime": "", // 审批信息-时间
+                    "checkUserName": "", // 审批信息-操作人
+                    "createTime": "2018-12-08 03:57:20", // 申请信息-时间
+                    "createUserName": "系统操作", // 申请信息-申请人
+                    "remark": "申请", // 申请信息-备注
+                    "effectDate": "2018-12-08", // 追溯时间、启动时间、生效日期
+                    "id": 1,
+                    "ladderFlg": 0, // 定量价格 0-未设置 1-已设置
+                    "price": 100, // 签约价
+                    "product": {
+                        "name": "香草凤尾虾", // 品名
+                        "pno": "0151", // 品号
+                    },
+                    "productUnit": {
+                        "guige": "500g(23-25枚）/盒", // 规格
+                        "unit": "盒" // 单位
+                    },
+                    "status": "ASKFOR", // 审核状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
+                    "supplierId": 1, // 经销商id
+                    "supplierName": "山西代县文庙水产品经销商", // 经销商名称
+                    "type": "NOW" // 定时类型 NOW-立即执行 HISTORY-追溯历史 FUTURE-定时执行
+                }
+            ],
+            "pageNo": 1,
+        }
+    }
+
+### CG-52. 采购供货价审核-获取定量价格
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/supplier/price/askfor/{id}/ladder
+#### 参数
+    id // 主键id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                
+                "effectDate": "2018-12-11", // 生效日期
+                "amount": 20, // 起订量
+                "price": 11, 签约价
+            }
+        ]
+    }
+
+### CG-53. 采购供货价审核-审批通过
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/supplier/price/askfor/pass
+#### 参数
+    [1,2,3,4,5,6] // id 集合
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### CG-53. 采购供货价审核-审批拒绝
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/supplier/price/askfor/refuse
+#### 参数
+    {
+        ids: [1,2,3,4,5,6] // id 集合
+        remark: "不符合规定" // 备注
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### CG-54. 采购供货价审核-新增采购阶梯价格申请
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    POST /v2/supplier/price/askfor/{id}/ladder
+#### 参数
+    id: 主键id（采购供货价格id） 仅仅拼接在uri 即可
+    {
+        supplierId: 1, // 经销商id
+        productId: 1, // 产品id
+        productUnitId: 1, // 产品规格id
+        amount: 1, // 起订量
+        price: 2, // 签约价
+        effectDate: "2018-12-12 12:12:12" // 生效日期
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+
+### CG-55. 采购供货价管理-列表
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/supplier/price?buttonPermissionFlg=1
+#### 参数
+    keyword // 品号/品名
+    supplierName // 经销商名称
+    deleteFlg // 签约状态
+    type // NOW-立即生效 HISTORY-追溯历史 FUTURE-定时执行
+    ladderFlg // 定量价格 0-未设置 1-已设置
+    buttonPermissionFlg // 获取权限按钮 0-否 1-是
+    pageNo // 页码
+    pageSize // 行数
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [
+                {
+                    "cancelButton": true,
+                    "ladderButton": true
+                }
+            ],
+            "datas": [
+                {
+                    "deleteFlg": 0, // 签约状态 0-正常 1-失效
+                    "effectDate": "2018-12-10", // 追溯时间、启动时间、生效日期
+                    "id": 1,
+                    "ladderFlg": 0, // 定量价格 0-未设置 1-已设置
+                    "price": 1, // 签约价
+                    "product": {
+                        "name": "香草凤尾虾", // 品名
+                        "pno": "0151" // 品号
+                    },
+                    "productUnit": {
+                        "guige": "500g(23-25枚）/盒", // 规格
+                        "unit": "盒" // 单位
+                    },
+                    "remark": "",
+                    "supplierId": 1,
+                    "supplierName": "", // 供应商名称
+                    "type": "NOW", // 定时类型 NOW-立即生效 HISTORY-追溯历史 FUTURE-定时执行
+                    "updateTime": "2018-12-10 09:39:01", // 操作信息-操作时间
+                    "updateUserName": "xxx" // 操作信息-操作人
+                },
+                ...
+            ],
+            "pageNo": 1,
+        }
+    }
+
+### CG-56. 采购供货价管理-取消签约
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    DELETE /v2/supplier/price
+#### 参数
+    [1,2,3,4,5,6] // id集合
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### CG-57. 采购供货价管理-获取定量价格
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/supplier/price/{id}/ladder
+#### 参数
+    id // 主键id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                
+                "effectDate": "2018-12-11", // 生效日期
+                "amount": 20, // 起订量
+                "price": 11, 签约价
+            }
+        ]
+    }
+
+### CG-58. 采购订单价格申请-列表
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/paorder/price/askfor?buttonPermissionFlg=1
+#### 参数
+    keyword // 采购订单号/供应商名称
+    status // 审核状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
+    buttonPermissionFlg // 获取权限按钮 0-否 1-是
+    pageNo // 页码
+    pageSize // 行数
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [
+                {
+                    "refuseButton": false,
+                    "passButton": false
+                },
+                ...
+            ],
+            "datas": [
+                {
+                    "checkRemark": "@@@@", // 审核信息-备注
+                    "checkTime": "2018-12-12 09:50:00", // 审核信息-时间
+                    "checkUserName": "yyy", // 审核信息-操作人
+                    "createTime": "2018-12-12 01:49:23", // 创建信息-时间
+                    "createUserName": "xxx", // 创建信息-操作人
+                    "remark": "", // 创建信息-备注
+                    "id": 1,
+                    "paymode": "INBUY", // 支付方式
+                    "orderId": "PA1812000001", // 订单号
+                    "productUnit": {
+                        "guige": "500g(23-25枚）/盒", // 规格
+                        "name": "香草凤尾虾", // 品名
+                        "pno": "0151", // 品号
+                        "unit": "盒" // 单位
+                    },
+                    "sPrice": 12, // 原单价
+                    "status": "ASKFOR", // 审核状态  ASKFOR-待审核 PASS-通过 REFUSE-拒绝
+                    "supplierId": 1, // 经销商id
+                    "supplierName": "湖北武汉",
+                    "tPrice": 12, // 目标单价
+                },
+                ...
+            ],
+            "pageNo": 1,
+        }
+    }
+
+### CG-59. 采购订单价格申请-通过
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/paorder/price/askfor/pass
+#### 参数
+    [1,2,3,4,5,6] id 集合
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### CG-60. 采购订单价格申请-拒绝
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/paorder/price/askfor/refuse
+#### 参数
+    {
+        ids: [1,2,3,4,5,6] // id集合
+        remark: "不符合规定" // 备注
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### CG-61. 采购订单-列表
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/paorder?buttonPermissionFlg=1
+#### 参数
+    keyword // 采购订单号/供应商名称
+    deliverType // 配送方式 SELF 自送 THIRD 物流配送
+    depotId // 仓id
+    status // 订单状态 INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已完成
+    paymode // 支付方式 INBUY OUTBUY
+    priceFlg // 采购价格调整 0 未调整 1 申请中 2 同意
+    buttonPermissionFlg // 获取权限按钮 0-否 1-是
+    pageNo // 页码
+    pageSize // 行数
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [
+                {
+                    "setRunButton": true, // 确认执行按钮
+                    "editButton": true, // 修改按钮 
+                    "delButton": true, // 删除按钮
+                    "modifyPriceButton": false, // 修改价格按钮
+                    "logButton": true // 日志查看按钮
+                }
+            ],
+            "datas": [
+                {
+                    "completeTime": "", // 完成时间
+                    "createTime": "2018-12-10 09:46:43",
+                    "createUserName": "0",
+                    "deleteFlg": 0,
+                    "deliverType": "THIRD", // 配送方式 SELF 自送 THIRD 物流配送
+                    "depotId": 1,
+                    "depotName": "大连铁越仓", // 出库仓
+                    "id": 3,
+                    "onlyCode": "",
+                    "orderId": "PA1812100000008", // 采购订单号
+                    "paymode": "OUTBUY", // 支付方式 INBUY OUTBUY
+                    "planCompleteTime": "2018-12-22 12:12:12", // 计划入库时间
+                    "planSendTime": "2018-12-12 00:00:00", // 计划发出时间
+                    "priceFlg": 0, // 采购价格调整 0 未调整 1 申请中 2 同意
+                    "remark": "test",
+                    "runTime": "", // 执行时间(生效时间)
+                    "sendTime": "", // 发车时间
+                    "status": "INVALID", // 订单状态 INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已完成
+                    "supplierAddress": "山西代县文庙附近", // 经销商名称
+                    "supplierId": 1, // 供应商id
+                    "supplierName": "山西代县文庙超市", // 供应商名称
+                    "totalprice": 1 // 金额
+                }
+            ],
+            "pageNo": 1,
+        }
+    }
+
+### CG-62. 采购订单-详情
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/paorder/{orderId}
+#### 参数
+    orderId 订单号
+    comb - 赠品行是否需要合并
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "completeTime": "",
+            "createTime": "2018-12-10 09:46:43",
+            "deliverType": "THIRD", // 配送方式 SELF 自送 THIRD 物流配送
+            "depotId": 1,
+            "depotName": "大连铁越仓", // 入库仓
+            "id": 3,
+            "jian": 0, // 总件数
+            "orderId": "PA1812100000008", // 订单号
+            "orderPaPros": [
+                {
+                    "giftFlg": 0, // 赠品标识 0-否 1-是
+                    "pcount": 1, // 数量
+                    "price": 1, // 价格
+                    "productUnit": {
+                        "guige": "500g(23-25枚）/盒", // 规格
+                        "name": "香草凤尾虾", // 品名
+                        "pno": "0151", // 品号
+                        "unit": "盒" // 单位
+                    },
+                    "totalprice": 1 // 小计
+                },
+                ...
+            ],
+            "supplier": {
+                "city": "", // 市
+                "contactAddress": "", // 详细地址
+                "contactMobile": "", // 手机号
+                "contactName": "", // 联系人
+                "county": "", // 区
+                "province": "", // 省
+            },
+            "paymode": "OUTBUY", // 支付方式
+            "planCompleteTime": "2018-12-10 16:23:23", // 计划入库时间
+            "planSendTime": "2018-12-12 00:00:00", // 计划发出时间
+            "runTime": "", // 生效时间
+            "san": 1, // 散货
+            "sendTime": "2018-12-18 12:12:12", // 发出时间
+            "status": "INVALID", // INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已完成
+            "supplierName": "山西代县文庙超市", // 供应商名称
+            "totalprice": 1 // 总计
+        }
+    }
+
+### CG-63. 采购订单-确认执行
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/paorder/{orderId}/run
+#### 参数
+    orderId 订单号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### CG-64. 采购订单-新增
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    POST /v2/paorder
+#### 参数
+    {
+        *supplierId: 1, // 经销商id
+        *supplierName: "xxx", // 经销商名称
+        *supplierAddress: "山西忻州代县", // 经销商地址
+        *depotId: 6, // 入库仓id
+        *depotName: "大连铁越仓", // 入库仓名称
+        *paymode: INBUY, // 支付方式
+        *deliverType: "THIRD", // 配送方式 SELF 自送 THIRD 物流配送
+        *planCompleteTime: "2018-12-12 12:12:12", // 计划入库时间
+        *planSendTime: "2018-12-12 12:12:12", // 计划发出时间
+        *remark: "采购入货", // 备注
+        *orderPaProList: [
+            {
+                *productId: 1, // 产品id
+                *productUnitId: 1, // 产品规格id
+                *pcount: 2, // 采购数量
+                *giftCount: 3 // 赠品数量
+            }
+        ]
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### CG-65. 采购订单-修改采购订单
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/paorder/{orderId}
+#### 参数
+    {
+        *id: 1, // 主键
+        *supplierId: 1, // 经销商id
+        *supplierName: "xxx", // 经销商名称
+        *supplierAddress: "山西忻州代县", // 经销商地址
+        *depotId: 6, // 入库仓id
+        *depotName: "大连铁越仓", // 入库仓名称
+        *paymode: INBUY, // 支付方式
+        *deliverType: "THIRD", // 配送方式 SELF 自送 THIRD 物流配送
+        *planCompleteTime: "2018-12-12 12:12:12", // 计划入库时间
+        *planSendTime: "2018-12-12 12:12:12", // 计划发出时间
+        *remark: "采购入货", // 备注
+        *orderPaProList: [
+            {
+                *productId: 1, // 产品id
+                *productUnitId: 1, // 产品规格id
+                *pcount: 2, // 采购数量
+                *giftCount: 3 // 赠品数量
+            }
+        ]
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### CG-66. 采购订单-删除采购订单
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    DELETE /v2/paorder/{orderId}
+#### 参数
+    orderId 订单号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### CG-67. 采购订单-获取采购订单日志
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/paorder/{orderId}/log
+#### 参数
+    orderId // 订单号
+    pageNo // 页码
+    pageSize // 行数
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "datas": [
+                {
+                    "id": 1,
+                    "opInfo": "创建采购订单", // 操作内容
+                    "opTime": "2018-12-10 17:47:14", // 操作时间
+                    "opUserName": "孙启萌", // 操作人
+                    "orderId": "PA1812100000008"
+                }
+            ],
+            "pageNo": 1
+        }
+    }
+
+### CG-68. 采购订单-修改采购价格
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    POST /v2/paorder/price/askfor
+#### 参数
+    {
+        "supplierId": 5374, // 经销商id
+        "paProId": 363807, // 采购单产品明细id
+        "supplierName": "21", // 经销商名称
+        "productId": 1529, // 产品id
+        "productUnitId": 2609, // 产品规格id
+        "orderId": "PA181031015389", // 订单号
+        "targetPrice": 70,// 目标单价
+        "remark": "促销活动失效"// 备注
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### CG-69. 采购订单-通过批量采购单号获取产品明细
+#### 对接股责任
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/paorder/pros
+#### 参数
+    orderIds: [PA181221000001, PA181221000001]
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "batchNo": "", // 批次号
+                "giftFlg": 0, // 是否赠品 0 - 否 1 - 是
+                "id": 1, // 主键id
+                "orderId": "PA140821046931", // 采购订单号
+                "pcount": 136, // 数量
+                "price": 360, // 价格
+                "productId": 27, // 产品id
+                "productUnitId": 52, // 产品规格id
+                "totalprice": 48960 // 产品总价
+            },
+            ...
+        ]
+    }
+
+### CG-69.采购退单-列表
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/prorder?buttonPermissionFlg=1
+#### 参数
+    keyword // 单号/经销商名称
+    deliverType // 配送方式 SELF 自送 THIRD 物流配送
+    depotId // 仓id
+    status // 订单状态 INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已完成
+    buttonPermissionFlg // 获取权限按钮 0-否 1-是
+    pageNo // 页码
+    pageSize // 行数
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [
+                {
+                    "setRunButton": true, // 确认执行按钮
+                    "editButton": true, // 修改按钮
+                    "delButton": true, // 删除按钮
+                    "logButton": true // 日志按钮
+                }
+            ],
+            "datas": [
+                {
+                    "createTime": "2018-12-12 05:52:03", // 创建时间
+                    "deleteFlg": 0,
+                    "deliverType": "SELF", // 配送方式 SELF 自送 THIRD 物流配送
+                    "depotId": 0,
+                    "depotName": "大连铁越仓", // 出库仓
+                    "id": 1,
+                    "jian": 0,
+                    "orderId": "PA1812100000001", // 采购退单号
+                    "planTime": "2018-12-12 01:10:01", // 计划出库时间
+                    "completeTime": "2018-12-12 01:10:01", // 完成时间
+                    "sendTime": "2018-12-12 01:10:01", // 发货时间
+                    "runTime": "2018-12-12 01:10:01", // 生效时间
+                    "remark": "", // 备注
+                    "san": 0,
+                    "status": "INVALID", // 订单状态 INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已完成
+                    "supplierAddress": "湖北省武汉市汉口",
+                    "supplierId": 1, // 供应商id
+                    "supplierName": "山西忻州经销商", // 供应商名称
+                    "totalprice": 0 // 订单总金额
+                }
+            ],
+            "pageNo": 1,
+        }
+    }
+
+### CG-70. 采购退单-确认执行
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/prorder/{orderId}/run
+#### 参数
+    orderId // 订单号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### CG-71. 采购退单-删除
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    DELETE /v2/prorder/{orderId}
+#### 参数
+    orderId // 订单号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### CG-72. 采购退单-新增销售退单
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    POST /v2/prorder
+#### 参数
+    {
+        *supplierId: 1, // 经销商id
+        *supplierName: "xxx", // 经销商名称
+        *supplierAddress: "yyy", // 经销商地址
+        *depotId: 1, // 仓库id
+        *depotName: "rrr" // 仓库名称
+        *deliverType: "SELF" // 配送方式 SELF 自送 THIRD 物流配送
+        *remark: "kkk", // 备注
+        *planTime: "2018-12-12 12:12:12", // 计划出库时间
+        *orderPrProList: [
+            {
+                *productId: 1, // 产品id
+                *productUnitId: 1, // 产品规格id
+                *pcount: 1, // 退货数量
+                *giftCount: 2 // 赠品数量
+            },
+            ...
+        ]
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### CG-73. 采购退单-修改销售退单
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/prorder/{orderId}
+#### 参数
+    orderId // 订单号
+    {
+        *id: 1, // 主键id
+        *supplierId: 1, // 经销商id
+        *supplierName: "xxx", // 经销商名称
+        *supplierAddress: "yyy", // 经销商地址
+        *depotId: 1, // 仓库id
+        *depotName: "rrr" // 仓库名称
+        *deliverType: "SELF" // 配送方式 SELF 自送 THIRD 物流配送
+        *remark: "kkk", // 备注
+        *planTime: "2018-12-12 12:12:12", // 计划出库时间
+        *orderPrProList: [
+            {
+                *productId: 1, // 产品id
+                *productUnitId: 1, // 产品规格id
+                *pcount: 1, // 退货数量
+                *price: 2, // 退货价格
+                *giftCount: 2 // 赠品数量
+            },
+            ...
+        ]
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### CG-74. 采购退单-获取详情
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/prorder/{orderId}
+#### 参数
+    orderId // 订单号
+    comb - 赠品行是否需要合并
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "completeTime": "",
+            "createTime": "2018-12-12 08:13:32",
+            "deliverType": "THIRD", // 配送方式 SELF 自送 THIRD 物流配送
+            "depotName": "大连铁越仓", // 入库仓
+            "jian": 0, // 总件数
+            "onlyCode": "",
+            "orderId": "PR1812120000001", // 订单号
+            "orderPrPros": [
+                {
+                    "giftFlg": 0, // 赠品标识 0-否 1-是
+                    "pcount": 1, // 数量
+                    "price": 1, // 价格
+                    "productUnit": {
+                        "guige": "500g(23-25枚）/盒", // 规格
+                        "name": "香草凤尾虾", // 品名
+                        "pno": "0151", // 品号
+                        "unit": "盒" // 单位
+                    },
+                    "totalprice": 5.94 // 小计
+                }
+            ],
+            "planTime": "2018-12-12 12:12:12", // 计划出库时间
+            "platformId": 1,
+            "remark": "我就是测试一下", // 备注
+            "runTime": "", // 生效时间
+            "san": 4, // 散货
+            "sendTime": "", // 发出时间
+            "status": "INVALID", // INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已完成
+            "supplier": {
+                "city": "北京市", // 市
+                "contactAddress": "朝阳区", // 详细地址
+                "contactMobile": "13xxxxxxxxx", // 手机号
+                "contactName": "某某某", // 联系人
+                "county": "朝阳区", // 区
+                "province": "北京", // 省
+            },
+            "supplierName": "湖北武汉经销商", // 供应商名称
+            "totalprice": 5.94 // 总计
+        }
+    }
+
+
+
+### CG-75. 采购订单价格申请-列表
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/paorder/price/askfor?buttonPermissionFlg=1
+#### 参数
+    keyword // 订单号/供应商名称
+    status // 申请状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
+    buttonPermissionFlg // 获取权限按钮 0-否 1-是
+    pageNo // 页码
+    pageSize // 行数
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [
+                {
+                    "refuseButton": false, // 拒绝按钮
+                    "passButton": false // 通过按钮
+                }
+            ],
+            "datas": [
+                {
+                    "checkRemark": "", // 审核信息-备注
+                    "checkTime": "", // 审核信息-时间
+                    "checkUserName": "", // 审核信息-操作人
+                    "createTime": "2018-12-12 06:43:40", // 操作信息-时间
+                    "createUserName": "", // 操作信息-操作人
+                    "remark": "", // 操作信息-备注
+                    "id": 1, // 主键id
+                    "orderId": "PA18121200001", // 采购单号
+                    "paymode": "OUTBUY", // 支付方式
+                    "pcount": 1,
+                    "sendTime": "2018-12-12 12:12:12", // 发出时间
+                    "platformId": 1,
+                    "productUnit": {
+                        "guige": "500g(23-25枚）/盒", // 规格
+                        "name": "香草凤尾虾", // 品名
+                        "pno": "0151", // 品号
+                        "unit": "盒" // 单位
+                    },
+                    "sPrice": 1, // 原单价
+                    "tPrice": 1, // 目标单价
+                    "status": "ASKFOR", // 申请状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
+                    "supplierId": 1, // 供应商id
+                    "supplierName": "供应商名称", // 供应商名称
+                }
+            ],
+            "pageNo": 1,
+        }
+    }
+
+### CG-76. 采购订单价格申请-通过
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/paorder/price/askfor/pass
+#### 参数
+    [1,2,3,4,5,6] // id 集合
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### CG-77. 采购订单价格申请-通过
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/paorder/price/askfor/refuse
+#### 参数
+    {
+        ids: [1,2,3,4,5,6], // id集合
+        remark: "不符规定" // 备注
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
 ### 模版
 #### 对接负责人
 #### 模块负责人
