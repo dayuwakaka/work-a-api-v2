@@ -1045,6 +1045,20 @@
             ],
             "pyAll": "",
             "pyCode": "",
+            "relatePnos": [
+                {
+                    "id": 0,
+                    "productId": 1315,
+                    "relatePno": "A272",
+                    "relateProductId": 1284
+                },
+                {
+                    "id": 0,
+                    "productId": 1315,
+                    "relatePno": "A273",
+                    "relateProductId": 1285
+                }
+            ],
             "status": "NORMAL", // 状态 NORMAL 正常
             "stock": { // 库存
                 "amount": 0, // 最小单位数量 与规格内的perunit相除，取整则是各个规格应该显示的库存数量
