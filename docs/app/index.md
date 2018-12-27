@@ -1372,10 +1372,7 @@
 #### 请求
     DELETE /router/v5/product/cart
 #### 参数
-    *
-    [
-        1, 2, 3 // 购物车明细ID
-    ]
+    *ids=1,2,3 // 购物车明细ID
 #### 响应
     {
         "code": 100000,
@@ -1413,6 +1410,64 @@
         }
     }
 
+
+### APP-40. 产品规格列表
+#### 对接负责人
+    刘宏宇
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /router/v5/product/productunit
+#### 参数
+    *pathId : '010111' // 区域码
+    *productUnitIds[]: '1,2,3' // 产品规格
+    pageNo: 1 // 不传默认1
+    pageSize: 10 // 不传默认10
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [],
+            "dataSums": null,
+            "datas": [
+                {
+                    "cubage": 1512,                 // 体积
+                    "grossweight": 0.55,            // 毛重
+                    "guige": "500g(23-25枚）/盒",   // 规格
+                    "height": 5,                    // 高度
+                    "id": 1,                        // 规格id
+                    "length": 19.5,                 // 长度
+                    "minimum": 0,                   // 最小起订量
+                    "minimumType": "NONE",          // 最小起订量类型 NONE 无 BEGIN 递增 STEP 步增
+                    "netweight": 0.5,               // 净重
+                    "perunit": 1,                   // 转化率
+                    "price": null,                  
+                    "product": {                
+                        "customFlg": 0,             // 是否定制品 0 非定制 1 定制
+                        "id": 1,                    // 产品id
+                        "longName": "香草凤尾虾-专业开背，秘制加工，中西餐厅新食尚~",       // 带广告词名称
+                        "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/f9ce32e007fc796722466531c86d5cd9.jpg",     // 包装图
+                        "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg",       // 主图
+                        "name": "香草凤尾虾",           // 品名
+                        "pno": "0151",                  // 品号
+                        "productLack": null,            
+                        "status": "NORMAL"              // 状态     normal 上架   lock  下架
+                    },
+                    "productCart": null,
+                    "productId": 1,
+                    "stock": null,
+                    "supplierPrice": null,
+                    "unit": "盒",                   // 单位名
+                    "unitId": 2,                    // 单位id
+                    "width": 15.5                   // 宽度
+                },
+                ............
+            ],
+            "pageNo": 1,
+            "total": -1
+        }
+    }
 ### 模版
 #### 对接负责人
 #### 模块负责人
