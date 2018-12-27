@@ -1142,7 +1142,7 @@
 #### 模块负责人
     梁铁骐
 #### 请求
-    GET 
+    GET /v2/price/sign/askfor
 #### 参数
     keyword // 客户名称/品名/品号
     customerType // 客户类型
