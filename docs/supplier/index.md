@@ -1,4 +1,3 @@
-
 ## 供应商接口
 ### GYS-1. 查询供应商
 #### 对接负责人
@@ -347,9 +346,6 @@
         "msg": "",
         "data": null
     }
-
-
-
 
 ### CG-51. 采购供货价审核-列表
 #### 对接负责人
@@ -741,7 +737,7 @@
 #### 模块负责人
     梁铁骐
 #### 请求
-    PUT /v2/paorder/{orderId}
+    GET /v2/paorder/{orderId}
 #### 参数
     orderId 订单号
     comb - 赠品行是否需要合并
@@ -769,6 +765,7 @@
                         "pno": "0151", // 品号
                         "unit": "盒" // 单位
                     },
+                    "id": 1, // 主键id
                     "totalprice": 1 // 小计
                 },
                 ...
@@ -1066,7 +1063,7 @@
         "data": null
     }
 
-### CG-72. 采购退单-新增销售退单
+### CG-72. 采购退单-新增采购退单
 #### 对接负责人
     梁铁骐
 #### 模块负责人
@@ -1100,7 +1097,7 @@
         "data": null
     }
 
-### CG-73. 采购退单-修改销售退单
+### CG-73. 采购退单-修改采购退单
 #### 对接负责人
     梁铁骐
 #### 模块负责人
@@ -1193,9 +1190,7 @@
         }
     }
 
-
-
-### CG-75. 采购订单价格申请-列表
+### CG-75. 采购订单价格申请-列表(作废)
 #### 对接负责人
     梁铁骐
 #### 模块负责人
@@ -1250,7 +1245,7 @@
         }
     }
 
-### CG-76. 采购订单价格申请-通过
+### CG-76. 采购订单价格申请-通过(作废)
 #### 对接负责人
     梁铁骐
 #### 模块负责人
@@ -1266,7 +1261,7 @@
         "data": null
     }
 
-### CG-77. 采购订单价格申请-通过
+### CG-77. 采购订单价格申请-通过(作废)
 #### 对接负责人
     梁铁骐
 #### 模块负责人
@@ -1285,9 +1280,104 @@
         "data": null
     }
 
-### 模版
+### CG-78. 采购供货价审核-新增
 #### 对接负责人
+    梁铁骐
 #### 模块负责人
+    梁铁骐
 #### 请求
+    POST /v2/supplier/price/askfor
 #### 参数
+    {
+        supplierId: 1, // 经销商id
+        productId: 1, // 产品id
+        productUnitId: 1, // 产品规格id
+        type： "NOW" // NOW 立即生效 HISTORY 追溯历史 FUTURE 定时执行
+        price: 2, // 签约价
+        effectDate: "2018-12-12 12:12:12" // 生效日期
+        onlyCode: "as-dhj-fdfs-as-asdf" // 申请唯一码
+    }
 #### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### CG-79. 采购供货价审核-列表导出
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/supplier/price/askfor/export
+#### 参数
+    keyword // 品名/品号
+    supplierName // 经销商名称
+    status // 审核状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
+    type // 定时类型 NOW-立即执行 HISTORY-追溯历史 FUTURE-定时执行
+    ladderFlg // 定量价格 0-未设置 1-已设置
+    *date： 日期 // 2018-12
+    *checkCode: 下载码
+#### 响应
+    stream
+
+### CG-80.采购退单-日志列表
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/prorder/{orderId}/log
+#### 参数
+    orderId 采购退单号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [
+                {
+                    "setRunButton": true, // 确认执行按钮
+                    "editButton": true, // 修改按钮
+                    "delButton": true, // 删除按钮
+                    "logButton": true // 日志按钮
+                }
+            ],
+            "datas": [
+                {
+                    "opInfo": "订单状态锁定", // 操作内容
+                    "opTime": "2018-10-22 13:11:07", // 操作时间
+                    "opUserName": "李凤", // 操作人
+                    "orderId": "PR181019000192"
+                }
+            ],
+            "pageNo": 1,
+        }
+    }
+
+### CG-81. 采购订单-产品明细拆分
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/paorder/{orderId}/pro
+#### 参数
+    {
+        "onlyCode": "iijkiokjijklj", // 唯一码
+        "orderPaPros": [
+            {
+                "id": 363848, // 明细id
+                "pcount": 200, // 
+                "batchNo": "NO.324781293"
+            },
+            ...
+        ]
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
