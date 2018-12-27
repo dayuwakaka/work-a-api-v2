@@ -755,7 +755,8 @@
     customerId: 1 // 客户ID
     *deviceNo: '1' // 设备号
     keyword: 'xx' // 模糊搜索 品号、品名
-    sort:'fw' // 常订购搜索条件
+    filterFollow：'YES' // 是否常订购搜索   YES 是 默认NO 不是
+    productUnitIds[]:3,4,5 // 规格id字符串或数组
     pageNo: 1 //页码 默认1
     pageSize: 10 // 页条数 默认10
 #### 响应
