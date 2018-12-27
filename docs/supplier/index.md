@@ -246,7 +246,42 @@
     GET /v2/supplier/fee
 #### 参数
     *supplierId:1 // 供应商ID
+    depotId： 1 // 仓ID 非必传
 #### 响应
+    {
+    "code": 100000,
+    "msg": "",
+    "data": {
+        "buttonPermissions": [],
+        "dataSums": null,
+        "datas": [
+            {
+                "calCross": 0, // 是否越库 0 否 1 是
+                "calOut": 0, // 忽略
+                "calWeight": "NET", // 计重方式 NET 净重 GROSS 毛重
+                "createRole": 0, 
+                "createTime": "2018-12-24 10:02:49.0",
+                "createUser": 0,
+                "createUserName": "",
+                "deleteFlg": 0,
+                "depotFee": 12.1, // 库费系数
+                "depotId": 85, // 仓ID
+                "depotName": "xxx", // 仓名
+                "effectDate": "2018-06-13", // 生效日期
+                "id": 2587, //  ID
+                "platformId": 1, 
+                "serviceFee": 135, // 服务费
+                "supplierId": 2637, // 供应商ID
+                "updateRole": 0,
+                "updateTime": "2018-12-24 10:02:49.0",
+                "updateUser": 0,
+                "updateUserName": ""
+            }
+        ],
+        "pageNo": 1, //  页码
+        "total": 0 // 总数
+    }
+}
 
 ### GYS-11. 供应商库费系数新增
 #### 对接负责人
