@@ -558,7 +558,7 @@
             "pageNo": 1,
             "datas": [
                 {
-                     "guige": "500g(23-25枚）/盒", // 规格
+                    "guige": "500g(23-25枚）/盒", // 规格
                     "id": 1,
                     "price": { // 价格信息
                         "aPrice": 40.12, // A价
@@ -985,6 +985,8 @@
                     "guige": "2kg/袋*4袋", // 规格
                     "id": 0,
                     "pno": "M018", // 品号
+                    "aPrice": 1, // A价格
+                    "pPrice": 2, // P价格
                     "price": 190, // 签约价
                     "productName": "去皮巴沙鱼柳(300-400)", // 品名
                     "status": "NORMAL", // NORMAL-正常 LOCK-锁定
@@ -1180,6 +1182,8 @@
                     "guige": "300g", // 规格
                     "id": 10,
                     "pno": "1750", // 品号
+                    "aPrice": 1, // A价
+                    "pPrice": 2, // P价
                     "price": 10, // 签约价
                     "productName": "热浪全虾脆", // 产品名称
                     "status": "ASKFOR", // 状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
