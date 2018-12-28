@@ -613,6 +613,7 @@
                     "checkUserName": "yyy", // 审核信息-操作人
                     "createTime": "2018-12-12 01:49:23", // 创建信息-时间
                     "createUserName": "xxx", // 创建信息-操作人
+                    "sendTime": "2018-12-12 12:12:12", // 发送时间
                     "remark": "", // 创建信息-备注
                     "id": 1,
                     "paymode": "INBUY", // 支付方式
@@ -681,9 +682,9 @@
     keyword // 采购订单号/供应商名称
     deliverType // 配送方式 SELF 自送 THIRD 物流配送
     depotId // 仓id
-    status // 订单状态 INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已完成
-    paymode // 支付方式 INBUY OUTBUY
-    priceFlg // 采购价格调整 0 未调整 1 申请中 2 同意
+    status // 订单状态 INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
+    paymode // 支付方式 INBUY 入结 OUTBUY 出结
+    priceFlg // 采购价格调整 0 未修改价格 1 修改价格待审核 2 已修改价格
     buttonPermissionFlg // 获取权限按钮 0-否 1-是
     pageNo // 页码
     pageSize // 行数
@@ -716,7 +717,7 @@
                     "paymode": "OUTBUY", // 支付方式 INBUY OUTBUY
                     "planCompleteTime": "2018-12-22 12:12:12", // 计划入库时间
                     "planSendTime": "2018-12-12 00:00:00", // 计划发出时间
-                    "priceFlg": 0, // 采购价格调整 0 未调整 1 申请中 2 同意
+                    "priceFlg": 0, // 采购价格调整 0 未修改价格 1 修改价格待审核 2 已修改价格
                     "remark": "test",
                     "runTime": "", // 执行时间(生效时间)
                     "sendTime": "", // 发车时间
@@ -988,7 +989,7 @@
     keyword // 单号/经销商名称
     deliverType // 配送方式 SELF 自送 THIRD 物流配送
     depotId // 仓id
-    status // 订单状态 INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已完成
+    status // 订单状态 INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
     buttonPermissionFlg // 获取权限按钮 0-否 1-是
     pageNo // 页码
     pageSize // 行数
