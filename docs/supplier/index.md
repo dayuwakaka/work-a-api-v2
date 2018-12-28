@@ -347,6 +347,43 @@
         "data": null
     }
 
+### GYS-14. 供应商库费系数-详情
+#### 对接负责人
+    刘宏宇
+#### 模块负责人
+    刘宏宇
+#### 请求
+    GET /v2/supplier/fee/{id}
+#### 参数
+    *id: 2608 // 库费系数ID
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "calCross": 0, // 是否越库 0 否 1 是
+            "calOut": 0, // 忽略
+            "calWeight": "NET", // 计重方式 NET 净重 GROSS 毛重
+            "createRole": 0,
+            "createTime": "2018-12-24 10:02:49.0",
+            "createUser": 0,
+            "createUserName": "",
+            "deleteFlg": 0,
+            "depotFee": 12.1, // 库费系数
+            "depotId": 85, // 仓ID
+            "depotName": "DC（成都太古仓）", // 仓名
+            "effectDate": "2018-10-22", // 生效日期
+            "id": 2608, //  ID
+            "platformId": 1,
+            "serviceFee": 135, // 服务费
+            "supplierId": 5555, // 供应商ID
+            "updateRole": 0,
+            "updateTime": "2018-12-24 10:02:49.0",
+            "updateUser": 0,
+            "updateUserName": ""
+        }
+    }
+
 ### CG-51. 采购供货价审核-列表
 #### 对接负责人
     梁铁骐
