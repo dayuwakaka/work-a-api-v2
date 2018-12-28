@@ -970,11 +970,7 @@
     POST /v2/paorder/price/askfor
 #### 参数
     {
-        "supplierId": 5374, // 经销商id
         "paProId": 363807, // 采购单产品明细id
-        "supplierName": "21", // 经销商名称
-        "productId": 1529, // 产品id
-        "productUnitId": 2609, // 产品规格id
         "orderId": "PA181031015389", // 订单号
         "targetPrice": 70,// 目标单价
         "remark": "促销活动失效"// 备注
