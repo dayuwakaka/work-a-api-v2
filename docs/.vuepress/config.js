@@ -15,6 +15,7 @@ module.exports = {
       {text: '营销', link: '/market/'},
       {text: '基础', link: '/common/'},
       {text: 'APP', link: '/app/'},
+      {text: '代理接口', link: '/feign/'},
       {text: '其它', link: '/other/'},
       {text: '变更', link: '/changelog/'}
     ],

@@ -977,6 +977,8 @@
             ],
             "datas": [
                 {
+                    "aPrice": 250, // A价
+                    "pPrice": 200, // P价
                     "customerId": 32175, // 客户id
                     "customerName": "天津小蚁科技有限公司-上海【战略】", // 客户名称
                     "customerType": "P", 客户类型
@@ -1117,7 +1119,7 @@
 #### 模块负责人
     梁铁骐
 #### 请求
-    PUT /v2/price/sign/auto/log
+    GET /v2/price/sign/auto/log
 #### 参数
     无
 #### 响应
@@ -1437,5 +1439,65 @@
     {
         "code": 100000,
         "msg": "",
-        "data": true // true 具有权限 false 不具有
+        "data": {
+            "openButton": false,
+            "closeButton": false,
+            "logButton": false
+        }
     }
+
+### JG-41 PA价格审核-列表导出
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/price/pa/askfor/export
+#### 参数
+    keyword // 品名/品号
+    processContent // 内容信息完整度 0-待维护 1-已完善
+    processPrice // 发票信息完整度 0-待维护 1-已完善
+    processInvoice // 价格信息完整度 0-待维护 1-已完善
+    productStatus // 产品状态 NORMAL-正常or上架 LOCK-下架
+    status // 审核状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
+    productName // 品名
+    pno // 品号
+    businessTypeId // 餐饮业态
+    rawFlg // 原料品 YES-是 NO-否
+    runType // 定时修改价格 0-否 1-是
+    *date // 导出日期 2018-12
+    *checkCode // 下载码
+#### 响应
+    stream
+
+### JG-42 签约价格审核-列表导出
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/price/sign/askfor/export
+#### 参数
+    keyword // 客户名称/品名/品号
+    customerType // 客户类型
+    status // 状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
+    *date // 日期
+    *checkCode // 下载码
+
+#### 响应
+    stream
+
+### JG-43 区域价格审核-列表导出
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/price/area/askfor/export
+#### 参数
+    keyword // 品名/品号
+    status // 审核状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
+    checkCode // 下载码
+    date // 日期
+#### 响应
+    stream

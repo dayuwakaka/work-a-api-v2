@@ -1300,7 +1300,7 @@
                     "checkTime": "",
                     "checkUser": 0,
                     "checkUserName": "",
-                    "contactName": "梁铁骑",        //联系人
+                    "contactName": "梁铁骐",        //联系人
                     "createRole": 0,
                     "createTime": "2018-10-23",
                     "createUser": 0,
@@ -1329,7 +1329,7 @@
                     "invoiceInfoPerson": {
                         "id":1,
                         "invoiceId":1,
-                        "name":"梁铁骑",                            //发票名称
+                        "name":"梁铁骐",                            //发票名称
                         "cardNo":"239124199012121345",              //身份证号
                         "deleteFlg":0
                     },
@@ -1372,7 +1372,7 @@
                 "checkTime": "",
                 "checkUser": 0,
                 "checkUserName": "",
-                "contactName": "梁铁骑",        //联系人
+                "contactName": "梁铁骐",        //联系人
                 "createRole": 0,
                 "createTime": "2018-10-23",
                 "createUser": 0,
@@ -1401,7 +1401,7 @@
                 "invoiceInfoPerson": {
                     "id":1,
                     "invoiceId":1,
-                    "name":"梁铁骑",                            //发票名称
+                    "name":"梁铁骐",                            //发票名称
                     "cardNo":"239124199012121345",              //身份证号
                     "deleteFlg":0
                 },
@@ -1440,7 +1440,7 @@
             "checkTime": "",
             "checkUser": 0,
             "checkUserName": "",
-            "contactName": "梁铁骑",        //联系人
+            "contactName": "梁铁骐",        //联系人
             "createRole": 0,
             "createTime": "2018-10-23",
             "createUser": 0,
@@ -1478,7 +1478,7 @@
             "invoiceInfoPerson": {
                 "id":1,
                 "invoiceId":1,
-                "name":"梁铁骑",                            //发票名称
+                "name":"梁铁骐",                            //发票名称
                 "cardNo":"239124199012121345",              //身份证号
                 "deleteFlg":0
             },

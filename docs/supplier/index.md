@@ -1,10 +1,9 @@
-
 ## 供应商接口
 ### GYS-1. 查询供应商
 #### 对接负责人
     刘宏宇
 #### 模块负责人
-    梁铁骑
+    梁铁骐
 #### 请求
     GET /v2/supplier
 #### 参数
@@ -48,11 +47,11 @@
         }
     }
 
-### GYS-2. 获取供应明细
+### GYS-2. 获取供应商明细
 #### 对接负责人
     刘宏宇
 #### 模块负责人
-    梁铁骑
+    梁铁骐
 #### 请求
     GET /v2/supplier/{id}
 #### 参数
@@ -88,7 +87,7 @@
 #### 对接负责人
     刘宏宇
 #### 模块负责人
-    梁铁骑
+    梁铁骐
 #### 请求
     POST /v2/supplier
 #### 参数
@@ -112,7 +111,7 @@
 #### 对接负责人
     刘宏宇
 #### 模块负责人
-    梁铁骑
+    梁铁骐
 #### 请求
     PUT /v2/supplier/{id}
 #### 参数
@@ -138,7 +137,7 @@
 #### 对接负责人
     刘宏宇
 #### 模块负责人
-    梁铁骑
+    梁铁骐
 #### 请求
     PUT /v2/supplier/account/{id}
 #### 参数
@@ -157,7 +156,7 @@
 #### 对接负责人
     刘宏宇
 #### 模块负责人
-    梁铁骑
+    梁铁骐
 #### 请求
     PUT /v2/supplier/account/reset/{id}
 #### 参数
@@ -173,7 +172,7 @@
 #### 对接负责人
     刘宏宇
 #### 模块负责人
-    梁铁骑
+    梁铁骐
 #### 请求
     PUT /v2/supplier/account/status/{id}
 #### 参数
@@ -192,7 +191,7 @@
 #### 对接负责人
     刘宏宇
 #### 模块负责人
-    梁铁骑
+    梁铁骐
 #### 请求
     DELETE /v2/supplier/{id}
 #### 参数
@@ -208,7 +207,7 @@
 #### 对接负责人
     刘宏宇
 #### 模块负责人
-    梁铁骑
+    梁铁骐
 #### 请求
     GET /v2/supplier/log
 #### 参数
@@ -348,8 +347,42 @@
         "data": null
     }
 
-
-
+### GYS-14. 供应商库费系数-详情
+#### 对接负责人
+    刘宏宇
+#### 模块负责人
+    刘宏宇
+#### 请求
+    GET /v2/supplier/fee/{id}
+#### 参数
+    *id: 2608 // 库费系数ID
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "calCross": 0, // 是否越库 0 否 1 是
+            "calOut": 0, // 忽略
+            "calWeight": "NET", // 计重方式 NET 净重 GROSS 毛重
+            "createRole": 0,
+            "createTime": "2018-12-24 10:02:49.0",
+            "createUser": 0,
+            "createUserName": "",
+            "deleteFlg": 0,
+            "depotFee": 12.1, // 库费系数
+            "depotId": 85, // 仓ID
+            "depotName": "DC（成都太古仓）", // 仓名
+            "effectDate": "2018-10-22", // 生效日期
+            "id": 2608, //  ID
+            "platformId": 1,
+            "serviceFee": 135, // 服务费
+            "supplierId": 5555, // 供应商ID
+            "updateRole": 0,
+            "updateTime": "2018-12-24 10:02:49.0",
+            "updateUser": 0,
+            "updateUserName": ""
+        }
+    }
 
 ### CG-51. 采购供货价审核-列表
 #### 对接负责人
@@ -617,6 +650,7 @@
                     "checkUserName": "yyy", // 审核信息-操作人
                     "createTime": "2018-12-12 01:49:23", // 创建信息-时间
                     "createUserName": "xxx", // 创建信息-操作人
+                    "sendTime": "2018-12-12 12:12:12", // 发送时间
                     "remark": "", // 创建信息-备注
                     "id": 1,
                     "paymode": "INBUY", // 支付方式
@@ -685,9 +719,9 @@
     keyword // 采购订单号/供应商名称
     deliverType // 配送方式 SELF 自送 THIRD 物流配送
     depotId // 仓id
-    status // 订单状态 INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已完成
-    paymode // 支付方式 INBUY OUTBUY
-    priceFlg // 采购价格调整 0 未调整 1 申请中 2 同意
+    status // 订单状态 INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
+    paymode // 支付方式 INBUY 入结 OUTBUY 出结
+    priceFlg // 采购价格调整 0 未修改价格 1 修改价格待审核 2 已修改价格
     buttonPermissionFlg // 获取权限按钮 0-否 1-是
     pageNo // 页码
     pageSize // 行数
@@ -720,11 +754,11 @@
                     "paymode": "OUTBUY", // 支付方式 INBUY OUTBUY
                     "planCompleteTime": "2018-12-22 12:12:12", // 计划入库时间
                     "planSendTime": "2018-12-12 00:00:00", // 计划发出时间
-                    "priceFlg": 0, // 采购价格调整 0 未调整 1 申请中 2 同意
+                    "priceFlg": 0, // 采购价格调整 0 未修改价格 1 修改价格待审核 2 已修改价格
                     "remark": "test",
                     "runTime": "", // 执行时间(生效时间)
                     "sendTime": "", // 发车时间
-                    "status": "INVALID", // 订单状态 INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已完成
+                    "status": "INVALID", // 订单状态 INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
                     "supplierAddress": "山西代县文庙附近", // 经销商名称
                     "supplierId": 1, // 供应商id
                     "supplierName": "山西代县文庙超市", // 供应商名称
@@ -741,7 +775,7 @@
 #### 模块负责人
     梁铁骐
 #### 请求
-    PUT /v2/paorder/{orderId}
+    GET /v2/paorder/{orderId}
 #### 参数
     orderId 订单号
     comb - 赠品行是否需要合并
@@ -757,6 +791,7 @@
             "depotName": "大连铁越仓", // 入库仓
             "id": 3,
             "jian": 0, // 总件数
+            "remark": "", // 备注
             "orderId": "PA1812100000008", // 订单号
             "orderPaPros": [
                 {
@@ -769,6 +804,7 @@
                         "pno": "0151", // 品号
                         "unit": "盒" // 单位
                     },
+                    "id": 1, // 主键id
                     "totalprice": 1 // 小计
                 },
                 ...
@@ -787,7 +823,7 @@
             "runTime": "", // 生效时间
             "san": 1, // 散货
             "sendTime": "2018-12-18 12:12:12", // 发出时间
-            "status": "INVALID", // INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已完成
+            "status": "INVALID", // INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
             "supplierName": "山西代县文庙超市", // 供应商名称
             "totalprice": 1 // 总计
         }
@@ -990,7 +1026,7 @@
     keyword // 单号/经销商名称
     deliverType // 配送方式 SELF 自送 THIRD 物流配送
     depotId // 仓id
-    status // 订单状态 INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已完成
+    status // 订单状态 INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
     buttonPermissionFlg // 获取权限按钮 0-否 1-是
     pageNo // 页码
     pageSize // 行数
@@ -1023,7 +1059,7 @@
                     "runTime": "2018-12-12 01:10:01", // 生效时间
                     "remark": "", // 备注
                     "san": 0,
-                    "status": "INVALID", // 订单状态 INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已完成
+                    "status": "INVALID", // 订单状态 INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
                     "supplierAddress": "湖北省武汉市汉口",
                     "supplierId": 1, // 供应商id
                     "supplierName": "山西忻州经销商", // 供应商名称
@@ -1066,7 +1102,7 @@
         "data": null
     }
 
-### CG-72. 采购退单-新增销售退单
+### CG-72. 采购退单-新增采购退单
 #### 对接负责人
     梁铁骐
 #### 模块负责人
@@ -1100,7 +1136,7 @@
         "data": null
     }
 
-### CG-73. 采购退单-修改销售退单
+### CG-73. 采购退单-修改采购退单
 #### 对接负责人
     梁铁骐
 #### 模块负责人
@@ -1179,7 +1215,7 @@
             "runTime": "", // 生效时间
             "san": 4, // 散货
             "sendTime": "", // 发出时间
-            "status": "INVALID", // INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已完成
+            "status": "INVALID", // INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
             "supplier": {
                 "city": "北京市", // 市
                 "contactAddress": "朝阳区", // 详细地址
@@ -1193,9 +1229,7 @@
         }
     }
 
-
-
-### CG-75. 采购订单价格申请-列表
+### CG-75. <font color=red>采购订单价格申请-列表(作废)</font>
 #### 对接负责人
     梁铁骐
 #### 模块负责人
@@ -1250,7 +1284,7 @@
         }
     }
 
-### CG-76. 采购订单价格申请-通过
+### CG-76. <font color=red>采购订单价格申请-通过(作废)</font>
 #### 对接负责人
     梁铁骐
 #### 模块负责人
@@ -1266,7 +1300,7 @@
         "data": null
     }
 
-### CG-77. 采购订单价格申请-通过
+### CG-77. <font color=red>采购订单价格申请-通过(作废)</font>
 #### 对接负责人
     梁铁骐
 #### 模块负责人
@@ -1285,9 +1319,104 @@
         "data": null
     }
 
-### 模版
+### CG-78. 采购供货价审核-新增
 #### 对接负责人
+    梁铁骐
 #### 模块负责人
+    梁铁骐
 #### 请求
+    POST /v2/supplier/price/askfor
 #### 参数
+    {
+        supplierId: 1, // 经销商id
+        productId: 1, // 产品id
+        productUnitId: 1, // 产品规格id
+        type： "NOW" // NOW 立即生效 HISTORY 追溯历史 FUTURE 定时执行
+        price: 2, // 签约价
+        effectDate: "2018-12-12 12:12:12" // 生效日期
+        onlyCode: "as-dhj-fdfs-as-asdf" // 申请唯一码
+    }
 #### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### CG-79. 采购供货价审核-列表导出
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/supplier/price/askfor/export
+#### 参数
+    keyword // 品名/品号
+    supplierName // 经销商名称
+    status // 审核状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
+    type // 定时类型 NOW-立即执行 HISTORY-追溯历史 FUTURE-定时执行
+    ladderFlg // 定量价格 0-未设置 1-已设置
+    *date： 日期 // 2018-12
+    *checkCode: 下载码
+#### 响应
+    stream
+
+### CG-80.采购退单-日志列表
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/prorder/{orderId}/log
+#### 参数
+    orderId 采购退单号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [
+                {
+                    "setRunButton": true, // 确认执行按钮
+                    "editButton": true, // 修改按钮
+                    "delButton": true, // 删除按钮
+                    "logButton": true // 日志按钮
+                }
+            ],
+            "datas": [
+                {
+                    "opInfo": "订单状态锁定", // 操作内容
+                    "opTime": "2018-10-22 13:11:07", // 操作时间
+                    "opUserName": "李凤", // 操作人
+                    "orderId": "PR181019000192"
+                }
+            ],
+            "pageNo": 1,
+        }
+    }
+
+### CG-81. 采购订单-产品明细拆分
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/paorder/{orderId}/pro
+#### 参数
+    {
+        "onlyCode": "iijkiokjijklj", // 唯一码
+        "orderPaPros": [
+            {
+                "id": 363848, // 明细id
+                "pcount": 200, // 
+                "batchNo": "NO.324781293"
+            },
+            ...
+        ]
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
