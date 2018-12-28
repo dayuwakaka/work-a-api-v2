@@ -7,22 +7,23 @@
 #### 请求
     GET /v2/customer
 #### 参数
-    pageNo: 1 分页
-    pageSize: 25 // 默认值
-    keyword: "1" 客户名/登录帐号
-    shortName: "1" 客户名
-    accountMobile: "1" 登录帐号
-    businessunit：1 事业部ID 
-    ssRoleId：1 SSID
-    srRoleId：1 SRID
-    attrId：1 属性ID
-    sCreateTime："2018-01-01 00:00:00" 创建时间（开始）
-    eCreateTime："2018-01-01 23:59:59" 创建时间（结束）
-    isParent: -1 查询客户类型 -1 所有 0 普通客户 1 总公司 2 分店 
-    ignorePower: false 忽略权限标识，true为不限制任何权限查询客户
-    states: ['NORMAL', 'DELETE'] NORMAL 正常 DELETE 休眠
-    @@showAttr：是否显示客户属性 true 显示 false 不显示
-    @@showInvoice：是否显示发票状态 true 显示 false 不显示
+    pageNo: 1                       // 页码 默认1
+    pageSize: 25                    // 页条数 默认25
+    keyword: "1"                    // 客户名/登录帐号
+    shortName: "1"                  // 客户名
+    accountMobile: "1"              // 登录帐号
+    businessunit：1                 // 事业部ID 
+    ssRoleId：1                     // SSID
+    srRoleId：1                     // SRID
+    attrId[]：1                     // 属性ID
+    sCreateTime："2018-01-01 00:00:00"  // 创建时间（开始）
+    eCreateTime："2018-01-01 23:59:59"  // 创建时间（结束）
+    isParent: -1                        // 查询客户类型 -1 所有 0 普通客户 1 总公司 2 分店 
+    ignorePower: false                  // 忽略权限标识，true为不限制任何权限查询客户
+    states: ['NORMAL', 'DELETE']        // NORMAL 正常 DELETE 休眠
+    @@customerIds[]:149                 // 客户id列表
+    showAttr：                          // 是否显示客户属性 true 显示 false 不显示
+    showInvoice：                       // 是否显示发票状态 true 显示 false 不显示
 #### 响应
     {
         "code": 100000,
