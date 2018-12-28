@@ -753,6 +753,7 @@
             "depotName": "大连铁越仓", // 入库仓
             "id": 3,
             "jian": 0, // 总件数
+            "remark": "", // 备注
             "orderId": "PA1812100000008", // 订单号
             "orderPaPros": [
                 {
