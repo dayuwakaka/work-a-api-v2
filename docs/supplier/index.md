@@ -758,7 +758,7 @@
                     "remark": "test",
                     "runTime": "", // 执行时间(生效时间)
                     "sendTime": "", // 发车时间
-                    "status": "INVALID", // 订单状态 INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已完成
+                    "status": "INVALID", // 订单状态 INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
                     "supplierAddress": "山西代县文庙附近", // 经销商名称
                     "supplierId": 1, // 供应商id
                     "supplierName": "山西代县文庙超市", // 供应商名称
@@ -823,7 +823,7 @@
             "runTime": "", // 生效时间
             "san": 1, // 散货
             "sendTime": "2018-12-18 12:12:12", // 发出时间
-            "status": "INVALID", // INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已完成
+            "status": "INVALID", // INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
             "supplierName": "山西代县文庙超市", // 供应商名称
             "totalprice": 1 // 总计
         }
@@ -1059,7 +1059,7 @@
                     "runTime": "2018-12-12 01:10:01", // 生效时间
                     "remark": "", // 备注
                     "san": 0,
-                    "status": "INVALID", // 订单状态 INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已完成
+                    "status": "INVALID", // 订单状态 INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
                     "supplierAddress": "湖北省武汉市汉口",
                     "supplierId": 1, // 供应商id
                     "supplierName": "山西忻州经销商", // 供应商名称
@@ -1215,7 +1215,7 @@
             "runTime": "", // 生效时间
             "san": 4, // 散货
             "sendTime": "", // 发出时间
-            "status": "INVALID", // INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已完成
+            "status": "INVALID", // INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
             "supplier": {
                 "city": "北京市", // 市
                 "contactAddress": "朝阳区", // 详细地址
