@@ -1387,6 +1387,8 @@
                     "guige": "300g", // 规格
                     "id": 28498,
                     "pno": "1750", // 品号
+                    "aPrice": 218, // A价
+                    "pPrice": 175, // P价
                     "price": 33, // 区域价
                     "productName": "热浪全虾脆", // 品名
                     "status": "ASKFOR", // 状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
