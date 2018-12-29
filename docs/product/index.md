@@ -730,18 +730,18 @@
         "msg": "",
         "data": [
             {
-                "code": "01",           // 业态编码
+                "code": "|16|",          // 业态编码
                 "deleteFlg": 0,
-                "id": 1,                // 业态id
-                "image": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/01.png", // 主图
-                "leaf": "N",            // 是否叶子节点 Y 是 N 否
-                "level": 1,             // 等级
-                "name": "中餐",         // 业态名称
+                "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g02.png",
+                "hasProductCnt": 6,     // 产品数
+                "id": 16,               // 业态id
+                "level": 1,             // 业态等级
+                "name": "西餐西快",     // 名称
                 "parentId": 0,          // 上级业态id
-                "pyCode": "ZC23",       // 拼音编码
-                "sImage": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s01.png", // 小图
-                "sort": 50,             // 排序
-                "wImage": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g01.png" // 白图
+                "pyCode": "",           // 拼音编码
+                "sIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png",
+                "showFlg": 1,           // 是否显示 1 显示 2 隐藏
+                "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w02.png"
             }
         ]
     }
