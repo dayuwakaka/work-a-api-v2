@@ -714,7 +714,7 @@
 #### 模块负责人
     梁铁骐
 #### 请求
-    PUT /v2/paorder?buttonPermissionFlg=1
+    GET /v2/paorder?buttonPermissionFlg=1
 #### 参数
     keyword // 采购订单号/供应商名称
     deliverType // 配送方式 SELF 自送 THIRD 物流配送
@@ -1231,7 +1231,7 @@
 #### 模块负责人
     梁铁骐
 #### 请求
-    PUT /v2/paorder/price/askfor?buttonPermissionFlg=1
+    GET /v2/paorder/price/askfor?buttonPermissionFlg=1
 #### 参数
     keyword // 订单号/供应商名称
     status // 申请状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
