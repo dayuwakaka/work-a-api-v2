@@ -1416,3 +1416,26 @@
         "msg": "",
         "data": null
     }
+
+### CG-82. 采购订单-校验采购订单能否确认执行
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    POST /v2/paorder/complete/status
+    Headrs: {
+        "token": "923o4yu8tr3q94theriuot"
+    }
+#### 参数
+    json body
+    ["PA1812290001","pa1812290002"] // 采购订单号集合
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "PA140821046932": true,
+            "PA140821046931": false
+        }
+    }
