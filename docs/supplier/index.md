@@ -1352,7 +1352,7 @@
     status // 审核状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
     type // 定时类型 NOW-立即执行 HISTORY-追溯历史 FUTURE-定时执行
     ladderFlg // 定量价格 0-未设置 1-已设置
-    *date： 日期 // 2018-12
+    *date： '2018-12' // 导出日期 yyyy-MM
     *checkCode: 下载码
 #### 响应
     stream

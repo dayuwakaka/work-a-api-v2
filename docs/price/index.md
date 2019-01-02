@@ -1473,7 +1473,7 @@
     businessTypeId // 餐饮业态
     rawFlg // 原料品 YES-是 NO-否
     runType // 定时修改价格 0-否 1-是
-    *date // 导出日期 2018-12
+    *date // 导出日期 yyyy-MM
     *checkCode // 下载码
 #### 响应
     stream
@@ -1489,7 +1489,7 @@
     keyword // 客户名称/品名/品号
     customerType // 客户类型
     status // 状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
-    *date // 日期
+    *date // 导出日期 yyyy-MM
     *checkCode // 下载码
 
 #### 响应
@@ -1506,6 +1506,6 @@
     keyword // 品名/品号
     status // 审核状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
     checkCode // 下载码
-    date // 日期
+    date // 导出日期 yyyy-MM
 #### 响应
     stream
