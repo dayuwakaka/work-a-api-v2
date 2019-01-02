@@ -209,7 +209,7 @@
 #### 模块负责人
     梁铁骐
 #### 请求
-    GET /v2/supplier/log
+    GET /v2/supplier/{id}/log
 #### 参数
     *id: 1 // 供应商ID
 #### 响应
@@ -628,6 +628,7 @@
 #### 参数
     keyword // 采购订单号/供应商名称
     status // 审核状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
+    paymode // 支付方式 INBUY OUTBUY
     buttonPermissionFlg // 获取权限按钮 0-否 1-是
     pageNo // 页码
     pageSize // 行数
@@ -855,11 +856,12 @@
 #### 参数
     {
         *supplierId: 1, // 经销商id
-        *supplierName: "xxx", // 经销商名称
-        *supplierAddress: "山西忻州代县", // 经销商地址
+        contactName: '阎锡山', // 联系人
+        contactMobile： 13333333333, // 联系电话
+        contactPathId: 060202, // 区域id
+        contactAddress: "山西忻州代县", // 经销商地址
         *depotId: 6, // 入库仓id
         *depotName: "大连铁越仓", // 入库仓名称
-        *paymode: INBUY, // 支付方式
         *deliverType: "THIRD", // 配送方式 SELF 自送 THIRD 物流配送
         *planCompleteTime: "2018-12-12 12:12:12", // 计划入库时间
         *planSendTime: "2018-12-12 12:12:12", // 计划发出时间
@@ -1108,8 +1110,10 @@
 #### 参数
     {
         *supplierId: 1, // 经销商id
-        *supplierName: "xxx", // 经销商名称
-        *supplierAddress: "yyy", // 经销商地址
+        contactName: '阎锡山', // 联系人
+        contactMobile： 13333333333, // 联系电话
+        contactPathId: 060202, // 区域id
+        contactAddress: "山西忻州代县", // 经销商地址
         *depotId: 1, // 仓库id
         *depotName: "rrr" // 仓库名称
         *deliverType: "SELF" // 配送方式 SELF 自送 THIRD 物流配送
