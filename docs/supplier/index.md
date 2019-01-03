@@ -508,14 +508,17 @@
     POST /v2/supplier/price/askfor/{id}/ladder
 #### 参数
     id: 主键id（采购供货价格id） 仅仅拼接在uri 即可
-    {
-        supplierId: 1, // 经销商id
-        productId: 1, // 产品id
-        productUnitId: 1, // 产品规格id
-        amount: 1, // 起订量
-        price: 2, // 签约价
-        effectDate: "2018-12-12 12:12:12" // 生效日期
-    }
+    [
+        {
+            supplierId: 1, // 经销商id
+            productId: 1, // 产品id
+            productUnitId: 1, // 产品规格id
+            amount: 1, // 起订量
+            price: 2, // 签约价
+            effectDate: "2018-12-12 12:12:12" // 生效日期
+        },
+        ...
+    ]
 #### 响应
     {
         "code": 100000,
@@ -585,7 +588,7 @@
 #### 模块负责人
     梁铁骐
 #### 请求
-    DELETE /v2/supplier/price
+    POST /v2/supplier/price
 #### 参数
     [1,2,3,4,5,6] // id集合
 #### 响应
@@ -894,7 +897,10 @@
         *id: 1, // 主键
         *supplierId: 1, // 经销商id
         *supplierName: "xxx", // 经销商名称
-        *supplierAddress: "山西忻州代县", // 经销商地址
+        contactName: '阎锡山', // 联系人
+        contactMobile： 13333333333, // 联系电话
+        contactPathId: 060202, // 区域id
+        contactAddress: "山西忻州代县", // 经销商地址
         *depotId: 6, // 入库仓id
         *depotName: "大连铁越仓", // 入库仓名称
         *paymode: INBUY, // 支付方式
@@ -1149,7 +1155,10 @@
         *id: 1, // 主键id
         *supplierId: 1, // 经销商id
         *supplierName: "xxx", // 经销商名称
-        *supplierAddress: "yyy", // 经销商地址
+        contactName: '阎锡山', // 联系人
+        contactMobile： 13333333333, // 联系电话
+        contactPathId: 060202, // 区域id
+        contactAddress: "山西忻州代县", // 经销商地址
         *depotId: 1, // 仓库id
         *depotName: "rrr" // 仓库名称
         *deliverType: "SELF" // 配送方式 SELF 自送 THIRD 物流配送
