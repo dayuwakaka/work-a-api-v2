@@ -674,16 +674,17 @@
                         "productLack": { // 缺货标识，若未null 则不缺货
                             "productId": 1，
                             "startTime": "2018-01-01", // 缺货开始时间 
-                            "endTime": "2018-01-20" // 缺货结束时间}
-                        },
-                        "stock": { // 库存
-                            "productId": 1,
-                            "amount": 20 // 最小单位数量
-                        },
-                        "unit": "盒", // 单位名
-                        "unitId": 2,  // 单位ID
-                        "width": 15.5 // 宽度
-                    }
+                            "endTime": "2018-01-20" // 缺货结束时间
+                        }
+                    },
+                    "stock": { // 库存
+                        "productId": 1,
+                        "amount": 20 // 最小单位数量
+                    },
+                    "unit": "盒", // 单位名
+                    "unitId": 2,  // 单位ID
+                    "width": 15.5 // 宽度
+                }
             ],
             "pageNo": 1,
             "total": 0
