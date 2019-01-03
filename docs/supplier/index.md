@@ -1385,14 +1385,6 @@
         "code": 100000,
         "msg": "",
         "data": {
-            "buttonPermissions": [
-                {
-                    "setRunButton": true, // 确认执行按钮
-                    "editButton": true, // 修改按钮
-                    "delButton": true, // 删除按钮
-                    "logButton": true // 日志按钮
-                }
-            ],
             "datas": [
                 {
                     "opInfo": "订单状态锁定", // 操作内容
