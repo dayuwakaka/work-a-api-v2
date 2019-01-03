@@ -588,7 +588,7 @@
 #### 模块负责人
     梁铁骐
 #### 请求
-    DELETE /v2/supplier/price
+    POST /v2/supplier/price
 #### 参数
     [1,2,3,4,5,6] // id集合
 #### 响应
