@@ -620,14 +620,14 @@
     depotId: 1 // 仓ID， 传递仓ID，是需要产品匹配库存存量
     ---------------------------以下四个has开头的参数决定是否查询价格和库存 ture查询 & false不查询-----------------------------------------
     hasPrice:           // 客户某个区域产品价格
-		*customerId
-		*pathId
+		customerId
+		pathId
 	hasSupplierPrice:   // 供应商产品价格
 		*supplierId
-	hasStock:           // 客户某个区域产品库存
-		*customerId
+	hasStock:           // 客户某个区域产品库存, pathId & depotId 二选一
+		customerId
 		*pathId
-		depotId
+		*depotId
 	hasStock3:          // 供应商某个仓库产品库存
 		*supplierId
 		*depotId
