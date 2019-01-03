@@ -897,7 +897,10 @@
         *id: 1, // 主键
         *supplierId: 1, // 经销商id
         *supplierName: "xxx", // 经销商名称
-        *supplierAddress: "山西忻州代县", // 经销商地址
+        contactName: '阎锡山', // 联系人
+        contactMobile： 13333333333, // 联系电话
+        contactPathId: 060202, // 区域id
+        contactAddress: "山西忻州代县", // 经销商地址
         *depotId: 6, // 入库仓id
         *depotName: "大连铁越仓", // 入库仓名称
         *paymode: INBUY, // 支付方式
@@ -1152,7 +1155,10 @@
         *id: 1, // 主键id
         *supplierId: 1, // 经销商id
         *supplierName: "xxx", // 经销商名称
-        *supplierAddress: "yyy", // 经销商地址
+        contactName: '阎锡山', // 联系人
+        contactMobile： 13333333333, // 联系电话
+        contactPathId: 060202, // 区域id
+        contactAddress: "山西忻州代县", // 经销商地址
         *depotId: 1, // 仓库id
         *depotName: "rrr" // 仓库名称
         *deliverType: "SELF" // 配送方式 SELF 自送 THIRD 物流配送
