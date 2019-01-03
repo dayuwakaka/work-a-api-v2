@@ -1344,6 +1344,7 @@
         price: 2, // 签约价
         effectDate: "2018-12-12 12:12:12" // 生效日期
         onlyCode: "as-dhj-fdfs-as-asdf" // 申请唯一码
+        remark: "" // 备注
     }
 #### 响应
     {
