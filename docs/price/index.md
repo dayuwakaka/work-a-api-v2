@@ -851,7 +851,6 @@
     pno // 品号
     businessTypeId // 餐饮业态
     rawFlg // 原料品 YES-是 NO-否
-    runType // 定时修改价格 0-否 1-是
     buttonPermissionFlg // 获取权限按钮 0-否 1-是
     pageNo // 页码
     pageSize // 行数
