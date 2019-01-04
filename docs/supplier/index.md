@@ -508,17 +508,20 @@
     POST /v2/supplier/price/askfor/{id}/ladder
 #### 参数
     id: 主键id（采购供货价格id） 仅仅拼接在uri 即可
-    [
-        {
-            supplierId: 1, // 经销商id
-            productId: 1, // 产品id
-            productUnitId: 1, // 产品规格id
-            amount: 1, // 起订量
-            price: 2, // 签约价
-            effectDate: "2018-12-12 12:12:12" // 生效日期
-        },
-        ...
-    ]
+    {
+        "ladderList": [
+            {
+                supplierId: 1, // 经销商id
+                productId: 1, // 产品id
+                productUnitId: 1, // 产品规格id
+                amount: 1, // 起订量
+                price: 2, // 签约价
+                effectDate: "2018-12-12 12:12:12" // 生效日期
+            },
+            ...
+        ],
+        "remark": "asdfasdfasd" // 备注
+    }
 #### 响应
     {
         "code": 100000,
