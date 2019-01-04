@@ -1134,6 +1134,7 @@
                 *productUnitId: 1, // 产品规格id
                 *pcount: 1, // 退货数量
                 *giftCount: 2 // 赠品数量
+                *price: 100 // 退货价格
             },
             ...
         ]
