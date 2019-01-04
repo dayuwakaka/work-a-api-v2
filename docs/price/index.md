@@ -1512,6 +1512,6 @@
     pathId // 区域编号 060202
     status // 审核状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
     checkCode // 下载码
-    date // 导出日期 yyyy-MM
+    *date // 导出日期 yyyy-MM
 #### 响应
     stream
