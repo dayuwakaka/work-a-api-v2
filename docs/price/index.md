@@ -1048,15 +1048,15 @@
 #### 模块负责人
     梁铁骐
 #### 请求
-    POST /v2/price/sign/askfor/{customerId}
+    POST /v2/price/sign/askfor/batch
 #### 参数
-    *customerId 客户id
     json body
     [
         {
-            productId: 1, // 产品id
-            productUnitId: 2, // 产品规格id
-            price: 12.5 // 签约价
+            *customerId: 1, // 客户id 
+            *productId: 1, // 产品id
+            *productUnitId: 2, // 产品规格id
+            *price: 12.5 // 签约价
         },
         ...
     ]
