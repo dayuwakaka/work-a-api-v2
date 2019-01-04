@@ -23,75 +23,83 @@
     {
         "code": 100000,
         "msg": "",
-        "buttonPermissions": [],
-        "dataSums": null,
-        "pageNo": 1,
-        "total": 0
-        "datas": [
-            {
-                "businessTypeIds": null, // 餐饮业态ID [1, 2, 3]
-                "createTime": "2018-11-16 06:09:12", // 创建时间
-                "customFlg": 0, // 是否定制 0 未定制 1 定制
-                "customerIds": null, // 若为定制 则 定制的客户ID [1, 2, 3]
-                "deleteFlg": 0, 
-                "id": 4697, // 产品ID
-                "longName": "", 
-                "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/0",
-                "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/0", // 产品主图
-                "name": "345", // 产品名
-                "pno": "3245", // 品号
-                "process": 3, // 完善度，3/4, 4是固定写死
-                "processContent": 1, // 内容完善状态 0 未完善 1 已完善
-                "processInvoice": 0, // 发票完善状态 0 未完善 1 已完善
-                "processPrice": 1, // 价格完善状态 0 未完善 1 已完善
-                "productExtra": null,
-                "productImgs": null,
-                "productLack": { // 缺货标识，null 为不缺货
-                    "productId": 1，
-                    "startTime": "2018-01-01", // 缺货开始时间
-                    "endTime": "2018-01-20" // 缺货结束时间
-                },
-                "productUnits": [ // 规格列表
-                    {
-                        "cubage": 0,
-                        "grossweight": 234,
-                        "guige": "123", // 规格名
-                        "height": 234,
-                        "id": 8088, // 规格ID
-                        "length": 0, 
-                        "minimum": 234,
-                        "minimumType": null,
-                        "netweight": 234,
-                        "perunit": 234, // 转化率
-                        "price": null, 
-                        "productId": 4697, 
-                        "unit": "袋", // 单位
-                        "width": 234
+        "data":{
+            "buttonPermissions": [],
+            "dataSums": null,
+            "pageNo": 1,
+            "total": 0
+            "datas": [
+                {
+                    "businessTypeIds": null, // 餐饮业态ID [1, 2, 3]
+                    "createTime": "2018-11-16 06:09:12", // 创建时间
+                    "customFlg": 0, // 是否定制 0 未定制 1 定制
+                    "customerIds": null, // 若为定制 则 定制的客户ID [1, 2, 3]
+                    "deleteFlg": 0, 
+                    "followFlg": 0,
+                    "id": 4697, // 产品ID
+                    "longName": "", 
+                    "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/0",
+                    "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/0", // 产品主图
+                    "name": "345", // 产品名
+                    "pno": "3245", // 品号
+                    "process": 3, // 完善度，3/4, 4是固定写死
+                    "processContent": 1, // 内容完善状态 0 未完善 1 已完善
+                    "processInvoice": 0, // 发票完善状态 0 未完善 1 已完善
+                    "processPrice": 1, // 价格完善状态 0 未完善 1 已完善
+                    "productExtra": null,
+                    "productImgs": null,
+                    "productLack": { // 缺货标识，null 为不缺货
+                        "productId": 1，
+                        "startTime": "2018-01-01", // 缺货开始时间
+                        "endTime": "2018-01-20" // 缺货结束时间
                     },
-                    {
-                        "cubage": 0,
-                        "grossweight": 1234,
-                        "guige": "21212321",
-                        "height": 341234,
-                        "id": 8089,
-                        "length": 0,
-                        "minimum": 231412,
-                        "minimumType": null,
-                        "netweight": 9999.9999,
-                        "perunit": 9999.99,
-                        "price": null,
-                        "productId": 4697,
-                        "unit": "件",
-                        "width": 123412
-                    }
-                ],
-                "pyAll": "",
-                "pyCode": "",
-                "status": "LOCK", // 上下架状态 NORMAL 上架 LOCK 下架
-                "stock": null,
-                "taxRate": 0
-            }
-        ]
+                    "productUnits": [ // 规格列表
+                        {
+                            "cubage": 0,
+                            "grossweight": 234,
+                            "guige": "123", // 规格名
+                            "height": 234,
+                            "id": 8088, // 规格ID
+                            "length": 0, 
+                            "minimum": 234,
+                            "minimumType": null,
+                            "netweight": 234,
+                            "perunit": 234, // 转化率
+                            "price": null, 
+                            "productCart": null,
+                            "productId": 4697, 
+                            "unit": "袋", // 单位
+                            "unitId": 1, // 单位id
+                            "width": 234
+                        },
+                        {
+                            "cubage": 0,
+                            "grossweight": 1234,
+                            "guige": "21212321",
+                            "height": 341234,
+                            "id": 8089,
+                            "length": 0,
+                            "minimum": 231412,
+                            "minimumType": null,
+                            "netweight": 9999.9999,
+                            "perunit": 9999.99,
+                            "price": null,
+                            "productCart": null,
+                            "productId": 4697,
+                            "unit": "件",
+                            "unitId": 1, // 单位id
+                            "width": 123412
+                        }
+                    ],
+                    "pyAll": "",
+                    "pyCode": "",
+                    "relatePnos": null,
+                    "status": "LOCK", // 上下架状态 NORMAL 上架 LOCK 下架
+                    "stock": null,
+                    "taxRate": 0
+                }
+            ]
+        }
     }
 
 ### CP-2. 新增产品
@@ -676,12 +684,16 @@
                             "productId": 1，
                             "startTime": "2018-01-01", // 缺货开始时间 
                             "endTime": "2018-01-20" // 缺货结束时间
-                        }
+                        },
+                        "status": "NORMAL"
                     },
+                    "productCart": null,
+                    "productId": 1,
                     "stock": { // 库存
                         "productId": 1,
                         "amount": 20 // 最小单位数量
                     },
+                    "supplierPrice": null,
                     "unit": "盒", // 单位名
                     "unitId": 2,  // 单位ID
                     "width": 15.5 // 宽度
