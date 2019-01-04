@@ -958,7 +958,7 @@
 #### 参数
     keyword // 客户名称/品名/品号
     customerType // 客户类型 A、P、P2P、C
-    status // 审核状态 
+    status // 签约状态 NORMAL-正常 LOCK-锁定
     buttonPermissionFlg // 是否获取权限按钮 0-否 1-是
     pageNo // 页码
     pageSize // 行数
