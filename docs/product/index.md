@@ -704,7 +704,7 @@
         {
             "productId": 1, // 产品ID
             "businessTypeId": 1, // 产品业态ID
-            "businessTypeCode": "|001|002|" // 产品业态码
+            "businessTypeCode": "-001-002-" // 产品业态码
         }
     ]
 #### 响应
@@ -746,7 +746,7 @@
         "msg": "",
         "data": [
             {
-                "code": "|16|",          // 业态编码
+                "code": "-16-",          // 业态编码
                 "deleteFlg": 0,
                 "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g02.png",
                 "hasProductCnt": 6,     // 产品数
