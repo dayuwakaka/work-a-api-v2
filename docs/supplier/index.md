@@ -508,17 +508,20 @@
     POST /v2/supplier/price/askfor/{id}/ladder
 #### 参数
     id: 主键id（采购供货价格id） 仅仅拼接在uri 即可
-    [
-        {
-            supplierId: 1, // 经销商id
-            productId: 1, // 产品id
-            productUnitId: 1, // 产品规格id
-            amount: 1, // 起订量
-            price: 2, // 签约价
-            effectDate: "2018-12-12 12:12:12" // 生效日期
-        },
-        ...
-    ]
+    {
+        "ladderList": [
+            {
+                supplierId: 1, // 经销商id
+                productId: 1, // 产品id
+                productUnitId: 1, // 产品规格id
+                amount: 1, // 起订量
+                price: 2, // 签约价
+                effectDate: "2018-12-12 12:12:12" // 生效日期
+            },
+            ...
+        ],
+        "remark": "asdfasdfasd" // 备注
+    }
 #### 响应
     {
         "code": 100000,
@@ -1344,6 +1347,7 @@
         price: 2, // 签约价
         effectDate: "2018-12-12 12:12:12" // 生效日期
         onlyCode: "as-dhj-fdfs-as-asdf" // 申请唯一码
+        remark: "" // 备注
     }
 #### 响应
     {
@@ -1384,14 +1388,6 @@
         "code": 100000,
         "msg": "",
         "data": {
-            "buttonPermissions": [
-                {
-                    "setRunButton": true, // 确认执行按钮
-                    "editButton": true, // 修改按钮
-                    "delButton": true, // 删除按钮
-                    "logButton": true // 日志按钮
-                }
-            ],
             "datas": [
                 {
                     "opInfo": "订单状态锁定", // 操作内容
@@ -1450,5 +1446,49 @@
         "data": {
             "PA1812290001": true,
             "pa1812290002": false
+        }
+    }
+    
+### CG-83. 供应商产品列表
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/supplier/product
+#### 参数
+    depotId 仓库id // 采购退单调用要传出库仓id
+    *supplierId 供应商id
+    keyword // 品名品号
+    pageNo 1 // 页码
+    pageSize 25 // 行数
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            datas: [
+                {
+                    "price": 1280, // 采购价格
+                    "productId": 4523, // 产品id
+                    "productUnit": {
+                        "guige": "170g/盒*40盒", // 规格
+                        "product": {                            
+                            "name": "冰鲜三文鱼扒 ", // 品名
+                            "pno": "F001", // 品号
+                            "customFlg": 0, // 定制标识  0 常规品 1 定制品
+                            "productLack": null, // 产品断货标识，若未null 则不缺货 反之亦然
+                            "status": "NORMAL" // 产品状态 NORMAL - 正常 LOCK - 下架
+                        },
+                        "stock": {
+                            "amount": 0, // 库存数量
+                        },
+                        "unit": "件" // 单位
+                    },
+                    "productUnitId": 7951, // 产品规格id
+                    "supplierId": 5553,
+                    "supplierName": "北京利旺通达商贸有限公司"
+                }
+            ]
         }
     }

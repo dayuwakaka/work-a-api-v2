@@ -851,7 +851,7 @@
     pno // 品号
     businessTypeId // 餐饮业态
     rawFlg // 原料品 YES-是 NO-否
-    runType // 定时修改价格 0-否 1-是
+    runType // NOW - 是 TASK - 否
     buttonPermissionFlg // 获取权限按钮 0-否 1-是
     pageNo // 页码
     pageSize // 行数
@@ -906,7 +906,7 @@
                     },
                     "rawFlg": "NONE", // 原料品 YES-是 NO-否 NONE-未设置
                     "runTime": "", // 定时执行时间
-                    "runType": "NOW", // 定时修改价格 NOW-否 TASK-否
+                    "runType": "NOW", // 定时修改价格 NOW-否 TASK-是
                     "status": "PASS"  // 审核状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
                 },
             ]
