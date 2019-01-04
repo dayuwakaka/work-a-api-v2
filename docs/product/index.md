@@ -768,7 +768,7 @@
                 "parentId": 0,          // 上级业态id
                 "pyCode": "",           // 拼音编码
                 "sIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png",
-                "showFlg": 1,           // 是否显示 1 显示 2 隐藏
+                "showFlg": 1,           // 是否显示 1 显示 0 隐藏
                 "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w02.png"
             }
         ]
@@ -824,7 +824,7 @@
 #### 参数
     *id: 1 // 餐饮业态ID
     {
-        *"show":true // 显示隐藏状态
+        *"show":1 // 显示隐藏状态 0 隐藏  1 显示
     }
 #### 响应
     {
