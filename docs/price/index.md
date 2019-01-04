@@ -1067,7 +1067,7 @@
         "data": null
     }
 
-### JG-25 签约价格管理-获取当前自动审核状态
+### JG-25 签约价格管理-获取自动审核三个按钮
 #### 对接负责人
     梁铁骐
 #### 模块负责人
@@ -1080,7 +1080,11 @@
     {
         "code": 100000,
         "msg": "",
-        "data": OPEN // OPEN - 开启，CLOSE - 关闭
+        "data": {
+            "openButton": false, // 开启按钮
+            "closeButton": false, // 关闭按钮
+            "logButton": false // 日志按钮
+        }
     }
 
 ### JG-26 签约价格管理-开启自动审核
