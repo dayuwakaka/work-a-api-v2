@@ -1048,15 +1048,15 @@
 #### 模块负责人
     梁铁骐
 #### 请求
-    POST /v2/price/sign/askfor/{customerId}
+    POST /v2/price/sign/askfor/batch
 #### 参数
-    *customerId 客户id
     json body
     [
         {
-            productId: 1, // 产品id
-            productUnitId: 2, // 产品规格id
-            price: 12.5 // 签约价
+            *customerId: 1, // 客户id 
+            *productId: 1, // 产品id
+            *productUnitId: 2, // 产品规格id
+            *price: 12.5 // 签约价
         },
         ...
     ]
@@ -1261,14 +1261,10 @@
                     "aPrice": 218, // A价
                     "pPrice": 175, // P价
                     "price": 194.5, // 区域价
-                    "product": {
-                        "name": "洋风椰蓉蓝莓大福",
-                        "pno": "1671", // 品号
-                    },
-                    "productUnit": {
-                        "guige": "250g（10枚）/袋*20袋", // 规格
-                        "unit": "件" // 单位
-                    }
+                    "productName": "洋风椰蓉蓝莓大福",
+                    "pno": "1671", // 品号
+                    "giuge": "规格",// 规格
+                    "unit": "单位" // 单位
                 },
                 ...
             ]
@@ -1509,8 +1505,9 @@
     GET /v2/price/area/askfor/export
 #### 参数
     keyword // 品名/品号
+    pathId // 区域编号 060202
     status // 审核状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
-    checkCode // 下载码
-    date // 导出日期 yyyy-MM
+    *checkCode // 下载码
+    *date // 导出日期 yyyy-MM
 #### 响应
     stream
