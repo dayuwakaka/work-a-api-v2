@@ -1362,6 +1362,7 @@
     GET /v2/price/area/askfor
 #### 参数
     keyword // 品名/品号
+    pathId // 区域编码 060202
     status // 审核状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
     buttonPermissionFlg // 是否获取权限按钮 0-否 1-是 
     pageNo // 页码
