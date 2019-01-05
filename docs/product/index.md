@@ -627,12 +627,10 @@
     supplierId: 1 // 供应商ID， 传递供应商ID 是在进行产品定价的时候 需要带出产品的供应商价格
     depotId: 1 // 仓ID， 传递仓ID，是需要产品匹配库存存量
     productunitIds[]:1,2,7  // 产品规格
-    ---------------------------以下四个has开头的参数决定是否查询价格和库存 ture查询 & false不查询-----------------------------------------
+    ---------------------------以下三个has开头的参数决定是否查询价格和库存 ture查询 & false不查询-----------------------------------------
     hasPrice:           // 客户某个区域产品价格
 		customerId
 		pathId
-	hasSupplierPrice:   // 供应商产品价格
-		*supplierId
 	hasStock:           // 客户某个区域产品库存, pathId & depotId 二选一
 		customerId
 		*pathId
@@ -693,7 +691,6 @@
                         "productId": 1,
                         "amount": 20 // 最小单位数量
                     },
-                    "supplierPrice": null,
                     "unit": "盒", // 单位名
                     "unitId": 2,  // 单位ID
                     "width": 15.5 // 宽度
@@ -786,6 +783,7 @@
         "name": "xx", // 餐饮业态名称
         "showFlg": 1, // 是否显示 0 不显示 1 显示
         "parentId": 1, // 父餐饮业态ID
+        "sIcon":"http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png"
     }
 #### 响应
     {
