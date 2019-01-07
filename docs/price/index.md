@@ -1350,13 +1350,13 @@
         "data": null
     }
 
-### JG-40 签约价管理-获取自动审核按钮权限
+### JG-40 签约价管理-获取自动审核相关按钮
 #### 对接负责人
     梁铁骐
 #### 模块负责人
     梁铁骐
 #### 请求
-    PUT /v2/price/sign/auto/auth
+    PUT /v2/price/sign/auto/menus
 #### 参数
     无
 #### 响应
