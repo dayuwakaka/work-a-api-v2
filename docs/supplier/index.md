@@ -1220,6 +1220,9 @@
                         "name": "香草凤尾虾", // 品名
                         "pno": "0151", // 品号
                         "unit": "盒" // 单位
+                         "stock": {
+                             "amount": 150, // 库存数量
+                         },
                     },
                     "productUnitId": 52, // 产品规格id
                     "productId": 12, // 产品id
