@@ -540,7 +540,7 @@
 #### 参数
     keyword // 品号/品名
     supplierName // 经销商名称
-    deleteFlg // 签约状态
+    deleteFlg // 签约状态 0-正常 1-失效
     type // NOW-立即生效 HISTORY-追溯历史 FUTURE-定时执行
     ladderFlg // 定量价格 0-未设置 1-已设置
     buttonPermissionFlg // 获取权限按钮 0-否 1-是
@@ -899,7 +899,6 @@
     {
         *id: 1, // 主键
         *supplierId: 1, // 经销商id
-        *supplierName: "xxx", // 经销商名称
         contactName: '阎锡山', // 联系人
         contactMobile： 13333333333, // 联系电话
         contactPathId: 060202, // 区域id
@@ -1158,7 +1157,6 @@
     {
         *id: 1, // 主键id
         *supplierId: 1, // 经销商id
-        *supplierName: "xxx", // 经销商名称
         contactName: '阎锡山', // 联系人
         contactMobile： 13333333333, // 联系电话
         contactPathId: 060202, // 区域id
