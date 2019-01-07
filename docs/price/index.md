@@ -401,21 +401,15 @@
             "pageNo": 1,
             "datas": [
                 {
-                    "guige": "500g(23-25枚）/盒", // 规格
-                    "id": 1,
-                    "price": { // 价格信息
-                        "aPrice": 40.12, // A价
-                        "pPrice": 32.5, // P价
-                        "productUnitId": 1, // 产品规格id
-                        "signPrice": 0, // 签约价
-                    },
-                    "product": {
-                        "id": 1,
-                        "name": "香草凤尾虾", // 品名
-                        "pno": "0151", // 品号
-                    },
                     "productId": 1, // 产品id
                     "unit": "盒" // 单位
+                    "aPrice": 40.12, // A价
+                    "pPrice": 32.5, // P价
+                    "productUnitId": 1, // 产品规格id
+                    "guige": "500g(23-25枚）/盒", // 规格
+                    "name": "香草凤尾虾", // 品名
+                    "pno": "0151", // 品号
+                    "price": 0.0 // 签约价
                 },
                 ...
             ]
