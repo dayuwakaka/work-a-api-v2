@@ -899,7 +899,6 @@
     {
         *id: 1, // 主键
         *supplierId: 1, // 经销商id
-        *supplierName: "xxx", // 经销商名称
         contactName: '阎锡山', // 联系人
         contactMobile： 13333333333, // 联系电话
         contactPathId: 060202, // 区域id
@@ -1158,7 +1157,6 @@
     {
         *id: 1, // 主键id
         *supplierId: 1, // 经销商id
-        *supplierName: "xxx", // 经销商名称
         contactName: '阎锡山', // 联系人
         contactMobile： 13333333333, // 联系电话
         contactPathId: 060202, // 区域id
