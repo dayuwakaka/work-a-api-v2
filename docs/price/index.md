@@ -53,21 +53,8 @@
                     "unlockButton": false, // 解锁
                     "editButton": true, // 编辑
                     "logButton": true // 操作日志
-                },
-                {
-                    "deleteButton": false, // 删除
-                    "lockButton": true, // 锁定
-                    "unlockButton": false, // 解锁
-                    "editButton": true, // 编辑
-                    "logButton": true // 操作日志
-                },
-                {
-                    "deleteButton": false, // 删除
-                    "lockButton": true, // 锁定
-                    "unlockButton": false, // 解锁
-                    "editButton": true, // 编辑
-                    "logButton": true // 操作日志
                 }
+                ...
             ],
             "dataSums": null,
             "datas": [
@@ -93,54 +80,7 @@
                         
                     ]
                 },
-                {
-                    "specialId": 6,
-                    "productId": 2231,
-                    "pno": "0755",
-                    "productName": "蒜蓉粉丝鲍（特惠装）",
-                    "productunitId": 3869,
-                    "unitName": "件",
-                    "aPrice": 742,
-                    "pPrice": 594,
-                    "tPrice": 56,
-                    "status": "NORMAL",
-                    "startDate": "2017-12-21",
-                    "endDate": "2018-05-31",
-                    "businessunitType":"ALL",
-                    "businessunit": [
-                        
-                    ],
-                    "customerAttrType":"PART",
-                    "customerAttrList": [
-                        3,
-                        1,
-                        2
-                    ]
-                },
-                {
-                    "specialId": 5,
-                    "productId": 1195,
-                    "pno": "eb0050",
-                    "productName": "龙虾（冻煮）（400-450g/只）（ASAE）",
-                    "productunitId": 2056,
-                    "unitName": "件",
-                    "aPrice": 630,
-                    "pPrice": 598,
-                    "tPrice": 22,
-                    "status": "NORMAL",
-                    "startDate": "2017-12-21",
-                    "endDate": "2018-05-31",
-                    "businessunitType":"PART",
-                    "businessunit": [
-                        3,
-                        16,
-                        27
-                    ],
-                    "customerAttrType":"ALL",
-                    "customerAttrList": [
-                        
-                    ]
-                }
+                ...
             ],
             "pageNo": 1,
             "total": 3
@@ -435,22 +375,7 @@
                     "createUserName": "樊嘉辉",
                     "createTime": "2018-08-25 14:19:42"
                 },
-                {
-                    "specialId": 64,
-                    "content": "锁定特价",
-                    "createRole": 0,
-                    "createUser": 0,
-                    "createUserName": "樊嘉辉",
-                    "createTime": "2018-08-25 14:19:42"
-                },
-                {
-                    "specialId": 64,
-                    "content": "删除特价",
-                    "createRole": 0,
-                    "createUser": 0,
-                    "createUserName": "樊嘉辉",
-                    "createTime": "2018-08-25 14:19:42"
-                }
+                ...
             ],
             "pageNo": 1,
             "total": 3
@@ -476,21 +401,15 @@
             "pageNo": 1,
             "datas": [
                 {
-                    "guige": "500g(23-25枚）/盒", // 规格
-                    "id": 1,
-                    "price": { // 价格信息
-                        "aPrice": 40.12, // A价
-                        "pPrice": 32.5, // P价
-                        "productUnitId": 1, // 产品规格id
-                        "signPrice": 0, // 签约价
-                    },
-                    "product": {
-                        "id": 1,
-                        "name": "香草凤尾虾", // 品名
-                        "pno": "0151", // 品号
-                    },
                     "productId": 1, // 产品id
                     "unit": "盒" // 单位
+                    "aPrice": 40.12, // A价
+                    "pPrice": 32.5, // P价
+                    "productUnitId": 1, // 产品规格id
+                    "guige": "500g(23-25枚）/盒", // 规格
+                    "name": "香草凤尾虾", // 品名
+                    "pno": "0151", // 品号
+                    "price": 0.0 // 签约价
                 },
                 ...
             ]
@@ -517,20 +436,18 @@
             "pageNo": 1,
             "datas": [
                 {
-                    "guige": "500g(23-25枚）/盒", // 规格
-                    "id": 1,
-                    "price": { // 价格信息
-                        "aPrice": 40.12, // A价
-                        "pPrice": 32.5, // P价
-                        "productUnitId": 1, // 产品规格id
-                        "signPrice": 0, // 签约价
-                    },
-                    "product": {
-                        "id": 1,
-                        "name": "香草凤尾虾", // 品名
-                        "pno": "0151", // 品号
-                    },
-                    "productId": 1, // 产品id
+                    "aPrice": 75.9, // A价
+                    "customerId": 32178,
+                    "deleteFlg": 0,
+                    "guige": "1.68kg（24枚）/盒", // 规格
+                    "id": 522352, // 主键id
+                    "pPrice": 61.5, // P价
+                    "pno": "0110", // 品号
+                    "price": 61.5, // 签约价
+                    "productId": 722, // 产品id
+                    "productName": "汉堡虾排（餐饮量贩装）【原名：汉堡虾排（特惠装）】", // 品名
+                    "productUnitId": 1259, // 产品规格id
+                    "status": "NORMAL",
                     "unit": "盒" // 单位
                 },
                 ...
@@ -558,21 +475,19 @@
             "pageNo": 1,
             "datas": [
                 {
-                    "guige": "500g(23-25枚）/盒", // 规格
-                    "id": 1,
-                    "price": { // 价格信息
-                        "aPrice": 40.12, // A价
-                        "pPrice": 32.5, // P价
-                        "productUnitId": 1, // 产品规格id
-                        "signPrice": 66, // 签约价
-                    },
-                    "product": {
-                        "id": 1,
-                        "name": "香草凤尾虾", // 品名
-                        "pno": "0151", // 品号
-                    },
-                    "productId": 1, // 产品id
-                    "unit": "盒" // 单位
+                    "aPrice": 43.38, // A价
+                    "createTime": "2019-01-07 13:23:02.0", // 提交时间
+                    "deleteFlg": 0,
+                    "guige": "750g（50枚）", // 规格
+                    "id": 0,
+                    "pPrice": 34.7, // P价
+                    "pno": "0140", // 品号
+                    "price": 2, // 签约价
+                    "productId": 3, // 产品id
+                    "productName": "鲜虾春卷", // 品名
+                    "productUnitId": 9, // 产品规格id
+                    "status": "ASKFOR",
+                    "unit": "盒", // 单位
                 }
             ]
         }
@@ -1435,13 +1350,13 @@
         "data": null
     }
 
-### JG-40 签约价管理-获取自动审核按钮权限
+### JG-40 签约价管理-获取自动审核相关按钮
 #### 对接负责人
     梁铁骐
 #### 模块负责人
     梁铁骐
 #### 请求
-    PUT /v2/price/sign/auto/auth
+    PUT /v2/price/sign/auto/menus
 #### 参数
     无
 #### 响应
