@@ -793,6 +793,10 @@
         "data": {
             "completeTime": "",
             "createTime": "2018-12-10 09:46:43",
+            "contactAddress": "", // 联系详细地址
+            "contactMobile": "", // 联系电话
+            "contactName": "", // 联系人
+            "contactPathId": "", // 区域code
             "deliverType": "THIRD", // 配送方式 SELF 自送 THIRD 物流配送
             "depotId": 1,
             "depotName": "大连铁越仓", // 入库仓
@@ -804,6 +808,7 @@
                 {
                     "giftFlg": 0, // 赠品标识 0-否 1-是
                     "pcount": 1, // 数量
+                    "giftCount": 0, // 赠品数量
                     "price": 1, // 价格
                     "productUnit": {
                         "guige": "500g(23-25枚）/盒", // 规格
@@ -812,18 +817,12 @@
                         "unit": "盒" // 单位
                     },
                     "id": 1, // 主键id
+                    "productId": 27, // 产品id
+                    "productUnitId": 52, // 产品规格id
                     "totalprice": 1 // 小计
                 },
                 ...
             ],
-            "supplier": {
-                "city": "", // 市
-                "contactAddress": "", // 详细地址
-                "contactMobile": "", // 手机号
-                "contactName": "", // 联系人
-                "county": "", // 区
-                "province": "", // 省
-            },
             "paymode": "OUTBUY", // 支付方式
             "planCompleteTime": "2018-12-10 16:23:23", // 计划入库时间
             "planSendTime": "2018-12-12 00:00:00", // 计划发出时间
@@ -831,6 +830,7 @@
             "san": 1, // 散货
             "sendTime": "2018-12-18 12:12:12", // 发出时间
             "status": "INVALID", // INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
+            "supplierId": 2637, // 供应商id
             "supplierName": "山西代县文庙超市", // 供应商名称
             "totalprice": 1 // 总计
         }
@@ -1203,6 +1203,10 @@
         "data": {
             "completeTime": "",
             "createTime": "2018-12-12 08:13:32",
+            "contactAddress": "西岗区物流商贸大厦", // 联系详细地址
+            "contactMobile": "13333333336", // 联系电话
+            "contactName": "李斯", // 联系人
+            "contactPathId": "060202", // 联系地址code
             "deliverType": "THIRD", // 配送方式 SELF 自送 THIRD 物流配送
             "depotName": "大连铁越仓", // 入库仓
             "jian": 0, // 总件数
@@ -1219,6 +1223,8 @@
                         "pno": "0151", // 品号
                         "unit": "盒" // 单位
                     },
+                    "productUnitId": 52, // 产品规格id
+                    "productId": 12, // 产品id
                     "totalprice": 5.94 // 小计
                 }
             ],
@@ -1229,14 +1235,7 @@
             "san": 4, // 散货
             "sendTime": "", // 发出时间
             "status": "INVALID", // INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
-            "supplier": {
-                "city": "北京市", // 市
-                "contactAddress": "朝阳区", // 详细地址
-                "contactMobile": "13xxxxxxxxx", // 手机号
-                "contactName": "某某某", // 联系人
-                "county": "朝阳区", // 区
-                "province": "北京", // 省
-            },
+            "supplierId": 2674, // 经销商id
             "supplierName": "湖北武汉经销商", // 供应商名称
             "totalprice": 5.94 // 总计
         }
