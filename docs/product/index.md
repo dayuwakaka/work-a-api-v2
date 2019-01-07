@@ -837,9 +837,10 @@
 #### 模块负责人
     尹洪明
 #### 请求
-    DELETE /v2/product/businessType/{id}
+    DELETE /v2/product/businessType/{delId}/{toId}
 #### 参数
-    *id: 1 // 餐饮业态ID
+    *delId: 1 // 需要删除的餐饮业态ID
+    toId: 2 // 移至的餐饮业态ID 无时，toId=0
 #### 响应
     {
         "code": 100000,
