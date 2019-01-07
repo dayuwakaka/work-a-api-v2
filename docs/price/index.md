@@ -561,7 +561,7 @@
 #### 模块负责人
     梁铁骐
 #### 请求
-    POST /v2/price/sign/cancel
+    PUT /v2/price/sign/cancel
 #### 参数
     *[id,id]
     主键id集合
