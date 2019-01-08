@@ -812,9 +812,12 @@
                     "price": 1, // 价格
                     "productUnit": {
                         "guige": "500g(23-25枚）/盒", // 规格
-                        "name": "香草凤尾虾", // 品名
-                        "pno": "0151", // 品号
                         "unit": "盒" // 单位
+                        "product": {
+                            "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/2442f15cbb285be1ad38c26dc8e0ec29.jpg", // 图片url
+                            "name": "至Q虾球", // 品名
+                            "pno": "0036", // 品号
+                        }
                     },
                     "id": 1, // 主键id
                     "productId": 27, // 产品id
@@ -1225,6 +1228,7 @@
                             "pno": "0151", // 品号
                             "productLack": null,
                             "status": "NORMAL"
+                            "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg", // 退单url
                         },
                         "stock": {
                              "amount": 150, // 库存数量
@@ -1485,7 +1489,8 @@
                             "pno": "F001", // 品号
                             "customFlg": 0, // 定制标识  0 常规品 1 定制品
                             "productLack": null, // 产品断货标识，若未null 则不缺货 反之亦然
-                            "status": "NORMAL" // 产品状态 NORMAL - 正常 LOCK - 下架
+                            "status": "NORMAL", // 产品状态 NORMAL - 正常 LOCK - 下架
+                            "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/0", // 图片url
                         },
                         "stock": {
                             "amount": 0, // 库存数量

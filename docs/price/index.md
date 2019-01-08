@@ -608,7 +608,7 @@
                         "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg", // 产品主图
                         "name": "香草凤尾虾", // 品名
                         "pno": "0151", // 品号
-                        "process": 4, // 信息完整度分母
+                        "process": 3, // 完善度 写死 3/4
                         "processContent": 1, // 内容信息完整度 0-待维护 1-已完善
                         "processInvoice": 1, // 发票信息完整度 0-待维护 1-已完善
                         "processPrice": 1, // 价格信息完整度 0-待维护 1-已完善
@@ -982,7 +982,7 @@
         "data": null
     }
 
-### JG-25 签约价格管理-获取自动审核三个按钮
+### JG-25 签约价格管理-获取自动审核三个按钮(作废)
 #### 对接负责人
     梁铁骐
 #### 模块负责人
@@ -1240,7 +1240,13 @@
         "msg": "",
         "data": null
     }
-    上传的数据校验失败：
+    上传的数据出现错误:
+    {
+         "code": 1,
+         "msg": "",
+         "data": "数据错误"
+    }
+    上传的数据校验失败:
     {
         "code": 0,
         "msg": "",
@@ -1356,7 +1362,7 @@
 #### 模块负责人
     梁铁骐
 #### 请求
-    PUT /v2/price/sign/auto/menus
+    GET /v2/price/sign/auto/menus
 #### 参数
     无
 #### 响应
@@ -1364,9 +1370,9 @@
         "code": 100000,
         "msg": "",
         "data": {
-            "openButton": false,
-            "closeButton": false,
-            "logButton": false
+            "openButton": false, // 开启按钮
+            "closeButton": false, // 关闭按钮
+            "logButton": false // 日志按钮
         }
     }
 
