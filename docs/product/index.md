@@ -406,9 +406,27 @@
                 2,
                 3
             ],
+            "businessTypes": [
+                {
+                    "code": "-119-121-",
+                    "deleteFlg": 0,
+                    "gIcon": "",
+                    "hasProductCnt": 1,
+                    "id": 121,
+                    "level": 2,
+                    "name": "东北菜系",
+                    "parentId": 119,
+                    "pyCode": "",
+                    "sIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190108092630882-7112.jpg",
+                    "showFlg": 1,
+                    "wIcon": ""
+                },
+                ......
+            ],
             "createTime": "2018-12-06 07:27:16", // 创建时间
             "customFlg": 1,
             "customerIds": null,
+            "customers": null,
             "deleteFlg": 0,
             "id": 4708,
             "longName": "longName", // 带广告名称
