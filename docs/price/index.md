@@ -1364,9 +1364,9 @@
         "code": 100000,
         "msg": "",
         "data": {
-            "openButton": false,
-            "closeButton": false,
-            "logButton": false
+            "openButton": false, // 开启按钮
+            "closeButton": false, // 关闭按钮
+            "logButton": false // 日志按钮
         }
     }
 
