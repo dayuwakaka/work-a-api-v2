@@ -407,7 +407,7 @@
                     "pPrice": 32.5, // P价
                     "productUnitId": 1, // 产品规格id
                     "guige": "500g(23-25枚）/盒", // 规格
-                    "name": "香草凤尾虾", // 品名
+                    "productName": "香草凤尾虾", // 品名
                     "pno": "0151", // 品号
                     "price": 0.0 // 签约价
                 },
@@ -561,7 +561,7 @@
 #### 模块负责人
     梁铁骐
 #### 请求
-    POST /v2/price/sign/cancel
+    PUT /v2/price/sign/cancel
 #### 参数
     *[id,id]
     主键id集合
