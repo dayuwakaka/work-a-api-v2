@@ -982,7 +982,7 @@
         "data": null
     }
 
-### JG-25 签约价格管理-获取自动审核三个按钮
+### JG-25 签约价格管理-获取自动审核三个按钮(作废)
 #### 对接负责人
     梁铁骐
 #### 模块负责人
@@ -1356,7 +1356,7 @@
 #### 模块负责人
     梁铁骐
 #### 请求
-    PUT /v2/price/sign/auto/menus
+    GET /v2/price/sign/auto/menus
 #### 参数
     无
 #### 响应
@@ -1364,9 +1364,9 @@
         "code": 100000,
         "msg": "",
         "data": {
-            "openButton": false,
-            "closeButton": false,
-            "logButton": false
+            "openButton": false, // 开启按钮
+            "closeButton": false, // 关闭按钮
+            "logButton": false // 日志按钮
         }
     }
 
