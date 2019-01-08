@@ -1217,10 +1217,16 @@
                     "price": 1, // 价格
                     "productUnit": {
                         "guige": "500g(23-25枚）/盒", // 规格
-                        "name": "香草凤尾虾", // 品名
-                        "pno": "0151", // 品号
                         "unit": "盒" // 单位
-                         "stock": {
+                        "product": {
+                            "id": 1,
+                            "longName": "香草凤尾虾-专业开背，秘制加工，中西餐厅新食尚~",
+                            "name": "香草凤尾虾", // 品名
+                            "pno": "0151", // 品号
+                            "productLack": null,
+                            "status": "NORMAL"
+                        },
+                        "stock": {
                              "amount": 150, // 库存数量
                          },
                     },
