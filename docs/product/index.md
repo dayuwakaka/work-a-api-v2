@@ -176,6 +176,20 @@
                 2,
                 3
             ],
+            "customers": [
+                {
+                    "businessunit": 44,
+                    "businessunitName": "P2P-CS",
+                    "companyName": "18611318343",
+                    "customerId": 24404,        // 客户id
+                    "shortName": "18611318343", // 客户名
+                    "srRoleId": 3913,
+                    "srRoleName": "孙奇",
+                    "ssRoleId": 29319,
+                    "ssRoleName": "孙启萌1",
+                    "type": "A"
+                }
+            ],
             "deleteFlg": 0,
             "id": 4708, // 产品ID
             "longName": "", 
