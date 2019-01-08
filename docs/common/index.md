@@ -100,8 +100,8 @@
 #### 请求
     GET /v2/common/download
 #### 参数
-    *fileName:"" // 文件名
-    readPath:"" // 定制路径 默认为空
+    *fileName:"" // 下载文件名
+    *readFileName*:"" // 读取文件名
 #### 响应
     文件流
 
