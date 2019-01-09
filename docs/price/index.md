@@ -590,7 +590,7 @@
     pno // 品号
     businessTypeId // 餐饮业态
     rawFlg // 原料品 YES-是 NO-否
-    runType // 定时修改价格 0-否 1-是
+    runType // 定时修改价格 NOW - 否 TASK - 是
     pageNo // 页码
     pageSize // 行数
 
@@ -766,7 +766,7 @@
     pno // 品号
     businessTypeId // 餐饮业态
     rawFlg // 原料品 YES-是 NO-否
-    runType // NOW - 是 TASK - 否
+    runType // 定时修改价格 NOW - 否 TASK - 是
     buttonPermissionFlg // 获取权限按钮 0-否 1-是
     pageNo // 页码
     pageSize // 行数
@@ -1169,9 +1169,9 @@
             "datas": [
                 {
                     "areaName": "黑龙江-大庆市", // 区域
-                    "createRemark": "xxx", // 备注
-                    "createTime": "2018-12-12 12:12:12", // 操作信息-时间
-                    "createUserName": "嘻嘻", // 操作信息-操作人
+                    "remark": "xxx", // 备注 
+                    "updateTime": "2018-12-12 12:12:12", // 操作信息-时间
+                    "updateUserName": "嘻嘻", // 操作信息-操作人
                     "id": 22181,
                     "aPrice": 218, // A价
                     "pPrice": 175, // P价
