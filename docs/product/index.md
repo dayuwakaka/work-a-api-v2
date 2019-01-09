@@ -8,15 +8,18 @@
     GET /v2/product
 #### 参数
     keyword : "" // 关键字
-    pno : "" // 品名
-    businessTypeId： 0 // 产品业态ID
-    taxCategoryId: 0 // 税收分类ID
+    pno : "" // 品号
+    name: "" // 品名
     status："NORMAL" //上架状态 NORMAL 上架 LOCK 下架
-    lackFlg : 1 // 是否缺货 0 不缺货 1 缺货
-    customFlg: 1 // 是否定制 0 不定制 1 定制
-    processContent: 0 // 内容信息状态 0 待维护 1 已完善
-    processPrice: 0 // 价格信息状态 0 待维护 1 已完善
-    processInvoice： 0 // 发票信息状态 0 待维护 1 已完善
+    customFlg: 1 定制标志 0 非定制 1 定制
+    businessTypeId： 0 // 产品业态ID
+    businessTypeCode: -16- 业态编码
+    taxCategoryId: 0 // 税收分类ID
+    processContent: 1 // 内容是否完善 0 未完善  1 完善
+    processPrice: 1  // 价格是否完善 0 未完善  1 完善
+    processInvoice: 1 // 发票是否完善  0 未完善  1 完善
+    lackFlg: 1          // 断货标志 0 非断货 1 断货
+    buttonPermissionFlg: 1 
     pageNo:1 // 页码 默认1
     pageSize: 25 // 页面条数 默认25
 #### 响应
