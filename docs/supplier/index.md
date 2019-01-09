@@ -668,11 +668,11 @@
                         "pno": "0151", // 品号
                         "unit": "盒" // 单位
                     },
-                    "sPrice": 12, // 原单价
+                    "sourcePrice": 200,, // 原价
                     "status": "ASKFOR", // 审核状态  ASKFOR-待审核 PASS-通过 REFUSE-拒绝
                     "supplierId": 1, // 经销商id
                     "supplierName": "湖北武汉",
-                    "tPrice": 12, // 目标单价
+                    "targetPrice": 202,, // 目标价
                 },
                 ...
             ],
