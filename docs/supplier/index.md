@@ -540,7 +540,7 @@
 #### 参数
     keyword // 品号/品名
     supplierName // 经销商名称
-    deleteFlg // 签约状态 0-正常 1-失效
+    status // 签约状态 0-正常 1-失效
     type // NOW-立即生效 HISTORY-追溯历史 FUTURE-定时执行
     ladderFlg // 定量价格 0-未设置 1-已设置
     buttonPermissionFlg // 获取权限按钮 0-否 1-是
@@ -559,7 +559,7 @@
             ],
             "datas": [
                 {
-                    "deleteFlg": 0, // 签约状态 0-正常 1-失效
+                    "status": 0, // 签约状态 0-正常 1-失效
                     "effectDate": "2018-12-10", // 追溯时间、启动时间、生效日期
                     "id": 1,
                     "ladderFlg": 0, // 定量价格 0-未设置 1-已设置
@@ -810,6 +810,7 @@
                     "pcount": 1, // 数量
                     "giftCount": 0, // 赠品数量
                     "price": 1, // 价格
+                    "priceFlg": 0, // 是否调整价格 0 - 未调整；1 - 待审核；2 - 通过
                     "productUnit": {
                         "guige": "500g(23-25枚）/盒", // 规格
                         "unit": "盒" // 单位

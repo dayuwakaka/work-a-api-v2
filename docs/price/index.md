@@ -1169,9 +1169,9 @@
             "datas": [
                 {
                     "areaName": "黑龙江-大庆市", // 区域
-                    "createRemark": "xxx", // 备注
-                    "createTime": "2018-12-12 12:12:12", // 操作信息-时间
-                    "createUserName": "嘻嘻", // 操作信息-操作人
+                    "remark": "xxx", // 备注 
+                    "updateTime": "2018-12-12 12:12:12", // 操作信息-时间
+                    "updateUserName": "嘻嘻", // 操作信息-操作人
                     "id": 22181,
                     "aPrice": 218, // A价
                     "pPrice": 175, // P价
