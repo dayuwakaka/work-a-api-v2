@@ -942,6 +942,7 @@
     *pathId: "0101" // 区域ID
     *productId: 1 // 产品ID
     customerId: 0 // 客户ID 默认0
+    *deviceNo:198437512379851  // 设备号
 #### 响应
     {
         "code": 100000,
