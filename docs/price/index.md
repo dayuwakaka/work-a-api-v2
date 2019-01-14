@@ -736,6 +736,7 @@
             },
             ...
         ],
+        rate： 0.3 // 折算比率 0 <= rate <= 1
         createRemark: "xxxx", // 200字符以内或者不传
         *runType: "TASK", // 定时修改价格 NOW-否 TASK-是
         runTime："2018-12-12", // 定时执行时间， TASK-必传 NOW-不传
