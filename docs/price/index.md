@@ -712,6 +712,7 @@
             },
             "productId": 1, // 产品id
             "rawFlg": "NONE", // 原料品， YES-是 NO-否 NONE-未设置
+            "rate": 0.3, // 折算比率
             "updateTime": "2017-01-22 13:06:06", // 操作信息-时间
             "updateUserName": "张婷" // 操作信息-操作人
         }
