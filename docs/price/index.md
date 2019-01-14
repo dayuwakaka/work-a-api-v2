@@ -631,6 +631,7 @@
                     "productId": 1, // 产品id
                     "rawFlg": "NONE", // 原料品， YES-是 NO-否 NONE-未设置
                     "runFlg": "0", // 定时修改价格flg 0-无 1-有
+                    "rate": 0.3, // 折算比率
                     "updateTime": "2017-01-22 13:06:06", // 操作信息-时间
                     "updateUserName": "张婷" // 操作信息-操作人
                 },
@@ -822,6 +823,7 @@
                     },
                     "rawFlg": "NONE", // 原料品 YES-是 NO-否 NONE-未设置
                     "runTime": "", // 定时执行时间
+                    "rate": 0.3, // 折算比率
                     "runType": "NOW", // 定时修改价格 NOW-否 TASK-是
                     "status": "PASS"  // 审核状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
                 },
