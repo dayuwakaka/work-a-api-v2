@@ -1623,6 +1623,8 @@
                 {
                     "customerName": "孙健-泊头", // 客户名称
                     "errorInfo": "", // 错误信息（如果存在，说明是自动执行失败的，并且会携带错误信息显示）
+                    "callbackPdfUrl": "pdf url",
+                    "callBackPdfSysFlg": 1, // pdf 信息是否已同步
                     "id": 1, // 主键id
                     "orderId": "SA180501031673", // 订单号
                     "orderType": "SA", // 订单类型 SA：销售订单，SR：销售退单，AP：调价单
@@ -2420,19 +2422,3 @@
     *date: "" // 时间 2018-01 yyyy-MM
 #### 响应
     数据流
-    
-### FP-91 获取发票的pdflocalurl
-#### 对接负责人
-    梁铁骐
-#### 模块负责人
-    刘宏宇
-#### 请求
-    GET /v2/invoice/formal/{id}/pdf
-#### 参数
-    *id: 101 // 主键id
-#### 响应
-    {
-        "code": 100000,
-        "msg": "",
-        "data": "http://asae.oss-cn-beijing.aliyuncs.com/asae_invoice_12505197.pdf"
-    }
