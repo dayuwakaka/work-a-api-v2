@@ -2407,3 +2407,32 @@
     *endDate: "" // 时间 2018-02-31
 #### 响应
     数据流
+
+### FP-90 待开票订单列表导出
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    刘宏宇
+#### 请求
+    GET /v2/invoice/wait/orders/export?date=2018-12&checkCode=2394
+#### 参数
+    *checkCode: "" // 下载授权码 0035
+    *date: "" // 时间 2018-01 yyyy-MM
+#### 响应
+    数据流
+    
+### FP-91 获取发票的pdflocalurl
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    刘宏宇
+#### 请求
+    GET /v2/invoice/formal/{id}/pdf
+#### 参数
+    *id: 101 // 主键id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": "http://asae.oss-cn-beijing.aliyuncs.com/asae_invoice_12505197.pdf"
+    }
