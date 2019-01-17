@@ -35,7 +35,8 @@
                 {
                     "businessTypeIds": null, // 餐饮业态ID [1, 2, 3]
                     "createTime": "2018-11-16 06:09:12", // 创建时间
-                    "customFlg": 0, // 是否定制 0 未定制 1 定制
+                    "customFlg": 0, // 是否定制 0 非定制 1 定制
+                    "customFlgMore" 0, // 是否定制更详细状态位 0 非定制 1 常规定制 2 专属定制
                     "customerIds": null, // 若为定制 则 定制的客户ID [1, 2, 3]
                     "deleteFlg": 0, 
                     "followFlg": 0,
@@ -118,7 +119,7 @@
             *"name":"测试01", // 产品名
             *"pno":"pnotest01", // 品号 不可重复
             *"taxRate":0.1, // 税率
-            *"customFlg":1 // 是否定制 0 未定制 1 定制
+            *"customFlg":1 // 是否定制 0 未定制 1 常规定制 2 专属定制
         },
         *"productExtra":{ // 产品扩展信息
             "attributes": 1, // 标准类别
@@ -148,7 +149,7 @@
                 
             }
         ],	
-        "customerIds":[1, 2, 3]
+        "customerIds":[1, 2, 3] // 专属定制品的所属客户ID
     }
 #### 响应
     {
@@ -173,8 +174,9 @@
         "data": {
             "businessTypeIds": null,
             "createTime": "2018-12-06 07:27:16", 
-            "customFlg": 1, // 是否定制
-            "customerIds": [ // 定制客户ID数组
+            "customFlg": 1, // 是否定制 0 非定制 1 定制
+            "customFlgMore": 0 // 是否定制 0 非定制 1 常规定制 2 专属定制
+            "customerIds": [ // 专属定制客户ID数组
                 1,
                 2,
                 3
@@ -428,6 +430,7 @@
             ],
             "createTime": "2018-12-06 07:27:16", // 创建时间
             "customFlg": 1,
+            "customFlgMore": 1,
             "customerIds": null,
             "customers": null,
             "deleteFlg": 0,
