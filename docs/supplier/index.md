@@ -743,7 +743,8 @@
                     "editButton": true, // 修改按钮 
                     "delButton": true, // 删除按钮
                     "modifyPriceButton": false, // 修改价格按钮
-                    "logButton": true // 日志查看按钮
+                    "logButton": true， // 日志查看按钮
+                    "backButton" : true // 撤回按钮
                 }
             ],
             "datas": [
@@ -1504,6 +1505,22 @@
                 }
             ]
         }
+    }
+    
+### CG-83. PA单撤回
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/paorder/{orderId}/status/back
+#### 参数
+    *orderId PA单号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
     }
     
 
