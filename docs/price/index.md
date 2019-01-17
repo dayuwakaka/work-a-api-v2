@@ -405,6 +405,7 @@
                     "unit": "盒" // 单位
                     "productLack": null, // 产品断货标识，若未null 则不缺货 反之亦然
                     "productStatus": "LOCK", // NORMAL 正常 LOCK 下架
+                    "customFlg": 0, // 0 非定制品 1 定制品
                     "aPrice": 40.12, // A价
                     "pPrice": 32.5, // P价
                     "productUnitId": 1, // 产品规格id
@@ -444,6 +445,7 @@
                     "guige": "1.68kg（24枚）/盒", // 规格
                     "productLack": null, // 产品断货标识，若未null 则不缺货 反之亦然
                     "productStatus": "LOCK", // NORMAL 正常 LOCK 下架
+                    "customFlg": 0, // 0 非定制品 1 定制品
                     "id": 522352, // 主键id
                     "pPrice": 61.5, // P价
                     "pno": "0110", // 品号
@@ -485,6 +487,7 @@
                     "guige": "750g（50枚）", // 规格
                     "productLack": null, // 产品断货标识，若未null 则不缺货 反之亦然
                     "productStatus": "LOCK", // NORMAL 正常 LOCK 下架
+                    "customFlg": 0, // 0 非定制品 1 定制品
                     "id": 0,
                     "pPrice": 34.7, // P价
                     "pno": "0140", // 品号
