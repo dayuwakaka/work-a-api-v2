@@ -95,6 +95,7 @@
     *fileName:"" // 下载文件名
     *readFileName*:"" // 读取文件名
     type:"EXCEL" // 下载 EXCEL 默认 下载 PDF
+    from:"SERVER" // 下载源 SERVER 服务器 URL 远程URL转发
 #### 响应
     文件流
 
