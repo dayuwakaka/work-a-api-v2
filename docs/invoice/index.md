@@ -2126,7 +2126,8 @@
                     "cancelButton": false, // 作废按钮
                     "logButton": true, // 日志查看按钮
                     "reAddButton": false, // 重开发票按钮
-                    "hedButton": false // 发票信息冲红
+                    "hedButton": false, // 发票信息冲红
+                    "downLoadPdfButton: true // 带脑子发票导出按钮
                 },
                 ...
             ],
