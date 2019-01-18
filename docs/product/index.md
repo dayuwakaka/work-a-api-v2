@@ -12,6 +12,7 @@
     name: "" // 品名
     status："NORMAL" //上架状态 NORMAL 上架 LOCK 下架
     customFlg: 1 定制标志 0 非定制 1 定制
+    customFlgMore: 1 定制标志 0 非定制 1 普通定制 2 专属定制
     businessTypeId： 0 // 产品业态ID
     businessTypeCode: -16- 业态编码
     taxCategoryId: 0 // 税收分类ID
@@ -660,6 +661,7 @@
     keyword: "" // 模糊查询品名、品号
     status: "NORMAL" // 状态 NORMAL 上架 LOCK 下架
     customFlg: 0 // 客户定制 0 常规品 1 定制品
+    customFlgMore: 0 // 客户定制 0 常规品 1 定制品 2 专属定制品
     customerId: 1 // 客户ID， 传递客户ID 是在进行产品定价的时候 需要带出产品的客户签约价格
     pathId: "0101" // 区域ID， 传递区域ID 是在进行产品定价的时候 需要带出产品的区域价格
     supplierId: 1 // 供应商ID， 传递供应商ID 是在进行产品定价的时候 需要带出产品的供应商价格
