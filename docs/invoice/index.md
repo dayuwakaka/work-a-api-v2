@@ -2137,7 +2137,7 @@
                     "invoiceType": 发票类型 NORMAL: 增值税普通发票, SPECIAL: 增值税专用发票
                     "abandonFlg": 0, // 作废状态 0: 正常, 1: 作废
                     "status": "AGREE", // 审核状态
-                    "callbackPdfUrl": "pdf url",
+                    "localPdfUrl": "pdf url",
                     "callBackPdfSysFlg": 1, // pdf 信息是否已同步
                     "totalprice": 123, // 发票金额
                     "type": "RED", // RED 冲红票 BLUE 普通发票
