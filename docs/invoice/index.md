@@ -2132,6 +2132,7 @@
             "datas": [
                 {
                     "callbackInvoiceNo": "202012312" // 发票号码
+                    "callbackInvoiceCode": "123123123", // 发票代码
                     "name": "樊家辉的82年凯龙", // 发票抬头
                     "action": "MAKING", // 发票状态 WAIT: 等待开票，MAKING: 开具中，DONE: 完成，ERROR: 错误
                     "invoiceType": 发票类型 NORMAL: 增值税普通发票, SPECIAL: 增值税专用发票
