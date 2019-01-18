@@ -174,7 +174,7 @@
         "data": {
             "businessTypeIds": null,
             "createTime": "2018-12-06 07:27:16", 
-            "customFlg": 1, // 是否定制 0 非定制 1 定制
+            "customFlg": 1, // 是否定制 0 非定制 1 定制 （**请勿使用此字段显示明细页，请使用customFlgMore来控制明细定制状态）
             "customFlgMore": 0 // 是否定制 0 非定制 1 常规定制 2 专属定制
             "customerIds": [ // 专属定制客户ID数组
                 1,
