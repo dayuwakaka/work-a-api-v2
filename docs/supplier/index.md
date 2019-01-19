@@ -743,7 +743,8 @@
                     "editButton": true, // 修改按钮 
                     "delButton": true, // 删除按钮
                     "modifyPriceButton": false, // 修改价格按钮
-                    "logButton": true // 日志查看按钮
+                    "logButton": true， // 日志查看按钮
+                    "backButton" : true // 撤回按钮
                 }
             ],
             "datas": [
@@ -762,7 +763,9 @@
                     "planCompleteTime": "2018-12-22 12:12:12", // 计划入库时间
                     "planSendTime": "2018-12-12 00:00:00", // 计划发出时间
                     "priceFlg": 0, // 采购价格调整 0 未修改价格 1 修改价格待审核 2 已修改价格
-                    "remark": "test",
+                    "jian": 12, // 件
+                    "san": 2, // 散
+                    "remark": "test", // 备注
                     "runTime": "", // 执行时间(生效时间)
                     "sendTime": "", // 发车时间
                     "status": "INVALID", // 订单状态 INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
@@ -1505,3 +1508,21 @@
             ]
         }
     }
+    
+### CG-83. 采购订单撤回
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/paorder/{orderId}/status/back
+#### 参数
+    *orderId PA单号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+    
+

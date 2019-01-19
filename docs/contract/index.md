@@ -883,7 +883,7 @@
 #### 模块负责人
     梁铁骐
 #### 请求url
-    /v2/contract/performance/able/{contractNum}/{rebateNode}
+    /v2/contract/performance/enable/{contractNum}/{rebateNode}
 
 #### 请求类型
     PUT

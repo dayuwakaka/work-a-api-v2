@@ -403,6 +403,9 @@
                 {
                     "productId": 1, // 产品id
                     "unit": "盒" // 单位
+                    "productLack": null, // 产品断货标识，若未null 则不缺货 反之亦然
+                    "productStatus": "LOCK", // NORMAL 正常 LOCK 下架
+                    "customFlg": 0, // 0 非定制品 1 定制品
                     "aPrice": 40.12, // A价
                     "pPrice": 32.5, // P价
                     "productUnitId": 1, // 产品规格id
@@ -440,6 +443,9 @@
                     "customerId": 32178,
                     "deleteFlg": 0,
                     "guige": "1.68kg（24枚）/盒", // 规格
+                    "productLack": null, // 产品断货标识，若未null 则不缺货 反之亦然
+                    "productStatus": "LOCK", // NORMAL 正常 LOCK 下架
+                    "customFlg": 0, // 0 非定制品 1 定制品
                     "id": 522352, // 主键id
                     "pPrice": 61.5, // P价
                     "pno": "0110", // 品号
@@ -479,6 +485,9 @@
                     "createTime": "2019-01-07 13:23:02.0", // 提交时间
                     "deleteFlg": 0,
                     "guige": "750g（50枚）", // 规格
+                    "productLack": null, // 产品断货标识，若未null 则不缺货 反之亦然
+                    "productStatus": "LOCK", // NORMAL 正常 LOCK 下架
+                    "customFlg": 0, // 0 非定制品 1 定制品
                     "id": 0,
                     "pPrice": 34.7, // P价
                     "pno": "0140", // 品号
@@ -631,6 +640,7 @@
                     "productId": 1, // 产品id
                     "rawFlg": "NONE", // 原料品， YES-是 NO-否 NONE-未设置
                     "runFlg": "0", // 定时修改价格flg 0-无 1-有
+                    "rate": 0.3, // 折算比率
                     "updateTime": "2017-01-22 13:06:06", // 操作信息-时间
                     "updateUserName": "张婷" // 操作信息-操作人
                 },
@@ -711,6 +721,7 @@
             },
             "productId": 1, // 产品id
             "rawFlg": "NONE", // 原料品， YES-是 NO-否 NONE-未设置
+            "rate": 0.3, // 折算比率
             "updateTime": "2017-01-22 13:06:06", // 操作信息-时间
             "updateUserName": "张婷" // 操作信息-操作人
         }
@@ -736,6 +747,7 @@
             },
             ...
         ],
+        rate： 0.3 // 折算比率 0 <= rate < 1
         createRemark: "xxxx", // 200字符以内或者不传
         *runType: "TASK", // 定时修改价格 NOW-否 TASK-是
         runTime："2018-12-12", // 定时执行时间， TASK-必传 NOW-不传
@@ -821,6 +833,7 @@
                     },
                     "rawFlg": "NONE", // 原料品 YES-是 NO-否 NONE-未设置
                     "runTime": "", // 定时执行时间
+                    "rate": 0.3, // 折算比率
                     "runType": "NOW", // 定时修改价格 NOW-否 TASK-是
                     "status": "PASS"  // 审核状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
                 },
