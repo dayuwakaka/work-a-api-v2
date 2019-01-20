@@ -1413,9 +1413,145 @@
     }
 
 
-### 模版
+
+### APP-40. 风格列表-我有我的风格
 #### 对接负责人
+    尹洪明
 #### 模块负责人
+    尹洪明
 #### 请求
+    GET /router/v5/cookbook/style
 #### 参数
+    *businessTypeCode:-16-  // 业态编码
 #### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "cookBookLites": [
+                    {
+                        "cookBookId": 17,
+                        "followFlg": 0,
+                        "name": "水果全缤纷",
+                        "styleId": 2,
+                        "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg"
+                    },
+                    {
+                        "cookBookId": 16,
+                        "followFlg": 0,
+                        "name": "水果全缤纷",
+                        "styleId": 2,
+                        "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg"
+                    },
+                    {
+                        "cookBookId": 15,
+                        "followFlg": 0,
+                        "name": "水果全缤纷",
+                        "styleId": 2,
+                        "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg"
+                    },
+                    {
+                        "cookBookId": 18,
+                        "followFlg": 0,
+                        "name": "水果全缤纷",
+                        "styleId": 2,
+                        "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg"
+                    },
+                    {
+                        "cookBookId": 14,
+                        "followFlg": 0,
+                        "name": "水果全缤纷",
+                        "styleId": 2,
+                        "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg"
+                    },
+                    {
+                        "cookBookId": 13,
+                        "followFlg": 0,
+                        "name": "水果全缤纷",
+                        "styleId": 2,
+                        "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg"
+                    }
+                ],
+                "id": 2,
+                "nameCn": "罗曼蒂克风",
+                "nameEn": "Romantic Love",
+                "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg"
+            },
+            {
+                "cookBookLites": [
+                    {
+                        "cookBookId": 12,
+                        "followFlg": 0,
+                        "name": "水果全缤纷",
+                        "styleId": 6,
+                        "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg"
+                    },
+                    {
+                        "cookBookId": 11,
+                        "followFlg": 0,
+                        "name": "水果全缤纷",
+                        "styleId": 6,
+                        "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg"
+                    }
+                ],
+                "id": 6,
+                "nameCn": "商务黑金风",
+                "nameEn": "Black Business Meals",
+                "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg"
+            }
+        ]
+    }
+
+### APP-41. 菜谱列表
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /router/v5/cookbook
+#### 参数
+    // 获取风格关联菜谱
+    *styleId:2  // 风格id
+    customerId:32512    // 客户id，用于判断是否已收藏
+    pageNo:1
+    pageSize:10 // 默认10条
+    // 获取我收藏的菜谱
+    *customerId:32512   // 客户id
+    *filterFollos:"YES" // 传固定值 YES
+    pageNo:1
+    pageSize:10     // 默认10条
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [],
+            "dataSums": null,
+            "datas": [
+                {
+                    "cookBookId": 17,   // 菜谱id
+                    "followFlg": 0,     // 收藏标识 0 未收藏 1 已收藏
+                    "name": "水果全缤纷",    // 菜谱名
+                    "styleId": 2,
+                    "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg" // 图片
+                },
+                {
+                    "cookBookId": 16,
+                    "followFlg": 1,
+                    "name": "水果全缤纷",
+                    "styleId": 2,
+                    "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg"
+                },
+                {
+                    "cookBookId": 15,
+                    "followFlg": 1,
+                    "name": "水果全缤纷",
+                    "styleId": 2,
+                    "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg"
+                }
+            ],
+            "pageNo": 1,
+            "total": 3
+        }
+    }
