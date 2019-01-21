@@ -1227,7 +1227,6 @@
     GET /v2/prorder/{orderId}
 #### 参数
     orderId // 订单号
-    comb - 赠品行是否需要合并 进入编辑页传递true 进入详情页传递false
 #### 响应
     {
         "code": 100000,
