@@ -1839,3 +1839,37 @@
             "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg" // 菜谱图片
         }
     }
+### APP-43. 菜谱收藏
+     #### 对接负责人
+         尹洪明
+     #### 模块负责人
+         尹洪明
+     #### 请求
+         POST /router/v5/cookbook/follow
+     #### 参数    
+         {
+             *"customerId":32512,    // 客户id
+             *"cookBookId":17        // 菜谱id
+         }
+     #### 响应    
+         {
+             "code": 100000,
+             "msg": "",
+             "data":null
+         }
+### APP-44. 菜谱取消收藏
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    尹洪明
+#### 请求
+    DELETE /router/v5/cookbook/follow
+#### 参数    
+    *"customerId":32512,    // 客户id
+    *"cookBookId":17        // 菜谱id
+#### 响应    
+    {
+        "code": 100000,
+        "msg": "",
+        "data":null
+    }         
