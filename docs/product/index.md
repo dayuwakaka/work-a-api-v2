@@ -806,6 +806,9 @@
                 "pyCode": "",           // 拼音编码
                 "sIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png",
                 "showFlg": 1,           // 是否显示 1 显示 0 隐藏
+                @"styleFlg": 1,         // 是否显示风格入口图片 1 显示 0 不显示
+                // 风格入口图片
+                @"styleUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190121132417926-4745.png",
                 "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w02.png"
             }
         ]
@@ -823,7 +826,10 @@
         "name": "xx", // 餐饮业态名称
         "showFlg": 1, // 是否显示 0 不显示 1 显示
         "parentId": 1, // 父餐饮业态ID
-        "sIcon":"http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png"
+        "sIcon":"http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png",
+        // 只有一级业态需要指定styleFlg,styleFlg=1时，styleUrl必须
+        @"styleFlg":1,  // 是否显示风格入口图片 1 指定 0 不指定
+        @"styleUrl":"http://asae.oss-cn-beijing.aliyuncs.com/ANET20190121132417926-4745.png"
     }
 #### 响应
     {

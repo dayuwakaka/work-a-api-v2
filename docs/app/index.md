@@ -1409,7 +1409,7 @@
     GET /router/v5/product/index
 #### 参数
     *pathId : '0101' // 区域码
-    businessTypeCode: '|01|' // 业态Code
+    businessTypeCode: '-120-' // 业态Code
     customerId: 1 // 客户ID
     *deviceNo: '1' // 设备号
 #### 响应
@@ -1425,7 +1425,9 @@
             ],
             "specialProduct": [
                 6个json对象，字段结构同APP-28
-            ]
+            ],
+            // 风格入口图片
+            @"styleUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190121132417926-4745.png"
         }
     }
 
