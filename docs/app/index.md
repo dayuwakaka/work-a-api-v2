@@ -1555,3 +1555,13 @@
             "total": 3
         }
     }
+### APP-42. 菜谱详情
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /router/v5/cookbook/detail
+#### 参数    
+    *cookBookId // 菜谱id
+    customerId  // 客户id，用于获取收藏标志
