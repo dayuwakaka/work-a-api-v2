@@ -1684,12 +1684,13 @@
                         "customers": null,
                         "deleteFlg": 0,
                         "followFlg": 0,
-                        "id": 4538,
+                        "id": 4538,         // 商品id
                         "longName": "",
                         "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201809/bf4f1596765356a6bec573ccf302e8d2.jpg@!app-s",
+                        // 主图
                         "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201809/5de6f5e608e5fa07f08e637a8c940f6c.jpg@!app-s",
-                        "name": "天妇罗虾（裹粉炸虾）预炸",
-                        "pno": "1680",
+                        "name": "天妇罗虾（裹粉炸虾）预炸", // 品名
+                        "pno": "1680",                  // 品号
                         "process": 4,
                         "processContent": 1,
                         "processInvoice": 1,
@@ -1697,7 +1698,7 @@
                         "productExtra": null,
                         "productImgs": null,
                         "productLack": null,
-                        "productUnits": [
+                        "productUnits": [           // 规格列表
                             {
                                 "createTime": "",
                                 "cubage": 0,
@@ -1711,11 +1712,11 @@
                                 "modifyTime": "",
                                 "netweight": 0.23,
                                 "perunit": 1,
-                                "price": {
+                                "price": {                 // 价格
                                     "aPrice": 15.9,
                                     "areaPrice": 0,
                                     "decideType": "A",
-                                    "finallyPrice": 15.9,
+                                    "finallyPrice": 15.9,      // 最终价格
                                     "pPrice": 12.7,
                                     "productUnitId": 7973,
                                     "rawFlg": "NO",
@@ -1741,7 +1742,7 @@
                                 "modifyTime": "",
                                 "netweight": 3.45,
                                 "perunit": 15,
-                                "price": {
+                                "price": { 
                                     "aPrice": 237.5,
                                     "areaPrice": 0,
                                     "decideType": "A",
@@ -1763,7 +1764,7 @@
                         "pyCode": "",
                         "relatePnos": null,
                         "status": "NORMAL",
-                        "stock": {
+                        "stock": {              // 可用库存
                             "amount": 59,
                             "productId": 4538
                         },
@@ -1776,9 +1777,9 @@
                 {
                     "cookBookId": 16,
                     "deleteFlg": 0,
-                    "dosage": "2个",
+                    "dosage": "2个",         // 食材用量
                     "id": 24,
-                    "name": "apple"
+                    "name": "apple"         // 食材名
                 },
                 {
                     "cookBookId": 16,
@@ -1791,7 +1792,7 @@
             "cookBookSteps": [
                 {
                     "cookBookId": 16,
-                    "cookBookStepImgs": [
+                    "cookBookStepImgs": [   // 步骤图片列表，null表示无图片
                         {
                             "id": 18,
                             "stepId": 21,
@@ -1804,8 +1805,8 @@
                         }
                     ],
                     "deleteFlg": 0,
-                    "id": 21,
-                    "intro": "苹果切碎"
+                    "id": 21,               
+                    "intro": "苹果切碎"     // 步骤说明
                 },
                 {
                     "cookBookId": 16,
@@ -1819,9 +1820,10 @@
                 {
                     "cookBookLites": null,
                     "id": 2,
-                    "nameCn": "罗曼蒂克风",
+                    "nameCn": "罗曼蒂克风",  // 风格中文名
                     "nameEn": "",
-                    "url": ""
+                    // 风格图片
+                    "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg"              
                 }
             ],
             "createRole": 0,

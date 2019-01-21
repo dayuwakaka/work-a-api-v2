@@ -4,7 +4,6 @@ module.exports = {
   themeConfig: {
     lastUpdated: 'Last Updated',
     nav: [
-      {text: '菜谱', link: '/cookbook/'},
       {text: '供应商', link: '/supplier/'},
       {text: '发票', link: '/invoice/'},
       {text: '客户', link: '/customer/'},
@@ -18,7 +17,8 @@ module.exports = {
       {text: 'APP', link: '/app/'},
       {text: '代理接口', link: '/feign/'},
       {text: '其它', link: '/other/'},
-      {text: '变更', link: '/changelog/'}
+      {text: '变更', link: '/changelog/'},
+      {text: '菜谱', link: '/cookbook/'}
     ],
     sidebar: 'auto',
   },
