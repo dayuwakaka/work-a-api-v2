@@ -949,6 +949,23 @@
         "msg": "",
         "data": {
             "businessTypeIds": null,
+            "cookBookLites": [ // 关联菜谱
+                {
+                    "cookBookId": 18,       // 菜谱id
+                    "followFlg": 0,
+                    "name": "水果全缤纷",    // 菜谱名
+                    "styleId": 0,
+                    // 菜谱图片
+                    "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg"
+                },
+                {
+                    "cookBookId": 17,
+                    "followFlg": 0,
+                    "name": "水果全缤纷",
+                    "styleId": 0,
+                    "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg"
+                }
+            ],
             "createTime": "2014-06-21 11:26:58", // 创建时间
             "customFlg": 0, // 是否定制 0 非定制 1 定制
             "customerIds": null, 
