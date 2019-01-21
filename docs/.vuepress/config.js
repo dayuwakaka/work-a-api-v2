@@ -12,13 +12,13 @@ module.exports = {
       {text: '销售优惠', link: '/contract/'},
       {text: '价格', link: '/price/'},
       {text: '运费', link: '/freight/'},
-      {text: '营销', link: '/market/'},
+      {text: '营销', link: '/market/'},,
+      {text: '菜谱', link: '/cookbook/'},
       {text: '基础', link: '/common/'},
       {text: 'APP', link: '/app/'},
       {text: '代理接口', link: '/feign/'},
       {text: '其它', link: '/other/'},
-      {text: '变更', link: '/changelog/'},
-      {text: '菜谱', link: '/cookbook/'}
+      {text: '变更', link: '/changelog/'}
     ],
     sidebar: 'auto',
   },
