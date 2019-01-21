@@ -1565,3 +1565,275 @@
 #### 参数    
     *cookBookId // 菜谱id
     customerId  // 客户id，用于获取收藏标志
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "cookBook2Products": [
+                {
+                    "cookBookId": 16,
+                    "id": 22,
+                    "product": {
+                        "businessTypeIds": null,
+                        "businessTypes": null,
+                        "cookBookLites": null,
+                        "createTime": "2018-09-04 08:33:25",
+                        "customFlg": 0,
+                        "customerIds": null,
+                        "customers": null,
+                        "deleteFlg": 0,
+                        "followFlg": 0,
+                        "id": 4537,
+                        "longName": "",
+                        "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201809/30bf6ba5bc475bbe5d0be15992321af3.jpg@!app-s",
+                        "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201809/2e504aad125a380a3e9f49b4ad0d0d60.jpg@!app-s",
+                        "name": "黄金薯泥芝士棒",
+                        "pno": "1654",
+                        "process": 4,
+                        "processContent": 1,
+                        "processInvoice": 1,
+                        "processPrice": 1,
+                        "productExtra": null,
+                        "productImgs": null,
+                        "productLack": null,
+                        "productUnits": [
+                            {
+                                "createTime": "",
+                                "cubage": 0,
+                                "grossweight": 0.92,
+                                "guige": "900g（20枚）/盒",
+                                "height": 7.8,
+                                "id": 7971,
+                                "length": 25.5,
+                                "minimum": 0,
+                                "minimumType": "NONE",
+                                "modifyTime": "",
+                                "netweight": 0.9,
+                                "perunit": 1,
+                                "price": {
+                                    "aPrice": 40.5,
+                                    "areaPrice": 0,
+                                    "decideType": "A",
+                                    "finallyPrice": 40.5,
+                                    "pPrice": 32.4,
+                                    "productUnitId": 7971,
+                                    "rawFlg": "NO",
+                                    "signPrice": 0,
+                                    "specialPrice": 0
+                                },
+                                "productCart": null,
+                                "productId": 4537,
+                                "unit": "盒",
+                                "unitId": 2,
+                                "width": 17
+                            },
+                            {
+                                "createTime": "",
+                                "cubage": 0,
+                                "grossweight": 9.2,
+                                "guige": "900g（20枚）/盒*9盒",
+                                "height": 24.2,
+                                "id": 7972,
+                                "length": 52.2,
+                                "minimum": 0,
+                                "minimumType": "NONE",
+                                "modifyTime": "",
+                                "netweight": 8.1,
+                                "perunit": 9,
+                                "price": {
+                                    "aPrice": 364.5,
+                                    "areaPrice": 0,
+                                    "decideType": "A",
+                                    "finallyPrice": 364.5,
+                                    "pPrice": 291.6,
+                                    "productUnitId": 7972,
+                                    "rawFlg": "NO",
+                                    "signPrice": 0,
+                                    "specialPrice": 0
+                                },
+                                "productCart": null,
+                                "productId": 4537,
+                                "unit": "件",
+                                "unitId": 3,
+                                "width": 26.5
+                            }
+                        ],
+                        "pyAll": "",
+                        "pyCode": "",
+                        "relatePnos": null,
+                        "status": "NORMAL",
+                        "stock": {
+                            "amount": 8,
+                            "productId": 4537
+                        },
+                        "taxRate": 0
+                    },
+                    "productId": 4537
+                },
+                {
+                    "cookBookId": 16,
+                    "id": 23,
+                    "product": {
+                        "businessTypeIds": null,
+                        "businessTypes": null,
+                        "cookBookLites": null,
+                        "createTime": "2018-09-04 08:43:46",
+                        "customFlg": 0,
+                        "customerIds": null,
+                        "customers": null,
+                        "deleteFlg": 0,
+                        "followFlg": 0,
+                        "id": 4538,
+                        "longName": "",
+                        "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201809/bf4f1596765356a6bec573ccf302e8d2.jpg@!app-s",
+                        "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201809/5de6f5e608e5fa07f08e637a8c940f6c.jpg@!app-s",
+                        "name": "天妇罗虾（裹粉炸虾）预炸",
+                        "pno": "1680",
+                        "process": 4,
+                        "processContent": 1,
+                        "processInvoice": 1,
+                        "processPrice": 1,
+                        "productExtra": null,
+                        "productImgs": null,
+                        "productLack": null,
+                        "productUnits": [
+                            {
+                                "createTime": "",
+                                "cubage": 0,
+                                "grossweight": 0.25,
+                                "guige": "230g（10枚）/袋",
+                                "height": 0,
+                                "id": 7973,
+                                "length": 35,
+                                "minimum": 0,
+                                "minimumType": "NONE",
+                                "modifyTime": "",
+                                "netweight": 0.23,
+                                "perunit": 1,
+                                "price": {
+                                    "aPrice": 15.9,
+                                    "areaPrice": 0,
+                                    "decideType": "A",
+                                    "finallyPrice": 15.9,
+                                    "pPrice": 12.7,
+                                    "productUnitId": 7973,
+                                    "rawFlg": "NO",
+                                    "signPrice": 0,
+                                    "specialPrice": 0
+                                },
+                                "productCart": null,
+                                "productId": 4538,
+                                "unit": "袋",
+                                "unitId": 1,
+                                "width": 23
+                            },
+                            {
+                                "createTime": "",
+                                "cubage": 0,
+                                "grossweight": 4.65,
+                                "guige": "230g（10枚）/袋*15袋",
+                                "height": 13.5,
+                                "id": 7974,
+                                "length": 56,
+                                "minimum": 0,
+                                "minimumType": "NONE",
+                                "modifyTime": "",
+                                "netweight": 3.45,
+                                "perunit": 15,
+                                "price": {
+                                    "aPrice": 237.5,
+                                    "areaPrice": 0,
+                                    "decideType": "A",
+                                    "finallyPrice": 237.5,
+                                    "pPrice": 190,
+                                    "productUnitId": 7974,
+                                    "rawFlg": "NO",
+                                    "signPrice": 0,
+                                    "specialPrice": 0
+                                },
+                                "productCart": null,
+                                "productId": 4538,
+                                "unit": "件",
+                                "unitId": 3,
+                                "width": 28.5
+                            }
+                        ],
+                        "pyAll": "",
+                        "pyCode": "",
+                        "relatePnos": null,
+                        "status": "NORMAL",
+                        "stock": {
+                            "amount": 59,
+                            "productId": 4538
+                        },
+                        "taxRate": 0
+                    },
+                    "productId": 4538
+                }
+            ],
+            "cookBookFoods": [
+                {
+                    "cookBookId": 16,
+                    "deleteFlg": 0,
+                    "dosage": "2个",
+                    "id": 24,
+                    "name": "apple"
+                },
+                {
+                    "cookBookId": 16,
+                    "deleteFlg": 0,
+                    "dosage": "500ml",
+                    "id": 25,
+                    "name": "沙拉"
+                }
+            ],
+            "cookBookSteps": [
+                {
+                    "cookBookId": 16,
+                    "cookBookStepImgs": [
+                        {
+                            "id": 18,
+                            "stepId": 21,
+                            "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg"
+                        },
+                        {
+                            "id": 19,
+                            "stepId": 21,
+                            "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg"
+                        }
+                    ],
+                    "deleteFlg": 0,
+                    "id": 21,
+                    "intro": "苹果切碎"
+                },
+                {
+                    "cookBookId": 16,
+                    "cookBookStepImgs": null,
+                    "deleteFlg": 0,
+                    "id": 22,
+                    "intro": "沙拉与苹果搅拌均匀"
+                }
+            ],
+            "cookBookStyles": [             // 风格列表
+                {
+                    "cookBookLites": null,
+                    "id": 2,
+                    "nameCn": "罗曼蒂克风",
+                    "nameEn": "",
+                    "url": ""
+                }
+            ],
+            "createRole": 0,
+            "createTime": "2019-01-20",
+            "createUser": 0,
+            "createUserName": "孙启萌",
+            "deleteFlg": 0,
+            "followFlg": 1,             // 收藏标志 0 未收藏 1 已收藏
+            "id": 16,                   // 菜谱id
+            "intro": "樱桃乳酪慕斯裹上白巧克力创花,搭配丰富的水果,酸甜与美味融合,轻易征服你的味蕾.",    // 菜谱说明
+            "name": "水果全缤纷",        // 菜谱名
+            "status": "LOCK",
+            "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg" // 菜谱图片
+        }
+    }
