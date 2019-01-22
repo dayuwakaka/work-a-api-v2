@@ -551,9 +551,9 @@
                     "cookBookSteps": null,
                     "cookBookStyles": [ // 所属分割
                         {
-                            "cnName": "罗曼蒂克风",  //风格中文名
+                            "nameCn": "罗曼蒂克风",  //风格中文名
                             "cookBookLites": null,
-                            "enName": "",
+                            "nameEn": "",
                             "id": 2,                //风格id
                             "url": ""
                         }
