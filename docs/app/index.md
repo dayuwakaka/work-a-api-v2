@@ -309,9 +309,9 @@
     *password:"222222" // 登录密码
     *ipAddress:"0.0.0.0" // 登录IP
     *cartId:"1" //登录设备号
+    *aliToken:"*********" // 阿里token
 #### 响应
     {
-        "flg": "1",
         "code": "100000",
         "msg": "",
         "data": {
@@ -1891,4 +1891,54 @@
         "code": 100000,
         "msg": "",
         "data":null
-    }         
+    }        
+    
+    
+### APP-45 登出
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    尹洪明
+#### 请求
+    DELETE /router/v5/auth/appLogout
+#### 参数
+    *customerId:"1" //客户id
+    *aliToken:"*********" // 阿里token
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data":null
+    }  
+ 
+### APP-46 小程序登录
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /router/v5/auth/wxLogin
+#### 参数
+    appId:"**************"
+    secret:"*************"
+    grantType:"authorization_code" // 默认authorization_code
+    *jsCode:"**************"        // code
+    *encrypteddata:"*********" // 手机号密文
+    *iv:"*********"             // iv
+#### 响应
+    {
+        "code": "100000", 
+        "msg": "", 
+        "data": [
+            {
+                "customerId": 32250, 
+                "openId": "**********", 
+                "token": "eyJhbGciOiJIUzUxMiJ9.eyJ1aWQiOiIzMjkyMyIsImdpZCI6Ii0xIiwicmlkcyI6Ii0xIiwiY3JlYXRlX3RpbWUiOiIyMDE4LTA5LTIwIDE1OjE2OjExIiwicGlkIjoiMSIsInJpZCI6Ii0xIn0.SQgLPdxNV8UxSa-pmJBpfn1InJxDLqDcwHgWdCo_LJfyjauBiiSNmpWcAJSJv7yVuJV7qRR8eqt8mtIQ-DpSAA"
+            }, 
+            {
+                "customerId": 32250, 
+                "openId": "**********", 
+                "token": "eyJhbGciOiJIUzUxMiJ9.eyJ1aWQiOiIzMjkyMyIsImdpZCI6Ii0xIiwicmlkcyI6Ii0xIiwiY3JlYXRlX3RpbWUiOiIyMDE4LTA5LTIwIDE1OjE2OjExIiwicGlkIjoiMSIsInJpZCI6Ii0xIn0.SQgLPdxNV8UxSa-pmJBpfn1InJxDLqDcwHgWdCo_LJfyjauBiiSNmpWcAJSJv7yVuJV7qRR8eqt8mtIQ-DpSAA"
+            }
+        ]
+    }
