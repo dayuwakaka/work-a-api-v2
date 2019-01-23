@@ -807,7 +807,7 @@
                 "sIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png",
                 "showFlg": 1,           // 是否显示 1 显示 0 隐藏
                 @"styleFlg": 1,         // 是否显示风格入口图片 1 显示 0 不显示
-                // 风格入口图片
+                // 风格入口图片(小程序图标)
                 @"styleUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190121132417926-4745.png",
                 "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w02.png"
             }
