@@ -383,6 +383,35 @@
             "updateUserName": ""
         }
     }
+### CG-20. 普通入库单-列表
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/niorder
+#### 参数
+    keyword // 采购订单好、供应删名称
+    depotId // 入库仓id
+    status // 订单状态
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [
+                {
+                    "refuseButton": true, // 拒绝按钮
+                    "passButton": true // 通过按钮
+                }
+            ],
+            "datas": [
+                {
+                    
+                }
+            ]
+        }
+    }
 
 ### CG-51. 采购供货价审核-列表
 #### 对接负责人
@@ -788,7 +817,6 @@
     GET /v2/paorder/{orderId}
 #### 参数
     orderId 订单号
-    comb - 赠品行是否需要合并 进入编辑页传递true 进入详情页传递false
 #### 响应
     {
         "code": 100000,
@@ -811,7 +839,6 @@
                 {
                     "giftFlg": 0, // 赠品标识 0-否 1-是
                     "pcount": 1, // 数量
-                    "giftCount": 0, // 赠品数量
                     "price": 1, // 价格
                     "priceFlg": 0, // 是否调整价格 0 - 未调整；1 - 待审核；2 - 通过
                     "productUnit": {
@@ -1200,7 +1227,6 @@
     GET /v2/prorder/{orderId}
 #### 参数
     orderId // 订单号
-    comb - 赠品行是否需要合并 进入编辑页传递true 进入详情页传递false
 #### 响应
     {
         "code": 100000,
