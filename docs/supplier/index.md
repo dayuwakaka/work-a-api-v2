@@ -752,7 +752,8 @@
 #### 请求
     GET /v2/paorder?buttonPermissionFlg=1
 #### 参数
-    keyword // 采购订单号/供应商名称
+    keyword // 采购订单号
+    supplierId // 供应商id
     deliverType // 配送方式 SELF 自送 THIRD 物流配送
     depotId // 仓id
     status // 订单状态 INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
@@ -1064,7 +1065,8 @@
 #### 请求
     GET /v2/prorder?buttonPermissionFlg=1
 #### 参数
-    keyword // 单号/经销商名称
+    keyword // 单号
+    supplierId // 供应商id
     deliverType // 配送方式 SELF 自送 THIRD 物流配送
     depotId // 仓id
     status // 订单状态 INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
