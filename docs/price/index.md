@@ -884,7 +884,7 @@
 #### 请求
     GET /v2/price/sign
 #### 参数
-    customerKeyWord // 客户名称
+    customerId // 客户id
     productKeyWord // 品名/品号
     customerType // 客户类型 A、P、P2P、C
     status // 签约状态 NORMAL-正常 LOCK-锁定
@@ -1083,7 +1083,7 @@
 #### 请求
     GET /v2/price/sign/askfor
 #### 参数
-    customerKeyWord // 客户名称
+    customerId // 客户id
     productKeyWord // 品名/品号
     customerType // 客户类型
     status // 状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
