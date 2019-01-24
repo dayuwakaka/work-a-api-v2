@@ -884,7 +884,8 @@
 #### 请求
     GET /v2/price/sign
 #### 参数
-    keyword // 客户名称/品名/品号
+    customerId // 客户id
+    productKeyWord // 品名/品号
     customerType // 客户类型 A、P、P2P、C
     status // 签约状态 NORMAL-正常 LOCK-锁定
     buttonPermissionFlg // 是否获取权限按钮 0-否 1-是
@@ -911,6 +912,7 @@
                     "customerId": 32175, // 客户id
                     "customerName": "天津小蚁科技有限公司-上海【战略】", // 客户名称
                     "customerType": "P", 客户类型
+                    "businessUnitName": "PW", // 事业部名称
                     "guige": "2kg/袋*4袋", // 规格
                     "id": 0,
                     "pno": "M018", // 品号
@@ -1081,10 +1083,12 @@
 #### 请求
     GET /v2/price/sign/askfor
 #### 参数
-    keyword // 客户名称/品名/品号
+    customerId // 客户id
+    productKeyWord // 品名/品号
     customerType // 客户类型
     status // 状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
     buttonPermissionFlg // 是否获取权限按钮 0-否 1-是
+    priceFlg // 低于P价格 0 全部 1 低于P价格
     pageNo // 页码
     pageSize // 行数
 
