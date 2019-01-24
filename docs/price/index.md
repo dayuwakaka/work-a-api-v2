@@ -1086,6 +1086,7 @@
     customerType // 客户类型
     status // 状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
     buttonPermissionFlg // 是否获取权限按钮 0-否 1-是
+    priceFlg // 低于P价格 0 全部 1 低于P价格
     pageNo // 页码
     pageSize // 行数
 
