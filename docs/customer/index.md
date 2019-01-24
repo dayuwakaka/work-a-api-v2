@@ -21,7 +21,7 @@
     isParent: -1                        // 查询客户类型 -1 所有 0 普通客户 1 总公司 2 分店 
     ignorePower: false                  // 忽略权限标识，true为不限制任何权限查询客户
     states: ['NORMAL', 'DELETE']        // NORMAL 正常 DELETE 休眠
-    @@customerIds[]:149                 // 客户id列表
+    customerIds[]:149                 // 客户id列表
     showAttr：                          // 是否显示客户属性 true 显示 false 不显示
     showInvoice：                       // 是否显示发票状态 true 显示 false 不显示
 #### 响应
@@ -56,7 +56,7 @@
                         "prepaid": 0 //定金金额
                     },
                     "customerContacts": [],
-                    @@"customer2Attrs": [
+                    "customer2Attrs": [
                         {
                             "attrId": 1,                //属性id
                             "attrName": "彤德莱",       //属性名称
@@ -67,7 +67,7 @@
                             "id": 390
                         }
                     ],
-                    @@"invoiceInfoStatus": "NORMAL",    //EMPTY 待维护 NORMAL 已维护 ASKFOR 待审核
+                    "invoiceInfoStatus": "NORMAL",    //EMPTY 待维护 NORMAL 已维护 ASKFOR 待审核
                     "dod": 0,
                     "freight": 1,
                     "id": 32164, // 客户编号
@@ -77,7 +77,7 @@
                     "printPrice": 1,
                     "province": "辽宁",
                     "shortName": "32164", // 客户名
-                    "source": "1",
+                    @"source": "1",              // 客户来源 0：自主注册  1：后台添加, 2: 小程序
                     "srRoleId": 29247,// SRID
                     "srRoleName": "", // SR名
                     "ssRoleId": 29324,// SSID

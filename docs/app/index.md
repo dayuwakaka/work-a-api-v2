@@ -309,9 +309,9 @@
     *password:"222222" // 登录密码
     *ipAddress:"0.0.0.0" // 登录IP
     *cartId:"1" //登录设备号
+    *aliToken:"*********" // 阿里token
 #### 响应
     {
-        "flg": "1",
         "code": "100000",
         "msg": "",
         "data": {
@@ -949,6 +949,23 @@
         "msg": "",
         "data": {
             "businessTypeIds": null,
+            "cookBookLites": [ // 关联菜谱
+                {
+                    "cookBookId": 18,       // 菜谱id
+                    "followFlg": 0,
+                    "name": "水果全缤纷",    // 菜谱名
+                    "styleId": 0,
+                    // 菜谱图片
+                    "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg"
+                },
+                {
+                    "cookBookId": 17,
+                    "followFlg": 0,
+                    "name": "水果全缤纷",
+                    "styleId": 0,
+                    "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg"
+                }
+            ],
             "createTime": "2014-06-21 11:26:58", // 创建时间
             "customFlg": 0, // 是否定制 0 非定制 1 定制
             "customerIds": null, 
@@ -1392,7 +1409,7 @@
     GET /router/v5/product/index
 #### 参数
     *pathId : '0101' // 区域码
-    businessTypeCode: '|01|' // 业态Code
+    businessTypeCode: '-120-' // 业态Code
     customerId: 1 // 客户ID
     *deviceNo: '1' // 设备号
 #### 响应
@@ -1408,14 +1425,522 @@
             ],
             "specialProduct": [
                 6个json对象，字段结构同APP-28
-            ]
+            ],
+            // 风格入口图片
+            @"styleUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190121132417926-4745.png"
         }
     }
 
 
-### 模版
+
+### APP-40. 风格列表-我有我的风格
 #### 对接负责人
+    尹洪明
 #### 模块负责人
+    尹洪明
 #### 请求
+    GET /router/v5/cookbook/style
 #### 参数
+    *businessTypeCode:-16-  // 业态编码
 #### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "cookBookLites": [
+                    {
+                        "cookBookId": 17,
+                        "followFlg": 0,
+                        "name": "水果全缤纷",
+                        "styleId": 2,
+                        "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg"
+                    },
+                    {
+                        "cookBookId": 16,
+                        "followFlg": 0,
+                        "name": "水果全缤纷",
+                        "styleId": 2,
+                        "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg"
+                    },
+                    {
+                        "cookBookId": 15,
+                        "followFlg": 0,
+                        "name": "水果全缤纷",
+                        "styleId": 2,
+                        "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg"
+                    },
+                    {
+                        "cookBookId": 18,
+                        "followFlg": 0,
+                        "name": "水果全缤纷",
+                        "styleId": 2,
+                        "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg"
+                    },
+                    {
+                        "cookBookId": 14,
+                        "followFlg": 0,
+                        "name": "水果全缤纷",
+                        "styleId": 2,
+                        "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg"
+                    },
+                    {
+                        "cookBookId": 13,
+                        "followFlg": 0,
+                        "name": "水果全缤纷",
+                        "styleId": 2,
+                        "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg"
+                    }
+                ],
+                "id": 2,
+                "nameCn": "罗曼蒂克风",
+                "nameEn": "Romantic Love",
+                "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg"
+            },
+            {
+                "cookBookLites": [
+                    {
+                        "cookBookId": 12,
+                        "followFlg": 0,
+                        "name": "水果全缤纷",
+                        "styleId": 6,
+                        "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg"
+                    },
+                    {
+                        "cookBookId": 11,
+                        "followFlg": 0,
+                        "name": "水果全缤纷",
+                        "styleId": 6,
+                        "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg"
+                    }
+                ],
+                "id": 6,
+                "nameCn": "商务黑金风",
+                "nameEn": "Black Business Meals",
+                "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg"
+            }
+        ]
+    }
+
+### APP-41. 菜谱列表
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /router/v5/cookbook
+#### 参数
+    // 获取风格关联菜谱
+    *styleId:2  // 风格id
+    customerId:32512    // 客户id，用于判断是否已收藏
+    pageNo:1
+    pageSize:10 // 默认10条
+    // 获取我收藏的菜谱
+    *customerId:32512   // 客户id
+    *filterFollos:"YES" // 传固定值 YES
+    pageNo:1
+    pageSize:10     // 默认10条
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [],
+            "dataSums": null,
+            "datas": [
+                {
+                    "cookBookId": 17,   // 菜谱id
+                    "followFlg": 0,     // 收藏标识 0 未收藏 1 已收藏
+                    "name": "水果全缤纷",    // 菜谱名
+                    "styleId": 2,
+                    "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg" // 图片
+                },
+                {
+                    "cookBookId": 16,
+                    "followFlg": 1,
+                    "name": "水果全缤纷",
+                    "styleId": 2,
+                    "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg"
+                },
+                {
+                    "cookBookId": 15,
+                    "followFlg": 1,
+                    "name": "水果全缤纷",
+                    "styleId": 2,
+                    "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg"
+                }
+            ],
+            "pageNo": 1,
+            "total": 3
+        }
+    }
+### APP-42. 菜谱详情
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /router/v5/cookbook/detail
+#### 参数    
+    *cookBookId // 菜谱id
+    customerId  // 客户id，用于获取收藏标志
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "cookBook2Products": [
+                {
+                    "cookBookId": 16,
+                    "id": 22,
+                    "product": {
+                        "businessTypeIds": null,
+                        "businessTypes": null,
+                        "cookBookLites": null,
+                        "createTime": "2018-09-04 08:33:25",
+                        "customFlg": 0,
+                        "customerIds": null,
+                        "customers": null,
+                        "deleteFlg": 0,
+                        "followFlg": 0,
+                        "id": 4537,
+                        "longName": "",
+                        "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201809/30bf6ba5bc475bbe5d0be15992321af3.jpg@!app-s",
+                        "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201809/2e504aad125a380a3e9f49b4ad0d0d60.jpg@!app-s",
+                        "name": "黄金薯泥芝士棒",
+                        "pno": "1654",
+                        "process": 4,
+                        "processContent": 1,
+                        "processInvoice": 1,
+                        "processPrice": 1,
+                        "productExtra": null,
+                        "productImgs": null,
+                        "productLack": null,
+                        "productUnits": [
+                            {
+                                "createTime": "",
+                                "cubage": 0,
+                                "grossweight": 0.92,
+                                "guige": "900g（20枚）/盒",
+                                "height": 7.8,
+                                "id": 7971,
+                                "length": 25.5,
+                                "minimum": 0,
+                                "minimumType": "NONE",
+                                "modifyTime": "",
+                                "netweight": 0.9,
+                                "perunit": 1,
+                                "price": {
+                                    "aPrice": 40.5,
+                                    "areaPrice": 0,
+                                    "decideType": "A",
+                                    "finallyPrice": 40.5,
+                                    "pPrice": 32.4,
+                                    "productUnitId": 7971,
+                                    "rawFlg": "NO",
+                                    "signPrice": 0,
+                                    "specialPrice": 0
+                                },
+                                "productCart": null,
+                                "productId": 4537,
+                                "unit": "盒",
+                                "unitId": 2,
+                                "width": 17
+                            },
+                            {
+                                "createTime": "",
+                                "cubage": 0,
+                                "grossweight": 9.2,
+                                "guige": "900g（20枚）/盒*9盒",
+                                "height": 24.2,
+                                "id": 7972,
+                                "length": 52.2,
+                                "minimum": 0,
+                                "minimumType": "NONE",
+                                "modifyTime": "",
+                                "netweight": 8.1,
+                                "perunit": 9,
+                                "price": {
+                                    "aPrice": 364.5,
+                                    "areaPrice": 0,
+                                    "decideType": "A",
+                                    "finallyPrice": 364.5,
+                                    "pPrice": 291.6,
+                                    "productUnitId": 7972,
+                                    "rawFlg": "NO",
+                                    "signPrice": 0,
+                                    "specialPrice": 0
+                                },
+                                "productCart": null,
+                                "productId": 4537,
+                                "unit": "件",
+                                "unitId": 3,
+                                "width": 26.5
+                            }
+                        ],
+                        "pyAll": "",
+                        "pyCode": "",
+                        "relatePnos": null,
+                        "status": "NORMAL",
+                        "stock": {
+                            "amount": 8,
+                            "productId": 4537
+                        },
+                        "taxRate": 0
+                    },
+                    "productId": 4537
+                },
+                {
+                    "cookBookId": 16,
+                    "id": 23,
+                    "product": {
+                        "businessTypeIds": null,
+                        "businessTypes": null,
+                        "cookBookLites": null,
+                        "createTime": "2018-09-04 08:43:46",
+                        "customFlg": 0,
+                        "customerIds": null,
+                        "customers": null,
+                        "deleteFlg": 0,
+                        "followFlg": 0,
+                        "id": 4538,         // 商品id
+                        "longName": "",
+                        "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201809/bf4f1596765356a6bec573ccf302e8d2.jpg@!app-s",
+                        // 主图
+                        "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201809/5de6f5e608e5fa07f08e637a8c940f6c.jpg@!app-s",
+                        "name": "天妇罗虾（裹粉炸虾）预炸", // 品名
+                        "pno": "1680",                  // 品号
+                        "process": 4,
+                        "processContent": 1,
+                        "processInvoice": 1,
+                        "processPrice": 1,
+                        "productExtra": null,
+                        "productImgs": null,
+                        "productLack": null,
+                        "productUnits": [           // 规格列表
+                            {
+                                "createTime": "",
+                                "cubage": 0,
+                                "grossweight": 0.25,
+                                "guige": "230g（10枚）/袋",
+                                "height": 0,
+                                "id": 7973,
+                                "length": 35,
+                                "minimum": 0,
+                                "minimumType": "NONE",
+                                "modifyTime": "",
+                                "netweight": 0.23,
+                                "perunit": 1,
+                                "price": {                 // 价格
+                                    "aPrice": 15.9,
+                                    "areaPrice": 0,
+                                    "decideType": "A",
+                                    "finallyPrice": 15.9,      // 最终价格
+                                    "pPrice": 12.7,
+                                    "productUnitId": 7973,
+                                    "rawFlg": "NO",
+                                    "signPrice": 0,
+                                    "specialPrice": 0
+                                },
+                                "productCart": null,
+                                "productId": 4538,
+                                "unit": "袋",
+                                "unitId": 1,
+                                "width": 23
+                            },
+                            {
+                                "createTime": "",
+                                "cubage": 0,
+                                "grossweight": 4.65,
+                                "guige": "230g（10枚）/袋*15袋",
+                                "height": 13.5,
+                                "id": 7974,
+                                "length": 56,
+                                "minimum": 0,
+                                "minimumType": "NONE",
+                                "modifyTime": "",
+                                "netweight": 3.45,
+                                "perunit": 15,
+                                "price": { 
+                                    "aPrice": 237.5,
+                                    "areaPrice": 0,
+                                    "decideType": "A",
+                                    "finallyPrice": 237.5,
+                                    "pPrice": 190,
+                                    "productUnitId": 7974,
+                                    "rawFlg": "NO",
+                                    "signPrice": 0,
+                                    "specialPrice": 0
+                                },
+                                "productCart": null,
+                                "productId": 4538,
+                                "unit": "件",
+                                "unitId": 3,
+                                "width": 28.5
+                            }
+                        ],
+                        "pyAll": "",
+                        "pyCode": "",
+                        "relatePnos": null,
+                        "status": "NORMAL",
+                        "stock": {              // 可用库存
+                            "amount": 59,
+                            "productId": 4538
+                        },
+                        "taxRate": 0
+                    },
+                    "productId": 4538
+                }
+            ],
+            "cookBookFoods": [
+                {
+                    "cookBookId": 16,
+                    "deleteFlg": 0,
+                    "dosage": "2个",         // 食材用量
+                    "id": 24,
+                    "name": "apple"         // 食材名
+                },
+                {
+                    "cookBookId": 16,
+                    "deleteFlg": 0,
+                    "dosage": "500ml",
+                    "id": 25,
+                    "name": "沙拉"
+                }
+            ],
+            "cookBookSteps": [
+                {
+                    "cookBookId": 16,
+                    "cookBookStepImgs": [   // 步骤图片列表，null表示无图片
+                        {
+                            "id": 18,
+                            "stepId": 21,
+                            "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg"
+                        },
+                        {
+                            "id": 19,
+                            "stepId": 21,
+                            "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg"
+                        }
+                    ],
+                    "deleteFlg": 0,
+                    "id": 21,               
+                    "intro": "苹果切碎"     // 步骤说明
+                },
+                {
+                    "cookBookId": 16,
+                    "cookBookStepImgs": null,
+                    "deleteFlg": 0,
+                    "id": 22,
+                    "intro": "沙拉与苹果搅拌均匀"
+                }
+            ],
+            "cookBookStyles": [             // 风格列表
+                {
+                    "cookBookLites": null,
+                    "id": 2,
+                    "nameCn": "罗曼蒂克风",  // 风格中文名
+                    "nameEn": "",
+                    // 风格图片
+                    "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg"              
+                }
+            ],
+            "createRole": 0,
+            "createTime": "2019-01-20",
+            "createUser": 0,
+            "createUserName": "孙启萌",
+            "deleteFlg": 0,
+            "followFlg": 1,             // 收藏标志 0 未收藏 1 已收藏
+            "id": 16,                   // 菜谱id
+            "intro": "樱桃乳酪慕斯裹上白巧克力创花,搭配丰富的水果,酸甜与美味融合,轻易征服你的味蕾.",    // 菜谱说明
+            "name": "水果全缤纷",        // 菜谱名
+            "status": "LOCK",
+            "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg" // 菜谱图片
+        }
+    }
+### APP-43. 菜谱收藏
+     #### 对接负责人
+         尹洪明
+     #### 模块负责人
+         尹洪明
+     #### 请求
+         POST /router/v5/cookbook/follow
+     #### 参数    
+         {
+             *"customerId":32512,    // 客户id
+             *"cookBookId":17        // 菜谱id
+         }
+     #### 响应    
+         {
+             "code": 100000,
+             "msg": "",
+             "data":null
+         }
+### APP-44. 菜谱取消收藏
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    尹洪明
+#### 请求
+    DELETE /router/v5/cookbook/follow
+#### 参数    
+    *"customerId":32512,    // 客户id
+    *"cookBookId":17        // 菜谱id
+#### 响应    
+    {
+        "code": 100000,
+        "msg": "",
+        "data":null
+    }        
+    
+    
+### APP-45 登出
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    尹洪明
+#### 请求
+    DELETE /router/v5/auth/appLogout
+#### 参数
+    *customerId:"1" //客户id
+    *aliToken:"*********" // 阿里token
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data":null
+    }  
+ 
+### APP-46 小程序登录
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /router/v5/auth/wxLogin
+#### 参数
+    appId:"**************"
+    secret:"*************"
+    grantType:"authorization_code" // 默认authorization_code
+    *jsCode:"**************"        // code
+    *encrypteddata:"*********" // 手机号密文
+    *iv:"*********"             // iv
+#### 响应
+    {
+        "code": "100000", 
+        "msg": "", 
+        "data": [
+            {
+                "companyName:"yazhouyugang",
+                "customerId": 32250, 
+                "openId": "**********", 
+                "token": "eyJhbGciOiJIUzUxMiJ9.eyJ1aWQiOiIzMjkyMyIsImdpZCI6Ii0xIiwicmlkcyI6Ii0xIiwiY3JlYXRlX3RpbWUiOiIyMDE4LTA5LTIwIDE1OjE2OjExIiwicGlkIjoiMSIsInJpZCI6Ii0xIn0.SQgLPdxNV8UxSa-pmJBpfn1InJxDLqDcwHgWdCo_LJfyjauBiiSNmpWcAJSJv7yVuJV7qRR8eqt8mtIQ-DpSAA"
+            }, 
+            {
+                "companyName:"yazhouhaocai",
+                "customerId": 32250, 
+                "openId": "**********", 
+                "token": "eyJhbGciOiJIUzUxMiJ9.eyJ1aWQiOiIzMjkyMyIsImdpZCI6Ii0xIiwicmlkcyI6Ii0xIiwiY3JlYXRlX3RpbWUiOiIyMDE4LTA5LTIwIDE1OjE2OjExIiwicGlkIjoiMSIsInJpZCI6Ii0xIn0.SQgLPdxNV8UxSa-pmJBpfn1InJxDLqDcwHgWdCo_LJfyjauBiiSNmpWcAJSJv7yVuJV7qRR8eqt8mtIQ-DpSAA"
+            }
+        ]
+    }
