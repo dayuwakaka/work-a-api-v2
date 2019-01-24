@@ -1173,3 +1173,58 @@
             ]
         }
     }
+    
+### CB-34. 菜谱食材详情
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /v2/cookbook/food/detail/{id}
+#### 参数
+    *id     // 食材id
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "cookBookId": 8,    // 菜谱id
+            "deleteFlg": 1,
+            "dosage": "300ml",  // 用量
+            "id": 11,           // 食材id
+            "name": "橙子汁"   // 食材名
+        }
+    }
+### CB-35. 菜谱烹饪步骤详情
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /v2/cookbook/step/detail/{id}
+#### 参数
+    *id     // 烹饪步骤id
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "cookBookId": 11,       // 菜谱id
+            "cookBookStepImgs": [   // 烹饪步骤图片列表
+                {
+                    "id": 8,
+                    "stepId": 11,
+                    // 图片
+                    "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg"
+                },
+                {
+                    "id": 9,
+                    "stepId": 11,
+                    "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg"
+                }
+            ],
+            "deleteFlg": 0,
+            "id": 11,               // 烹饪步骤id
+            "intro": "苹果切碎"     // 步骤说明
+        }
+    }    
