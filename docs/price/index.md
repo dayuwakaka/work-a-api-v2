@@ -911,6 +911,7 @@
                     "customerId": 32175, // 客户id
                     "customerName": "天津小蚁科技有限公司-上海【战略】", // 客户名称
                     "customerType": "P", 客户类型
+                    "businessUnitName": "PW", // 事业部名称
                     "guige": "2kg/袋*4袋", // 规格
                     "id": 0,
                     "pno": "M018", // 品号
