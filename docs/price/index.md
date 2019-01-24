@@ -884,7 +884,8 @@
 #### 请求
     GET /v2/price/sign
 #### 参数
-    keyword // 客户名称/品名/品号
+    customerKeyWord // 客户名称
+    productKeyWord // 品名/品号
     customerType // 客户类型 A、P、P2P、C
     status // 签约状态 NORMAL-正常 LOCK-锁定
     buttonPermissionFlg // 是否获取权限按钮 0-否 1-是
@@ -1082,7 +1083,8 @@
 #### 请求
     GET /v2/price/sign/askfor
 #### 参数
-    keyword // 客户名称/品名/品号
+    customerKeyWord // 客户名称
+    productKeyWord // 品名/品号
     customerType // 客户类型
     status // 状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
     buttonPermissionFlg // 是否获取权限按钮 0-否 1-是
