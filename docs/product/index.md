@@ -781,7 +781,7 @@
     
 ### CP-50.产品业态查询
 #### 对接负责人
-    刘宏宇
+    尹洪明
 #### 模块负责人
     尹洪明
 #### 请求
@@ -798,6 +798,7 @@
                 "code": "-16-",          // 业态编码
                 "deleteFlg": 0,
                 "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g02.png",
+                "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w02.png",
                 "hasProductCnt": 6,     // 产品数
                 "id": 16,               // 业态id
                 "level": 1,             // 业态等级
@@ -806,17 +807,18 @@
                 "pyCode": "",           // 拼音编码
                 "sIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png",
                 "showFlg": 1,           // 是否显示 1 显示 0 隐藏
-                @"styleFlg": 1,         // 是否显示风格入口图片 1 显示 0 不显示
-                // 风格入口图片(小程序图标)
-                @"styleUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190121132417926-4745.png",
-                "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w02.png"
+                @"miniFlg": 1,         // 小程序开关 1 开启 0 关闭
+                // 小程序图标
+                @"mIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png",
+                // 风格入口图片
+                @"styleUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190121132417926-4745.png"
             }
         ]
     }
 
 ### CP-51.产品业态新增
 #### 对接负责人
-    刘宏宇
+    尹洪明
 #### 模块负责人
     尹洪明
 #### 请求
@@ -826,9 +828,9 @@
         "name": "xx", // 餐饮业态名称
         "showFlg": 1, // 是否显示 0 不显示 1 显示
         "parentId": 1, // 父餐饮业态ID
-        "sIcon":"http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png",
-        // 只有一级业态需要指定styleFlg,styleFlg=1时，styleUrl必须
-        @"styleFlg":1,  // 是否显示风格入口图片 1 指定 0 不指定
+        "sicon":"http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png",
+        @"micon":"http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png",
+        @"miniFlg":1,  // 小程序开关 1 开启 0 关闭
         @"styleUrl":"http://asae.oss-cn-beijing.aliyuncs.com/ANET20190121132417926-4745.png"
     }
 #### 响应
@@ -840,7 +842,7 @@
 
 ### CP-52.产品业态名称修改
 #### 对接负责人
-    刘宏宇
+    尹洪明
 #### 模块负责人
     尹洪明
 #### 请求
@@ -860,7 +862,7 @@
 
 ### CP-52.产品业态显示隐藏
 #### 对接负责人
-    刘宏宇
+    尹洪明
 #### 模块负责人
     尹洪明
 #### 请求
@@ -879,7 +881,7 @@
 
 ### CP-53.产品业态删除
 #### 对接负责人
-    刘宏宇
+    尹洪明
 #### 模块负责人
     尹洪明
 #### 请求
@@ -894,6 +896,66 @@
         "data": null
     }
 
+### CP-54.产品业态修改
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT /v2/product/businessType/{id}
+#### 参数
+    *id: 1 // 业态id
+    {
+        "name": "xx", // 餐饮业态名称
+        "showFlg": 1, // 是否显示 0 不显示 1 显示
+        "parentId": 1, // 父餐饮业态ID
+        "sicon":"http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png",
+        @"micon":"http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png",
+        @"miniFlg":1,  // 小程序开关 1 开启 0 关闭
+        @"styleUrl":"http://asae.oss-cn-beijing.aliyuncs.com/ANET20190121132417926-4745.png"
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### CP-55.产品业态详情
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /v2/product/businessType/detail/{id}
+#### 参数
+    *id: 1 // 业态id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "code": "-121-",
+            "deleteFlg": 0,
+            "gIcon": "",
+            "hasProductCnt": 0,
+            "id": 121,                  // 业态id
+            "level": 1,
+            "name": "小程序二级业态",      // 业态名  
+            "parentId": 0,
+            "pyCode": "",
+            "wIcon": ""
+            "showFlg": 0,               // 业态是否前台显示
+            // App图标
+            "sIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png",
+            "miniFlg": 0,    // 小程序开关 1 开启  0 关闭 
+            // 小程序图标
+            "mIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190121132417926-4745.png",
+            // 风格入口图片
+            "styleUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190121132417926-4745.png",
+        }
+    }
+    
 ### CP-101. 新增断货
 #### 对接负责人
     尹洪明
