@@ -1893,16 +1893,16 @@
     }        
     
     
-### APP-45 绑定客户&openId
+### APP-45 客户绑定deviceToken
 #### 对接负责人
     尹洪明
 #### 模块负责人
     尹洪明
 #### 请求
-    DELETE /router/v5/auth/appLogout
+    PUT /router/v5/auth/deviceToken
 #### 参数
-    *customerId:"1" //客户id
-    *aliToken:"*********" // 阿里token
+    *customerId:"1" //客户id  需要删除时，不需要传递customerId 或者 customerId = 0
+    *deviceToken:"*********" // 阿里token
 #### 响应
     {
         "code": 100000,
