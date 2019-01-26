@@ -24,6 +24,7 @@
     customerIds[]:149                 // 客户id列表
     showAttr：                          // 是否显示客户属性 true 显示 false 不显示
     showInvoice：                       // 是否显示发票状态 true 显示 false 不显示
+    source:                             // 客户来源 0 自主注册 1 后台添加 2 小程序
 #### 响应
     {
         "code": 100000,
