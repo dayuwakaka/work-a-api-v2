@@ -2199,7 +2199,7 @@
 #### 参数
     {
     	"orderTr": {
-    		*"fromDepotId": 40, //
+    		*"fromDepotId": 40, // 出库仓id
     		*"fromDepotName": "大连铁越", // 出库仓名称
     		*"toDepotId": 2, // 入库仓id
     		*"toDepotName": "沈阳铁越", // 入库仓名称
