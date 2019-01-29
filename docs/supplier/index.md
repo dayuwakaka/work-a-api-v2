@@ -1562,6 +1562,7 @@
 #### 请求
     GET /v2/niorder
 #### 参数
+    buttonPermissionFlg 是否获取权限按钮
     keyword 单号
     depotId 仓库id
     status 订单状态 INVALID - 未生效 RUN - 已生效  COMPLETE - 已签收
@@ -1838,6 +1839,7 @@
 #### 请求
     GET /v2/noorder
 #### 参数
+    buttonPermissionFlg 是否获取权限按钮
     keyword 单号
     depotId 仓库id
     status 订单状态 INVALID - 未生效 RUN - 已生效  SEND - 已签收
@@ -2139,6 +2141,7 @@
 #### 请求
     GET /v2/trorder
 #### 参数
+    buttonPermissionFlg 是否获取权限按钮
     keyword 单号
     fromDepotId 出库仓id
     toDepotId 入库仓id
