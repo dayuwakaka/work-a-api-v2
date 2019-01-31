@@ -1924,6 +1924,7 @@
     *jsCode:"**************"        // code
     *encrypteddata:"*********" // 手机号密文
     *iv:"*********"             // iv
+    businessTypeId:16           // 业态id
 #### 响应
     {
         "code": "100000", 
@@ -1943,3 +1944,33 @@
             }
         ]
     }
+    
+ 
+### APP-47 再来一单
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT /router/v5/product/cart/batch
+#### 参数
+    *customerId:12345
+    *deviceNo:"192834182937482918932"
+    *productCarts:[
+        {
+            *"productId": 123,
+            *"productUnitId":1231,
+            *"pcount": 3
+        },
+        {
+            "productId": 456,
+            "productUnitId":4561,
+            "pcount": 5
+        }
+    ]
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data":null
+    } 
