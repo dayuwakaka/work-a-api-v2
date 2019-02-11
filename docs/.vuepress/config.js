@@ -17,6 +17,7 @@ module.exports = {
       {text: '基础', link: '/common/'},
       {text: 'APP', link: '/app/'},
       {text: '库存', link: '/depot/'},
+      {text: '费用', link: '/fee/'},
       {text: 'WMS仓储', link: '/wms/'},
       {text: '消息通知', link: '/notice/'},
       {text: '变更', link: '/changelog/'},
