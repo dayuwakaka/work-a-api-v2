@@ -413,9 +413,10 @@
 #### 请求
     GET    /v2/depot/safe/stock/export
 #### 参数
+    // ****************参考税收分类导出*****************
     keyword             // 品名、品号
     depotId             // 仓库id
-    checkCode           // 通过JC-3获取
+    checkCode           // 通过 JC-3 获取
 #### 响应
     流
     
