@@ -291,8 +291,40 @@
             }
         ]
     }     
+     
+### CCGL-9. 安全库存规则日志
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /v2/depot/safe/rule/log
+#### 参数
+    pageNo  // 页码
+    pageSize // 页大小
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [],
+            "dataSums": null,
+            "datas": [
+                {
+                    "id": 0,
+                    "opInfo": "修改安全库存",         // 操作内容
+                    "opRole": 0,
+                    "opTime": "2019-01-31 08:27:57",    // 操作时间
+                    "opUser": 0,
+                    "opUserName": "孙启萌",            // 操作人
+                    "ruleId": 0
+                }
+            ],
+            "pageNo": 1,
+            "total": 1
+        }
+    }    
     
-### CCGL-9. 安全库存列表 
+    
+### CCGL-10. 安全库存列表 
 #### 模块负责人
     尹洪明
 #### 请求
@@ -300,6 +332,7 @@
 #### 参数
     keyword             // 品名、品号
     depotId             // 仓库id
+    status              // 库存状态 'NORMAL' 正常,'LOCK' 锁定
     safeAmountOp        // 安全库存 操作符
     safeAmount                      值
     enableAmountOp      // 可用库存 操作符
@@ -354,7 +387,7 @@
         }
     }
     
-### CCGL-10. 安全库存修改
+### CCGL-11. 安全库存修改
 #### 模块负责人
     尹洪明
 #### 请求
@@ -373,40 +406,7 @@
         "msg": "",
         "data": null
     }    
-         
-### CCGL-11. 安全库存日志
-#### 模块负责人
-    尹洪明
-#### 请求
-    GET /v2/depot/safe/stock/log/{id}
-#### 参数
-    *id // 安全库存id， 【大于等于0】的数字，在列表中获取不到id时，传 0 给后台
-    pageNo  // 页码
-    pageSize // 页大小
-#### 响应
-    {
-        "code": 100000,
-        "msg": "",
-        "data": {
-            "buttonPermissions": [],
-            "dataSums": null,
-            "datas": [
-                {
-                    "id": 0,
-                    "opInfo": "修改安全库存",         // 操作内容
-                    "opRole": 0,
-                    "opTime": "2019-01-31 08:27:57",    // 操作时间
-                    "opUser": 0,
-                    "opUserName": "孙启萌",            // 操作人
-                    "safeStockId": 0
-                }
-            ],
-            "pageNo": 1,
-            "total": 1
-        }
-    }    
-    
-    
+        
 ### CCGL-12. 安全库存导出
 #### 模块负责人
     尹洪明

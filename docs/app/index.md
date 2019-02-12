@@ -1582,7 +1582,7 @@
     GET /router/v5/cookbook/detail
 #### 参数    
     *cookBookId // 菜谱id
-    customerId  // 客户id，用于获取收藏标志
+    *customerId  // 客户id
 #### 响应
     {
         "code": 100000,
@@ -1640,7 +1640,14 @@
                                     "signPrice": 0,
                                     "specialPrice": 0
                                 },
-                                "productCart": null,
+                                "productCart": {
+                                    "createTime": "",
+                                    "id": 0,
+                                    "ownerId": "",
+                                    "pcount": 0,
+                                    "productId": 0,
+                                    "productUnitId": 0
+                                },
                                 "productId": 4537,
                                 "unit": "盒",
                                 "unitId": 2,
@@ -1670,7 +1677,14 @@
                                     "signPrice": 0,
                                     "specialPrice": 0
                                 },
-                                "productCart": null,
+                                "productCart": {
+                                    "createTime": "",
+                                    "id": 0,
+                                    "ownerId": "",
+                                    "pcount": 0,
+                                    "productId": 0,
+                                    "productUnitId": 0
+                                },
                                 "productId": 4537,
                                 "unit": "件",
                                 "unitId": 3,
@@ -1741,7 +1755,14 @@
                                     "signPrice": 0,
                                     "specialPrice": 0
                                 },
-                                "productCart": null,
+                                "productCart": {
+                                       "createTime": "",
+                                       "id": 0,
+                                       "ownerId": "",
+                                       "pcount": 0,
+                                       "productId": 0,
+                                       "productUnitId": 0
+                                   },
                                 "productId": 4538,
                                 "unit": "袋",
                                 "unitId": 1,
@@ -1771,7 +1792,14 @@
                                     "signPrice": 0,
                                     "specialPrice": 0
                                 },
-                                "productCart": null,
+                                "productCart": {
+                                       "createTime": "",
+                                       "id": 0,
+                                       "ownerId": "",
+                                       "pcount": 0,
+                                       "productId": 0,
+                                       "productUnitId": 0
+                                   },
                                 "productId": 4538,
                                 "unit": "件",
                                 "unitId": 3,
