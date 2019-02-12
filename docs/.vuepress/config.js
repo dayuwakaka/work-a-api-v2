@@ -20,7 +20,8 @@ module.exports = {
       {text: '其它', link: '/other/'},
       {text: '变更', link: '/changelog/'},
       {text: '仓储', link: '/wms/'},
-      {text: '库存', link: '/depot/'}
+      {text: '库存', link: '/depot/'},
+      {text: '消息通知', link: '/notice/'}
     ],
     sidebar: 'auto',
   },

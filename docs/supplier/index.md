@@ -752,7 +752,8 @@
 #### 请求
     GET /v2/paorder?buttonPermissionFlg=1
 #### 参数
-    keyword // 采购订单号/供应商名称
+    keyword // 采购订单号
+    supplierId // 供应商id
     deliverType // 配送方式 SELF 自送 THIRD 物流配送
     depotId // 仓id
     status // 订单状态 INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
@@ -838,6 +839,7 @@
             "orderPaPros": [
                 {
                     "giftFlg": 0, // 赠品标识 0-否 1-是
+                    "batchNo": "20876656765767567", // 批次号
                     "pcount": 1, // 数量
                     "price": 1, // 价格
                     "priceFlg": 0, // 是否调整价格 0 - 未调整；1 - 待审核；2 - 通过
@@ -1063,7 +1065,8 @@
 #### 请求
     GET /v2/prorder?buttonPermissionFlg=1
 #### 参数
-    keyword // 单号/经销商名称
+    keyword // 单号
+    supplierId // 供应商id
     deliverType // 配送方式 SELF 自送 THIRD 物流配送
     depotId // 仓id
     status // 订单状态 INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
@@ -1535,7 +1538,7 @@
         }
     }
     
-### CG-83. 采购订单撤回
+### CG-84. 采购订单撤回
 #### 对接负责人
     梁铁骐
 #### 模块负责人
@@ -1551,4 +1554,861 @@
         "data": null
     }
     
+### CG-85. 普通入库单-列表
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/niorder
+#### 参数
+    buttonPermissionFlg 是否获取权限按钮
+    keyword 单号
+    depotId 仓库id
+    status 订单状态 INVALID - 未生效 RUN - 已生效  COMPLETE - 已签收
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [
+                {
+                    "setRunButton": true, // 确认执行按钮
+                    "editButton": true, // 修改按钮
+                    "delButton": true, // 删除按钮
+                    "logButton": true // 日志查看按钮
+                }
+            ],
+            "dataSums": null,
+            "datas": [
+                {
+                    "completeTime": "", // 完成时间
+                    "createRole": 1,
+                    "createTime": "2019-01-19 09:03:31",
+                    "createUser": 518,
+                    "createUserName": "孙启萌", // 创建人
+                    "deleteFlg": 0,
+                    "depotId": 40, // 入库仓id
+                    "depotName": "大连铁1越", // 入库仓名称
+                    "id": 1, // 主键id
+                    "jian": 0, // 件
+                    "modifyTime": "2019-01-19 10:06:52",
+                    "orderId": "NI1901190000001", // 单号
+                    "orderTypeId": 1,
+                    "orderTypeName": "样品出库", // 入库类型名称
+                    "planCompleteTime": "2019-01-20 00:00:00", // 计划入库时间
+                    "platformId": 1,
+                    "remark": "首单测试", // 备注
+                    "runTime": "2019-01-19 09:49:45", // 生效时间
+                    "san": 1, // 散
+                    "status": "INVALID", // 订单状态 INVALID - 未生效 RUN - 已生效  COMPLETE - 已签收
+                    "totalprice": 40.12 // 订单金额
+                }
+            ],
+            "pageNo": 1,
+            "total": 0
+        }
+    }
 
+### CG-86. 普通入库单-新增
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    POST /v2/niorder
+#### 参数
+    {
+    	"orderNi": {
+    		*"depotId": 40, // 入库仓id
+    		*"depotName": "大连铁越", // 入库仓名称
+    		*"orderTypeId": 1, // 入库类型id
+    		*"orderTypeName": "样品出库", // 入库类型名称
+    		"remark": "首单测试", // 备注 0 ~ 250长度，前端同事请做校验
+    		*"planCompleteTime": "2019-01-20" // 计划入库时间
+    	},
+    	"orderNiProList": [
+    		{
+    			*"productId": 1, // 产品id
+    			*"productUnitId": 1, // 产品规格id
+    			*"pcount": 1 // 入库数量
+    		}
+    	],
+    	"onlyCode": 1222231231 // 唯一码
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### CG-87. 普通入库单-修改
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/niorder/{orderId}
+#### 参数
+    *orderId 订单号
+    jsonbody:
+    {
+    	"orderNi": {
+    		*"id": 4096, // 主键id
+    		*"orderId": "NI1901290000003", // 订单号
+    		*"depotId": 40, // 入库仓id
+    		*"depotName": "大连铁越", // 入库仓名称
+    		*"orderTypeId": 1, // 入库类型id
+    		*"orderTypeName":"样品出库", // 入库类型名称
+    		"remark": "首单测试", // 备注 0 ~ 255 前端同事请做校验
+    		*"planCompleteTime": "2019-01-20" // 计划入库时间
+    	},
+    	"orderNiProList": [
+    		{
+    			*"productId": 1, // 产品id
+    			*"productUnitId": 1, // 产品规格id
+    			*"pcount": 1 // 入库数量
+    		}
+    	]
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### CG-88. 普通入库单-详情
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/niorder/{orderId}
+#### 参数
+    *orderId 订单号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "orderNi": {
+                "completeTime": "", // 签收时间
+                "createRole": 1,
+                "createTime": "2019-01-29 11:04:03", // 创建时间
+                "createUser": 518,
+                "createUserName": "孙启萌", // 创建人
+                "deleteFlg": 0,
+                "depotId": 40, // 入库仓id
+                "depotName": "大连铁1越", // 入库仓名称
+                "id": 4096, //
+                "jian": 0, // 件
+                "modifyTime": "2019-01-29 11:06:40",
+                "orderId": "NI1901290000003", // 单号
+                "orderTypeId": 1,
+                "orderTypeName": "样品出库", // 入库类型名称
+                "planCompleteTime": "2019-01-20 00:00:00", // 计划入库时间
+                "platformId": 1,
+                "remark": "首单测试", // 备注
+                "runTime": "", // 生效时间
+                "san": 1, // 散
+                "status": "INVALID", // 订单状态 INVALID - 未生效 RUN - 已生效  COMPLETE - 已签收
+                "totalprice": 40.12 // 订单总金额
+            },
+            "orderNiProList": [
+                {
+                    "deleteFlg": 0,
+                    "id": 32770,
+                    "orderId": "NI1901290000003",
+                    "pcount": 1, // 数量
+                    "price": 40.12, // 单价
+                    "productId": 1,
+                    "productUnit": {
+                        "guige": "500g(23-25枚）/盒", // 规格
+                        "id": 1,
+                        "name": "香草凤尾虾", // 品名
+                        "perunit": 1,
+                        "pno": "0151", // 品号
+                        "productId": 1,
+                        "unit": "盒" // 单位
+                    },
+                    "productUnitId": 1,
+                    "totalprice": 40.12 // 小计
+                }
+            ]
+        }
+    }
+
+### CG-89. 普通入库单-日志列表
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/niorder/{orderId}/logs
+#### 参数
+    *orderId 订单号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [],
+            "dataSums": null,
+            "datas": [
+                {
+                    "id": 1026,
+                    "opInfo": "修改普通入库单", // 操作内容
+                    "opRole": 1,
+                    "opTime": "2019-01-29 11:08:27", // 操作时间
+                    "opUser": 518,
+                    "opUserName": "孙启萌", // 操作者
+                    "orderId": "NI1901290000003"
+                },
+                ...
+            ],
+            "pageNo": 1,
+            "total": 0
+        }
+    }
+
+### CG-90. 普通入库单-确认执行
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/niorder/{orderId}/run
+#### 参数
+    *orderId 订单号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### CG-91. 普通入库单-删除
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    DELETE /v2/niorder/{orderId}
+#### 参数
+    *orderId 订单号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+
+### CG-92. 普通入库单-入库类型
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/niorder/types
+#### 参数
+    无
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "deleteFlg": 0,
+                "id": 16, // id
+                "name": "亚渔货品入库单", // 名称
+                "sort": 0,
+                "type": "NI"
+            },
+        ]
+    }
+
+
+### CG-93. 普通出库单-列表
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/noorder
+#### 参数
+    buttonPermissionFlg 是否获取权限按钮
+    keyword 单号
+    depotId 仓库id
+    status 订单状态 INVALID - 未生效 RUN - 已生效  SEND - 已签收
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [
+                {
+                    "setRunButton": true, // 确认执行按钮
+                    "editButton": true, // 修改按钮
+                    "delButton": true, // 删除按钮
+                    "logButton": true // 日志查看按钮
+                }
+            ],
+            "dataSums": null,
+            "datas": [
+                {
+                    "sendTime": "", // 发车时间
+                    "createRole": 1,
+                    "createTime": "2019-01-19 09:03:31",
+                    "createUser": 518,
+                    "createUserName": "孙启萌", // 创建人
+                    "deleteFlg": 0,
+                    "depotId": 40, // 出库仓id
+                    "depotName": "大连铁1越", // 出库仓名称
+                    "id": 1, // 主键id
+                    "jian": 0, // 件
+                    "modifyTime": "2019-01-19 10:06:52",
+                    "orderId": "NO1901190000001", // 单号
+                    "orderTypeId": 1,
+                    "orderTypeName": "样品出库", // 入库类型名称
+                    "planSendTime": "2019-01-20 00:00:00", // 计划出库时间
+                    "platformId": 1,
+                    "remark": "首单测试", // 备注
+                    "runTime": "2019-01-19 09:49:45", // 生效时间
+                    "san": 1, // 散
+                    "status": "INVALID", // 订单状态 INVALID - 未生效 RUN - 已生效  SEND - 已发车
+                    "totalprice": 40.12 // 订单金额
+                }
+            ],
+            "pageNo": 1,
+            "total": 0
+        }
+    }
+    
+### CG-94. 普通出库单-新增
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    POST /v2/noorder
+#### 参数
+    {
+    	"orderNo": {
+    		*"depotId": 40, // 出库仓id
+    		*"depotName": "大连铁越", // 出库仓名称
+    		*"orderTypeId": 1, // 出库类型id
+    		*"orderTypeName": "样品出库", // 出库类型名称
+    		"remark": "首单测试", // 备注 0 ~ 255 前端同事请做校验
+    		*"planSendTime": "2019-01-20" // 计划发出时间
+    	},
+    	"orderNoProList": [
+    		{
+    			*"productId": 1, // 产品id
+    			*"productUnitId": 1, // 产品规格id
+    			*"pcount": 1 // 数量
+    		}
+    	],
+    	*"onlyCode": 1231231123 // 唯一码
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### CG-95. 普通出库单-修改
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/noorder/{orderId}
+#### 参数
+    *orderId 订单号
+    jsonbody:
+    {
+    	"orderNo": {
+    		*"id": 16384, // 主键id
+    		*"orderId": "NO1901290000002", // 订单号
+    		*"depotId": 40, // 出库仓id
+    		*"depotName": "大连铁越", // 出库仓名称
+    		*"orderTypeId": 1, // 出库类型id
+    		*"orderTypeName":"出库类型名称", // 出库类型名称
+    		"remark": "首单测试", // 备注 0 ~ 255 前端同事请做校验
+    		*"planSendTime": "2019-01-20" // 计划出库时间
+    	},
+    	"orderNoProList": [
+    		{
+    			*"productId": 1, // 产品id
+    			*"productUnitId": 1, // 产品规格id
+    			*"pcount": 1 // 数量
+    		}
+    	]
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### CG-96. 普通出库单-详情
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/noorder/{orderId}
+#### 参数
+    *orderId 订单号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "orderNo": {
+                "createRole": 1,
+                "createTime": "2019-01-29 11:31:07", // 创建时间
+                "createUser": 518,
+                "createUserName": "孙启萌", // 创建人
+                "deleteFlg": 0,
+                "depotId": 40, // 出库仓id
+                "depotName": "大连铁越", // 出库仓名称
+                "id": 16384, // 主键id
+                "jian": 0, // 件
+                "modifyTime": "2019-01-29 11:35:27",
+                "orderId": "NO1901290000002", // 订单号
+                "orderTypeId": 1, // 出库类型id
+                "orderTypeName": "样品出库", // 出库类型名称
+                "planSendTime": "2019-01-20 00:00:00", // 计划出库时间
+                "platformId": 1,
+                "remark": "首单测试", // 备注
+                "runTime": "", // 生效时间
+                "san": 1, // 散
+                "sendTime": "", // 发出时间
+                "status": "INVALID", // 订单状态 INVALID - 未生效 RUN - 已生效  SEND - 已签收
+                "totalprice": 40.12 // 订单总计
+            },
+            "orderNoProList": [
+                {
+                    "deleteFlg": 1,
+                    "id": 131071,
+                    "orderId": "NO1901290000002",
+                    "pcount": 1,
+                    "price": 40.12,
+                    "productId": 1,
+                    "productUnit": {
+                        "createTime": "",
+                        "cubage": 1512,
+                        "grossweight": 0.55,
+                        "guige": "500g(23-25枚）/盒", // 规格
+                        "height": 5,
+                        "id": 1,
+                        "length": 19.5,
+                        "minimum": 0,
+                        "minimumType": "NONE",
+                        "modifyTime": "",
+                        "netweight": 0.5,
+                        "perunit": 1,
+                        "price": null,
+                        "product": {
+                            "customFlg": 0,
+                            "id": 1,
+                            "longName": "香草凤尾虾-专业开背，秘制加工，中西餐厅新食尚~",
+                            "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/f9ce32e007fc796722466531c86d5cd9.jpg",
+                            "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg",
+                            "name": "香草凤尾虾", // 品名
+                            "pno": "0151", // 品号
+                            "productLack": null,
+                            "status": "LOCK"
+                        },
+                        "productCart": null,
+                        "productId": 1,
+                        "stock": {
+                            "amount": 216, // 库存数量
+                            "productId": 1
+                        },
+                        "unit": "盒", // 单位
+                        "unitId": 2,
+                        "width": 15.5
+                    },
+                    "productUnitId": 1, //
+                    "totalprice": 40.12 // 产品小计
+                }
+            ]
+        }
+    }
+
+### CG-97. 普通出库单-日志列表
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/noorder/{orderId}/logs
+#### 参数
+    *orderId 订单号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [],
+            "dataSums": null,
+            "datas": [
+                {
+                    "id": 1026,
+                    "opInfo": "修改普通出库单", // 操作内容
+                    "opRole": 1,
+                    "opTime": "2019-01-29 11:08:27", // 操作时间
+                    "opUser": 518,
+                    "opUserName": "孙启萌", // 操作者
+                    "orderId": "NO1901290000003"
+                },
+                ...
+            ],
+            "pageNo": 1,
+            "total": 0
+        }
+    }
+
+### CG-98. 普通出库单-确认执行
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/noorder/{orderId}/run
+#### 参数
+    *orderId 订单号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### CG-99. 普通出库单-删除
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    DELETE /v2/noorder/{orderId}
+#### 参数
+    *orderId 订单号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+    
+### CG-100 普通出库单-出库类型
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/noorder/types
+#### 参数
+    无
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "deleteFlg": 0,
+                "id": 16, // id
+                "name": "亚渔货品出库单", // 名称
+                "sort": 0,
+                "type": "NO"
+            },
+        ]
+    }
+ 
+
+### CG-101. 调拨单-列表
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/trorder
+#### 参数
+    buttonPermissionFlg 是否获取权限按钮
+    keyword 单号
+    fromDepotId 出库仓id
+    toDepotId 入库仓id
+    status 订单状态 INVALID:订单未生效,RUN:订单生效,SEND:已发出,COMPLETE:已签收
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [
+                {
+                    "setRunButton": true, // 确认执行按钮
+                    "editButton": true, // 修改按钮
+                    "delButton": true, // 删除按钮
+                    "logButton": true // 日志查看按钮
+                }
+            ],
+            "dataSums": null,
+            "datas": [
+                {
+                    "advanceFlg": 0,
+                    "completeTime": "", // 完成时间
+                    "createRole": 1,
+                    "createTime": "2019-01-16 11:38:18", // 创建时间
+                    "createUser": 518,
+                    "createUserName": "孙启萌", // 创建人
+                    "deleteFlg": 0,
+                    "fromDepotId": 50, // 出库仓id
+                    "fromDepotName": "VC（工厂直发）", // 出库仓名称
+                    "id": 6333, // 主键id
+                    "jian": 1, // 件
+                    "modifyTime": "2019-01-28 14:40:27",
+                    "orderId": "TR190116003691", // 单号
+                    "planCompleteTime": "2019-01-16 00:00:00", // 计划入库时间
+                    "planSendTime": "2019-01-16 00:00:00", // 计划出库时间
+                    "platformId": 1,
+                    "remark": "1", // 备注
+                    "runTime": "2019-01-16 00:00:00", // 生效时间
+                    "san": 1, // 散
+                    "sendTime": "2019-01-16 00:00:00", // 发出时间
+                    "status": "RUN", // 订单状态 INVALID:订单未生效,RUN:订单生效,SEND:已发出,COMPLETE:已签收
+                    "toDepotId": 22, // 入库仓id
+                    "toDepotName": "DC（郑州信基仓）" // 入库仓名称
+                }
+            ],
+            "pageNo": 1,
+            "total": 0
+        }
+    }
+
+### CG-102. 调拨单-新增
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    POST /v2/trorder
+#### 参数
+    {
+    	"orderTr": {
+    		*"fromDepotId": 40, // 出库仓id
+    		*"fromDepotName": "大连铁越", // 出库仓名称
+    		*"toDepotId": 2, // 入库仓id
+    		*"toDepotName": "沈阳铁越", // 入库仓名称
+    		"remark": "首单测试", // 备注 0 ~ 255 前端同事请做校验
+    		*"planSendTime": "2019-01-20", // 计划出库时间
+    		*"planCompleteTime": "2019-01-22" // 计划入库时间
+    	},
+    	"orderTrProList": [
+    		{
+    			*"productId": 1, // 产品id
+    			*"productUnitId": 1, // 产品规格id
+    			*"pcount": 1 // 数量
+    		}
+    	],
+    	"onlyCode": 123123 // 唯一码
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### CG-103. 调拨单-修改
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/trorder
+#### 参数
+    {
+    	"orderTr": {
+    		*"id": 8192, // 主键id
+    		*"orderId": "TR1901290000001", // 单号
+    		*"fromDepotId": 40, // 出库仓id
+    		*"fromDepotName": "大连铁越", // 出库仓名称
+    		*"toDepotId": 21, // 入库仓id
+    		*"toDepotName": "沈阳铁越", // 入库仓名称
+    		"remark": "首单测试1", // 备注 0 ~ 255 前端同事请做校验
+    		*"planSendTime": "2019-01-01", // 计划出库时间
+    		*"planCompleteTime": "2019-01-01" // 计划入库时间
+    	},
+    	"orderTrProList": [
+    		{
+    			*"productId": 1, // 产品id
+    			*"productUnitId": 1, //产品规格id
+    			*"pcount": 1 // 数量
+    		}
+    	]
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+    
+    
+### CG-104. 调拨单-详情
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/trorder/{orderId}
+#### 参数
+    *orderId 订单号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "orderTr": {
+                "advanceFlg": 0,
+                "completeTime": "", // 完成时间
+                "createRole": 1,
+                "createTime": "2019-01-29 13:18:07", // 创建时间
+                "createUser": 518,
+                "createUserName": "孙启萌", // 创建人
+                "deleteFlg": 0,
+                "fromDepotId": 40, // 出库仓id
+                "fromDepotName": "大连铁越", // 出库仓名称
+                "id": 8192, // 主键id
+                "jian": 0, // 件
+                "modifyTime": "2019-01-29 13:35:33",
+                "orderId": "TR1901290000001", // 订单号
+                "planCompleteTime": "2019-01-01 00:00:00", // 计划入库时间
+                "planSendTime": "2019-01-01 00:00:00", // 计划出库时间
+                "platformId": 1,
+                "remark": "首单测试1", // 备注 0 ~ 255 前端同事请做校验
+                "runTime": "", // 生效时间
+                "san": 1, // 散
+                "sendTime": "", // 发出时间
+                "status": "INVALID", // 订单状态 INVALID:订单未生效,RUN:订单生效,SEND:已发出,COMPLETE:已签收
+                "toDepotId": 21, // 入库仓id
+                "toDepotName": "沈阳铁越" // 入库仓名称
+            },
+            "orderTrProList": [
+                {
+                    "deleteFlg": 0,
+                    "id": 131073,
+                    "orderId": "TR1901290000001",
+                    "pcount": 1,
+                    "productId": 1,
+                    "productUnit": {
+                        "createTime": "",
+                        "cubage": 1512,
+                        "grossweight": 0.55,
+                        "guige": "500g(23-25枚）/盒", // 规格
+                        "height": 5,
+                        "id": 1,
+                        "length": 19.5,
+                        "minimum": 0,
+                        "minimumType": "NONE",
+                        "modifyTime": "",
+                        "netweight": 0.5,
+                        "perunit": 1,
+                        "price": null,
+                        "product": {
+                            "customFlg": 0,
+                            "id": 1,
+                            "longName": "香草凤尾虾-专业开背，秘制加工，中西餐厅新食尚~",
+                            "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/f9ce32e007fc796722466531c86d5cd9.jpg",
+                            "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg",
+                            "name": "香草凤尾虾", // 品名
+                            "pno": "0151", // 品号
+                            "productLack": null,
+                            "status": "LOCK"
+                        },
+                        "productCart": null,
+                        "productId": 1,
+                        "stock": {
+                            "amount": 216, // 库存
+                            "productId": 1
+                        },
+                        "unit": "盒", // 单位
+                        "unitId": 2,
+                        "width": 15.5
+                    },
+                    "productUnitId": 1
+                }
+            ]
+        }
+    }
+
+### CG-105. 调拨单-日志列表
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/trorder/{orderId}/logs
+#### 参数
+    *orderId 订单号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [],
+            "dataSums": null,
+            "datas": [
+                {
+                    "id": 65538,
+                    "opInfo": "修改调拨单", // 操作内容
+                    "opRole": 1,
+                    "opTime": "2019-01-29 13:44:24", // 操作时间
+                    "opUser": 518,
+                    "opUserName": "孙启萌", // 操作人
+                    "orderId": "TR1901290000001"
+                }
+            ],
+            "pageNo": 1,
+            "total": 0
+        }
+    }
+    
+### CG-106. 调拨单-确认执行
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/trorder/{orderId}/run
+#### 参数
+    *orderId 订单号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### CG-107. 调拨单-删除
+#### 对接负责人
+    梁铁骐
+#### 模块负责人
+    梁铁骐
+#### 请求
+    DELETE /v2/trorder/{orderId}
+#### 参数
+    *orderId 订单号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
