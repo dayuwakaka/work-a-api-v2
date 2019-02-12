@@ -96,3 +96,40 @@
         }
     }
 
+### FYGL-4. 库费系数历史
+#### 模块负责人
+    刘宏宇
+#### 请求
+    GET /v2/fee/coefficient/history/{depotId}
+#### 参数
+    *depotId: 1 // 仓ID
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [],
+            "dataSums": null,
+            "datas": [
+                {
+                    "calOut": 1, // 计算越库 0 不计算 1 计算
+                    "calWeight": "NET", // 计重方式 NET 净重 GROSS 毛重
+                    "depotCoefficient": 1, // 库费系数
+                    "depotId": 110, // 仓ID
+                    "depotLevel": "FDC",// 仓类型
+                    "depotName": "FDC（哈尔滨天顺仓）", // 仓名
+                    "effectDate": "2019-02-11", // 生效实际
+                    "id": 1, // 库费系数ID
+                    "modifyRemark": "123", // 修改备注
+                    "modifyRole": 1, // 修改角色ID
+                    "modifyTime": "2019-02-11 17:49:44", // 修改时间
+                    "modifyUser": 101,  // 修改人ID
+                    "modifyUserName": "樊嘉辉", // 修改人名
+                    "serviceCoefficient": 1, // 服务费系数
+                    "type": "NOW" // 类型 NOW 立即生效 TASK 定时任务
+                }
+            ],
+            "pageNo": 1,
+            "total": -1
+        }
+    }
