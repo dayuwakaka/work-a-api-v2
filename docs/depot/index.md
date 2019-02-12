@@ -413,17 +413,9 @@
 #### 请求
     GET    /v2/depot/safe/stock/export
 #### 参数
-    // ****************参考税收分类导出*****************
     keyword             // 品名、品号
     depotId             // 仓库id
-    safeAmountOp        // 安全库存 操作符
-    safeAmount                      值
-    enableAmountOp      // 可用库存 操作符
-    enableAmount                    值
-    normalAmountOp      // 实际库存 操作符
-    normalAmount                    值
-    averageOp           // 平均库存 操作符
-    average                         值
+    checkCode           // 通过JC-3获取
 #### 响应
     流
     
