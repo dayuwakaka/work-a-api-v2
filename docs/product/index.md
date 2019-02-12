@@ -907,16 +907,148 @@
             "styleUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190121132417926-4745.png",
         }
     }
+ 
+### CP-56.产品属性分类新增
+#### 模块负责人
+    尹洪明
+#### 请求
+    POST /v2/product/attr/category
+#### 参数
+    {
+        *"name":"特殊安全库存"
+    }
+#### 响应
+    {
+    	"code": 100000,
+    	"msg": "",
+    	"data": null
+    }
+ 
+### CP-57.产品属性分类列表
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /v2/product/attr/category
+#### 参数
+    无
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "createTime": "",
+                "deleteFlg": 0,
+                "id": 1,                // 分类id
+                "name": "特殊安全库存"    // 分类名称
+            }
+        ]
+    }
+ 
+### CP-58.产品属性新增
+#### 模块负责人
+    尹洪明
+#### 请求
+    POST /v2/product/attr
+#### 参数
+    {
+        "categoryId":1,                     // 分类id
+        "name":"运输周期超过一周以上的产品", // 属性名
+        "depotSafeFlg":1            // 是否计入安全库存(0 不计入 1 计入)
+    }
+#### 响应
+    {
+    	"code": 100000,
+    	"msg": "",
+    	"data": null
+    }
+
+### CP-59.产品属性修改
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT /v2/product/attr/{id}
+#### 参数
+    *id // 属性id
+    {
+        "categoryId":1,                     // 分类id
+        "name":"运输周期超过一周以上的产品", // 属性名
+        "depotSafeFlg":1            // 是否计入安全库存(0 不计入 1 计入)
+    }
+#### 响应
+    {
+    	"code": 100000,
+    	"msg": "",
+    	"data": null
+    }
     
+### CP-60.产品属性删除
+#### 模块负责人
+    尹洪明
+#### 请求
+    DELETE /v2/product/attr/{id}
+#### 参数
+    *id // 属性id
+#### 响应
+    {
+    	"code": 100000,
+    	"msg": "",
+    	"data": null
+    } 
+### CP-61.产品属性列表
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /v2/product/attr
+#### 参数
+    keyword // 属性名称
+    categoryId // 分类id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "categoryId": 0,
+                "categoryName": "特殊安全库存",       // 属性分类名
+                "createTime": "",
+                "deleteFlg": 0,
+                "depotSafeFlg": 0,
+                "id": 1,                            // 属性id
+                "isDepotSafe": "不计算安全库存",       // 属性特权
+                "name": "运输周期超过一周以上的产品",    // 属性名称
+                "productId": 0
+            }
+        ]
+    }
+
+### CP-62.产品属性详情
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /v2/product/attr/detail/{id}
+#### 参数
+    *id // 属性id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "categoryId": 1,        // 分类id
+            "createTime": "",
+            "deleteFlg": 0,
+            "depotSafeFlg": 1,                      // 是否计入安全库存(0 不计入 1 计入)
+            "id": 1,                                // 属性id
+            "name": "运输周期超过一周以上的产品"         // 属性名称
+        }
+    }    
+      
 ### CP-101. 新增断货
 #### 模块负责人
     尹洪明
 #### 请求
-
     POST    /v2/product/lack
-    
 #### 参数
-
     {
     	*"productIds":[3182,3180,3176],      // 产品列表
     	*"startTime":"2018-09-12 10:10:10",  // 开始时间
