@@ -33,6 +33,8 @@
     enableAmount: 10 // 可用库存数量
     normalAmountOp: ">" // > <  >= <= = 实际库存数量比较符
     normalAmount: 10 // 实际库存数量
+    pageNo: 1 // 分页
+    pageSize: 25 // 页条数
 #### 响应
     {
         "code": 100000,
@@ -88,6 +90,8 @@
     status:"NORMAL" // 状态 NORMAL 正常 LOCK 锁定
     normalAmountOp: ">" // > < >= = 实际库存比较符
     normalAmount: 10.0 // 实际库存数量
+    pageNo: 1 // 分页
+    pageSize: 25 // 页条数
 #### 响应     
         {
             "code": 100000,
@@ -159,7 +163,8 @@
     payMode: "INBUY" // 支付方式 INBUY 入结 OUT 出结
     giftFlg: 0 // 0 非赠品 1 赠品 ，不限制不传
     depotId: 1 // 仓ID
-
+    pageNo: 1 // 分页
+    pageSize: 25 // 页条数
 #### 响应  
     {
         "code": 100000,
