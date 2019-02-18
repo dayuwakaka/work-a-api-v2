@@ -11,6 +11,8 @@
     calWeight:"NET" // 计重方式 NET 净重 GROSS 毛重
     calOut：1 // 计算越库 0 不计算 1 计算
     type:"TASK" // NOW 即时生效 TASK 定时生效
+    pageNo: 1 // 分页
+    pageSize: 25 // 页条数
 #### 响应
     {
         "code": 100000,
@@ -73,6 +75,8 @@
     GET /v2/fee/coefficient/log/{depotId}
 #### 参数
     *depotId: 1 // 仓ID
+    pageNo: 1 // 分页
+    pageSize: 25 // 页条数
 #### 响应
     {
         "code": 100000,
@@ -96,3 +100,104 @@
         }
     }
 
+### FYGL-4. 库费系数历史
+#### 模块负责人
+    刘宏宇
+#### 请求
+    GET /v2/fee/coefficient/history/{depotId}
+#### 参数
+    *depotId: 1 // 仓ID
+    pageNo: 1 // 分页
+    pageSize: 25 // 页条数
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [],
+            "dataSums": null,
+            "datas": [
+                {
+                    "calOut": 1, // 计算越库 0 不计算 1 计算
+                    "calWeight": "NET", // 计重方式 NET 净重 GROSS 毛重
+                    "depotCoefficient": 1, // 库费系数
+                    "depotId": 110, // 仓ID
+                    "depotLevel": "FDC",// 仓类型
+                    "depotName": "FDC（哈尔滨天顺仓）", // 仓名
+                    "effectDate": "2019-02-11", // 生效实际
+                    "id": 1, // 库费系数ID
+                    "modifyRemark": "123", // 修改备注
+                    "modifyRole": 1, // 修改角色ID
+                    "modifyTime": "2019-02-11 17:49:44", // 修改时间
+                    "modifyUser": 101,  // 修改人ID
+                    "modifyUserName": "樊嘉辉", // 修改人名
+                    "serviceCoefficient": 1, // 服务费系数
+                    "type": "NOW" // 类型 NOW 立即生效 TASK 定时任务
+                }
+            ],
+            "pageNo": 1,
+            "total": -1
+        }
+    }
+
+### FYGL-5. 仓库库费
+#### 模块负责人
+    刘宏宇
+#### 请求
+    GET /v2/fee/pay/depot
+#### 参数
+    depotId: 1 // 仓ID
+    calWeight: "NET" // 计重方式 NET 净重 GROSS 毛重
+    calOut: 1 // 计算越库 0 不计算 1 计算
+    sDate: "2019-01-01" // 开始日期
+    eDate: "2019-01-31" // 结束日期
+    pageNo: 1 // 分页
+    pageSize: 25 // 页条数
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [],
+            "dataSums": null,
+            "datas": [
+                {
+                    "calOut": 0, // 计算越库 0 不计算 1 计算
+                    "calWeight": "GROSS", // 计重方式 NET 净重 GROSS 毛重
+                    "depotCoefficient": 3.6, // 库费系数
+                    "depotFee": 79418.23, // 库费
+                    "depotId": 40, // 仓ID
+                    "depotName": "", // 仓名
+                    "depotWeight": 22060.62009, // 库费吨位
+                    "serviceCoefficient": 66, // 服务费系数
+                    "serviceFee": 45534.56, // 服务费
+                    "serviceWeight": 689.91753 // 服务费吨位
+                }
+            ],
+            "pageNo": 1,
+            "total": -1
+        }
+    }
+
+
+### FYGL-5. 仓库库费汇总
+#### 模块负责人
+    刘宏宇
+#### 请求
+    GET /v2/fee/pay/depot/summary
+#### 参数
+    depotId: 1 // 仓ID
+    calWeight: "NET" // 计重方式 NET 净重 GROSS 毛重
+    calOut: 1 // 计算越库 0 不计算 1 计算
+    sDate: "2019-01-01" // 开始日期
+    eDate: "2019-01-31" // 结束日期
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "totalDepotFee": 285246.59, // 总库费
+            "totalFee": 290235.87, // 总费用
+            "totalServiceFee": 4989.28 // 总服务费
+        }
+    }
