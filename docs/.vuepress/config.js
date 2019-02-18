@@ -16,11 +16,13 @@ module.exports = {
       {text: '菜谱', link: '/cookbook/'},
       {text: '基础', link: '/common/'},
       {text: 'APP', link: '/app/'},
-      {text: '代理接口', link: '/feign/'},
-      {text: '其它', link: '/other/'},
+      {text: '库存', link: '/depot/'},
+      {text: '费用', link: '/fee/'},
+      {text: 'WMS仓储', link: '/wms/'},
+      {text: '消息通知', link: '/notice/'},
       {text: '变更', link: '/changelog/'},
-      {text: '仓储', link: '/wms/'},
-      {text: '消息通知', link: '/notice/'}
+      {text: '代理接口', link: '/feign/'},
+      {text: '其它', link: '/other/'}
     ],
     sidebar: 'auto',
   },
