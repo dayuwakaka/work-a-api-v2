@@ -1462,6 +1462,7 @@
     keyword 单号
     depotId 仓库id
     status 订单状态 INVALID - 未生效 RUN - 已生效  COMPLETE - 已签收
+    orderTypeId 入库类型
 #### 响应
     {
         "code": 100000,
@@ -1723,6 +1724,7 @@
     keyword 单号
     depotId 仓库id
     status 订单状态 INVALID - 未生效 RUN - 已生效  SEND - 已签收
+    orderTypeId 出库类型
 #### 响应
     {
         "code": 100000,
