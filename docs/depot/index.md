@@ -222,33 +222,35 @@
     PUT /v2/depot/safe/rule
 #### 参数
     // 此接口包含新增、修改、删除的逻辑
-    // 新增的规则id=0，修改的id>0，删除的规则不需要传给后台
-    [
-        {
-            *"id":13,                // 规则id
-            *"parameter": "AVERAGE", // 基础参数，目前只有AVERAGE一种参数类型
-            *"minRange": 1,          // 最小值
-            *"maxRange": 200,        // 最大值
-            *"actionType": "FULL",   // 安全库存值 FULL 基础参数； HALF 基础参数/2； SPECIFY 其它
-            *"actionValue": 0        // 当actionType=SPECIFY时，actionValue>0,FULL&HALF时，actionValue=0
-        },
-        {
-            "id":0,
-            "parameter": "AVERAGE",
-            "minRange": 200,
-            "maxRange": 400,
-            "actionType": "HALF",
-            "actionValue": 0
-        },
-        {
-            "id":0,
-            "parameter": "AVERAGE",
-            "minRange": 400,
-            "maxRange": 600,
-            "actionType": "SPECIFY",
-            "actionValue": 100
-        }
-    ]
+    // 删除的规则不需要传给后台
+    {
+        "onlyCode":"19823478127",        // 唯一编码
+        [
+            {
+                *"id":13,                // 规则id
+                *"parameter": "AVERAGE", // 基础参数，目前只有AVERAGE一种参数类型
+                *"minRange": 1,          // 最小值
+                *"maxRange": 200,        // 最大值
+                *"actionType": "FULL",   // 安全库存值 FULL 基础参数； HALF 基础参数/2； SPECIFY 其它
+                *"actionValue": 0        // 当actionType=SPECIFY时，actionValue>0,FULL&HALF时，actionValue=0
+            },
+            {
+                "id":0,
+                "parameter": "AVERAGE",
+                "minRange": 200,
+                "maxRange": 400,
+                "actionType": "HALF",
+                "actionValue": 0
+            },
+            {
+                "parameter": "AVERAGE",
+                "minRange": 400,
+                "maxRange": 600,
+                "actionType": "SPECIFY",
+                "actionValue": 100
+            }
+        ]
+    }
 
 ### CCGL-8. 安全库存规则查询
 #### 模块负责人
@@ -333,14 +335,10 @@
     keyword             // 品名、品号
     depotId             // 仓库id
     status              // 库存状态 'NORMAL' 正常,'LOCK' 锁定
-    safeAmountOp        // 安全库存 操作符
-    safeAmount                      值
     enableAmountOp      // 可用库存 操作符
     enableAmount                    值
     normalAmountOp      // 实际库存 操作符
     normalAmount                    值
-    averageOp           // 平均库存 操作符
-    average                         值
     pageNo              // 页码
     pageSize            // 页大小
 #### 响应
@@ -416,6 +414,7 @@
     // ****************参考税收分类导出*****************
     keyword             // 品名、品号
     depotId             // 仓库id
+    status              // 库存状态
     checkCode           // 通过 JC-3 获取
 #### 响应
     流
