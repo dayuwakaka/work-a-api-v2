@@ -1462,6 +1462,7 @@
     keyword 单号
     depotId 仓库id
     status 订单状态 INVALID - 未生效 RUN - 已生效  COMPLETE - 已签收
+    orderTypeId 入库类型id
 #### 响应
     {
         "code": 100000,
@@ -1723,6 +1724,7 @@
     keyword 单号
     depotId 仓库id
     status 订单状态 INVALID - 未生效 RUN - 已生效  SEND - 已签收
+    orderTypeId 出库类型id
 #### 响应
     {
         "code": 100000,
@@ -2151,7 +2153,7 @@
                 "planCompleteTime": "2019-01-01 00:00:00", // 计划入库时间
                 "planSendTime": "2019-01-01 00:00:00", // 计划出库时间
                 "platformId": 1,
-                "remark": "首单测试1", // 备注 0 ~ 255 前端同事请做校验
+                "remark": "首单测试1", // 备注
                 "runTime": "", // 生效时间
                 "san": 1, // 散
                 "sendTime": "", // 发出时间
