@@ -382,7 +382,7 @@
 #### 模块负责人
     刘宏宇
 #### 请求
-    GET /v2/fee/depot/dayly/export
+    GET /v2/fee/income/depot/dayly/export
 #### 参数
     *checkToken: "xx" // 下载授权码
     sDate:"2019-01-01" // 开始日期
@@ -394,7 +394,7 @@
 #### 模块负责人
     刘宏宇
 #### 请求
-    GET /v2/fee/depot/detail
+    GET /v2/fee/income/depot/detail
 #### 参数
     sDate:"2019-01-01" // 开始日期
     eDate:"2019-01-31" // 结束日期
