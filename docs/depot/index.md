@@ -119,6 +119,7 @@
                         "supplierId": 2629 // 供应商ID
                     },
                     "guige": "540g（15串）/盒*12盒", // 规格
+                    "unit": "件", // 单位
                     "normalAmount": 2265, // 实际库存（最小单位数量）
                     "normalAmountJian": 188, // 实际库存（件）
                     "normalAmountSan": 9, // 实际库存（散）
