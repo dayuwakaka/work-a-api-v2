@@ -289,12 +289,8 @@
             "dataSums": null,
             "datas": [
                 {
-                    "calOut": 0, // 计算越库 0 不计算 1 计算
-                    "calWeight": "NET", // 计重方式 NET 净重 GROSS 毛重
-                    "depotCoefficient": 0, // 库费系数
                     "depotFee": 0, // 库费
                     "depotWeight": 284.04358, // 库费吨位
-                    "serviceCoefficient": 0, // 服务费系数
                     "serviceFee": 0, // 服务费
                     "serviceWeight": 11.27009, // 服务费吨位
                     "supplierId": 2629, // 供应商ID
@@ -356,16 +352,12 @@
             "dataSums": null,
             "datas": [
                 {
-                    "calOut": 0, // 计算越库 0 不计算 1 计算
-                    "calWeight": "NET", // 计重方式 NET 净重 GROSS 毛重
-                    "depotCoefficient": 3.6, // 库费系数
                     "depotFee": 21.501432, // 库费
                     "depotWeight": 5.97262, // 库费吨位
                     "inWeight": 0, // 今日入吨位
                     "lastRemainWeight": 4587.67, // 昨日仓存留吨位
                     "outWeight": 16, // 今日出吨位
                     "remainWeight": 5972.62, // 今日存留吨位
-                    "serviceCoefficient": 66, // 服务费系数
                     "serviceFee": 1.056, // 服务费
                     "serviceWeight": 0.016, // 服务费吨位
                     "supplierId": 2629, // 供应商ID
@@ -478,7 +470,9 @@
                     "errorFlg": 0, // 价格异常标记 0 正常 1 异常
                     "guige": "", // 规格
                     "inOrderId": "PA180929014365", // 入单ID
+                    "inOrderType": "TR" // 入单类型 TR 调拨单 PA 采购单 IN 普通入 SR 销售退
                     "outOrderId": "", // 出单ID
+                    "outOrderType": "TR" // 出库单类型 TR 调拨单 PR 采购退 NO 普通出 SA 销售单
                     "payMode": "INBUY", // 结算方式 INBUY 入结 OUTBUY 出结
                     "pno": "", // 品号
                     "price": 523.04, // 基价

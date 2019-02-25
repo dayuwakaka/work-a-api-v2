@@ -85,6 +85,7 @@
 #### 请求
     GET /v2/depot/stock3
 #### 参数
+    supplierId: 1 // 供应商ID
     productKeyword:"xxx" // 品号，品名
     depotId: 1 // 仓ID，全部为不传
     status:"NORMAL" // 状态 NORMAL 正常 LOCK 锁定
@@ -119,6 +120,7 @@
                         "supplierId": 2629 // 供应商ID
                     },
                     "guige": "540g（15串）/盒*12盒", // 规格
+                    "unit": "件", // 单位
                     "normalAmount": 2265, // 实际库存（最小单位数量）
                     "normalAmountJian": 188, // 实际库存（件）
                     "normalAmountSan": 9, // 实际库存（散）
