@@ -417,6 +417,8 @@
                     "serviceWeight": 0.016, // 服务费吨位
                     "supplierId": 2629, // 供应商ID
                     "supplierName": "26", // 供应商名
+                    "depotId": 40, // 仓ID
+                    "depotName": "DC（大连铁越仓）", // 仓名
                     "tag": "2019-01-01" // 日
                 }
             ],
