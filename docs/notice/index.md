@@ -4,7 +4,7 @@
 #### 模块负责人
     梁铁骑
 #### 1.1 请求URL
-    /v2/notice
+    /router/v5/notice
 
 #### 1.2 请求类型
     GET
