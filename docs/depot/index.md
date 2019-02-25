@@ -85,6 +85,7 @@
 #### 请求
     GET /v2/depot/stock3
 #### 参数
+    supplierId: 1 // 供应商ID
     productKeyword:"xxx" // 品号，品名
     depotId: 1 // 仓ID，全部为不传
     status:"NORMAL" // 状态 NORMAL 正常 LOCK 锁定
