@@ -391,6 +391,7 @@
     sDate:"2019-01-01" // 开始日期
     eDate:"2019-01-31" // 结束日期
     supplierId: 1 // 供应商ID
+    depotId: 1 // 仓ID
     pageNo: 1 // 页
     pageSize: 25 // 页行数
 #### 响应
