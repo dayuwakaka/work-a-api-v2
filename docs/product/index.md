@@ -643,8 +643,8 @@
 		pathId
 	hasStock:           // 客户某个区域产品库存, pathId & depotId 二选一
 		customerId
-		*pathId
-		*depotId
+		pathId
+		depotId
 	hasStock3:          // 供应商某个仓库产品库存
 		*supplierId
 		*depotId
