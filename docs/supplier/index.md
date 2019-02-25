@@ -1616,13 +1616,16 @@
                     "price": 40.12, // 单价
                     "productId": 1,
                     "productUnit": {
-                        "guige": "500g(23-25枚）/盒", // 规格
-                        "id": 1,
-                        "name": "香草凤尾虾", // 品名
-                        "perunit": 1,
-                        "pno": "0151", // 品号
-                        "productId": 1,
-                        "unit": "盒" // 单位
+                        "guige": "800g", // 规格
+                        "product": {
+                            "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/36c00a2019dde2abbd23e609eff56d44.jpg", // 产品主图
+                            "name": "海苔多春鱼", // 品名
+                            "pno": "0079", // 品号
+                            "productLack": null,
+                            "status": "NORMAL"
+                        },
+                        "stock": null,
+                        "unit": "盒", // 单位
                     },
                     "productUnitId": 1,
                     "totalprice": 40.12 // 小计
@@ -1896,7 +1899,7 @@
                             "id": 1,
                             "longName": "香草凤尾虾-专业开背，秘制加工，中西餐厅新食尚~",
                             "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/f9ce32e007fc796722466531c86d5cd9.jpg",
-                            "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg",
+                            "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg", // 产品主图
                             "name": "香草凤尾虾", // 品名
                             "pno": "0151", // 品号
                             "productLack": null,
@@ -2187,7 +2190,7 @@
                             "id": 1,
                             "longName": "香草凤尾虾-专业开背，秘制加工，中西餐厅新食尚~",
                             "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/f9ce32e007fc796722466531c86d5cd9.jpg",
-                            "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg",
+                            "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg", // 产品主图
                             "name": "香草凤尾虾", // 品名
                             "pno": "0151", // 品号
                             "productLack": null,
