@@ -44,6 +44,37 @@
         }
     }
 
+### FYGL-1.1 库费系数明细
+#### 模块负责人
+    刘宏宇
+#### 请求
+    GET /v2/fee/coefficient/{id}
+#### 参数
+    *id: 1 //库费ID
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "calOut": 0, // 计算越库 0 不计算 1 计算
+            "calWeight": null, // 计重方式 NET 净重 GROSS 毛重
+            "depotCoefficient": 0, // 库费系数
+            "depotId": 110, // 仓ID
+            "depotLevel": "FDC", // 仓类型 
+            "depotName": "FDC（哈尔滨天顺仓）", // 仓名
+            "effectDate": "", // 生效日期
+            "id": 0, // 费率ID， 0 未配置过
+            "modifyRemark": "", // 修改备注
+            "modifyRole": 0, // 修改角色ID
+            "modifyTime": "", // 修改时间
+            "modifyUser": 0, // 修改人ID
+            "modifyUserName": "", // 修改人名
+            "serviceCoefficient": 0, // 服务费系数
+            "type": null // 类型 NOW 立即执行 TASK 定时执行
+        }
+    }
+
+
 ### FYGL-2. 库费系数修改
 #### 模块负责人
     刘宏宇
