@@ -423,6 +423,8 @@
     eDate:"2019-01-31" // 结束日期
     supplierId: 1 // 供应商ID
     depotId: 1 // 仓ID
+    calWeight: "NET" // 计重方式 NET 净重 GROSS 毛重
+    calOut: 1 // 计算越库 0 不计算 1 计算
     pageNo: 1 // 页
     pageSize: 25 // 页行数
 #### 响应
