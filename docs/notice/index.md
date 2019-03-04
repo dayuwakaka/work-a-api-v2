@@ -31,7 +31,7 @@
                     "msgType": "ORDER",
                     "msgValue": "SA19012600001", // if msgType=ORDER msgValue就是订单号 else if msgType=ACTIVITY msgValue就是活动id（老数据没有活动id）
                     "pushId": 0,
-                    "readFlg": 1,
+                    "readFlg": 1, // 是否已读 0 - 否 1 - 是
                     "title": "订单通知" // title 标题
                 }
             ]
