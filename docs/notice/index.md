@@ -21,10 +21,7 @@
     {
         "code": 100000,
         "msg": "",
-        "data": {
-            "buttonPermissions": [],
-            "dataSums": null,
-            "datas": [
+        "data": [
                 {
                     "body": "您的订单号：SA1709，共1475元订单已发出，请留意订单信息。点击推送消息时，进入该订单详情页面。", // 消息内容
                     "createTime": "2017-09-26 14:35:57", // 时间
@@ -37,8 +34,5 @@
                     "readFlg": 1,
                     "title": "订单通知" // title 标题
                 }
-            ],
-            "pageNo": 1,
-            "total": -1
-        }
+            ]
     }
