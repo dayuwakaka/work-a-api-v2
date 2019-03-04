@@ -423,6 +423,8 @@
     eDate:"2019-01-31" // 结束日期
     supplierId: 1 // 供应商ID
     depotId: 1 // 仓ID
+    calWeight: "NET" // 计重方式 NET 净重 GROSS 毛重
+    calOut: 1 // 计算越库 0 不计算 1 计算
     pageNo: 1 // 页
     pageSize: 25 // 页行数
 #### 响应
@@ -479,12 +481,14 @@
     GET /v2/fee/pay/goods
 #### 参数
     supplierId: 1 // 供应商ID
+    productKeyword: "xxx" // 品名 品号
     depotId: 1 // 仓ID
     sDate: "2018-10-01" // 开始时间
     eDate: "2018-10-31" // 结束时间
     payMode: "INBUY" // 支付方式 INBUY 入结 OUTBUY 出结
     inOrderId: "xxx" // 入单ID
     outOrderId: "xxx" // 出单ID
+    outOrderType: "TR" // TR 调拨 SA 销售 NO 普通出 PR 采购退
     errorFlg: 0 // 价格异常标识 0 正常 1 异常
 #### 响应
     {

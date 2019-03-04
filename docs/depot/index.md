@@ -214,8 +214,8 @@
     type:"IN" // 流水类型 IN 入流水 OUT 出流水
     inOrderId: "xxx" // 入单号
     productKeyword: "xxx" // 品号，品名
-    inOrderType: "TR" // 入单类型 PA 采购单 IN 普通入 TR 调拨单
-    outOrderType: "TR" // 出单类型 SA 销售单 OUT 普通出 TR 调拨单
+    inOrderType: "TR" // 入单类型 PA 采购单 IN 普通入 TR 调拨单 SR 销售退
+    outOrderType: "TR" // 出单类型 SA 销售单 OUT 普通出 TR 调拨单 PR 采购退
     payMode: "INBUY" // 支付方式 INBUY 入结 OUT 出结
     giftFlg: 0 // 0 非赠品 1 赠品 ，不限制不传
 #### 响应
