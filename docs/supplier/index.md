@@ -2097,8 +2097,10 @@
 #### 模块负责人
     梁铁骐
 #### 请求
-    PUT /v2/trorder
+    PUT /v2/trorder/{orderId}
 #### 参数
+    *orderId
+    
     {
     	"orderTr": {
     		*"id": 8192, // 主键id
