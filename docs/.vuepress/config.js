@@ -22,7 +22,8 @@ module.exports = {
       {text: '消息通知', link: '/notice/'},
       {text: '变更', link: '/changelog/'},
       {text: '代理接口', link: '/feign/'},
-      {text: '其它', link: '/other/'}
+      {text: '其它', link: '/other/'},
+      {text: '统计', link: '/sta/'}
     ],
     sidebar: 'auto',
   },
