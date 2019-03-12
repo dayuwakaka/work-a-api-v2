@@ -226,3 +226,297 @@
             "total": -1
         }
     }
+    
+    
+### DD-51. 销售退新增
+#### 模块负责人
+    尹洪明
+#### 请求
+    POST /order/sr
+#### 参数
+    {
+        "orderSr": {
+            *"platformId": 1,                    // 平台商 默认1
+            *"customerId": 32805,                // 客户ID
+            *"saOrderId": "SA180611037577",      // 销售单号
+            *"toDepotId": 40,                    // 入库仓ID
+            *"toDepotName": "DC（大连铁越仓）",     // 入库仓名
+            *"balance": 20,                      // 差额
+            "remark": "这是一句备注",             // 备注
+            *"isFreight": 1                      // 是否包含运费
+        },
+        "orderSrPro": [
+            {
+                *"productId": 4152,              // 产品ID
+                *"productunitId": 7383,          // 产品规格ID
+                *"pcount": 1,                    // 退货数量
+                *"price": 391,                   // 退货价
+                *"giftFlg": 0                    // 是否赠品   0 非曾平 1 申请的赠品 2 活动赠品
+            },
+            {
+                "productId": 100,
+                "productunitId": 184,
+                "pcount": 1,
+                "price": 21,
+                "giftFlg": 0
+            }
+        ]
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+    
+
+### DD-52. 销售退修改
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT /order/sr/{orderId}
+#### 参数
+    *orderId        // 销售退编号
+    {
+        "orderSr": {
+            *"platformId": 1,                    // 平台商 默认1
+            *"customerId": 32805,                // 客户ID
+            *"saOrderId": "SA180611037577",      // 销售单号
+            *"toDepotId": 40,                    // 入库仓ID
+            *"toDepotName": "DC（大连铁越仓）",     // 入库仓名
+            *"balance": 20,                      // 差额
+            "remark": "这是一句备注",             // 备注
+            *"isFreight": 1                      // 是否包含运费
+        },
+        "orderSrPro": [
+            {
+                *"productId": 4152,              // 产品ID
+                *"productunitId": 7383,          // 产品规格ID
+                *"pcount": 1,                    // 退货数量
+                *"price": 391,                   // 退货价
+                *"giftFlg": 0                    // 是否赠品   0 非曾平 1 申请的赠品 2 活动赠品
+            },
+            {
+                "productId": 100,
+                "productunitId": 184,
+                "pcount": 1,
+                "price": 21,
+                "giftFlg": 0
+            }
+        ]
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }     
+    
+### DD-53. 销售退列表
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /order/sr
+#### 参数
+    buttonPermissionFlg // 权限标志 0 无权限  1 查询权限
+    toDepotId           // 入库仓
+    saOrderId           // 销售单编号
+    orderId             // 销售退编号
+    status              // 状态
+    customerName        // 客户名
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [
+                {
+                    "setRunButton": true,
+                    "detailButton": true,
+                    "editButton": true,
+                    "delButton": true,
+                    "logButton": true,
+                    "passButton":false,
+                    "refuseButton":false
+                }
+            ],
+            "dataSums": null,
+            "datas": [
+                {
+                    "balance": 20,
+                    "completeTime": "",
+                    "createRole": 1,
+                    "createTime": "2019-03-12 14:29:26",
+                    "createUser": 518,
+                    "createUserName": "孙启萌",
+                    "customerId": 32805,
+                    "customerName": "18698665798",
+                    "customerType": "A",
+                    "deleteFlg": 0,
+                    "discountPrice": 20,
+                    "freight": 10,
+                    "id": 6,
+                    "isFreight": 0,
+                    "jian": 1,
+                    "modifyTime": "",
+                    "orderId": "SR1903120000020",
+                    "orderSrPro": null,
+                    "passTime": "",
+                    "platformId": 1,
+                    "price": 33,
+                    "rebatePrice": 0,
+                    "refuseTime": "",
+                    "remark": "这是一句备注",
+                    "saOrderId": "SA180611037577",
+                    "san": 1,
+                    "status": "INVALID",
+                    "toDepotId": 40,
+                    "toDepotName": "DC（大连铁越仓）",
+                    "totalPrice": 382
+                }
+            ],
+            "pageNo": 1,
+            "total": 0
+        }
+    }
+    
+    
+    
+### DD-54. 销售退详情
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /order/sr/detail/{orderId}
+#### 参数
+    *orderId        // 销售退编号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "balance": 20,                      // 差额
+            "completeTime": "",                 // 签收时间
+            "createRole": 1,                    // 创建人角色ID
+            "createTime": "2019-03-12 14:29:26",    // 创建时间
+            "createUser": 518,                  // 创建人ID
+            "createUserName": "孙启萌",            // 创建人名
+            "customerId": 32805,                // 客户ID
+            "customerName": "",                 // 客户名
+            "customerType": "",                 // 客户类型
+            "deleteFlg": 0,                     // 删除标志 0 未删除 1 删除
+            "discountPrice": 20,                // 优惠金额
+            "freight": 10,                      // 运费
+            "id": 6,                            // id 
+            "isFreight": 0,                     // 是否包含运费
+            "jian": 1,                          // 件
+            "modifyTime": "",                   // 修改时间
+            "orderId": "SR1903120000020",       // 退单号
+            "orderSrPro": [
+                {
+                    "deleteFlg": 0,             // 是否删除 0 未删除 1 已删除
+                    "giftFlg": 0,               // 是否赠品 0 非曾平 1 申请的赠品  2 活动赠品
+                    "guige": "",                // 规格
+                    "id": 5,                        // ID
+                    "orderId": "SR1903120000020",       // 退单号
+                    "pcount": 1,                    // 退货数量
+                    "pno": "",                  // 品号
+                    "price": 391,               // 退货价格
+                    "productId": 4152,          // 退货产品ID
+                    "productName": "",          // 退货产品名
+                    "productunitId": 7383,      // 退货产品规格ID
+                    "totalPrice": 391,            // 退货总价
+                    "unit": ""                  //　产品单位
+                },
+                {
+                    "deleteFlg": 0,
+                    "giftFlg": 0,
+                    "guige": "",
+                    "id": 6,
+                    "orderId": "SR1903120000020",
+                    "pcount": 1,
+                    "pno": "",
+                    "price": 21,
+                    "productId": 100,
+                    "productName": "",
+                    "productunitId": 184,
+                    "totalPrice": 21,
+                    "unit": ""
+                }
+            ],
+            "passTime": "",                     // 审核通过时间
+            "platformId": 1,                    // 平台商ID
+            "price": 33,                        // 原单价
+            "rebatePrice": 0,                   // 优惠金额
+            "refuseTime": "",                   // 拒绝时间
+            "remark": "这是一句备注",             // 备注
+            "saOrderId": "SA180611037577",      // 销售单号
+            "san": 1,                           // 散
+            // 状态   (INVALID:未生效,RUN:生效,FMS_PASS: 财务通过,COMPLETE:已签收)
+            "status": "INVALID",                
+            "toDepotId": 40,                    // 入库仓ID
+            "toDepotName": "DC（大连铁越仓）",     // 入库仓名
+            "totalPrice": 382                       // 最终退款额
+        }
+    }   
+
+### DD-55. 销售退确认执行&审核通过&审核拒绝
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT /order/sr/status/{orderId}
+#### 参数
+    * orderId           // 退单编号
+    {
+        *"status": "RUN"     // 操作 RUN:确认执行,FMSPASS: 审核通过 INVALID 审核拒绝
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### DD-56. 销售退删除
+#### 模块负责人
+    尹洪明
+#### 请求
+    DELETE /order/sr/{orderId}
+#### 参数
+    *orderId        // 销售退编号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }     
+    
+
+### DD-57. 销售退日志
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /order/sr/log/{orderId}
+#### 参数
+    *orderId        // 销售退编号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [],
+            "dataSums": null,
+            "datas": [
+                {
+                    "id": 3,
+                    "opInfo": "新增退货单",             // 操作内容
+                    "opRole": 1,
+                    "opTime": "2019-03-12 14:29:26",    // 操作时间
+                    "opUser": 518,
+                    "opUserName": "孙启萌",            // 操作人
+                    "orderId": "SR1903120000020"
+                }
+            ],
+            "pageNo": 1,
+            "total": 0
+        }
+    }        
