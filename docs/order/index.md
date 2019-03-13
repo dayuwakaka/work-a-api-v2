@@ -188,6 +188,9 @@
                     "salePrice": 2 // 销售单价
                 }
             ],
+            "customer":{
+                "shortName": "xxx" // 客户名
+            },
             "orderId": "AP1903110000010", // 调价单号
             "passTime": "2019-03-11", // 通过时间
             "platformId": 1, // 平台ID
