@@ -116,7 +116,7 @@
                     "runTime": "", // 确认时间
                     "saOrderId": "test-01", // 销售单号
                     "status": "INVALID", // Type = BEFORE INVALID: 作废 RUN：确认 PASS|COMPLETE：CPA审核通过
-                                         // Type = AFTER INVALID:未生效：RUN：确认 PASS：CPA审核通过 COMPLETE 财务审核通过通过 COMPLETE 财务审核通过
+                                         // Type = AFTER INVALID:未生效：RUN：确认 PASS：CPA审核通过 COMPLETE 财务审核通过 COMPLETE 财务审核通过
                     "totalAskPrice": 1, // 请求总价
                     "totalBalancePrice": -1, // 请求总差价
                     "totalSalePrice": 2, // 请求原总价
