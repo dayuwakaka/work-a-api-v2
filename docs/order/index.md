@@ -191,7 +191,7 @@
             "runTime": "2019-03-11", // 确认时间
             "saOrderId": "test-05", // 销售单号
             "status": "COMPLETE", // Type = BEFORE INVALID: 作废 RUN：确认 PASS|COMPLETE：CPA审核通过
-                                  // Type = AFTER INVALID:未生效：RUN：确认 PASS：CPA审核通过 COMPLETE 财务审核通过通过 COMPLETE 财务审核通过
+                                  // Type = AFTER INVALID:未生效：RUN：确认 PASS：CPA审核通过 COMPLETE 财务审核通过 COMPLETE 财务审核通过
             "totalAskPrice": 1, // 调价总价
             "totalBalancePrice": -1, // 调价总差价
             "totalSalePrice": 2, // 销售原总价
