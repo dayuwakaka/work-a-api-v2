@@ -83,12 +83,12 @@
     		}],
     		"marketProductRanges":[
     			{
-    			"type":"productunit", // productunit
+    			"type":"PRODUCTUNIT", // @@PRODUCTUNIT 指定品   EXCLUDE 排除品
     			"rangeId":7383, // 产品规格ID
     			"extra":""	// 传空即可
     			},
     			{
-    			"type":"productunit",
+    			"type":"PRODUCTUNIT",
     			"rangeId":7382,
     			"extra":""	
     			}],
