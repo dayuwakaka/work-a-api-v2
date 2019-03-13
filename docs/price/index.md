@@ -20,29 +20,7 @@
 #### 1.4 请求示例
     无
 
-#### 1.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|specialId|特价id|
-|productId|产品id|
-|pno|产品编号|
-|productName|产品名称|
-|productunitId|产品规格id|
-|unitGuige|单位名称|
-|aPrice|A价格|
-|pPrice|P价格|
-|tPrice|T价格|
-|productState|产品状态|NORMAL:正常,CUSTOM:定制,LOCK:锁定|
-|status|状态|normal 正常 lock 锁定|
-|startDate|开始时间|
-|endDate|结束时间|
-|businessunitType|事业部限制类型|ALL 无限制 PART 部分事业部|
-|businessunit|事业部id列表|
-|customerAttrType|客户属性限制类型|ALL 无限制 PART 部分客户属性|
-|customerAttrList|客户属性列表|
-|buttonPermissionFlg|是否获取列表对应的按钮权限|1- 是 0 - 否|
-
-#### 1.6 返回示例
+#### 1.5 返回示例
     {
         "code": 100000,
         "msg": "",
@@ -111,28 +89,7 @@
 #### 2.4 请求示例
     无
 
-#### 2.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|specialId|特价id|
-|productId|产品id|
-|pno|产品编号|
-|productName|产品名称|
-|productunitId|产品规格id|
-|unitName|单位名称|
-|aPrice|A价格|
-|pPrice|P价格|
-|tPrice|T价格|
-|status|状态|normal 正常 lock 锁定|
-|startDate|开始时间|
-|endDate|结束时间|
-|businessunitType|事业部限制类型|ALL 无限制 PART 部分事业部|
-|businessunit|事业部id列表|
-|customerAttrType|客户属性限制类型|ALL 无限制 PART 部分客户属性|
-|customerAttrList|客户属性列表|
-
-
-#### 2.6 返回示例
+#### 2.5 返回示例
     {
         "code": 100000,
         "msg": "",
