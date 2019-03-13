@@ -82,7 +82,7 @@
     orderIdKeyWord: "xxx" // 调价、差价单号
     saOrderIdKeyWord: "xxx" // 销售订单号
     type: "BEFORE" // BEFORE 发出前 AFTER 发出后
-    statuses: "xx" // BEFORE 发出前 INVALID 作废 RUN 确认 COMPLETE CPA审核通过
+    statuses[]: "xx" // BEFORE 发出前 INVALID 作废 RUN 确认 COMPLETE CPA审核通过
                    // AFTER 发出后 INVALID 未生效 RUN 确认 PASS CPA审核通过 COMPLETE 财务审核通过
     pageNo: 1 // 页码
     pageSize: 25 // 页条数

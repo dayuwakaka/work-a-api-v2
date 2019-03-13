@@ -48,43 +48,49 @@
         "msg": "",
         "data": {
             "buttonPermissions": [
-                {
-                    "deleteButton": false, // 删除
-                    "lockButton": true, // 锁定
-                    "unlockButton": false, // 解锁
-                    "editButton": true, // 编辑
-                    "logButton": true // 操作日志
-                }
-                ...
+                "deleteButton": false, // 删除
+                "lockButton": true, // 锁定
+                "unlockButton": false, // 解锁
+                "editButton": true, // 编辑
+                "logButton": true // 操作日志
             ],
             "dataSums": null,
             "datas": [
                 {
-                    "specialId": 63,
-                    "productId": 2231,
-                    "pno": "0755",
-                    "productName": "蒜蓉粉丝鲍（特惠装）",
-                    "productunitId": 3868,
-                    "unitName": "袋",
-                    "aPrice": 61.9,
-                    "pPrice": 49.5,
-                    "tPrice": 55,
-                    "status": "NORMAL",
-                    "startDate": "2017-12-21",
-                    "endDate": "2018-05-31",
-                    "businessunitType":"ALL",
-                    "businessunit": [
-                        
+                    "aPrice": 232, // a价格
+                    "areaType": null, // 区域限制 ALL 全部 PART 部分
+                    "businessunitRange": [ // 事业部限制清单 
+                        "16", // 事业部ID
+                        "3",
+                        "27"
                     ],
-                    "customerAttrType":"ALL",
-                    "customerAttrList": [
-                        
-                    ]
-                },
-                ...
+                    "businessunitType": "PART", // 事业部限制 ALL 全部 PART 部分
+                    "customerAttrRange": null, // 客户属性限制清单
+                    "customerAttrType": "ALL", // 客户属性限制 ALL 全部 PART 部分
+                    "deleteflg": 0, // 删除标价
+                    "endDate": "2019-01-31", // 结束时间
+                    "excludeRange": null, // 排除客户清单， 客户ID
+                    "id": 254, // 特价ID
+                    "pPrice": 185, // p价格
+                    "pathIdRange": null, // 区域限制清单，区域pathid
+                    "productId": 811, // 产品ID
+                    "productUnit": { // 产品规格信息
+                        "guige": "150g/袋*50袋", // 规格
+                        "id": 1421, // 规格ID
+                        "name": "香辣鱼皮", // 产品名
+                        "perunit": 50, // 转化率
+                        "pno": "0162", // 品号
+                        "productId": 811, // 产品ID
+                        "unit": "件"// 单位
+                    },
+                    "productUnitId": 1421, // 规格ID
+                    "startDate": "2018-12-06", // 开始时间
+                    "status": "NORMAL", // 状态 NORMAL 正常 LOCK 锁定
+                    "tPrice": 185 // 特价 
+                }
             ],
             "pageNo": 1,
-            "total": 3
+            "total": -1
         }
     }
 
@@ -131,28 +137,36 @@
         "code": 100000,
         "msg": "",
         "data": {
-            "specialId": 6,
-            "productId": 2231,
-            "pno": "0755",
-            "productName": "蒜蓉粉丝鲍（特惠装）",
-            "productunitId": 3869,
-            "unitName": "件",
-            "pPrice": 594,
-            "aPrice": 742,
-            "tPrice": 56,
-            "status": "NORMAL",
-            "startDate": "2017-12-21",
-            "endDate": "2018-05-31",
-            "businessunitType":"ALL",
-            "businessunit": [
-                
+            "aPrice": 232, // a价格
+            "areaType": null, // 区域限制 ALL 全部 PART 部分
+            "businessunitRange": [ // 事业部限制清单
+                "16", // 事业部ID
+                "3",
+                "27"
             ],
-            "customerAttrType":"PART"
-            "customerAttrList": [
-                3,
-                1,
-                2
-            ]
+            "businessunitType": "PART", // 事业部限制 ALL 全部 PART 部分
+            "customerAttrRange": null, // 客户属性限制清单， 客户属性ID
+            "customerAttrType": "ALL", // 客户属性限制 ALL 全部 PART 部分
+            "deleteflg": 0, // 删除标记
+            "endDate": "2019-01-31", // 结束时间
+            "excludeRange": null, // 排除客户清单， 客户ID
+            "id": 254, // 特价ID
+            "pPrice": 185, // p价格
+            "pathIdRange": null, // 区域限制清单， pathid
+            "productId": 811, // 产品ID
+            "productUnit": { // 产品信息
+                "guige": "150g/袋*50袋", // 规格
+                "id": 1421, // 规格ID
+                "name": "香辣鱼皮", // 产品名
+                "perunit": 50, // 转化率
+                "pno": "0162", // 品号
+                "productId": 811, // 产品ID
+                "unit": "件" // 单位
+            },
+            "productUnitId": 1421, // 规格ID
+            "startDate": "2018-12-06", // 开始时间
+            "status": "NORMAL", // 状态 NORMAL 正常 LOCK 锁定
+            "tPrice": 185 // 特价
         }
     }
 
@@ -170,30 +184,33 @@
 |参数|名称|描述|
 |---|---|---|
 |productId|产品ID|必|
-|productunitId|产品规格ID|必|
+|productUnitId|产品规格ID|必|
 |tPrice|特价|必|
 |businessunitType|事业部限制类型|必 ALL 无限制 PART 部分事业部|
-|businessunit|事业部列表|
+|businessunitRange|事业部列表|
 |customerAttrType|客户属性限制类型|必 ALL 无限制 PART 部分|
-|customerAttrList|客户属性列表|
+|customerAttrRange|客户属性列表|
+|areaType|区域限制类型|必 ALL 无限制 PART 部分区域|
+|pathIdRange|区域列表|
+|excludeRange|排除客户列表|
 |startDate|开始时间|必 日期为客户所选 时间固定 00:00:00|
 |endDate|结束时间|必 日期为客户所选 时间固定 23:59:59|
-
-
 
 #### 3.4 请求示例
     {
         "productId":1,
-        "productunitId":1,
-        "tprice":35.2,
+        "productUnitId":1,
+        "tPrice":10,
         "businessunitType":"PART",
-        "businessunit":[1,3,2],
-        "customerAttrType":"PART",
-        "customerAttrList":[1,3,2],
-        "startDate":"2018-08-25 08:00:00",
-        "endDate":"2018-09-24 20:00:00"
+        "businessunitRange": [1, 2, 3],
+        "customerAttrType": "PART",
+        "customerAttrRange": [1, 2, 3],
+        "areaType":"PART",
+        "pathIdRange":["0101"],
+        "excludeRange":[1],
+        "startDate":"2019-01-01 00:00:00",
+        "endDate":"2019-04-01 23:59:59"
     }
-
 
 #### 3.5 返回值
 |参数|名称|描述|
@@ -201,7 +218,6 @@
 |code|编号|100000成功；0 失败；|
 |msg|消息|异常信息|
 |data|null|
-
 
 #### 3.6 返回示例
     {
@@ -225,12 +241,15 @@
 |---|---|---|
 |id|特价ID|必|
 |productId|产品ID|必|
-|productunitId|产品规格ID|必|
+|productUnitId|产品规格ID|必|
 |tPrice|特价|必|
 |businessunitType|事业部限制类型|必 ALL 无限制 PART 部分事业部|
-|businessunit|事业部列表|
+|businessunitRange|事业部列表|
 |customerAttrType|客户属性限制类型|必 ALL 无限制 PART 部分|
-|customerAttrList|客户属性列表|
+|customerAttrRange|客户属性列表|
+|areaType|区域限制类型|必 ALL 无限制 PART 部分区域|
+|pathIdRange|区域列表|
+|excludeRange|排除客户列表|
 |startDate|开始时间|必 日期为客户所选 时间固定 00:00:00|
 |endDate|结束时间|必 日期为客户所选 时间固定 23:59:59|
 
@@ -238,14 +257,17 @@
 #### 4.4 请求示例
     {
         "productId":1,
-        "productunitId":1,
-        "tprice":35.2,
+        "productUnitId":1,
+        "tPrice":10,
         "businessunitType":"PART",
-        "businessunit":[1,3,2],
-        "customerAttrType":"PART",
-        "customerAttrList":[1,3,2],
-        "startDate":"2018-08-25 08:00:00",
-        "endDate":"2018-09-24 20:00:00"
+        "businessunitRange": [1, 2, 3],
+        "customerAttrType": "PART",
+        "customerAttrRange": [1, 2, 3],
+        "areaType":"PART",
+        "pathIdRange":["0101"],
+        "excludeRange":[1],
+        "startDate":"2019-01-01 00:00:00",
+        "endDate":"2019-04-01 23:59:59"
     }
 
 
