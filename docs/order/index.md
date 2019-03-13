@@ -78,6 +78,7 @@
 #### 请求
     GET /v2/order/ap
 #### 参数
+    orderKeyWord: "xx" // 调价单、差价单、销售单号
     orderIdKeyWord: "xxx" // 调价、差价单号
     saOrderIdKeyWord: "xxx" // 销售订单号
     pageNo: 1 // 页码
