@@ -107,6 +107,11 @@
             "deleteflg": 0, // 删除标记
             "endDate": "2019-01-31", // 结束时间
             "excludeRange": null, // 排除客户清单， 客户ID
+            "excludeCustomer": [
+                {
+                    "shortName":"xxx"
+                }
+            ],
             "id": 254, // 特价ID
             "pPrice": 185, // p价格
             "pathIdRange": null, // 区域限制清单， pathid
