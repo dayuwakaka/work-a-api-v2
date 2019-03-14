@@ -47,6 +47,7 @@
                     "customerAttrType": "ALL", // 客户属性限制 ALL 全部 PART 部分
                     "deleteflg": 0, // 删除标价
                     "endDate": "2019-01-31", // 结束时间
+                    "excludeType": "ALL", // 排除客户类型 ALL 全部 PART 部分
                     "excludeRange": null, // 排除客户清单， 客户ID
                     "id": 254, // 特价ID
                     "pPrice": 185, // p价格
@@ -106,6 +107,7 @@
             "customerAttrType": "ALL", // 客户属性限制 ALL 全部 PART 部分
             "deleteflg": 0, // 删除标记
             "endDate": "2019-01-31", // 结束时间
+            "excludeType": "ALL", // 排除客户类型 ALL 全部 PART 部分
             "excludeRange": null, // 排除客户清单， 客户ID
             "excludeCustomer": [
                 {
@@ -155,6 +157,7 @@
 |customerAttrRange|客户属性列表|
 |areaType|区域限制类型|必 ALL 无限制 PART 部分区域|
 |pathIdRange|区域列表|
+|excludeType|排除客户类型|必 ALL 无限制 PART 部分|
 |excludeRange|排除客户列表|
 |startDate|开始时间|必 日期为客户所选 时间固定 00:00:00|
 |endDate|结束时间|必 日期为客户所选 时间固定 23:59:59|
@@ -170,6 +173,7 @@
         "customerAttrRange": [1, 2, 3],
         "areaType":"PART",
         "pathIdRange":["0101"],
+        "excludeType":"PART",
         "excludeRange":[1],
         "startDate":"2019-01-01 00:00:00",
         "endDate":"2019-04-01 23:59:59"
@@ -212,6 +216,7 @@
 |customerAttrRange|客户属性列表|
 |areaType|区域限制类型|必 ALL 无限制 PART 部分区域|
 |pathIdRange|区域列表|
+|excludeType|排除客户类型 ALL 无限制 PART 部分|
 |excludeRange|排除客户列表|
 |startDate|开始时间|必 日期为客户所选 时间固定 00:00:00|
 |endDate|结束时间|必 日期为客户所选 时间固定 23:59:59|
@@ -228,6 +233,7 @@
         "customerAttrRange": [1, 2, 3],
         "areaType":"PART",
         "pathIdRange":["0101"],
+        "excludeType":"PART",
         "excludeRange":[1],
         "startDate":"2019-01-01 00:00:00",
         "endDate":"2019-04-01 23:59:59"
