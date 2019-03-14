@@ -250,7 +250,6 @@
             *"saOrderId": "SA180611037577",      // 销售单号
             *"toDepotId": 40,                    // 入库仓ID
             *"toDepotName": "DC（大连铁越仓）",     // 入库仓名
-            *"balance": 20,                      // 差额
             "remark": "这是一句备注",             // 备注
             *"isFreight": 1                      // 是否包含运费
         },
@@ -259,6 +258,7 @@
                 *"productId": 4152,              // 产品ID
                 *"productunitId": 7383,          // 产品规格ID
                 *"pcount": 1,                    // 退货数量
+                *"oldPrice": 391,                // 成交价格
                 *"price": 391,                   // 退货价
                 *"giftFlg": 0                    // 是否赠品   0 非曾平 1 申请的赠品 2 活动赠品
             },
@@ -266,6 +266,7 @@
                 "productId": 100,
                 "productunitId": 184,
                 "pcount": 1,
+                "oldPrice": 21,
                 "price": 21,
                 "giftFlg": 0
             }
@@ -293,7 +294,6 @@
             *"saOrderId": "SA180611037577",      // 销售单号
             *"toDepotId": 40,                    // 入库仓ID
             *"toDepotName": "DC（大连铁越仓）",     // 入库仓名
-            *"balance": 20,                      // 差额
             "remark": "这是一句备注",             // 备注
             *"isFreight": 1                      // 是否包含运费
         },
@@ -302,6 +302,7 @@
                 *"productId": 4152,              // 产品ID
                 *"productunitId": 7383,          // 产品规格ID
                 *"pcount": 1,                    // 退货数量
+                *"oldPrice": 391,                // 成交价格
                 *"price": 391,                   // 退货价
                 *"giftFlg": 0                    // 是否赠品   0 非曾平 1 申请的赠品 2 活动赠品
             },
@@ -309,6 +310,7 @@
                 "productId": 100,
                 "productunitId": 184,
                 "pcount": 1,
+                *"oldPrice": 21,                
                 "price": 21,
                 "giftFlg": 0
             }
@@ -328,9 +330,7 @@
     GET /order/sr
 #### 参数
     buttonPermissionFlg // 权限标志 0 无权限  1 查询权限
-    toDepotId           // 入库仓
-    saOrderId           // 销售单编号
-    orderId             // 销售退编号
+    order           // 腿单号、订单号
     status              // 状态
     customerName        // 客户名
 #### 响应
@@ -344,44 +344,48 @@
                     "detailButton": true,
                     "editButton": true,
                     "delButton": true,
-                    "logButton": true,
                     "passButton":false,
-                    "refuseButton":false
+                    "refuseButton":false,
+                    "refundButton": false
                 }
             ],
             "dataSums": null,
             "datas": [
                 {
-                    "balance": 20,
                     "completeTime": "",
                     "createRole": 1,
-                    "createTime": "2019-03-12 14:29:26",
+                    "createTime": "2019-03-12 14:29:26",        // 创建时间
                     "createUser": 518,
-                    "createUserName": "孙启萌",
+                    "createUserName": "孙启萌",                // 创建人
                     "customerId": 32805,
-                    "customerName": "18698665798",
-                    "customerType": "A",
+                    "customerName": "18698665798",          // 客户名
+                    "customerType": "A",                    // 客户类型 A客户 P客户 C客户 P2P客户
                     "deleteFlg": 0,
                     "discountPrice": 20,
-                    "freight": 10,
-                    "id": 6,
-                    "isFreight": 0,
-                    "jian": 1,
+                    "freight": 10,              // 运费
+                    "id": 6,               // id
+                    "isFreight": 0,         // 是否包含运费
+                    "isParent": 0,          // 0 普通客户 1 总店  2 分店
+                    "jian": 1,          // 件数量
                     "modifyTime": "",
-                    "orderId": "SR1903120000020",
+                    "orderId": "SR1903120000020",       // 退单号
+                    "orderSrLog": null,
                     "orderSrPro": null,
                     "passTime": "",
                     "platformId": 1,
-                    "price": 33,
+                    "price": 33,                    
+                    "rebate": 10,                       // 折扣
                     "rebatePrice": 0,
+                    "receiveTime": "",
                     "refuseTime": "",
                     "remark": "这是一句备注",
-                    "saOrderId": "SA180611037577",
-                    "san": 1,
+                    "saOrderId": "SA180611037577",      // 关联订单号
+                    "san": 1,                           // 散货数量
+            // 状态   (INVALID:未生效,RUN:生效,FMS_PASS: 财务通过,RECEIVE:已签收,COMPLETE 已完成)
                     "status": "INVALID",
                     "toDepotId": 40,
-                    "toDepotName": "DC（大连铁越仓）",
-                    "totalPrice": 382
+                    "toDepotName": "DC（大连铁越仓）",     // 入库仓
+                    "totalPrice": 382                   // 实退
                 }
             ],
             "pageNo": 1,
@@ -403,72 +407,70 @@
         "code": 100000,
         "msg": "",
         "data": {
-            "balance": 20,                      // 差额
-            "completeTime": "",                 // 签收时间
-            "createRole": 1,                    // 创建人角色ID
-            "createTime": "2019-03-12 14:29:26",    // 创建时间
-            "createUser": 518,                  // 创建人ID
-            "createUserName": "孙启萌",            // 创建人名
-            "customerId": 32805,                // 客户ID
+            "completeTime": "",                
+            "createRole": 1,                  
+            "createTime": "2019-03-12 14:29:26", 
+            "createUser": 518,                 
+            "createUserName": "孙启萌",
+            "customerId": 32805,                
             "customerName": "",                 // 客户名
-            "customerType": "",                 // 客户类型
-            "deleteFlg": 0,                     // 删除标志 0 未删除 1 删除
-            "discountPrice": 20,                // 优惠金额
-            "freight": 10,                      // 运费
+            "customerType": "", 
+            "deleteFlg": 0,                    
+            "discountPrice": 20,              
+            "freight": 10,                      // 退运费
             "id": 6,                            // id 
-            "isFreight": 0,                     // 是否包含运费
-            "jian": 1,                          // 件
-            "modifyTime": "",                   // 修改时间
+            "isFreight": 0,                     // 是否包含运费 0 不包含 1 包含
+            "isParent": 0,  
+            "jian": 1,                          // 件数
+            "modifyTime": "",                  
             "orderId": "SR1903120000020",       // 退单号
+            "orderSrLog": [
+                {
+                    "id": 11,
+                    "opInfo": "修改退货单",      // 操作内容
+                    "opRole": 0,
+                    "opTime": "2019-03-13 15:58:10",    // 操作时间
+                    "opUser": 0,
+                    "opUserName": "孙启萌",            // 操作人
+                    "orderId": "SR1903130000001"
+                }
+            ]
             "orderSrPro": [
                 {
-                    "deleteFlg": 0,             // 是否删除 0 未删除 1 已删除
+                    "deleteFlg": 0,           
                     "giftFlg": 0,               // 是否赠品 0 非曾平 1 申请的赠品  2 活动赠品
-                    "guige": "",                // 规格
+                    "guige": "",                // 产品规格
                     "id": 5,                        // ID
-                    "orderId": "SR1903120000020",       // 退单号
+                    "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201707/1b56214371d52d1e5d47cef59b55b31a.jpg",
+                    "oldPrice": 391,                    // 成交价格
+                    "orderId": "SR1903120000020",       
                     "pcount": 1,                    // 退货数量
                     "pno": "",                  // 品号
                     "price": 391,               // 退货价格
                     "productId": 4152,          // 退货产品ID
                     "productName": "",          // 退货产品名
                     "productunitId": 7383,      // 退货产品规格ID
-                    "totalPrice": 391,            // 退货总价
+                    "totalPrice": 391,            // 退款金额
                     "unit": ""                  //　产品单位
-                },
-                {
-                    "deleteFlg": 0,
-                    "giftFlg": 0,
-                    "guige": "",
-                    "id": 6,
-                    "orderId": "SR1903120000020",
-                    "pcount": 1,
-                    "pno": "",
-                    "price": 21,
-                    "productId": 100,
-                    "productName": "",
-                    "productunitId": 184,
-                    "totalPrice": 21,
-                    "unit": ""
                 }
             ],
-            "passTime": "",                     // 审核通过时间
-            "platformId": 1,                    // 平台商ID
-            "price": 33,                        // 原单价
-            "rebatePrice": 0,                   // 优惠金额
-            "refuseTime": "",                   // 拒绝时间
-            "remark": "这是一句备注",             // 备注
-            "saOrderId": "SA180611037577",      // 销售单号
-            "san": 1,                           // 散
-            // 状态   (INVALID:未生效,RUN:生效,FMS_PASS: 财务通过,COMPLETE:已签收)
-            "status": "INVALID",                
-            "toDepotId": 40,                    // 入库仓ID
+            "passTime": "",                  
+            "platformId": 1,                   
+            "price": 33,                        // 产品总价
+            "rebate": 10,                       // 已用折扣
+            "rebatePrice": 0,                 
+            "refuseTime": "",                  
+            "remark": "这是一句备注",             // 退单备注
+            "saOrderId": "SA180611037577",      // 订单号
+            "san": 1,                           // 散货
+            "status": "INVALID",                // 状态 INVALID 未生效 RUN 已执行 FMS_PASS 已审核通过 RECEIVE 已签收 COMPLETE 已退款
+            "toDepotId": 40,                       
             "toDepotName": "DC（大连铁越仓）",     // 入库仓名
-            "totalPrice": 382                       // 最终退款额
+            "totalPrice": 382                       // 总计
         }
     }   
 
-### DD-55. 销售退确认执行&审核通过&审核拒绝
+### DD-55. 销售退状态变更
 #### 模块负责人
     尹洪明
 #### 请求
@@ -476,7 +478,7 @@
 #### 参数
     * orderId           // 退单编号
     {
-        *"status": "RUN"     // 操作 RUN:确认执行,FMSPASS: 审核通过 INVALID 审核拒绝
+        *"status": "RUN"     // 操作 RUN:确认执行,FMS_PASS: 审核通过 INVALID 审核拒绝 COMPLETE 退款
     }
 #### 响应
     {
@@ -498,34 +500,193 @@
         "msg": "",
         "data": null
     }     
-    
-
-### DD-57. 销售退日志
+ 
+### DD-57. 销售退详情(新增拉取订单明细)
 #### 模块负责人
     尹洪明
 #### 请求
-    GET /order/sr/log/{orderId}
+    GET /order/sr/detail/sa/{saOrderId}
 #### 参数
-    *orderId        // 销售退编号
+    *saOrderId        // 销售订单号
 #### 响应
     {
         "code": 100000,
         "msg": "",
         "data": {
-            "buttonPermissions": [],
-            "dataSums": null,
-            "datas": [
+            "completeTime": "",
+            "createRole": 0,
+            "createTime": "",
+            "createUser": 0,
+            "createUserName": "",
+            "customerId": 30560,                        // 客户ID
+            "customerName": "沈阳市皇姑区金鹏小火锅餐厅",    // 客户名称
+            "customerType": "",
+            "deleteFlg": 0,
+            "discountPrice": 0,
+            "freight": 10,
+            "id": 0,
+            "isFreight": 0,
+            "isParent": 0,
+            "jian": 0,
+            "modifyTime": "",
+            "orderId": "",
+            "orderSrLog": null,
+            "orderSrPro": [
                 {
-                    "id": 3,
-                    "opInfo": "新增退货单",             // 操作内容
-                    "opRole": 1,
-                    "opTime": "2019-03-12 14:29:26",    // 操作时间
-                    "opUser": 518,
-                    "opUserName": "孙启萌",            // 操作人
-                    "orderId": "SR1903120000020"
+                    "deleteFlg": 0,
+                    "giftFlg": 0,                   // 赠品标志 0 普通品 1 申请的赠品 2 活动赠品
+                    "guige": "500g/袋*16袋",      // 规格
+                    "id": 0,
+                    "leftPcount": 1,       // 数量     
+                    "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201707/1b56214371d52d1e5d47cef59b55b31a.jpg",
+                    "oldPrice": 391,        // 成交价
+                    "orderId": "",
+                    "pcount": 0,
+                    "pno": "1362",          // 品号
+                    "price": 0,
+                    "productId": 4152,
+                    "productName": "原浆生开扇贝肉",   // 品名
+                    "productunitId": 7383,
+                    "totalPrice": 0,
+                    "unit": "件"             // 单位
+                },
+                {
+                    "deleteFlg": 0,
+                    "giftFlg": 0,
+                    "guige": "1000g",
+                    "id": 0,
+                    "leftPcount": 1,
+                    "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201804/323ad7af9dad4e58306d9548843f7dfa.jpg",
+                    "oldPrice": 21,
+                    "orderId": "",
+                    "pcount": 0,
+                    "pno": "277",
+                    "price": 0,
+                    "productId": 100,
+                    "productName": "蟹足棒（模拟蟹肉）",
+                    "productunitId": 184,
+                    "totalPrice": 0,
+                    "unit": "袋"
                 }
             ],
-            "pageNo": 1,
-            "total": 0
+            "passTime": "",
+            "platformId": 0,
+            "price": 0,
+            "rebate": 0,
+            "rebatePrice": 0,
+            "receiveTime": "",
+            "refuseTime": "",
+            "remark": "",
+            "saOrderId": "SA180611037577",          // 销售单号
+            "san": 0,
+            "status": null,
+            "toDepotId": 0,
+            "toDepotName": "",
+            "totalPrice": 0
         }
-    }        
+    }
+    
+
+### DD-58. 销售退计算合计等
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT /order/sr/calculatediscount
+#### 参数
+    {
+        "orderSr": {
+            "saOrderId": "SA180611037577",      // 销售单号
+            "isFreight": 1                      // 是否包含运费
+        },
+        "orderSrPro": [
+            {
+                "productunitId": 7383,          // 规格ID
+                "pcount": 1,                    // 退货数量
+                "price": 391,                   // 退货价
+                "giftFlg": 0                    // 是否赠品
+            },
+            {
+                "productunitId": 184,
+                "pcount": 1,
+                "price": 21,
+                "giftFlg": 0
+            }
+        ]
+    }
+#### 响应    
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "completeTime": "",
+            "createRole": 0,
+            "createTime": "",
+            "createUser": 0,
+            "createUserName": "",
+            "customerId": 0,
+            "customerName": "",
+            "customerType": "",
+            "deleteFlg": 0,
+            "discountPrice": 20,
+            "freight": 10,              // 运费
+            "id": 0,
+            "isFreight": 1,
+            "isParent": 0,
+            "jian": 1,                  // 件
+            "modifyTime": "",
+            "orderId": "",
+            "orderSrLog": null,
+            "orderSrPro": [
+                {
+                    "deleteFlg": 0,
+                    "giftFlg": 0,
+                    "guige": "",
+                    "id": 0,
+                    "leftPcount": 0,
+                    "mainImg": "",
+                    "oldPrice": 0,
+                    "orderId": "",
+                    "pcount": 1,
+                    "pno": "",
+                    "price": 391,
+                    "productId": 0,
+                    "productName": "",
+                    "productunitId": 7383,      // 产品规格ID
+                    "totalPrice": 391,      // 退款金额
+                    "unit": ""
+                },
+                {
+                    "deleteFlg": 0,
+                    "giftFlg": 0,
+                    "guige": "",
+                    "id": 0,
+                    "leftPcount": 0,
+                    "mainImg": "",
+                    "oldPrice": 0,
+                    "orderId": "",
+                    "pcount": 1,
+                    "pno": "",
+                    "price": 21,
+                    "productId": 0,
+                    "productName": "",
+                    "productunitId": 184,
+                    "totalPrice": 21,
+                    "unit": ""
+                }
+            ],
+            "passTime": "",
+            "platformId": 0,
+            "price": 412,           // 产品总价
+            "rebate": 20,           // 折扣
+            "rebatePrice": 0,
+            "receiveTime": "",
+            "refuseTime": "",
+            "remark": "",
+            "saOrderId": "SA180611037577",
+            "san": 1,                // 散
+            "status": null,
+            "toDepotId": 0,
+            "toDepotName": "",
+            "totalPrice": 402       // 总计
+        }
+    }
