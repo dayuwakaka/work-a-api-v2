@@ -109,7 +109,8 @@
             "excludeRange": null, // 排除客户清单， 客户ID
             "excludeCustomer": [
                 {
-                    "shortName":"xxx"
+                    "id": 1 // 客户ID
+                    "shortName":"xxx" // 客户名
                 }
             ],
             "id": 254, // 特价ID
