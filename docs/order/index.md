@@ -409,19 +409,19 @@
         "data": {
             "completeTime": "",                
             "createRole": 1,                  
-            "createTime": "2019-03-12 14:29:26",    // 创建时间
+            "createTime": "2019-03-12 14:29:26", 
             "createUser": 518,                 
-            "createUserName": "孙启萌",            // 创建人名
-            "customerId": 32805,                // 客户ID
+            "createUserName": "孙启萌",
+            "customerId": 32805,                
             "customerName": "",                 // 客户名
-            "customerType": "",                 // 客户类型 P客户 A客户 C客户 P2P客户
+            "customerType": "", 
             "deleteFlg": 0,                    
             "discountPrice": 20,              
-            "freight": 10,                      // 运费
+            "freight": 10,                      // 退运费
             "id": 6,                            // id 
-            "isFreight": 0,                     // 是否包含运费
-            "isParent": 0,          // 0 普通客户 1 总店  2 分店
-            "jian": 1,                          // 件
+            "isFreight": 0,                     // 是否包含运费 0 不包含 1 包含
+            "isParent": 0,  
+            "jian": 1,                          // 件数
             "modifyTime": "",                  
             "orderId": "SR1903120000020",       // 退单号
             "orderSrLog": [
@@ -439,52 +439,34 @@
                 {
                     "deleteFlg": 0,           
                     "giftFlg": 0,               // 是否赠品 0 非曾平 1 申请的赠品  2 活动赠品
-                    "guige": "",                // 规格
+                    "guige": "",                // 产品规格
                     "id": 5,                        // ID
                     "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201707/1b56214371d52d1e5d47cef59b55b31a.jpg",
-                    "oldPrice": 391,
-                    "orderId": "SR1903120000020",       // 退单号
+                    "oldPrice": 391,                    // 成交价格
+                    "orderId": "SR1903120000020",       
                     "pcount": 1,                    // 退货数量
                     "pno": "",                  // 品号
                     "price": 391,               // 退货价格
                     "productId": 4152,          // 退货产品ID
                     "productName": "",          // 退货产品名
                     "productunitId": 7383,      // 退货产品规格ID
-                    "totalPrice": 391,            // 退货总价
+                    "totalPrice": 391,            // 退款金额
                     "unit": ""                  //　产品单位
-                },
-                {
-                    "deleteFlg": 0,
-                    "giftFlg": 0,
-                    "guige": "",
-                    "id": 6,
-                    "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201707/1b56214371d52d1e5d47cef59b55b31a.jpg",
-                    "oldPrice": 391,
-                    "orderId": "SR1903120000020",
-                    "pcount": 1,
-                    "pno": "",
-                    "price": 21,
-                    "productId": 100,
-                    "productName": "",
-                    "productunitId": 184,
-                    "totalPrice": 21,
-                    "unit": ""
                 }
             ],
             "passTime": "",                  
-            "platformId": 1,                    // 平台商ID
-            "price": 33,                        // 成交单价
-            "rebate": 10,                       // 折扣
+            "platformId": 1,                   
+            "price": 33,                        // 产品总价
+            "rebate": 10,                       // 已用折扣
             "rebatePrice": 0,                 
             "refuseTime": "",                  
-            "remark": "这是一句备注",             // 备注
+            "remark": "这是一句备注",             // 退单备注
             "saOrderId": "SA180611037577",      // 订单号
-            "san": 1,                           // 散
-            // 状态   (INVALID:未生效,RUN:生效,FMS_PASS: 财务通过,RECEIVE:已签收,COMPLETE 已完成)
-            "status": "INVALID",                
-            "toDepotId": 40,                   
+            "san": 1,                           // 散货
+            "status": "INVALID",                // 状态 INVALID 未生效 RUN 已执行 FMS_PASS 已审核通过 RECEIVE 已签收 COMPLETE 已退款
+            "toDepotId": 40,                       
             "toDepotName": "DC（大连铁越仓）",     // 入库仓名
-            "totalPrice": 382                       // 最终退款额
+            "totalPrice": 382                       // 总计
         }
     }   
 
