@@ -672,3 +672,162 @@
             "totalPrice": 402       // 总计
         }
     }
+    
+### DD-101. 申请赠品列表
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/saorder/gift/askfor
+#### 参数
+    orderId：单号
+    status：状态 INVALID：待审核 REFUSE：拒绝 PASS：通过
+    buttonPermissionFlg：1 - 获取权限按钮列表 0 -否
+    pageNo: 页码
+    pageSize: 行数
+#### 响应    
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [
+                        {
+                            "refuseButton": true, // 拒绝按钮
+                            "passButton": true, // 通过按钮
+                            "logButton": true // 日志按钮
+                        }
+                    ],
+                    "dataSums": null,
+                    "datas": [
+                        {
+                            "checkRemark": "", // 审核备注
+                            "checkRole": 0,
+                            "checkTime": "", // 审核时间
+                            "checkUser": 0,
+                            "checkUserName": "", // 审核人
+                            "createName": "孙启萌", // 创建人
+                            "createRole": 0,
+                            "createTime": "2019-03-14 17:16:51", // 创建时间
+                            "createUser": 0,
+                            "customer": {
+                                "shortName": "么志勇", // 客户名称
+                            },
+                            "customerId": 2434,
+                            "id": 18, // 主键id
+                            "jian": 0, // 件
+                            "remark": "", // 申请备注
+                            "saOrderId": "SA1903140000040", // 销售单号
+                            "san": 10, // 散
+                            "status": "INVALID", // 状态 INVALID：待审核 REFUSE：拒绝 PASS：通过
+                            "totalprice": 325 // 赠品金额
+                        }
+                    ],
+                    "pageNo": 1,
+                    "total": -1
+        }
+    }
+    
+### DD-102. 赠品详情
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/saorder/gift/askfor/{id}
+#### 参数
+    id: 主键id
+#### 响应    
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "id": 18,
+            "orderGiftProAskForVOs": [
+                {
+                    "pcount": 10, // 数量
+                    "price": 32.5, // 赠品价格
+                    "totalprice": 325, // 赠品小计
+                    "productUnit": {
+                        "guige": "500g(23-25枚）/盒", // 规格
+                        "product": {
+                            "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg", // 产品主图url
+                            "name": "香草凤尾虾", // 品名
+                            "pno": "0151", // 品号
+                        },
+                        "unit": "盒", // 单位
+                    }
+                }
+            ],
+            "remark": "", // 申请备注
+            "saOrderId": "SA1903140000040",
+            "status": "INVALID",
+            "totalprice": 325 // 赠品金额
+        }
+    }
+    
+
+### DD-103. 赠品审批拒绝
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/saorder/gift/askfor/refuse
+#### 参数
+    {
+        ids: [1,2,3] // 主键
+        remark: "赠品价格太高，搭赠赔本" // 备注
+    }
+#### 响应    
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+
+### DD-104. 赠品审批通过
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/saorder/gift/askfor/pass
+#### 参数
+    [1,2,3] // 主键
+#### 响应    
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### DD-105. 销售订单列表
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/saorder
+#### 参数
+    id: 主键id
+#### 响应    
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
