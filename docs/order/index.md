@@ -78,8 +78,12 @@
 #### 请求
     GET /v2/order/ap
 #### 参数
+    orderKeyWord: "xx" // 调价单、差价单、销售单号
     orderIdKeyWord: "xxx" // 调价、差价单号
     saOrderIdKeyWord: "xxx" // 销售订单号
+    type: "BEFORE" // BEFORE 发出前 AFTER 发出后
+    statuses[]: "xx" // BEFORE 发出前 INVALID 作废 RUN 确认 COMPLETE CPA审核通过
+                   // AFTER 发出后 INVALID 未生效 RUN 确认 PASS CPA审核通过 COMPLETE 财务审核通过
     pageNo: 1 // 页码
     pageSize: 25 // 页条数
 #### 响应
@@ -115,7 +119,8 @@
                     "remark": "", // 备注
                     "runTime": "", // 确认时间
                     "saOrderId": "test-01", // 销售单号
-                    "status": "INVALID", // 状态 RUN 确认，INVALID 作废 若Type = BEFORE， COMPLETE 显示为CPA通过  若Type = AFTER PASS 显示为CPA通过，COMPLETE 财务通过
+                    "status": "INVALID", // Type = BEFORE INVALID: 作废 RUN：确认 PASS|COMPLETE：CPA审核通过
+                                         // Type = AFTER INVALID:未生效：RUN：确认 PASS：CPA审核通过 COMPLETE 财务审核通过 COMPLETE 财务审核通过
                     "totalAskPrice": 1, // 请求总价
                     "totalBalancePrice": -1, // 请求总差价
                     "totalSalePrice": 2, // 请求原总价
@@ -183,13 +188,17 @@
                     "salePrice": 2 // 销售单价
                 }
             ],
+            "customer":{
+                "shortName": "xxx" // 客户名
+            },
             "orderId": "AP1903110000010", // 调价单号
             "passTime": "2019-03-11", // 通过时间
             "platformId": 1, // 平台ID
             "remark": "", // 备注
             "runTime": "2019-03-11", // 确认时间
             "saOrderId": "test-05", // 销售单号
-            "status": "COMPLETE", // 状态 INVALID 作废 RUN 确认 Type = BEFORE COMPLETE CPA审核通过 Type = AFTER PASS CPA审核通过 COMPLETE 财务审核通过
+            "status": "COMPLETE", // Type = BEFORE INVALID: 作废 RUN：确认 PASS|COMPLETE：CPA审核通过
+                                  // Type = AFTER INVALID:未生效：RUN：确认 PASS：CPA审核通过 COMPLETE 财务审核通过 COMPLETE 财务审核通过
             "totalAskPrice": 1, // 调价总价
             "totalBalancePrice": -1, // 调价总差价
             "totalSalePrice": 2, // 销售原总价
