@@ -1073,7 +1073,8 @@
     {
         *"groupId":1, // 客户属性组ID
         *"name":"aaa", // 客户属性名
-        *"freightFlg":1, // 满免运费标识 0 未开启 1 开启
+        *"freightFlg":1, // 免运费标识 0 未开启 1 开启
+        @@*"stocklimitFlg":1 //库存无限制标识 0 未开启 1 开启 
     }
 #### 响应
     {
@@ -1093,7 +1094,8 @@
     {
         *"groupId":1, // 客户属性组ID
         *"name":"aaa", // 客户属性名
-        *"freightFlg":1, // 满免运费标识 0 未开启 1 开启
+        *"freightFlg":1, // 免运费标识 0 未开启 1 开启
+        @@*"stocklimitFlg":1 //库存无限制标识 0 未开启 1 开启 
     }
 #### 响应
     {
@@ -1123,6 +1125,7 @@
                 "groupName": "", // 客户属性组名
                 "id": 5, // 客户属性ID
                 "name": "aaa" // 客户属性名
+                @@"stocklimitFlg":1 //库存无限制标识 0 未开启 1 开启 
             }
         ]
     }
@@ -1264,4 +1267,25 @@
         "code": 100000,
         "msg": "",
         "data": null
+    }
+
+
+### KH-50. 获取新增客户类型的权限
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /v2/customer/role/auth
+#### 参数
+    无
+#### 响应
+    // true 有新增相应客户的权限    false 无新增相应客户权限   false时，相应radio置灰
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "a": false, // A客户
+            "c": false, // C客户
+            "p": true,  // P客户
+            "p2p": false    // P2P客户
+        }
     }
