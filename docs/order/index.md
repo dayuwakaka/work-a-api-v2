@@ -335,7 +335,6 @@
                     "detailButton": true,
                     "editButton": true,
                     "delButton": true,
-                    "logButton": true,
                     "passButton":false,
                     "refuseButton":false,
                     "refundButton": false
@@ -480,7 +479,7 @@
         }
     }   
 
-### DD-55. 销售退确认执行&审核通过&审核拒绝
+### DD-55. 销售退状态变更
 #### 模块负责人
     尹洪明
 #### 请求
@@ -511,7 +510,7 @@
         "data": null
     }     
  
-### DD-57. 销售退详情(新增拉取)
+### DD-57. 销售退详情(新增拉取订单明细)
 #### 模块负责人
     尹洪明
 #### 请求
@@ -597,7 +596,7 @@
     }
     
 
-### DD-58. 销售退计算件&散&价格等
+### DD-58. 销售退计算合计等
 #### 模块负责人
     尹洪明
 #### 请求
