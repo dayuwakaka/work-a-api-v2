@@ -1301,42 +1301,36 @@
     {
         "code": 100000,
         "msg": "",
-        "data": {
-            "buttonPermissions": [],
-            "dataSums": null,
-            "datas": [
-                {
-                    "businessunit": 9,          // 所属事业部ID
-                    "businessunitName": "PV",   // 所属事业部名
-                    "companyName": "亚惠",
-                    "customerId": 149,     // 客户ID
-                    "isParent": 0,          // 客户等级  0 普通客户  1 总店  2 分店
-                    "isStockLimit": 0,
-                    "platformId": 1,
-                    "shortName": "亚惠",      // 客户名
-                    "srRoleId": 7518,
-                    "srRoleName": "陈明",
-                    "ssRoleId": 29214,
-                    "ssRoleName": "张莹",
-                    "type": "A"         // 客户类型 P客户 A客户 C客户 P2P客户
-                },
-                {
-                    "businessunit": 79,
-                    "businessunitName": "TG",
-                    "companyName": "18698665798",
-                    "customerId": 32805,
-                    "isParent": 0,
-                    "isStockLimit": 0,
-                    "platformId": 149,
-                    "shortName": "18698665798",
-                    "srRoleId": 0,
-                    "srRoleName": "",
-                    "ssRoleId": 0,
-                    "ssRoleName": "",
-                    "type": "A"
-                }
-            ],
-            "pageNo": 0,
-            "total": 0
-        }
-    }   
+        "data": [
+            {
+                "businessunit": 9,              // 事业部ID
+                "businessunitName": "PV",       // 事业部名
+                "companyName": "亚惠",      
+                "customerId": 149,              // 客户ID
+                "isParent": 0,                  // 客户等级 0 普通客户  1 总店  2 分店
+                "isStockLimit": 0,
+                "platformId": 1,
+                "shortName": "亚惠",            // 客户名
+                "srRoleId": 7518,
+                "srRoleName": "陈明",
+                "ssRoleId": 29214,
+                "ssRoleName": "张莹",
+                "type": "A"                     // 客户类型  A客户 P客户 C客户 P2P客户
+            },
+            {
+                "businessunit": 79,
+                "businessunitName": "TG",
+                "companyName": "18698665798",
+                "customerId": 32805,
+                "isParent": 0,
+                "isStockLimit": 0,
+                "platformId": 149,
+                "shortName": "18698665798",
+                "srRoleId": 0,
+                "srRoleName": "",
+                "ssRoleId": 0,
+                "ssRoleName": "",
+                "type": "A"
+            }
+        ]
+    }
