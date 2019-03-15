@@ -508,7 +508,7 @@
     GET /order/sr/detail
 #### 参数
     *saOrderId        // 销售订单号
-    *orderId        // 销售退
+    orderId        // 销售退（新增时拉取，不需要传，修改时拉取需要）
 #### 响应
     {
         "code": 100000,
@@ -673,7 +673,7 @@
         }
     }
     
-### DD-101. 申请赠品列表
+### DD-101. 赠品-列表
 #### 模块负责人
     梁铁骐
 #### 请求
@@ -726,7 +726,7 @@
         }
     }
     
-### DD-102. 赠品详情
+### DD-102. 赠品-详情
 #### 模块负责人
     梁铁骐
 #### 请求
@@ -763,7 +763,7 @@
     }
     
 
-### DD-103. 赠品审批拒绝
+### DD-103. 赠品-审批拒绝
 #### 模块负责人
     梁铁骐
 #### 请求
@@ -781,7 +781,7 @@
     }
 
 
-### DD-104. 赠品审批通过
+### DD-104. 赠品-审批通过
 #### 模块负责人
     梁铁骐
 #### 请求
@@ -795,25 +795,200 @@
         "data": null
     }
 
-### DD-105. 销售订单列表
+### DD-105. 销售订单-列表
 #### 模块负责人
     梁铁骐
 #### 请求
     GET /v2/saorder
 #### 参数
-    id: 主键id
+    customerId: 客户id,
+    orderId: 销售订单号,
+    tradefrom: 下单方式 SYS-后台手动下单 SELF-客户自主下单
+    status: 订单状态 INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收
+    payFlg： 结款状态 0-未结款 1-已结款
+    createUserName： 创建人
+    createStartDate: 创建开始日期
+    createEndDate: 创建结束日期
+    sendStartDate: 发货开始日期
+    sendEndDate: 发货结束日期
 #### 响应    
     {
         "code": 100000,
         "msg": "",
         "data": {
-            
+            "buttonPermissions": [
+                {
+                     "editBaseButton": false, // 修改基本信息按钮
+                     "payButton": false, // 支付按钮
+                     "exportButton": false, // 导出按钮
+                     "deleteButton": false, // 删除按钮
+                     "apButton": false, // 申请调价按钮
+                     "srButton": false, // 退货按钮
+                     "unlockButton": false, // 解锁按钮
+                     "editButton": false, // 修改订单按钮
+                     "cancelPayButton": false, // 取消结款按钮
+                     "runButton": false, // 确认执行按钮
+                     "splitButton": false // 拆分按钮
+                }
+            ],
+            "dataSums": null,
+            "datas": [
+                {
+                    "apPrice": 0, // 调价金额
+                    "completeTime": "",
+                    "createTime": "2019-03-14 16:31:58", // 创建时间
+                    "createUserName": "孙启萌", // 创建人
+                    "customer": {
+                        "isParent": 0, // 0 表示普通客户 1表示总店 2表示分店
+                        "shortName": "么志勇", // 客户名称
+                        "type": "P" // 客户类型 A, P, P2P, C
+                    },
+                    "customerId": 2434, // 客户id
+                    "delivery": {
+                        "address": "河北唐山市路南区君瑞批发市场冷库站台", // 收货地址
+                        "mobile": "13393255188", // 联系电话
+                        "name": "么志勇", // 收货人
+                    },
+                    "deliveryType": "DELIVERY",
+                    "depositPrice": 0,
+                    "discountPrice": 0, // 优惠活动折扣金额
+                    "freight": 0, // 运费
+                    "freightStatus": 0,
+                    "fromDepotId": 51,
+                    "fromDepotName": "DC（天津优和仓 ）",
+                    "giftFlg": 0, // 赠品标识 0-无 1-有
+                    "id": 50,
+                    "jian": 10, // 件
+                    "lockFlg": 0, // 锁标识 0-无 1-有
+                    "mainOrderId": "",
+                    "modifyTime": "2019-03-14 08:38:36.0",
+                    "orderId": "SA1903140000034", // 单号
+                    "payFlg": 0, // 结款状态 0 - 未结款 1 - 已结款
+                    "payTime": "2019-03-14 16:35:00",
+                    "paymentType": "CASH",
+                    "planSendTime": "2019-03-15 00:00:00", // 计划发货时间
+                    "platformId": 1,
+                    "price": 7033,
+                    "rebatePrice": 0, // 返利券折扣金额
+                    "receiveId": 17508,
+                    "remark": "我的测试测试备注", // 备注
+                    "runTime": "",
+                    "san": 20, // 散
+                    "sendTime": "",
+                    "splitFlg": 1, // 被拆分标识 1 - 是 0 - 否 
+                    "status": "INVALID", // INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收
+                    "totalprice": 7033, // 实收
+                    "tradefrom": "SYS"
+                }
+            ],
+            "pageNo": 1,
+            "total": 0
         }
     }
 
-
-
-
+### DD-106. 销售订单-详情
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/saorder/{orderId}
+#### 参数
+    orderId: 销售订单号
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "activeId": 0,
+            "activeName": "",
+            "apPrice": 0,
+            "completeTime": "",
+            "couponId": 0,
+            "couponName": "",
+            "createRole": 1,
+            "createTime": "2019-03-14 17:16:50",
+            "createUser": 518,
+            "createUserName": "孙启萌",
+            "customer": {
+                "shortName": "么志勇", // 客户名称
+            },
+            "delivery": {
+                "address": "河北唐山市路南区君瑞批发市场冷库站台", // 详细地址
+                "areapathid": "030201",
+                "id": 65,
+                "mobile": "13393255188", // 联系电话
+                "name": "么志勇", // 收货人
+                "orderId": "SA1903140000040"
+            },
+            "deliveryType": "DELIVERY",
+            "depositPrice": 0,
+            "discountPrice": 0, // 优惠活动金额
+            "freight": 0, // 运费
+            "freightStatus": -1, // 运费状态 -1 未申请 0 待审核 1 通过 2 未通过
+            "fromDepotId": 51,
+            "fromDepotName": "DC（天津优和仓 ）", // 出库仓
+            "giftFlg": 0,
+            "id": 66,
+            "jian": 10,
+            "lockFlg": 1,
+            "logs": [ // 操作日志
+                {
+                    "opInfo": "发起调价单申请", // 操作内容
+                    "opTime": "2019-03-14 17:16:51", // 操作时间
+                    "opUserName": "孙启萌", // 操作者
+                }
+            ],
+            "mainOrderId": "",
+            "modifyTime": "2019-03-14 09:16:50",
+            "orderId": "SA1903140000040", // 单号
+            "orderSaPros": [
+                {
+                    "activeId": 0,
+                    "afterAskPrice": 0, // 调价单金额
+                    "apStatus": {
+                        "saOrderId": "SA1903140000040",
+                        "status": "RUN", // 调价单状态
+                        "type": "BEFORE"
+                    },
+                    "beforeAskPrice": 0, // 差价单金额
+                    "giftFlg": 0, // 赠品标识 0-正常品 1-申请的赠品 2-活动赠品
+                    "id": 192,
+                    "pcount": 10, // 数量
+                    "price": 32.5, // 单价
+                    "totalprice": 325, // 总计
+                    "priceFlg": "P", // 价格类别 NONE-未知 T-特价 S-签约价 Q -区域价 A-A价 P-P价 AK-调价'
+                    "productId": 1,
+                    "productUnit": {
+                        "guige": "500g(23-25枚）/盒", // 规格
+                        "product": {
+                            "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg", // 产品图片url
+                            "name": "香草凤尾虾", // 品名
+                            "pno": "0151", // 品号
+                        },
+                        "unit": "盒", // 单位
+                    },
+                    "productUnitId": 1
+                }
+            ],
+            "payFlg": 0, // 结款状态 0-未结款 1-结款
+            "payTime": "",
+            "paymentType": "CASH",
+            "planSendTime": "2019-03-15 00:00:00", // 计划发出时间
+            "platformId": 1,
+            "price": 7033, // 产品总价
+            "rebateId": 0,
+            "rebateName": "", // 返利券名称
+            "rebatePrice": 0, // 返利金额
+            "receiveId": 17508,
+            "remark": "我的测试测试备注", // 订单备注
+            "runTime": "",
+            "san": 20, // 散
+            "sendTime": "",
+            "splitFlg": 0,
+            "status": "INVALID", // 订单状态 INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收
+            "totalprice": 7033, // 总价
+            "tradefrom": "SYS"
+        }
+    }
 
 
 
