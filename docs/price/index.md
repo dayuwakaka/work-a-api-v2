@@ -152,6 +152,19 @@
                     "name": "彤德莱", // 属性名
                     "stocklimitFlg": 1
                 }
+            ],
+            "areas": [
+                {
+                    "adcode": "110100",
+                    "amap": "116.407395,39.904211",
+                    "areaName": "北京市", // 区域名
+                    "children": null,
+                    "id": 36,
+                    "parentId": 2, 
+                    "pathid": "0101", // pathid 
+                    "pycode": "BJS",
+                    "zipcode": "0"
+                }
             ]
         }
     }
