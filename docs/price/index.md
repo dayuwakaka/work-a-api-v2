@@ -132,6 +132,27 @@
             "startDate": "2018-12-06", // 开始时间
             "status": "NORMAL", // 状态 NORMAL 正常 LOCK 锁定
             "tPrice": 185 // 特价
+            "businessUnits": [ // 事业部限制清单
+                {
+                    "bcFlg": 0,
+                    "groupId": 8,
+                    "groupName": "AHAN", // 事业部组名
+                    "id": 3,
+                    "name": "AH大连", // 事业部名
+                    "platformId": 1,
+                    "sort": 1
+                }
+            ],
+            "customerAttrs":[
+                {
+                    "freightFlg": 0,
+                    "groupId": 1,
+                    "groupName": "彤德莱体系客户", // 属性组名
+                    "id": 1, 
+                    "name": "彤德莱", // 属性名
+                    "stocklimitFlg": 1
+                }
+            ]
         }
     }
 
