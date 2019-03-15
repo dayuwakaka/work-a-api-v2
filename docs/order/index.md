@@ -1295,6 +1295,98 @@
     {
         "code": 100000,
         "msg": "",
+        "data": {
+            "activeId": 0,
+            "orderId": "SA1903140000034", // 订单号
+            "orderSaPros": [
+                {
+                    "productUnit": {
+                        "product": {
+                            "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg", // 产品图片
+                            "name": "香草凤尾虾",
+                            "pno": "0151",
+                        },
+                        "productId": 1,
+                        "stock": null,
+                        "unit": "盒",
+                    }
+                }
+            ],
+            "payFlg": 0, // 0-未结款 1-结款
+            "paymentType": "CASH", // CASH-先款后货 CREDIT-账期
+            "remark": "我的测试测试备注", // 备注
+            "san": 20, // 散
+            "sendTime": "", // 发货时间
+            "status": "INVALID", // 订单状态 INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收 
+            "totalprice": 7033, // 订单总价
+        },
+    }
+
+### DD-120. 销售订单-“订单复购”订单列表（APP端）
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /router/v5/order/{customerId}/search
+#### 参数
+    customerId: 客户id
+    productKeyword: 产品名称
+    pageNo: default 1
+    pageSize: default 10
+#### 相应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "createTime": "2019-03-14 16:31:58", // 创建时间
+            "orderId": "SA1903140000034-1", // 单号
+            "orderSaPros": [
+                {
+                    "activeId": 0,
+                    "afterAskPrice": 0, // 调价单金额
+                    "beforeAskPrice": 0, // 差价单金额
+                    "pcount": 5, // 数量
+                    "price": 32.5, // 单价
+                    "productUnit": {
+                        "guige": "500g(23-25枚）/盒", // 规格
+                        "minimum": 0, // 最小起订量
+                        "product": {
+                            "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg", // 产品图片url
+                            "name": "香草凤尾虾", // 品名
+                            "pno": "0151", // 品号
+                        },
+                        "unit": "盒", // 单位
+                    }
+                }
+            ],
+            "totalprice": 152.5 // 总价
+        }
+    }
+
+### DD-121. 销售订单-删除（APP端）
+#### 模块负责人
+    梁铁骐
+#### 请求
+    DELETE /router/v5/order/{orderId}
+#### 参数
+    orderId: 单号
+#### 相应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### DD-122. 销售订单-确认签收（APP端）
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /router/v5/order/{orderId}/complete
+#### 参数
+    orderId: 单号
+#### 相应
+    {
+        "code": 100000,
+        "msg": "",
         "data": null
     }
 
