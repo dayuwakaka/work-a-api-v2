@@ -501,13 +501,14 @@
         "data": null
     }     
  
-### DD-57. 销售退详情(新增拉取订单明细)
+### DD-57. 销售退详情(新增、修改拉取明细)
 #### 模块负责人
     尹洪明
 #### 请求
-    GET /order/sr/detail/sa/{saOrderId}
+    GET /order/sr/detail
 #### 参数
     *saOrderId        // 销售订单号
+    orderId        // 销售退（新增时拉取，不需要传，修改时拉取需要）
 #### 响应
     {
         "code": 100000,
@@ -518,74 +519,55 @@
             "createTime": "",
             "createUser": 0,
             "createUserName": "",
-            "customerId": 30560,                        // 客户ID
-            "customerName": "沈阳市皇姑区金鹏小火锅餐厅",    // 客户名称
+            "customerId": 2434,         // 客户ID
+            "customerName": "么志勇",      // 客户名
             "customerType": "",
             "deleteFlg": 0,
             "discountPrice": 0,
-            "freight": 10,
-            "id": 0,
-            "isFreight": 0,
+            "freight": 0,               // 运费
+            "id": 8,
+            "isFreight": 0,             // 是否包含运费 0 不包含 1 包含
             "isParent": 0,
-            "jian": 0,
+            "jian": 0,                  // 件
             "modifyTime": "",
-            "orderId": "",
+            "orderId": "SR1903140000007",   // 退单号
             "orderSrLog": null,
             "orderSrPro": [
                 {
                     "deleteFlg": 0,
-                    "giftFlg": 0,                   // 赠品标志 0 普通品 1 申请的赠品 2 活动赠品
-                    "guige": "500g/袋*16袋",      // 规格
+                    "giftFlg": 0,                   // 是否赠品 0 非赠品  1 曾陪你过
+                    "guige": "500g(23-25枚）/盒",  // 规格
                     "id": 0,
-                    "leftPcount": 1,       // 数量     
-                    "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201707/1b56214371d52d1e5d47cef59b55b31a.jpg",
-                    "oldPrice": 391,        // 成交价
+                    "leftPcount": 3,                // 数量
+                    "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg",
+                    "oldPrice": 32.5,               // 成交价
                     "orderId": "",
-                    "pcount": 0,
-                    "pno": "1362",          // 品号
-                    "price": 0,
-                    "productId": 4152,
-                    "productName": "原浆生开扇贝肉",   // 品名
-                    "productunitId": 7383,
-                    "totalPrice": 0,
-                    "unit": "件"             // 单位
-                },
-                {
-                    "deleteFlg": 0,
-                    "giftFlg": 0,
-                    "guige": "1000g",
-                    "id": 0,
-                    "leftPcount": 1,
-                    "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201804/323ad7af9dad4e58306d9548843f7dfa.jpg",
-                    "oldPrice": 21,
-                    "orderId": "",
-                    "pcount": 0,
-                    "pno": "277",
-                    "price": 0,
-                    "productId": 100,
-                    "productName": "蟹足棒（模拟蟹肉）",
-                    "productunitId": 184,
-                    "totalPrice": 0,
-                    "unit": "袋"
+                    "pcount": 2,                    // 退货数量
+                    "pno": "0151",                  // 品号
+                    "price": 30,                    // 退货价格
+                    "productId": 1,                 // 产品ID
+                    "productName": "香草凤尾虾",     // 产品名
+                    "productunitId": 1,             // 产品规格ID
+                    "totalPrice": 60,               // 退款金额
+                    "unit": "盒"                     // 产品单位
                 }
             ],
             "passTime": "",
             "platformId": 0,
-            "price": 0,
-            "rebate": 0,
+            "price": 60,                            // 产品总价
+            "rebate": 8,                            // 折扣
             "rebatePrice": 0,
             "receiveTime": "",
             "refuseTime": "",
-            "remark": "",
-            "saOrderId": "SA180611037577",          // 销售单号
-            "san": 0,
+            "remark": "这是一句备注2222",             // 备注
+            "saOrderId": "SA1903140000034-1",       // 订单号
+            "san": 2,                               // 散货数
             "status": null,
-            "toDepotId": 0,
-            "toDepotName": "",
-            "totalPrice": 0
+            "toDepotId": 51,                        // 入库仓ID
+            "toDepotName": "DC（天津优和仓 ）",        // 入库仓名
+            "totalPrice": 52                        // 总计
         }
     }
-    
 
 ### DD-58. 销售退计算合计等
 #### 模块负责人
