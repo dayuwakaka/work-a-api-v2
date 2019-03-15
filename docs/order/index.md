@@ -978,7 +978,7 @@
             "rebateId": 0,
             "rebateName": "", // 返利券名称
             "rebatePrice": 0, // 返利金额
-            "receiveId": 17508,
+            "receiveId": 17508, // 收货人id
             "remark": "我的测试测试备注", // 订单备注
             "runTime": "",
             "san": 20, // 散
@@ -989,6 +989,316 @@
             "tradefrom": "SYS"
         }
     }
+
+### DD-107. 销售订单-解除整单锁
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/saorder/{orderId}/unlock
+#### 参数
+    orderId: 销售订单号
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### DD-108. 销售订单-解除调价锁
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/saorder/{orderId}/{proId}/unlock
+#### 参数
+    orderId: 销售订单号
+    proId: 产品明细id
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### DD-109. 销售订单-结款
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/saorder/{orderId}/pay
+#### 参数
+    orderId: 销售订单号
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### DD-110. 销售订单-取消结款
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/saorder/{orderId}/unpay
+#### 参数
+    orderId: 销售订单号
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### DD-110. 销售订单-拆分
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/saorder/{orderId}/split
+#### 参数
+    {
+        orderId: 'SA190000000001', 销售订单号
+        splitOrderSaPros: [
+            {
+                id: 产品明细id,
+                pcount: 数量
+            },
+            ...
+        ]
+    }
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### DD-111. 销售订单-物流通知修改出库仓
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/saorder/depot
+#### 参数
+    {
+        order_ids: 'SA190001,SA190002,SA190003', // 订单号 以 “，”相隔
+        depot_id: 1 // 仓id
+        
+    }
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### DD-112. 销售订单-订单列表导出
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/saorder/export
+#### 参数
+    date: '2019-01' // yyyy-MM
+    checkCode: 下载码
+#### 响应  
+    stream
+
+### DD-113. 销售订单-订单导出
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/saorder/export/single
+#### 参数
+    orderId: 'SA19000001' // 单号
+    checkCode: 下载码
+#### 响应  
+    stream
+
+### DD-114. 销售订单-确认执行
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/saorder/{orderId}/run
+#### 参数
+    orderId: 'SA19000001' // 单号
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### DD-115. 销售订单-删除
+#### 模块负责人
+    梁铁骐
+#### 请求
+    DELETE /v2/saorder/{orderId}
+#### 参数
+    orderId: 'SA19000001' // 单号
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### DD-116. 销售订单-新增（SYS端）
+#### 模块负责人
+    梁铁骐
+#### 请求
+    POST /v2/saorder
+#### 参数
+    {
+    	"saOrder": {
+    		*"customerId": 2434, // 客户id
+    		*"receiveId": 17508, // 联系人id
+    		*"tradefrom": "SYS", // 下单渠道 固定 SYS
+    		*"deliveryType": "DELIVERY", // 配送方式 DELIVERY：配送 SELF：自提
+    		*"planSendTime": "2019-03-15", // 计划发货时间
+    		"rebateId": 1, // 返利券id
+    		"couponId": 1, // 优惠券id
+    		"activeId": 1, // 活动id
+    		"excludeActiveIds": [1,2,3], // 排除满赠活动id
+    		"freightFlg": 1, // 是否申请免运费 0-否 1-是
+    		"freightRemark": "申请免运费备注", // 免运费申请备注 0 ~ 255 请前端同事校验好，后端也校验
+    		"remark": "我的测试测试备注", // 订单备注
+    		"giftRemark": "赠品申请备注" // 赠品申请备注 0 ~ 255 请前端同事校验好，后端也校验
+    	},
+    	"saOrderPros": [ // 订单产品明细
+    		{
+    			*"productUnitId": 1, // 产品规格id
+    			*"productId": 1, // 产品id
+    			*"pcount": 10, // 数量
+    			"giftCount": "1", // 赠品数量
+    			"beforeAskPrice": 10, // 调价金额
+    			"beforeAskPriceRemark": "测试AP单备注" // 调价备注 0 ~ 255 请前端同事校验好，后端也校验
+    		},
+    		...
+    	],
+    	*"onlyCode": 1123.9663 // 唯一码
+    }
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### DD-117. 销售订单-修改订单基本信息
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/saorder/{orderId}/info
+#### 参数
+    orderId: 单号,
+    {
+    	orderId: 'SA190000001', // 单号
+        remark: 'sdfasdfas', // 备注
+        receiveId: '1', // 联系人id
+        planSendTime: '2019-10-10' // 计划发货时间
+    }
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### DD-118. 销售订单-修改订单
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/saorder/{orderId}
+#### 参数
+    orderId: 单号,
+    {
+    	"saOrder": {
+    	    *"id": 1,
+    		*"customerId": 2434, // 客户id
+    		*"receiveId": 17508, // 联系人id
+    		*"tradefrom": "SYS", // 下单渠道 固定 SYS
+    		*"deliveryType": "DELIVERY", // 配送方式 DELIVERY：配送 SELF：自提
+    		*"planSendTime": "2019-03-15", // 计划发货时间
+    		"rebateId": 1, // 返利券id
+    		"couponId": 1, // 优惠券id
+    		"activeId": 1, // 活动id
+    		"excludeActiveIds": [1,2,3], // 排除满赠活动id
+    		"freightFlg": 1, // 是否申请免运费 0-否 1-是
+    		"freightRemark": "申请免运费备注", // 免运费申请备注 0 ~ 255 请前端同事校验好，后端也校验
+    		"remark": "我的测试测试备注", // 订单备注
+    		"giftRemark": "赠品申请备注" // 赠品申请备注 0 ~ 255 请前端同事校验好，后端也校验
+    	},
+    	"saOrderPros": [ // 订单产品明细
+    		{
+    			*"productUnitId": 1, // 产品规格id
+    			*"productId": 1, // 产品id
+    			*"pcount": 10, // 数量
+    			"giftCount": "1", // 赠品数量
+    			"beforeAskPrice": 10, // 调价金额
+    			"beforeAskPriceRemark": "测试AP单备注" // 调价备注 0 ~ 255 请前端同事校验好，后端也校验
+    		},
+    		...
+    	],
+    	*"onlyCode": 1123.9663 // 唯一码
+    }
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### DD-119. 销售订单-新增（APP端）
+#### 模块负责人
+    梁铁骐
+#### 请求
+    POST /router/v5/order
+#### 参数
+    {
+    	"saOrder": {
+    		*"customerId": 2434, // 客户id
+    		*"receiveId": 17508, // 联系人id
+    		*"tradefrom": "SYS", // 下单渠道 固定 APP
+    		*"deliveryType": "DELIVERY", // 配送方式 DELIVERY：配送 SELF：自提
+    		*"planSendTime": "2019-03-15", // 计划发货时间
+    		"rebateId": 1, // 返利券id
+    		"couponId": 1, // 优惠券id
+    		"activeId": 1, // 活动id
+    		"excludeActiveIds": [1,2,3], // 排除满赠活动id
+    		"remark": "我的测试测试备注", // 订单备注
+    	},
+    	"saOrderPros": [ // 订单产品明细
+    		{
+    			*"productUnitId": 1, // 产品规格id
+    			*"productId": 1, // 产品id
+    			*"pcount": 10 // 数量
+    		},
+    		...
+    	],
+    	*"onlyCode": 1123.9663 // 唯一码
+    }
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+    
+### DD-119. 销售订单-获取“我的”订单列表（APP端）
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /router/v5/order/{customerId}
+#### 参数
+    customerId: 客户id
+    payFlg: 结款 0-未结款 1-结款
+    status: 订单状态 INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收 
+    pageNo: default 1
+    pageSize: default 10
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+
 
 
 
