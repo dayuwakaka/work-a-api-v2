@@ -508,7 +508,7 @@
     GET /order/sr/detail
 #### 参数
     *saOrderId        // 销售订单号
-    *orderId        // 销售退
+    orderId        // 销售退（新增时拉取，不需要传，修改时拉取需要）
 #### 响应
     {
         "code": 100000,
