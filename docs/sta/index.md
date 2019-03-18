@@ -312,29 +312,29 @@
 #### 请求
     GET /reportMarket/marketInfo
 #### 参数
+    *customerId : 12341    //客户编号
     productIds: 1,2,3,4,5 //商品编号
     productUnitIds: 1,2,3,4,5 //商品规格编号
-    
 #### 响应
       {
         "code": 100000,
         "msg": "",
         "data":[
-              {
-                 "productId": 1,
-				 "productUnitId":1,
-                 "markets":[
-                     {
-                         "marketId":1,
-                         "marketType": 'COUPON', // COUPON 优惠券 'GIFT' 满增 'REDUCE' 满减 'DISCOUNT' 满折
-                         "marketName": "xxxx", // 营销名
-                         "effectStime": "xxx", // 开始时间
-                         "effectEtime": "xxx", // 结束时间
-                     },
-                     ...
-                 ]
-              },
-             ...
+          {
+             "productId": 1,     // 按商品客户查询
+             "productUnitId":1,  // 按规格客户查询
+             "markets":[
+                 {
+                     "marketId":1,
+                     "marketType": 'COUPON', // COUPON 优惠券 'GIFT' 满增 'REDUCE' 满减 'DISCOUNT' 满折
+                     "marketName": "xxxx", // 营销名
+                     "effectStime": "xxx", // 开始时间
+                     "effectEtime": "xxx", // 结束时间
+                 },
+                 ...
+             ]
+          },
+          ...
         ]
     }
     
