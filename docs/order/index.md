@@ -801,6 +801,7 @@
 #### 请求
     GET /v2/saorder
 #### 参数
+    buttonPermissionFlg: 1,
     customerId: 客户id,
     orderId: 销售订单号,
     tradefrom: 下单方式 SYS-后台手动下单 SELF-客户自主下单
