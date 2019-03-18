@@ -47,6 +47,7 @@
                     "customerAttrType": "ALL", // 客户属性限制 ALL 全部 PART 部分
                     "deleteflg": 0, // 删除标价
                     "endDate": "2019-01-31", // 结束时间
+                    "excludeType": "ALL", // 排除客户类型 ALL 全部 PART 部分
                     "excludeRange": null, // 排除客户清单， 客户ID
                     "id": 254, // 特价ID
                     "pPrice": 185, // p价格
@@ -76,7 +77,7 @@
 #### 模块负责人
     梁铁骑
 #### 2.1 请求URL
-    /v2/price/special/detail
+    /v2/price/special/detail/{id}
 
 #### 2.2 请求类型
     GET
@@ -84,7 +85,7 @@
 #### 2.3 请求参数
 |参数|名称|描述|
 |---|---|---|
-|specialId|特价ID|必|
+|id|特价ID|必|
 
 #### 2.4 请求示例
     无
@@ -106,6 +107,7 @@
             "customerAttrType": "ALL", // 客户属性限制 ALL 全部 PART 部分
             "deleteflg": 0, // 删除标记
             "endDate": "2019-01-31", // 结束时间
+            "excludeType": "ALL", // 排除客户类型 ALL 全部 PART 部分
             "excludeRange": null, // 排除客户清单， 客户ID
             "excludeCustomer": [
                 {
@@ -130,6 +132,40 @@
             "startDate": "2018-12-06", // 开始时间
             "status": "NORMAL", // 状态 NORMAL 正常 LOCK 锁定
             "tPrice": 185 // 特价
+            "businessUnits": [ // 事业部限制清单
+                {
+                    "bcFlg": 0,
+                    "groupId": 8,
+                    "groupName": "AHAN", // 事业部组名
+                    "id": 3,
+                    "name": "AH大连", // 事业部名
+                    "platformId": 1,
+                    "sort": 1
+                }
+            ],
+            "customerAttrs":[
+                {
+                    "freightFlg": 0,
+                    "groupId": 1,
+                    "groupName": "彤德莱体系客户", // 属性组名
+                    "id": 1, 
+                    "name": "彤德莱", // 属性名
+                    "stocklimitFlg": 1
+                }
+            ],
+            "areas": [
+                {
+                    "adcode": "110100",
+                    "amap": "116.407395,39.904211",
+                    "areaName": "北京市", // 区域名
+                    "children": null,
+                    "id": 36,
+                    "parentId": 2, 
+                    "pathid": "0101", // pathid 
+                    "pycode": "BJS",
+                    "zipcode": "0"
+                }
+            ]
         }
     }
 
@@ -155,6 +191,7 @@
 |customerAttrRange|客户属性列表|
 |areaType|区域限制类型|必 ALL 无限制 PART 部分区域|
 |pathIdRange|区域列表|
+|excludeType|排除客户类型|必 ALL 无限制 PART 部分|
 |excludeRange|排除客户列表|
 |startDate|开始时间|必 日期为客户所选 时间固定 00:00:00|
 |endDate|结束时间|必 日期为客户所选 时间固定 23:59:59|
@@ -170,6 +207,7 @@
         "customerAttrRange": [1, 2, 3],
         "areaType":"PART",
         "pathIdRange":["0101"],
+        "excludeType":"PART",
         "excludeRange":[1],
         "startDate":"2019-01-01 00:00:00",
         "endDate":"2019-04-01 23:59:59"
@@ -212,6 +250,7 @@
 |customerAttrRange|客户属性列表|
 |areaType|区域限制类型|必 ALL 无限制 PART 部分区域|
 |pathIdRange|区域列表|
+|excludeType|排除客户类型 ALL 无限制 PART 部分|
 |excludeRange|排除客户列表|
 |startDate|开始时间|必 日期为客户所选 时间固定 00:00:00|
 |endDate|结束时间|必 日期为客户所选 时间固定 23:59:59|
@@ -228,6 +267,7 @@
         "customerAttrRange": [1, 2, 3],
         "areaType":"PART",
         "pathIdRange":["0101"],
+        "excludeType":"PART",
         "excludeRange":[1],
         "startDate":"2019-01-01 00:00:00",
         "endDate":"2019-04-01 23:59:59"
@@ -328,7 +368,7 @@
 #### 模块负责人
     梁铁骑
 #### 7.1 请求URL
-    /v2/price/special/log
+    /v2/price/special/log/{id}
 
 #### 7.2 请求类型
     GET
@@ -336,7 +376,7 @@
 #### 7.3 请求参数
 |参数|名称|描述|
 |---|---|---|
-|specialId|特价ID|必|
+|id|特价ID|必|
 
 #### 7.4 请求示例
     无

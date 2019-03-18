@@ -83,12 +83,12 @@
     		}],
     		"marketProductRanges":[
     			{
-    			"type":"productunit", // productunit
+    			@@"type":"PRODUCTUNIT", // PRODUCTUNIT 指定品   EXCLUDE 排除品  ALL 无限制
     			"rangeId":7383, // 产品规格ID
     			"extra":""	// 传空即可
     			},
     			{
-    			"type":"productunit",
+    			"type":"PRODUCTUNIT",
     			"rangeId":7382,
     			"extra":""	
     			}],
@@ -1168,3 +1168,226 @@
         -> count
 #### 响应
     格式同 YX-20
+    
+### YX-22. 获取可用返利券
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT /v2/market/canuse/rebate
+#### 参数
+    rebateName  // 返利券名称
+    {
+        *"customerId": 29543,   // 客户ID
+        *"product": [
+            {
+                *"productId": 1,        // 产品ID
+                *"productunitId": 2,    // 产品规格ID
+                *"price": 10,           // 购买价格
+                *"count": 10            // 购买数量
+            },
+            {
+                "productId": 2,
+                "productunitId": 8,
+                "price": 10,
+                "count": 10
+            },
+            {
+                "productId": 3,
+                "productunitId": 10,
+                "price": 10,
+                "count": 10
+            }
+        ]
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "createRole": 0,
+                "createTime": "2019-03-15 14:23:38",
+                "createUser": 0,
+                "createUserName": "孙启萌",
+                "customerId": 29543,
+                "customerName": "",
+                "effectEtime": "2020-04-01 23:59:59",   // 结束日期
+                "effectStime": "2019-03-15 00:00:00",   // 开始日期
+                "id": 15279,                     // 返利券ID
+                "leftValue": 2850,              // 剩余面值
+                "name": "测试9推广费用",          // 返利券名
+                "note": "",
+                "ranges": "ALL",
+                "rate": 50,                     // 使用比率 50%
+                "rebate": 150,                  // 可用面值
+                "source": "HANDWORK",
+                "sourceExt": "",
+                "sourceValue": "518",
+                "status": "NORMAL",
+                "type": "SPREAD", // 返利券类型 REBATE 返利券 SPREAD 推广会 FREIGHT 运费 OTHER 其它
+                "value": 3000
+            },
+            {
+                "createRole": 0,
+                "createTime": "2019-03-15 14:18:59",
+                "createUser": 0,
+                "createUserName": "孙启萌",
+                "customerId": 29543,
+                "customerName": "",
+                "effectEtime": "2020-04-01 23:59:59",
+                "effectStime": "2019-03-15 00:00:00",
+                "id": 15278,
+                "leftValue": 89940,
+                "name": "测试9返利券",
+                "note": "",
+                "ranges": "ALL",
+                "rate": 20,
+                "rebate": 60,
+                "source": "HANDWORK",
+                "sourceExt": "",
+                "sourceValue": "518",
+                "status": "NORMAL",
+                "type": "REBATE",
+                "value": 90000
+            }
+        ]
+    }
+ 
+### YX-23. 获取可用活动优惠
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT /v2/market/canuse/coupon
+#### 参数
+    couponName  // 活动优惠名称
+    {
+        *"customerId": 29543,   // 客户ID
+        *"product": [
+            {
+                *"productId": 1,        // 产品ID
+                *"productunitId": 2,    // 产品规格ID
+                *"price": 10,           // 购买价格
+                *"count": 10            // 购买数量
+            },
+            {
+                "productId": 2,
+                "productunitId": 8,
+                "price": 10,
+                "count": 10
+            },
+            {
+                "productId": 3,
+                "productunitId": 10,
+                "price": 10,
+                "count": 10
+            }
+        ]
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "accumulative": "LADDER",               // LADDER 阶梯  EACH 每满
+                "effectEtime": "2020-04-01 23:59:59",   // 结束时间
+                "effectStime": "2019-03-15 00:00:00",   // 开始时间
+                "giveCondition": {
+                    "171": {
+                        "actionValue": 10,
+                        "extra": "",
+                        "guige": "",
+                        "id": 171,
+                        "marketId": 254,
+                        "pno": "",
+                        "productName": "",
+                        "targetValue": 100
+                    },
+                    "172": {
+                        "actionValue": 30,
+                        "extra": "",
+                        "guige": "",
+                        "id": 172,
+                        "marketId": 254,
+                        "pno": "",
+                        "productName": "",
+                        "targetValue": 200
+                    },
+                    "173": {
+                        "actionValue": 50,      // 减50元 或 50折
+                        "extra": "",
+                        "guige": "",
+                        "id": 173,
+                        "marketId": 254,
+                        "pno": "",
+                        "productName": "",
+                        "targetValue": 300 // （每）满 300 元（个）
+                                                注：满或每满根据accumulative判断
+                                                    元或个根据unit判断
+                    }
+                },
+                "hitGiveConditionId": 173,      // 命中的规则详细
+                "id": 254,                      // 活动优惠ID
+                "name": "满减005",            // 活动优惠名
+                "rangeType": "PRODUCTUNIT", // 使用条件 PRODUCTUNIT 指定品 EXCLUDE 排除品 ALL 无限制
+                "ranges": [             // 指定品或排除品的 productunitId
+                    2,
+                    8,
+                    10
+                ],
+                "type": "REDUCE", // 活动优惠类型 REDUCE 满减 DISCOUNT 满折 COUPON 优惠券
+                "unit": "PRICE"     // PRICE 金额满 COUNT 数量满
+            }
+        ]
+    }    
+
+
+### YX-24. 获取可用赠品
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT /v2/market/canuse/gift
+#### 参数
+    {
+        *"customerId": 29543,   // 客户ID
+        *"product": [
+            {
+                *"productId": 1,        // 产品ID
+                *"productunitId": 2,    // 产品规格ID
+                *"price": 10,           // 购买价格
+                *"count": 10            // 购买数量
+            },
+            {
+                "productId": 2,
+                "productunitId": 8,
+                "price": 10,
+                "count": 10
+            },
+            {
+                "productId": 3,
+                "productunitId": 10,
+                "price": 10,
+                "count": 10
+            }
+        ]
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "giftGuige": "900g",
+                "giftMainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201901/43b4a0bb5a7c75276d57f24268432952.jpg",
+                "giftName": "唐扬鱿鱼",
+                "giftNum": 2,
+                "giftPno": "",
+                "giftProductId": 6,
+                "giftProductunitId": 5,
+                "marketId": 250,        // 活动ID
+                "marketName": "满赠001",  // 活动名
+                "productId": 1,   
+                "productunitId": 2 
+            }
+        ]
+    }    
