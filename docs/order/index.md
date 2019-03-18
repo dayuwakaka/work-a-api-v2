@@ -1449,7 +1449,7 @@
         "data": null
     }
 
-### DD-123. 销售订单-获取订单基本信息(对应免运费审核列表)
+### DD-123. 销售订单-获取订单基本信息
 #### 模块负责人
     梁铁骐
 #### 请求
@@ -1462,19 +1462,27 @@
         "msg": "",
         "data": {
             "activeId": 0,
-                    "customer": {
-                        "shortName": "太原千海湖商贸有限公司", // 客户名称
-                        "type": "P"
-                    },
-                    "fromDepotName": "DC（天津优和仓 ）", // 出库仓
-                    "jian": 3, // 见
-                    "payFlg": 0, // 结款状态 0-未结款 1-结款
-                    "san": 0, // 散
-                    "status": "INVALID", // 订单状态 INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收
-                    "totalprice": 1696.6, // 订单金额
-                    "tradefrom": "SYS"
-                }
+            "delivery": {
+                "address": "北京/北京市/顺义区/赵全营镇燕华营村燕华大街1号", // 详细地址
+                "areapathid": "010112", 
+                "mobile": "13910547554", // 手机号
+                "name": "冯志国", // 收货人
+            },
+            "planSendTime": "", // 计划发出时间
+            "remark": "", // 备注
+            "customer": {
+                "shortName": "太原千海湖商贸有限公司", // 客户名称
+                "type": "P"
+            },
+            "fromDepotName": "DC（天津优和仓 ）", // 出库仓
+            "jian": 3, // 见
+            "payFlg": 0, // 结款状态 0-未结款 1-结款
+            "san": 0, // 散
+            "status": "INVALID", // 订单状态 INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收
+            "totalprice": 1696.6, // 订单金额
+            "tradefrom": "SYS"
             }
+        }
     }
 
 ### DD-124. 销售订单-解除整单锁获取将要消失的优返活及申请的赠品列表
