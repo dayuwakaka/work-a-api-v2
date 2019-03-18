@@ -899,11 +899,11 @@
         "msg": "",
         "data": {
             "activeId": 0,
-            "activeName": "",
+            "activeName": "", // 活动名称
             "apPrice": 0,
             "completeTime": "",
             "couponId": 0,
-            "couponName": "",
+            "couponName": "", // 优惠券名称
             "createRole": 1,
             "createTime": "2019-03-14 17:16:50",
             "createUser": 518,
