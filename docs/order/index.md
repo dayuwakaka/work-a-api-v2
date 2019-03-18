@@ -470,6 +470,24 @@
         }
     }   
 
+### DD-55. 销售退状态变更(已废弃)
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT /order/sr/status/{orderId}
+#### 参数
+    * orderId           // 退单编号
+    {
+        *"status": "RUN"     // 操作 RUN:确认执行,FMS_PASS: 审核通过 INVALID 审核拒绝 COMPLETE 退款
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+
 ### DD-56. 销售退删除
 #### 模块负责人
     尹洪明
