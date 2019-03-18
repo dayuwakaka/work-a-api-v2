@@ -470,23 +470,6 @@
         }
     }   
 
-### DD-55. 销售退状态变更
-#### 模块负责人
-    尹洪明
-#### 请求
-    PUT /order/sr/status/{orderId}
-#### 参数
-    * orderId           // 退单编号
-    {
-        *"status": "RUN"     // 操作 RUN:确认执行,FMS_PASS: 审核通过 INVALID 审核拒绝 COMPLETE 退款
-    }
-#### 响应
-    {
-        "code": 100000,
-        "msg": "",
-        "data": null
-    }
-
 ### DD-56. 销售退删除
 #### 模块负责人
     尹洪明
@@ -671,6 +654,63 @@
             "toDepotName": "",
             "totalPrice": 402       // 总计
         }
+    }
+    
+    
+### DD-59. 销售退确认执行
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT /order/sr/run/{orderId}
+#### 参数
+    * orderId           // 退单编号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+    
+### DD-60. 销售退审核通过
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT /order/sr/pass/{orderId}
+#### 参数
+    * orderId           // 退单编号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+    
+### DD-61. 销售退审核拒绝
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT /order/sr/refuse/{orderId}
+#### 参数
+    * orderId           // 退单编号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+    
+### DD-62. 销售退退款
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT /order/sr/complete/{orderId}
+#### 参数
+    * orderId           // 退单编号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
     }
     
 ### DD-101. 赠品-列表
