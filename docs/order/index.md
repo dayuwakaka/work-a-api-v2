@@ -1443,7 +1443,7 @@
                         "unit": "盒", // 单位
                     }
                 },
-                "rebate": 500, // 优惠券
+                "rebate": 500, // 优惠金额
                 "type": "REBATE" // 优惠类型 ACTIVE_GIFT：满赠活动 ACTIVE：活动（含满折 和 满减） COUPON：优惠券, REBATE：返利券 GIFT_ASK_FOR 申请赠品 
             },
             ...
