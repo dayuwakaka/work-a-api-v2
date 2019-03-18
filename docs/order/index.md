@@ -923,7 +923,7 @@
             "depositPrice": 0,
             "discountPrice": 0, // 优惠活动金额
             "freight": 0, // 运费
-            "freightStatus": -1, // 运费状态 -1 未申请 0 待审核 1 通过 2 未通过
+            "freightStatus": 3, // 运费状态 0 待审核 1 通过 2 未通过 3 未申请
             "fromDepotId": 51,
             "fromDepotName": "DC（天津优和仓 ）", // 出库仓
             "giftFlg": 0,
