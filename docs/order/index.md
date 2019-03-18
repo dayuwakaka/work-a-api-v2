@@ -1418,6 +1418,38 @@
             }
     }
 
+### DD-124. 销售订单-解除整单锁获取将要消失的优返活及申请的赠品列表
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/saorder/{orderId}/lose/sth
+#### 参数
+    orderId: 单号
+#### 相应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "name": "2018年12月陆战队补贴", // 优惠券名称或者申请单号
+                "orderSaProVO": {
+                    "pcount": 1, // 数量
+                    "productUnit": {
+                        "guige": "500g(23-25枚）/盒", // 规格
+                        "product": {
+                            "name": "香草凤尾虾", // 品名
+                            "pno": "0151", // 品号
+                        },
+                        "unit": "盒", // 单位
+                    }
+                },
+                "rebate": 500, // 优惠券
+                "type": "REBATE" // 优惠类型 ACTIVE_GIFT：满赠活动 ACTIVE：活动（含满折 和 满减） COUPON：优惠券, REBATE：返利券 GIFT_ASK_FOR 申请赠品 
+            },
+            ...
+        ]
+    }
+
 
 
 
