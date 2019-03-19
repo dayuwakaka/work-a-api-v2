@@ -1641,7 +1641,6 @@
                             "pno": "1526", // 品号
                             "status": "NORMAL"
                         },
-                        "productId": 4364,
                         "unit": "件", // 单位
                     },
                     "productUnitId": 7719, // 产品规格id
