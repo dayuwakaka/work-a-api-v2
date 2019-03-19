@@ -310,11 +310,10 @@
 #### 模块负责人
     郭枫
 #### 请求
-    GET /reportMarket/marketInfo
+    GET /reportMarket/marketInfo/product
 #### 参数
     *customerId : 12341    //客户编号
-    productIds: 1,2,3,4,5 //商品编号
-    productUnitIds: 1,2,3,4,5 //商品规格编号
+    *productIds: 1,2,3,4,5 //商品编号
 #### 响应
       {
         "code": 100000,
@@ -322,7 +321,6 @@
         "data":[
           {
              "productId": 1,     // 按商品客户查询
-             "productUnitId":1,  // 按规格客户查询
              "markets":[
                  {
                      "marketId":1,
@@ -330,6 +328,37 @@
                      "marketName": "xxxx", // 营销名
                      "effectStime": "xxx", // 开始时间
                      "effectEtime": "xxx", // 结束时间
+                     "remark":XXX// 描述
+                 },
+                 ...
+             ]
+          },
+          ...
+        ]
+    }
+### STA-16. 营销模块
+#### 模块负责人
+    郭枫
+#### 请求
+    GET /reportMarket/marketInfo/productUnit
+#### 参数
+    *customerId : 12341    //客户编号
+    *productUnitIds: 1,2,3,4,5 //商品规格编号
+#### 响应
+      {
+        "code": 100000,
+        "msg": "",
+        "data":[
+          {
+             "productUnitId": 1,     // 规格
+             "markets":[
+                 {
+                     "marketId":1,
+                     "marketType": 'COUPON', // COUPON 优惠券 'GIFT' 满增 'REDUCE' 满减 'DISCOUNT' 满折
+                     "marketName": "xxxx", // 营销名
+                     "effectStime": "xxx", // 开始时间
+                     "effectEtime": "xxx", // 结束时间
+                     "remark":XXX// 描述
                  },
                  ...
              ]
