@@ -1479,6 +1479,7 @@
             "fromDepotName": "DC（天津优和仓 ）", // 出库仓
             "jian": 3, // 见
             "payFlg": 0, // 结款状态 0-未结款 1-结款
+            "receiveId": 50783, // 联系人id
             "san": 0, // 散
             "status": "INVALID", // 订单状态 INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收
             "totalprice": 1696.6, // 订单金额
