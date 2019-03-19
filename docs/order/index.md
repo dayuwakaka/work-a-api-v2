@@ -952,7 +952,7 @@
     GET /v2/saorder/{orderId}
 #### 参数
     orderId: 销售订单号
-#### 响应  
+#### 响应
     {
         "code": 100000,
         "msg": "",

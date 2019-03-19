@@ -710,3 +710,19 @@
             "totalprice": 4000
         }
     }
+    
+### YF-14. 获取运费金额
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/freight/amount
+#### 参数
+    customerid 客户id
+    pathid 区域id
+    amount 金额订单金额（不含优惠券、返利券、活动（满减、满折））的金额
+#### 响应
+    {
+        "code":100000,
+        "msg":"",
+        "data": 123 // 运费
+    }
