@@ -1112,16 +1112,14 @@
 #### 请求
     PUT /v2/saorder/{orderId}/split
 #### 参数
-    {
-        orderId: 'SA190000000001', 销售订单号
-        splitOrderSaPros: [
-            {
-                id: 产品明细id,
-                pcount: 数量
-            },
-            ...
-        ]
-    }
+    orderId: 'SA190000000001', 销售订单号
+    [
+        {
+            id: 产品明细id,
+            pcount: 数量
+        },
+        ...
+    ]
 #### 响应  
     {
         "code": 100000,
