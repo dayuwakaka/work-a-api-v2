@@ -1633,10 +1633,27 @@
                     "price": 204, // 单机
                     "priceFlg": "NONE", // 价格类别 NONE-未知 T-特价 S-签约价 Q -区域价 A-A价 P-P价 AK-调价'
                     "productId": 4364, // 产品id
+                    "invoice": {
+                        "id": 5132, // 发票id
+                        "invoiceDoneTotal": 1, // 已完成的发票数量
+                        "invoiceTotal": 1 // 发票总数量
+                    },
                     "productUnit": {
                         "guige": "280g/盒*12盒", // 规格
                         "minimum": 0,
+                        "price": {
+                            "aPrice": 40.12,
+                            "areaPrice": 0,
+                            "decideType": "A",
+                            "finallyPrice": 40.12,
+                            "pPrice": 32.5,
+                            "productUnitId": 1,
+                            "rawFlg": "NO", // 是否原料品 NO-否 YES-是
+                            "signPrice": 0,
+                            "specialPrice": 0
+                        },
                         "product": {
+                            "customFlg": 0, // 是否定制品 0-非定制品 1-普通定制品 2-专属定制品
                             "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201812/38136c953e63ab82f786fd18283bcd66.jpg", // 产品主图url
                             "name": "孔雀开屏粉丝扇贝", // 品名
                             "pno": "1526", // 品号
