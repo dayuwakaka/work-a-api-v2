@@ -1525,6 +1525,7 @@
     GET /v2/saorder/{orderId}/childs
 #### 参数
     orderId: 销售订单号,
+    buttonPermissionFlg: 1
 #### 响应    
     {
         "code": 100000,
