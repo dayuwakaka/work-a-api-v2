@@ -859,6 +859,7 @@
 #### 请求
     GET /v2/saorder
 #### 参数
+    buttonPermissionFlg: 1,
     customerId: 客户id,
     orderId: 销售订单号,
     tradefrom: 下单方式 SYS-后台手动下单 SELF-客户自主下单
@@ -1111,16 +1112,14 @@
 #### 请求
     PUT /v2/saorder/{orderId}/split
 #### 参数
-    {
-        orderId: 'SA190000000001', 销售订单号
-        splitOrderSaPros: [
-            {
-                id: 产品明细id,
-                pcount: 数量
-            },
-            ...
-        ]
-    }
+    orderId: 'SA190000000001', 销售订单号
+    [
+        {
+            id: 产品明细id,
+            pcount: 数量
+        },
+        ...
+    ]
 #### 响应  
     {
         "code": 100000,
@@ -1386,7 +1385,7 @@
 #### 请求
     GET /router/v5/order/{customerId}/search
 #### 参数
-    customerId: 客户id
+    *customerId: 客户id
     productKeyword: 产品名称
     pageNo: default 1
     pageSize: default 10
@@ -1404,6 +1403,8 @@
                     "beforeAskPrice": 0, // 差价单金额
                     "pcount": 5, // 数量
                     "price": 32.5, // 单价
+                    "productId": 618, // 产品id
+                    "productUnitId": 123, // 产品规格id
                     "productUnit": {
                         "guige": "500g(23-25枚）/盒", // 规格
                         "minimum": 0, // 最小起订量
@@ -1448,7 +1449,7 @@
         "data": null
     }
 
-### DD-123. 销售订单-获取订单基本信息(对应免运费审核列表)
+### DD-123. 销售订单-获取订单基本信息
 #### 模块负责人
     梁铁骐
 #### 请求
@@ -1461,19 +1462,28 @@
         "msg": "",
         "data": {
             "activeId": 0,
-                    "customer": {
-                        "shortName": "太原千海湖商贸有限公司", // 客户名称
-                        "type": "P"
-                    },
-                    "fromDepotName": "DC（天津优和仓 ）", // 出库仓
-                    "jian": 3, // 见
-                    "payFlg": 0, // 结款状态 0-未结款 1-结款
-                    "san": 0, // 散
-                    "status": "INVALID", // 订单状态 INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收
-                    "totalprice": 1696.6, // 订单金额
-                    "tradefrom": "SYS"
-                }
+            "delivery": {
+                "address": "北京/北京市/顺义区/赵全营镇燕华营村燕华大街1号", // 详细地址
+                "areapathid": "010112", 
+                "mobile": "13910547554", // 手机号
+                "name": "冯志国", // 收货人
+            },
+            "planSendTime": "", // 计划发出时间
+            "remark": "", // 备注
+            "customer": {
+                "shortName": "太原千海湖商贸有限公司", // 客户名称
+                "type": "P"
+            },
+            "fromDepotName": "DC（天津优和仓 ）", // 出库仓
+            "jian": 3, // 见
+            "payFlg": 0, // 结款状态 0-未结款 1-结款
+            "receiveId": 50783, // 联系人id
+            "san": 0, // 散
+            "status": "INVALID", // 订单状态 INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收
+            "totalprice": 1696.6, // 订单金额
+            "tradefrom": "SYS"
             }
+        }
     }
 
 ### DD-124. 销售订单-解除整单锁获取将要消失的优返活及申请的赠品列表
@@ -1515,6 +1525,7 @@
     GET /v2/saorder/{orderId}/childs
 #### 参数
     orderId: 销售订单号,
+    buttonPermissionFlg: 1
 #### 响应    
     {
         "code": 100000,
