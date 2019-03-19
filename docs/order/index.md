@@ -1624,6 +1624,11 @@
             "discountPrice": 0, // 优惠活动金额
             "freight": 0, // 运费
             "jian": 518, // 件
+            "invoice": {
+                "id": 5132, // 发票id
+                "invoiceDoneTotal": 1, // 已完成的发票数量
+                "invoiceTotal": 1 // 发票总数量
+            },
             "orderSaPros": [
                 {
                     "afterAskPrice": 0, // 调价单金额
@@ -1633,11 +1638,6 @@
                     "price": 204, // 单机
                     "priceFlg": "NONE", // 价格类别 NONE-未知 T-特价 S-签约价 Q -区域价 A-A价 P-P价 AK-调价'
                     "productId": 4364, // 产品id
-                    "invoice": {
-                        "id": 5132, // 发票id
-                        "invoiceDoneTotal": 1, // 已完成的发票数量
-                        "invoiceTotal": 1 // 发票总数量
-                    },
                     "productUnit": {
                         "guige": "280g/盒*12盒", // 规格
                         "minimum": 0,
