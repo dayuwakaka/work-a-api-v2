@@ -1599,9 +1599,82 @@
         }
     }
 
+### DD-126. 销售订单-获取销售订单详情（APP）
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /router/v5/order/{customerId}/{orderId}
+#### 参数
+    customerId: 客户id,
+    orderId: 销售订单号,
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "apPrice": 0, // 调价金额
+            "createTime": "2018-05-28 11:24:13", // 订单创建时间
+            "delivery": {
+                "address": "河北/唐山市/路南区/君瑞批发市场冷库站台", // 收货地址
+                "mobile": "13393255188", // 收货人手机号
+                "name": "么志勇", // 收货人
+            },
+            "deliveryType": "DELIVERY",
+            "discountPrice": 0, // 优惠活动金额
+            "freight": 0, // 运费
+            "jian": 518, // 件
+            "orderSaPros": [
+                {
+                    "afterAskPrice": 0, // 调价单金额
+                    "beforeAskPrice": 0, // 差价单金额
+                    "giftFlg": 0, // 是否赠品 0-赠品 1-申请的赠品 2-活动赠品
+                    "pcount": 300, // 数量
+                    "price": 204, // 单机
+                    "priceFlg": "NONE", // 价格类别 NONE-未知 T-特价 S-签约价 Q -区域价 A-A价 P-P价 AK-调价'
+                    "productId": 4364, // 产品id
+                    "productUnit": {
+                        "guige": "280g/盒*12盒", // 规格
+                        "minimum": 0,
+                        "product": {
+                            "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201812/38136c953e63ab82f786fd18283bcd66.jpg", // 产品主图url
+                            "name": "孔雀开屏粉丝扇贝", // 品名
+                            "pno": "1526", // 品号
+                            "status": "NORMAL"
+                        },
+                        "unit": "件", // 单位
+                    },
+                    "productUnitId": 7719, // 产品规格id
+                    "totalprice": 61200 // 产品小计
+                }                
+            ],
+            "payFlg": 1, // 结款状态 0-未结款 1-结款
+            "payTime": "2018-05-28 13:56:41",
+            "paymentType": "CASH", // 支付方式 CASH-先款后货 CREDIT: 账余 DAOFU：货到付款
+            "planSendTime": "2018-05-30 16:49:42", // 计划发货时间
+            "price": 84200, // 商品金额
+            "rebatePrice": 16523.1, // 返利券优惠金额
+            "remark": "", // 订单备注
+            "san": 0, // 散
+            "sendTime": "2018-05-30 16:49:42", // 发货时间
+            "status": "COMPLETE", 订单状态 INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收
+            "totalprice": 67676.9, // 商品实付款
+        }
+    }
 
-
-
+### DD-127. 销售订单-第三方结款成功回调接口(财务回调)
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/saorder/{orderId}/pay/third
+#### 参数
+    orderId: 销售订单号,
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+    
 
 
 
