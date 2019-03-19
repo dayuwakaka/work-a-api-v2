@@ -1370,7 +1370,7 @@
                 }
             ],
             "payFlg": 0, // 0-未结款 1-结款
-            "paymentType": "CASH", // CASH-先款后货 CREDIT-账期
+            "paymentType": "CASH", // CASH-先款后货 CREDIT-账期 DAOFU-货到付款
             "remark": "我的测试测试备注", // 备注
             "san": 20, // 散
             "sendTime": "", // 发货时间
