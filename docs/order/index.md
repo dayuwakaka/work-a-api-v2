@@ -1405,6 +1405,8 @@
                     "beforeAskPrice": 0, // 差价单金额
                     "pcount": 5, // 数量
                     "price": 32.5, // 单价
+                    "productId": 618, // 产品id
+                    "productUnitId": 123, // 产品规格id
                     "productUnit": {
                         "guige": "500g(23-25枚）/盒", // 规格
                         "minimum": 0, // 最小起订量
