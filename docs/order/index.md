@@ -1665,7 +1665,7 @@
 #### 模块负责人
     梁铁骐
 #### 请求
-    GET /v2/saorder/{orderId}/pay/third
+    PUT /v2/saorder/{orderId}/pay/third
 #### 参数
     orderId: 销售订单号,
 #### 响应
