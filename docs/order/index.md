@@ -1006,6 +1006,7 @@
                     "apStatus": {
                         "saOrderId": "SA1903140000040",
                         "status": "RUN", // 调价单状态
+                        "askPrice"： 100, // 调价金额
                         "type": "BEFORE"
                     },
                     "beforeAskPrice": 0, // 差价单金额
