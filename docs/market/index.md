@@ -52,6 +52,7 @@
 
 #### 1.4 请求示例
     {
+        @@"remark":"健哥要求加的活动说明",
     	"type":"coupon",
     	"name":"领券活动名称",
     	"customerRange":"all",
@@ -1175,7 +1176,6 @@
 #### 请求
     PUT /v2/market/canuse/rebate
 #### 参数
-    rebateName  // 返利券名称
     {
         *"customerId": 29543,   // 客户ID
         *"product": [
@@ -1259,7 +1259,6 @@
 #### 请求
     PUT /v2/market/canuse/coupon
 #### 参数
-    couponName  // 活动优惠名称
     {
         *"customerId": 29543,   // 客户ID
         *"product": [
