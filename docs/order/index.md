@@ -1318,7 +1318,6 @@
     		"rebateId": 1, // 返利券id
     		"couponId": 1, // 优惠券id
     		"activeId": 1, // 活动id
-    		"excludeActiveIds": [1,2,3], // 排除满赠活动id
     		"remark": "我的测试测试备注", // 订单备注
     	},
     	"saOrderPros": [ // 订单产品明细
