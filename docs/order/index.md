@@ -1015,6 +1015,7 @@
                     "giftFlg": 0, // 赠品标识 0-正常品 1-申请的赠品 2-活动赠品
                     "id": 192,
                     "pcount": 10, // 数量
+                    "giftCount": 0, // 赠品数量
                     "price": 32.5, // 单价
                     "totalprice": 325, // 总计
                     "priceFlg": "P", // 价格类别 NONE-未知 T-特价 S-签约价 Q -区域价 A-A价 P-P价 AK-调价'
