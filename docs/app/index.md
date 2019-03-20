@@ -2002,3 +2002,140 @@
         "msg": "",
         "data":null
     } 
+
+### APP-48. 获取可用活动
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT /router/v5/market/canuse
+#### 参数
+    {
+        *"customerId": 29543,   // 客户ID
+        *"product": [
+            {
+                *"productId": 1,        // 产品ID
+                *"productunitId": 2,    // 产品规格ID
+                *"price": 10,           // 购买价格
+                *"count": 10            // 购买数量
+            },
+            {
+                "productId": 2,
+                "productunitId": 8,
+                "price": 10,
+                "count": 10
+            },
+            {
+                "productId": 3,
+                "productunitId": 10,
+                "price": 10,
+                "count": 10
+            }
+        ]
+    }
+#### 响应    
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "activeCoupon": [
+                {
+                    "accumulative": "LADDER",   // LADDER 阶梯 EACH 每满
+                    "effectEtime": "2020-04-01 23:59:59", // 结束日期
+                    "effectStime": "2019-03-15 00:00:00",// 开始日期
+                    "giftMainImg": "",
+                    "giftNum": 0,
+                    "giveCondition": {
+                        "169": {
+                            "actionValue": 80,  // 减80元（80折）
+                            "extra": "",
+                            "guige": "",
+                            "id": 169,
+                            "marketId": 252,
+                            "pno": "",
+                            "productName": "",
+                            "targetValue": 100  // （每）满 100 元（个）
+                                                注：满或每满根据accumulative判断
+                                                    元或个根据unit判断
+                        }
+                    },
+                    "guige": "",
+                    "hitGiveConditionId": 169,  // 命中的规格ID
+                    "id": 252,                  // 活动ID
+                    "name": "满折003",            // 活动名
+                    "productId": 0,
+                    "productName": "",
+                    "productUnitId": 0,
+                    "rangeType": "PRODUCTUNIT", // PRODUCTUNIT 指定品 EXCLUDE 排除品 ALL 无限制
+                    "ranges": [ // 指定品或排除品productunitId
+                        2,
+                        8,
+                        10
+                    ],
+                    "rebate": 60,           // 优惠金额
+                    "type": "DISCOUNT", // 类型 COUPON 优惠券 REDUCE 满减 DISCOUNT 满折
+                    "unit": "PRICE",        // PRICE 金额 COUNT 数量
+                    "used": "NO",
+                    "way": "DISCOUNT"
+                }
+            ],
+            "activeGift": [
+                {
+                    "accumulative": null,
+                    "effectEtime": "",
+                    "effectStime": "",
+                    "giftMainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201901/43b4a0bb5a7c75276d57f24268432952.jpg",
+                    "giftNum": 2,           // 赠品数量
+                    "giveCondition": {},
+                    "guige": "900g",        // 赠品规格
+                    "hitGiveConditionId": 0,
+                    "id": 250,              // 活动ID
+                    "name": "满赠001",        // 活动名
+                    "productId": 6,         // 赠品ID
+                    "productName": "唐扬鱿鱼",  // 赠品名
+                    "productUnitId": 5,         // 赠品规格ID
+                    "rangeType": null,
+                    "ranges": null,
+                    "rebate": 0,
+                    "type": "GIFT", 
+                    "unit": null,
+                    "used": "NO",
+                    "way": null
+                }
+            ],
+            "activeRebate": [
+                {
+                    "accumulative": null,
+                    "effectEtime": "2020-04-01 23:59:59",
+                    "effectStime": "2019-03-15 00:00:00",
+                    "giftMainImg": "",
+                    "giftNum": 0,
+                    "giveCondition": {
+                        "0": {
+                            "actionValue": 150, // 优惠金额
+                            "extra": "50.0",    // 折扣比率
+                            "guige": "",
+                            "id": 0,
+                            "marketId": 0,
+                            "pno": "",
+                            "productName": "",
+                            "targetValue": 2850  剩余金额
+                        }
+                    },
+                    "guige": "",
+                    "hitGiveConditionId": 0,
+                    "id": 15279,                // 返利券ID
+                    "name": "测试9推广费用",      // 返利券名
+                    "productId": 0,
+                    "productName": "",
+                    "productUnitId": 0,
+                    "rangeType": "ALL",
+                    "ranges": null,
+                    "rebate": 150,          // 优惠金额
+                    "type": "SPREAD",// 返利券类型  REBATE 返利券 SPREAD 推广会 FREIGHT 运费 OTHER 其它
+                    "unit": "PRICE",
+                    "used": "NO",
+                    "way": "REDUCE"
+                }
+            ]
+        }
+    }

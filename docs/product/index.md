@@ -32,7 +32,28 @@
             "total": 0
             "datas": [
                 {
-                    "businessTypeIds": null, // 餐饮业态ID [1, 2, 3]
+                    @@"businessTypeIds": [103,......], // 餐饮业态ID
+                    @@"businessTypes": [
+                        {
+                            "code": "-16-0220-",
+                            "deleteFlg": 0,
+                            "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/0220.png",
+                            "hasProductCnt": 30,
+                            "id": 103,
+                            "level": 2,
+                            "mIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190301161618188-4729.png",
+                            "miniFlg": 1,
+                            "name": "甜品冰点",             // 业态名称
+                            "parentId": 16,
+                            "parentName": "西餐西快",
+                            "pyCode": "",
+                            "sIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/0220.png",
+                            "showFlg": 1,
+                            "styleUrl": "",
+                            "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/0220.png"
+                        },
+                        .......
+                    ],
                     "createTime": "2018-11-16 06:09:12", // 创建时间
                     "customFlg": 0, // 是否定制 0 非定制 1 定制
                     "customFlgMore" 0, // 是否定制更详细状态位 0 非定制 1 常规定制 2 专属定制

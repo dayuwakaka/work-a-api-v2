@@ -471,7 +471,7 @@
         }
     }   
 
-### DD-55. 销售退状态变更
+### DD-55. 销售退状态变更(已废弃)
 #### 模块负责人
     尹洪明
 #### 请求
@@ -487,6 +487,7 @@
         "msg": "",
         "data": null
     }
+
 
 ### DD-56. 销售退删除
 #### 模块负责人
@@ -674,6 +675,63 @@
         }
     }
     
+    
+### DD-59. 销售退确认执行
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT /order/sr/run/{orderId}
+#### 参数
+    * orderId           // 退单编号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+    
+### DD-60. 销售退审核通过
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT /order/sr/pass/{orderId}
+#### 参数
+    * orderId           // 退单编号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+    
+### DD-61. 销售退审核拒绝
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT /order/sr/refuse/{orderId}
+#### 参数
+    * orderId           // 退单编号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+    
+### DD-62. 销售退退款
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT /order/sr/complete/{orderId}
+#### 参数
+    * orderId           // 退单编号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+    
 ### DD-101. 赠品-列表
 #### 模块负责人
     梁铁骐
@@ -802,6 +860,7 @@
 #### 请求
     GET /v2/saorder
 #### 参数
+    buttonPermissionFlg: 1,
     customerId: 客户id,
     orderId: 销售订单号,
     tradefrom: 下单方式 SYS-后台手动下单 SELF-客户自主下单
@@ -894,17 +953,17 @@
     GET /v2/saorder/{orderId}
 #### 参数
     orderId: 销售订单号
-#### 响应  
+#### 响应
     {
         "code": 100000,
         "msg": "",
         "data": {
             "activeId": 0,
-            "activeName": "",
+            "activeName": "", // 活动名称
             "apPrice": 0,
             "completeTime": "",
             "couponId": 0,
-            "couponName": "",
+            "couponName": "", // 优惠券名称
             "createRole": 1,
             "createTime": "2019-03-14 17:16:50",
             "createUser": 518,
@@ -924,7 +983,7 @@
             "depositPrice": 0,
             "discountPrice": 0, // 优惠活动金额
             "freight": 0, // 运费
-            "freightStatus": -1, // 运费状态 -1 未申请 0 待审核 1 通过 2 未通过
+            "freightStatus": 3, // 运费状态 0 待审核 1 通过 2 未通过 3 未申请
             "fromDepotId": 51,
             "fromDepotName": "DC（天津优和仓 ）", // 出库仓
             "giftFlg": 0,
@@ -948,6 +1007,7 @@
                     "apStatus": {
                         "saOrderId": "SA1903140000040",
                         "status": "RUN", // 调价单状态
+                        "askPrice"： 100, // 调价金额
                         "type": "BEFORE"
                     },
                     "beforeAskPrice": 0, // 差价单金额
@@ -979,7 +1039,7 @@
             "rebateId": 0,
             "rebateName": "", // 返利券名称
             "rebatePrice": 0, // 返利金额
-            "receiveId": 17508,
+            "receiveId": 17508, // 收货人id
             "remark": "我的测试测试备注", // 订单备注
             "runTime": "",
             "san": 20, // 散
@@ -991,10 +1051,648 @@
         }
     }
 
+### DD-107. 销售订单-解除整单锁
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/saorder/{orderId}/unlock
+#### 参数
+    orderId: 销售订单号
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
 
+### DD-108. 销售订单-解除调价锁
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/saorder/{orderId}/{proId}/unlock
+#### 参数
+    orderId: 销售订单号
+    proId: 产品明细id
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
 
+### DD-109. 销售订单-结款
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/saorder/{orderId}/pay
+#### 参数
+    orderId: 销售订单号
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
 
+### DD-110. 销售订单-取消结款
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/saorder/{orderId}/unpay
+#### 参数
+    orderId: 销售订单号
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
 
+### DD-110. 销售订单-拆分
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/saorder/{orderId}/split
+#### 参数
+    orderId: 'SA190000000001', 销售订单号
+    [
+        {
+            id: 产品明细id,
+            pcount: 数量
+        },
+        ...
+    ]
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### DD-111. 销售订单-物流通知修改出库仓
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/saorder/depot
+#### 参数
+    {
+        order_ids: 'SA190001,SA190002,SA190003', // 订单号 以 “，”相隔
+        depot_id: 1 // 仓id
+        
+    }
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### DD-112. 销售订单-订单列表导出
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/saorder/export
+#### 参数
+    date: '2019-01' // yyyy-MM
+    checkCode: 下载码
+#### 响应  
+    stream
+
+### DD-113. 销售订单-订单导出
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/saorder/export/single
+#### 参数
+    orderId: 'SA19000001' // 单号
+    checkCode: 下载码
+#### 响应  
+    stream
+
+### DD-114. 销售订单-确认执行
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/saorder/{orderId}/run
+#### 参数
+    orderId: 'SA19000001' // 单号
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### DD-115. 销售订单-删除
+#### 模块负责人
+    梁铁骐
+#### 请求
+    DELETE /v2/saorder/{orderId}
+#### 参数
+    orderId: 'SA19000001' // 单号
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### DD-116. 销售订单-新增（SYS端）
+#### 模块负责人
+    梁铁骐
+#### 请求
+    POST /v2/saorder
+#### 参数
+    {
+    	"saOrder": {
+    		*"customerId": 2434, // 客户id
+    		*"receiveId": 17508, // 联系人id
+    		*"tradefrom": "SYS", // 下单渠道 固定 SYS
+    		*"deliveryType": "DELIVERY", // 配送方式 DELIVERY：配送 SELF：自提
+    		*"planSendTime": "2019-03-15", // 计划发货时间
+    		"rebateId": 1, // 返利券id
+    		"couponId": 1, // 优惠券id
+    		"activeId": 1, // 活动id
+    		"excludeActiveIds": [1,2,3], // 排除满赠活动id
+    		"freightFlg": 1, // 是否申请免运费 0-否 1-是
+    		"freightRemark": "申请免运费备注", // 免运费申请备注 0 ~ 255 请前端同事校验好，后端也校验
+    		"remark": "我的测试测试备注", // 订单备注
+    		"giftRemark": "赠品申请备注" // 赠品申请备注 0 ~ 255 请前端同事校验好，后端也校验
+    	},
+    	"saOrderPros": [ // 订单产品明细
+    		{
+    			*"productUnitId": 1, // 产品规格id
+    			*"productId": 1, // 产品id
+    			*"pcount": 10, // 数量
+    			"giftCount": "1", // 赠品数量
+    			"beforeAskPrice": 10, // 调价金额
+    			"beforeAskPriceRemark": "测试AP单备注" // 调价备注 0 ~ 255 请前端同事校验好，后端也校验
+    		},
+    		...
+    	],
+    	*"onlyCode": 1123.9663 // 唯一码
+    }
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### DD-117. 销售订单-修改订单基本信息
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/saorder/{orderId}/info
+#### 参数
+    orderId: 单号,
+    {
+    	orderId: 'SA190000001', // 单号
+        remark: 'sdfasdfas', // 备注
+        receiveId: '1', // 联系人id
+        planSendTime: '2019-10-10' // 计划发货时间
+    }
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### DD-118. 销售订单-修改订单
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/saorder/{orderId}
+#### 参数
+    orderId: 单号,
+    {
+    	"saOrder": {
+    	    *"id": 1,
+    		*"customerId": 2434, // 客户id
+    		*"receiveId": 17508, // 联系人id
+    		*"tradefrom": "SYS", // 下单渠道 固定 SYS
+    		*"deliveryType": "DELIVERY", // 配送方式 DELIVERY：配送 SELF：自提
+    		*"planSendTime": "2019-03-15", // 计划发货时间
+    		"rebateId": 1, // 返利券id
+    		"couponId": 1, // 优惠券id
+    		"activeId": 1, // 活动id
+    		"excludeActiveIds": [1,2,3], // 排除满赠活动id
+    		"freightFlg": 1, // 是否申请免运费 0-否 1-是
+    		"freightRemark": "申请免运费备注", // 免运费申请备注 0 ~ 255 请前端同事校验好，后端也校验
+    		"remark": "我的测试测试备注", // 订单备注
+    		"giftRemark": "赠品申请备注" // 赠品申请备注 0 ~ 255 请前端同事校验好，后端也校验
+    	},
+    	"saOrderPros": [ // 订单产品明细
+    		{
+    			*"productUnitId": 1, // 产品规格id
+    			*"productId": 1, // 产品id
+    			*"pcount": 10, // 数量
+    			"giftCount": "1", // 赠品数量
+    			"beforeAskPrice": 10, // 调价金额
+    			"beforeAskPriceRemark": "测试AP单备注" // 调价备注 0 ~ 255 请前端同事校验好，后端也校验
+    		},
+    		...
+    	],
+    	*"onlyCode": 1123.9663 // 唯一码
+    }
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### DD-119. 销售订单-新增（APP端）
+#### 模块负责人
+    梁铁骐
+#### 请求
+    POST /router/v5/order
+#### 参数
+    {
+    	"saOrder": {
+    		*"customerId": 2434, // 客户id
+    		*"receiveId": 17508, // 联系人id
+    		*"tradefrom": "SYS", // 下单渠道 固定 APP
+    		*"deliveryType": "DELIVERY", // 配送方式 DELIVERY：配送 SELF：自提
+    		*"planSendTime": "2019-03-15", // 计划发货时间
+    		"rebateId": 1, // 返利券id
+    		"couponId": 1, // 优惠券id
+    		"activeId": 1, // 活动id
+    		"remark": "我的测试测试备注", // 订单备注
+    	},
+    	"saOrderPros": [ // 订单产品明细
+    		{
+    			*"productUnitId": 1, // 产品规格id
+    			*"productId": 1, // 产品id
+    			*"pcount": 10 // 数量
+    		},
+    		...
+    	],
+    	*"onlyCode": 1123.9663 // 唯一码
+    }
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+    
+### DD-119. 销售订单-获取“我的”订单列表（APP端）
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /router/v5/order/{customerId}
+#### 参数
+    customerId: 客户id
+    payFlg: 结款 0-未结款 1-结款
+    status: 订单状态 INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收 
+    pageNo: default 1
+    pageSize: default 10
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "activeId": 0,
+            "orderId": "SA1903140000034", // 订单号
+            "orderSaPros": [
+                {
+                    "productUnit": {
+                        "product": {
+                            "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg", // 产品图片
+                            "name": "香草凤尾虾",
+                            "pno": "0151",
+                        },
+                        "productId": 1,
+                        "stock": null,
+                        "unit": "盒",
+                    }
+                }
+            ],
+            "payFlg": 0, // 0-未结款 1-结款
+            "paymentType": "CASH", // CASH-先款后货 CREDIT-账余 DAOFU-货到付款
+            "remark": "我的测试测试备注", // 备注
+            "san": 20, // 散
+            "sendTime": "", // 发货时间
+            "status": "INVALID", // 订单状态 INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收 
+            "totalprice": 7033, // 订单总价
+        },
+    }
+
+### DD-120. 销售订单-“订单复购”订单列表（APP端）
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /router/v5/order/{customerId}/search
+#### 参数
+    *customerId: 客户id
+    productKeyword: 产品名称
+    pageNo: default 1
+    pageSize: default 10
+#### 相应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "createTime": "2019-03-14 16:31:58", // 创建时间
+            "orderId": "SA1903140000034-1", // 单号
+            "orderSaPros": [
+                {
+                    "activeId": 0,
+                    "afterAskPrice": 0, // 调价单金额
+                    "beforeAskPrice": 0, // 差价单金额
+                    "pcount": 5, // 数量
+                    "price": 32.5, // 单价
+                    "productId": 618, // 产品id
+                    "productUnitId": 123, // 产品规格id
+                    "productUnit": {
+                        "guige": "500g(23-25枚）/盒", // 规格
+                        "minimum": 0, // 最小起订量
+                        "product": {
+                            "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg", // 产品图片url
+                            "name": "香草凤尾虾", // 品名
+                            "pno": "0151", // 品号
+                        },
+                        "unit": "盒", // 单位
+                    }
+                }
+            ],
+            "totalprice": 152.5 // 总价
+        }
+    }
+
+### DD-121. 销售订单-删除（APP端）
+#### 模块负责人
+    梁铁骐
+#### 请求
+    DELETE /router/v5/order/{orderId}
+#### 参数
+    orderId: 单号
+#### 相应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### DD-122. 销售订单-确认签收（APP端）
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /router/v5/order/{orderId}/complete
+#### 参数
+    orderId: 单号
+#### 相应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### DD-123. 销售订单-获取订单基本信息
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/saorder/{orderId}/lite
+#### 参数
+    orderId: 单号
+#### 相应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "activeId": 0,
+            "delivery": {
+                "address": "北京/北京市/顺义区/赵全营镇燕华营村燕华大街1号", // 详细地址
+                "areapathid": "010112", 
+                "mobile": "13910547554", // 手机号
+                "name": "冯志国", // 收货人
+            },
+            "planSendTime": "", // 计划发出时间
+            "remark": "", // 备注
+            "customer": {
+                "shortName": "太原千海湖商贸有限公司", // 客户名称
+                "type": "P"
+            },
+            "fromDepotName": "DC（天津优和仓 ）", // 出库仓
+            "jian": 3, // 见
+            "payFlg": 0, // 结款状态 0-未结款 1-结款
+            "receiveId": 50783, // 联系人id
+            "san": 0, // 散
+            "status": "INVALID", // 订单状态 INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收
+            "totalprice": 1696.6, // 订单金额
+            "tradefrom": "SYS"
+            }
+        }
+    }
+
+### DD-124. 销售订单-解除整单锁获取将要消失的优返活及申请的赠品列表
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/saorder/{orderId}/lose/sth
+#### 参数
+    orderId: 单号
+#### 相应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "name": "2018年12月陆战队补贴", // 优惠券名称或者申请单号
+                "orderSaProVO": {
+                    "pcount": 1, // 数量
+                    "productUnit": {
+                        "guige": "500g(23-25枚）/盒", // 规格
+                        "product": {
+                            "name": "香草凤尾虾", // 品名
+                            "pno": "0151", // 品号
+                        },
+                        "unit": "盒", // 单位
+                    }
+                },
+                "rebate": 500, // 优惠金额
+                "type": "REBATE" // 优惠类型 ACTIVE_GIFT：满赠活动 ACTIVE：活动（含满折 和 满减） COUPON：优惠券, REBATE：返利券 GIFT_ASK_FOR 申请赠品 
+            },
+            ...
+        ]
+    }
+
+### DD-125. 销售订单-获取被拆分订单的子单
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/saorder/{orderId}/childs
+#### 参数
+    orderId: 销售订单号,
+    buttonPermissionFlg: 1
+#### 响应    
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [
+                {
+                     "editBaseButton": false, // 修改基本信息按钮
+                     "payButton": false, // 支付按钮
+                     "exportButton": false, // 导出按钮
+                     "deleteButton": false, // 删除按钮
+                     "apButton": false, // 申请调价按钮
+                     "srButton": false, // 退货按钮
+                     "unlockButton": false, // 解锁按钮
+                     "editButton": false, // 修改订单按钮
+                     "cancelPayButton": false, // 取消结款按钮
+                     "runButton": false, // 确认执行按钮
+                     "splitButton": false // 拆分按钮
+                }
+            ],
+            "dataSums": null,
+            "datas": [
+                {
+                    "apPrice": 0, // 调价金额
+                    "completeTime": "",
+                    "createTime": "2019-03-14 16:31:58", // 创建时间
+                    "createUserName": "孙启萌", // 创建人
+                    "customer": {
+                        "isParent": 0, // 0 表示普通客户 1表示总店 2表示分店
+                        "shortName": "么志勇", // 客户名称
+                        "type": "P" // 客户类型 A, P, P2P, C
+                    },
+                    "customerId": 2434, // 客户id
+                    "delivery": {
+                        "address": "河北唐山市路南区君瑞批发市场冷库站台", // 收货地址
+                        "mobile": "13393255188", // 联系电话
+                        "name": "么志勇", // 收货人
+                    },
+                    "deliveryType": "DELIVERY",
+                    "depositPrice": 0,
+                    "discountPrice": 0, // 优惠活动折扣金额
+                    "freight": 0, // 运费
+                    "freightStatus": 0,
+                    "fromDepotId": 51,
+                    "fromDepotName": "DC（天津优和仓 ）",
+                    "giftFlg": 0, // 赠品标识 0-无 1-有
+                    "id": 50,
+                    "jian": 10, // 件
+                    "lockFlg": 0, // 锁标识 0-无 1-有
+                    "mainOrderId": "",
+                    "modifyTime": "2019-03-14 08:38:36.0",
+                    "orderId": "SA1903140000034", // 单号
+                    "payFlg": 0, // 结款状态 0 - 未结款 1 - 已结款
+                    "payTime": "2019-03-14 16:35:00",
+                    "paymentType": "CASH",
+                    "planSendTime": "2019-03-15 00:00:00", // 计划发货时间
+                    "platformId": 1,
+                    "price": 7033,
+                    "rebatePrice": 0, // 返利券折扣金额
+                    "receiveId": 17508,
+                    "remark": "我的测试测试备注", // 备注
+                    "runTime": "",
+                    "san": 20, // 散
+                    "sendTime": "",
+                    "splitFlg": 1, // 被拆分标识 1 - 是 0 - 否 
+                    "status": "INVALID", // INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收
+                    "totalprice": 7033, // 实收
+                    "tradefrom": "SYS"
+                }
+            ]
+        }
+    }
+
+### DD-126. 销售订单-获取销售订单详情（APP）
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /router/v5/order/{customerId}/{orderId}
+#### 参数
+    customerId: 客户id,
+    orderId: 销售订单号,
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "apPrice": 0, // 调价金额
+            "createTime": "2018-05-28 11:24:13", // 订单创建时间
+            "delivery": {
+                "address": "河北/唐山市/路南区/君瑞批发市场冷库站台", // 收货地址
+                "mobile": "13393255188", // 收货人手机号
+                "name": "么志勇", // 收货人
+            },
+            "deliveryType": "DELIVERY",
+            "discountPrice": 0, // 优惠活动金额
+            "freight": 0, // 运费
+            "jian": 518, // 件
+            "invoice": {
+                "id": 5132, // 发票id
+                "invoiceDoneTotal": 1, // 已完成的发票数量
+                "invoiceTotal": 1 // 发票总数量
+            },
+            "orderSaPros": [
+                {
+                    "afterAskPrice": 0, // 调价单金额
+                    "beforeAskPrice": 0, // 差价单金额
+                    "giftFlg": 0, // 是否赠品 0-赠品 1-申请的赠品 2-活动赠品
+                    "pcount": 300, // 数量
+                    "price": 204, // 单机
+                    "priceFlg": "NONE", // 价格类别 NONE-未知 T-特价 S-签约价 Q -区域价 A-A价 P-P价 AK-调价'
+                    "productId": 4364, // 产品id
+                    "productUnit": {
+                        "guige": "280g/盒*12盒", // 规格
+                        "minimum": 0,
+                        "price": {
+                            "aPrice": 40.12,
+                            "areaPrice": 0,
+                            "decideType": "A",
+                            "finallyPrice": 40.12,
+                            "pPrice": 32.5,
+                            "productUnitId": 1,
+                            "rawFlg": "NO", // 是否原料品 NO-否 YES-是
+                            "signPrice": 0,
+                            "specialPrice": 0
+                        },
+                        "product": {
+                            "customFlg": 0, // 是否定制品 0-非定制品 1-普通定制品 2-专属定制品
+                            "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201812/38136c953e63ab82f786fd18283bcd66.jpg", // 产品主图url
+                            "name": "孔雀开屏粉丝扇贝", // 品名
+                            "pno": "1526", // 品号
+                            "status": "NORMAL"
+                        },
+                        "unit": "件", // 单位
+                    },
+                    "productUnitId": 7719, // 产品规格id
+                    "totalprice": 61200 // 产品小计
+                }                
+            ],
+            "payFlg": 1, // 结款状态 0-未结款 1-结款
+            "payTime": "2018-05-28 13:56:41",
+            "paymentType": "CASH", // 支付方式 CASH-先款后货 CREDIT: 账余 DAOFU：货到付款
+            "planSendTime": "2018-05-30 16:49:42", // 计划发货时间
+            "price": 84200, // 商品金额
+            "rebatePrice": 16523.1, // 返利券优惠金额
+            "remark": "", // 订单备注
+            "san": 0, // 散
+            "sendTime": "2018-05-30 16:49:42", // 发货时间
+            "status": "COMPLETE", 订单状态 INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收
+            "totalprice": 67676.9, // 商品实付款
+        }
+    }
+
+### DD-127. 销售订单-第三方结款成功回调接口(财务回调)
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/saorder/{orderId}/pay/third
+#### 参数
+    orderId: 销售订单号,
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+    
 
 
 
