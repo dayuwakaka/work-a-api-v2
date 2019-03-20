@@ -1373,6 +1373,11 @@
                     }
                 }
             ],
+            "invoice": {
+                "id": 5132, // 发票id
+                "invoiceDoneTotal": 1, // 已完成的发票数量
+                "invoiceTotal": 1 // 发票总数量
+            },
             "payFlg": 0, // 0-未结款 1-结款
             "paymentType": "CASH", // CASH-先款后货 CREDIT-账余 DAOFU-货到付款
             "remark": "我的测试测试备注", // 备注
