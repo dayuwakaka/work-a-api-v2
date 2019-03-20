@@ -580,6 +580,7 @@
     {
         "orderSr": {
             "saOrderId": "SA180611037577",      // 销售单号
+            "orderId":"SR18201905223342",       // 退单号，修改退单时传递
             "isFreight": 1                      // 是否包含运费
         },
         "orderSrPro": [
