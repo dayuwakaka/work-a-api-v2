@@ -182,6 +182,7 @@
                         "pno": "0151", // 品号
                         "productId": 1, // 产品ID
                         "unit": "盒" // 单位
+                        "mainImg": "xxx" // 主图
                     },
                     "productUnitId": 1, // 规格ID
                     "saOrderId": "test-05", // 销售单号
