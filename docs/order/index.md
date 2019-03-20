@@ -182,6 +182,7 @@
                         "pno": "0151", // 品号
                         "productId": 1, // 产品ID
                         "unit": "盒" // 单位
+                        "mainImg": "xxx" // 主图
                     },
                     "productUnitId": 1, // 规格ID
                     "saOrderId": "test-05", // 销售单号
@@ -953,7 +954,7 @@
     GET /v2/saorder/{orderId}
 #### 参数
     orderId: 销售订单号
-#### 响应  
+#### 响应
     {
         "code": 100000,
         "msg": "",
@@ -1007,6 +1008,7 @@
                     "apStatus": {
                         "saOrderId": "SA1903140000040",
                         "status": "RUN", // 调价单状态
+                        "askPrice"： 100, // 调价金额
                         "type": "BEFORE"
                     },
                     "beforeAskPrice": 0, // 差价单金额
@@ -1318,7 +1320,6 @@
     		"rebateId": 1, // 返利券id
     		"couponId": 1, // 优惠券id
     		"activeId": 1, // 活动id
-    		"excludeActiveIds": [1,2,3], // 排除满赠活动id
     		"remark": "我的测试测试备注", // 订单备注
     	},
     	"saOrderPros": [ // 订单产品明细
@@ -1335,7 +1336,10 @@
     {
         "code": 100000,
         "msg": "",
-        "data": null
+        "data": {
+            "orderId": "SA19000100002", // 订单号
+            "totalprice": 10000 // 订单实际金额
+        }
     }
     
 ### DD-119. 销售订单-获取“我的”订单列表（APP端）
@@ -1370,8 +1374,13 @@
                     }
                 }
             ],
+            "invoice": {
+                "id": 5132, // 发票id
+                "invoiceDoneTotal": 1, // 已完成的发票数量
+                "invoiceTotal": 1 // 发票总数量
+            },
             "payFlg": 0, // 0-未结款 1-结款
-            "paymentType": "CASH", // CASH-先款后货 CREDIT-账期
+            "paymentType": "CASH", // CASH-先款后货 CREDIT-账余 DAOFU-货到付款
             "remark": "我的测试测试备注", // 备注
             "san": 20, // 散
             "sendTime": "", // 发货时间
@@ -1624,6 +1633,11 @@
             "discountPrice": 0, // 优惠活动金额
             "freight": 0, // 运费
             "jian": 518, // 件
+            "invoice": {
+                "id": 5132, // 发票id
+                "invoiceDoneTotal": 1, // 已完成的发票数量
+                "invoiceTotal": 1 // 发票总数量
+            },
             "orderSaPros": [
                 {
                     "afterAskPrice": 0, // 调价单金额
@@ -1636,7 +1650,19 @@
                     "productUnit": {
                         "guige": "280g/盒*12盒", // 规格
                         "minimum": 0,
+                        "price": {
+                            "aPrice": 40.12,
+                            "areaPrice": 0,
+                            "decideType": "A",
+                            "finallyPrice": 40.12,
+                            "pPrice": 32.5,
+                            "productUnitId": 1,
+                            "rawFlg": "NO", // 是否原料品 NO-否 YES-是
+                            "signPrice": 0,
+                            "specialPrice": 0
+                        },
                         "product": {
+                            "customFlg": 0, // 是否定制品 0-非定制品 1-普通定制品 2-专属定制品
                             "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201812/38136c953e63ab82f786fd18283bcd66.jpg", // 产品主图url
                             "name": "孔雀开屏粉丝扇贝", // 品名
                             "pno": "1526", // 品号
