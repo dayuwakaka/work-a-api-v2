@@ -1045,7 +1045,7 @@
             "runTime": "",
             "san": 20, // 散
             "sendTime": "",
-            "splitFlg": 0,
+            "splitFlg": 0, // 拆分标识 0-否 1-是
             "status": "INVALID", // 订单状态 INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收
             "totalprice": 7033, // 总价
             "tradefrom": "SYS"
