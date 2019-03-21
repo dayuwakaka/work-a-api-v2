@@ -1019,6 +1019,7 @@
                     "giftFlg": 0, // 赠品标识 0-正常品 1-申请的赠品 2-活动赠品
                     "id": 192,
                     "pcount": 10, // 数量
+                    "giftCount": 0, // 赠品数量
                     "price": 32.5, // 单价
                     "totalprice": 325, // 总计
                     "priceFlg": "P", // 价格类别 NONE-未知 T-特价 S-签约价 Q -区域价 A-A价 P-P价 AK-调价'
@@ -1049,7 +1050,7 @@
             "runTime": "",
             "san": 20, // 散
             "sendTime": "",
-            "splitFlg": 0,
+            "splitFlg": 0, // 拆分标识 0-否 1-是
             "status": "INVALID", // 订单状态 INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收
             "totalprice": 7033, // 总价
             "tradefrom": "SYS"
@@ -1341,6 +1342,7 @@
         "code": 100000,
         "msg": "",
         "data": {
+            "id": 123, // 订单主键id
             "orderId": "SA19000100002", // 订单号
             "totalprice": 10000 // 订单实际金额
         }
@@ -1707,8 +1709,29 @@
     }
     
 
-
-
+### DD-128. 销售订单-SYS端获取产品总价
+#### 模块负责人
+    梁铁骐
+#### 请求
+    POST /v2/saorder/price
+#### 参数
+    {
+        customerId: 1, // 客户id
+        pathId: '010101' // 区域
+        products: [
+            {
+                id: 12, // 如果是编辑页面要把产品明细id携带过来，新增页面则不用传
+                productUnitId: 27, 产品规格id
+                pcount: 36 // 数量 （赠品数量不传）
+            }
+        ]
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": 66666 // 产品总价
+    }
 
 
 
