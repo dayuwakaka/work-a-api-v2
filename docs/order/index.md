@@ -1658,7 +1658,7 @@
                     "beforeAskPrice": 0, // 差价单金额
                     "giftFlg": 0, // 是否赠品 0-赠品 1-申请的赠品 2-活动赠品
                     "pcount": 300, // 数量
-                    "price": 204, // 单机
+                    "price": 204, // 单价
                     "priceFlg": "NONE", // 价格类别 NONE-未知 T-特价 S-签约价 Q -区域价 A-A价 P-P价 AK-调价'
                     "productId": 4364, // 产品id
                     "productUnit": {
