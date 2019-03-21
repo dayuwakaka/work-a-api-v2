@@ -887,7 +887,7 @@
                      "payButton": false, // 支付按钮
                      "exportButton": false, // 导出按钮
                      "deleteButton": false, // 删除按钮
-                     "apButton": false, // 申请调价按钮
+                     （废）"apButton": false, // 申请调价按钮
                      "srButton": false, // 退货按钮
                      "unlockButton": false, // 解锁按钮
                      "editButton": false, // 修改订单按钮
@@ -1017,12 +1017,12 @@
                 {
                     "activeId": 0,
                     "afterAskPrice": 0, // 调价单金额
-                    "apStatus": {
-                        "saOrderId": "SA1903140000040",
-                        "status": "RUN", // 调价单状态
-                        "askPrice"： 100, // 调价金额
-                        "type": "BEFORE"
-                    },
+                    // "apStatus": {
+                    //     "saOrderId": "SA1903140000040",
+                    //     "status": "RUN", // 调价单状态
+                    //     "askPrice"： 100, // 调价金额
+                    //     "type": "BEFORE"
+                    // },
                     "beforeAskPrice": 0, // 差价单金额
                     "giftFlg": 0, // 赠品标识 0-正常品 1-申请的赠品 2-活动赠品
                     "id": 192,
@@ -1228,19 +1228,19 @@
     		"couponId": 1, // 优惠券id
     		"activeId": 1, // 活动id
     		"excludeActiveIds": [1,2,3], // 排除满赠活动id
-    		"freightFlg": 1, // 是否申请免运费 0-否 1-是
-    		"freightRemark": "申请免运费备注", // 免运费申请备注 0 ~ 255 请前端同事校验好，后端也校验
+    		// "freightFlg": 1, // 是否申请免运费 0-否 1-是
+    		// "freightRemark": "申请免运费备注", // 免运费申请备注 0 ~ 255 请前端同事校验好，后端也校验
     		"remark": "我的测试测试备注", // 订单备注
-    		"giftRemark": "赠品申请备注" // 赠品申请备注 0 ~ 255 请前端同事校验好，后端也校验
+    		// "giftRemark": "赠品申请备注" // 赠品申请备注 0 ~ 255 请前端同事校验好，后端也校验
     	},
     	"saOrderPros": [ // 订单产品明细
     		{
     			*"productUnitId": 1, // 产品规格id
     			*"productId": 1, // 产品id
     			*"pcount": 10, // 数量
-    			"giftCount": "1", // 赠品数量
-    			"beforeAskPrice": 10, // 调价金额
-    			"beforeAskPriceRemark": "测试AP单备注" // 调价备注 0 ~ 255 请前端同事校验好，后端也校验
+    			// "giftCount": "1", // 赠品数量
+    			// "beforeAskPrice": 10, // 调价金额
+    			// "beforeAskPriceRemark": "测试AP单备注" // 调价备注 0 ~ 255 请前端同事校验好，后端也校验
     		},
     		...
     	],
@@ -1292,9 +1292,9 @@
     		"couponId": 1, // 优惠券id
     		"activeId": 1, // 活动id
     		"excludeActiveIds": [1,2,3], // 排除满赠活动id
-    		"freightFlg": 1, // 是否申请免运费 0-否 1-是
-    		"freightRemark": "申请免运费备注", // 免运费申请备注 0 ~ 255 请前端同事校验好，后端也校验
-    		"remark": "我的测试测试备注", // 订单备注
+    		// "freightFlg": 1, // 是否申请免运费 0-否 1-是
+    		// "freightRemark": "申请免运费备注", // 免运费申请备注 0 ~ 255 请前端同事校验好，后端也校验
+    		// "remark": "我的测试测试备注", // 订单备注
     		"giftRemark": "赠品申请备注" // 赠品申请备注 0 ~ 255 请前端同事校验好，后端也校验
     	},
     	"saOrderPros": [ // 订单产品明细
@@ -1302,9 +1302,9 @@
     			*"productUnitId": 1, // 产品规格id
     			*"productId": 1, // 产品id
     			*"pcount": 10, // 数量
-    			"giftCount": "1", // 赠品数量
-    			"beforeAskPrice": 10, // 调价金额
-    			"beforeAskPriceRemark": "测试AP单备注" // 调价备注 0 ~ 255 请前端同事校验好，后端也校验
+    			// "giftCount": "1", // 赠品数量
+    			// "beforeAskPrice": 10, // 调价金额
+    			// "beforeAskPriceRemark": "测试AP单备注" // 调价备注 0 ~ 255 请前端同事校验好，后端也校验
     		},
     		...
     	],
