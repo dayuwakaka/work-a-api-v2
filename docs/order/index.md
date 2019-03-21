@@ -887,7 +887,7 @@
                      "payButton": false, // 支付按钮
                      "exportButton": false, // 导出按钮
                      "deleteButton": false, // 删除按钮
-                     "apButton": false, // 申请调价按钮
+                     （废）"apButton": false, // 申请调价按钮
                      "srButton": false, // 退货按钮
                      "unlockButton": false, // 解锁按钮
                      "editButton": false, // 修改订单按钮
@@ -913,6 +913,9 @@
                         "address": "河北唐山市路南区君瑞批发市场冷库站台", // 收货地址
                         "mobile": "13393255188", // 联系电话
                         "name": "么志勇", // 收货人
+                    },
+                    "freightAsk": {
+                        isPass: 0 // 0：待审，1：通过，2：未通过
                     },
                     "deliveryType": "DELIVERY",
                     "depositPrice": 0,
@@ -958,6 +961,7 @@
     GET /v2/saorder/{orderId}
 #### 参数
     orderId: 销售订单号
+    filterGiftFlg: 编辑订单页获取详情时传1 其余暂时不用传
 #### 响应
     {
         "code": 100000,
@@ -1004,17 +1008,24 @@
             ],
             "mainOrderId": "",
             "modifyTime": "2019-03-14 09:16:50",
+            "activeGifts": [
+                {
+                   id: 1 // 满赠活动id,
+                   activeName: "买香草贝贝虾送香草贝贝虾" // 活动名称 
+                },
+                ...
+            ],
             "orderId": "SA1903140000040", // 单号
             "orderSaPros": [
                 {
                     "activeId": 0,
                     "afterAskPrice": 0, // 调价单金额
-                    "apStatus": {
-                        "saOrderId": "SA1903140000040",
-                        "status": "RUN", // 调价单状态
-                        "askPrice"： 100, // 调价金额
-                        "type": "BEFORE"
-                    },
+                    // "apStatus": {
+                    //     "saOrderId": "SA1903140000040",
+                    //     "status": "RUN", // 调价单状态
+                    //     "askPrice"： 100, // 调价金额
+                    //     "type": "BEFORE"
+                    // },
                     "beforeAskPrice": 0, // 差价单金额
                     "giftFlg": 0, // 赠品标识 0-正常品 1-申请的赠品 2-活动赠品
                     "id": 192,
@@ -1220,19 +1231,19 @@
     		"couponId": 1, // 优惠券id
     		"activeId": 1, // 活动id
     		"excludeActiveIds": [1,2,3], // 排除满赠活动id
-    		"freightFlg": 1, // 是否申请免运费 0-否 1-是
-    		"freightRemark": "申请免运费备注", // 免运费申请备注 0 ~ 255 请前端同事校验好，后端也校验
+    		// "freightFlg": 1, // 是否申请免运费 0-否 1-是
+    		// "freightRemark": "申请免运费备注", // 免运费申请备注 0 ~ 255 请前端同事校验好，后端也校验
     		"remark": "我的测试测试备注", // 订单备注
-    		"giftRemark": "赠品申请备注" // 赠品申请备注 0 ~ 255 请前端同事校验好，后端也校验
+    		// "giftRemark": "赠品申请备注" // 赠品申请备注 0 ~ 255 请前端同事校验好，后端也校验
     	},
     	"saOrderPros": [ // 订单产品明细
     		{
     			*"productUnitId": 1, // 产品规格id
     			*"productId": 1, // 产品id
     			*"pcount": 10, // 数量
-    			"giftCount": "1", // 赠品数量
-    			"beforeAskPrice": 10, // 调价金额
-    			"beforeAskPriceRemark": "测试AP单备注" // 调价备注 0 ~ 255 请前端同事校验好，后端也校验
+    			// "giftCount": "1", // 赠品数量
+    			// "beforeAskPrice": 10, // 调价金额
+    			// "beforeAskPriceRemark": "测试AP单备注" // 调价备注 0 ~ 255 请前端同事校验好，后端也校验
     		},
     		...
     	],
@@ -1284,9 +1295,9 @@
     		"couponId": 1, // 优惠券id
     		"activeId": 1, // 活动id
     		"excludeActiveIds": [1,2,3], // 排除满赠活动id
-    		"freightFlg": 1, // 是否申请免运费 0-否 1-是
-    		"freightRemark": "申请免运费备注", // 免运费申请备注 0 ~ 255 请前端同事校验好，后端也校验
-    		"remark": "我的测试测试备注", // 订单备注
+    		// "freightFlg": 1, // 是否申请免运费 0-否 1-是
+    		// "freightRemark": "申请免运费备注", // 免运费申请备注 0 ~ 255 请前端同事校验好，后端也校验
+    		// "remark": "我的测试测试备注", // 订单备注
     		"giftRemark": "赠品申请备注" // 赠品申请备注 0 ~ 255 请前端同事校验好，后端也校验
     	},
     	"saOrderPros": [ // 订单产品明细
@@ -1294,9 +1305,9 @@
     			*"productUnitId": 1, // 产品规格id
     			*"productId": 1, // 产品id
     			*"pcount": 10, // 数量
-    			"giftCount": "1", // 赠品数量
-    			"beforeAskPrice": 10, // 调价金额
-    			"beforeAskPriceRemark": "测试AP单备注" // 调价备注 0 ~ 255 请前端同事校验好，后端也校验
+    			// "giftCount": "1", // 赠品数量
+    			// "beforeAskPrice": 10, // 调价金额
+    			// "beforeAskPriceRemark": "测试AP单备注" // 调价备注 0 ~ 255 请前端同事校验好，后端也校验
     		},
     		...
     	],
@@ -1650,7 +1661,7 @@
                     "beforeAskPrice": 0, // 差价单金额
                     "giftFlg": 0, // 是否赠品 0-赠品 1-申请的赠品 2-活动赠品
                     "pcount": 300, // 数量
-                    "price": 204, // 单机
+                    "price": 204, // 单价
                     "priceFlg": "NONE", // 价格类别 NONE-未知 T-特价 S-签约价 Q -区域价 A-A价 P-P价 AK-调价'
                     "productId": 4364, // 产品id
                     "productUnit": {
