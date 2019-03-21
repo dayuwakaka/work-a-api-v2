@@ -1000,6 +1000,13 @@
             ],
             "mainOrderId": "",
             "modifyTime": "2019-03-14 09:16:50",
+            "activeGifts": [
+                {
+                   id: 1 // 满赠活动id,
+                   activeName: "买香草贝贝虾送香草贝贝虾" // 活动名称 
+                },
+                ...
+            ],
             "orderId": "SA1903140000040", // 单号
             "orderSaPros": [
                 {
