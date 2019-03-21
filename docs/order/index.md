@@ -681,9 +681,10 @@
 #### 模块负责人
     尹洪明
 #### 请求
-    PUT /order/sr/run/{orderId}
+    PUT /order/sr/run/{orderId}/{saOrderId}
 #### 参数
     * orderId           // 退单编号
+    * saOrderId             // 订单号
 #### 响应
     {
         "code": 100000,
@@ -695,9 +696,10 @@
 #### 模块负责人
     尹洪明
 #### 请求
-    PUT /order/sr/pass/{orderId}
+    PUT /order/sr/pass/{orderId}/{saOrderId}
 #### 参数
     * orderId           // 退单编号
+    * saOrderId             // 订单号
 #### 响应
     {
         "code": 100000,
@@ -709,9 +711,10 @@
 #### 模块负责人
     尹洪明
 #### 请求
-    PUT /order/sr/refuse/{orderId}
+    PUT /order/sr/refuse/{orderId}/{saOrderId}
 #### 参数
     * orderId           // 退单编号
+    * saOrderId             // 订单号
 #### 响应
     {
         "code": 100000,
@@ -723,9 +726,10 @@
 #### 模块负责人
     尹洪明
 #### 请求
-    PUT /order/sr/complete/{orderId}
+    PUT /order/sr/complete/{orderId}/{saOrderId}
 #### 参数
     * orderId           // 退单编号
+    * saOrderId             // 订单号
 #### 响应
     {
         "code": 100000,
