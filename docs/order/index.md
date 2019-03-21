@@ -958,6 +958,7 @@
     GET /v2/saorder/{orderId}
 #### 参数
     orderId: 销售订单号
+    filterGiftFlg: 编辑订单页获取详情时传1 其余暂时不用传
 #### 响应
     {
         "code": 100000,
