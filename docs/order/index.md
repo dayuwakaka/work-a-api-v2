@@ -914,6 +914,9 @@
                         "mobile": "13393255188", // 联系电话
                         "name": "么志勇", // 收货人
                     },
+                    "freightAsk": {
+                        isPass: 0 // 0：待审，1：通过，2：未通过
+                    },
                     "deliveryType": "DELIVERY",
                     "depositPrice": 0,
                     "discountPrice": 0, // 优惠活动折扣金额
