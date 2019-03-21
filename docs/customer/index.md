@@ -1334,3 +1334,36 @@
             }
         ]
     }
+    
+     
+### KH-52.客户地址详情
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /v2/customerContact/detail/{id}
+#### 参数
+    *id            // 地址id
+#### 响应 
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "address": "八百里胡同12号",      // 详细地址
+            "area": "西城区",              // 区
+            "areapathid": "010102",
+            "city": "北京市",          // 市
+            "createRole": 1,
+            "createTime": "2019-03-07 08:56:24.0",
+            "createUser": 518,
+            "customerId": 32813,
+            "customer_id": 0,
+            "id": 52240,
+            "isDefault": 0,
+            "isdefault": 0,
+            "lastModified": "2019-03-21 03:24:50.0",
+            "mobile": "18699993333",        // 联系电话
+            "name": "弟弟",               // 联系人
+            "province": "北京",       // 省
+            "remarks": ""
+        }
+    }
