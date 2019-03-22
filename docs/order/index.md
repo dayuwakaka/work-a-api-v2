@@ -887,13 +887,14 @@
                      "payButton": false, // 支付按钮
                      "exportButton": false, // 导出按钮
                      "deleteButton": false, // 删除按钮
-                     （废）"apButton": false, // 申请调价按钮
+                     "apButton": false, // 申请调价按钮
                      "srButton": false, // 退货按钮
                      "unlockButton": false, // 解锁按钮
                      "editButton": false, // 修改订单按钮
                      "cancelPayButton": false, // 取消结款按钮
                      "runButton": false, // 确认执行按钮
                      "splitButton": false // 拆分按钮
+                     "freightAskButton": false // 免运费申请按钮
                 }
             ],
             "dataSums": null,
