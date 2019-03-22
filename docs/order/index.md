@@ -1037,6 +1037,17 @@
                     "priceFlg": "P", // 价格类别 NONE-未知 T-特价 S-签约价 Q -区域价 A-A价 P-P价 AK-调价'
                     "productId": 1,
                     "productUnit": {
+                        "price": {
+                            "aPrice": 802.47, // A价格
+                            "areaPrice": 0,
+                            "decideType": "A",
+                            "finallyPrice": 802.47,
+                            "pPrice": 650, // P价格
+                            "productUnitId": 2,
+                            "rawFlg": "NO",
+                            "signPrice": 0,
+                            "specialPrice": 0
+                        },
                         "guige": "500g(23-25枚）/盒", // 规格
                         "product": {
                             "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg", // 产品图片url
