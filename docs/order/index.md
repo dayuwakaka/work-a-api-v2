@@ -1278,7 +1278,6 @@
     {
     	orderId: 'SA190000001', // 单号
         remark: 'sdfasdfas', // 备注
-        receiveId: '1', // 联系人id
         planSendTime: '2019-10-10' // 计划发货时间
     }
 #### 响应  
