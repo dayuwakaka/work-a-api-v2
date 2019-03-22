@@ -658,6 +658,7 @@
     supplierId: 1 // 供应商ID， 传递供应商ID 是在进行产品定价的时候 需要带出产品的供应商价格
     depotId: 1 // 仓ID， 传递仓ID，是需要产品匹配库存存量
     productunitIds[]:1,2,7  // 产品规格
+    @@isAsign: 0              // 0 未签约 1 已签约
     ---------------------------以下三个has开头的参数决定是否查询价格和库存 ture查询 & false不查询-----------------------------------------
     hasPrice:           // 客户某个区域产品价格
 		customerId
@@ -703,6 +704,7 @@
                     }, 
                     "product": {
                         "customFlg": 0, // 定制标识
+                        @@"customFlgMore": 0, // 定制标志 0 非定制 1 普通定制 2 专属定制
                         "id": 1, // 产品ID
                         "longName": "香草凤尾虾-专业开背，秘制加工，中西餐厅新食尚~", // 广告名
                         "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/f9ce32e007fc796722466531c86d5cd9.jpg", // 主图背景图
