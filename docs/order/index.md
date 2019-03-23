@@ -581,6 +581,7 @@
     {
         "orderSr": {
             "saOrderId": "SA180611037577",      // 销售单号
+            "orderId":"SR18201905223342",       // 退单号，修改退单时传递
             "isFreight": 1                      // 是否包含运费
         },
         "orderSrPro": [
@@ -681,9 +682,10 @@
 #### 模块负责人
     尹洪明
 #### 请求
-    PUT /order/sr/run/{orderId}
+    PUT /order/sr/run/{orderId}/{saOrderId}
 #### 参数
     * orderId           // 退单编号
+    * saOrderId             // 订单号
 #### 响应
     {
         "code": 100000,
@@ -695,9 +697,10 @@
 #### 模块负责人
     尹洪明
 #### 请求
-    PUT /order/sr/pass/{orderId}
+    PUT /order/sr/pass/{orderId}/{saOrderId}
 #### 参数
     * orderId           // 退单编号
+    * saOrderId             // 订单号
 #### 响应
     {
         "code": 100000,
@@ -709,9 +712,10 @@
 #### 模块负责人
     尹洪明
 #### 请求
-    PUT /order/sr/refuse/{orderId}
+    PUT /order/sr/refuse/{orderId}/{saOrderId}
 #### 参数
     * orderId           // 退单编号
+    * saOrderId             // 订单号
 #### 响应
     {
         "code": 100000,
@@ -723,9 +727,10 @@
 #### 模块负责人
     尹洪明
 #### 请求
-    PUT /order/sr/complete/{orderId}
+    PUT /order/sr/complete/{orderId}/{saOrderId}
 #### 参数
     * orderId           // 退单编号
+    * saOrderId             // 订单号
 #### 响应
     {
         "code": 100000,
@@ -890,6 +895,7 @@
                      "cancelPayButton": false, // 取消结款按钮
                      "runButton": false, // 确认执行按钮
                      "splitButton": false // 拆分按钮
+                     "freightAskButton": false // 免运费申请按钮
                 }
             ],
             "dataSums": null,
@@ -909,6 +915,9 @@
                         "address": "河北唐山市路南区君瑞批发市场冷库站台", // 收货地址
                         "mobile": "13393255188", // 联系电话
                         "name": "么志勇", // 收货人
+                    },
+                    "freightAsk": {
+                        isPass: 0 // 0：待审，1：通过，2：未通过
                     },
                     "deliveryType": "DELIVERY",
                     "depositPrice": 0,
@@ -954,6 +963,7 @@
     GET /v2/saorder/{orderId}
 #### 参数
     orderId: 销售订单号
+    filterGiftFlg: 编辑订单页获取详情时传1 其余暂时不用传
 #### 响应
     {
         "code": 100000,
@@ -1000,26 +1010,45 @@
             ],
             "mainOrderId": "",
             "modifyTime": "2019-03-14 09:16:50",
+            "activeGifts": [
+                {
+                   id: 1 // 满赠活动id,
+                   activeName: "买香草贝贝虾送香草贝贝虾" // 活动名称 
+                },
+                ...
+            ],
             "orderId": "SA1903140000040", // 单号
             "orderSaPros": [
                 {
                     "activeId": 0,
                     "afterAskPrice": 0, // 调价单金额
-                    "apStatus": {
-                        "saOrderId": "SA1903140000040",
-                        "status": "RUN", // 调价单状态
-                        "askPrice"： 100, // 调价金额
-                        "type": "BEFORE"
-                    },
+                    // "apStatus": {
+                    //     "saOrderId": "SA1903140000040",
+                    //     "status": "RUN", // 调价单状态
+                    //     "askPrice"： 100, // 调价金额
+                    //     "type": "BEFORE"
+                    // },
                     "beforeAskPrice": 0, // 差价单金额
                     "giftFlg": 0, // 赠品标识 0-正常品 1-申请的赠品 2-活动赠品
                     "id": 192,
                     "pcount": 10, // 数量
+                    "giftCount": 0, // 赠品数量
                     "price": 32.5, // 单价
                     "totalprice": 325, // 总计
                     "priceFlg": "P", // 价格类别 NONE-未知 T-特价 S-签约价 Q -区域价 A-A价 P-P价 AK-调价'
                     "productId": 1,
                     "productUnit": {
+                        "price": {
+                            "aPrice": 802.47, // A价格
+                            "areaPrice": 0,
+                            "decideType": "A",
+                            "finallyPrice": 802.47,
+                            "pPrice": 650, // P价格
+                            "productUnitId": 2,
+                            "rawFlg": "NO",
+                            "signPrice": 0,
+                            "specialPrice": 0
+                        },
                         "guige": "500g(23-25枚）/盒", // 规格
                         "product": {
                             "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg", // 产品图片url
@@ -1045,7 +1074,7 @@
             "runTime": "",
             "san": 20, // 散
             "sendTime": "",
-            "splitFlg": 0,
+            "splitFlg": 0, // 拆分标识 0-否 1-是
             "status": "INVALID", // 订单状态 INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收
             "totalprice": 7033, // 总价
             "tradefrom": "SYS"
@@ -1215,19 +1244,19 @@
     		"couponId": 1, // 优惠券id
     		"activeId": 1, // 活动id
     		"excludeActiveIds": [1,2,3], // 排除满赠活动id
-    		"freightFlg": 1, // 是否申请免运费 0-否 1-是
-    		"freightRemark": "申请免运费备注", // 免运费申请备注 0 ~ 255 请前端同事校验好，后端也校验
+    		// "freightFlg": 1, // 是否申请免运费 0-否 1-是
+    		// "freightRemark": "申请免运费备注", // 免运费申请备注 0 ~ 255 请前端同事校验好，后端也校验
     		"remark": "我的测试测试备注", // 订单备注
-    		"giftRemark": "赠品申请备注" // 赠品申请备注 0 ~ 255 请前端同事校验好，后端也校验
+    		// "giftRemark": "赠品申请备注" // 赠品申请备注 0 ~ 255 请前端同事校验好，后端也校验
     	},
     	"saOrderPros": [ // 订单产品明细
     		{
     			*"productUnitId": 1, // 产品规格id
     			*"productId": 1, // 产品id
     			*"pcount": 10, // 数量
-    			"giftCount": "1", // 赠品数量
-    			"beforeAskPrice": 10, // 调价金额
-    			"beforeAskPriceRemark": "测试AP单备注" // 调价备注 0 ~ 255 请前端同事校验好，后端也校验
+    			// "giftCount": "1", // 赠品数量
+    			// "beforeAskPrice": 10, // 调价金额
+    			// "beforeAskPriceRemark": "测试AP单备注" // 调价备注 0 ~ 255 请前端同事校验好，后端也校验
     		},
     		...
     	],
@@ -1250,7 +1279,6 @@
     {
     	orderId: 'SA190000001', // 单号
         remark: 'sdfasdfas', // 备注
-        receiveId: '1', // 联系人id
         planSendTime: '2019-10-10' // 计划发货时间
     }
 #### 响应  
@@ -1279,9 +1307,9 @@
     		"couponId": 1, // 优惠券id
     		"activeId": 1, // 活动id
     		"excludeActiveIds": [1,2,3], // 排除满赠活动id
-    		"freightFlg": 1, // 是否申请免运费 0-否 1-是
-    		"freightRemark": "申请免运费备注", // 免运费申请备注 0 ~ 255 请前端同事校验好，后端也校验
-    		"remark": "我的测试测试备注", // 订单备注
+    		// "freightFlg": 1, // 是否申请免运费 0-否 1-是
+    		// "freightRemark": "申请免运费备注", // 免运费申请备注 0 ~ 255 请前端同事校验好，后端也校验
+    		// "remark": "我的测试测试备注", // 订单备注
     		"giftRemark": "赠品申请备注" // 赠品申请备注 0 ~ 255 请前端同事校验好，后端也校验
     	},
     	"saOrderPros": [ // 订单产品明细
@@ -1289,9 +1317,9 @@
     			*"productUnitId": 1, // 产品规格id
     			*"productId": 1, // 产品id
     			*"pcount": 10, // 数量
-    			"giftCount": "1", // 赠品数量
-    			"beforeAskPrice": 10, // 调价金额
-    			"beforeAskPriceRemark": "测试AP单备注" // 调价备注 0 ~ 255 请前端同事校验好，后端也校验
+    			// "giftCount": "1", // 赠品数量
+    			// "beforeAskPrice": 10, // 调价金额
+    			// "beforeAskPriceRemark": "测试AP单备注" // 调价备注 0 ~ 255 请前端同事校验好，后端也校验
     		},
     		...
     	],
@@ -1336,7 +1364,11 @@
     {
         "code": 100000,
         "msg": "",
-        "data": null
+        "data": {
+            "id": 123, // 订单主键id
+            "orderId": "SA19000100002", // 订单号
+            "totalprice": 10000 // 订单实际金额
+        }
     }
     
 ### DD-119. 销售订单-获取“我的”订单列表（APP端）
@@ -1371,6 +1403,11 @@
                     }
                 }
             ],
+            "invoice": {
+                "id": 5132, // 发票id
+                "invoiceDoneTotal": 1, // 已完成的发票数量
+                "invoiceTotal": 1 // 发票总数量
+            },
             "payFlg": 0, // 0-未结款 1-结款
             "paymentType": "CASH", // CASH-先款后货 CREDIT-账余 DAOFU-货到付款
             "remark": "我的测试测试备注", // 备注
@@ -1636,7 +1673,7 @@
                     "beforeAskPrice": 0, // 差价单金额
                     "giftFlg": 0, // 是否赠品 0-赠品 1-申请的赠品 2-活动赠品
                     "pcount": 300, // 数量
-                    "price": 204, // 单机
+                    "price": 204, // 单价
                     "priceFlg": "NONE", // 价格类别 NONE-未知 T-特价 S-签约价 Q -区域价 A-A价 P-P价 AK-调价'
                     "productId": 4364, // 产品id
                     "productUnit": {
@@ -1695,8 +1732,29 @@
     }
     
 
-
-
+### DD-128. 销售订单-SYS端获取产品总价
+#### 模块负责人
+    梁铁骐
+#### 请求
+    POST /v2/saorder/price
+#### 参数
+    {
+        customerId: 1, // 客户id
+        pathId: '010101' // 区域
+        products: [
+            {
+                id: 12, // 如果是编辑页面要把产品明细id携带过来，新增页面则不用传
+                productUnitId: 27, 产品规格id
+                pcount: 36 // 数量 （赠品数量不传）
+            }
+        ]
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": 66666 // 产品总价
+    }
 
 
 
