@@ -4,7 +4,7 @@
 #### 模块负责人
     刘宏宇
 #### 请求
-    PUT /v2/order/ap
+    POST /v2/order/ap
 #### 参数
     {
         *"saOrderId": "test-03", // 销售订单号
@@ -32,7 +32,7 @@
 #### 模块负责人
     刘宏宇
 #### 请求
-    POST /v2/order/ap/pass/{orderId}
+    PUT /v2/order/ap/pass/{orderId}
 #### 参数
     *orderId: "AP1903110000008" // 差价、调价单ID
 #### 响应
@@ -46,7 +46,7 @@
 #### 模块负责人
     刘宏宇
 #### 请求
-    POST /v2/order/ap/refuse/{orderId}
+    PUT /v2/order/ap/refuse/{orderId}
 #### 参数
     *orderId: "AP1903110000008" // 差价、调价单ID
     body
@@ -62,9 +62,10 @@
 #### 模块负责人
     刘宏宇  
 #### 请求
-    POST /v2/order/ap/complete/{orderId}
+    PUT /v2/order/ap/complete/{orderId}/{saOrderId}
 #### 参数
     *orderId: "AP1903110000008" // 调价单ID
+    *saOrderId:"SAxxxxxx" // 对应销售单ID
 #### 响应
     {
         "code": 100000,
@@ -236,7 +237,7 @@
             "total": -1
         }
     }
-    
+
     
 ### DD-51. 销售退新增
 #### 模块负责人
