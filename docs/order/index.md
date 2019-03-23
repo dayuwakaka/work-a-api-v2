@@ -853,7 +853,7 @@
     PUT /v2/saorder/gift/askfor/pass
 #### 参数
     [1,2,3] // 主键
-#### 响应    
+#### 响应
     {
         "code": 100000,
         "msg": "",
@@ -877,7 +877,7 @@
     createEndDate: 创建结束日期
     sendStartDate: 发货开始日期
     sendEndDate: 发货结束日期
-#### 响应    
+#### 响应
     {
         "code": 100000,
         "msg": "",
@@ -1760,7 +1760,7 @@
 #### 模块负责人
     梁铁骐
 #### 请求
-    PUT /v2/saorder/{orderId}/market
+    DELETE /v2/saorder/{orderId}/market
 #### 参数
     orderId: 订单号
 #### 响应
