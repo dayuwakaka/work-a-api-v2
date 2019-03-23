@@ -18,6 +18,8 @@
     processPrice: 1  // 价格是否完善 0 未完善  1 完善
     processInvoice: 1 // 发票是否完善  0 未完善  1 完善
     lackFlg: 1          // 断货标志 0 非断货 1 断货
+    rawFlg: 0           // 是否原料品 0 非 1 是
+    rangeType: PART     // 销售区域类型 ALL 全部区域 PART 指定区域 EXCLUDE 排除区域
     buttonPermissionFlg: 1 
     pageNo:1 // 页码 默认1
     pageSize: 25 // 页面条数 默认25
@@ -39,20 +41,19 @@
                             "deleteFlg": 0,
                             "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/0220.png",
                             "hasProductCnt": 30,
-                            "id": 103,
+                            "id": 103,                      // 业态id
                             "level": 2,
                             "mIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190301161618188-4729.png",
                             "miniFlg": 1,
-                            "name": "甜品冰点",             // 业态名称
-                            "parentId": 16,
-                            "parentName": "西餐西快",
+                            "name": "甜品冰点",             // 业态名
+                            "parentId": 16,                 // 上级业态id
+                            "parentName": "西餐西快",        // 上级业态名
                             "pyCode": "",
                             "sIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/0220.png",
                             "showFlg": 1,
                             "styleUrl": "",
                             "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/0220.png"
-                        },
-                        .......
+                        }
                     ],
                     "createTime": "2018-11-16 06:09:12", // 创建时间
                     "customFlg": 0, // 是否定制 0 非定制 1 定制
@@ -70,6 +71,19 @@
                     "processContent": 1, // 内容完善状态 0 未完善 1 已完善
                     "processInvoice": 0, // 发票完善状态 0 未完善 1 已完善
                     "processPrice": 1, // 价格完善状态 0 未完善 1 已完善
+                    @@"productAttrs": [
+                        {
+                            "categoryId": 1,            // 分类id
+                            "categoryName": "属性分类一",    // 分类名称
+                            "createTime": "",
+                            "deleteFlg": 0,
+                            "depotSafeFlg": 0,
+                            "id": 1,                    // 属性id
+                            "isDepotSafe": "",
+                            "name": "特长属性",         // 属性名称
+                            "productId": 4752
+                        }
+                    ],
                     "productExtra": null,
                     "productImgs": null,
                     "productLack": { // 缺货标识，null 为不缺货
@@ -77,6 +91,23 @@
                         "startTime": "2018-01-01", // 缺货开始时间
                         "endTime": "2018-01-20" // 缺货结束时间
                     },
+                    @@"productRange": [
+                        {
+                            "id": 7,
+                            "pathid": "06",     // 区域编码
+                            "productId": 4752
+                        },
+                        {
+                            "id": 8,
+                            "pathid": "0602",
+                            "productId": 4752
+                        },
+                        {
+                            "id": 9,
+                            "pathid": "060101",
+                            "productId": 4752
+                        }
+                    ],
                     "productUnits": [ // 规格列表
                         {
                             "cubage": 0,
@@ -89,9 +120,22 @@
                             "minimumType": null,
                             "netweight": 234,
                             "perunit": 234, // 转化率
-                            "price": null, 
+                            @@"price": {
+                                "aPrice": 4.8,          // A价格
+                                "areaPrice": 0,
+                                "decideType": null,
+                                "finallyPrice": 0,  
+                                "pPrice": 3.8,          // P价格
+                                "productUnitId": 0,
+                                "rate": 0,              // 这算比率
+                                "rawFlg": "NO",     // 是否原料 NO 非 YES 是
+                                "signPrice": 0,
+                                "specialPrice": 0
+                            },
+                            "product": null,
                             "productCart": null,
                             "productId": 4697, 
+                            "stock": null,
                             "unit": "袋", // 单位
                             "unitId": 1, // 单位id
                             "width": 234
@@ -107,9 +151,22 @@
                             "minimumType": null,
                             "netweight": 9999.9999,
                             "perunit": 9999.99,
-                            "price": null,
+                            @@"price": {
+                                "aPrice": 4.8,
+                                "areaPrice": 0,
+                                "decideType": null,
+                                "finallyPrice": 0,
+                                "pPrice": 3.8,
+                                "productUnitId": 0,
+                                "rate": 0,
+                                "rawFlg": "NO",
+                                "signPrice": 0,
+                                "specialPrice": 0
+                            },
+                            "product": null,
                             "productCart": null,
                             "productId": 4697,
+                            "stock": null,
                             "unit": "件",
                             "unitId": 1, // 单位id
                             "width": 123412
@@ -117,6 +174,7 @@
                     ],
                     "pyAll": "",
                     "pyCode": "",
+                    "rangeType": "ALL",     // ALL 全部区域 PART 指定区域 EXCLUDE 排除区域
                     "relatePnos": null,
                     "status": "LOCK", // 上下架状态 NORMAL 上架 LOCK 下架
                     "stock": null,
@@ -734,6 +792,72 @@
         }
     }
 
+### CP-17.  产品下架
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT /v2/product/down/{id}
+#### 参数
+    *id:1 // 产品ID
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+   
+ 
+### CP-106. 操作日志列表
+#### 模块负责人
+    尹洪明
+#### 请求
+
+    GET     /v2/product/lack/log
+    
+#### 参数
+
+    *id      // 断货id
+    
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": null,
+            "dataSums": null,
+            "datas": [
+                {
+                    "content": "新增断货",  // 操作内容
+                    "id": 0,
+                    "lackIds": null,        // 断货id 
+                    "note": "",
+                    "operTime": "2018-09-12 10:55:58",  // 操作时间
+                    "operUser": 0,          
+                    "operUserName": "樊嘉辉"        // 操作人
+                }
+            ],
+            "pageNo": 1,
+            "total": 4
+        }
+    } 
+
+### CP-107. 产品销售区域修改
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT     /v2/product/area/{productId}
+#### 参数
+    *productId  // 产品id
+    {
+        *"pathid": ["06","0602","060101"]
+    }
+#### 响应
+    {
+    	"code": 100000,
+    	"msg": "",
+    	"data": null
+    }
+    
 ### CP-16.批量修改产品业态
 #### 模块负责人
     尹洪明
@@ -754,20 +878,6 @@
         "data": null
     }
 
-### CP-17.  产品下架
-#### 模块负责人
-    尹洪明
-#### 请求
-    PUT /v2/product/down/{id}
-#### 参数
-    *id:1 // 产品ID
-#### 响应
-    {
-        "code": 100000,
-        "msg": "",
-        "data": null
-    }
-    
 ### CP-50.产品业态查询
 #### 模块负责人
     尹洪明
@@ -930,141 +1040,7 @@
             "styleUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190121132417926-4745.png",
         }
     }
- 
-### CP-56.产品属性分类新增
-#### 模块负责人
-    尹洪明
-#### 请求
-    POST /v2/product/attr/category
-#### 参数
-    {
-        *"name":"特殊安全库存"
-    }
-#### 响应
-    {
-    	"code": 100000,
-    	"msg": "",
-    	"data": null
-    }
- 
-### CP-57.产品属性分类列表
-#### 模块负责人
-    尹洪明
-#### 请求
-    GET /v2/product/attr/category
-#### 参数
-    无
-#### 响应
-    {
-        "code": 100000,
-        "msg": "",
-        "data": [
-            {
-                "createTime": "",
-                "deleteFlg": 0,
-                "id": 1,                // 分类id
-                "name": "特殊安全库存"    // 分类名称
-            }
-        ]
-    }
- 
-### CP-58.产品属性新增
-#### 模块负责人
-    尹洪明
-#### 请求
-    POST /v2/product/attr
-#### 参数
-    {
-        "categoryId":1,                     // 分类id
-        "name":"运输周期超过一周以上的产品", // 属性名
-        "depotSafeFlg":1            // 是否计入安全库存(0 不计入 1 计入)
-    }
-#### 响应
-    {
-    	"code": 100000,
-    	"msg": "",
-    	"data": null
-    }
-
-### CP-59.产品属性修改
-#### 模块负责人
-    尹洪明
-#### 请求
-    PUT /v2/product/attr/{id}
-#### 参数
-    *id // 属性id
-    {
-        "categoryId":1,                     // 分类id
-        "name":"运输周期超过一周以上的产品", // 属性名
-        "depotSafeFlg":1            // 是否计入安全库存(0 不计入 1 计入)
-    }
-#### 响应
-    {
-    	"code": 100000,
-    	"msg": "",
-    	"data": null
-    }
-    
-### CP-60.产品属性删除
-#### 模块负责人
-    尹洪明
-#### 请求
-    DELETE /v2/product/attr/{id}
-#### 参数
-    *id // 属性id
-#### 响应
-    {
-    	"code": 100000,
-    	"msg": "",
-    	"data": null
-    } 
-### CP-61.产品属性列表
-#### 模块负责人
-    尹洪明
-#### 请求
-    GET /v2/product/attr
-#### 参数
-    keyword // 属性名称
-    categoryId // 分类id
-#### 响应
-    {
-        "code": 100000,
-        "msg": "",
-        "data": [
-            {
-                "categoryId": 0,
-                "categoryName": "特殊安全库存",       // 属性分类名
-                "createTime": "",
-                "deleteFlg": 0,
-                "depotSafeFlg": 0,
-                "id": 1,                            // 属性id
-                "isDepotSafe": "不计算安全库存",       // 属性特权
-                "name": "运输周期超过一周以上的产品",    // 属性名称
-                "productId": 0
-            }
-        ]
-    }
-
-### CP-62.产品属性详情
-#### 模块负责人
-    尹洪明
-#### 请求
-    GET /v2/product/attr/detail/{id}
-#### 参数
-    *id // 属性id
-#### 响应
-    {
-        "code": 100000,
-        "msg": "",
-        "data": {
-            "categoryId": 1,        // 分类id
-            "createTime": "",
-            "deleteFlg": 0,
-            "depotSafeFlg": 1,                      // 是否计入安全库存(0 不计入 1 计入)
-            "id": 1,                                // 属性id
-            "name": "运输周期超过一周以上的产品"         // 属性名称
-        }
-    }    
+  
       
 ### CP-101. 新增断货
 #### 模块负责人
@@ -1215,65 +1191,221 @@
     	"data": null
     }
  
- 
-### CP-106. 操作日志列表
+### CP-56.产品属性分类新增
 #### 模块负责人
     尹洪明
 #### 请求
-
-    GET     /v2/product/lack/log
-    
+    POST /v2/product/attr/category
 #### 参数
-
-    *id      // 断货id
-    
+    {
+        *"name":"特殊安全库存"
+    }
 #### 响应
+    {
+    	"code": 100000,
+    	"msg": "",
+    	"data": null
+    }
+ 
+### CP-57.产品属性分类列表
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /v2/product/attr/category
+#### 参数
+    无
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "createTime": "",
+                "deleteFlg": 0,
+                "id": 1,                // 分类id
+                "name": "特殊安全库存"    // 分类名称
+            }
+        ]
+    }
+ 
+### CP-58.产品属性新增
+#### 模块负责人
+    尹洪明
+#### 请求
+    POST /v2/product/attr
+#### 参数
+    {
+        "categoryId":1,                     // 分类id
+        "name":"运输周期超过一周以上的产品", // 属性名
+        "depotSafeFlg":1            // 是否计入安全库存(0 不计入 1 计入)
+    }
+#### 响应
+    {
+    	"code": 100000,
+    	"msg": "",
+    	"data": null
+    }
 
+### CP-59.产品属性修改
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT /v2/product/attr/{id}
+#### 参数
+    *id // 属性id
+    {
+        "categoryId":1,                     // 分类id
+        "name":"运输周期超过一周以上的产品", // 属性名
+        "depotSafeFlg":1            // 是否计入安全库存(0 不计入 1 计入)
+    }
+#### 响应
+    {
+    	"code": 100000,
+    	"msg": "",
+    	"data": null
+    }
+    
+### CP-60.产品属性删除
+#### 模块负责人
+    尹洪明
+#### 请求
+    DELETE /v2/product/attr/{id}
+#### 参数
+    *id // 属性id
+#### 响应
+    {
+    	"code": 100000,
+    	"msg": "",
+    	"data": null
+    } 
+### CP-61.产品属性列表
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /v2/product/attr
+#### 参数
+    keyword // 属性名称
+    categoryId // 分类id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "categoryId": 0,
+                "categoryName": "特殊安全库存",       // 属性分类名
+                "createTime": "",
+                "deleteFlg": 0,
+                "depotSafeFlg": 0,
+                "id": 1,                            // 属性id
+                "isDepotSafe": "不计算安全库存",       // 属性特权
+                "name": "运输周期超过一周以上的产品",    // 属性名称
+                "productId": 0
+            }
+        ]
+    }
+
+### CP-62.产品属性详情
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /v2/product/attr/detail/{id}
+#### 参数
+    *id // 属性id
+#### 响应
     {
         "code": 100000,
         "msg": "",
         "data": {
-            "buttonPermissions": null,
-            "dataSums": null,
-            "datas": [
-                {
-                    "content": "新增断货",  // 操作内容
-                    "id": 0,
-                    "lackIds": null,        // 断货id 
-                    "note": "",
-                    "operTime": "2018-09-12 10:55:58",  // 操作时间
-                    "operUser": 0,          
-                    "operUserName": "樊嘉辉"        // 操作人
-                },
-                {
-                    "content": "锁定",
-                    "id": 0,
-                    "lackIds": null,
-                    "note": "",
-                    "operTime": "2018-09-12 11:55:49",
-                    "operUser": 0,
-                    "operUserName": "樊嘉辉"
-                },
-                {
-                    "content": "作废",
-                    "id": 0,
-                    "lackIds": null,
-                    "note": "",
-                    "operTime": "2018-09-12 11:56:31",
-                    "operUser": 0,
-                    "operUserName": "樊嘉辉"
-                },
-                {
-                    "content": "更新断货",
-                    "id": 0,
-                    "lackIds": null,
-                    "note": "",
-                    "operTime": "2018-09-12 12:23:48",
-                    "operUser": 0,
-                    "operUserName": "樊嘉辉"
-                }
-            ],
-            "pageNo": 1,
-            "total": 4
+            "categoryId": 1,        // 分类id
+            "createTime": "",
+            "deleteFlg": 0,
+            "depotSafeFlg": 1,                      // 是否计入安全库存(0 不计入 1 计入)
+            "id": 1,                                // 属性id
+            "name": "运输周期超过一周以上的产品"         // 属性名称
         }
+    }  
+    
+### CP-108. 产品属性查询
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET     /v2/product/attr/group
+#### 参数
+    *attrId[]: 1   // 属性id 
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "createTime": "",
+                "deleteFlg": 0,
+                "id": 2,                // 分类id
+                "name": "属性分类二",    // 分类名
+                "productAttr": [
+                    {
+                        "categoryId": 2,
+                        "createTime": "",
+                        "deleteFlg": 0,
+                        "depotSafeFlg": 0,
+                        "id": 2,        // 属性id
+                        "name": "特惠"    // 属性名
+                    }
+                ]
+            },
+            {
+                "createTime": "",
+                "deleteFlg": 0,
+                "id": 1,
+                "name": "属性分类一",
+                "productAttr": [
+                    {
+                        "categoryId": 1,
+                        "createTime": "",
+                        "deleteFlg": 0,
+                        "depotSafeFlg": 0,
+                        "id": 3,
+                        "name": "特性图"
+                    },
+                    {
+                        "categoryId": 1,
+                        "createTime": "",
+                        "deleteFlg": 0,
+                        "depotSafeFlg": 0,
+                        "id": 1,
+                        "name": "特长属性"
+                    }
+                ]
+            }
+        ]
+    }
+    
+     
+### CP-109. 产品关联属性
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT     /v2/product/attr/product2attr/{productIds}
+#### 参数
+    *productIds  // 1,2,3
+    [
+        {
+            *"categoryId": 1,
+            *"attrId": 1
+        },
+        {
+            "categoryId": 1,
+            "attrId": 2
+        },
+        {
+            "categoryId": 2,
+            "attrId": 3
+        }
+    ]
+#### 响应    
+    {
+    	"code": 100000,
+    	"msg": "",
+    	"data": null
     }
