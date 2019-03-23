@@ -1390,3 +1390,115 @@
             }
         ]
     }    
+
+### YX-31. 查询广告位
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /v2/marketAdvertisement
+#### 参数    
+    name                // 广告位名称
+    type                // 广告位类型 BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告
+    businesstypeId      // 关联业态id
+    marketType          // 关联活动类型
+    marketStatu         // 关联活动状态 0 正常 1 作废
+    deleteFlg           // 状态 0 正常 1 作废
+    pageNo              // 页码
+    pageSize            // 页条数
+#### 响应
+{
+    "code": 100000,
+    "msg": "",
+    "data": {
+        "buttonPermissions": [],
+        "dataSums": null,
+        "datas": [
+            {
+                "businesstypeRange": "PART",//广告位关联业态范围 ALL 全部业态 PART 部分
+                "createRole": 1,
+                "createTime": "2019-03-22 13:37:19.0",
+                "createUser": 518,
+                "createUsername": "孙启萌",
+                "deleteFlg": 0,
+                "id": 16,
+                "image": "http://beijing.aliyuncs.com/businesstype/w02.png",
+                "market": {//广告位关联活动数据
+                    "bannerPic": "",
+                    "createTime": "2018-10-25 12:05:55",
+                    "createUser": 232,
+                    "createUserName": "赵江敏",
+                    "customerRange": "ALL",
+                    "deleteFlg": 0,
+                    "effectEtime": "2018-10-27 23:59:59",
+                    "effectStime": "2018-10-25 00:00:00",
+                    "id": 150,
+                    "name": "10月25号-27号线上秒杀仅限3天",
+                    "overdue": 0,
+                    "remark": "",
+                    "type": "SPECIAL"
+                },
+                "marketId": 150,
+                "modifyTime": "2019-03-22 05:37:21.0",
+                "name": "测试广告位3",
+                "productBusinessTypepArray": [//广告位关联业态数据集合
+                    {
+                        "code": "-16-",
+                        "deleteFlg": 0,
+                        "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g02.png",
+                        "hasProductCnt": 0,
+                        "id": 16,
+                        "level": 1,
+                        "mIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190304143700781-1981.png",
+                        "miniFlg": 1,
+                        "name": "西餐西快",
+                        "parentId": 0,
+                        "parentName": "",
+                        "pyCode": "XCXK",
+                        "sIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png",
+                        "showFlg": 1,
+                        "styleUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190304143621318-3752.jpg",
+                        "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w02.png"
+                    },
+                    {
+                        "code": "-22-",
+                        "deleteFlg": 1,
+                        "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g03.png",
+                        "hasProductCnt": 0,
+                        "id": 22,
+                        "level": 1,
+                        "mIcon": "",
+                        "miniFlg": 0,
+                        "name": "日韩料理",
+                        "parentId": 0,
+                        "parentName": "",
+                        "pyCode": "RILL",
+                        "sIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s03.png",
+                        "showFlg": 1,
+                        "styleUrl": "",
+                        "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w03.png"
+                    }
+                ],
+                "type": "BANNER"//广告位类型
+            }
+        ],
+        "pageNo": 1,
+        "total": 1
+    }
+}
+
+### YX-32. 新增广告位
+#### 模块负责人
+    王子悦
+#### 请求
+    POST v2/marketAdvertisement
+#### 参数    
+    {
+    "name":"测试广告位1",// 广告位名称
+    "type":"BANNER",// 广告位类型 BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告
+    "businesstypeRange":"PART", // 关联业态范围
+    "rangeId":"16,22", // 关联业态id
+    "image":"http://beijing.aliyuncs.com/businesstype/w02.png",//图片地址
+    "marketId":"5"//关联活动id
+    }
+#### 响应
+    {"code":100000,"msg":"","data":null}
