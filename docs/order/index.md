@@ -1770,9 +1770,33 @@
         "data": null
     }
 
+### DD-130. 销售订单-取消订单返利券
+#### 模块负责人
+    梁铁骐
+#### 请求
+    DELETE /v2/saorder/{orderId}/rebate
+#### 参数
+    orderId: 订单号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
 
-
-
+### DD-131. 销售订单-取消订单优惠活动
+#### 模块负责人
+    梁铁骐
+#### 请求
+    DELETE /v2/saorder/{orderId}/coupon-market
+#### 参数
+    orderId: 订单号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
 
 
 
