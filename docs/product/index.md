@@ -1416,26 +1416,23 @@
 #### 请求
     POST     /nowfuture
 #### 参数  
-    {
-        "depotId": 40,
-        "nowFuture": [
-            {
-                "depotId": 40,
-                "productId": 4749,
-                "type": "NOW"
-            },
-            {
-                "depotId": 40,
-                "productId": 4748,
-                "type": "FUTURE"
-            },
-            {
-                "depotId": 40,
-                "productId": 4747,
-                "type": "NOW"
-            }
-        ]
-    }
+    [
+        {
+            "depotId": 40,
+            "productId": 4749,
+            "type": "NOW"
+        },
+        {
+            "depotId": 40,
+            "productId": 4748,
+            "type": "FUTURE"
+        },
+        {
+            "depotId": 40,
+            "productId": 4747,
+            "type": "NOW"
+        }
+    ]
 #### 响应  
     {
         "code": 100000,
