@@ -775,6 +775,7 @@
                 "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201809/bf4f1596765356a6bec573ccf302e8d2.jpg", // 产品包装图
                 "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201809/5de6f5e608e5fa07f08e637a8c940f6c.jpg", // 产品图
                 "name": "天妇罗虾（裹粉炸虾）预炸", // 产品名
+                @@"nowfuture": "NOW",         // NOW 现货  FUTURE 期货
                 "pno": "1680", // 品号
                 "process": 4, 
                 "processContent": 1,
@@ -976,6 +977,7 @@
             "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/f9ce32e007fc796722466531c86d5cd9.jpg", // 产品包装图
             "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg", // 产品主图
             "name": "香草凤尾虾", // 产品名
+            @@"nowfuture": "NOW",         // NOW 现货  FUTURE 期货
             "pno": "0151", // 品号
             "process": 4,
             "processContent": 1,
@@ -1123,6 +1125,7 @@
                             "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/643130529230f29af376829e0c96d208.jpg", // 产品包装图
                             "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/1f91464a8a09dc642230ad0259074be9.jpg", // 产品主图
                             "name": "鱿点Q（裹粉鱿鱼）", // 产品名
+                            @@"nowfuture": "NOW",         // NOW 现货  FUTURE 期货
                             "pno": "0118", // 品号
                             "process": 4,
                             "processContent": 1,
@@ -1272,6 +1275,7 @@
                         "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/f9ce32e007fc796722466531c86d5cd9.jpg", // 产品包装图
                         "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg", // 产品图
                         "name": "香草凤尾虾", // 产品名
+                        @@"nowfuture": "NOW",         // NOW 现货  FUTURE 期货
                         "pno": "0151", // 品号
                         "productLack": { // 缺货标识, NULL 未不缺货
                             "productId": 1,

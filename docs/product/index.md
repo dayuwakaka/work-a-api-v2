@@ -768,6 +768,7 @@
                         "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/f9ce32e007fc796722466531c86d5cd9.jpg", // 主图背景图
                         "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg", // 主图
                         "name": "香草凤尾虾", // 产品名
+                        @@"nowfuture": "NOW",         // NOW 现货  FUTURE 期货
                         "pno": "0151", // 品号
                         "productLack": { // 缺货标识，若未null 则不缺货
                             "productId": 1，
