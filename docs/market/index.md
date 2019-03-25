@@ -1406,85 +1406,85 @@
     pageNo              // 页码
     pageSize            // 页条数
 #### 响应
-{
-    "code": 100000,
-    "msg": "",
-    "data": {
-        "buttonPermissions": [],
-        "dataSums": null,
-        "datas": [
-            {
-                "businesstypeRange": "PART",//广告位关联业态范围 ALL 全部业态 PART 部分
-                "createRole": 1,
-                "createTime": "2019-03-22 13:37:19.0",
-                "createUser": 518,
-                "createUsername": "孙启萌",
-                "deleteFlg": 0,
-                "id": 16,
-                "image": "http://beijing.aliyuncs.com/businesstype/w02.png",
-                "market": {//广告位关联活动数据
-                    "bannerPic": "",
-                    "createTime": "2018-10-25 12:05:55",
-                    "createUser": 232,
-                    "createUserName": "赵江敏",
-                    "customerRange": "ALL",
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [],
+            "dataSums": null,
+            "datas": [
+                {
+                    "businesstypeRange": "PART",//广告位关联业态范围 ALL 全部业态 PART 部分
+                    "createRole": 1,
+                    "createTime": "2019-03-22 13:37:19.0",
+                    "createUser": 518,
+                    "createUsername": "孙启萌",
                     "deleteFlg": 0,
-                    "effectEtime": "2018-10-27 23:59:59",
-                    "effectStime": "2018-10-25 00:00:00",
-                    "id": 150,
-                    "name": "10月25号-27号线上秒杀仅限3天",
-                    "overdue": 0,
-                    "remark": "",
-                    "type": "SPECIAL"
-                },
-                "marketId": 150,
-                "modifyTime": "2019-03-22 05:37:21.0",
-                "name": "测试广告位3",
-                "productBusinessTypepArray": [//广告位关联业态数据集合
-                    {
-                        "code": "-16-",
+                    "id": 16,
+                    "image": "http://beijing.aliyuncs.com/businesstype/w02.png",
+                    "market": {//广告位关联活动数据
+                        "bannerPic": "",
+                        "createTime": "2018-10-25 12:05:55",
+                        "createUser": 232,
+                        "createUserName": "赵江敏",
+                        "customerRange": "ALL",
                         "deleteFlg": 0,
-                        "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g02.png",
-                        "hasProductCnt": 0,
-                        "id": 16,
-                        "level": 1,
-                        "mIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190304143700781-1981.png",
-                        "miniFlg": 1,
-                        "name": "西餐西快",
-                        "parentId": 0,
-                        "parentName": "",
-                        "pyCode": "XCXK",
-                        "sIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png",
-                        "showFlg": 1,
-                        "styleUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190304143621318-3752.jpg",
-                        "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w02.png"
+                        "effectEtime": "2018-10-27 23:59:59",
+                        "effectStime": "2018-10-25 00:00:00",
+                        "id": 150,
+                        "name": "10月25号-27号线上秒杀仅限3天",
+                        "overdue": 0,
+                        "remark": "",
+                        "type": "SPECIAL"
                     },
-                    {
-                        "code": "-22-",
-                        "deleteFlg": 1,
-                        "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g03.png",
-                        "hasProductCnt": 0,
-                        "id": 22,
-                        "level": 1,
-                        "mIcon": "",
-                        "miniFlg": 0,
-                        "name": "日韩料理",
-                        "parentId": 0,
-                        "parentName": "",
-                        "pyCode": "RILL",
-                        "sIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s03.png",
-                        "showFlg": 1,
-                        "styleUrl": "",
-                        "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w03.png"
-                    }
-                ],
-                "type": "BANNER"//广告位类型
-            }
-        ],
-        "pageNo": 1,
-        "total": 1
+                    "marketId": 150,
+                    "modifyTime": "2019-03-22 05:37:21.0",
+                    "name": "测试广告位3",
+                    "productBusinessTypepArray": [//广告位关联业态数据集合
+                        {
+                            "code": "-16-",
+                            "deleteFlg": 0,
+                            "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g02.png",
+                            "hasProductCnt": 0,
+                            "id": 16,
+                            "level": 1,
+                            "mIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190304143700781-1981.png",
+                            "miniFlg": 1,
+                            "name": "西餐西快",
+                            "parentId": 0,
+                            "parentName": "",
+                            "pyCode": "XCXK",
+                            "sIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png",
+                            "showFlg": 1,
+                            "styleUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190304143621318-3752.jpg",
+                            "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w02.png"
+                        },
+                        {
+                            "code": "-22-",
+                            "deleteFlg": 1,
+                            "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g03.png",
+                            "hasProductCnt": 0,
+                            "id": 22,
+                            "level": 1,
+                            "mIcon": "",
+                            "miniFlg": 0,
+                            "name": "日韩料理",
+                            "parentId": 0,
+                            "parentName": "",
+                            "pyCode": "RILL",
+                            "sIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s03.png",
+                            "showFlg": 1,
+                            "styleUrl": "",
+                            "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w03.png"
+                        }
+                    ],
+                    "type": "BANNER"//广告位类型
+                }
+            ],
+            "pageNo": 1,
+            "total": 1
+        }
     }
-}
 
 ### YX-32. 新增广告位
 #### 模块负责人
@@ -1502,3 +1502,229 @@
     }
 #### 响应
     {"code":100000,"msg":"","data":null}
+
+### YX-33. 更新广告位
+#### 模块负责人
+    王子悦
+#### 请求
+    PUT v2/marketAdvertisement/{id}
+#### 参数    
+    {
+    "name":"测试广告位1",// 广告位名称
+    "type":"BANNER",// 广告位类型 BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告
+    "businesstypeRange":"PART", // 关联业态范围
+    "rangeId":"16,22", // 关联业态id
+    "image":"http://beijing.aliyuncs.com/businesstype/w03.png",//图片地址
+    "marketId":"5"//关联活动id
+    }
+#### 响应
+    {"code":100000,"msg":"","data":null}
+
+### YX-34. 删除广告位
+#### 模块负责人
+    王子悦
+#### 请求
+    DELETE v2/marketAdvertisement/{id}
+#### 参数    
+    id  //广告位id
+#### 响应
+    {"code":100000,"msg":"","data":null}   
+
+### YX-35. 查询广告位操作日志
+#### 模块负责人
+    王子悦
+#### 请求
+    GET v2/marketAdvertisement/log/{id}
+#### 参数    
+    id  //广告位id
+#### 响应
+    {
+    "code": 100000,
+    "msg": "",
+    "data": {
+        "buttonPermissions": [],
+        "dataSums": null,
+        "datas": [
+            {
+                "advertisementId": 15,
+                "id": 32,
+                "opInfo": "删除广告位信息",
+                "opRole": 1,
+                "opTime": "2019-03-23 11:18:58.0",
+                "opUser": 518,
+                "opUsername": "孙启萌"
+            },
+            {
+                "advertisementId": 15,
+                "id": 2,
+                "opInfo": "新增广告位信息",
+                "opRole": 1,
+                "opTime": "2019-03-22 13:37:18.0",
+                "opUser": 518,
+                "opUsername": "孙启萌"
+            }
+        ],
+        "pageNo": 1,
+        "total": 2
+    }
+    }
+### YX-36. app端查询广告位列表数据
+#### 模块负责人
+    王子悦
+#### 请求
+    GET router/v5/market/marketAdvertisements
+#### 参数    
+    无
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "businesstypeRange": "PART",
+                "createRole": 1,
+                "createTime": "2019-03-23 10:38:14.0",
+                "createUser": 518,
+                "createUsername": "孙启萌",
+                "deleteFlg": 0,
+                "id": 41,
+                "image": "http://beijing.aliyuncs.com/businesstype/w02.png",
+                "market": {
+                    "bannerPic": "",
+                    "createTime": "2018-03-13 14:00:12",
+                    "createUser": 101,
+                    "createUserName": "樊嘉辉",
+                    "customerRange": "NEW",
+                    "deleteFlg": 0,
+                    "effectEtime": "2018-04-30 23:59:59",
+                    "effectStime": "2018-03-01 00:00:00",
+                    "id": 5,
+                    "name": "新用户满减活动",
+                    "overdue": 0,
+                    "remark": "",
+                    "type": "COUPON"
+                },
+                "marketId": 5,
+                "modifyTime": "2019-03-23 02:38:17.0",
+                "name": "测试广告位7",
+                "productBusinessTypepArray": [
+                    {
+                        "code": "-34-",
+                        "deleteFlg": 0,
+                        "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g05.png",
+                        "hasProductCnt": 0,
+                        "id": 34,
+                        "level": 1,
+                        "mIcon": "",
+                        "miniFlg": 0,
+                        "name": "农贸市集",
+                        "parentId": 0,
+                        "parentName": "",
+                        "pyCode": "NSJ",
+                        "sIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s05.png",
+                        "showFlg": 1,
+                        "styleUrl": "",
+                        "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w05.png"
+                    },
+                    {
+                        "code": "-44-",
+                        "deleteFlg": 0,
+                        "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g08.png",
+                        "hasProductCnt": 0,
+                        "id": 44,
+                        "level": 1,
+                        "mIcon": "",
+                        "miniFlg": 0,
+                        "name": "火锅烧烤",
+                        "parentId": 0,
+                        "parentName": "",
+                        "pyCode": "IGSK",
+                        "sIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s08.png",
+                        "showFlg": 1,
+                        "styleUrl": "",
+                        "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w08.png"
+                    }
+                ],
+                "type": "BANNER"
+            }
+        ]
+    }
+### YX-37. app端查询广告位详情数据
+#### 模块负责人
+    王子悦
+#### 请求
+    GET router/v5/market/marketAdvertisement/{id}
+#### 参数    
+    id //广告位id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "businesstypeRange": "PART",
+            "createRole": 1,
+            "createTime": "2019-03-22 13:37:19.0",
+            "createUser": 518,
+            "createUsername": "孙启萌",
+            "deleteFlg": 0,
+            "id": 16,
+            "image": "http://beijing.aliyuncs.com/businesstype/w02.png",
+            "market": {
+                "bannerPic": "",
+                "createTime": "2019-03-04 15:25:16",
+                "createUser": 232,
+                "createUserName": "赵江敏",
+                "customerRange": "ALL",
+                "deleteFlg": 0,
+                "effectEtime": "2019-04-30 23:59:59",
+                "effectStime": "2019-03-04 00:00:00",
+                "id": 231,
+                "name": "在线订购满2000元享受9折原料品跟特价不参加",
+                "overdue": 0,
+                "remark": "",
+                "type": "DISCOUNT"
+            },
+            "marketId": 231,
+            "modifyTime": "2019-03-22 05:37:21.0",
+            "name": "测试广告位3",
+            "productBusinessTypepArray": [
+                {
+                    "code": "-22-",
+                    "deleteFlg": 1,
+                    "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g03.png",
+                    "hasProductCnt": 0,
+                    "id": 22,
+                    "level": 1,
+                    "mIcon": "",
+                    "miniFlg": 0,
+                    "name": "日韩料理",
+                    "parentId": 0,
+                    "parentName": "",
+                    "pyCode": "RILL",
+                    "sIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s03.png",
+                    "showFlg": 1,
+                    "styleUrl": "",
+                    "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w03.png"
+                },
+                {
+                    "code": "-44-",
+                    "deleteFlg": 0,
+                    "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g08.png",
+                    "hasProductCnt": 0,
+                    "id": 44,
+                    "level": 1,
+                    "mIcon": "",
+                    "miniFlg": 0,
+                    "name": "火锅烧烤",
+                    "parentId": 0,
+                    "parentName": "",
+                    "pyCode": "IGSK",
+                    "sIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s08.png",
+                    "showFlg": 1,
+                    "styleUrl": "",
+                    "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w08.png"
+                }
+            ],
+            "type": "COLUMN"
+        }
+    }
