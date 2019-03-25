@@ -1525,11 +1525,26 @@
 #### 模块负责人
     尹洪明
 #### 请求
-    POST     /nowfuture
+    GET     /nowfuture/profile/{depotId}
 #### 参数   
-
+    *depotId // 仓库id
 #### 响应
-
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "allCount": 380,                // 全部产品
+                "customerCount": 5735,          // 近三个月服务客户
+                "depotId": 40,                  // 仓库id
+                "depotName": "DC（大连仓）ASA",      // 仓库名
+                "futureCount": 199,             // 期货产品
+                "nowCount": 181,                // 现货产品
+                "outCategory": 297,             // 上月出库品类
+                "outJian": 1100608              // 上月出库件数
+            }
+        ]
+    }
 
    
 ### CP-157. 期货现货日志
