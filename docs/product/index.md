@@ -1578,3 +1578,256 @@
             "total": 0
         }
     }  
+### CP-201. 查询热搜信息
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /v2/productkeyword
+#### 参数    
+    keyword             // 热搜词
+    type                // QUERY 关键词 DETAIL 关联产品 MARKET 关联活动
+    businesstypeId      // 关联业态id
+    deleteFlg           // 状态 0 正常 1 作废
+    pageNo              // 页码
+    pageSize            // 页条数
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [],
+            "dataSums": null,
+            "datas": [
+                {//此热搜关联活动数据，market里加载活动信息，product是null，relateInfo是market_id
+                    "businesstypeRange": "PART",
+                    "createRole": 1,
+                    "createTime": "2019-03-25 13:18:19",
+                    "createUser": 518,
+                    "createUsername": "孙启萌",
+                    "deleteFlg": 0,
+                    "id": 7,
+                    "keyword": "本季热卖鞋品3",
+                    "market": {
+                        "bannerPic": "",
+                        "createTime": "2018-03-13 14:00:12",
+                        "createUser": 101,
+                        "createUserName": "樊嘉辉",
+                        "customerRange": "NEW",
+                        "deleteFlg": 0,
+                        "effectEtime": "2018-04-30 23:59:59",
+                        "effectStime": "2018-03-01 00:00:00",
+                        "id": 5,
+                        "name": "新用户满减活动",
+                        "overdue": 0,
+                        "remark": "",
+                        "type": "COUPON"
+                    },
+                    "modifyTime": "2019-03-25 13:18:19",
+                    "product": null,
+                    "productBusinessTypepArray": [
+                        {
+                            "code": "-34-",
+                            "deleteFlg": 0,
+                            "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g05.png",
+                            "hasProductCnt": 0,
+                            "id": 34,
+                            "level": 1,
+                            "mIcon": "",
+                            "miniFlg": 0,
+                            "name": "农贸市集",
+                            "parentId": 0,
+                            "parentName": "",
+                            "pyCode": "NSJ",
+                            "sIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s05.png",
+                            "showFlg": 1,
+                            "styleUrl": "",
+                            "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w05.png"
+                        }
+                    ],
+                    "relateInfo": "5",
+                    "type": "MARKET"
+                },
+                {//此热搜关联产品数据，market是null，product里加载产品数据，relateInfo是product_id
+                    "businesstypeRange": "PART",
+                    "createRole": 1,
+                    "createTime": "2019-03-25 13:16:19",
+                    "createUser": 518,
+                    "createUsername": "孙启萌",
+                    "deleteFlg": 0,
+                    "id": 6,
+                    "keyword": "本季热卖鞋品2",
+                    "market": null,
+                    "modifyTime": "2019-03-25 13:16:19",
+                    "product": {
+                        "createTime": "2014-06-21 11:26:58.0",
+                        "customFlg": 0,
+                        "deleteFlg": 0,
+                        "id": 1,
+                        "longName": "香草凤尾虾-专业开背，秘制加工，中西餐厅新食尚~",
+                        "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/f9ce32e007fc796722466531c86d5cd9.jpg",
+                        "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg",
+                        "name": "香草凤尾虾",
+                        "pno": "0151",
+                        "process": 4,
+                        "processContent": 1,
+                        "processInvoice": 1,
+                        "processPrice": 1,
+                        "pyAll": "xiangcaofengweixia",
+                        "pyCode": "XCFWX",
+                        "rangeType": "ALL",
+                        "status": "NORMAL",
+                        "taxRate": 0
+                    },
+                    "productBusinessTypepArray": [
+                        {
+                            "code": "-16-",
+                            "deleteFlg": 0,
+                            "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g02.png",
+                            "hasProductCnt": 0,
+                            "id": 16,
+                            "level": 1,
+                            "mIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190304143700781-1981.png",
+                            "miniFlg": 1,
+                            "name": "西餐西快",
+                            "parentId": 0,
+                            "parentName": "",
+                            "pyCode": "XCXK",
+                            "sIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png",
+                            "showFlg": 1,
+                            "styleUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190304143621318-3752.jpg",
+                            "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w02.png"
+                        }
+                    ],
+                    "relateInfo": "1",
+                    "type": "DETAIL"
+                },
+                {//此热搜是关键词类型，market是null，product是null，relateInfo是关键词信息
+                    "businesstypeRange": "PART",
+                    "createRole": 1,
+                    "createTime": "2019-03-25 12:01:00",
+                    "createUser": 518,
+                    "createUsername": "孙启萌",
+                    "deleteFlg": 0,
+                    "id": 5,
+                    "keyword": "本季热卖鞋品2",
+                    "market": null,
+                    "modifyTime": "2019-03-25 12:01:00",
+                    "product": null,
+                    "productBusinessTypepArray": [
+                        {
+                            "code": "-16-",
+                            "deleteFlg": 0,
+                            "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g02.png",
+                            "hasProductCnt": 0,
+                            "id": 16,
+                            "level": 1,
+                            "mIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190304143700781-1981.png",
+                            "miniFlg": 1,
+                            "name": "西餐西快",
+                            "parentId": 0,
+                            "parentName": "",
+                            "pyCode": "XCXK",
+                            "sIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png",
+                            "showFlg": 1,
+                            "styleUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190304143621318-3752.jpg",
+                            "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w02.png"
+                        }
+                    ],
+                    "relateInfo": "测试关键词",
+                    "type": "QUERY"
+                }
+            ],
+            "pageNo": 1,
+            "total": 3
+        }
+    }
+
+### CP-202. 新增热搜信息
+#### 模块负责人
+    王子悦
+#### 请求
+    POST v2/productkeyword
+#### 参数    
+    {
+        "keyword":"本季热卖鞋品",//热搜词
+        "businesstypeRange":"PART",//关联业态类型 ALL 全部 PART 部分
+        "rangeId":"16,34",//关联业态id
+        "type":"MARKET",//热搜类型 QUERY 关键词 DETAIL 关联产品 MARKET 关联活动
+        "relateInfo":"5"//如果是QUERY，此项内容是关键词。如果是DETAIL或MARKET，此项内容是数据id
+    }
+#### 响应
+    {"code":100000,"msg":"","data":null}
+
+### CP-203. 更新热搜信息
+#### 模块负责人
+    王子悦
+#### 请求
+    PUT v2/productkeyword/{id}
+#### 参数    
+    {
+    "keyword":"本季热卖鞋品5",
+    "businesstypeRange":"PART",
+    "rangeId":"34",
+    "type":"MARKET",
+    "relateInfo":"5"
+    }
+#### 响应
+    {"code":100000,"msg":"","data":null}
+
+### CP-204. 删除热搜信息
+#### 模块负责人
+    王子悦
+#### 请求
+    DELETE v2/productkeyword/{id}
+#### 参数    
+    id  //热搜信息id
+#### 响应
+    {"code":100000,"msg":"","data":null} 
+
+### CP-205. 查询热搜信息操作日志
+#### 模块负责人
+    王子悦
+#### 请求
+    GET v2/productkeyword/log/{id}
+#### 参数    
+    id  //热搜信息id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [],
+            "dataSums": null,
+            "datas": [
+                {
+                    "id": 6,
+                    "keywordId": 5,
+                    "opInfo": "删除热搜信息",
+                    "opRole": 1,
+                    "opTime": "2019-03-25 14:21:33",
+                    "opUser": 518,
+                    "opUsername": "孙启萌"
+                },
+                {
+                    "id": 5,
+                    "keywordId": 5,
+                    "opInfo": "更新热搜信息",
+                    "opRole": 1,
+                    "opTime": "2019-03-25 14:02:46",
+                    "opUser": 518,
+                    "opUsername": "孙启萌"
+                },
+                {
+                    "id": 2,
+                    "keywordId": 5,
+                    "opInfo": "新增热搜信息",
+                    "opRole": 1,
+                    "opTime": "2019-03-25 12:01:00",
+                    "opUser": 518,
+                    "opUsername": "孙启萌"
+                }
+            ],
+            "pageNo": 1,
+            "total": 3
+        }
+    }
