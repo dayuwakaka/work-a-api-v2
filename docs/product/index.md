@@ -1409,3 +1409,160 @@
     	"msg": "",
     	"data": null
     }
+    
+### CP-151. 期货现货新增
+#### 模块负责人
+    尹洪明
+#### 请求
+    POST     /nowfuture
+#### 参数  
+    {
+        "depotId": 40,
+        "nowFuture": [
+            {
+                "depotId": 40,
+                "productId": 4749,
+                "type": "NOW"
+            },
+            {
+                "depotId": 40,
+                "productId": 4748,
+                "type": "FUTURE"
+            },
+            {
+                "depotId": 40,
+                "productId": 4747,
+                "type": "NOW"
+            }
+        ]
+    }
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+    
+### CP-152. 期货转现货
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT     /nowfuture/now/{id}
+#### 参数    
+    *id // 期货现货id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+   
+### CP-153. 现货转期货
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT     /nowfuture/future/{id}
+#### 参数    
+    *id // 期货现货id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+   
+### CP-154. 期货现货取消手动
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT     /nowfuture/cancel/{id}
+#### 参数  
+    *id // 期货现货id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }  
+
+
+   
+### CP-155. 期货现货列表
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET     /nowfuture
+#### 参数    
+    keyword // 品名、品号
+    type    // NOW 现货 FUTURE 期货
+    pageNo      // 默认1
+    pageSize    // 默认25
+#### 响应    
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [],
+            "dataSums": null,
+            "datas": [
+                {
+                    "create_time": "",
+                    "customFlg": 1,         // 0 非定制 1 普通定制 2 专属定制
+                    "depotId": 40,
+                    "fromType": "AUTO",     // AUTO 自动  HANDWORK 手动
+                    "handworkType": null,
+                    "id": 8,                // 期货现货id
+                    "pno": "1866",          // 品号
+                    "productId": 4748,
+                    "productName": "唐扬鱿鱼圈", // 品名
+                    "type": "FUTURE"        // NOW 现货 FUTURE 期货
+                }
+            ],
+            "pageNo": 0,
+            "total": 0
+        }
+    }
+   
+### CP-156. 期货现货统计列表
+#### 模块负责人
+    尹洪明
+#### 请求
+    POST     /nowfuture
+#### 参数   
+
+#### 响应
+
+
+   
+### CP-157. 期货现货日志
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET     /nowfuture/log/{depotId}
+#### 参数   
+    *depotId    // 仓库ID
+    pageNo      // 默认1
+    pageSize    // 默认25
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [],
+            "dataSums": null,
+            "datas": [
+                {
+                    "id": 0,
+                    "opInfo": "仓库【DC（大连铁越仓）】产品【榴莲大福】现货 -> 期货",  // 操作内容
+                    "opRole": 0,
+                    "opTime": "2019-03-25 14:08:58",                          // 操作时间
+                    "opUser": 0,
+                    "opUserName": "系统操作",                                   // 操作人
+                    "settingId": 4
+                }
+            ],
+            "pageNo": 0,
+            "total": 0
+        }
+    }  
