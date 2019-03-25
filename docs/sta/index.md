@@ -372,8 +372,8 @@
 #### 请求
     GET /reportProduct/productInfo
 #### 参数
-    deportId : 40        //仓库id
-    deportName: '大连仓'  //仓库名称
+    depotId : 40        //仓库id
+    depotName: '大连仓'  //仓库名称
     pageSize // 每页显示的条数
     pageNo   // 当前页数
 #### 响应
