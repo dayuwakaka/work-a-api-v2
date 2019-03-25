@@ -4,7 +4,7 @@
 #### 模块负责人
     刘宏宇
 #### 请求
-    PUT /v2/order/ap
+    POST /v2/order/ap
 #### 参数
     {
         *"saOrderId": "test-03", // 销售订单号
@@ -32,7 +32,7 @@
 #### 模块负责人
     刘宏宇
 #### 请求
-    POST /v2/order/ap/pass/{orderId}
+    PUT /v2/order/ap/pass/{orderId}
 #### 参数
     *orderId: "AP1903110000008" // 差价、调价单ID
 #### 响应
@@ -46,7 +46,7 @@
 #### 模块负责人
     刘宏宇
 #### 请求
-    POST /v2/order/ap/refuse/{orderId}
+    PUT /v2/order/ap/refuse/{orderId}
 #### 参数
     *orderId: "AP1903110000008" // 差价、调价单ID
     body
@@ -62,9 +62,10 @@
 #### 模块负责人
     刘宏宇  
 #### 请求
-    POST /v2/order/ap/complete/{orderId}
+    PUT /v2/order/ap/complete/{orderId}/{saOrderId}
 #### 参数
     *orderId: "AP1903110000008" // 调价单ID
+    *saOrderId:"SAxxxxxx" // 对应销售单ID
 #### 响应
     {
         "code": 100000,
@@ -236,7 +237,7 @@
             "total": -1
         }
     }
-    
+
     
 ### DD-51. 销售退新增
 #### 模块负责人
@@ -852,7 +853,7 @@
     PUT /v2/saorder/gift/askfor/pass
 #### 参数
     [1,2,3] // 主键
-#### 响应    
+#### 响应
     {
         "code": 100000,
         "msg": "",
@@ -876,7 +877,7 @@
     createEndDate: 创建结束日期
     sendStartDate: 发货开始日期
     sendEndDate: 发货结束日期
-#### 响应    
+#### 响应
     {
         "code": 100000,
         "msg": "",
@@ -1244,9 +1245,9 @@
     		"activeId": 1, // 活动id
     		"excludeActiveIds": [1,2,3], // 排除满赠活动id
     		// "freightFlg": 1, // 是否申请免运费 0-否 1-是
-    		// "freightRemark": "申请免运费备注", // 免运费申请备注 0 ~ 255 请前端同事校验好，后端也校验
+    		// "freightRemark": "申请免运费备注", // 免运费申请备注 0 ~ 250 请前端同事校验好，后端也校验
     		"remark": "我的测试测试备注", // 订单备注
-    		// "giftRemark": "赠品申请备注" // 赠品申请备注 0 ~ 255 请前端同事校验好，后端也校验
+    		// "giftRemark": "赠品申请备注" // 赠品申请备注 0 ~ 250 请前端同事校验好，后端也校验
     	},
     	"saOrderPros": [ // 订单产品明细
     		{
@@ -1255,7 +1256,7 @@
     			*"pcount": 10, // 数量
     			// "giftCount": "1", // 赠品数量
     			// "beforeAskPrice": 10, // 调价金额
-    			// "beforeAskPriceRemark": "测试AP单备注" // 调价备注 0 ~ 255 请前端同事校验好，后端也校验
+    			// "beforeAskPriceRemark": "测试AP单备注" // 调价备注 0 ~ 250 请前端同事校验好，后端也校验
     		},
     		...
     	],
@@ -1307,9 +1308,9 @@
     		"activeId": 1, // 活动id
     		"excludeActiveIds": [1,2,3], // 排除满赠活动id
     		// "freightFlg": 1, // 是否申请免运费 0-否 1-是
-    		// "freightRemark": "申请免运费备注", // 免运费申请备注 0 ~ 255 请前端同事校验好，后端也校验
+    		// "freightRemark": "申请免运费备注", // 免运费申请备注 0 ~ 250 请前端同事校验好，后端也校验
     		// "remark": "我的测试测试备注", // 订单备注
-    		"giftRemark": "赠品申请备注" // 赠品申请备注 0 ~ 255 请前端同事校验好，后端也校验
+    		"giftRemark": "赠品申请备注" // 赠品申请备注 0 ~ 250 请前端同事校验好，后端也校验
     	},
     	"saOrderPros": [ // 订单产品明细
     		{
@@ -1318,7 +1319,7 @@
     			*"pcount": 10, // 数量
     			// "giftCount": "1", // 赠品数量
     			// "beforeAskPrice": 10, // 调价金额
-    			// "beforeAskPriceRemark": "测试AP单备注" // 调价备注 0 ~ 255 请前端同事校验好，后端也校验
+    			// "beforeAskPriceRemark": "测试AP单备注" // 调价备注 0 ~ 250 请前端同事校验好，后端也校验
     		},
     		...
     	],
@@ -1755,11 +1756,47 @@
         "data": 66666 // 产品总价
     }
 
+### DD-129. 销售订单-取消订单返利券、优惠券、满折、满减
+#### 模块负责人
+    梁铁骐
+#### 请求
+    DELETE /v2/saorder/{orderId}/market
+#### 参数
+    orderId: 订单号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
 
+### DD-130. 销售订单-取消订单返利券
+#### 模块负责人
+    梁铁骐
+#### 请求
+    DELETE /v2/saorder/{orderId}/rebate
+#### 参数
+    orderId: 订单号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
 
-
-
-
+### DD-131. 销售订单-取消订单优惠活动
+#### 模块负责人
+    梁铁骐
+#### 请求
+    DELETE /v2/saorder/{orderId}/coupon-market
+#### 参数
+    orderId: 订单号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
 
 
 
