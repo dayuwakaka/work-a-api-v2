@@ -869,7 +869,7 @@
     buttonPermissionFlg: 1,
     customerId: 客户id,
     orderId: 销售订单号,
-    tradefrom: 下单方式 SYS-后台手动下单 SELF-客户自主下单
+    tradefrom: 下单方式 SYS-后台手动下单 APP-客户自主下单
     status: 订单状态 INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收
     payFlg： 结款状态 0-未结款 1-已结款
     createUserName： 创建人
