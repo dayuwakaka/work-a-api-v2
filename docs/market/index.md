@@ -1395,7 +1395,7 @@
 #### 模块负责人
     王子悦
 #### 请求
-    GET /v2/marketAdvertisement
+    GET /v2/market/advertisement
 #### 参数    
     name                // 广告位名称
     type                // 广告位类型 BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告
@@ -1490,13 +1490,13 @@
 #### 模块负责人
     王子悦
 #### 请求
-    POST v2/marketAdvertisement
+    POST v2/market/advertisement
 #### 参数    
     {
     "name":"测试广告位1",// 广告位名称
     "type":"BANNER",// 广告位类型 BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告
     "businesstypeRange":"PART", // 关联业态范围
-    "rangeId":"16,22", // 关联业态id
+    "rangeId":[16,22], // 关联业态id
     "image":"http://beijing.aliyuncs.com/businesstype/w02.png",//图片地址
     "marketId":"5"//关联活动id
     }
@@ -1507,13 +1507,13 @@
 #### 模块负责人
     王子悦
 #### 请求
-    PUT v2/marketAdvertisement/{id}
+    PUT v2/market/advertisement/{id}
 #### 参数    
     {
     "name":"测试广告位1",// 广告位名称
     "type":"BANNER",// 广告位类型 BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告
     "businesstypeRange":"PART", // 关联业态范围
-    "rangeId":"16,22", // 关联业态id
+    "rangeId":[16,22], // 关联业态id
     "image":"http://beijing.aliyuncs.com/businesstype/w03.png",//图片地址
     "marketId":"5"//关联活动id
     }
@@ -1524,7 +1524,7 @@
 #### 模块负责人
     王子悦
 #### 请求
-    DELETE v2/marketAdvertisement/{id}
+    DELETE v2/market/advertisement/{id}
 #### 参数    
     id  //广告位id
 #### 响应
@@ -1534,7 +1534,7 @@
 #### 模块负责人
     王子悦
 #### 请求
-    GET v2/marketAdvertisement/log/{id}
+    GET v2/market/advertisement/log/{id}
 #### 参数    
     id  //广告位id
 #### 响应
@@ -1567,4 +1567,65 @@
         "pageNo": 1,
         "total": 2
     }
+    }
+### YX-36. 广告位详情
+#### 模块负责人
+    王子悦
+#### 请求
+    GET v2/market/advertisement/{id}
+#### 参数    
+    id  //广告位id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "businesstypeRange": "PART",
+            "createRole": 1,
+            "createTime": "2019-03-25 19:47:35",
+            "createUser": 518,
+            "createUsername": "孙启萌",
+            "deleteFlg": 0,
+            "id": 59,
+            "image": "http://beijing.aliyuncs.com/businesstype/w02.png",
+            "market": {
+                "bannerPic": "",
+                "createTime": "2018-03-13 14:00:12",
+                "createUser": 101,
+                "createUserName": "樊嘉辉",
+                "customerRange": "NEW",
+                "deleteFlg": 0,
+                "effectEtime": "2018-04-30 23:59:59",
+                "effectStime": "2018-03-01 00:00:00",
+                "id": 5,
+                "name": "新用户满减活动",
+                "overdue": 0,
+                "remark": "",
+                "type": "COUPON"
+            },
+            "marketId": 5,
+            "modifyTime": "2019-03-25 19:47:35",
+            "name": "测试广告位1",
+            "productBusinessTypepArray": [
+                {
+                    "code": "-16-",
+                    "deleteFlg": 0,
+                    "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g02.png",
+                    "hasProductCnt": 0,
+                    "id": 16,
+                    "level": 1,
+                    "mIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190325174758882-9387.png",
+                    "miniFlg": 1,
+                    "name": "西餐西快",
+                    "parentId": 0,
+                    "parentName": "",
+                    "pyCode": "XCXK",
+                    "sIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190325174752832-7587.png",
+                    "showFlg": 1,
+                    "styleUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190304143621318-3752.jpg",
+                    "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w02.png"
+                }
+            ],
+            "type": "BANNER"
+        }
     }
