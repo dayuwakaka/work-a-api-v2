@@ -1583,7 +1583,7 @@
 #### 模块负责人
     王子悦
 #### 请求
-    GET /v2/productkeyword
+    GET /v2/product/keyword
 #### 参数    
     keyword             // 热搜词
     type                // QUERY 关键词 DETAIL 关联产品 MARKET 关联活动
@@ -1747,12 +1747,12 @@
 #### 模块负责人
     王子悦
 #### 请求
-    POST v2/productkeyword
+    POST v2/product/keyword
 #### 参数    
     {
         "keyword":"本季热卖鞋品",//热搜词
         "businesstypeRange":"PART",//关联业态类型 ALL 全部 PART 部分
-        "rangeId":"16,34",//关联业态id
+        "rangeId":[16,34],//关联业态id
         "type":"MARKET",//热搜类型 QUERY 关键词 DETAIL 关联产品 MARKET 关联活动
         "relateInfo":"5"//如果是QUERY，此项内容是关键词。如果是DETAIL或MARKET，此项内容是数据id
     }
@@ -1763,12 +1763,12 @@
 #### 模块负责人
     王子悦
 #### 请求
-    PUT v2/productkeyword/{id}
+    PUT v2/product/keyword/{id}
 #### 参数    
     {
     "keyword":"本季热卖鞋品5",
     "businesstypeRange":"PART",
-    "rangeId":"34",
+    "rangeId":[16,34],
     "type":"MARKET",
     "relateInfo":"5"
     }
@@ -1779,7 +1779,7 @@
 #### 模块负责人
     王子悦
 #### 请求
-    DELETE v2/productkeyword/{id}
+    DELETE v2/product/keyword/{id}
 #### 参数    
     id  //热搜信息id
 #### 响应
@@ -1789,7 +1789,7 @@
 #### 模块负责人
     王子悦
 #### 请求
-    GET v2/productkeyword/log/{id}
+    GET v2/product/keyword/log/{id}
 #### 参数    
     id  //热搜信息id
 #### 响应
@@ -1830,5 +1830,67 @@
             ],
             "pageNo": 1,
             "total": 3
+        }
+    }
+
+### CP-206. 热搜信息详情
+#### 模块负责人
+    王子悦
+#### 请求
+    GET v2/product/keyword/{id}
+#### 参数    
+    id  //热搜信息id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "businesstypeRange": "PART",
+            "createRole": 1,
+            "createTime": "2019-03-25 13:18:19",
+            "createUser": 518,
+            "createUsername": "孙启萌",
+            "deleteFlg": 0,
+            "id": 7,
+            "keyword": "本季热卖鞋品3",
+            "market": {
+                "bannerPic": "",
+                "createTime": "2018-03-13 14:00:12",
+                "createUser": 101,
+                "createUserName": "樊嘉辉",
+                "customerRange": "NEW",
+                "deleteFlg": 0,
+                "effectEtime": "2018-04-30 23:59:59",
+                "effectStime": "2018-03-01 00:00:00",
+                "id": 5,
+                "name": "新用户满减活动",
+                "overdue": 0,
+                "remark": "",
+                "type": "COUPON"
+            },
+            "modifyTime": "2019-03-25 13:18:19",
+            "product": null,
+            "productBusinessTypepArray": [
+                {
+                    "code": "-34-",
+                    "deleteFlg": 0,
+                    "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g05.png",
+                    "hasProductCnt": 0,
+                    "id": 34,
+                    "level": 1,
+                    "mIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190325174910768-2729.png",
+                    "miniFlg": 1,
+                    "name": "农贸市集",
+                    "parentId": 0,
+                    "parentName": "",
+                    "pyCode": "NMSJ",
+                    "sIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190325174905224-8581.png",
+                    "showFlg": 1,
+                    "styleUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190325174918199-5987.jpg",
+                    "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w05.png"
+                }
+            ],
+            "relateInfo": "5",
+            "type": "MARKET"
         }
     }
