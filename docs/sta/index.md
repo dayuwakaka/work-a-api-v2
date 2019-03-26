@@ -366,4 +366,38 @@
           ...
         ]
     }
+### STA-17. 产品期现货
+#### 模块负责人
+    郭枫
+#### 请求
+    GET /reportProduct/productInfo
+#### 参数
+    depotId : 40        //仓库id
+    depotName: '大连仓'  //仓库名称
+    pageSize // 每页显示的条数
+    pageNo   // 当前页数
+#### 响应
+      {
+        "code": 100000,
+        "msg": "",
+         "data": {
+                "buttonPermissions": [],
+                "dataSums": null,
+                "datas": [
+                    {
+                        "nowAmount": 175, // 现货产品
+                        "lastProductAmount": 297, //上月出库品类
+                        "depot_id": 40, // 仓库id
+                        "customerAmount": 5412, // 近三个月服务客户数
+                        "deporName": "DC（大连仓）ASA", // 仓库名称
+                        "lastSalesJian": 1100608,  // 上月出库初恋
+                        "allProductAmount": 369,  // 全部产品
+                        "futureAmount": 194 // 期货产品
+                    },
+                    ...
+                ],
+                "pageNo": 1, // 当前页
+                "total": 11  // 总记录数
+            }
+    }
     
