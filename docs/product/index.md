@@ -1526,9 +1526,9 @@
 #### 模块负责人
     尹洪明
 #### 请求
-    GET     /nowfuture/profile/{depotId}
+    GET     /nowfuture/profile
 #### 参数   
-    *depotId // 仓库id
+    depotId // 仓库id
 #### 响应
     {
         "code": 100000,
