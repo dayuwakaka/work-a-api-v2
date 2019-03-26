@@ -256,74 +256,51 @@
 #### 模块负责人
     尹洪明
 #### 请求
-
     GET     /v2/coupon/rule
-    
 #### 参数
-
     name                // 券规名称
     deleteFlg           // 状态 0 正常 1 作废
     buttonPermissionFlg // 按钮权限 0 不查询 1 查询
     pageNo              // 页码
     pageSize            // 页条数
-
-#### 返回值
-|参数|名称|描述|
-|---|---|---|
-|id|优惠券规则id|
-|name|券规名称|
-|ruleType|满减类别| 'PRICE' 金额 ,'COUNT' 数量|
-|ranges|使用条件|PRODUCT 指定产品  ALL 无限制|
-|deleteFlg|状态|0 正常 1 作废|
-|targetValue|目标值|即满值|
-|actionValue|执行值|即减值|
-|createUserName|创建人名称|
-|createTime|创建时间|
-|rangeValues|产品范围|列表中用到productunitId，去调用产品规格接口|
-
 ##### 响应
-
     {
         "code": 100000,
         "msg": "",
         "data": {
-            "buttonPermissions": [
-                {
-                    "deleteButton": true,           // 删除
-                    "sendCouponRuleButton": true    // 发放优惠券
-                }
-            ],
+            "buttonPermissions": [],
             "dataSums": null,
             "datas": [
                 {
-                    "actionValue": 1,
+                    "actionValue": 1,           // 减
+                    "budgetFlg": 0,
                     "createRole": 0,
-                    "createTime": "2018-09-14 13:47:58",
+                    "createTime": "2019-03-26 18:35:29",
                     "createUser": 0,
-                    "createUserName": "老铁",
-                    "deleteFlg": 0,
-                    "id": 9908,
+                    "createUserName": "樊嘉辉",
+                    "deleteFlg": 0,         // 0 正常 1 作废
+                    "id": 12375,            // 券规id
                     "material": 0,
-                    "name": "测试名称",
+                    "name": "2019年新券规", // 券规名
                     "onlyCode": "",
-                    "rangeValues": [
+                    "ranges": "PRODUCTUNIT", // 产品限制    ALL 全部品 PRODUCTUNIT 指定品 EXCLUDE 排除品
+                    "ruleRanges": [
                         {
-                            "couponId": 9908,
+                            "couponRuleId": 12375,
                             "deleteFlg": 0,
-                            "guige": "1.875kg（25片）/袋*6袋",
-                            "id": 0,
-                            "name": "六和70/80腿肉",
-                            "pno": "LB473",
-                            "productId": 2205,
-                            "productunitId": 3784,
-                            "state": ""
+                            "id": 16793,
+                            "productUnitId": 1  // 指定品或排除品规格id
+                        },
+                        {
+                            "couponRuleId": 12375,
+                            "deleteFlg": 0,
+                            "id": 16794,
+                            "productUnitId": 2
                         }
                     ],
-                    "ranges": "PRODUCT",
-                    "rule": "REDUCE",
-                    "ruleType": "COUNT",
-                    "ruleValues": null,
-                    "targetValue": 100
+                    "targetValue": 101, // 满
+                    "type": "REDUCE",   
+                    "unit": "PRICE"     // 满减类型
                 }
             ],
             "pageNo": 1,
@@ -335,66 +312,84 @@
 #### 模块负责人
     尹洪明
 #### 请求
-
     POST    /v2/coupon/rule
-
 #### 参数
-
-    name   // * 券规名称
-    ruleType    // * 满减类型 PRICE: 价格; COUNT: 数量
-    ranges  // * 产品范围限制 ALL: 不限; PRODUCT: 指定产品
-    ruleValues // * 优惠券规则
-    rangeValues // * 优惠券产品范围，ranges=product时，必传
-    onlyCode    // * 本次提交携带的唯一码 防止重复提交用
-
     {
-    	"name": "123",
-    	"ruleType": "PRICE",
-    	"ranges": "ALL",
-    	"ruleValues": [{
-            targetValue: 120 (目标值，即满值，可以为两位小数) - Number,
-            value: 20 (执行值，可以为两位小数) - Number
-    	}],
-    	"rangeValues": [{
-            productId: 66651 (产品id) - Number,
-            productUnitId: 128989 (产品规格id) - Number,
-            pno: "A081210",
-            name: "扛枪保家卫国套餐",
-            guige: "1人/次"
-        }],
-    	"onlyCode": "_1537162222240"
+        "name": "2019年新券规",     // 券规名
+        "unit": "PRICE",            // 满减类型
+        "targetValue": 101,         // 满
+        "actionValue": 1,           // 减
+        "ranges": "PRODUCTUNIT",    // ALL 全部品 PRODUCTUNIT 指定品 EXCLUDE 排除品
+        "ruleRanges": [         // 指定品或排除品规格id列表
+            {
+                "productUnitId": 1
+            },
+            {
+                "productUnitId": 2
+            }
+        ],
+        "onlyCode": "_153905sd99956"    // 唯一码
     }
-
-
 #### 响应
-
     {
     	"code": 100000,
     	"msg": "",
     	"data": null
     }
 
-
+### YX-7.客户发放预算券
+#### 模块负责人
+    尹洪明
+#### 请求
+    POST    /v2/coupon
+#### 参数
+    {
+        "customerAmount": { // customerId -> 优惠券数量
+            "32936": 1,
+            "32938": 2
+        },
+        "couponRule": {
+            "name": "2019年预算券", // 优惠券名
+            "unit": "PRICE",        // 满减类型 PRICE 价格 COUNT 数量
+            "targetValue": 100,     // 满
+            "actionValue": 1,       // 减
+            "ranges": "PRODUCTUNIT",    // ALL 全部产品  PRODUCTUNIT 指定品  EXCLUDE 排除品
+            "ruleRanges": [         // 指定品排除品产品规格id列表
+                {
+                    "productUnitId": 1
+                },
+                {
+                    "productUnitId": 2
+                }
+            ]
+        },
+        "effectStime": "2019-03-26 00:00:00",   // 有效开始时间
+        "effectEtime": "2019-04-26 23:59:59",   // 有效结束时间
+        "onlyCode": "294376S334"                // 唯一码
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+    
+        
 ### YX-8.券规作废
 #### 模块负责人
     尹洪明
 #### 请求
-
     DELETE  /v2/coupon/rule/{id}
-
 #### 参数
-
-    id  // * 券规id
-
+    *id  // 券规id
 #### 响应
-
     {
     	"code": 100000,
     	"msg": "",
     	"data": null
     }
 
-### YX-9.客户优惠券申请列表
+### YX-9.客户优惠券申请列表（废弃）
 #### 模块负责人
     尹洪明
 #### 请求
@@ -451,7 +446,7 @@
         }
     }
 
-### YX-10.客户优惠券申请审批
+### YX-10.客户优惠券申请审批（废弃）
 #### 模块负责人
     尹洪明
 #### 请求
@@ -471,7 +466,7 @@
     	"data": null
     }
 
-### YX-11.客户优惠券申请批量审批
+### YX-11.客户优惠券申请批量审批（废弃）
 #### 模块负责人
     尹洪明
 #### 请求
@@ -491,7 +486,7 @@
     	"data": null
     }
 
-### YX-12.客户优惠券申请批量新增（优惠券规则列表中的发券功能、客户功能模块中的发券功能）
+### YX-12.客户优惠券申请批量新增（废弃）
 #### 模块负责人
     尹洪明
 #### 请求url
@@ -526,15 +521,12 @@
         note: '我就是打个酱油'
     }
 
-### YX-13.客户优惠券列表
+### YX-9.客户优惠券列表
 #### 模块负责人
     尹洪明
 #### 请求
-
     GET     /v2/coupon/customers
-
 #### 参数
-
     keyword     // 优惠券名称/客户名称
     source      // 发放源
     status      // normal 正常 lock 锁定 invalid 作废
@@ -542,9 +534,7 @@
     buttonPermissionFlg     // 0 不查询按钮权限  1 查询
     pageNo      // 页码
     pageSize    // 页条数
-
 #### 响应
-
     {
         "code": 100000,
         "msg": "",
@@ -559,35 +549,87 @@
             "dataSums": null,
             "datas": [
                 {
-                    "businessName": "PDOD", 
-                    "couponId": 0,                          // 优惠券规则id
+                    "actionValue": 1,
+                    "businessName": "",
+                    "couponRuleId": 12374,          // 券规id
                     "createRole": 0,
-                    "createTime": "2018-09-11 09:25:14.0",
+                    "createTime": "2019-03-26 18:23:06.0",
                     "createUser": 0,
-                    "createUserName": "",
-                    "customerId": 0,
-                    "customerName": "946",                  // 客户名称
-                    "effectEtime": "2018-12-12 23:59:59",   // 优惠券结束时间
-                    "effectStime": "2018-09-11 00:00:00",   // 优惠券开始时间
-                    "id": 21995,                            // 客户优惠券编号
-                    "pageId": 0,
-                    "ruleName": "小饺丫（荠菜鱿鱼饺）优惠券",   // 优惠券名称
-                    "ruleType": "REDUCE",
-                    "source": "",
-                    "sourceName": "手工",           // 发放源
-                    "status": "NORMAL",     // 状态 normal 正常 lock 锁定 invalid 作废
-                    "type": 0,
-                    "used": "NO"            // 使用情况 YES 已使用 NO 未使用
-                },
-                ......
+                    "createUserName": "樊嘉辉",
+                    "customerId": 32938,
+                    "customerName": "82年凯龙",    // 客户名
+                    "effectEtime": "2019-04-26 23:59:59",   // 结束日志
+                    "effectStime": "2019-03-26 00:00:00",   // 开始日期
+                    "id": 186186,               // 优惠券编号
+                    "marketId": 0,
+                    "rangeType": "PRODUCTUNIT",
+                    "ranges": null,
+                    "rebate": 0,
+                    "ruleName": "2019年预算券", // 优惠券名
+                    "ruleType": "",
+                    "source": "HANDWORK",   // 发放源 HANDWORK 手工 ACTIVE 活动
+                    "sourceName": "",
+                    "status": "LOCK",       // 优惠券状态    NORMAL 正常 LOCK 锁定 CANCEL 作废
+                    "targetValue": 100,
+                    "type": "REDUCE",
+                    "unit": "PRICE",
+                    "used": "NO"        // 使用情况  YES 已使用  NO 未使用
+                }
             ],
             "pageNo": 1,
             "total": 7334
         }
     }
+### YX-10.客户优惠券批量锁定
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT     /v2/coupon/lock
+#### 参数
+    [
+        186186,
+        186185
+    ]
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+### YX-11.客户优惠券批量解锁
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT     /v2/coupon/unlock
+#### 参数
+    [
+        186186,
+        186185
+    ]
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+### YX-12.客户优惠券批量作废
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT     /v2/coupon/cancel
+#### 参数
+    [
+        186186,
+        186185
+    ]
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
     
-    
-### YX-14. 客户优惠券批量解锁、批量锁定、批量作废
+### YX-14. 客户优惠券批量解锁、锁定、作废（废弃）
 #### 模块负责人
     尹洪明
 #### 请求
@@ -611,7 +653,7 @@
     
     
 
-### YX-15.客户优惠券解锁、锁定、作废
+### YX-15.客户优惠券解锁、锁定、作废（废弃）
 #### 模块负责人
     尹洪明
 #### 请求
@@ -1389,7 +1431,25 @@
                 "productunitId": 2 
             }
         ]
-    }    
+    }  
+    
+    
+### YX-25. 检查活动是否可用
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT /v2/market/canuse/check
+#### 参数  
+    {
+        "activeId": 258,        // 活动id、优惠券id、返利券id
+        "type": "ACTIVE"        // ACTIVE 活动、COUPON 优惠券、REBATE 返利券
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": true        // true 可用  false 不可用
+    }
 
 ### YX-31. 查询广告位
 #### 模块负责人
