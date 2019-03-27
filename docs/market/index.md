@@ -1418,13 +1418,14 @@
         "msg": "",
         "data": [
             {
-                "giftGuige": "900g",
+                "giftGuige": "900g",        // 赠品规格
                 "giftMainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201901/43b4a0bb5a7c75276d57f24268432952.jpg",
-                "giftName": "唐扬鱿鱼",
+                "giftName": "唐扬鱿鱼",         // 赠品名
                 "giftNum": 2,
-                "giftPno": "",
-                "giftProductId": 6,
-                "giftProductunitId": 5,
+                "giftPno": "1949",          // 赠品品号
+                "giftProductId": 6,         // 赠品id
+                "giftProductunitId": 5,     // 赠品规格id
+                "giftUnitName": "件",    // 赠品单位
                 "marketId": 250,        // 活动ID
                 "marketName": "满赠001",  // 活动名
                 "productId": 1,   
