@@ -310,7 +310,7 @@
 #### 模块负责人
     郭枫
 #### 请求
-    GET /reportMarket/marketInfo/product
+    GET /reportMarket/market/product
 #### 参数
     *customerId : 12341    //客户编号
     *productIds: 1,2,3,4,5 //商品编号
@@ -340,7 +340,7 @@
 #### 模块负责人
     郭枫
 #### 请求
-    GET /reportMarket/marketInfo/productUnit
+    GET /reportMarket/market/productUnit
 #### 参数
     *customerId : 12341    //客户编号
     *productUnitIds: 1,2,3,4,5 //商品规格编号
@@ -370,7 +370,7 @@
 #### 模块负责人
     郭枫
 #### 请求
-    GET /reportProduct/productInfo
+    GET /reportProduct/productNowFuture
 #### 参数
     depotId : 40        //仓库id
     depotName: '大连仓'  //仓库名称
