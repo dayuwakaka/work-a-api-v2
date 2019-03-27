@@ -56,6 +56,20 @@
                         }
                     ],
                     "createTime": "2018-11-16 06:09:12", // 创建时间
+                    @@"custom": [                   // 定制客户 或 定制事业部
+                        {
+                            "id": 2891,
+                            "productId": 4757,
+                            "rangeId": 1,           // 事业部id 或 客户id
+                            "type": "BUSINESSUNIT" // BUSINESSUNIT 事业部  CUSTOMER 客户
+                        },
+                        {
+                            "id": 2892,
+                            "productId": 4757,
+                            "rangeId": 2,
+                            "type": "BUSINESSUNIT"
+                        }
+                    ],
                     "customFlg": 0, // 是否定制 0 非定制 1 定制
                     "customFlgMore" 0, // 是否定制更详细状态位 0 非定制 1 常规定制 2 专属定制
                     "customerIds": null, // 若为定制 则 定制的客户ID [1, 2, 3]
@@ -191,6 +205,16 @@
     POST /v2/product
 #### 参数
     {
+        @@"custom": [                   // 专属定制时，需要传递
+            {
+                "type": "BUSINESSUNIT", // BUSINESSUNIT 事业部  CUSTOMER 客户
+                "rangeId": 1            // 事业部id 或 客户id
+            },
+            {
+                "type": "BUSINESSUNIT",
+                "rangeId": 2
+            }
+        ],
         *"product":{ // 产品信息
             *"name":"测试01", // 产品名
             *"pno":"pnotest01", // 品号 不可重复
@@ -224,8 +248,7 @@
                 *"minimumType":"NONE" // 起订方式 NONE 不限制 BEGIN 递增 STEP 步增
                 
             }
-        ],	
-        "customerIds":[1, 2, 3] // 专属定制品的所属客户ID
+        ]
     }
 #### 响应
     {
@@ -334,6 +357,16 @@
 #### 参数
     id:1 //产品ID
     {
+        @@"custom": [                   // 专属定制时，需要传递
+            {
+                "type": "BUSINESSUNIT", // BUSINESSUNIT 事业部  CUSTOMER 客户
+                "rangeId": 1            // 事业部id 或 客户id
+            },
+            {
+                "type": "BUSINESSUNIT",
+                "rangeId": 2
+            }
+        ],
         *"product":{ // 产品信息
             *"name":"测试01", // 产品名
             *"pno":"pnotest01", // 品号 不可重复
@@ -351,8 +384,7 @@
             "saveType":"NORMAL", // 存储方式 NORMAL 常温 FROZEN 冷冻
             "shelfLife":"shelfLife" // 质保期
             
-        },
-        "customerIds":[1, 2, 3]
+        }
     }
 #### 响应
     {
