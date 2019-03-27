@@ -1926,3 +1926,293 @@
             "type": "MARKET"
         }
     }
+
+### CP-211. 推荐信息列表查询
+#### 模块负责人
+    王子悦
+#### 请求
+    GET v2/product/recommend
+#### 参数    
+    无
+#### 响应
+
+
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "code": "-16-",
+                "deleteFlg": 0,
+                "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g02.png",
+                "hasProductCnt": 5,
+                "id": 16,
+                "level": 1,
+                "mIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190325174758882-9387.png",
+                "miniFlg": 1,
+                "name": "西餐西快",
+                "parentId": 0,
+                "parentName": "",
+                "productRecommendList": [
+                    {
+                        "businesstypeId": 16,
+                        "deleteFlg": 1,
+                        "id": 1,
+                        "productId": 5,
+                        "remark": "12312312312",
+                        "sort": 0,
+                        "tag": "HOT"
+                    },
+                    {
+                        "businesstypeId": 16,
+                        "deleteFlg": 0,
+                        "id": 2,
+                        "productId": 5,
+                        "remark": "测试推荐说明",
+                        "sort": 0,
+                        "tag": "HOT"
+                    }
+                ],
+                "pyCode": "",
+                "sIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190325174752832-7587.png",
+                "showFlg": 1,
+                "styleUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190304143621318-3752.jpg",
+                "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w02.png"
+            },
+            {
+                "code": "-34-",
+                "deleteFlg": 0,
+                "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g05.png",
+                "hasProductCnt": 38,
+                "id": 34,
+                "level": 1,
+                "mIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190325174910768-2729.png",
+                "miniFlg": 1,
+                "name": "农贸市集",
+                "parentId": 0,
+                "parentName": "",
+                "productRecommendList": [
+                    {
+                        "businesstypeId": 34,
+                        "deleteFlg": 0,
+                        "id": 7,
+                        "productId": 5,
+                        "remark": "测试推荐说明",
+                        "sort": 0,
+                        "tag": "HOT"
+                    },
+                    {
+                        "businesstypeId": 34,
+                        "deleteFlg": 0,
+                        "id": 8,
+                        "productId": 5,
+                        "remark": "测试推荐说明",
+                        "sort": 0,
+                        "tag": "HOT"
+                    },
+                    {
+                        "businesstypeId": 34,
+                        "deleteFlg": 0,
+                        "id": 9,
+                        "productId": 5,
+                        "remark": "测试推荐说明",
+                        "sort": 0,
+                        "tag": "HOT"
+                    },
+                    {
+                        "businesstypeId": 34,
+                        "deleteFlg": 0,
+                        "id": 10,
+                        "productId": 5,
+                        "remark": "测试推荐说明",
+                        "sort": 0,
+                        "tag": "HOT"
+                    },
+                    {
+                        "businesstypeId": 34,
+                        "deleteFlg": 0,
+                        "id": 11,
+                        "productId": 5,
+                        "remark": "测试推荐说明",
+                        "sort": 0,
+                        "tag": "HOT"
+                    },
+                    {
+                        "businesstypeId": 34,
+                        "deleteFlg": 0,
+                        "id": 12,
+                        "productId": 5,
+                        "remark": "测试推荐说明",
+                        "sort": 0,
+                        "tag": "HOT"
+                    }
+                ],
+                "pyCode": "",
+                "sIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190325174905224-8581.png",
+                "showFlg": 1,
+                "styleUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190325174918199-5987.jpg",
+                "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w05.png"
+            },
+            {
+                "code": "-44-",
+                "deleteFlg": 0,
+                "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g08.png",
+                "hasProductCnt": 0,
+                "id": 44,
+                "level": 1,
+                "mIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190325175048773-8180.png",
+                "miniFlg": 1,
+                "name": "火锅烧烤",
+                "parentId": 0,
+                "parentName": "",
+                "productRecommendList": [
+                    {
+                        "businesstypeId": 44,
+                        "deleteFlg": 1,
+                        "id": 3,
+                        "productId": 5,
+                        "remark": "测试推荐说明",
+                        "sort": 0,
+                        "tag": "HOT"
+                    },
+                    {
+                        "businesstypeId": 44,
+                        "deleteFlg": 1,
+                        "id": 4,
+                        "productId": 5,
+                        "remark": "测试推荐说明",
+                        "sort": 0,
+                        "tag": "HOT"
+                    },
+                    {
+                        "businesstypeId": 44,
+                        "deleteFlg": 1,
+                        "id": 5,
+                        "productId": 5,
+                        "remark": "测试推荐说明",
+                        "sort": 0,
+                        "tag": "HOT"
+                    },
+                    {
+                        "businesstypeId": 44,
+                        "deleteFlg": 1,
+                        "id": 6,
+                        "productId": 5,
+                        "remark": "测试推荐说明",
+                        "sort": 0,
+                        "tag": "HOT"
+                    }
+                ],
+                "pyCode": "",
+                "sIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190325174947605-1154.png",
+                "showFlg": 1,
+                "styleUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190325174939912-6055.jpg",
+                "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w08.png"
+            }
+        ]
+    }
+### CP-212. 推荐新增信息
+#### 模块负责人
+    王子悦
+#### 请求
+    POST v2/product/recommend
+#### 参数    
+    {
+    "businesstypeId":"16",//业态id
+    "productId":"5",//产品id
+    "tag":"HOT", //标签 HOT 热销 NEW 新品
+    "sort":"0", //排序
+    "remark":"测试推荐说明" //推荐说明
+    }
+#### 响应
+    {"code":100000,"msg":"","data":null}
+
+### CP-213. 推荐更新信息
+#### 模块负责人
+    王子悦
+#### 请求
+    PUT v2/product/recommend/{id}
+#### 参数    
+    {
+    "tag":"HOT", //标签 HOT 热销 NEW 新品 （非空）
+    "remark":"12312312312" //推荐说明
+    }
+#### 响应
+    {"code":100000,"msg":"","data":null}
+
+### CP-214. 推荐删除信息
+#### 模块负责人
+    王子悦
+#### 请求
+    DELETE v2/product/recommend/
+#### 参数    
+    {
+        "id":"1",
+        "businesstypeId":"22" //逻辑说明：1）删除单条推荐，id赋值【推荐】id，businesstypeId不传值
+                              //2）批量删除，businesstypeId赋值【业态】id
+    }
+#### 响应
+    {"code":100000,"msg":"","data":null}
+
+### CP-215. 推荐操作日志信息
+#### 模块负责人
+    王子悦
+#### 请求
+    GET v2/product/recommend/log/{id}
+#### 参数 
+    id //业态id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [],
+            "dataSums": null,
+            "datas": [
+                {
+                    "businesstypeId": 16,
+                    "id": 22,
+                    "opInfo": "删除推荐信息:海苔贝柱",
+                    "opRole": 1,
+                    "opTime": "2019-03-27 09:13:20.0",
+                    "opUser": 518,
+                    "opUsername": "孙启萌",
+                    "productId": 0
+                },
+                {
+                    "businesstypeId": 16,
+                    "id": 21,
+                    "opInfo": "删除推荐信息:海苔贝柱",
+                    "opRole": 1,
+                    "opTime": "2019-03-27 07:55:28.0",
+                    "opUser": 518,
+                    "opUsername": "孙启萌",
+                    "productId": 0
+                }
+            ],
+            "pageNo": 1,
+            "total": 22
+        }
+    }
+
+### CP-216. 推荐详情信息
+#### 模块负责人
+    王子悦
+#### 请求
+    GET v2/product/recommend/{id}
+#### 参数 
+    id //推荐id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "businesstypeId": 16,
+            "deleteFlg": 1,
+            "id": 1,
+            "productId": 5,
+            "remark": "12312312312",
+            "sort": 0,
+            "tag": "HOT"
+        }
+    }
