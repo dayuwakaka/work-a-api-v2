@@ -1441,14 +1441,19 @@
     PUT /v2/market/canuse/check
 #### 参数  
     {
-        "activeId": 258,        // 活动id、优惠券id、返利券id
-        "type": "ACTIVE"        // ACTIVE 活动、COUPON 优惠券、REBATE 返利券
+        "activeId": 258,        // 活动id
+        "couponId": 258,        // 优惠券id
+        "rebateId": 258        // 返利券id
     }
 #### 响应
     {
         "code": 100000,
         "msg": "",
-        "data": true        // true 可用  false 不可用
+        "data": {
+            "active": false,
+            "coupon": true,
+            "rebate": true
+        }
     }
 
 ### YX-31. 查询广告位
