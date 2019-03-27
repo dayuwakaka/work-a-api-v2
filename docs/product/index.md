@@ -2126,9 +2126,9 @@
 #### 模块负责人
     王子悦
 #### 请求
-    GET v2/product/recommend/log/{16}
+    GET v2/product/recommend/log/{id}
 #### 参数 
-    无
+    id //业态id
 #### 响应
     {
         "code": 100000,
