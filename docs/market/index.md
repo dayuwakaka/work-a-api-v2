@@ -628,7 +628,29 @@
         "msg": "",
         "data": null
     }
-    
+### YX-13.客户所属事业组的预算
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET     /v2/market/coupon/budget/{customerId}
+#### 参数
+    *customerId // 客户id
+#### 响应    
+     {
+         "code": 100000,
+         "msg": "",
+         "data": {
+             "budgetAmount": 893890,            // 剩余预算额
+             "budgetYm": "2019-03",
+             "businessunitGroupId": 4,
+             "createRole": 1,
+             "createTime": "2019-03-27 16:40:20.0",
+             "createUser": 1,
+             "createUsername": "樊佳慧",
+             "id": 1,
+             "modifyTime": "2019-03-28 00:53:37.0"
+         }
+     }   
 ### YX-14. 客户优惠券批量解锁、锁定、作废（废弃）
 #### 模块负责人
     尹洪明
