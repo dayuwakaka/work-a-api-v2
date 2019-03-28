@@ -2216,3 +2216,22 @@
             "tag": "HOT"
         }
     }
+
+### CP-217. 为数据中心提供反向推送销量排序更新排序接口
+#### 模块负责人
+    王子悦
+#### 请求
+    GET v2/product/recommend/productsort
+#### 参数 
+        [//集合内容应该是同一业态下的产品信息
+        {"businesstypeId":"16",//业态id
+            "productId":"10",//产品id
+            "salesort":"23"//销量排序
+        },
+        {"businesstypeId":"16",
+            "productId":"11",
+            "salesort":"56"
+        }
+        ]
+#### 响应
+    {"code":100000,"msg":"","data":null}
