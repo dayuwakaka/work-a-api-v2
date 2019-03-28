@@ -994,7 +994,9 @@
             "depositPrice": 0,
             "discountPrice": 0, // 优惠活动金额
             "freight": 0, // 运费
-            "freightStatus": 3, // 运费状态 0 待审核 1 通过 2 未通过 3 未申请
+            "freightAsk": { // 免运费申请状态
+                "isPass": 1, // 0：待审，1：通过，2：未通过
+            },
             "fromDepotId": 51,
             "fromDepotName": "DC（天津优和仓 ）", // 出库仓
             "giftFlg": 0,
