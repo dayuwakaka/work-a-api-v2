@@ -1489,7 +1489,7 @@
     type                // 广告位类型 BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告
     businesstypeId      // 关联业态id
     marketType          // 关联活动类型
-    marketStatu         // 关联活动状态 0 正常 1 作废
+    marketStatus        // 关联活动状态 0 正常 1 作废
     deleteFlg           // 状态 0 正常 1 作废
     pageNo              // 页码
     pageSize            // 页条数
