@@ -55,6 +55,8 @@
                             "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/0220.png"
                         }
                     ],
+                    "businessunit": [],
+                    "cookBookLites": null,
                     "createTime": "2018-11-16 06:09:12", // 创建时间
                     @@"custom": [                   // 定制客户 或 定制事业部
                         {
@@ -72,7 +74,8 @@
                     ],
                     "customFlg": 0, // 是否定制 0 非定制 1 定制
                     "customFlgMore" 0, // 是否定制更详细状态位 0 非定制 1 常规定制 2 专属定制
-                    "customerIds": null, // 若为定制 则 定制的客户ID [1, 2, 3]
+                    "customers": [],
+                    @@(作废)"customerIds": null, // 若为定制 则 定制的客户ID [1, 2, 3]
                     "deleteFlg": 0, 
                     "followFlg": 0,
                     "id": 4697, // 产品ID
@@ -270,10 +273,48 @@
         "msg": "",
         "data": {
             "businessTypeIds": null,
+            "businessTypes": null,
+            @@"businessunit": [         // 定制事业部
+                {
+                    "bcFlg": 0,
+                    "groupId": 4,
+                    "groupName": "PV事业组",
+                    "id": 9,
+                    "name": "PV",
+                    "platformId": 1,
+                    "sort": 2
+                }
+            ],
+            "cookBookLites": null,
             "createTime": "2018-12-06 07:27:16", 
+            @@"custom": [
+                {
+                    "id": 2884,
+                    "productId": 709,
+                    "rangeId": 9,
+                    "type": "BUSINESSUNIT"
+                }
+            ],
             "customFlg": 1, // 是否定制 0 非定制 1 定制 （**请勿使用此字段显示明细页，请使用customFlgMore来控制明细定制状态）
             "customFlgMore": 0 // 是否定制 0 非定制 1 常规定制 2 专属定制
-            "customerIds": [ // 专属定制客户ID数组
+            @@"customers": [                // 定制客户
+                {
+                    "businessunit": 9,
+                    "businessunitName": "PV",
+                    "companyName": "凑凑（天津）餐饮管理有限公司",
+                    "customerId": 32741,
+                    "isParent": 0,
+                    "isStockLimit": 0,
+                    "platformId": 1,
+                    "shortName": "凑凑（天津）餐饮管理有限公司",
+                    "srRoleId": 7518,
+                    "srRoleName": "陈明",
+                    "ssRoleId": 29214,
+                    "ssRoleName": "张莹",
+                    "type": "P"
+                }
+            ],
+            @@(作废)"customerIds": [ // 专属定制客户ID数组
                 1,
                 2,
                 3
