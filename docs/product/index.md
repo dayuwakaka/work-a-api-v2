@@ -2262,7 +2262,7 @@
 #### 模块负责人
     王子悦
 #### 请求
-    PUT v2/product/recommend/productsort/6673179271335148160
+    PUT v2/product/recommend/productsort/ME0154uoR5rnnzEQ62c4Npz1hbqCS71T
 #### 参数 
         [//集合内容应该是同一业态下的产品信息
         {"businesstypeId":"16",//业态id
