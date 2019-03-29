@@ -2000,15 +2000,41 @@
                         "deleteFlg": 1,
                         "id": 1,
                         "productId": 5,
-                        "remark": "12312312312",
-                        "sort": 0,
-                        "tag": "HOT"
+                        "productLite": {
+                        "customFlg": 1,
+                        "customFlgMore": 1,//定制状态  0是普通品，1是常规定制品，2是专属定制品
+                        "id": 5,
+                        "longName": "",
+                        "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/e888069ae08024bb21a595de06a44b29.jpg",
+                        "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/edc70e47f9d1f65ed4c02ecf2312475c.jpg",//产品图片
+                        "name": "海苔贝柱",//品名
+                        "nowfuture": "",
+                        "pno": "0204",//品号
+                        "productLack": null,
+                        "status": "NORMAL"//上架状态  NORMAL上架 LOCK下架
+                        },
+                        "remark": "12312312312",//推荐说明
+                        "sort": 0,//推荐序列
+                        "tag": "HOT"//推荐标签
                     },
                     {
                         "businesstypeId": 16,
                         "deleteFlg": 0,
                         "id": 2,
                         "productId": 5,
+                        "productLite": {
+                        "customFlg": 0,
+                        "customFlgMore": 0,
+                        "id": 6,
+                        "longName": "",
+                        "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201901/f8a740b54026ea2f959f188b96cf3d3e.jpg",
+                        "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201901/43b4a0bb5a7c75276d57f24268432952.jpg",
+                        "name": "唐扬鱿鱼",
+                        "nowfuture": "",
+                        "pno": "0137",
+                        "productLack": null,
+                        "status": ""
+                    },
                         "remark": "测试推荐说明",
                         "sort": 0,
                         "tag": "HOT"
@@ -2019,137 +2045,8 @@
                 "showFlg": 1,
                 "styleUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190304143621318-3752.jpg",
                 "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w02.png"
-            },
-            {
-                "code": "-34-",
-                "deleteFlg": 0,
-                "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g05.png",
-                "hasProductCnt": 38,
-                "id": 34,
-                "level": 1,
-                "mIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190325174910768-2729.png",
-                "miniFlg": 1,
-                "name": "农贸市集",
-                "parentId": 0,
-                "parentName": "",
-                "productRecommendList": [
-                    {
-                        "businesstypeId": 34,
-                        "deleteFlg": 0,
-                        "id": 7,
-                        "productId": 5,
-                        "remark": "测试推荐说明",
-                        "sort": 0,
-                        "tag": "HOT"
-                    },
-                    {
-                        "businesstypeId": 34,
-                        "deleteFlg": 0,
-                        "id": 8,
-                        "productId": 5,
-                        "remark": "测试推荐说明",
-                        "sort": 0,
-                        "tag": "HOT"
-                    },
-                    {
-                        "businesstypeId": 34,
-                        "deleteFlg": 0,
-                        "id": 9,
-                        "productId": 5,
-                        "remark": "测试推荐说明",
-                        "sort": 0,
-                        "tag": "HOT"
-                    },
-                    {
-                        "businesstypeId": 34,
-                        "deleteFlg": 0,
-                        "id": 10,
-                        "productId": 5,
-                        "remark": "测试推荐说明",
-                        "sort": 0,
-                        "tag": "HOT"
-                    },
-                    {
-                        "businesstypeId": 34,
-                        "deleteFlg": 0,
-                        "id": 11,
-                        "productId": 5,
-                        "remark": "测试推荐说明",
-                        "sort": 0,
-                        "tag": "HOT"
-                    },
-                    {
-                        "businesstypeId": 34,
-                        "deleteFlg": 0,
-                        "id": 12,
-                        "productId": 5,
-                        "remark": "测试推荐说明",
-                        "sort": 0,
-                        "tag": "HOT"
-                    }
-                ],
-                "pyCode": "",
-                "sIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190325174905224-8581.png",
-                "showFlg": 1,
-                "styleUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190325174918199-5987.jpg",
-                "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w05.png"
-            },
-            {
-                "code": "-44-",
-                "deleteFlg": 0,
-                "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g08.png",
-                "hasProductCnt": 0,
-                "id": 44,
-                "level": 1,
-                "mIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190325175048773-8180.png",
-                "miniFlg": 1,
-                "name": "火锅烧烤",
-                "parentId": 0,
-                "parentName": "",
-                "productRecommendList": [
-                    {
-                        "businesstypeId": 44,
-                        "deleteFlg": 1,
-                        "id": 3,
-                        "productId": 5,
-                        "remark": "测试推荐说明",
-                        "sort": 0,
-                        "tag": "HOT"
-                    },
-                    {
-                        "businesstypeId": 44,
-                        "deleteFlg": 1,
-                        "id": 4,
-                        "productId": 5,
-                        "remark": "测试推荐说明",
-                        "sort": 0,
-                        "tag": "HOT"
-                    },
-                    {
-                        "businesstypeId": 44,
-                        "deleteFlg": 1,
-                        "id": 5,
-                        "productId": 5,
-                        "remark": "测试推荐说明",
-                        "sort": 0,
-                        "tag": "HOT"
-                    },
-                    {
-                        "businesstypeId": 44,
-                        "deleteFlg": 1,
-                        "id": 6,
-                        "productId": 5,
-                        "remark": "测试推荐说明",
-                        "sort": 0,
-                        "tag": "HOT"
-                    }
-                ],
-                "pyCode": "",
-                "sIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190325174947605-1154.png",
-                "showFlg": 1,
-                "styleUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190325174939912-6055.jpg",
-                "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w08.png"
             }
+            
         ]
     }
 ### CP-212. 推荐新增信息
@@ -2176,6 +2073,7 @@
 #### 参数    
     {
     "tag":"HOT", //标签 HOT 热销 NEW 新品 （非空）
+    "sort":"7",//排序序号
     "remark":"12312312312" //推荐说明
     }
 #### 响应
