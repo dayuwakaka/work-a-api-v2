@@ -2283,7 +2283,47 @@
 #### 参数    
     businesstypeId //业态id，例如16  22  44
 #### 响应    
-
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "businesstypeRange": "ALL",
+                "createRole": 0,
+                "createTime": "2019-03-27 17:38:42",
+                "createUser": 0,
+                "createUsername": "",
+                "deleteFlg": 0,
+                "id": 16,
+                "keyword": "1232",
+                "market": null,
+                "modifyTime": "",
+                "product": null,
+                "productBusinessTypepArray": [
+                    {
+                        "code": "-16-",
+                        "deleteFlg": 0,
+                        "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g02.png",
+                        "hasProductCnt": 0,
+                        "id": 16,
+                        "level": 1,
+                        "mIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190325174758882-9387.png",
+                        "miniFlg": 1,
+                        "name": "西餐西快",
+                        "parentId": 0,
+                        "parentName": "",
+                        "pyCode": "XCXK",
+                        "sIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190325174752832-7587.png",
+                        "showFlg": 1,
+                        "styleUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190304143621318-3752.jpg",
+                        "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w02.png"
+                    }
+                ],
+                "relateInfo": "2132",
+                "type": "QUERY"
+            }
+        ]
+    }
 ### APP-52. app端查询热搜详情数据
 #### 模块负责人
     王子悦
@@ -2292,3 +2332,56 @@
 #### 参数    
     id //热搜信息id
 #### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "businesstypeRange": "PART",
+            "createRole": 1,
+            "createTime": "2019-03-25 13:18:19",
+            "createUser": 518,
+            "createUsername": "孙启萌",
+            "deleteFlg": 0,
+            "id": 7,
+            "keyword": "本季热卖鞋品3",
+            "market": {
+                "bannerPic": "",
+                "createTime": "2018-03-13 14:00:12",
+                "createUser": 101,
+                "createUserName": "樊嘉辉",
+                "customerRange": "NEW",
+                "deleteFlg": 0,
+                "effectEtime": "2018-04-30 23:59:59",
+                "effectStime": "2018-03-01 00:00:00",
+                "id": 5,
+                "name": "新用户满减活动",
+                "overdue": 0,
+                "remark": "",
+                "type": "COUPON"
+            },
+            "modifyTime": "2019-03-25 13:18:19",
+            "product": null,
+            "productBusinessTypepArray": [
+                {
+                    "code": "-34-",
+                    "deleteFlg": 0,
+                    "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g05.png",
+                    "hasProductCnt": 0,
+                    "id": 34,
+                    "level": 1,
+                    "mIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190325174910768-2729.png",
+                    "miniFlg": 1,
+                    "name": "农贸市集",
+                    "parentId": 0,
+                    "parentName": "",
+                    "pyCode": "NMSJ",
+                    "sIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190325174905224-8581.png",
+                    "showFlg": 1,
+                    "styleUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190325174918199-5987.jpg",
+                    "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w05.png"
+                }
+            ],
+            "relateInfo": "5",
+            "type": "MARKET"
+        }
+    }
