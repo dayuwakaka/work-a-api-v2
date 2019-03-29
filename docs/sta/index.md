@@ -3,7 +3,7 @@
 #### 模块负责人
     石博孚
 #### 请求
-    GET /report/getReportOrderAo
+    GET /report/ao/getReportOrderAo
 #### 参数
     businessUnitId: 1// 事业部id
     ssRoleId: 1 //ss id
@@ -57,7 +57,7 @@
 #### 模块负责人
     石博孚
 #### 请求
-    GET /report/getReportCusOrderAo
+    GET /report/ao/getReportCusOrderAo
 #### 参数
     businessUnitId: 1 //事业部id
 	businessUnitGroupId: 1 //事业组id
@@ -113,7 +113,7 @@
 #### 模块负责人
     石博孚
 #### 请求
-    GET /report/getReportOrderPro
+    GET /report/ao/getReportOrderPro
 #### 参数
     startDay: "2019-03-01" //发货日期区间开始日期 默认为当年的3月1日
 	endDay: "2019-03-31" //发货日期区间开始日期 默认为当天
@@ -169,7 +169,7 @@
 #### 模块负责人
     石博孚
 #### 请求
-    GET /report/getReportOrderPriceAo
+    GET /report/ao/getReportOrderPriceAo
 #### 参数
 	priceRange: "0-300" //订单额度区间 
 	可选值："0-300", "301-500", "501-800", "801-1200", "1201-2000", "2001-3000", "3001-5000", "5001-8000","8001-10000", "10001-20000", "20001-30000", "30001-50000", "50001-80000", "80001-"
@@ -215,7 +215,7 @@
 #### 模块负责人
     石博孚
 #### 请求
-    GET /report/getCustomerMonth
+    GET /report/ao/getCustomerMonth
 #### 参数
     month: "2019-03" //月份
 	orderCount: "3-5" //下单次数 可选"5" 或 "3-5"两种方式，区间则以"-"分割
@@ -400,4 +400,28 @@
                 "total": 11  // 总记录数
             }
     }
-    
+### STA-17. 获取客户维度商品销量前50
+#### 模块负责人
+    石博孚
+#### 请求
+    GET /reportProduct/getCustomerProductSales
+#### 参数
+    customerId : 1        //客户id
+#### 响应
+	{
+        "code": 100000,
+        "msg": "",
+        "data": {
+                "buttonPermissions": [],
+                "dataSums": null,
+                "datas": [
+                    {
+		                "totalprice": 711836.65,	//销量
+		                "product_id": 231			//产品id
+		            },
+                    ...
+                ],
+                "pageNo": 0, // 当前页
+                "total": 0  // 总记录数
+            }
+    }
