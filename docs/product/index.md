@@ -2088,7 +2088,7 @@
     {
         "id":"1",
         "businesstypeId":"22" //逻辑说明：1）删除单条推荐，id赋值【推荐】id，businesstypeId不传值
-                              //2）批量删除，businesstypeId赋值【业态】id
+                              //2）批量删除，businesstypeId赋值【业态】id不传值
     }
 #### 响应
     {"code":100000,"msg":"","data":null}
