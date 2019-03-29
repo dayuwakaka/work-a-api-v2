@@ -2316,111 +2316,96 @@
     {
         "code": 100000,
         "msg": "",
-        "data": [
-            {
-                "businesstypeRange": "PART",
-                "createRole": 1,
-                "createTime": "2019-03-25 13:18:19",
-                "createUser": 518,
-                "createUsername": "孙启萌",
-                "deleteFlg": 0,
-                "id": 7,
-                "keyword": "本季热卖鞋品3",
-                "market": {//热搜关联的活动信息
-                    "bannerPic": "",
-                    "createTime": "2018-03-13 14:00:12",
-                    "createUser": 101,
-                    "createUserName": "樊嘉辉",
-                    "customerRange": "NEW",
+        "data": {
+            "BANNER": [
+                {
+                    "businesstypeRange": "ALL",
+                    "createRole": 0,
+                    "createTime": "2019-03-28 11:32:13",
+                    "createUser": 0,
+                    "createUsername": "孙启萌",
                     "deleteFlg": 0,
-                    "effectEtime": "2018-04-30 23:59:59",
-                    "effectStime": "2018-03-01 00:00:00",
-                    "id": 5,
-                    "name": "新用户满减活动",
-                    "overdue": 0,
-                    "remark": "",
-                    "type": "COUPON"
+                    "id": 64,
+                    "image": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190328175533452-1765.jpg",
+                    "market": null,
+                    "marketId": 0,
+                    "modifyTime": "",
+                    "name": "测试广告位8",
+                    "productBusinessTypepArray": null,
+                    "type": "BANNER"
                 },
-                "modifyTime": "2019-03-25 13:18:19",
-                "product": null,
-                "productBusinessTypepArray": [//热搜关联的业态信息
-                    {
-                        "code": "-34-",
-                        "deleteFlg": 0,
-                        "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g05.png",
-                        "hasProductCnt": 0,
-                        "id": 34,
-                        "level": 1,
-                        "mIcon": "",
-                        "miniFlg": 0,
-                        "name": "农贸市集",
-                        "parentId": 0,
-                        "parentName": "",
-                        "pyCode": "NSJ",
-                        "sIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s05.png",
-                        "showFlg": 1,
-                        "styleUrl": "",
-                        "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w05.png"
-                    }
-                ],
-                "relateInfo": "5",//如果是QUERY，此项内容是关键词。如果是DETAIL或MARKET，此项内容是数据id
-                "type": "MARKET"//热搜类型 QUERY 关键词 DETAIL 关联产品 MARKET 关联活动
-            },
-            {
-                "businesstypeRange": "PART",
-                "createRole": 1,
-                "createTime": "2019-03-25 13:16:19",
-                "createUser": 518,
-                "createUsername": "孙启萌",
-                "deleteFlg": 0,
-                "id": 6,
-                "keyword": "本季热卖鞋品2",
-                "market": null,
-                "modifyTime": "2019-03-25 13:16:19",
-                "product": {热搜关联的产品信息
-                    "createTime": "2014-06-21 11:26:58.0",
-                    "customFlg": 0,
+                {
+                    "businesstypeRange": "PART",
+                    "createRole": 0,
+                    "createTime": "2019-03-25 19:46:52",
+                    "createUser": 0,
+                    "createUsername": "孙启萌",
                     "deleteFlg": 0,
-                    "id": 1,
-                    "longName": "香草凤尾虾-专业开背，秘制加工，中西餐厅新食尚~",
-                    "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/f9ce32e007fc796722466531c86d5cd9.jpg",
-                    "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg",
-                    "name": "香草凤尾虾",
-                    "pno": "0151",
-                    "process": 4,
-                    "processContent": 1,
-                    "processInvoice": 1,
-                    "processPrice": 1,
-                    "pyAll": "xiangcaofengweixia",
-                    "pyCode": "XCFWX",
-                    "rangeType": "ALL",
-                    "status": "NORMAL",
-                    "taxRate": 0
-                },
-                "productBusinessTypepArray": [
-                    {
-                        "code": "-16-",
-                        "deleteFlg": 0,
-                        "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g02.png",
-                        "hasProductCnt": 0,
-                        "id": 16,
-                        "level": 1,
-                        "mIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190304143700781-1981.png",
-                        "miniFlg": 1,
-                        "name": "西餐西快",
-                        "parentId": 0,
-                        "parentName": "",
-                        "pyCode": "XCXK",
-                        "sIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png",
-                        "showFlg": 1,
-                        "styleUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190304143621318-3752.jpg",
-                        "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w02.png"
-                    }
-                ],
-                "relateInfo": "1",
-                "type": "DETAIL"
-            }
-        ]
+                    "id": 58,
+                    "image": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190328174847892-2989.jpg",
+                    "market": null,
+                    "marketId": 5,
+                    "modifyTime": "",
+                    "name": "测试广告位1",
+                    "productBusinessTypepArray": null,
+                    "type": "BANNER"
+                }
+            ],
+            "COLUMN": [
+                {
+                    "businesstypeRange": "PART",
+                    "createRole": 0,
+                    "createTime": "2019-03-23 10:00:17",
+                    "createUser": 0,
+                    "createUsername": "孙启萌",
+                    "deleteFlg": 0,
+                    "id": 25,
+                    "image": "http://beijing.aliyuncs.com/businesstype/w02.png",
+                    "market": null,
+                    "marketId": 5,
+                    "modifyTime": "",
+                    "name": "测试广告位4",
+                    "productBusinessTypepArray": null,
+                    "type": "COLUMN"
+                }
+            ],
+            "ROWDOWN": [
+                {
+                    "businesstypeRange": "ALL",
+                    "createRole": 0,
+                    "createTime": "2019-03-28 11:13:24",
+                    "createUser": 0,
+                    "createUsername": "孙启萌",
+                    "deleteFlg": 0,
+                    "id": 62,
+                    "image": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190328111308458-4149.png",
+                    "market": null,
+                    "marketId": 0,
+                    "modifyTime": "",
+                    "name": "ag",
+                    "productBusinessTypepArray": null,
+                    "type": "ROWDOWN"
+                }
+            ],
+            "ROWUP": [
+                {
+                    "businesstypeRange": "PART",
+                    "createRole": 0,
+                    "createTime": "2019-03-28 18:02:15",
+                    "createUser": 0,
+                    "createUsername": "孙启萌",
+                    "deleteFlg": 0,
+                    "id": 66,
+                    "image": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190328180207163-8064.png",
+                    "market": null,
+                    "marketId": 277,
+                    "modifyTime": "",
+                    "name": "胖胖的页",
+                    "productBusinessTypepArray": null,
+                    "type": "ROWUP"
+                }
+            ]
+        }
     }
 ### APP-52. app端查询热搜详情数据
 #### 模块负责人
@@ -2436,55 +2421,17 @@
         "data": {
             "businesstypeRange": "PART",
             "createRole": 1,
-            "createTime": "2019-03-25 13:16:19",
+            "createTime": "2019-03-26 10:29:21",
             "createUser": 518,
             "createUsername": "孙启萌",
-            "deleteFlg": 0,
-            "id": 6,
-            "keyword": "本季热卖鞋品2",
+            "deleteFlg": 1,
+            "id": 60,
+            "image": "http://beijing.aliyuncs.com/businesstype/w02.png",
             "market": null,
-            "modifyTime": "2019-03-25 13:16:19",
-            "product": {
-                "createTime": "2014-06-21 11:26:58.0",
-                "customFlg": 0,
-                "deleteFlg": 0,
-                "id": 1,
-                "longName": "香草凤尾虾-专业开背，秘制加工，中西餐厅新食尚~",
-                "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/f9ce32e007fc796722466531c86d5cd9.jpg",
-                "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg",
-                "name": "香草凤尾虾",
-                "pno": "0151",
-                "process": 4,
-                "processContent": 1,
-                "processInvoice": 1,
-                "processPrice": 1,
-                "pyAll": "xiangcaofengweixia",
-                "pyCode": "XCFWX",
-                "rangeType": "ALL",
-                "status": "NORMAL",
-                "taxRate": 0
-            },
-            "productBusinessTypepArray": [
-                {
-                    "code": "-16-",
-                    "deleteFlg": 0,
-                    "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g02.png",
-                    "hasProductCnt": 0,
-                    "id": 16,
-                    "level": 1,
-                    "mIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190304143700781-1981.png",
-                    "miniFlg": 1,
-                    "name": "西餐西快",
-                    "parentId": 0,
-                    "parentName": "",
-                    "pyCode": "XCXK",
-                    "sIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png",
-                    "showFlg": 1,
-                    "styleUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190304143621318-3752.jpg",
-                    "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w02.png"
-                }
-            ],
-            "relateInfo": "1",
-            "type": "DETAIL"
+            "marketId": 5,
+            "modifyTime": "2019-03-26 10:29:21",
+            "name": "测试广告位7",
+            "productBusinessTypepArray": null,
+            "type": "BANNER"
         }
-    }    
+    }
