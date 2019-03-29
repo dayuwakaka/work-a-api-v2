@@ -2015,7 +2015,7 @@
                         },
                         "remark": "12312312312",//推荐说明
                         "sort": 0,//推荐序列
-                        "tag": "HOT"//推荐标签
+                        "tag": "HOT"//推荐标签  HOT 热销 NEW 新品  SALE 销售
                     },
                     {
                         "businesstypeId": 16,
@@ -2058,7 +2058,7 @@
     {
     "businesstypeId":"16",//业态id
     "productId":"5",//产品id
-    "tag":"HOT", //标签 HOT 热销 NEW 新品
+    "tag":"HOT", //标签 HOT 热销 NEW 新品  SALE 销售
     "sort":"0", //排序
     "remark":"测试推荐说明" //推荐说明
     }
