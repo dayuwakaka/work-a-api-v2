@@ -1804,5 +1804,17 @@
         "data": null
     }
 
-
+### DD-132. 销售订单-账余支付（APP端）
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /router/v5/order/{orderId}/pay
+#### 参数
+    orderId: 单号
+#### 相应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
 
