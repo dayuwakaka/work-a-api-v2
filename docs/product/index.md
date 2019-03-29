@@ -2037,7 +2037,7 @@
                     },
                         "remark": "测试推荐说明",
                         "sort": 0,
-                        "tag": "HOT"
+                        "tag": "HOT" //标签 HOT 热销 NEW 新品  SALE 销售
                     }
                 ],
                 "pyCode": "",
