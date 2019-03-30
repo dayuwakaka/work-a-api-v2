@@ -1974,79 +1974,57 @@
 #### 请求
     GET v2/product/recommend
 #### 参数    
-    无
+    productKeyword  // 品名/品号   举例 海苔贝柱/0204
 #### 响应
-
 
     {
         "code": 100000,
         "msg": "",
         "data": [
             {
-                "code": "-16-",
-                "deleteFlg": 0,
-                "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g02.png",
-                "hasProductCnt": 5,
-                "id": 16,
-                "level": 1,
-                "mIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190325174758882-9387.png",
-                "miniFlg": 1,
-                "name": "西餐西快",
-                "parentId": 0,
-                "parentName": "",
-                "productRecommendList": [
-                    {
-                        "businesstypeId": 16,
-                        "deleteFlg": 1,
-                        "id": 1,
-                        "productId": 5,
-                        "productLite": {
-                        "customFlg": 1,
-                        "customFlgMore": 1,//定制状态  0是普通品，1是常规定制品，2是专属定制品
-                        "id": 5,
-                        "longName": "",
-                        "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/e888069ae08024bb21a595de06a44b29.jpg",
-                        "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/edc70e47f9d1f65ed4c02ecf2312475c.jpg",//产品图片
-                        "name": "海苔贝柱",//品名
-                        "nowfuture": "",
-                        "pno": "0204",//品号
-                        "productLack": null,
-                        "status": "NORMAL"//上架状态  NORMAL上架 LOCK下架
-                        },
-                        "remark": "12312312312",//推荐说明
-                        "sort": 0,//推荐序列
-                        "tag": "HOT"//推荐标签  HOT 热销 NEW 新品  SALE 销售
-                    },
+                "productBusinessType": {
+                    "code": "-16-",
+                    "deleteFlg": 0,
+                    "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g02.png",
+                    "hasProductCnt": 5,
+                    "id": 16,
+                    "level": 1,
+                    "mIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190325174758882-9387.png",
+                    "miniFlg": 1,
+                    "name": "西餐西快",
+                    "parentId": 0,
+                    "parentName": "",
+                    "pyCode": "",
+                    "sIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190325174752832-7587.png",
+                    "showFlg": 1,
+                    "styleUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190304143621318-3752.jpg",
+                    "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w02.png"
+                },
+                "productRecommends": [
                     {
                         "businesstypeId": 16,
                         "deleteFlg": 0,
-                        "id": 2,
-                        "productId": 5,
+                        "id": 27,
+                        "productId": 16,
                         "productLite": {
-                        "customFlg": 0,
-                        "customFlgMore": 0,
-                        "id": 6,
-                        "longName": "",
-                        "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201901/f8a740b54026ea2f959f188b96cf3d3e.jpg",
-                        "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201901/43b4a0bb5a7c75276d57f24268432952.jpg",
-                        "name": "唐扬鱿鱼",
-                        "nowfuture": "",
-                        "pno": "0137",
-                        "productLack": null,
-                        "status": ""
-                    },
-                        "remark": "测试推荐说明",
-                        "sort": 0,
-                        "tag": "HOT" //标签 HOT 热销 NEW 新品  SALE 销售
+                            "customFlg": 0,
+                            "customFlgMore": 0,//定制状态  0是普通品，1是常规定制品，2是专属定制品
+                            "id": 16,
+                            "longName": "",
+                            "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/a9aec32209f864aedcde19ada9e005ca.jpg",
+                            "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/53dd51a2fcde6a4c7d7692d7c836abfa.jpg",//产品图片
+                            "name": "虾米花（冻裹面包屑虾）",//品名
+                            "nowfuture": "",
+                            "pno": "0179",//品号
+                            "productLack": null,
+                            "status": "NORMAL" //上架状态  NORMAL上架 LOCK下架
+                        },
+                        "remark": "", //推荐说明
+                        "sort": 0, //推荐序列
+                        "tag": "HOT" //推荐标签  HOT 热销 NEW 新品  SALE 销售
                     }
-                ],
-                "pyCode": "",
-                "sIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190325174752832-7587.png",
-                "showFlg": 1,
-                "styleUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190304143621318-3752.jpg",
-                "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w02.png"
+                ]
             }
-            
         ]
     }
 ### CP-212. 推荐新增信息
@@ -2083,17 +2061,27 @@
 #### 模块负责人
     王子悦
 #### 请求
-    DELETE v2/product/recommend/
+    DELETE v2/product/recommend/{id}id
 #### 参数    
-    {
-        "id":"1",
-        "businesstypeId":"22" //逻辑说明：1）删除单条推荐，id赋值【推荐】id，businesstypeId不传值
-                              //2）批量删除，businesstypeId赋值【业态】id不传值
-    }
+    
+        id   //推荐id
+    
 #### 响应
     {"code":100000,"msg":"","data":null}
 
-### CP-215. 推荐操作日志信息
+### CP-215. 推荐信息批量删除
+#### 模块负责人
+    王子悦
+#### 请求
+    DELETE v2/product/recommend/ALL/{id}
+#### 参数    
+    
+        id   //业态id
+    
+#### 响应
+    {"code":100000,"msg":"","data":null}
+
+### CP-216. 推荐操作日志信息
 #### 模块负责人
     王子悦
 #### 请求
@@ -2134,7 +2122,7 @@
         }
     }
 
-### CP-216. 推荐详情信息
+### CP-217. 推荐详情信息
 #### 模块负责人
     王子悦
 #### 请求
@@ -2146,17 +2134,17 @@
         "code": 100000,
         "msg": "",
         "data": {
-            "businesstypeId": 16,
+            "businesstypeId": 16,//业态id
             "deleteFlg": 1,
             "id": 1,
-            "productId": 5,
-            "remark": "12312312312",
-            "sort": 0,
-            "tag": "HOT"
+            "productId": 5,//产品id
+            "remark": "12312312312",//推荐说明
+            "sort": 0,//推荐排序
+            "tag": "HOT" ////标签 HOT 热销 NEW 新品
         }
     }
 
-### CP-217. 为数据中心提供反向推送销量排序更新排序接口
+### CP-218. 为数据中心提供反向推送销量排序更新排序接口
 #### 模块负责人
     王子悦
 #### 请求
