@@ -1488,7 +1488,7 @@
     name                // 广告位名称
     type                // 广告位类型 BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告
     businesstypeId      // 关联业态id
-    marketType          // 关联活动类型
+    marketType          // 关联活动类型 COUPON领券 GIFT满赠 REDUCE满减 DISCOUNT满折 COLUMN专栏 SPECIAL专题
     marketStatus        // 关联活动状态 0 正常 1 作废
     deleteFlg           // 状态 0 正常 1 作废
     pageNo              // 页码
@@ -1504,30 +1504,30 @@
                 {
                     "businesstypeRange": "PART",//广告位关联业态范围 ALL 全部业态 PART 部分
                     "createRole": 1,
-                    "createTime": "2019-03-22 13:37:19.0",
+                    "createTime": "2019-03-22 13:37:19.0",//广告创建时间
                     "createUser": 518,
-                    "createUsername": "孙启萌",
+                    "createUsername": "孙启萌",//广告创建人
                     "deleteFlg": 0,
                     "id": 16,
-                    "image": "http://beijing.aliyuncs.com/businesstype/w02.png",
+                    "image": "http://beijing.aliyuncs.com/businesstype/w02.png",//广告图片
                     "market": {//广告位关联活动数据
                         "bannerPic": "",
                         "createTime": "2018-10-25 12:05:55",
                         "createUser": 232,
                         "createUserName": "赵江敏",
                         "customerRange": "ALL",
-                        "deleteFlg": 0,
-                        "effectEtime": "2018-10-27 23:59:59",
-                        "effectStime": "2018-10-25 00:00:00",
+                        "deleteFlg": 0,//活动状态
+                        "effectEtime": "2018-10-27 23:59:59",//活动结束日期
+                        "effectStime": "2018-10-25 00:00:00",//活动开始日期
                         "id": 150,
                         "name": "10月25号-27号线上秒杀仅限3天",
                         "overdue": 0,
                         "remark": "",
-                        "type": "SPECIAL"
+                        "type": "SPECIAL"//活动类型
                     },
                     "marketId": 150,
                     "modifyTime": "2019-03-22 05:37:21.0",
-                    "name": "测试广告位3",
+                    "name": "测试广告位3",//广告名称
                     "productBusinessTypepArray": [//广告位关联业态数据集合
                         {
                             "code": "-16-",
@@ -1638,7 +1638,7 @@
                 "id": 32,
                 "opInfo": "删除广告位信息",
                 "opRole": 1,
-                "opTime": "2019-03-23 11:18:58.0",
+                "opTime": "2019-03-23 11:18:58",
                 "opUser": 518,
                 "opUsername": "孙启萌"
             },
@@ -1647,7 +1647,7 @@
                 "id": 2,
                 "opInfo": "新增广告位信息",
                 "opRole": 1,
-                "opTime": "2019-03-22 13:37:18.0",
+                "opTime": "2019-03-22 13:37:18",
                 "opUser": 518,
                 "opUsername": "孙启萌"
             }
