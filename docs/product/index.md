@@ -2061,7 +2061,7 @@
 #### 模块负责人
     王子悦
 #### 请求
-    DELETE v2/product/recommend/{id}id
+    DELETE v2/product/recommend/{id}
 #### 参数    
     
         id   //推荐id
