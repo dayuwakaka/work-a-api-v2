@@ -2455,3 +2455,97 @@
             "type": "MARKET"
         }
     }
+
+### APP-53 获取活动信息
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /router/v5/market/{marketId}
+#### 参数
+    *marketId: 1 //活动ID
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "accumulative": "",
+            "activeConditionId": 0,
+            "bannerPic": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190323111436521-8883.jpg",
+            "couponConditionId": 0,
+            "detailPic": [
+                {
+                    "id":1,
+                    "marketId":2,
+                    "type":"BANNER",  // BANNER 图 POPUP 弹屏图 DETAIL 明细图    
+                    "position": "TOP",  // 图片位置 'NOLIMIT', 'TOP', 'MIDDLE', 'BOTTOM'
+                    "picUrl":"http://asae.oss-cn-beijing.aliyuncs.com/ANET20190323111436521-8883.jpg"
+                }
+            ],
+            "effectEtime": "2020-04-30 23:59:59",
+            "effectStime": "2019-03-23 00:00:00",
+            "hasBusinessunitRange": 1,
+            "hasExcludeProductunitRange": 0,
+            "hasProductunitRange": 10,
+            "id": 253,
+            "limitNum": 0,
+            "name": "超哥专栏001",
+            "popupPic": "",
+            "productunit": [
+                        {
+                            "createTime": "",
+                            "cubage": 28773,
+                            "grossweight": 8.104,
+                            "guige": "756g/盒*9盒",
+                            "height": 21.5,
+                            "id": 36,
+                            "length": 49.2,
+                            "markets": null,
+                            "minimum": 0,
+                            "minimumType": "NONE",
+                            "modifyTime": "",
+                            "netweight": 6.8,
+                            "perunit": 9,
+                            "price": {                          // 价格
+                                "aPrice": 459,
+                                "areaPrice": 0,
+                                "decideType": "A",              // 价格类型
+                                "finallyPrice": 459,            // 最终价格
+                                "pPrice": 344,
+                                "productUnitId": 36,
+                                "rate": 0,
+                                "rawFlg": "NO",
+                                "signPrice": 0,
+                                "specialPrice": 0
+                            },
+                            "product": {
+                                "customFlg": 0,
+                                "customFlgMore": 0,                // 定制 0 非定制  1 普通定制  2 专属定制
+                                "id": 17,
+                                "longName": "黄金蟹宝（A），完整蟹壳为底，鳕蟹肉嵌入其中，香酥入味。",
+                                "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201502/03/1422929379-GttZ.jpg@!app-s",
+                                "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201804/6a4d88ee11383bdaa031b430c673823b.jpg@!app-s",
+                                "name": "黄金蟹宝A（裹屑模拟蟹肉）",
+                                "nowfuture": "",
+                                "pno": "N0.0022",
+                                "productLack": {                    // 断货
+                                    "endTime": "2019-03-31",
+                                    "productId": 17,
+                                    "startTime": "2019-03-30"
+                                },,
+                                "status": "NORMAL"
+                            },
+                            "productCart": null,
+                            "productId": 17,
+                            "stock": {                          // 库存
+                                "amount": 135,
+                                "productId": 17
+                            },
+                            "unit": "件",
+                            "unitId": 3,
+                            "width": 27.2
+                        }
+            "productunitIds": "2,8,12,14,20,22,28,32,34,36",
+            "type": "COLUMN",
+            "unit": ""
+        }
+    }
