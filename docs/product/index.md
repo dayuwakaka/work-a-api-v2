@@ -20,6 +20,8 @@
     lackFlg: 1          // 断货标志 0 非断货 1 断货
     rawFlg: 0           // 是否原料品 0 非 1 是
     rangeType: PART     // 销售区域类型 ALL 全部区域 PART 指定区域 EXCLUDE 排除区域
+    @@attrId: 1           // 属性ID
+    @@hasBusinessType: 1  // 是否配置业态 0 否 1 是
     buttonPermissionFlg: 1 
     pageNo:1 // 页码 默认1
     pageSize: 25 // 页面条数 默认25
@@ -34,8 +36,8 @@
             "total": 0
             "datas": [
                 {
-                    @@"businessTypeIds": [103,......], // 餐饮业态ID
-                    @@"businessTypes": [
+                    "businessTypeIds": [103,......], // 餐饮业态ID
+                    "businessTypes": [
                         {
                             "code": "-16-0220-",
                             "deleteFlg": 0,
@@ -55,10 +57,10 @@
                             "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/0220.png"
                         }
                     ],
-                    "businessunit": [],
+                    "businessunit": [],             
                     "cookBookLites": null,
                     "createTime": "2018-11-16 06:09:12", // 创建时间
-                    @@"custom": [                   // 定制客户 或 定制事业部
+                    "custom": [                   // 定制客户 或 定制事业部
                         {
                             "id": 2891,
                             "productId": 4757,
@@ -88,7 +90,7 @@
                     "processContent": 1, // 内容完善状态 0 未完善 1 已完善
                     "processInvoice": 0, // 发票完善状态 0 未完善 1 已完善
                     "processPrice": 1, // 价格完善状态 0 未完善 1 已完善
-                    @@"productAttrs": [
+                    "productAttrs": [
                         {
                             "categoryId": 1,            // 分类id
                             "categoryName": "属性分类一",    // 分类名称
@@ -108,23 +110,48 @@
                         "startTime": "2018-01-01", // 缺货开始时间
                         "endTime": "2018-01-20" // 缺货结束时间
                     },
-                    @@"productRange": [
+                    @@"productSaleRange": [     // 销售区域
                         {
-                            "id": 7,
-                            "pathid": "06",     // 区域编码
-                            "productId": 4752
+                            "businessunit": null,       // 事业部
+                            "customer": {               // 客户
+                                "businessunit": 72,
+                                "businessunitName": "P2P-YJ",
+                                "companyName": "82年凯龙",
+                                "customerId": 32938,            // 客户ID
+                                "isParent": 0,
+                                "isStockLimit": 0,
+                                "platformId": 1,
+                                "shortName": "樊嘉辉的凯龙工厂",    // 客户名
+                                "srRoleId": 40,
+                                "srRoleName": "高成举",
+                                "ssRoleId": 1,
+                                "ssRoleName": "樊嘉辉",
+                                "type": "A"
+                            },
+                            "id": 4,
+                            "ownerId": 32938,       // 客户ID 或 事业部ID
+                            "pathid": "080201",     // 区域编码
+                            "productId": 4750,
+                            "type": "CUSTOMER"      // CUSTOMER 指定了客户 BUSINESSUNIT 指定了事业部
                         },
                         {
-                            "id": 8,
-                            "pathid": "0602",
-                            "productId": 4752
-                        },
-                        {
-                            "id": 9,
-                            "pathid": "060101",
-                            "productId": 4752
+                            "businessunit": {
+                                "bcFlg": 0,
+                                "groupId": 3,
+                                "groupName": "PW事业组",
+                                "id": 1,                    // 事业部ID
+                                "name": "PW",               // 事业部名
+                                "platformId": 1,
+                                "sort": 2
+                            },
+                            "customer": null,
+                            "id": 2,
+                            "ownerId": 1,
+                            "pathid": "060202",
+                            "productId": 4750,
+                            "type": "BUSINESSUNIT"
                         }
-                    ],
+                    ]
                     "productUnits": [ // 规格列表
                         {
                             "cubage": 0,
@@ -191,7 +218,7 @@
                     ],
                     "pyAll": "",
                     "pyCode": "",
-                    "rangeType": "ALL",     // ALL 全部区域 PART 指定区域 EXCLUDE 排除区域
+                    @@"rangeType": "ALL",     // ALL 全部区域 PART 指定区域 EXCLUDE 排除区域
                     "relatePnos": null,
                     "status": "LOCK", // 上下架状态 NORMAL 上架 LOCK 下架
                     "stock": null,
@@ -915,23 +942,6 @@
         }
     } 
 
-### CP-107. 产品销售区域修改
-#### 模块负责人
-    尹洪明
-#### 请求
-    PUT     /v2/product/area/{productId}
-#### 参数
-    *productId  // 产品id
-    {
-        *"pathid": ["06","0602","060101"]
-    }
-#### 响应
-    {
-    	"code": 100000,
-    	"msg": "",
-    	"data": null
-    }
-    
 ### CP-16.批量修改产品业态
 #### 模块负责人
     尹洪明
@@ -1484,6 +1494,44 @@
     	"data": null
     }
     
+### CP-120. 销售区域修改
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT     /v2/product/salerange
+#### 参数
+    {
+        "productId": 4759,          // 产品ID
+        "rangeType": "EXCLUDE",    // 销售范围 默认传递 EXCLUDE
+        "range": [
+            {
+                "pathid": "060202", // 排除区域编码
+                "type": "NONE",     // NONE 不指定任何事业部或客户 BUSINESSUNIT 指定事业部 CUSTOMER 指定客户
+                "ownerId": 0        // 事业部ID 或 客户ID 不指定任何事业部和客户时，传递 0
+            },
+            {
+                "pathid": "060202",
+                "type": "BUSINESSUNIT",
+                "ownerId": 1
+            },
+            {
+                "pathid": "060202",
+                "type": "CUSTOMER",
+                "ownerId": 32937
+            },
+            {
+                "pathid": "080201",
+                "type": "CUSTOMER",
+                "ownerId": 32938
+            }
+        ]
+    }
+#### 响应    
+    {
+    	"code": 100000,
+    	"msg": "",
+    	"data": null
+    }
 ### CP-151. 期货现货新增
 #### 模块负责人
     尹洪明
