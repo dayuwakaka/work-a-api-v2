@@ -2156,17 +2156,17 @@
         "code": 100000,
         "msg": "",
         "data": {
-            "BANNER": [
+            "BANNER": [//广告位 BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告
                 {
-                    "businesstypeRange": "ALL",
+                    "businesstypeRange": "ALL",//业态范围 ALL 全部业态 PART 部分
                     "createRole": 0,
-                    "createTime": "2019-03-28 11:32:13",
+                    "createTime": "2019-03-28 11:32:13",//创建时间
                     "createUser": 0,
-                    "createUsername": "孙启萌",
+                    "createUsername": "孙启萌",//创建人
                     "deleteFlg": 0,
                     "id": 64,
-                    "image": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190328175533452-1765.jpg",
-                    "market": {
+                    "image": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190328175533452-1765.jpg",//广告图片
+                    "market": {//关联活动
                         "bannerPic": "",
                         "createTime": "2018-03-13 14:00:12",
                         "createUser": 101,
@@ -2176,14 +2176,14 @@
                         "effectEtime": "2018-04-30 23:59:59",
                         "effectStime": "2018-03-01 00:00:00",
                         "id": 5,
-                        "name": "新用户满减活动",
+                        "name": "新用户满减活动",//活动名称
                         "overdue": 0,
                         "remark": "",
-                        "type": "COUPON"
+                        "type": "COUPON"//活动类型 COUPON领券 GIFT满赠 REDUCE满减 DISCOUNT满折 COLUMN专栏 SPECIAL专题
                     },
                     "marketId": 0,
                     "modifyTime": "",
-                    "name": "测试广告位8",
+                    "name": "测试广告位8",//广告名称
                     "productBusinessTypepArray": null,
                     "type": "BANNER"
                 },
@@ -2314,34 +2314,34 @@
         "code": 100000,
         "msg": "",
         "data": {
-            "businesstypeRange": "PART",
+            "businesstypeRange": "PART",//业态范围 ALL 全部业态 PART 部分
             "createRole": 1,
-            "createTime": "2019-03-26 10:29:21",
+            "createTime": "2019-03-26 10:29:21",//创建时间
             "createUser": 518,
-            "createUsername": "孙启萌",
+            "createUsername": "孙启萌",//创建人
             "deleteFlg": 1,
             "id": 60,
-            "image": "http://beijing.aliyuncs.com/businesstype/w02.png",
-            "market": {
+            "image": "http://beijing.aliyuncs.com/businesstype/w02.png",//广告图片
+            "market": {//关联活动信息
                     "bannerPic": "",
                     "createTime": "2018-03-13 14:00:12",
                     "createUser": 101,
                     "createUserName": "樊嘉辉",
                     "customerRange": "NEW",
                     "deleteFlg": 0,
-                    "effectEtime": "2018-04-30 23:59:59",
-                    "effectStime": "2018-03-01 00:00:00",
+                    "effectEtime": "2018-04-30 23:59:59",//活动结束时间
+                    "effectStime": "2018-03-01 00:00:00",//活动开始时间
                     "id": 5,
-                    "name": "新用户满减活动",
+                    "name": "新用户满减活动",//活动名称
                     "overdue": 0,
                     "remark": "",
-                    "type": "COUPON"
+                    "type": "COUPON"//活动类型 COUPON领券 GIFT满赠 REDUCE满减 DISCOUNT满折 COLUMN专栏 SPECIAL专题
                 },
             "marketId": 5,
             "modifyTime": "2019-03-26 10:29:21",
-            "name": "测试广告位7",
+            "name": "测试广告位7",//广告名称
             "productBusinessTypepArray": null,
-            "type": "BANNER"
+            "type": "BANNER"//BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告
         }
     }
 
@@ -2358,18 +2358,18 @@
         "msg": "",
         "data": [
             {
-                "businesstypeRange": "ALL",
+                "businesstypeRange": "ALL", //业态范围 ALL 全部业态 PART 部分
                 "createRole": 0,
-                "createTime": "2019-03-27 17:38:42",
+                "createTime": "2019-03-27 17:38:42",//创建时间
                 "createUser": 0,
-                "createUsername": "",
+                "createUsername": "孙启萌",//创建人
                 "deleteFlg": 0,
                 "id": 16,
-                "keyword": "1232",
+                "keyword": "1232",//热搜词
                 "market": null,
                 "modifyTime": "",
                 "product": null,
-                "productBusinessTypepArray": [
+                "productBusinessTypepArray": [//关联业态集合
                     {
                         "code": "-16-",
                         "deleteFlg": 0,
@@ -2389,8 +2389,8 @@
                         "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w02.png"
                     }
                 ],
-                "relateInfo": "2132",
-                "type": "QUERY"
+                "relateInfo": "2132",//关联信息 QUERY：模糊搜索词， DETAIL 产品ID， MARKET 营销ID
+                "type": "QUERY"//热词跳转类型 QUERY 模糊搜索， DETAIL 产品明细， MARKET 活动页
             }
         ]
     }
@@ -2406,28 +2406,28 @@
         "code": 100000,
         "msg": "",
         "data": {
-            "businesstypeRange": "PART",
+            "businesstypeRange": "PART",//业态范围 ALL 全部业态 PART 部分
             "createRole": 1,
-            "createTime": "2019-03-25 13:18:19",
+            "createTime": "2019-03-25 13:18:19",//创建时间
             "createUser": 518,
-            "createUsername": "孙启萌",
+            "createUsername": "孙启萌",//创建人
             "deleteFlg": 0,
             "id": 7,
-            "keyword": "本季热卖鞋品3",
-            "market": {
+            "keyword": "本季热卖鞋品3",//热搜词
+            "market": {//关联活动信息
                 "bannerPic": "",
                 "createTime": "2018-03-13 14:00:12",
                 "createUser": 101,
                 "createUserName": "樊嘉辉",
                 "customerRange": "NEW",
                 "deleteFlg": 0,
-                "effectEtime": "2018-04-30 23:59:59",
-                "effectStime": "2018-03-01 00:00:00",
+                "effectEtime": "2018-04-30 23:59:59",//活动结束时间
+                "effectStime": "2018-03-01 00:00:00",//活动开始时间
                 "id": 5,
-                "name": "新用户满减活动",
+                "name": "新用户满减活动",//活动名称
                 "overdue": 0,
                 "remark": "",
-                "type": "COUPON"
+                "type": "COUPON"//活动类型 COUPON领券 GIFT满赠 REDUCE满减 DISCOUNT满折 COLUMN专栏 SPECIAL专题
             },
             "modifyTime": "2019-03-25 13:18:19",
             "product": null,
@@ -2451,8 +2451,8 @@
                     "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w05.png"
                 }
             ],
-            "relateInfo": "5",
-            "type": "MARKET"
+            "relateInfo": "5",//关联信息 QUERY：模糊搜索词， DETAIL 产品ID， MARKET 营销ID
+            "type": "MARKET"//热词跳转类型 QUERY 模糊搜索， DETAIL 产品明细， MARKET 活动页
         }
     }
 
