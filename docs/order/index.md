@@ -1306,7 +1306,7 @@
     	    *"id": 1,
     		*"customerId": 2434, // 客户id
     		*"receiveId": 17508, // 联系人id
-    		*"tradefrom": "SYS", // 下单渠道 固定 SYS
+    		//*"tradefrom": "SYS", // 下单渠道 固定 SYS
     		*"deliveryType": "DELIVERY", // 配送方式 DELIVERY：配送 SELF：自提
     		*"planSendTime": "2019-03-15", // 计划发货时间
     		"rebateId": 1, // 返利券id
