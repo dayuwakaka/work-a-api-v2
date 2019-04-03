@@ -2147,11 +2147,11 @@
                 {
                     "businesstypeId": 16,
                     "id": 22,
-                    "opInfo": "删除推荐信息:海苔贝柱",
+                    "opInfo": "删除推荐信息:海苔贝柱",//操作信息
                     "opRole": 1,
-                    "opTime": "2019-03-27 09:13:20.0",
+                    "opTime": "2019-03-27 09:13:20.0",//操作时间
                     "opUser": 518,
-                    "opUsername": "孙启萌",
+                    "opUsername": "孙启萌",//操作人
                     "productId": 0
                 },
                 {
@@ -2182,26 +2182,26 @@
         "code": 100000,
         "msg": "",
         "data": {
-            "businesstypeId": 16,
+            "businesstypeId": 16,//业态id
             "deleteFlg": 0,
             "id": 36,
-            "productId": 22,
+            "productId": 22,//产品id
             "productLite": {//产品信息
                 "customFlg": 0,
                 "customFlgMore": 0,
                 "id": 22,
                 "longName": "",
                 "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/0027be91a8862ff23431ac2121df783d.jpg",
-                "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/608c64c47c03871eae2cc34d6325d7c0.jpg",
+                "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/608c64c47c03871eae2cc34d6325d7c0.jpg",//产品图片
                 "name": "黄金蟹钳（裹屑模拟蟹肉）",//品名
                 "nowfuture": "",
                 "pno": "0033",//品号
                 "productLack": null,
-                "status": "NORMAL"
+                "status": "NORMAL"//上架状态  NORMAL上架 LOCK下架
             },
             "remark": "",
-            "sort": 8,
-            "tag": "NEW"
+            "sort": 8,//排序序号
+            "tag": "NEW"////标签 HOT 热销 NEW 新品  SALE 销售
         }
     }
 
