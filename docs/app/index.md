@@ -2571,7 +2571,7 @@
 #### 模块负责人
     王子悦
 #### 请求
-    POST /router/v5/app/appversion
+    GET /router/v5/app/appversion
 #### 参数
     无
 #### 响应
