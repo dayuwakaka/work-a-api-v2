@@ -1721,32 +1721,32 @@
             "dataSums": null,
             "datas": [
                 {//此热搜关联活动数据，market里加载活动信息，product是null，relateInfo是market_id
-                    "businesstypeRange": "PART",
+                    "businesstypeRange": "PART",//热搜范围 ALL 全部业态 PART 部分业态
                     "createRole": 1,
-                    "createTime": "2019-03-25 13:18:19",
+                    "createTime": "2019-03-25 13:18:19",//创建时间
                     "createUser": 518,
-                    "createUsername": "孙启萌",
+                    "createUsername": "孙启萌",//创建人
                     "deleteFlg": 0,
                     "id": 7,
-                    "keyword": "本季热卖鞋品3",
-                    "market": {
+                    "keyword": "本季热卖鞋品3",//热搜词
+                    "market": {//关联活动
                         "bannerPic": "",
                         "createTime": "2018-03-13 14:00:12",
                         "createUser": 101,
                         "createUserName": "樊嘉辉",
                         "customerRange": "NEW",
                         "deleteFlg": 0,
-                        "effectEtime": "2018-04-30 23:59:59",
-                        "effectStime": "2018-03-01 00:00:00",
+                        "effectEtime": "2018-04-30 23:59:59",//结束时间
+                        "effectStime": "2018-03-01 00:00:00",//开始时间
                         "id": 5,
-                        "name": "新用户满减活动",
+                        "name": "新用户满减活动",//活动名称
                         "overdue": 0,
                         "remark": "",
-                        "type": "COUPON"
+                        "type": "COUPON"//活动类型 COUPON领券 GIFT满赠 REDUCE满减 DISCOUNT满折 COLUMN专栏 SPECIAL专题
                     },
                     "modifyTime": "2019-03-25 13:18:19",
                     "product": null,
-                    "productBusinessTypepArray": [
+                    "productBusinessTypepArray": [//关联业态信息
                         {
                             "code": "-34-",
                             "deleteFlg": 0,
@@ -1766,8 +1766,8 @@
                             "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w05.png"
                         }
                     ],
-                    "relateInfo": "5",
-                    "type": "MARKET"
+                    "relateInfo": "5",//关联信息 QUERY：模糊搜索词 DETAIL：产品ID MARKET：活动ID
+                    "type": "MARKET"//热搜类型 QUERY 关键词 DETAIL 关联产品 MARKET 关联活动
                 },
                 {//此热搜关联产品数据，market是null，product里加载产品数据，relateInfo是product_id
                     "businesstypeRange": "PART",
@@ -1780,16 +1780,16 @@
                     "keyword": "本季热卖鞋品2",
                     "market": null,
                     "modifyTime": "2019-03-25 13:16:19",
-                    "product": {
+                    "product": {//关联产品信息
                         "createTime": "2014-06-21 11:26:58.0",
                         "customFlg": 0,
                         "deleteFlg": 0,
                         "id": 1,
                         "longName": "香草凤尾虾-专业开背，秘制加工，中西餐厅新食尚~",
                         "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/f9ce32e007fc796722466531c86d5cd9.jpg",
-                        "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg",
-                        "name": "香草凤尾虾",
-                        "pno": "0151",
+                        "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg",//产品图片
+                        "name": "香草凤尾虾",//产品名称
+                        "pno": "0151",//品号
                         "process": 4,
                         "processContent": 1,
                         "processInvoice": 1,
@@ -1797,7 +1797,7 @@
                         "pyAll": "xiangcaofengweixia",
                         "pyCode": "XCFWX",
                         "rangeType": "ALL",
-                        "status": "NORMAL",
+                        "status": "NORMAL",////上架状态  NORMAL上架 LOCK下架
                         "taxRate": 0
                     },
                     "productBusinessTypepArray": [
@@ -1924,11 +1924,11 @@
                 {
                     "id": 6,
                     "keywordId": 5,
-                    "opInfo": "删除热搜信息",
+                    "opInfo": "删除热搜信息",//操作信息
                     "opRole": 1,
-                    "opTime": "2019-03-25 14:21:33",
+                    "opTime": "2019-03-25 14:21:33",//操作时间
                     "opUser": 518,
-                    "opUsername": "孙启萌"
+                    "opUsername": "孙启萌"//操作人
                 },
                 {
                     "id": 5,
@@ -1966,32 +1966,32 @@
         "code": 100000,
         "msg": "",
         "data": {
-            "businesstypeRange": "PART",
+            "businesstypeRange": "PART",//热搜范围 ALL 全部业态 PART 部分业态
             "createRole": 1,
-            "createTime": "2019-03-25 13:18:19",
+            "createTime": "2019-03-25 13:18:19",//创建时间
             "createUser": 518,
-            "createUsername": "孙启萌",
+            "createUsername": "孙启萌",//创建人
             "deleteFlg": 0,
             "id": 7,
-            "keyword": "本季热卖鞋品3",
-            "market": {
+            "keyword": "本季热卖鞋品3",//热搜词
+            "market": {//关联活动信息
                 "bannerPic": "",
                 "createTime": "2018-03-13 14:00:12",
                 "createUser": 101,
                 "createUserName": "樊嘉辉",
                 "customerRange": "NEW",
                 "deleteFlg": 0,
-                "effectEtime": "2018-04-30 23:59:59",
-                "effectStime": "2018-03-01 00:00:00",
+                "effectEtime": "2018-04-30 23:59:59",//结束时间
+                "effectStime": "2018-03-01 00:00:00",//开始时间
                 "id": 5,
-                "name": "新用户满减活动",
+                "name": "新用户满减活动",//活动id
                 "overdue": 0,
                 "remark": "",
-                "type": "COUPON"
+                "type": "COUPON"//活动类型 COUPON领券 GIFT满赠 REDUCE满减 DISCOUNT满折 COLUMN专栏 SPECIAL专题
             },
             "modifyTime": "2019-03-25 13:18:19",
             "product": null,
-            "productBusinessTypepArray": [
+            "productBusinessTypepArray": [//关联业态信息
                 {
                     "code": "-34-",
                     "deleteFlg": 0,
@@ -2011,8 +2011,8 @@
                     "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w05.png"
                 }
             ],
-            "relateInfo": "5",
-            "type": "MARKET"
+            "relateInfo": "5",//关联信息 QUERY：模糊搜索词 DETAIL：产品ID MARKET：活动ID
+            "type": "MARKET"//热搜类型 QUERY 关键词 DETAIL 关联产品 MARKET 关联活动
         }
     }
 
