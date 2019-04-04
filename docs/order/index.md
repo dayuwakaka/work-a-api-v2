@@ -1445,10 +1445,10 @@
             "orderSaPros": [
                 {
                     "activeId": 0,
-                    "afterAskPrice": 0, // 调价单金额
-                    "beforeAskPrice": 0, // 差价单金额
+                    "afterAskPrice": 0,
+                    "beforeAskPrice": 0,
                     "pcount": 5, // 数量
-                    "price": 32.5, // 单价
+                    "price": 32.5, // 单价（原价）
                     "productId": 618, // 产品id
                     "productUnitId": 123, // 产品规格id
                     "productUnit": {
@@ -1460,7 +1460,38 @@
                             "pno": "0151", // 品号
                         },
                         "unit": "盒", // 单位
-                    }
+                        "price": {
+                            "aPrice": 40.12, //
+                            "areaPrice": 0,
+                            "decideType": "A", // 价格决定类型 T 特价, S 签约价, Q 区域价, A A价, P P价
+                            "finallyPrice": 40.12, // 最终决定价格（现价）
+                            "pPrice": 32.5, // P价格
+                        },
+                    },
+                    "marketActives": [ // 活动信息
+                        {
+                            "accumulative": "EACH",
+                            "giveCondition": [
+                                {
+                                    "actionValue": 1,
+                                    "extra": "",
+                                    "guige": "",
+                                    "id": 198,
+                                    "marketId": 267,
+                                    "pno": "",
+                                    "productName": "",
+                                    "shiftFlg": 0,
+                                    "shiftType": "EACH",
+                                    "targetValue": 1
+                                }
+                            ],
+                            "marketId": 267,
+                            "marketName": "减",
+                            "marketType": "REDUCE",
+                            "remark": "",
+                            "unit": "PRICE"
+                        }                                            
+                    ],
                 }
             ],
             "totalprice": 152.5 // 总价
