@@ -2573,7 +2573,7 @@
 #### 请求
     GET /router/v5/app/appversion
 #### 参数
-    无
+    osType //设备类型：ANDROID 安卓  IOS  苹果
 #### 响应
     {
         "code": 100000,
