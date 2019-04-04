@@ -1354,6 +1354,7 @@
     		"rebateId": 1, // 返利券id
     		"couponId": 1, // 优惠券id
     		"activeId": 1, // 活动id
+    		"deviceNum" : "IUDSTYNERO-9065SD879EW4UIH78", // 设备号
     		"remark": "我的测试测试备注", // 订单备注
     	},
     	"saOrderPros": [ // 订单产品明细
