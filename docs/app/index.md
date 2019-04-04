@@ -2549,3 +2549,44 @@
             "unit": ""
         }
     }
+
+### APP-54 用户登录信息
+#### 模块负责人
+    王子悦
+#### 请求
+    POST /router/v5/app/applog
+#### 参数
+    {
+        "customerId":"35133",//(必填)客户ID
+        "deviceNo":"7878ASDFSDF78S78F90S90DFS9DF",//（必填）设备号
+        "phoneModel":"P20",//手机型号
+        "wifiName":"TESTWIFI",//wifi名
+        "osVersion":"android7",//设备系统版本
+        "appVersion":"5.2"//app版本
+    }
+#### 响应
+    {"code":100000,"msg":"","data":null}
+
+### APP-55 获取升级版本信息
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /router/v5/app/appversion
+#### 参数
+    无
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "createTime": "2019-04-03 15:39:50",//创建时间
+            "deleteFlg": "0",//删除状态 0 未删除 1 删除
+            "forceFlg": "0",//强制更新标记 0 不强制 1 强制
+            "id": 5,
+            "message": "测试更新信息",//更新信息
+            "osType": "ANDROID",//设备类型：ANDROID 安卓  IOS  苹果
+            "url": "testurl",//更新URL
+            "version": "5.2",//更新版本
+            "versionCode": "121"//更新版本Code
+        }
+    }

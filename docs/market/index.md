@@ -1520,10 +1520,10 @@
                         "effectEtime": "2018-10-27 23:59:59",//活动结束日期
                         "effectStime": "2018-10-25 00:00:00",//活动开始日期
                         "id": 150,
-                        "name": "10月25号-27号线上秒杀仅限3天",
+                        "name": "10月25号-27号线上秒杀仅限3天",//活动名称
                         "overdue": 0,
                         "remark": "",
-                        "type": "SPECIAL"//活动类型
+                        "type": "SPECIAL"//关联活动类型 COUPON领券 GIFT满赠 REDUCE满减 DISCOUNT满折 COLUMN专栏 SPECIAL专题
                     },
                     "marketId": 150,
                     "modifyTime": "2019-03-22 05:37:21.0",
@@ -1566,7 +1566,7 @@
                             "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w03.png"
                         }
                     ],
-                    "type": "BANNER"//广告位类型
+                    "type": "BANNER"//广告位类型 BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告
                 }
             ],
             "pageNo": 1,
@@ -1634,13 +1634,13 @@
         "dataSums": null,
         "datas": [
             {
-                "advertisementId": 15,
+                "advertisementId": 15,//广告id
                 "id": 32,
-                "opInfo": "删除广告位信息",
+                "opInfo": "删除广告位信息",//操作信息
                 "opRole": 1,
-                "opTime": "2019-03-23 11:18:58",
+                "opTime": "2019-03-23 11:18:58",//操作时间
                 "opUser": 518,
-                "opUsername": "孙启萌"
+                "opUsername": "孙启萌"//操作人
             },
             {
                 "advertisementId": 15,
@@ -1668,33 +1668,33 @@
         "code": 100000,
         "msg": "",
         "data": {
-            "businesstypeRange": "PART",
+            "businesstypeRange": "PART",//广告位关联业态范围 ALL 全部业态 PART 部分
             "createRole": 1,
-            "createTime": "2019-03-25 19:47:35",
+            "createTime": "2019-03-25 19:47:35",//创建时间
             "createUser": 518,
-            "createUsername": "孙启萌",
+            "createUsername": "孙启萌",//创建人
             "deleteFlg": 0,
             "id": 59,
-            "image": "http://beijing.aliyuncs.com/businesstype/w02.png",
-            "market": {
+            "image": "http://beijing.aliyuncs.com/businesstype/w02.png",//广告图片
+            "market": {//关联活动信息
                 "bannerPic": "",
                 "createTime": "2018-03-13 14:00:12",
                 "createUser": 101,
                 "createUserName": "樊嘉辉",
                 "customerRange": "NEW",
                 "deleteFlg": 0,
-                "effectEtime": "2018-04-30 23:59:59",
-                "effectStime": "2018-03-01 00:00:00",
+                "effectEtime": "2018-04-30 23:59:59",//结束时间
+                "effectStime": "2018-03-01 00:00:00",//开始时间
                 "id": 5,
-                "name": "新用户满减活动",
+                "name": "新用户满减活动",//活动名称
                 "overdue": 0,
                 "remark": "",
-                "type": "COUPON"
+                "type": "COUPON"//关联活动类型 COUPON领券 GIFT满赠 REDUCE满减 DISCOUNT满折 COLUMN专栏 SPECIAL专题
             },
-            "marketId": 5,
+            "marketId": 5,//关联活动id
             "modifyTime": "2019-03-25 19:47:35",
-            "name": "测试广告位1",
-            "productBusinessTypepArray": [
+            "name": "测试广告位1",//广告名称
+            "productBusinessTypepArray": [//关联业态信息
                 {
                     "code": "-16-",
                     "deleteFlg": 0,
@@ -1714,6 +1714,6 @@
                     "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w02.png"
                 }
             ],
-            "type": "BANNER"
+            "type": "BANNER"// 广告位类型 BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告
         }
     }
