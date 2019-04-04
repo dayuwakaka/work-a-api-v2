@@ -2150,7 +2150,7 @@
 #### 请求
     GET router/v5/market/marketAdvertisements/{businesstypeId}
 #### 参数    
-    businesstypeId //业态id，例如16  22  44
+    businesstypeId //业态id，例如16  34  44   95
 #### 响应
     {
         "code": 100000,
@@ -2351,7 +2351,7 @@
 #### 请求
     GET router/v5/product/productKeywords/{businesstypeId}
 #### 参数    
-    businesstypeId //业态id，例如16  22  44
+    businesstypeId //业态id，例如16  34  44   95
 #### 响应    
     {
         "code": 100000,
