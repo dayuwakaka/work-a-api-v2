@@ -1449,6 +1449,7 @@
                     "beforeAskPrice": 0,
                     "pcount": 5, // 数量
                     "price": 32.5, // 单价（原价）
+                    "giftFlg": 0, // 0 - 正常品 1 - 赠品
                     "productId": 618, // 产品id
                     "productUnitId": 123, // 产品规格id
                     "productUnit": {
