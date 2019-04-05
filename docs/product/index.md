@@ -1502,7 +1502,7 @@
 #### 参数
     {
         "productId": 4759,          // 产品ID
-        "rangeType": "EXCLUDE",    // 销售范围 默认传递 EXCLUDE
+        "rangeType": "EXCLUDE",    // 销售范围 ALL 全部区域 EXCLUDE 排除区域
         "range": [
             {
                 "pathid": "060202", // 排除区域编码
