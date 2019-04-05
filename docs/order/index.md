@@ -1306,7 +1306,7 @@
     	    *"id": 1,
     		*"customerId": 2434, // 客户id
     		*"receiveId": 17508, // 联系人id
-    		*"tradefrom": "SYS", // 下单渠道 固定 SYS
+    		//*"tradefrom": "SYS", // 下单渠道 固定 SYS
     		*"deliveryType": "DELIVERY", // 配送方式 DELIVERY：配送 SELF：自提
     		*"planSendTime": "2019-03-15", // 计划发货时间
     		"rebateId": 1, // 返利券id
@@ -1354,6 +1354,7 @@
     		"rebateId": 1, // 返利券id
     		"couponId": 1, // 优惠券id
     		"activeId": 1, // 活动id
+    		"deviceNum" : "IUDSTYNERO-9065SD879EW4UIH78", // 设备号
     		"remark": "我的测试测试备注", // 订单备注
     	},
     	"saOrderPros": [ // 订单产品明细
@@ -1444,10 +1445,11 @@
             "orderSaPros": [
                 {
                     "activeId": 0,
-                    "afterAskPrice": 0, // 调价单金额
-                    "beforeAskPrice": 0, // 差价单金额
+                    "afterAskPrice": 0,
+                    "beforeAskPrice": 0,
                     "pcount": 5, // 数量
-                    "price": 32.5, // 单价
+                    "price": 32.5, // 单价（原价）
+                    "giftFlg": 0, // 0 - 正常品 1 - 赠品
                     "productId": 618, // 产品id
                     "productUnitId": 123, // 产品规格id
                     "productUnit": {
@@ -1459,7 +1461,38 @@
                             "pno": "0151", // 品号
                         },
                         "unit": "盒", // 单位
-                    }
+                        "price": {
+                            "aPrice": 40.12, //
+                            "areaPrice": 0,
+                            "decideType": "A", // 价格决定类型 T 特价, S 签约价, Q 区域价, A A价, P P价
+                            "finallyPrice": 40.12, // 最终决定价格（现价）
+                            "pPrice": 32.5, // P价格
+                        },
+                    },
+                    "marketActives": [ // 活动信息
+                        {
+                            "accumulative": "EACH",
+                            "giveCondition": [
+                                {
+                                    "actionValue": 1,
+                                    "extra": "",
+                                    "guige": "",
+                                    "id": 198,
+                                    "marketId": 267,
+                                    "pno": "",
+                                    "productName": "",
+                                    "shiftFlg": 0,
+                                    "shiftType": "EACH",
+                                    "targetValue": 1
+                                }
+                            ],
+                            "marketId": 267,
+                            "marketName": "减",
+                            "marketType": "REDUCE",
+                            "remark": "",
+                            "unit": "PRICE"
+                        }                                            
+                    ],
                 }
             ],
             "totalprice": 152.5 // 总价
