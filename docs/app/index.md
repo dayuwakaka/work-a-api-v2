@@ -2460,9 +2460,11 @@
 #### 模块负责人
     尹洪明
 #### 请求
-    GET /router/v5/market/{marketId}
+    GET /router/v5/market
 #### 参数
     *marketId: 1 //活动ID
+    customerId: 32580 // 客户ID
+    businessTypeId: 16 // 业态ID
 #### 响应
     {
         "code": 100000,
@@ -2499,7 +2501,30 @@
                             "height": 21.5,
                             "id": 36,
                             "length": 49.2,
-                            "markets": null,
+                            "marketActive": [                   // 活动
+                                {
+                                    "accumulative": "EACH",   // LADDER 阶梯 EACH 每满
+                                    "giveCondition": [
+                                        {
+                                            "actionValue": 1,       // 减 折 赠
+                                            "extra": "",
+                                            "guige": "",            // 赠品规格
+                                            "id": 198,
+                                            "marketId": 267,
+                                            "pno": "",              // 赠品pno
+                                            "productName": "",      // 赠品名
+                                            "shiftFlg": 0,
+                                            "shiftType": "EACH", 
+                                            "targetValue": 1        // 满
+                                        }
+                                    ],
+                                    "marketId": 267,            // 活动ID
+                                    "marketName": "减",          // 活动名
+                                    "marketType": "REDUCE",     // 活动类型 GIFT 满赠 REDUCE 满减 DISCOUNT 满折
+                                    "remark": "",               // 活动说明
+                                    "unit": "PRICE"             // PRICE 金额 COUNT 数量
+                                }
+                            ],
                             "minimum": 0,
                             "minimumType": "NONE",
                             "modifyTime": "",
@@ -2525,6 +2550,7 @@
                                 "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201502/03/1422929379-GttZ.jpg@!app-s",
                                 "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201804/6a4d88ee11383bdaa031b430c673823b.jpg@!app-s",
                                 "name": "黄金蟹宝A（裹屑模拟蟹肉）",
+                                "newHotFlg": "NEW",                 // NEW 新品 HOT 热销
                                 "nowfuture": "",
                                 "pno": "N0.0022",
                                 "productLack": {                    // 断货
