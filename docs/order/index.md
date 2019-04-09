@@ -1432,6 +1432,7 @@
     GET /router/v5/order/{customerId}/search
 #### 参数
     *customerId: 客户id
+    *pathId: 区域编号
     productKeyword: 产品名称
     pageNo: default 1
     pageSize: default 10
