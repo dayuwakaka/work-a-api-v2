@@ -892,22 +892,33 @@
             },
             "marketActiveGiveConditions": [
                 {
-                    "actionValue": 2,               // 赠多少、减多少、折多少
-                    "extra": "4151:7380",
+                    "actionValue": 2,               // 赠、减、折
+                    "extra": "4151:7380",           // gift productId:productUnitId
                     "id": 9,
                     "marketId": 6,
-                    "targetValue": 100,             // 满多少
                     "productName":"西瓜霜",         // 赠品名称
                     "guige":"10袋/箱"               // 赠品规格
+                     @@"shiftFlg": 0,               // 阶梯转每满标识 0 非 1 是
+                     @@"shiftType": "EACH",
+                    "targetValue": 100            // 满
                 },
                 {
                     "actionValue": 5,
-                    "extra": "4151:7380",
+                    "extra": "",
                     "id": 10,
                     "marketId": 6,
+                    "productName":"",
+                    "guige":""
+                     @@"shiftFlg": 1,
+                     @@"shiftType": "EACH",
                     "targetValue": 200
                 }
             ],
+            @@"marketActiveShiftCondition":{  // 转每满
+                    "targetValue": 20,      // 目标值
+                    "actionValue": 2,       // 执行值
+                    "extra": "4749:8322"    // gift productId:productUnitId
+            },
             "marketBusinessunitRanges": [{
                     "extra": "",    // 事业部名称
                     "id": 19,
