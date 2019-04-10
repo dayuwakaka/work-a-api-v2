@@ -82,58 +82,67 @@
     			"effectStime":"2018-09-13 08:40:17",
     			"effectEtime":"2018-10-13 08:40:17"	
     		}],
-    		"marketProductRanges":[
-    			{
-    			@@"type":"PRODUCTUNIT", // PRODUCTUNIT 指定品   EXCLUDE 排除品  ALL 无限制
-    			"rangeId":7383, // 产品规格ID
-    			"extra":""	// 传空即可
-    			},
-    			{
-    			"type":"PRODUCTUNIT",
-    			"rangeId":7382,
-    			"extra":""	
-    			}],
-    		"marketActiveCondition":{
-    			"accumulative":"ladder", // ladder 阶梯 each 每满赠
-    			"unit":"count" // price 金额 count 数量
-    		},
-    		"marketActiveGiveConditions":[
-    			{
-    				"targetValue":100, // 满多少
-    				"actionValue":2, // 赠多少、减多少、折多少
-    				"extra":"4151:7380" // 满赠时，存赠送产品的id 和规格id 格式为 "产品ID:规格ID"
-    			},
-    			{
-    				"targetValue":200,
-    				"actionValue":5,
-    				"extra":"4151:7380"
-    			}],
-    		"marketImages":[
-    			{
-    				"type":"banner", // 图片类型 banner 轮播图 popup 弹屏图 detail 详情图
-    				"position":"nolimit", // nolimit 无限制 top 上图 middle 中图 bottom 下图
-    				"picUrl":"http://ad.asagroup.cn/asae-h5/v2/activity/index/1200" // 图片url
-    			},
-    			{
-    				"type":"popup",
-    				"position":"nolimit",
-    				"picUrl":"http://ad.asagroup.cn/asae-h5/v2/activity/index/1200"	
-    			},
-    			{
-    				"type":"detail",
-    				"position":"top",
-    				"picUrl":"http://ad.asagroup.cn/asae-h5/v2/activity/index/1200"	
-    			},
-    			{
-    				"type":"detail",
-    				"position":"middle",
-    				"picUrl":"http://ad.asagroup.cn/asae-h5/v2/activity/index/1200"	
-    			},
-    			{
-    				"type":"detail",
-    				"position":"bottom",
-    				"picUrl":"http://ad.asagroup.cn/asae-h5/v2/activity/index/1200"	
-    			}]
+        "marketProductRanges":[
+            {
+            @@"type":"PRODUCTUNIT", // PRODUCTUNIT 指定品   EXCLUDE 排除品  ALL 无限制
+            "rangeId":7383, // 产品规格ID
+            "extra":""	// 传空即可
+            },
+            {
+            "type":"PRODUCTUNIT",
+            "rangeId":7382,
+            "extra":""	
+            }],
+        "marketActiveCondition":{
+            "accumulative":"ladder", // ladder 阶梯 each 每满赠
+            "unit":"count" // price 金额 count 数量
+        },
+        "marketActiveGiveConditions":[
+            {
+                "targetValue":100, // 满多少
+                "actionValue":2, // 赠多少、减多少、折多少
+                "extra":"4151:7380" // 满赠时，存赠送产品的id 和规格id 格式为 "产品ID:规格ID"
+                 @@"shiftFlg":0,        // 转每满标志 默认 0
+                 @@"shiftType":"EACH"   // 默认 EACH
+            },
+            { // 转每满的一个目标值
+                "targetValue":200,      // 满
+                "actionValue":0,        // 默认 0
+                "extra":"",
+                @@"shiftFlg":1,       // 转每满标志 默认 1
+                @@"shiftType":"EACH"  // 默认 EACH
+            }],
+        @@"marketActiveShiftCondition":{  // 转每满
+                "targetValue": 20,      // 目标值
+                "actionValue": 2,       // 执行值
+                "extra": "4749:8322"    // gift productId:productUnitId
+        },
+        "marketImages":[
+            {
+                "type":"banner", // 图片类型 banner 轮播图 popup 弹屏图 detail 详情图
+                "position":"nolimit", // nolimit 无限制 top 上图 middle 中图 bottom 下图
+                "picUrl":"http://ad.asagroup.cn/asae-h5/v2/activity/index/1200" // 图片url
+            },
+            {
+                "type":"popup",
+                "position":"nolimit",
+                "picUrl":"http://ad.asagroup.cn/asae-h5/v2/activity/index/1200"	
+            },
+            {
+                "type":"detail",
+                "position":"top",
+                "picUrl":"http://ad.asagroup.cn/asae-h5/v2/activity/index/1200"	
+            },
+            {
+                "type":"detail",
+                "position":"middle",
+                "picUrl":"http://ad.asagroup.cn/asae-h5/v2/activity/index/1200"	
+            },
+            {
+                "type":"detail",
+                "position":"bottom",
+                "picUrl":"http://ad.asagroup.cn/asae-h5/v2/activity/index/1200"	
+            }]
     }
     
 #### 1.5 返回值

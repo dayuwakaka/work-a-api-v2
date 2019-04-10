@@ -2460,7 +2460,7 @@
 #### 模块负责人
     尹洪明
 #### 请求
-    GET /router/v5/market
+    GET /router/v5/market/{marketId}
 #### 参数
     *marketId: 1 //活动ID
     customerId: 32580 // 客户ID
