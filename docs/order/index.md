@@ -1852,3 +1852,30 @@
         "data": null
     }
 
+### DD-133. 销售订单-校验库存
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/saorder/{orderId}/stock
+#### 参数
+    orderId: 单号
+#### 相应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "depot_id": 21,
+                "left_amount": -10, // 不足数量
+                "left_amount_jian": -1,
+                "left_amount_san": 0,
+                "platform_id": 1,
+                "pno": "0020", // 品号
+                "product_id": 43,
+                "product_name": "熊猫豆沙包", // 品名
+                "product": {
+                    "mainImg": "123" // 产品主图
+                }
+            }
+        ]
+    }
