@@ -944,6 +944,7 @@
     *productId: 1 // 产品ID
     customerId: 0 // 客户ID 默认0
     *deviceNo:198437512379851  // 设备号
+    businessTypeId: 16      // 业态ID
 #### 响应
     {
         "code": 100000,
@@ -977,6 +978,7 @@
             "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/f9ce32e007fc796722466531c86d5cd9.jpg", // 产品包装图
             "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg", // 产品主图
             "name": "香草凤尾虾", // 产品名
+            @@"newHotFlg":"NEW"    // NEW  新品  HOT 热销 
             @@"nowfuture": "NOW",         // NOW 现货  FUTURE 期货
             "pno": "0151", // 品号
             "process": 4,
