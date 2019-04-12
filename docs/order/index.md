@@ -899,7 +899,9 @@
                      "freightAskButton": false // 免运费申请按钮
                 }
             ],
-            "dataSums": null,
+            "dataSums": {
+                "currentSum": 123 // 当页合计
+            },
             "datas": [
                 {
                     "apPrice": 0, // 调价金额
