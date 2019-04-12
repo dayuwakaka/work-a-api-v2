@@ -1888,7 +1888,7 @@
 #### 模块负责人
     梁铁骐
 #### 请求
-    GET /v2/saorder
+    GET /v2/saorder/sum
 #### 参数
     buttonPermissionFlg: 1,
     customerId: 客户id,
