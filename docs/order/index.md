@@ -897,6 +897,7 @@
                      "runButton": false, // 确认执行按钮
                      "splitButton": false // 拆分按钮
                      "freightAskButton": false // 免运费申请按钮
+                     "checkStockButton"： false // 检查库存按钮
                 }
             ],
             "dataSums": {
