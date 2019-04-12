@@ -870,7 +870,8 @@
     customerId: 客户id,
     orderId: 销售订单号,
     tradefrom: 下单方式 SYS-后台手动下单 APP-客户自主下单
-    status: 订单状态 INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收
+    businessUnitIds[]: 事业部id集合
+    statuses: ['INVALID', 'RUN', 'SEND'] 订单状态 INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收
     payFlg： 结款状态 0-未结款 1-已结款
     createUserName： 创建人
     createStartDate: 创建开始日期
@@ -1845,7 +1846,7 @@
     PUT /router/v5/order/{orderId}/pay
 #### 参数
     orderId: 单号
-#### 相应
+#### 响应
     {
         "code": 100000,
         "msg": "",
@@ -1859,7 +1860,7 @@
     GET /v2/saorder/{orderId}/stock
 #### 参数
     orderId: 单号
-#### 相应
+#### 响应
     {
         "code": 100000,
         "msg": "",
@@ -1878,4 +1879,29 @@
                 }
             }
         ]
+    }
+    
+### DD-134. 销售订单-总合计
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/saorder
+#### 参数
+    buttonPermissionFlg: 1,
+    customerId: 客户id,
+    orderId: 销售订单号,
+    tradefrom: 下单方式 SYS-后台手动下单 APP-客户自主下单
+    businessUnitIds[]: 事业部id集合
+    statuses: ['INVALID', 'RUN', 'SEND'] 订单状态 INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收
+    payFlg： 结款状态 0-未结款 1-已结款
+    createUserName： 创建人
+    createStartDate: 创建开始日期
+    createEndDate: 创建结束日期
+    sendStartDate: 发货开始日期
+    sendEndDate: 发货结束日期
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": 123
     }
