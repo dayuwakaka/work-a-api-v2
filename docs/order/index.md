@@ -1869,14 +1869,14 @@
         "msg": "",
         "data": [
             {
-                "depot_id": 21,
-                "left_amount": -10, // 不足数量
-                "left_amount_jian": -1,
-                "left_amount_san": 0,
-                "platform_id": 1,
+                "depotId": 21,
+                "leftAmount": -10, // 不足数量
+                "leftAmountJian": -1,
+                "leftAmountSan": 0,
+                "platformId": 1,
                 "pno": "0020", // 品号
-                "product_id": 43,
-                "product_name": "熊猫豆沙包", // 品名
+                "productId": 43,
+                "productName": "熊猫豆沙包", // 品名
                 "product": {
                     "mainImg": "123" // 产品主图
                 }
