@@ -1737,3 +1737,104 @@
             "type": "BANNER"// 广告位类型 BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告
         }
     }
+
+
+### YX-37. 插屏新增
+#### 模块负责人
+    王子悦
+#### 请求
+    POST /v2/market/popup
+#### 参数    
+    {
+	"name":"123",//插屏名称
+	"marketId":"326",//关联活动id
+	"popupImgUrl":"http://asae.oss-cn-beijing.aliyuncs.com/ANET20190401184936072-7658.jpg",//插屏图片
+	"effectStime":"2019-03-10",//插屏开始日期
+	"effectEtime":"2019-04-27",//插屏结束日期
+	"showStime":"08:01",//插屏生效开始时间
+	"showEtime":"19:55",//插屏生效结束时间
+	"sort":"1"//优先级
+    }
+#### 响应
+    {"code":100000,"msg":"","data":null}
+
+### YX-38. 插屏列表条件查询
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /v2/market/popup
+#### 参数  
+    name          //插屏名称
+    effectStime   //插屏开始日期
+    effectEtime   //插屏结束日期
+    showStime     //插屏生效开始时间
+    showEtime     //插屏生效结束时间
+    marketName    //关联活动名称
+    pageNo        //页码
+    pageSize      //页条数
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [],
+            "dataSums": null,
+            "datas": [
+                {
+                    "createRole": 0,
+                    "createTime": "2019-04-15 15:48:59",//插屏创建时间
+                    "createUser": 0,
+                    "createUsername": "孙启萌",//插屏创建人
+                    "effectEtime": "2019-04-27",//插屏结束日期
+                    "effectStime": "2019-03-10",//插屏开始日期
+                    "id": 9,
+                    "market": {//关联活动信息
+                        "bannerPic": "",
+                        "createTime": "2019-04-10 12:59:40",//活动创建时间
+                        "createUser": 518,
+                        "createUserName": "孙启萌",//活动创建人
+                        "customerRange": "ALL",
+                        "deleteFlg": 1,
+                        "effectEtime": "2019-04-10 23:59:59",//活动结束时间
+                        "effectStime": "2019-04-10 00:00:00",//活动开始时间
+                        "id": 326,
+                        "name": "营销满赠活动005",//活动名称
+                        "overdue": 1,
+                        "remark": "营销满赠活动说明",
+                        "type": "GIFT"//活动类型 COUPON领券 GIFT满赠 REDUCE满减 DISCOUNT满折 COLUMN专栏 SPECIAL专题
+                    },
+                    "marketId": 326,
+                    "name": "123",//插屏名称
+                    "popupImgUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190401184936072-7658.jpg",//插屏图片
+                    "showEtime": "19:55",//插屏生效结束时间
+                    "showStime": "08:01",//插屏生效开始时间
+                    "sort": 1,//优先级
+                    "status": "NORMAL"//插屏状态 NORMAL  正常    LOCK   下线     INVALID   失效  如果有效结束时间小于当前时间，状态显示为失效
+                }
+                ],
+            "pageNo": 1,
+            "total": 9
+        }
+    }
+
+### YX-39. 插屏上线
+#### 模块负责人
+    王子悦
+#### 请求
+    PUT /v2/market/popup/normal/{id}        //插屏id
+#### 参数  
+    无
+#### 响应
+    {"code":100000,"msg":"","data":null}
+
+### YX-40. 插屏下线
+#### 模块负责人
+    王子悦
+#### 请求
+    PUT /v2/market/popup/lock/{id}        //插屏id
+#### 参数  
+    无
+#### 响应
+    {"code":100000,"msg":"","data":null}
+
+    
