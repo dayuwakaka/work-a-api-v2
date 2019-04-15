@@ -1,6 +1,6 @@
 ## 消息推送接口
 
-### TS-1 获取消息推送列表
+### XXTS-1 获取消息推送列表
 #### 模块负责人
     梁铁骐
 #### 请求
@@ -47,7 +47,7 @@
         }
     }
     
-### TS-2 新增消息推送
+### XXTS-2 新增消息推送
 #### 模块负责人
     梁铁骐
 #### 请求
@@ -77,7 +77,7 @@
         "data": null
     }
     
-### TS-3 获取消息推送日志列表
+### XXTS-3 获取消息推送日志列表
 #### 模块负责人
     梁铁骐
 #### 请求
@@ -115,3 +115,142 @@
             ],
         }
     }
+
+### XXTS-4 消息中心首页数据 for app
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /router/v5/message/{customerId}/index
+#### 参数
+    *customerId: 客户id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "ACTIVITY": { // 消息类别 优惠促销
+                "createTime": "2019-04-15 09:13:05", // 时间
+                "messageNum": 1, // 消息数据
+                "title": "2019-04-12测试", // 标题
+                "type": "ACTIVITY"
+            },
+            "NOTICE": { // 消息类别 系统公告
+                "createTime": "2019-04-15 09:13:05", // 时间
+                "messageNum": 1, // 消息数据
+                "title": "2019-04-12测试", // 标题
+                "type": "ACTIVITY"
+            },
+            "ORDER": { // 消息类别 订单通知
+                "createTime": "2019-04-15 09:13:05", // 时间
+                "messageNum": 1, // 消息数据
+                "title": "2019-04-12测试", // 标题
+                "type": "ACTIVITY"
+            }
+        }
+    }
+
+### XXTS-5 全部标记已读 for app
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /router/v5/message/{customerId}
+#### 参数
+    *customerId: 客户id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### XXTS-6 标记已读 for app
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /router/v5/message/{customerId}/{messageId}
+#### 参数
+    *customerId: 客户id
+    *messageId: 消息id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### XXTS-7 获取优惠促销通知列表 for app
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /router/v5/message/{customerId}/active
+#### 参数
+    *customerId: 客户id
+    *pageNo: 页码
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "content": "你好么志勇", // 内容
+                "pushTime": "2091-05-19 00:00:00", // 推送时间
+                "readFlg": 0, // 0：未读 1:已读
+                "readTime": "",
+                "relationValue": "354", // 对应的关联值 优惠促销：活动id 系统公告：url 订单通知：订单号
+                "title": "2019-04-12测试" // 标题
+            }
+        ]
+    }
+
+### XXTS-8 获取系统公告通知列表 for app
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /router/v5/message/{customerId}/notice
+#### 参数
+    *customerId: 客户id
+    *pageNo: 页码
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "content": "你好么志勇", // 内容
+                "pushTime": "2091-05-19 00:00:00", // 推送时间
+                "readFlg": 0, // 0：未读 1:已读
+                "readTime": "",
+                "relationValue": "354", // 对应的关联值 优惠促销：活动id 系统公告：url 订单通知：订单号
+                "title": "2019-04-12测试" // 标题
+            }
+        ]
+    }
+
+### XXTS-9 获取订单通知列表 for app
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /router/v5/message/{customerId}/order
+#### 参数
+    *customerId: 客户id
+    *pageNo: 页码
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "content": "你好么志勇", // 内容
+                "pushTime": "2091-05-19 00:00:00", // 推送时间
+                "readFlg": 0, // 0：未读 1:已读
+                "readTime": "",
+                "relationValue": "354", // 对应的关联值 优惠促销：活动id 系统公告：url 订单通知：订单号
+                "title": "2019-04-12测试" // 标题
+            }
+        ]
+    }
+
+
+
+
+
