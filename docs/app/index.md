@@ -2619,3 +2619,69 @@
             "versionCode": "121"//更新版本Code
         }
     }
+
+### APP-56 插屏日志新建
+#### 模块负责人
+    王子悦
+#### 请求
+    POST /router/v5/market/popup/log
+#### 参数
+    {
+	"popupId":"5",//插屏id
+	"customerId":"32932",//用户customer_id
+	"action":"CLICK",//动作  CLICK 点击  CLOSE 关闭
+	"type":"H5" //展示渠道  H5  Android   iOS
+    }
+#### 响应
+    {"code":100000,"msg":"","data":null}
+
+### APP-57 插屏根据用户操作返回用户信息
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /router/v5/market/popup/customer/{id}   //用户customer_id
+#### 参数
+    无
+#### 逻辑
+    1插屏优先级最高
+    2插屏状态要是【上线】
+    3.当前时间要符合插屏的起止日期
+    4插屏关联的活动必须是有效的（delete-flg=0   并且    活动结束时间大于当前时间）
+    5用户click操作过的插屏，不再推给用户；如果是close，下次还返回给用户
+#### 响应
+
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "createRole": 0,
+            "createTime": "2019-04-12 09:51:29",//插屏创建时间
+            "createUser": 0,
+            "createUsername": "孙启萌",//插屏创建人
+            "effectEtime": "2019-04-27",//插屏结束日期
+            "effectStime": "2019-03-10",//插屏开始日期
+            "id": 5,
+            "market": {//关联活动信息
+                "bannerPic": "",
+                "createTime": "2019-04-12 08:56:43",//活动创建时间
+                "createUser": 518,
+                "createUserName": "孙启萌",//活动创建人
+                "customerRange": "ALL",
+                "deleteFlg": 0,
+                "effectEtime": "2019-05-22 23:59:59",//活动结束时间
+                "effectStime": "2019-05-07 00:00:00",//活动开始时间
+                "id": 339,
+                "name": "4",//活动名称
+                "overdue": 0,
+                "remark": "",
+                "type": "GIFT"//活动类型 COUPON领券 GIFT满赠 REDUCE满减 DISCOUNT满折 COLUMN专栏 SPECIAL专题
+            },
+            "marketId": 339,
+            "name": "测试插屏信息7",//插屏名称
+            "popupImgUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190401184936072-7658.jpg",//插屏图片
+            "showEtime": "17:55",//插屏生效结束时间
+            "showStime": "06:31",//插屏生效开始时间
+            "sort": 1,//优先级
+            "status": "NORMAL"//插屏状态 NORMAL  正常    LOCK   下线     INVALID   失效  如果有效结束时间小于当前时间，状态显示为失效
+        }
+    }
