@@ -29,202 +29,183 @@
     {
         "code": 100000,
         "msg": "",
-        "data":{
-            "buttonPermissions": [],
+        "data": {
+            "buttonPermissionPage": {       // 页面级权限控制
+                "priceColumn": false        // 是否显示价格列
+            },
+            "buttonPermissions": [
+                 {
+                     "contentButton": false,    // 内容
+                     "deleteButton": false,     // 删除
+                     "detailButton": true,      // 查看
+                     "editButton": false,       // 信息
+                     "upButton": false,         // 下架
+                     "downButton": false,       // 上架
+                     "logButton": false         // 日志
+                 }
+             ],
             "dataSums": null,
-            "pageNo": 1,
-            "total": 0
             "datas": [
                 {
-                    "businessTypeIds": [103,......], // 餐饮业态ID
-                    "businessTypes": [
+                    "businessTypeIds": [        // 业态ID列表
+                        86
+                    ],
+                    "businessTypes": [          // 业态列表
                         {
-                            "code": "-16-0220-",
+                            "code": "-34-0511-",    // 编码
                             "deleteFlg": 0,
-                            "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/0220.png",
-                            "hasProductCnt": 30,
-                            "id": 103,                      // 业态id
+                            "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/0511.png",
+                            "hasProductCnt": 44,
+                            "id": 86,
                             "level": 2,
-                            "mIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190301161618188-4729.png",
-                            "miniFlg": 1,
-                            "name": "甜品冰点",             // 业态名
-                            "parentId": 16,                 // 上级业态id
-                            "parentName": "西餐西快",        // 上级业态名
+                            "mIcon": "",
+                            "miniFlg": 0,
+                            "name": "宴席必备",     // 名称
+                            "parentId": 34,         // 上级ID
+                            "parentName": "农贸市集",   // 上级名称
                             "pyCode": "",
-                            "sIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/0220.png",
-                            "showFlg": 1,
+                            "sIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/0511.png",
+                            "showFlg": 1,  
                             "styleUrl": "",
-                            "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/0220.png"
+                            "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/0511.png"
                         }
                     ],
-                    "businessunit": [],             
+                    "businessunit": [],             // 定制事业部
                     "cookBookLites": null,
-                    "createTime": "2018-11-16 06:09:12", // 创建时间
-                    "custom": [                   // 定制客户 或 定制事业部
+                    "createTime": "2019-04-16 15:31:43",    
+                    "custom": [                     // 定制列表
                         {
-                            "id": 2891,
-                            "productId": 4757,
-                            "rangeId": 1,           // 事业部id 或 客户id
-                            "type": "BUSINESSUNIT" // BUSINESSUNIT 事业部  CUSTOMER 客户
+                            "id": 2935,
+                            "productId": 4780,
+                            "rangeId": 32937,       // 客户ID 、 事业部ID
+                            "type": "CUSTOMER"      // CUSTOMER 定制客户   BUSINESSUNIT 定制事业部
                         },
                         {
-                            "id": 2892,
-                            "productId": 4757,
-                            "rangeId": 2,
-                            "type": "BUSINESSUNIT"
+                            "id": 2936,
+                            "productId": 4780,
+                            "rangeId": 32938,
+                            "type": "CUSTOMER"
                         }
                     ],
-                    "customFlg": 0, // 是否定制 0 非定制 1 定制
-                    "customFlgMore" 0, // 是否定制更详细状态位 0 非定制 1 常规定制 2 专属定制
-                    "customers": [],
-                    @@(作废)"customerIds": null, // 若为定制 则 定制的客户ID [1, 2, 3]
-                    "deleteFlg": 0, 
+                    "customFlg": 1,                 
+                    "customFlgMore": 2,         // 0 普通品  1 普通定制品  2 专属定制品
+                    "customers": [],                // 定制客户
+                    "deleteFlg": 0,
                     "followFlg": 0,
-                    "id": 4697, // 产品ID
-                    "longName": "", 
-                    "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/0",
-                    "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/0", // 产品主图
-                    "name": "345", // 产品名
-                    "pno": "3245", // 品号
-                    "process": 3, // 完善度，3/4, 4是固定写死
-                    "processContent": 1, // 内容完善状态 0 未完善 1 已完善
-                    "processInvoice": 0, // 发票完善状态 0 未完善 1 已完善
-                    "processPrice": 1, // 价格完善状态 0 未完善 1 已完善
-                    "productAttrs": [
+                    "id": 4780,
+                    "longName": "摩加迪沙",         // 带广告词的名称
+                    "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190416153230824-8642.jpg",  // 包装图
+                    "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190416153234594-8939.jpg",    // 主图
+                    "marketActive": null,
+                    "name": "测试产品",                 // 产品名
+                    "newHotFlg": "",
+                    "nowFutureFlg": "",                 // 新品热销标识   NEW 新品  HOT 热销
+                    "pno": "8888",                  // 品号
+                    "process": 2,                   // 完善度
+                    "processContent": 1,            // 内容是否完善 0 未完善 1 完善
+                    "processInvoice": 0,            // 发票是否完善 0 未完善 1 完善
+                    "processPrice": 0,              // 价格是否完善 0 未完善 1 完善
+                    "productAttrs": [               // 产品属性列表
                         {
-                            "categoryId": 1,            // 分类id
-                            "categoryName": "属性分类一",    // 分类名称
-                            "createTime": "",
+                            "categoryId": 1,                // 属性所属分类ID
+                            "categoryName": "属性分类一",    // 属性所属分类名
+                            "createTime": "",   
                             "deleteFlg": 0,
                             "depotSafeFlg": 0,
-                            "id": 1,                    // 属性id
+                            "id": 3,                        // 属性ID
                             "isDepotSafe": "",
-                            "name": "特长属性",         // 属性名称
-                            "productId": 4752
+                            "name": "特性图",              // 属性名
+                            "productId": 4780
                         }
                     ],
                     "productExtra": null,
                     "productImgs": null,
-                    "productLack": { // 缺货标识，null 为不缺货
-                        "productId": 1，
-                        "startTime": "2018-01-01", // 缺货开始时间
-                        "endTime": "2018-01-20" // 缺货结束时间
-                    },
-                    @@"productSaleRange": [     // 销售区域
-                        {
-                            "businessunit": null,       // 事业部
-                            "customer": {               // 客户
-                                "businessunit": 72,
-                                "businessunitName": "P2P-YJ",
-                                "companyName": "82年凯龙",
-                                "customerId": 32938,            // 客户ID
-                                "isParent": 0,
-                                "isStockLimit": 0,
-                                "platformId": 1,
-                                "shortName": "樊嘉辉的凯龙工厂",    // 客户名
-                                "srRoleId": 40,
-                                "srRoleName": "高成举",
-                                "ssRoleId": 1,
-                                "ssRoleName": "樊嘉辉",
-                                "type": "A"
-                            },
-                            "id": 4,
-                            "ownerId": 32938,       // 客户ID 或 事业部ID
-                            "pathid": "080201",     // 区域编码
-                            "productId": 4750,
-                            "type": "CUSTOMER"      // CUSTOMER 指定了客户 BUSINESSUNIT 指定了事业部
+                    "productLack": {                    // 断货   null 非断货 
+                           "endTime": "2019-04-30",
+                           "productId": 4780,
+                           "startTime": "2019-04-16"
                         },
+                    "productSaleRange": [               // 销售范围
                         {
                             "businessunit": {
                                 "bcFlg": 0,
-                                "groupId": 3,
-                                "groupName": "PW事业组",
-                                "id": 1,                    // 事业部ID
-                                "name": "PW",               // 事业部名
+                                "groupId": 17,
+                                "groupName": "测试专用",
+                                "id": 80,               // 事业部ID
+                                "name": "测试专用",     // 事业部名
                                 "platformId": 1,
-                                "sort": 2
+                                "sort": 0
                             },
-                            "customer": null,
-                            "id": 2,
-                            "ownerId": 1,
-                            "pathid": "060202",
-                            "productId": 4750,
-                            "type": "BUSINESSUNIT"
+                            "customer": {
+                                "businessunit": 72,
+                                "businessunitName": "P2P-YJ",
+                                "companyName": "菠萝蜜",
+                                "customerId": 32937,        // 客户ID
+                                "isParent": 1,
+                                "isStockLimit": 0,
+                                "platformId": 1,
+                                "shortName": "大菠萝",     // 客户名
+                                "srRoleId": 40,
+                                "srRoleName": "高成举",
+                                "ssRoleId": 2196,
+                                "ssRoleName": "解冰",
+                                "type": "A"
+                            },
+                            "id": 57,
+                            "ownerId": 32937,       // 客户ID 、 事业部ID
+                            "pathid": "030401",     // 排除区域
+                            "productId": 4780,
+                            "type": "CUSTOMER"      // CUSTOMER 客户排除在外   BUSINESSUNIT  事业部排除在外
                         }
-                    ]
-                    "productUnits": [ // 规格列表
+                    ],
+                    "productUnits": [           // 产品规格
                         {
-                            "cubage": 0,
-                            "grossweight": 234,
-                            "guige": "123", // 规格名
-                            "height": 234,
-                            "id": 8088, // 规格ID
-                            "length": 0, 
-                            "minimum": 234,
-                            "minimumType": null,
-                            "netweight": 234,
-                            "perunit": 234, // 转化率
-                            @@"price": {
-                                "aPrice": 4.8,          // A价格
-                                "areaPrice": 0,
-                                "decideType": null,
-                                "finallyPrice": 0,  
-                                "pPrice": 3.8,          // P价格
-                                "productUnitId": 0,
-                                "rate": 0,              // 这算比率
-                                "rawFlg": "NO",     // 是否原料 NO 非 YES 是
-                                "signPrice": 0,
-                                "specialPrice": 0
+                            "createTime": "",
+                            "cubage": 1,
+                            "grossweight": 0.2,
+                            "guige": "200g（10枚）/盒",
+                            "height": 3.3,
+                            "id": 8375,
+                            "length": 20.4,
+                            "marketActive": null,
+                            "minimum": 0,
+                            "minimumType": "NONE",
+                            "modifyTime": "",
+                            "netweight": 0.2,
+                            "perunit": 1,
+                            "price": {              // 价格信息
+                                "aPrice": 0,                // a价
+                                "areaPrice": 0,             // 区域价
+                                "decideType": "A",          // 最终价格由什么价决定  T 特价 S 签约价 Q 区域价 A A价 P P价 
+                                "finallyPrice": 0,          // 最终价格
+                                "pPrice": 0,                // p价
+                                "productUnitId": 8375,
+                                "rate": 0,                  // 折算比率
+                                "rawFlg": "NO",             // 是否原材料
+                                "signPrice": 0,             // 签约价
+                                "specialPrice": 0           // 特价
                             },
                             "product": null,
                             "productCart": null,
-                            "productId": 4697, 
+                            "productId": 4780,
                             "stock": null,
-                            "unit": "袋", // 单位
-                            "unitId": 1, // 单位id
-                            "width": 234
-                        },
-                        {
-                            "cubage": 0,
-                            "grossweight": 1234,
-                            "guige": "21212321",
-                            "height": 341234,
-                            "id": 8089,
-                            "length": 0,
-                            "minimum": 231412,
-                            "minimumType": null,
-                            "netweight": 9999.9999,
-                            "perunit": 9999.99,
-                            @@"price": {
-                                "aPrice": 4.8,
-                                "areaPrice": 0,
-                                "decideType": null,
-                                "finallyPrice": 0,
-                                "pPrice": 3.8,
-                                "productUnitId": 0,
-                                "rate": 0,
-                                "rawFlg": "NO",
-                                "signPrice": 0,
-                                "specialPrice": 0
-                            },
-                            "product": null,
-                            "productCart": null,
-                            "productId": 4697,
-                            "stock": null,
-                            "unit": "件",
-                            "unitId": 1, // 单位id
-                            "width": 123412
+                            "unit": "盒",
+                            "unitId": 2,
+                            "width": 14.5
                         }
                     ],
                     "pyAll": "",
                     "pyCode": "",
-                    @@"rangeType": "ALL",     // ALL 全部区域 PART 指定区域 EXCLUDE 排除区域
+                    "rangeType": "EXCLUDE",     // ALL 全部区域 PART 指定区域 EXCLUDE 排除区域
                     "relatePnos": null,
-                    "status": "LOCK", // 上下架状态 NORMAL 上架 LOCK 下架
+                    "saleRange": "1省1市",
+                    "status": "LOCK",           // NORMAL 上架 LOCK 下架
                     "stock": null,
-                    "taxRate": 0
+                    "taxRate": 0.17                // 税率
                 }
-            ]
+            ],
+            "pageNo": 1,
+            "total": 0
         }
     }
 
@@ -286,6 +267,234 @@
         "msg": "",
         "data": 1 // 新增产品ID
     }
+    
+    
+### CP-18. 产品明细
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /v2/product/{id}
+#### 参数
+    id: 1 // 产品ID
+#### 响应    
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "businessTypeIds": [        // 业态ID列表
+                86
+            ],
+            "businessTypes": [          // 业态列表
+                {
+                    "code": "-34-0511-",    // 编码
+                    "deleteFlg": 0,
+                    "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/0511.png",
+                    "hasProductCnt": 44,
+                    "id": 86,
+                    "level": 2,
+                    "mIcon": "",
+                    "miniFlg": 0,
+                    "name": "宴席必备",     // 名称
+                    "parentId": 34,         // 上级ID
+                    "parentName": "农贸市集",   // 上级名称
+                    "pyCode": "",
+                    "sIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/0511.png",
+                    "showFlg": 1,  
+                    "styleUrl": "",
+                    "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/0511.png"
+                }
+            ],
+            "businessunit": [],             // 定制事业部
+            "cookBookLites": null,
+            "createTime": "2019-04-16 15:31:43",    
+            "custom": [                     // 定制列表
+                {
+                    "id": 2935,
+                    "productId": 4780,
+                    "rangeId": 32937,       // 客户ID 、 事业部ID
+                    "type": "CUSTOMER"      // CUSTOMER 定制客户   BUSINESSUNIT 定制事业部
+                },
+                {
+                    "id": 2936,
+                    "productId": 4780,
+                    "rangeId": 32938,
+                    "type": "CUSTOMER"
+                }
+            ],
+            "customFlg": 1,                 
+            "customFlgMore": 2,         // 0 普通品  1 普通定制品  2 专属定制品
+            "customers": [],                // 定制客户
+            "deleteFlg": 0,
+            "followFlg": 0,
+            "id": 4780,
+            "longName": "摩加迪沙",         // 带广告词的名称
+            "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190416153230824-8642.jpg",  // 包装图
+            "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190416153234594-8939.jpg",    // 主图
+            "marketActive": null,
+            "name": "测试产品",                 // 产品名
+            "newHotFlg": "",
+            "nowFutureFlg": "",                 // 新品热销标识   NEW 新品  HOT 热销
+            "pno": "8888",                  // 品号
+            "process": 2,                   // 完善度
+            "processContent": 1,            // 内容是否完善 0 未完善 1 完善
+            "processInvoice": 0,            // 发票是否完善 0 未完善 1 完善
+            "processPrice": 0,              // 价格是否完善 0 未完善 1 完善
+            "productAttrs": [               // 产品属性列表
+                {
+                    "categoryId": 1,                // 属性所属分类ID
+                    "categoryName": "属性分类一",    // 属性所属分类名
+                    "createTime": "",   
+                    "deleteFlg": 0,
+                    "depotSafeFlg": 0,
+                    "id": 3,                        // 属性ID
+                    "isDepotSafe": "",
+                    "name": "特性图",              // 属性名
+                    "productId": 4780
+                }
+            ],
+            "productExtra": {                   // 产品扩展信息
+                    "attributeName": "速冻生制",
+                    "attributes": 1,
+                    "barCode": "阿斯蒂芬",
+                    "cookWay": "  撒旦法",
+                    "description": " ",
+                    "id": 8299,
+                    "intro": "",
+                    "material": "阿斯蒂芬",
+                    "place": "啊s'd'f",
+                    "productId": 4779,
+                    "saveType": "FROZEN",
+                    "shelfLife": " 阿斯蒂芬",
+                    "standards": 0,
+                    "standardsName": "无",
+                    "store": "阿斯顿发"
+                },
+            "productImgs": {       // 产品图片
+                   "QUALITY": [     // 质检图
+                       {
+                           "id": 21336,
+                           "productId": 4779,
+                           "type": "QUALITY",
+                           "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190416110316045-4617.jpg"
+                       }
+                   ],
+                   "MAINBG": [      // 包装图
+                       {
+                           "id": 0,
+                           "productId": 4779,
+                           "type": "MAINBG",
+                           "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190416110336203-4543.jpg"
+                       }
+                   ],
+                   "MAIN": [        // 主图
+                       {
+                           "id": 0,
+                           "productId": 4779,
+                           "type": "MAIN",
+                           "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190416110332573-9021.jpg"
+                       }
+                   ],
+                   "PHOTO": [       // 产品图
+                       {
+                           "id": 21338,
+                           "productId": 4779,
+                           "type": "PHOTO",
+                           "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190416110431685-5502.jpg"
+                       }
+                   ],
+                   "DETAIL": [      // 详情图
+                       {
+                           "id": 21337,
+                           "productId": 4779,
+                           "type": "DETAIL",
+                           "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190416110327533-6891.jpg"
+                       }
+                   ]
+               },
+            "productLack": {                    // 断货   null 非断货 
+                   "endTime": "2019-04-30",
+                   "productId": 4780,
+                   "startTime": "2019-04-16"
+                },
+            "productSaleRange": [               // 销售范围
+                {
+                    "businessunit": {
+                        "bcFlg": 0,
+                        "groupId": 17,
+                        "groupName": "测试专用",
+                        "id": 80,               // 事业部ID
+                        "name": "测试专用",     // 事业部名
+                        "platformId": 1,
+                        "sort": 0
+                    },
+                    "customer": {
+                        "businessunit": 72,
+                        "businessunitName": "P2P-YJ",
+                        "companyName": "菠萝蜜",
+                        "customerId": 32937,        // 客户ID
+                        "isParent": 1,
+                        "isStockLimit": 0,
+                        "platformId": 1,
+                        "shortName": "大菠萝",     // 客户名
+                        "srRoleId": 40,
+                        "srRoleName": "高成举",
+                        "ssRoleId": 2196,
+                        "ssRoleName": "解冰",
+                        "type": "A"
+                    },
+                    "id": 57,
+                    "ownerId": 32937,       // 客户ID 、 事业部ID
+                    "pathid": "030401",     // 排除区域
+                    "productId": 4780,
+                    "type": "CUSTOMER"      // CUSTOMER 客户排除在外   BUSINESSUNIT  事业部排除在外
+                }
+            ],
+            "productUnits": [           // 产品规格
+                {
+                    "createTime": "",
+                    "cubage": 1,
+                    "grossweight": 0.2,
+                    "guige": "200g（10枚）/盒",
+                    "height": 3.3,
+                    "id": 8375,
+                    "length": 20.4,
+                    "marketActive": null,
+                    "minimum": 0,
+                    "minimumType": "NONE",
+                    "modifyTime": "",
+                    "netweight": 0.2,
+                    "perunit": 1,
+                    "price": {              // 价格信息
+                        "aPrice": 0,                // a价
+                        "areaPrice": 0,             // 区域价
+                        "decideType": "A",          // 最终价格由什么价决定  T 特价 S 签约价 Q 区域价 A A价 P P价 
+                        "finallyPrice": 0,          // 最终价格
+                        "pPrice": 0,                // p价
+                        "productUnitId": 8375,
+                        "rate": 0,                  // 折算比率
+                        "rawFlg": "NO",             // 是否原材料
+                        "signPrice": 0,             // 签约价
+                        "specialPrice": 0           // 特价
+                    },
+                    "product": null,
+                    "productCart": null,
+                    "productId": 4780,
+                    "stock": null,
+                    "unit": "盒",
+                    "unitId": 2,
+                    "width": 14.5
+                }
+            ],
+            "pyAll": "",
+            "pyCode": "",
+            "rangeType": "EXCLUDE",     // ALL 全部区域 PART 指定区域 EXCLUDE 排除区域
+            "relatePnos": null,
+            "saleRange": "1省1市",
+            "status": "LOCK",           // NORMAL 上架 LOCK 下架
+            "stock": null,
+            "taxRate": 0.17                // 税率
+        }
+    }
 
 ### CP-3. 查询产品生产信息
 #### 模块负责人
@@ -295,127 +504,7 @@
 #### 参数
     id: 1 // 产品ID
 #### 响应
-    {
-        "code": 100000,
-        "msg": "",
-        "data": {
-            "businessTypeIds": null,
-            "businessTypes": null,
-            @@"businessunit": [         // 定制事业部
-                {
-                    "bcFlg": 0,
-                    "groupId": 4,
-                    "groupName": "PV事业组",
-                    "id": 9,
-                    "name": "PV",
-                    "platformId": 1,
-                    "sort": 2
-                }
-            ],
-            "cookBookLites": null,
-            "createTime": "2018-12-06 07:27:16", 
-            @@"custom": [
-                {
-                    "id": 2884,
-                    "productId": 709,
-                    "rangeId": 9,
-                    "type": "BUSINESSUNIT"
-                }
-            ],
-            "customFlg": 1, // 是否定制 0 非定制 1 定制 （**请勿使用此字段显示明细页，请使用customFlgMore来控制明细定制状态）
-            "customFlgMore": 0 // 是否定制 0 非定制 1 常规定制 2 专属定制
-            @@"customers": [                // 定制客户
-                {
-                    "businessunit": 9,
-                    "businessunitName": "PV",
-                    "companyName": "凑凑（天津）餐饮管理有限公司",
-                    "customerId": 32741,
-                    "isParent": 0,
-                    "isStockLimit": 0,
-                    "platformId": 1,
-                    "shortName": "凑凑（天津）餐饮管理有限公司",
-                    "srRoleId": 7518,
-                    "srRoleName": "陈明",
-                    "ssRoleId": 29214,
-                    "ssRoleName": "张莹",
-                    "type": "P"
-                }
-            ],
-            @@(作废)"customerIds": [ // 专属定制客户ID数组
-                1,
-                2,
-                3
-            ],
-            "customers": [
-                {
-                    "businessunit": 44,
-                    "businessunitName": "P2P-CS",
-                    "companyName": "18611318343",
-                    "customerId": 24404,        // 客户id
-                    "shortName": "18611318343", // 客户名
-                    "srRoleId": 3913,
-                    "srRoleName": "孙奇",
-                    "ssRoleId": 29319,
-                    "ssRoleName": "孙启萌1",
-                    "type": "A"
-                }
-            ],
-            "deleteFlg": 0,
-            "id": 4708, // 产品ID
-            "longName": "", 
-            "mainBgImg": "0",
-            "mainImg": "0",
-            "name": "测试01", // 产品名
-            "pno": "pnotest02", // 品号
-            "process": 1,
-            "processContent": 0,
-            "processInvoice": 0,
-            "processPrice": 0,
-            "productExtra": { // 产品扩展信息
-                "attributeName": "速冻生制", // 产品标准分类名
-                "attributes": 1, // 产品标准分类ID
-                "barCode": "barCode", // 条码
-                "cookWay": "cookWay", // 烹饪方法
-                "description": "",
-                "id": 8195, // 规格ID
-                "intro": "",
-                "material": "meterial", // 配料
-                "place": "place", // 产地
-                "productId": 4708, // 产品ID
-                "saveType": "NORMAL", // NORMAL 常温 FROZEN 冷冻
-                "shelfLife": "shelfLife", 保质期
-                "standards": 1, // 标准号ID
-                "standardsName": "SB/T 10379  速冻调制食品", // 标准号名
-                "store": "store" // 保存方法
-            },
-            "productImgs": null,
-            "productLack": null,
-            "productUnits": [ // 产品规格
-                {
-                    "cubage": 10,
-                    "grossweight": 10.2, // 毛重
-                    "guige": "guige1", // 规格名
-                    "height": 10.2, // 高度
-                    "id": 8091, // 规格ID
-                    "length": 10.2, // 长度
-                    "minimum": 10, // 最小起订量
-                    "minimumType": null, // 起订类型 NONE 无设定 BEGIN 递增 STEP 步增
-                    "netweight": 9.2, // 净重
-                    "perunit": 1, // 转化率
-                    "price": null, 
-                    "productId": 4708, // 产品ID
-                    "unit": "袋", // 单位名
-                    "unitId": 1, // 单位ID
-                    "width": 10.2 // 宽度
-                }
-            ],
-            "pyAll": "",
-            "pyCode": "",
-            "status": "LOCK",
-            "stock": null,
-            "taxRate": 0.1 // 税率
-        }
-    }
+    同 CP-18
 
 ### CP-4. 修改产品生产信息
 #### 模块负责人
@@ -566,116 +655,7 @@
 #### 参数
     *id: 1 // 产品ID
 #### 响应
-    {
-        "code": 100000,
-        "msg": "",
-        "data": {
-            "businessTypeIds": [// 餐饮业态ID
-                1,
-                2,
-                3
-            ],
-            "businessTypes": [
-                {
-                    "code": "-119-121-",
-                    "deleteFlg": 0,
-                    "gIcon": "",
-                    "hasProductCnt": 1,
-                    "id": 121,
-                    "level": 2,
-                    "name": "东北菜系",
-                    "parentId": 119,
-                    "pyCode": "",
-                    "sIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190108092630882-7112.jpg",
-                    "showFlg": 1,
-                    "wIcon": ""
-                },
-                ......
-            ],
-            "createTime": "2018-12-06 07:27:16", // 创建时间
-            "customFlg": 1,
-            "customFlgMore": 1,
-            "customerIds": null,
-            "customers": null,
-            "deleteFlg": 0,
-            "id": 4708,
-            "longName": "longName", // 带广告名称
-            "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201509/30/1443601932-tmAN.jpg",
-            "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201509/30/1443601932-tmAN.jpg",
-            "name": "测试01",
-            "pno": "pnotest02",
-            "process": 2,
-            "processContent": 1,
-            "processInvoice": 0,
-            "processPrice": 0,
-            "productExtra": { // 产品扩展信息
-                "attributeName": "速冻生制",
-                "attributes": 1,
-                "barCode": "barCode",
-                "cookWay": "cookWay",
-                "description": "description", // 产品描述
-                "id": 8195,
-                "intro": "",
-                "material": "meterial",
-                "place": "place",
-                "productId": 4708,
-                "saveType": "NORMAL",
-                "shelfLife": "shelfLife",
-                "standards": 1,
-                "standardsName": "SB/T 10379  速冻调制食品",
-                "store": "store"
-            },
-            "productImgs": { // 产品图片
-                "QUALITY": [ // 质检图
-                    {
-                        "id": 8258,
-                        "productId": 4708,
-                        "type": "QUALITY",
-                        "url": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201509/30/1443601932-tmAN.jpg" // 图片URL
-                    }
-                ],
-                "MAINBG": [ // 背景图
-                    {
-                        "id": 0,
-                        "productId": 4708,
-                        "type": "MAINBG",
-                        "url": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201509/30/1443601932-tmAN.jpg"
-                    }
-                ],
-                "MAIN": [ // 主图
-                    {
-                        "id": 0,
-                        "productId": 4708,
-                        "type": "MAIN",
-                        "url": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201509/30/1443601932-tmAN.jpg"
-                    }
-                ],
-                "PHOTO": [ // 产品图
-                    {
-                        "id": 8260,
-                        "productId": 4708,
-                        "type": "PHOTO",
-                        "url": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201509/30/1443601932-tmAN.jpg"
-                    }
-                ],
-                "DETAIL": [ // 明细图
-                    {
-                        "id": 8259,
-                        "productId": 4708,
-                        "type": "DETAIL",
-                        "url": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201509/30/1443601932-tmAN.jpg"
-                    }
-                ]
-            },
-            "productLack": null,
-            "productUnits": null,
-            "pyAll": "",
-            "pyCode": "",
-            "status": "LOCK",
-            "stock": null,
-            "taxRate": 0
-        }
-    }
+    同CP-18
 
 ### CP-9.  产品上架
 #### 模块负责人

@@ -558,7 +558,7 @@
             "dataSums": null,
             "datas": [
                 {
-                    "actionValue": 1,
+                    "actionValue": 1,               // 减
                     "businessName": "",
                     "couponRuleId": 12374,          // 券规id
                     "createRole": 0,
@@ -571,17 +571,30 @@
                     "effectStime": "2019-03-26 00:00:00",   // 开始日期
                     "id": 186186,               // 优惠券编号
                     "marketId": 0,
-                    "rangeType": "PRODUCTUNIT",
-                    "ranges": null,
+                    "rangeType": "PRODUCTUNIT",         // ALL 全部品 PRODUCTUNIT 指定品 EXCLUDE 排除品
+                    "ranges": [         // 指定品 或 排除品
+                        {
+                            "couponRuleId": 12411,
+                            "deleteFlg": 0,
+                            "id": 16869,
+                            "productUnitId": 8066
+                        },
+                        {
+                            "couponRuleId": 12411,
+                            "deleteFlg": 0,
+                            "id": 16870,
+                            "productUnitId": 8061
+                        }
+                    ],
                     "rebate": 0,
                     "ruleName": "2019年预算券", // 优惠券名
                     "ruleType": "",
                     "source": "HANDWORK",   // 发放源 HANDWORK 手工 ACTIVE 活动
                     "sourceName": "",
                     "status": "LOCK",       // 优惠券状态    NORMAL 正常 LOCK 锁定 CANCEL 作废
-                    "targetValue": 100,
+                    "targetValue": 100,     // 满
                     "type": "REDUCE",
-                    "unit": "PRICE",
+                    "unit": "PRICE",        // PRICE 金额  COUNT 数量
                     "used": "NO"        // 使用情况  YES 已使用  NO 未使用
                 }
             ],
