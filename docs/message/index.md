@@ -55,17 +55,16 @@
 #### 参数
     {
     	"message": {
-    		"title": "2019-04-12测试",
-    		"content": "你好么志勇",
-    		"relationValue": "https://www.baidu.com/",
-    		"type": "NOTICE",
-    		"pushTime": "2019-04-13 00:00:00",
-    		"rangeType": "CUSTOMER"
+    		"title": "2019-04-12测试", // 名称
+    		"content": "你好么志勇", // 内容
+    		"relationValue": "https://www.baidu.com/", // 关联内容 （系统公告-url 优惠促销-活动id）
+    		"type": "NOTICE", // 类型 ACTIVITY-优惠促销 NOTICE-系统公告
+    		"pushTime": "2019-04-13 00:00:00", // 推送时间（如果选择的是优惠促销，应在活动时间范围内）
+    		"rangeType": "CUSTOMER" // 范围类别 ALL - 全部客户，BUSINESSUNIT - 事业部，CUSTOMER - 指定客户，MARKET - 取指定活动范围（当选择优惠促销时默认未MARKET）
     	},
-    	"messageRanges": [
+    	"messageRanges": [ // 消息范围， 全部客户 和 优惠促销 不必传范围
     		{
-    			"type": "CUSTOMER",
-    			"rangeId": 2434
+    			"rangeId": 2434 // 范围值
     		}
     	],
     	"onlyCode": "20081210"
