@@ -791,7 +791,7 @@
         }
     }
     
-### DD-102. 赠品-详情
+### DD-102. 赠品-详情（作废）
 #### 模块负责人
     梁铁骐
 #### 请求
@@ -828,7 +828,7 @@
     }
     
 
-### DD-103. 赠品-审批拒绝
+### DD-103. 赠品-审批拒绝（作废）
 #### 模块负责人
     梁铁骐
 #### 请求
@@ -846,7 +846,7 @@
     }
 
 
-### DD-104. 赠品-审批通过
+### DD-104. 赠品-审批通过（作废）
 #### 模块负责人
     梁铁骐
 #### 请求
@@ -867,10 +867,11 @@
     GET /v2/saorder
 #### 参数
     buttonPermissionFlg: 1,
-    customerId: 客户id,
+    customerName: 客户名称,
     orderId: 销售订单号,
     tradefrom: 下单方式 SYS-后台手动下单 APP-客户自主下单
-    status: 订单状态 INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收
+    businessUnitIds[]: 事业部id集合
+    statuses: ['INVALID', 'RUN', 'SEND'] 订单状态 INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收
     payFlg： 结款状态 0-未结款 1-已结款
     createUserName： 创建人
     createStartDate: 创建开始日期
@@ -896,9 +897,12 @@
                      "runButton": false, // 确认执行按钮
                      "splitButton": false // 拆分按钮
                      "freightAskButton": false // 免运费申请按钮
+                     "checkStockButton"： false // 检查库存按钮
                 }
             ],
-            "dataSums": null,
+            "dataSums": {
+                "currentSum": 123 // 当页合计
+            },
             "datas": [
                 {
                     "apPrice": 0, // 调价金额
@@ -1845,10 +1849,61 @@
     PUT /router/v5/order/{orderId}/pay
 #### 参数
     orderId: 单号
-#### 相应
+#### 响应
     {
         "code": 100000,
         "msg": "",
         "data": null
     }
 
+### DD-133. 销售订单-校验库存
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/saorder/{orderId}/stock
+#### 参数
+    orderId: 单号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "depotId": 21,
+                "leftAmount": -10, // 不足数量
+                "leftAmountJian": -1,
+                "leftAmountSan": 0,
+                "platformId": 1,
+                "pno": "0020", // 品号
+                "productId": 43,
+                "productName": "熊猫豆沙包", // 品名
+                "product": {
+                    "mainImg": "123" // 产品主图
+                }
+            }
+        ]
+    }
+    
+### DD-134. 销售订单-总合计
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/saorder/sum
+#### 参数
+    customerName: 客户名称,
+    orderId: 销售订单号,
+    tradefrom: 下单方式 SYS-后台手动下单 APP-客户自主下单
+    businessUnitIds[]: 事业部id集合
+    statuses: ['INVALID', 'RUN', 'SEND'] 订单状态 INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收
+    payFlg： 结款状态 0-未结款 1-已结款
+    createUserName： 创建人
+    createStartDate: 创建开始日期
+    createEndDate: 创建结束日期
+    sendStartDate: 发货开始日期
+    sendEndDate: 发货结束日期
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": 123
+    }

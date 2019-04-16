@@ -83,6 +83,7 @@
                     "ssRoleName": "", // SS名
                     "state": "NORMAL",  // 客户状态 NORMAL 正常 LOCK 休眠
                     "type": "A" // 客户类型
+                    "remark": "" // 客户备注
                 }
             ],
             "pageNo": 1, //页码
