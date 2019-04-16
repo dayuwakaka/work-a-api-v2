@@ -60,7 +60,7 @@
     		"relationValue": "https://www.baidu.com/", // 关联内容 （系统公告-url 优惠促销-活动id）
     		"type": "NOTICE", // 类型 ACTIVITY-优惠促销 NOTICE-系统公告
     		"pushTime": "2019-04-13 00:00:00", // 推送时间（如果选择的是优惠促销，应在活动时间范围内）
-    		"rangeType": "CUSTOMER" // 范围类别 ALL - 全部客户，BUSINESSUNIT - 事业部，CUSTOMER - 指定客户，MARKET - 取指定活动范围（当选择优惠促销时默认未MARKET）
+    		"rangeType": "CUSTOMER" // 范围类别 ALL - 全部客户，BUSINESSUNIT - 事业部，CUSTOMER - 指定客户，MARKET - 取指定活动范围（当选择优惠促销时默认为MARKET）
     	},
     	"messageRanges": [ // 消息范围， 全部客户 和 优惠促销 不必传范围
     		{
