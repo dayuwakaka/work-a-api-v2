@@ -791,7 +791,7 @@
         }
     }
     
-### DD-102. 赠品-详情
+### DD-102. 赠品-详情（作废）
 #### 模块负责人
     梁铁骐
 #### 请求
@@ -828,7 +828,7 @@
     }
     
 
-### DD-103. 赠品-审批拒绝
+### DD-103. 赠品-审批拒绝（作废）
 #### 模块负责人
     梁铁骐
 #### 请求
@@ -846,7 +846,7 @@
     }
 
 
-### DD-104. 赠品-审批通过
+### DD-104. 赠品-审批通过（作废）
 #### 模块负责人
     梁铁骐
 #### 请求
@@ -867,7 +867,7 @@
     GET /v2/saorder
 #### 参数
     buttonPermissionFlg: 1,
-    customerId: 客户id,
+    customerName: 客户名称,
     orderId: 销售订单号,
     tradefrom: 下单方式 SYS-后台手动下单 APP-客户自主下单
     businessUnitIds[]: 事业部id集合
@@ -1890,8 +1890,7 @@
 #### 请求
     GET /v2/saorder/sum
 #### 参数
-    buttonPermissionFlg: 1,
-    customerId: 客户id,
+    customerName: 客户名称,
     orderId: 销售订单号,
     tradefrom: 下单方式 SYS-后台手动下单 APP-客户自主下单
     businessUnitIds[]: 事业部id集合
