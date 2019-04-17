@@ -321,21 +321,18 @@
     }
 
 ### APP-11 获取验证码
-#### 对接负责人
-    刘宏宇
 #### 模块负责人
     尹洪明
 #### 请求
     GET /router/v5/auth/getVerifyCode
 #### 参数
     *loginName: "xxx" //登录名
-    *verifyType: "sms" // 验证方式 sms 短信 voice 语音
+    verifyType: "sms" // 验证方式 sms 短信 voice 语音
 #### 响应
     {
-        "flg": "1",
         "code": "100000",
         "msg": "",
-        "data": "28000e5145cf4bca876fb6d9d0f323a3" // 消息ID
+        "data": null
     }
 
 ### APP-12 重置密码
@@ -2685,3 +2682,20 @@
             "status": "NORMAL"//插屏状态 NORMAL  正常    LOCK   下线     INVALID   失效  如果有效结束时间小于当前时间，状态显示为失效
         }
     }
+    
+
+### APP-100 获取验证码(注册)
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /router/v5/auth/getVerifyCodeRegister
+#### 参数
+    *loginName: "xxx" //登录名
+    verifyType: "sms" // 验证方式 sms 短信 voice 语音
+#### 响应
+    {
+        "code": "100000",
+        "msg": "",
+        "data": null
+    }
+    

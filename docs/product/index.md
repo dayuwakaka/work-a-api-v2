@@ -418,6 +418,7 @@
                 },
             "productSaleRange": [               // 销售范围
                 {
+                    "area": "回民区",
                     "businessunit": {
                         "bcFlg": 0,
                         "groupId": 17,
@@ -442,10 +443,12 @@
                         "ssRoleName": "解冰",
                         "type": "A"
                     },
+                    "city": "呼和浩特市",
                     "id": 57,
                     "ownerId": 32937,       // 客户ID 、 事业部ID
                     "pathid": "030401",     // 排除区域
                     "productId": 4780,
+                    "province": "内蒙古",
                     "type": "CUSTOMER"      // CUSTOMER 客户排除在外   BUSINESSUNIT  事业部排除在外
                 }
             ],
