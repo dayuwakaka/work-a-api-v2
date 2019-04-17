@@ -1907,8 +1907,8 @@
 #### 参数  
     name          //插屏名称
     accountname   //用户    （此处查询的是用户账户名称）
-    beginTime     //查询开始时间
-    endTime       //查询结束时间
+    beginTime     //查询操作开始时间
+    endTime       //查询操作结束时间
     action        //动作  CLICK 点击  CLOSE 关闭
     type          //展示渠道  H5  ANDROID   IOS
     pageNo        //页码
