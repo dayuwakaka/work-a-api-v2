@@ -1792,7 +1792,15 @@
         "code": 100000,
         "msg": "",
         "data": {
-            "buttonPermissions": [],
+            "buttonPermissions": [
+                {
+                "effecttimeButton": true,//延期按钮(修改插屏起止日期)
+                "lockButton": true,      //下线按钮
+                "normalButton": false,   //上线按钮   
+                "sortButton": true,      //优先级按钮
+                "showtimeButton": true   //时间段按钮
+                }
+            ],
             "dataSums": null,
             "datas": [
                 {
@@ -1902,7 +1910,7 @@
     beginTime     //查询开始时间
     endTime       //查询结束时间
     action        //动作  CLICK 点击  CLOSE 关闭
-    type          //展示渠道  H5  Android   iOS
+    type          //展示渠道  H5  ANDROID   IOS
     pageNo        //页码
     pageSize      //页条数
 #### 响应
@@ -1923,7 +1931,7 @@
                     "id": 0,
                     "marketPopup": "测试插屏信息8",//插屏名称
                     "popupId": 8,//关联插屏id
-                    "type": "Android"//展示渠道  H5  Android   iOS
+                    "type": "ANDROID"//展示渠道  H5  ANDROID   IOS
                 }
                 ],
             "pageNo": 1,
@@ -1987,6 +1995,6 @@
     beginTime     //查询开始时间
     endTime       //查询结束时间
     action        //动作  CLICK 点击  CLOSE 关闭
-    type          //展示渠道  H5  Android   iOS
-    checkToken    //下载授权码
+    type          //展示渠道  H5  ANDROID   IOS
+    checkCode    //下载授权码
 

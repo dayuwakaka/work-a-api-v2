@@ -2630,7 +2630,7 @@
 	"popupId":"5",//插屏id
 	"customerId":"32932",//用户customer_id
 	"action":"CLICK",//动作  CLICK 点击  CLOSE 关闭
-	"type":"H5" //展示渠道  H5  Android   iOS
+	"type":"H5" //展示渠道  H5  ANDROID   IOS
     }
 #### 响应
     {"code":100000,"msg":"","data":null}
