@@ -1762,7 +1762,7 @@
     effectEtime   //插屏结束日期
     showStime     //插屏生效开始时间
     showEtime     //插屏生效结束时间
-    marketName    //关联活动名称
+    marketId      //关联活动id
     pageNo        //页码
     pageSize      //页条数
 #### 响应
