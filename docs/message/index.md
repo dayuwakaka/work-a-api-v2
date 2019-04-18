@@ -35,7 +35,8 @@
                     "rangeType": "CUSTOMER",
                     "readNum": 0, // 查看数
                     "relationName": "阶梯转每满测试", // 关联活动/公告
-                    "relationValue": "354", // 关联值
+                    "relationValue": "354", // 关联值 （url、活动id）
+                    "marketType": "GIFT", // 活动类别
                     "sentNum": 1, // 到达数
                     "status": "UNSENT", // 状态 UNSENT：未发送 SENT：已发送
                     "title": "2019-04-12测试", // 推送名称
