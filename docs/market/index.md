@@ -164,61 +164,40 @@
 ### YX-2. 营销列表
 #### 模块负责人
     尹洪明
-#### 2.1 请求URL
-    /v2/market
-#### 2.2 请求类型
-    GET
-#### 2.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|name|营销名称|
-|type|营销类型|coupon 券规 gift 满赠 reduce 满减 discount 满折 column 专栏 special 专题|
-|deleteFlg|状态|0 正常 1 作废 空 全部 字符串类型|
-|buttonPermissionFlg|0 无按钮 1 有按钮|
-|pageNo|页码|默认1|
-|pageSize|页条数|默认25|
-
-#### 2.4 请求示例
-    无
-#### 2.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|name|营销名称|
-|type|营销类型|coupon 领券 gift 满赠 reduce 满减 discount 满折 column 专栏 special 专题|
-|deleteFlg|状态|0 正常 1 作废|
-|effectEtime|开始时间|
-|effectStime|结束时间|
-|createUserName|创建人|
-|createTime|创建时间|
-|overdue|是否过期|0 未过期  1 已过期|
-|url|营销图片|起始就是轮播图|
-
-
-#### 2.6 返回示例
+#### 请求
+    GET /v2/market
+#### 参数
+    name // 活动名
+    type // 活动类型
+    deleteFlg // 0 正常 1 作废 空 全部
+    effective // 1 有效 0 无效 空 全部 （获取有效活动时结合deleteFlg 使用）
+    buttonPermissionFlg // 0 无权限  1 有权限
+    pageNo 页码
+    pageSize 页大小
+   
+#### 响应
     {
         "code": 100000,
         "msg": "",
         "data": {
-            "buttonPermissions": [
-                {
-                    "deleteButton": true // 删除
-                }
-            ],
+            "buttonPermissionPage": {},
+            "buttonPermissions": [],
             "dataSums": null,
             "datas": [
                 {
-                    "createTime": "2018-09-13 18:25:24",
-                    "createUser": 101,
-                    "createUserName": "樊嘉辉",
-                    "customerRange": "NEW",
-                    "deleteFlg": 0,
-                    "effectEtime": "2018-10-13 08:40:17",
-                    "effectStime": "2018-09-13 08:40:17",
-                    "id": 0,
-                    "name": "1",  
-                    "overdue": 0, 
-                    "type": "COUPON",
-                    "url":"http://....."
+                    "bannerPic": "",                        // 轮播图
+                    "createTime": "2019-04-15 09:50:15",    // 创建时间
+                    "createUser": 518,
+                    "createUserName": "孙启萌",            // 创建人
+                    "customerRange": "ALL",
+                    "deleteFlg": 1,                       // 状态 0 正常 1 作废
+                    "effectEtime": "2019-04-20 23:59:59",           // 有效结束时间
+                    "effectStime": "2019-04-15 00:00:00",           // 有效开始时间
+                    "id": 360,                                      // 活动ID
+                    "name": "SHH阶梯每满测试（10+1，20+3，超出10+2）",  // 活动名
+                    "overdue": 0,
+                    "remark": "",
+                    "type": "GIFT"                          // 活动类型
                 }
             ],
             "pageNo": 1,
@@ -558,7 +537,7 @@
             "dataSums": null,
             "datas": [
                 {
-                    "actionValue": 1,
+                    "actionValue": 1,               // 减
                     "businessName": "",
                     "couponRuleId": 12374,          // 券规id
                     "createRole": 0,
@@ -571,17 +550,30 @@
                     "effectStime": "2019-03-26 00:00:00",   // 开始日期
                     "id": 186186,               // 优惠券编号
                     "marketId": 0,
-                    "rangeType": "PRODUCTUNIT",
-                    "ranges": null,
+                    "rangeType": "PRODUCTUNIT",         // ALL 全部品 PRODUCTUNIT 指定品 EXCLUDE 排除品
+                    "ranges": [         // 指定品 或 排除品
+                        {
+                            "couponRuleId": 12411,
+                            "deleteFlg": 0,
+                            "id": 16869,
+                            "productUnitId": 8066
+                        },
+                        {
+                            "couponRuleId": 12411,
+                            "deleteFlg": 0,
+                            "id": 16870,
+                            "productUnitId": 8061
+                        }
+                    ],
                     "rebate": 0,
                     "ruleName": "2019年预算券", // 优惠券名
                     "ruleType": "",
                     "source": "HANDWORK",   // 发放源 HANDWORK 手工 ACTIVE 活动
                     "sourceName": "",
                     "status": "LOCK",       // 优惠券状态    NORMAL 正常 LOCK 锁定 CANCEL 作废
-                    "targetValue": 100,
+                    "targetValue": 100,     // 满
                     "type": "REDUCE",
-                    "unit": "PRICE",
+                    "unit": "PRICE",        // PRICE 金额  COUNT 数量
                     "used": "NO"        // 使用情况  YES 已使用  NO 未使用
                 }
             ],
@@ -1770,7 +1762,7 @@
     effectEtime   //插屏结束日期
     showStime     //插屏生效开始时间
     showEtime     //插屏生效结束时间
-    marketName    //关联活动名称
+    marketId      //关联活动id
     pageNo        //页码
     pageSize      //页条数
 #### 响应
@@ -1779,7 +1771,15 @@
         "code": 100000,
         "msg": "",
         "data": {
-            "buttonPermissions": [],
+            "buttonPermissions": [
+                {
+                "effecttimeButton": true,//延期按钮(修改插屏起止日期)
+                "lockButton": true,      //下线按钮
+                "normalButton": false,   //上线按钮   
+                "sortButton": true,      //优先级按钮
+                "showtimeButton": true   //时间段按钮
+                }
+            ],
             "dataSums": null,
             "datas": [
                 {
@@ -1886,10 +1886,10 @@
 #### 参数  
     name          //插屏名称
     accountname   //用户    （此处查询的是用户账户名称）
-    beginTime     //查询开始时间
-    endTime       //查询结束时间
+    beginTime     //查询操作开始时间
+    endTime       //查询操作结束时间
     action        //动作  CLICK 点击  CLOSE 关闭
-    type          //展示渠道  H5  Android   iOS
+    type          //展示渠道  H5  ANDROID   IOS
     pageNo        //页码
     pageSize      //页条数
 #### 响应
@@ -1910,7 +1910,7 @@
                     "id": 0,
                     "marketPopup": "测试插屏信息8",//插屏名称
                     "popupId": 8,//关联插屏id
-                    "type": "Android"//展示渠道  H5  Android   iOS
+                    "type": "ANDROID"//展示渠道  H5  ANDROID   IOS
                 }
                 ],
             "pageNo": 1,
@@ -1974,6 +1974,6 @@
     beginTime     //查询开始时间
     endTime       //查询结束时间
     action        //动作  CLICK 点击  CLOSE 关闭
-    type          //展示渠道  H5  Android   iOS
-    checkToken    //下载授权码
+    type          //展示渠道  H5  ANDROID   IOS
+    checkCode    //下载授权码
 
