@@ -2691,7 +2691,7 @@
     GET /router/v5/auth/getVerifyCodeRegister
 #### 参数
     *loginName: "xxx" //登录名
-    verifyType: "sms" // 验证方式 sms 短信 voice 语音
+    verifyType: "sms" // 验证方式 sms 短信 voice 语音   默认 sms
 #### 响应
     {
         "code": "100000",
@@ -2699,3 +2699,162 @@
         "data": null
     }
     
+### APP-101 验证码校验
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /router/v5/auth/checkVerifyCode
+#### 参数
+    *loginName: "xxx" //登录名
+    *verifyType: "sms" // 验证方式 sms 短信 voice 语音
+#### 响应
+    {
+        "code": "100000",
+        "msg": "",
+        "data": null
+    }   
+    
+    
+### APP-102 客户名校验
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /router/v5/auth/checkCustomerExist
+#### 参数
+    *customerName: "xxx" //客户名
+#### 响应
+    {
+        "code": "100000",
+        "msg": "",
+        "data": null
+    }        
+    
+### APP-103 营业执照&税务登记证识别
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /router/v5/auth/ocr/license
+#### 参数
+    *url: "xxx"
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "companyName": "****",  // 商家名
+            "legalName": "***",     // 法人
+            "regNum": "***"         // 营业执照号&税务登记证号
+        }
+    } 
+    
+### APP-104 身份证识别
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /router/v5/auth/ocr/card
+#### 参数
+    *url: "xxx"
+    *side: "face" // face 正面  back 背面
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "name": "***",
+            "num": "***"
+        }
+    }      
+    
+    
+### APP-105 注册
+#### 模块负责人
+    尹洪明
+#### 请求
+    POST /router/v5/wx/register
+#### 参数
+    
+#### 响应
+      
+      
+      
+    
+### APP-106 验证码登录
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /router/v5/wx/verifyCodeLogin
+#### 参数
+    *loginName  // 登录名
+    *verifyCode // 验证码
+    *customerId // 客户ID
+    *ipAddress  // ip地址
+    *cartId     // 设备号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "customerId": 32950,
+            "token": "eyJhbGciOiJIUzUxMiJ9.eyJ1aWQiOiItMSIsImdpZCI6Ii0xIiwicmlkcyI6Ii0xIiwiY3JlYXRlX3RpbWUiOiIyMDE5LTA0LTE4IDA5OjE1OjI5IiwicGlkIjoiMSIsInJpZCI6Ii0xIn0.Bvl8NW79rTjf07Lim7Im0l0RJd6kdUAEmsXLgaFdrADuEMOcvopSncVL-4r7ZxnfnKhRFD3xYM3hWqORINlQyQ"
+        }
+    }      
+    
+### APP-107 获取openId
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /router/v5/wx/jscode2session
+#### 参数
+    *jsCode  // 微信code
+    appId // appId
+    secret // appSecret
+    grantType  // 授权类型
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "openId": "aw2309asflk1287435r89dfshjklhdfgs"
+        }
+    }
+
+    
+### APP-108 校验手机号或设备号是否注册绑定
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /router/v5/wx/checkRegister
+#### 参数
+    *mobile  // 手机号
+    *officalOpenId // openId
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "hasBind": false,       // ture 已绑定  false 未绑定
+            "officalOpenId": "34857397593475982345729"  // openId
+        }
+    }
+    
+### APP-109 微信绑定登录
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /router/v5/wx/wxLogin
+#### 参数
+    *loginName  // 登录号
+    password // 密码
+    *customerId // 客户ID
+    *ipAddress  // ip地址
+    *cartId     // 设备号
+    officalOpenId   // openId   绑定时必须
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "customerId": 32950,
+            "token": "eyJhbGciOiJIUzUxMiJ9.eyJ1aWQiOiItMSIsImdpZCI6Ii0xIiwicmlkcyI6Ii0xIiwiY3JlYXRlX3RpbWUiOiIyMDE5LTA0LTE4IDEwOjMyOjMwIiwicGlkIjoiMSIsInJpZCI6Ii0xIn0.8wvL81Yga45XwKrZ2P1JrPkZtmlYVRj8pomPsZjiHT8AYO2aeuoKE0am1Xnl8emCq0Wqr94ydCGbDHuYSE8jJg"
+        }
+    } 
