@@ -264,7 +264,20 @@
         ]
     }
 
+### XXTS-11 app接受消息体
+#### 模块负责人
+    梁铁骐
 
+    {
+        msgType: "ORDER" // ORDER：订单通知 ACTIVITY：优惠促销 NOTICE：系统公告
+        msgBody: {
+            title: "订单发货通知",
+            body: 您的订单：SA1904100001已发车，请注意查收",
+            orderId: "SA1904100001", // 订单通知时存放订单号
+            id: "", // 优惠促销时存放活动id
+            url: "" // 系统公告时存放url
+        }
+    }
 
 
 
