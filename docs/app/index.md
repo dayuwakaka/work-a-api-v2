@@ -2690,7 +2690,7 @@
 #### 请求
     GET /router/v5/auth/getVerifyCodeRegister
 #### 参数
-    *loginName: "xxx" //登录名
+    *loginName: "xxx" //登录手机号
     verifyType: "sms" // 验证方式 sms 短信 voice 语音   默认 sms
 #### 响应
     {
@@ -2705,8 +2705,8 @@
 #### 请求
     GET /router/v5/auth/checkVerifyCode
 #### 参数
-    *loginName: "xxx" //登录名
-    *verifyType: "sms" // 验证方式 sms 短信 voice 语音
+    *mobile: "xxx" //登录手机号
+    *verifyCode: "2389" // 验证码
 #### 响应
     {
         "code": "100000",
@@ -2772,9 +2772,43 @@
 #### 请求
     POST /router/v5/wx/register
 #### 参数
-    
+    {
+        "loginName":"18698665798",      // 登录手机号
+        "password":"111111",            // 密码
+        "ssName":"高成举",                 // 备注客服名
+        "registerType":"COMPANY",       // 注册类型 COMPANY 企业 PERSON 个人
+        "customerPerson":{              // 个人信息
+            "name":"火云邪神",      // 客户名
+            "invoiceType":"NORMAL", // 发票类型 NORMAL 普票 SPECIAL 专票
+            "cardFrontUrl":"http://asae.oss-cn-beijing.aliyuncs.com/ANET20190319111140282-6832.jpg", // 身份证人像面
+            "cardBackUrl":"http://asae.oss-cn-beijing.aliyuncs.com/ANET20190319111140282-6832.jpg", // 身份证国徽面
+            "cardNo":"271002198101053026"       // 身份证号
+        },
+        "customerCompany":{         // 企业信息
+            "companyName":"摩加迪沙有限公司",   // 客户名
+            "legalName":"么桑卡",              // 法人
+            "invoiceType":"SPECIAL",            // 发票类型  NORMAL 普票 SPECIAL 专票
+            "licenseUrl":"http://asae.oss-cn-beijing.aliyuncs.com/ANET20190316151543251-2481.jpg", // 营业执照url
+            "licenseCode":"91510700MA64A4YM3K",     // 统一社会信用代码
+            "taxUrl":"http://asae.oss-cn-beijing.aliyuncs.com/ANET20190415140912162-2159.jpeg", // 税务登记证url
+            "taxCode":"370983743371849"             // 税务登记证号
+        },
+        "customerContact":{
+            "name":"王颖",                // 联系人名
+            "mobile":"18698665798",     // 联系人手机号
+            "areapathid":"060202",      // 联系人省市县
+            "address":"香炉礁五金几点大厦"   // 联系人详细地址
+        }
+    }
 #### 响应
-      
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "customerId": 32950,
+            "token": "eyJhbGciOiJIUzUxMiJ9.eyJ1aWQiOiItMSIsImdpZCI6Ii0xIiwicmlkcyI6Ii0xIiwiY3JlYXRlX3RpbWUiOiIyMDE5LTA0LTE4IDA5OjE1OjI5IiwicGlkIjoiMSIsInJpZCI6Ii0xIn0.Bvl8NW79rTjf07Lim7Im0l0RJd6kdUAEmsXLgaFdrADuEMOcvopSncVL-4r7ZxnfnKhRFD3xYM3hWqORINlQyQ"
+        }
+    } 
       
       
     
