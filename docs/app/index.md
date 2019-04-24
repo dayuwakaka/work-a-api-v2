@@ -497,6 +497,7 @@
         "data": [
             {
                 "companyName": "555", // 公司名
+                "customerId": 149,      // 客户ID
                 "mobile": "18842889150", // 手机号
                 "username": "as032250" // 用户帐号
             }
