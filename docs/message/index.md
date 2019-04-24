@@ -210,6 +210,7 @@
                 "pushTime": "2091-05-19 00:00:00", // 推送时间
                 "readFlg": 0, // 0：未读 1:已读
                 "readTime": "",
+                "type": "INVOICE_ASK_FOR" // 消息类别 INVOICE_ASK_FOR：发票信息审核 ORDER：订单通知 ACTIVITY：优惠促销 NOTICE：系统公告
                 "relationValue": "354", // 对应的关联值 优惠促销：活动id 系统公告：url 订单通知：订单号
                 "title": "2019-04-12测试" // 标题
             }
@@ -234,17 +235,18 @@
                 "pushTime": "2091-05-19 00:00:00", // 推送时间
                 "readFlg": 0, // 0：未读 1:已读
                 "readTime": "",
+                "type": "INVOICE_ASK_FOR" // 消息类别 INVOICE_ASK_FOR：发票信息审核 ORDER：订单通知 ACTIVITY：优惠促销 NOTICE：系统公告
                 "relationValue": "354", // 对应的关联值 优惠促销：活动id 系统公告：url 订单通知：订单号
                 "title": "2019-04-12测试" // 标题
             }
         ]
     }
 
-### XXTS-10 获取订单通知列表 for app
+### XXTS-10 获取订单其它通知列表 for app
 #### 模块负责人
     梁铁骐
 #### 请求
-    GET /router/v5/message/{customerId}/order
+    GET /router/v5/message/{customerId}/other
 #### 参数
     *customerId: 客户id
     *pageNo: 页码
@@ -258,6 +260,7 @@
                 "pushTime": "2091-05-19 00:00:00", // 推送时间
                 "readFlg": 0, // 0：未读 1:已读
                 "readTime": "",
+                "type": "INVOICE_ASK_FOR" // 消息类别 INVOICE_ASK_FOR：发票信息审核 ORDER：订单通知 ACTIVITY：优惠促销 NOTICE：系统公告
                 "relationValue": "354", // 对应的关联值 优惠促销：活动id 系统公告：url 订单通知：订单号
                 "title": "2019-04-12测试" // 标题
             }
@@ -269,7 +272,7 @@
     梁铁骐
 
     {
-        msgType: "ORDER" // ORDER：订单通知 ACTIVITY：优惠促销 NOTICE：系统公告
+        msgType: "ORDER" // 消息类别 INVOICE_ASK_FOR：发票信息审核 ORDER：订单通知 ACTIVITY：优惠促销 NOTICE：系统公告
         msgBody: {
             title: "订单发货通知",
             body: 您的订单：SA1904100001已发车，请注意查收",
