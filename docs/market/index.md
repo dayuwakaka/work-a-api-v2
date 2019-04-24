@@ -169,8 +169,8 @@
 #### 参数
     name // 活动名
     type // 活动类型
-    deleteFlg // 0 正常 1 作废 空 全部
-    effective // 1 有效 0 无效 空 全部 （获取有效活动时结合deleteFlg 使用）
+    deleteFlg // 0 正常 1 作废 2 过期 空 全部
+    effective // 1 有效 0 无效 空 全部 （获取有效活动时结合deleteFlg 使用）（作废）
     buttonPermissionFlg // 0 无权限  1 有权限
     pageNo 页码
     pageSize 页大小
@@ -185,26 +185,39 @@
             "dataSums": null,
             "datas": [
                 {
-                    "bannerPic": "",                        // 轮播图
-                    "createTime": "2019-04-15 09:50:15",    // 创建时间
+                    "accumulative": "",
+                    "activeConditionId": 0,
+                    "bannerPic": "",             // 轮播图
+                    "couponConditionId": 0,
+                    "createTime": "2019-04-12 08:54:30",  // 创建时间
                     "createUser": 518,
-                    "createUserName": "孙启萌",            // 创建人
+                    "createUserName": "孙启萌",      // 创建人
                     "customerRange": "ALL",
-                    "deleteFlg": 1,                       // 状态 0 正常 1 作废
-                    "effectEtime": "2019-04-20 23:59:59",           // 有效结束时间
-                    "effectStime": "2019-04-15 00:00:00",           // 有效开始时间
-                    "id": 360,                                      // 活动ID
-                    "name": "SHH阶梯每满测试（10+1，20+3，超出10+2）",  // 活动名
-                    "overdue": 0,
+                    "deleteFlg": 2,         // 状态 0 正常 1 作废 2 过期
+                    "detailPic": null,
+                    "effectEtime": "2019-04-20 23:59:59",        // 有效结束时间
+                    "effectStime": "2019-04-12 00:00:00",       // 有效开始时间
+                    "hasBusinessunitRange": 0,
+                    "hasExcludeProductunitRange": 0,
+                    "hasProductunitRange": 0,
+                    "id": 337,                     // 活动ID
+                    "limitNum": 0,
+                    "marketSpecialSkip": null,
+                    "name": "33",                 // 活动名
+                    "overdue": 1,
+                    "popupPic": "",
                     "remark": "",
-                    "type": "GIFT"                          // 活动类型
+                    "saOrderIds": [ // 已使用订单号列表
+                        "SA19040300004"
+                    ],
+                    "type": "GIFT",        // 活动类型 COUPON 领券 GIFT 满赠 REDUCE 满减 DISCOUNT 满折 COLUMN 专栏 SPECIAL 专题
+                    "unit": ""
                 }
             ],
             "pageNo": 1,
             "total": 1
         }
     }
-    
     
 ### YX-4. 营销作废
 #### 模块负责人
