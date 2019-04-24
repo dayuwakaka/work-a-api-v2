@@ -2690,7 +2690,7 @@
 #### 请求
     GET /router/v5/auth/getVerifyCodeRegister
 #### 参数
-    *loginName: "xxx" //登录名
+    *loginName: "xxx" //登录手机号
     verifyType: "sms" // 验证方式 sms 短信 voice 语音   默认 sms
 #### 响应
     {
@@ -2705,8 +2705,8 @@
 #### 请求
     GET /router/v5/auth/checkVerifyCode
 #### 参数
-    *loginName: "xxx" //登录名
-    *verifyType: "sms" // 验证方式 sms 短信 voice 语音
+    *mobile: "xxx" //登录手机号
+    *verifyCode: "2389" // 验证码
 #### 响应
     {
         "code": "100000",
