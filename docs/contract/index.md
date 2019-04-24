@@ -1255,11 +1255,8 @@
 #### 模块负责人
     尹洪明
 #### 请求
-
     GET     /v2/rebates
-
 #### 参数
-
     keyword             // 优惠券名称，客户名称
     type                // 返利券类型 REBATE 返利 SPREAD 推广费 FREIGHT 运费补 OTHER 其它
     rate                // 折扣率
@@ -1267,51 +1264,51 @@
     buttonPermissionFlg // 按钮权限 1 查询权限 0 不查询
     pageNo              // 页码
     pageSize            // 页条数
-
 #### 响应
-
     {
         "code": 100000,
         "msg": "",
         "data": {
+            "buttonPermissionPage": {},
             "buttonPermissions": [
                 {
-                    "deleteButton": true,
-                    "lockButton": true,         // 锁定
-                    "unlockButton": false,      // 解锁
-                    "logButton": true           // 日志
+                    "deleteButton": false, // 删除
+                    "lockButton": false,   // 锁定
+                    "unlockButton": false, // 解锁
+                    "logButton": true      // 日志
                 }
             ],
             "dataSums": null,
             "datas": [
                 {
                     "createRole": 0,
-                    "createTime": "2018-09-25 21:06:48.0",  // 创建时间
-                    "createUser": 0,    
-                    "createUserName": "樊嘉辉",             // 创建人
-                    "customerId": 31000,
-                    "customerName": "",                     // 客户名称
-                    "effectEtime": "2018-12-25 23:59:59.0", // 结束时间
-                    "effectStime": "2018-09-25 00:00:00.0", // 开始时间
-                    "id": 9913,
-                    "leftValue": 1000,                  // 剩余额
-                    "name": "2018年返利",               // 返利券名称
+                    "createTime": "2019-03-18 15:36:07",    // 创建时间
+                    "createUser": 0,
+                    "createUserName": "崔洋洋",            // 创建人
+                    "customerId": 27542,                        // 客户ID
+                    "customerName": "东莞市大岭山龙鑫冻品批发行",    // 客户名
+                    "effectEtime": "2019-05-28 23:59:59",       // 结束日期
+                    "effectStime": "2019-03-01 00:00:00",       // 开始日期
+                    "id": 15513,                    // 返利券ID
+                    "leftValue": 4424.08,           // 剩余
+                    "name": "2018年-年度返利",       // 返利券名
                     "note": "",
-                    "ranges": "ALL",    
-                    "rate": 80,                         // 折扣率
-                    "source": "HANDWORK",           
+                    "ranges": "ALL",
+                    "rate": 20,                 // 折扣比率
+                    "rebate": 0,
+                    "source": "CONTRACT",
                     "sourceExt": "",
-                    "sourceValue": "101",           
-                    "status": "NORMAL",     // 状态 NORMAL 正常  LOCK 锁定
-                    "type": "",             // 类型 REBATE 返利 SPREAD 推广费 FREIGHT 运费补 OTHER
-                    "value": 1000           // 面值
+                    "sourceValue": "ASA-C-2720880712369152",
+                    "status": "NORMAL",         // 状态
+                    "type": "REBATE",           // 类型 'REBATE' 返利,'SPREAD' 推广,'FREIGHT' 运费,'OTHER' 其他
+                    "value": 4424.08            // 面值
                 }
             ],
             "pageNo": 1,
-            "total": 2
+            "total": 25
         }
     }
-
+    
 ### XSYH-15. 返利券锁定、解锁
 #### 模块负责人
     尹洪明
