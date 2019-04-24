@@ -2,13 +2,10 @@
 ### YX-1. 营销新增
 #### 模块负责人
     尹洪明
-#### 1.1 请求URL
-    /v2/market
+#### 请求
+    POST /v2/market
     
-#### 1.2 请求类型
-    POST
-    
-#### 1.3 请求参数
+#### 请求参数
 
 ##### 基础参数（六钟类型通用参数）
 |参数|名称|描述|
@@ -19,6 +16,7 @@
 |effectEtime|营销结束时间|
 |customerRange|用户限制|all 全部客户 new 新客户|
 |marketBusinessunitRanges|事业部范围|
+|remark|活动说明|
 |onlyCode|唯一码|每次提交时都不能相同|
 
 ##### 领券参数
@@ -48,11 +46,12 @@
 |参数|名称|描述|
 |---|---|---|
 |marketImages|轮播图|banner 轮播图 detail 详情图|
+|marketSpecialSkip|跳转信息|
 
 
-#### 1.4 请求示例
+#### 请求示例
     {
-        @@"remark":"健哥要求加的活动说明",
+        "remark":"健哥要求加的活动说明",
     	"type":"coupon",
     	"name":"领券活动名称",
     	"customerRange":"all",
@@ -84,7 +83,7 @@
     		}],
         "marketProductRanges":[
             {
-            @@"type":"PRODUCTUNIT", // PRODUCTUNIT 指定品   EXCLUDE 排除品  ALL 无限制
+            "type":"PRODUCTUNIT", // PRODUCTUNIT 指定品   EXCLUDE 排除品  ALL 无限制
             "rangeId":7383, // 产品规格ID
             "extra":""	// 传空即可
             },
@@ -102,17 +101,17 @@
                 "targetValue":100, // 满多少
                 "actionValue":2, // 赠多少、减多少、折多少
                 "extra":"4151:7380" // 满赠时，存赠送产品的id 和规格id 格式为 "产品ID:规格ID"
-                 @@"shiftFlg":0,        // 转每满标志 默认 0
-                 @@"shiftType":"EACH"   // 默认 EACH
+                 "shiftFlg":0,        // 转每满标志 默认 0
+                 "shiftType":"EACH"   // 默认 EACH
             },
             { // 转每满的一个目标值
                 "targetValue":200,      // 满
                 "actionValue":0,        // 默认 0
                 "extra":"",
-                @@"shiftFlg":1,       // 转每满标志 默认 1
-                @@"shiftType":"EACH"  // 默认 EACH
+                "shiftFlg":1,       // 转每满标志 默认 1
+                "shiftType":"EACH"  // 默认 EACH
             }],
-        @@"marketActiveShiftCondition":{  // 转每满
+        "marketActiveShiftCondition":{  // 转每满
                 "targetValue": 20,      // 目标值
                 "actionValue": 2,       // 执行值
                 "extra": "4749:8322"    // gift productId:productUnitId
@@ -142,19 +141,14 @@
                 "type":"detail",
                 "position":"bottom",
                 "picUrl":"http://ad.asagroup.cn/asae-h5/v2/activity/index/1200"	
-            }]
+            }],
+        "marketSpecialSkip": {      // 专题活动的跳转信息
+            "extra": "4749",        // productId 或者 h5的url地址
+            "type": "PRODUCT"       // PRODUCT 跳转至产品 H5 跳转至h5
+        }
     }
     
-#### 1.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|code|编号|100000成功；0 失败；|
-|msg|消息|异常信息|
-|data|null|
-
-
-
-#### 1.6 返回示例
+#### 响应
     {
     	"code": 100000,
     	"msg": "",
@@ -1058,99 +1052,63 @@
         }
     }
 
-
-
 ### YX-19 专题活动详情
 #### 模块负责人
     尹洪明
-#### 19.1 请求URL
-    /v2/market/special/{id}
-#### 19.2 请求类型
-    GET
-#### 19.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|id|活动id|
-
-#### 19.4 请求示例
-    无
-
-#### 19.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|createTime|创建时间|
-|createUser|创建人|
-|createUserName|创建人姓名|
-|customerRange|客户类型 all 全部客户 new 新客户|
-|deleteFlg|活动状态|0 正常 1 作废|
-|effectEtime|结束时间|
-|effectStime|开始时间|
-|id|活动ID|
-|marketBusinessunitRanges|事业部范围|
-|marketImages|图片列表|
-|name|营销名称|
-|overdue|是否过期|0 未过期  1 已过期|
-|type|营销类型|coupon 领券 gift 满赠 reduce 满减 discount 满折 column 专栏 special 专题|
-
-#### 19.6 返回示例
-    
+#### 请求
+    GET /v2/market/special/{id}
+#### 参数
+    * id // 活动ID
+#### 响应
     {
         "code": 100000,
         "msg": "",
         "data": {
-            "createTime": "2018-09-13 19:03:14",
+            "bannerPic": "",
+            "createTime": "2019-04-24 16:45:28",           // 活动创建时间
             "createUser": 101,
-            "createUserName": "樊嘉辉",
-            "customerRange": "ALL",
-            "deleteFlg": 0,
-            "effectEtime": "2018-10-13 08:40:17",
-            "effectStime": "2018-09-13 08:40:17",
-            "id": 8,
-            "marketBusinessunitRanges": [{
-                    "extra": "",    // 事业部名称
-                    "id": 27,
-                    "marketId": 8,
-                    "rangeId": 3, // 事业部id
-                    "type": "BUSINESSUNIT"
-                },
-                ......
-                ]
-            "marketImages": [
+            "createUserName": "樊嘉辉",                    // 活动创建人
+            "customerRange": "ALL",                         // 客户范围  ALL 全部客户   NEW 新客户
+            "deleteFlg": 0,                                 // 0 正常  1 作废 2 过期
+            "effectEtime": "2019-05-04 23:59:59",           // 有效结束日期
+            "effectStime": "2019-05-01 00:00:00",           // 有效开始日期
+            "id": 367,                                      // 活动id
+            "marketBusinessunitRanges": [    // 事业部范围
                 {
-                    "id": 16,
-                    "marketId": 8,
-                    "picUrl": "http://ad.asagroup.cn/asae-h5/v2/activity/index/1200",
-                    "position": "NOLIMIT", // 位置无限制
-                    "type": "BANNER" // 轮播图
-                },
+                     "extra": "",    // 事业部名称
+                     "id": 27,
+                     "marketId": 8,
+                     "rangeId": 3, // 事业部id
+                     "type": "BUSINESSUNIT"
+                 }],
+            "marketImages": [               // 图片
                 {
-                    "id": 18,
-                    "marketId": 8,
-                    "picUrl": "http://ad.asagroup.cn/asae-h5/v2/activity/index/1200",
+                    "id": 508,
+                    "marketId": 367,
+                    "picUrl": "http://asae.oss-cn-beijing.aliyuncs.com/20181009132924935-562c11dfa9ec8a132078bf7dfd03918fa1ecc0c9.jpg",
                     "position": "NOLIMIT",
-                    "type": "DETAIL" // 详情图
+                    "type": "BANNER"        // BANNER 轮播图 DETAIL 详情图
                 },
                 {
-                    "id": 19,
-                    "marketId": 8,
-                    "picUrl": "http://ad.asagroup.cn/asae-h5/v2/activity/index/1200",
-                    "position": "NOLIMIT",
-                    "type": "DETAIL"
-                },
-                {
-                    "id": 20,
-                    "marketId": 8,
-                    "picUrl": "http://ad.asagroup.cn/asae-h5/v2/activity/index/1200",
-                    "position": "NOLIMIT",
+                    "id": 509,
+                    "marketId": 367,
+                    "picUrl": "http://asae.oss-cn-beijing.aliyuncs.com/20181009132928873-562c11dfa9ec8a132078bf7dfd03918fa1ecc0c9.jpg",
+                    "position": "BOTTOM",
                     "type": "DETAIL"
                 }
             ],
-            "name": "专题活动名称",
+            "marketSpecialSkip": {      // 活动跳转信息
+                "extra": "4749",        // productId 或者 h5页面url
+                "id": 1,
+                "marketId": 367,
+                "type": "PRODUCT"       // PRODUCT 跳转至产品 H5 跳转至h5
+            },
+            "name": "专题活动测试",       // 活动名
             "overdue": 0,
-            "type": "SPECIAL"
+            "remark": "postman新增数据",    // 活动说明
+            "type": "SPECIAL"   // 类型
         }
     }
-    
     
 ### YX-20. 根据客户id获取可用活动列表
 #### 模块负责人
