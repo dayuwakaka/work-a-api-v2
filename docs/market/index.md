@@ -1977,3 +1977,164 @@
     type          //展示渠道  H5  ANDROID   IOS
     checkCode    //下载授权码
 
+### YX-50 事业组预算-新增
+#### 模块负责人
+    梁铁骐
+#### 请求
+    POST /v2/coupon-budget
+#### 参数
+    {
+    	"businessunitGroupId": 20, // 事业组id
+    	"budgetYm": "2019-04", // 月份
+    	"originalBudgetAmount": 1000 // 预算
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+    
+### YX-51 事业组预算-列表
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/coupon-budget
+#### 参数
+    buttonPermissionFlg: 1 // 是否获取权限按钮 0-否 1-是
+    businessUnitGroupIds[] // 事业部组id集合
+    businessUnitGroupId: 1 // 事业部组id
+    budgetYm: 2019-04 // 月份
+    status: NORMAL // 状态 NORMAL-正常 LOCK-作废
+    pageNo: 1 // 页码
+    pageSize: 25 // 行数
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [
+                {
+                    "modifyButton": true, // 修改按钮
+                    "delButton": true, // 作废按钮
+                    "logButton": true // 查看日志按钮
+                }
+            ],
+            "dataSums": null,
+            "datas": [
+                {
+                    "budgetAmount": 1000, // 当前剩余
+                    "budgetYm": "2019-04", // 月份
+                    "businessUnitGroupName": "PT事业组", // 事业部组名称
+                    "businessunitGroupId": 2, // 事业部组id
+                    "createRole": 1,
+                    "createTime": "2019-04-24 10:41:47", // 操作时间
+                    "createUser": 518,
+                    "createUsername": "孙启萌", // 操作人
+                    "id": 7, // 主键id
+                    "modifyTime": "2019-04-24 10:41:47",
+                    "originalBudgetAmount": 1000, // 预算总额
+                    "status": "NORMAL" // 状态 NORMAL-正常 LOCK-作废
+                }
+            ],
+            "pageNo": 1,
+            "total": 0
+        }
+    }
+
+### YX-52 事业组预算-详情
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/coupon-budget/{id}
+#### 参数
+    id: 事业部组预算主键id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "budgetAmount": 1000, // 剩余预算
+            "budgetYm": "2019-04", // 
+            "businessUnitGroupName": "12", // 事业部组名称
+            "businessunitGroupId": 9,
+            "createRole": 1,
+            "createTime": "2019-04-24 10:42:45", // 
+            "createUser": 518,
+            "createUsername": "孙启萌", // 
+            "id": 10,
+            "modifyTime": "2019-04-24 10:42:45",
+            "originalBudgetAmount": 1000, // 原预算总额
+            "status": "NORMAL"
+        }
+    }
+
+### YX-53 事业组预算-作废
+#### 模块负责人
+    梁铁骐
+#### 请求
+    DELETE /v2/coupon-budget/{id}
+#### 参数
+    id: 事业部组预算主键id
+#### 响应
+     {
+         "code": 100000,
+         "msg": "",
+         "data": null
+     }
+
+### YX-54 事业组预算-日志列表
+#### 模块负责人
+    梁铁骐
+#### 请求
+    DELETE /v2/coupon-budget/{id}/logs
+#### 参数
+    id: 事业部组预算主键id
+    pageNo: 页码
+    pageSize: 行数
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "datas": [
+                {
+                    "action": "USE", // 行为 USE:使用 RELEASE: 释放 GRANT:分配
+                    "amount": -5, // 涉及金额
+                    "budgetId": 2,
+                    "couponId": 186360,
+                    "couponRuleId": 12411,
+                    "createTime": "2019-04-01 00:00:00", // 操作时间
+                    "couponRuleName": "", // 优惠券规则名
+                    "customer": {
+                        "shortName": "南京市江宁区吴昊食品经营部" // 客户名
+                    },
+                    "customerId": 32931,
+                    "id": 101,
+                    "opRole": 0,
+                    "opUser": 0,
+                    "opUserName": "" // 操作人
+                }
+            ],
+            "pageNo": 0,
+            "total": 0
+        }
+    }
+
+### YX-54 事业组预算-修改
+#### 模块负责人
+    梁铁骐
+#### 请求
+    DELETE /v2/coupon-budget/{id}
+#### 参数
+    {
+        id: 事业部组预算id
+        budgetAmount: 金额
+        type: "REDUCE" // REDUCE-削减 ADD-增加
+    }
+#### 响应
+     {
+         "code": 100000,
+         "msg": "",
+         "data": null
+     }
