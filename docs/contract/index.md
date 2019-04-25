@@ -1493,11 +1493,11 @@
 #### 请求参数
     [
         {
-            "contractNum": "123",
-            "rebateNode": "FIRST",
-            "saleAmount": 123,
-            "salesPercentage": "190%",
-            "preferentialAmount": 123
+            "contractNum": "123", // 合同号
+            "rebateNode": "FIRST", // 季度节点
+            "saleAmount": 123, // 销售额
+            "salesPercentage": "190%", // 达成比 
+            "preferentialAmount": 123 // 优惠金额
         },
         {
             "contractNum": "123",
