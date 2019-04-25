@@ -1937,9 +1937,6 @@
                         "type": "A" // 客户类型
                     },
                     "customerId": 27497,
-                    "deleteFlg": 0,
-                    "delivery": null,
-                    "deliveryType": null,
                     "depositPrice": 0,
                     "discountPrice": 0,
                     "freight": 0,
