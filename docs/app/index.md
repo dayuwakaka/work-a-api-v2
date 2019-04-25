@@ -2838,12 +2838,9 @@
 #### 模块负责人
     尹洪明
 #### 请求
-    GET /router/v5/wx/jscode2session
+    GET /router/v5/wx/code2session
 #### 参数
-    *jsCode  // 微信code
-    appId // appId
-    secret // appSecret
-    grantType  // 授权类型
+    *code  // 微信code
 #### 响应
     {
         "code": 100000,
@@ -2861,7 +2858,7 @@
     GET /router/v5/wx/checkRegister
 #### 参数
     *mobile  // 手机号
-    *officalOpenId // openId
+    *code // wx code
 #### 响应
     {
         "code": 100000,
