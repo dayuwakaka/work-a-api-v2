@@ -1514,3 +1514,17 @@
     	"msg": "",
     	"data": null
     }
+    
+### XSYH-42. 删除合同履约数据 for 小石
+#### 模块负责人
+    梁铁骐
+#### 请求url
+    DELETE /v2/contract/performance/rebate
+#### 请求参数
+    无
+#### 响应
+    {
+    	"code": 100000,
+    	"msg": "",
+    	"data": null
+    }
