@@ -794,6 +794,7 @@
     businesstype // 餐饮业态id
     taxCategory // 税收分类id
     productStatus   // 产品状态     NORMAL 上架 LOCK 下架   CUSTOM 定制     LACK 断货
+    status // 发票状态 EMPTY 待审核 NORMAL 已审核
     pageNo          // 页码
     pageSize        // 页大小
     
@@ -851,6 +852,7 @@
                     "taxCategory": 2,                              //税收分类id
                     "taxCategoryName": "方便食品类",               //税收分类名称
                     "taxRate": 0.17                              //税率
+                    "status": "EMPTY" // 待审核 已审核
                 }
             ],
             "pageNo": 1,

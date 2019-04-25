@@ -2,13 +2,10 @@
 ### YX-1. 营销新增
 #### 模块负责人
     尹洪明
-#### 1.1 请求URL
-    /v2/market
+#### 请求
+    POST /v2/market
     
-#### 1.2 请求类型
-    POST
-    
-#### 1.3 请求参数
+#### 请求参数
 
 ##### 基础参数（六钟类型通用参数）
 |参数|名称|描述|
@@ -19,6 +16,7 @@
 |effectEtime|营销结束时间|
 |customerRange|用户限制|all 全部客户 new 新客户|
 |marketBusinessunitRanges|事业部范围|
+|remark|活动说明|
 |onlyCode|唯一码|每次提交时都不能相同|
 
 ##### 领券参数
@@ -48,11 +46,12 @@
 |参数|名称|描述|
 |---|---|---|
 |marketImages|轮播图|banner 轮播图 detail 详情图|
+|marketSpecialSkip|跳转信息|
 
 
-#### 1.4 请求示例
+#### 请求示例
     {
-        @@"remark":"健哥要求加的活动说明",
+        "remark":"健哥要求加的活动说明",
     	"type":"coupon",
     	"name":"领券活动名称",
     	"customerRange":"all",
@@ -84,7 +83,7 @@
     		}],
         "marketProductRanges":[
             {
-            @@"type":"PRODUCTUNIT", // PRODUCTUNIT 指定品   EXCLUDE 排除品  ALL 无限制
+            "type":"PRODUCTUNIT", // PRODUCTUNIT 指定品   EXCLUDE 排除品  ALL 无限制
             "rangeId":7383, // 产品规格ID
             "extra":""	// 传空即可
             },
@@ -102,17 +101,17 @@
                 "targetValue":100, // 满多少
                 "actionValue":2, // 赠多少、减多少、折多少
                 "extra":"4151:7380" // 满赠时，存赠送产品的id 和规格id 格式为 "产品ID:规格ID"
-                 @@"shiftFlg":0,        // 转每满标志 默认 0
-                 @@"shiftType":"EACH"   // 默认 EACH
+                 "shiftFlg":0,        // 转每满标志 默认 0
+                 "shiftType":"EACH"   // 默认 EACH
             },
             { // 转每满的一个目标值
                 "targetValue":200,      // 满
                 "actionValue":0,        // 默认 0
                 "extra":"",
-                @@"shiftFlg":1,       // 转每满标志 默认 1
-                @@"shiftType":"EACH"  // 默认 EACH
+                "shiftFlg":1,       // 转每满标志 默认 1
+                "shiftType":"EACH"  // 默认 EACH
             }],
-        @@"marketActiveShiftCondition":{  // 转每满
+        "marketActiveShiftCondition":{  // 转每满
                 "targetValue": 20,      // 目标值
                 "actionValue": 2,       // 执行值
                 "extra": "4749:8322"    // gift productId:productUnitId
@@ -142,19 +141,14 @@
                 "type":"detail",
                 "position":"bottom",
                 "picUrl":"http://ad.asagroup.cn/asae-h5/v2/activity/index/1200"	
-            }]
+            }],
+        "marketSpecialSkip": {      // 专题活动的跳转信息
+            "extra": "4749",        // productId 或者 h5的url地址
+            "type": "PRODUCT"       // PRODUCT 跳转至产品 H5 跳转至h5
+        }
     }
     
-#### 1.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|code|编号|100000成功；0 失败；|
-|msg|消息|异常信息|
-|data|null|
-
-
-
-#### 1.6 返回示例
+#### 响应
     {
     	"code": 100000,
     	"msg": "",
@@ -169,8 +163,8 @@
 #### 参数
     name // 活动名
     type // 活动类型
-    deleteFlg // 0 正常 1 作废 空 全部
-    effective // 1 有效 0 无效 空 全部 （获取有效活动时结合deleteFlg 使用）
+    deleteFlg // 0 正常 1 作废 2 过期 空 全部
+    effective // 1 有效 0 无效 空 全部 （获取有效活动时结合deleteFlg 使用）（作废）
     buttonPermissionFlg // 0 无权限  1 有权限
     pageNo 页码
     pageSize 页大小
@@ -185,26 +179,39 @@
             "dataSums": null,
             "datas": [
                 {
-                    "bannerPic": "",                        // 轮播图
-                    "createTime": "2019-04-15 09:50:15",    // 创建时间
+                    "accumulative": "",
+                    "activeConditionId": 0,
+                    "bannerPic": "",             // 轮播图
+                    "couponConditionId": 0,
+                    "createTime": "2019-04-12 08:54:30",  // 创建时间
                     "createUser": 518,
-                    "createUserName": "孙启萌",            // 创建人
+                    "createUserName": "孙启萌",      // 创建人
                     "customerRange": "ALL",
-                    "deleteFlg": 1,                       // 状态 0 正常 1 作废
-                    "effectEtime": "2019-04-20 23:59:59",           // 有效结束时间
-                    "effectStime": "2019-04-15 00:00:00",           // 有效开始时间
-                    "id": 360,                                      // 活动ID
-                    "name": "SHH阶梯每满测试（10+1，20+3，超出10+2）",  // 活动名
-                    "overdue": 0,
+                    "deleteFlg": 2,         // 状态 0 正常 1 作废 2 过期
+                    "detailPic": null,
+                    "effectEtime": "2019-04-20 23:59:59",        // 有效结束时间
+                    "effectStime": "2019-04-12 00:00:00",       // 有效开始时间
+                    "hasBusinessunitRange": 0,
+                    "hasExcludeProductunitRange": 0,
+                    "hasProductunitRange": 0,
+                    "id": 337,                     // 活动ID
+                    "limitNum": 0,
+                    "marketSpecialSkip": null,
+                    "name": "33",                 // 活动名
+                    "overdue": 1,
+                    "popupPic": "",
                     "remark": "",
-                    "type": "GIFT"                          // 活动类型
+                    "saOrderIds": [ // 已使用订单号列表
+                        "SA19040300004"
+                    ],
+                    "type": "GIFT",        // 活动类型 COUPON 领券 GIFT 满赠 REDUCE 满减 DISCOUNT 满折 COLUMN 专栏 SPECIAL 专题
+                    "unit": ""
                 }
             ],
             "pageNo": 1,
             "total": 1
         }
     }
-    
     
 ### YX-4. 营销作废
 #### 模块负责人
@@ -1045,99 +1052,63 @@
         }
     }
 
-
-
 ### YX-19 专题活动详情
 #### 模块负责人
     尹洪明
-#### 19.1 请求URL
-    /v2/market/special/{id}
-#### 19.2 请求类型
-    GET
-#### 19.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|id|活动id|
-
-#### 19.4 请求示例
-    无
-
-#### 19.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|createTime|创建时间|
-|createUser|创建人|
-|createUserName|创建人姓名|
-|customerRange|客户类型 all 全部客户 new 新客户|
-|deleteFlg|活动状态|0 正常 1 作废|
-|effectEtime|结束时间|
-|effectStime|开始时间|
-|id|活动ID|
-|marketBusinessunitRanges|事业部范围|
-|marketImages|图片列表|
-|name|营销名称|
-|overdue|是否过期|0 未过期  1 已过期|
-|type|营销类型|coupon 领券 gift 满赠 reduce 满减 discount 满折 column 专栏 special 专题|
-
-#### 19.6 返回示例
-    
+#### 请求
+    GET /v2/market/special/{id}
+#### 参数
+    * id // 活动ID
+#### 响应
     {
         "code": 100000,
         "msg": "",
         "data": {
-            "createTime": "2018-09-13 19:03:14",
+            "bannerPic": "",
+            "createTime": "2019-04-24 16:45:28",           // 活动创建时间
             "createUser": 101,
-            "createUserName": "樊嘉辉",
-            "customerRange": "ALL",
-            "deleteFlg": 0,
-            "effectEtime": "2018-10-13 08:40:17",
-            "effectStime": "2018-09-13 08:40:17",
-            "id": 8,
-            "marketBusinessunitRanges": [{
-                    "extra": "",    // 事业部名称
-                    "id": 27,
-                    "marketId": 8,
-                    "rangeId": 3, // 事业部id
-                    "type": "BUSINESSUNIT"
-                },
-                ......
-                ]
-            "marketImages": [
+            "createUserName": "樊嘉辉",                    // 活动创建人
+            "customerRange": "ALL",                         // 客户范围  ALL 全部客户   NEW 新客户
+            "deleteFlg": 0,                                 // 0 正常  1 作废 2 过期
+            "effectEtime": "2019-05-04 23:59:59",           // 有效结束日期
+            "effectStime": "2019-05-01 00:00:00",           // 有效开始日期
+            "id": 367,                                      // 活动id
+            "marketBusinessunitRanges": [    // 事业部范围
                 {
-                    "id": 16,
-                    "marketId": 8,
-                    "picUrl": "http://ad.asagroup.cn/asae-h5/v2/activity/index/1200",
-                    "position": "NOLIMIT", // 位置无限制
-                    "type": "BANNER" // 轮播图
-                },
+                     "extra": "",    // 事业部名称
+                     "id": 27,
+                     "marketId": 8,
+                     "rangeId": 3, // 事业部id
+                     "type": "BUSINESSUNIT"
+                 }],
+            "marketImages": [               // 图片
                 {
-                    "id": 18,
-                    "marketId": 8,
-                    "picUrl": "http://ad.asagroup.cn/asae-h5/v2/activity/index/1200",
+                    "id": 508,
+                    "marketId": 367,
+                    "picUrl": "http://asae.oss-cn-beijing.aliyuncs.com/20181009132924935-562c11dfa9ec8a132078bf7dfd03918fa1ecc0c9.jpg",
                     "position": "NOLIMIT",
-                    "type": "DETAIL" // 详情图
+                    "type": "BANNER"        // BANNER 轮播图 DETAIL 详情图
                 },
                 {
-                    "id": 19,
-                    "marketId": 8,
-                    "picUrl": "http://ad.asagroup.cn/asae-h5/v2/activity/index/1200",
-                    "position": "NOLIMIT",
-                    "type": "DETAIL"
-                },
-                {
-                    "id": 20,
-                    "marketId": 8,
-                    "picUrl": "http://ad.asagroup.cn/asae-h5/v2/activity/index/1200",
-                    "position": "NOLIMIT",
+                    "id": 509,
+                    "marketId": 367,
+                    "picUrl": "http://asae.oss-cn-beijing.aliyuncs.com/20181009132928873-562c11dfa9ec8a132078bf7dfd03918fa1ecc0c9.jpg",
+                    "position": "BOTTOM",
                     "type": "DETAIL"
                 }
             ],
-            "name": "专题活动名称",
+            "marketSpecialSkip": {      // 活动跳转信息
+                "extra": "4749",        // productId 或者 h5页面url
+                "id": 1,
+                "marketId": 367,
+                "type": "PRODUCT"       // PRODUCT 跳转至产品 H5 跳转至h5
+            },
+            "name": "专题活动测试",       // 活动名
             "overdue": 0,
-            "type": "SPECIAL"
+            "remark": "postman新增数据",    // 活动说明
+            "type": "SPECIAL"   // 类型
         }
     }
-    
     
 ### YX-20. 根据客户id获取可用活动列表
 #### 模块负责人
@@ -1498,7 +1469,7 @@
     GET /v2/market/advertisement
 #### 参数    
     name                // 广告位名称
-    type                // 广告位类型 BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告
+    type                // 广告位类型 BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告  H5
     businesstypeId      // 关联业态id
     marketType          // 关联活动类型 COUPON领券 GIFT满赠 REDUCE满减 DISCOUNT满折 COLUMN专栏 SPECIAL专题
     marketStatus        // 关联活动状态 0 正常 1 作废
@@ -1520,8 +1491,10 @@
                     "createUser": 518,
                     "createUsername": "孙启萌",//广告创建人
                     "deleteFlg": 0,
+                    "extra": "33,3",//额外信息 长、宽 50, 20
                     "id": 16,
-                    "image": "http://beijing.aliyuncs.com/businesstype/w02.png",//广告图片
+                    "image": "http://beijing.aliyuncs.com/businesstype/w02.png",//H5类型：存储H5链接地址，其他类型：存储广告图片
+                    "length": "33",//H5广告的长度
                     "market": {//广告位关联活动数据
                         "bannerPic": "",
                         "createTime": "2018-10-25 12:05:55",
@@ -1578,7 +1551,9 @@
                             "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w03.png"
                         }
                     ],
-                    "type": "BANNER"//广告位类型 BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告
+                    "sort": 3,//排序
+                    "type": "BANNER",//广告位类型 BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告  H5
+                    "width": "3"//H5广告宽度
                 }
             ],
             "pageNo": 1,
@@ -1594,11 +1569,13 @@
 #### 参数    
     {
     "name":"测试广告位1",// 广告位名称
-    "type":"BANNER",// 广告位类型 BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告
+    "type":"BANNER",// 广告位类型 BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告 H5
     "businesstypeRange":"PART", // 关联业态范围
     "rangeId":[16,22], // 关联业态id
-    "image":"http://beijing.aliyuncs.com/businesstype/w02.png",//图片地址
-    "marketId":"5"//关联活动id
+    "image":"http://beijing.aliyuncs.com/businesstype/w02.png",//H5类型：存储H5链接地址，其他类型：存储广告图片
+    "marketId":"5",//关联活动id
+    "length":"123",//广告长度
+    "width":"12"//广告宽度
     }
 #### 响应
     {"code":100000,"msg":"","data":null}
@@ -1611,26 +1588,40 @@
 #### 参数    
     {
     "name":"测试广告位1",// 广告位名称
-    "type":"BANNER",// 广告位类型 BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告
+    "type":"BANNER",// 广告位类型 BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告 H5
     "businesstypeRange":"PART", // 关联业态范围
     "rangeId":[16,22], // 关联业态id
-    "image":"http://beijing.aliyuncs.com/businesstype/w03.png",//图片地址
-    "marketId":"5"//关联活动id
+    "image":"http://beijing.aliyuncs.com/businesstype/w03.png",//H5类型：存储H5链接地址，其他类型：存储广告图片
+    "marketId":"5",//关联活动id
+    "length":"123",//广告长度
+    "width":"12"//广告宽度
     }
 #### 响应
     {"code":100000,"msg":"","data":null}
 
-### YX-34. 删除广告位
+### YX-34. 更新广告位排序
+#### 模块负责人
+    王子悦
+#### 请求
+    PUT v2/market/advertisement/sort/{id}
+#### 参数    
+    {"sort":"3"}//排序序号
+#### 响应
+    {"code":100000,"msg":"","data":null}
+
+
+
+### YX-35. 删除广告位
 #### 模块负责人
     王子悦
 #### 请求
     DELETE v2/market/advertisement/{id}
 #### 参数    
-    id  //广告位id
+    
 #### 响应
     {"code":100000,"msg":"","data":null}   
 
-### YX-35. 查询广告位操作日志
+### YX-36. 查询广告位操作日志
 #### 模块负责人
     王子悦
 #### 请求
@@ -1668,7 +1659,7 @@
         "total": 2
     }
     }
-### YX-36. 广告位详情
+### YX-37. 广告位详情
 #### 模块负责人
     王子悦
 #### 请求
@@ -1686,8 +1677,10 @@
             "createUser": 518,
             "createUsername": "孙启萌",//创建人
             "deleteFlg": 0,
+            "extra": "33,3",//额外信息 长、宽 50, 20
             "id": 59,
-            "image": "http://beijing.aliyuncs.com/businesstype/w02.png",//广告图片
+            "image": "http://beijing.aliyuncs.com/businesstype/w02.png",//H5类型：存储H5链接地址，其他类型：存储广告图片
+            "length": "33",//H5广告长度
             "market": {//关联活动信息
                 "bannerPic": "",
                 "createTime": "2018-03-13 14:00:12",
@@ -1726,12 +1719,14 @@
                     "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w02.png"
                 }
             ],
-            "type": "BANNER"// 广告位类型 BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告
+            "sort": 3,//排序
+            "type": "BANNER",// 广告位类型 BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告
+            "width": "3"//H5广告宽度
         }
     }
 
 
-### YX-37. 插屏新增
+### YX-40. 插屏新增
 #### 模块负责人
     王子悦
 #### 请求
@@ -1751,7 +1746,7 @@
 #### 响应
     {"code":100000,"msg":"","data":null}
 
-### YX-38. 插屏列表条件查询
+### YX-41. 插屏列表条件查询
 #### 模块负责人
     王子悦
 #### 请求
@@ -1819,7 +1814,7 @@
         }
     }
 
-### YX-39. 插屏上线
+### YX-42. 插屏上线
 #### 模块负责人
     王子悦
 #### 请求
@@ -1829,7 +1824,7 @@
 #### 响应
     {"code":100000,"msg":"","data":null}
 
-### YX-40. 插屏下线
+### YX-43. 插屏下线
 #### 模块负责人
     王子悦
 #### 请求
@@ -1840,7 +1835,7 @@
     {"code":100000,"msg":"","data":null}
 
 
-### YX-41. 插屏修改起止日期（延期）
+### YX-44. 插屏修改起止日期（延期）
 #### 模块负责人
     王子悦
 #### 请求
@@ -1853,7 +1848,7 @@
 #### 响应
     {"code":100000,"msg":"","data":null}  
 
-### YX-42. 插屏修改时间段
+### YX-45. 插屏修改时间段
 #### 模块负责人
     王子悦
 #### 请求
@@ -1866,7 +1861,7 @@
 #### 响应
     {"code":100000,"msg":"","data":null} 
 
-### YX-43. 插屏修改优先级
+### YX-46. 插屏修改优先级
 #### 模块负责人
     王子悦
 #### 请求
@@ -1878,7 +1873,7 @@
 #### 响应
     {"code":100000,"msg":"","data":null} 
 
-### YX-44. 插屏日志条件查询列表
+### YX-47. 插屏日志条件查询列表
 #### 模块负责人
     王子悦
 #### 请求
@@ -1919,7 +1914,7 @@
     }
 
 
-### YX-45. 插屏详情
+### YX-48. 插屏详情
 #### 模块负责人
     王子悦
 #### 请求
@@ -1963,7 +1958,7 @@
                     }
         }
 
-### YX-46. 插屏日志导出
+### YX-49. 插屏日志导出
 #### 模块负责人
     王子悦
 #### 请求
