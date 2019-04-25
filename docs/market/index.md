@@ -1469,7 +1469,7 @@
     GET /v2/market/advertisement
 #### 参数    
     name                // 广告位名称
-    type                // 广告位类型 BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告
+    type                // 广告位类型 BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告  H5
     businesstypeId      // 关联业态id
     marketType          // 关联活动类型 COUPON领券 GIFT满赠 REDUCE满减 DISCOUNT满折 COLUMN专栏 SPECIAL专题
     marketStatus        // 关联活动状态 0 正常 1 作废
@@ -1491,8 +1491,10 @@
                     "createUser": 518,
                     "createUsername": "孙启萌",//广告创建人
                     "deleteFlg": 0,
+                    "extra": "33,3",//额外信息 长、宽 50, 20
                     "id": 16,
-                    "image": "http://beijing.aliyuncs.com/businesstype/w02.png",//广告图片
+                    "image": "http://beijing.aliyuncs.com/businesstype/w02.png",//H5类型：存储H5链接地址，其他类型：存储广告图片
+                    "length": "33",//H5广告的长度
                     "market": {//广告位关联活动数据
                         "bannerPic": "",
                         "createTime": "2018-10-25 12:05:55",
@@ -1549,7 +1551,9 @@
                             "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w03.png"
                         }
                     ],
-                    "type": "BANNER"//广告位类型 BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告
+                    "sort": 3,//排序
+                    "type": "BANNER",//广告位类型 BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告  H5
+                    "width": "3"//H5广告宽度
                 }
             ],
             "pageNo": 1,
@@ -1565,11 +1569,13 @@
 #### 参数    
     {
     "name":"测试广告位1",// 广告位名称
-    "type":"BANNER",// 广告位类型 BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告
+    "type":"BANNER",// 广告位类型 BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告 H5
     "businesstypeRange":"PART", // 关联业态范围
     "rangeId":[16,22], // 关联业态id
-    "image":"http://beijing.aliyuncs.com/businesstype/w02.png",//图片地址
-    "marketId":"5"//关联活动id
+    "image":"http://beijing.aliyuncs.com/businesstype/w02.png",//H5类型：存储H5链接地址，其他类型：存储广告图片
+    "marketId":"5",//关联活动id
+    "length":"123",//广告长度
+    "width":"12"//广告宽度
     }
 #### 响应
     {"code":100000,"msg":"","data":null}
@@ -1582,26 +1588,40 @@
 #### 参数    
     {
     "name":"测试广告位1",// 广告位名称
-    "type":"BANNER",// 广告位类型 BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告
+    "type":"BANNER",// 广告位类型 BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告 H5
     "businesstypeRange":"PART", // 关联业态范围
     "rangeId":[16,22], // 关联业态id
-    "image":"http://beijing.aliyuncs.com/businesstype/w03.png",//图片地址
-    "marketId":"5"//关联活动id
+    "image":"http://beijing.aliyuncs.com/businesstype/w03.png",//H5类型：存储H5链接地址，其他类型：存储广告图片
+    "marketId":"5",//关联活动id
+    "length":"123",//广告长度
+    "width":"12"//广告宽度
     }
 #### 响应
     {"code":100000,"msg":"","data":null}
 
-### YX-34. 删除广告位
+### YX-34. 更新广告位排序
+#### 模块负责人
+    王子悦
+#### 请求
+    PUT v2/market/advertisement/sort/{id}
+#### 参数    
+    {"sort":"3"}//排序序号
+#### 响应
+    {"code":100000,"msg":"","data":null}
+
+
+
+### YX-35. 删除广告位
 #### 模块负责人
     王子悦
 #### 请求
     DELETE v2/market/advertisement/{id}
 #### 参数    
-    id  //广告位id
+    
 #### 响应
     {"code":100000,"msg":"","data":null}   
 
-### YX-35. 查询广告位操作日志
+### YX-36. 查询广告位操作日志
 #### 模块负责人
     王子悦
 #### 请求
@@ -1639,7 +1659,7 @@
         "total": 2
     }
     }
-### YX-36. 广告位详情
+### YX-37. 广告位详情
 #### 模块负责人
     王子悦
 #### 请求
@@ -1657,8 +1677,10 @@
             "createUser": 518,
             "createUsername": "孙启萌",//创建人
             "deleteFlg": 0,
+            "extra": "33,3",//额外信息 长、宽 50, 20
             "id": 59,
-            "image": "http://beijing.aliyuncs.com/businesstype/w02.png",//广告图片
+            "image": "http://beijing.aliyuncs.com/businesstype/w02.png",//H5类型：存储H5链接地址，其他类型：存储广告图片
+            "length": "33",//H5广告长度
             "market": {//关联活动信息
                 "bannerPic": "",
                 "createTime": "2018-03-13 14:00:12",
@@ -1697,12 +1719,14 @@
                     "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w02.png"
                 }
             ],
-            "type": "BANNER"// 广告位类型 BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告
+            "sort": 3,//排序
+            "type": "BANNER",// 广告位类型 BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告
+            "width": "3"//H5广告宽度
         }
     }
 
 
-### YX-37. 插屏新增
+### YX-40. 插屏新增
 #### 模块负责人
     王子悦
 #### 请求
@@ -1722,7 +1746,7 @@
 #### 响应
     {"code":100000,"msg":"","data":null}
 
-### YX-38. 插屏列表条件查询
+### YX-41. 插屏列表条件查询
 #### 模块负责人
     王子悦
 #### 请求
@@ -1790,7 +1814,7 @@
         }
     }
 
-### YX-39. 插屏上线
+### YX-42. 插屏上线
 #### 模块负责人
     王子悦
 #### 请求
@@ -1811,7 +1835,7 @@
     {"code":100000,"msg":"","data":null}
 
 
-### YX-41. 插屏修改起止日期（延期）
+### YX-43. 插屏修改起止日期（延期）
 #### 模块负责人
     王子悦
 #### 请求
@@ -1824,7 +1848,7 @@
 #### 响应
     {"code":100000,"msg":"","data":null}  
 
-### YX-42. 插屏修改时间段
+### YX-44. 插屏修改时间段
 #### 模块负责人
     王子悦
 #### 请求
@@ -1837,7 +1861,7 @@
 #### 响应
     {"code":100000,"msg":"","data":null} 
 
-### YX-43. 插屏修改优先级
+### YX-45. 插屏修改优先级
 #### 模块负责人
     王子悦
 #### 请求
@@ -1849,7 +1873,7 @@
 #### 响应
     {"code":100000,"msg":"","data":null} 
 
-### YX-44. 插屏日志条件查询列表
+### YX-46. 插屏日志条件查询列表
 #### 模块负责人
     王子悦
 #### 请求
@@ -1890,7 +1914,7 @@
     }
 
 
-### YX-45. 插屏详情
+### YX-47. 插屏详情
 #### 模块负责人
     王子悦
 #### 请求
@@ -1934,7 +1958,7 @@
                     }
         }
 
-### YX-46. 插屏日志导出
+### YX-48. 插屏日志导出
 #### 模块负责人
     王子悦
 #### 请求
