@@ -358,6 +358,7 @@
                 }
             ]
         },
+        *"budgetType": "其它品类费用", // 预算券类别
         "effectStime": "2019-03-26 00:00:00",   // 有效开始时间
         "effectEtime": "2019-04-26 23:59:59",   // 有效结束时间
         "onlyCode": "294376S334"                // 唯一码
@@ -520,7 +521,7 @@
 #### 模块负责人
     尹洪明
 #### 请求
-    GET     /v2/coupon/customers
+    GET     /v2/coupon
 #### 参数
     keyword     // 优惠券名称/客户名称
     source      // 发放源
@@ -548,9 +549,11 @@
                     "businessName": "",
                     "couponRuleId": 12374,          // 券规id
                     "createRole": 0,
-                    "createTime": "2019-03-26 18:23:06.0",
+                    "createTime": "2019-03-26 18:23:06", // 创建时间 
                     "createUser": 0,
-                    "createUserName": "樊嘉辉",
+                    "createUserName": "樊嘉辉", // 创建人
+                    "remark": "我是预算券备注", // 备注
+                    "budgetType": "其它品类费用" // 预算类别
                     "customerId": 32938,
                     "customerName": "82年凯龙",    // 客户名
                     "effectEtime": "2019-04-26 23:59:59",   // 结束日志
