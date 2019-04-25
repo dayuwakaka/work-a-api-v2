@@ -273,13 +273,9 @@
 
     {
         msgType: "ORDER" // 消息类别 INVOICE_ASK_FOR：发票信息审核 ORDER：订单通知 ACTIVITY：优惠促销 NOTICE：系统公告
-        msgBody: {
-            title: "订单发货通知",
-            body: 您的订单：SA1904100001已发车，请注意查收",
-            orderId: "SA1904100001", // 订单通知时存放订单号
-            id: 123, // 优惠促销时存放活动id
-            url: "www.baidu.com" // 系统公告时存放url
-        }
+        title: "订单发货通知",
+        body: 您的订单：SA1904100001已发车，请注意查收",
+        value: "SA1904100001", // 订单通知时存放订单号 优惠促销时存放活动id 系统公告时存放url
     }
 
 
