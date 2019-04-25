@@ -1490,7 +1490,6 @@
     梁铁骐
 #### 请求url
     POST /v2/contract/performance/rebate
-    P2P合同 - p2p
 #### 请求参数
     [
         {
