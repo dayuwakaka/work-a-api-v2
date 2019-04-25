@@ -353,21 +353,22 @@
                 }
             ],
             "productExtra": {                   // 产品扩展信息
-                    "attributeName": "速冻生制",
+                    "attributeName": "速冻生制",//产品标准号
                     "attributes": 1,
-                    "barCode": "阿斯蒂芬",
-                    "cookWay": "  撒旦法",
+                    "barCode": "阿斯蒂芬",//条码
+                    "cookWay": "  撒旦法",//烹饪方法
                     "description": " ",
                     "id": 8299,
                     "intro": "",
                     "material": "阿斯蒂芬",
-                    "place": "啊s'd'f",
+                    "place": "啊s'd'f",//产地
                     "productId": 4779,
-                    "saveType": "FROZEN",
-                    "shelfLife": " 阿斯蒂芬",
+                    "saveType": "FROZEN",//存储方式 英文
+                    "saveTypeName": "常温",//存储方式 中文
+                    "shelfLife": " 阿斯蒂芬",//保质期
                     "standards": 0,
-                    "standardsName": "无",
-                    "store": "阿斯顿发"
+                    "standardsName": "无",//标准类别
+                    "store": "阿斯顿发"//存储温度
                 },
             "productImgs": {       // 产品图片
                    "QUALITY": [     // 质检图
