@@ -1483,3 +1483,35 @@
             ......
         ]
     }
+    
+    
+### XSYH-41. 同步合同履约数据 for 小石
+#### 模块负责人
+    梁铁骐
+#### 请求url
+    POST /v2/contract/performance/rebate
+    P2P合同 - p2p
+#### 请求参数
+    [
+        {
+            "contractNum": "123",
+            "rebateNode": "FIRST",
+            "saleAmount": 123,
+            "salesPercentage": "190%",
+            "preferentialAmount": 123
+        },
+        {
+            "contractNum": "123",
+        	"rebateNode": "FIRST",
+        	"saleAmount": 123,
+        	"salesPercentage": "190%",
+        	"preferentialAmount": 123
+        },
+        ...
+    ]
+#### 响应
+    {
+    	"code": 100000,
+    	"msg": "",
+    	"data": null
+    }
