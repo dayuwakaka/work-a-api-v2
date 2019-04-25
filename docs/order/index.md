@@ -1909,3 +1909,61 @@
         "msg": "",
         "data": 123
     }
+    
+### DD-135. 营销列表调用订单列表
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/saorder/active/list
+#### 参数
+    {
+    	"orderIds": ["SA19042200001"], // 订单号集合
+    	"pageNo": 1, // 页码
+    	"pageSize": 25 // 行数
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "datas": [
+                {
+                    "apPrice": 0,
+                    "completeTime": "",
+                    "createTime": "2019-04-22 08:52:51", // 创建时间
+                    "createUserName": "客户APP下单", // 创建信息
+                    "customer": {
+                        "shortName": "测试", // 客户名称
+                        "type": "A" // 客户类型
+                    },
+                    "customerId": 27497,
+                    "depositPrice": 0,
+                    "discountPrice": 0,
+                    "freight": 0,
+                    "freightAsk": null,
+                    "fromDepotId": 51,
+                    "fromDepotName": "DC（天津仓）ASA",
+                    "giftFlg": 0,
+                    "id": 328064,
+                    "invoice": null,
+                    "jian": 0,
+                    "mainOrderId": "",
+                    "modifyTime": "",
+                    "orderId": "SA19042200001", // 单号
+                    "payFlg": 0,
+                    "price": 17868.6,
+                    "rebateId": 0,
+                    "rebatePrice": 0,
+                    "receiveId": 0,
+                    "remark": "",
+                    "san": 997,
+                    "splitFlg": 0,
+                    "status": "INVALID", // 订单状态 INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收
+                    "totalprice": 17868.6, // 订单实收金额
+                    "tradefrom": "APP"
+                }
+            ],
+            "pageNo": 1,
+            "total": 0
+        }
+    }
