@@ -1072,7 +1072,7 @@
 #### 模块负责人
     王子悦
 #### 请求
-    GET    /v2/authfollow/focus
+    GET    /v2/authfollow/befocus
 #### 参数
     name   //角色名称
     status //状态 INVALID 未通过 REFUSE 拒绝 PASS 通过
@@ -1141,9 +1141,6 @@
 #### 响应
     {"code":100000,"msg":"","data":null}
 
-#### 响应
-    {"code":100000,"msg":"","data":null}
-
 ### QX-45. 拒绝关注
 
 #### 模块负责人
@@ -1189,7 +1186,7 @@
             "datas": [
                 {
                     "gid": 42,
-                    "rid": 2200,//角色ID
+                    "rid": 2200,//角色编号
                     "roleName": "李欢欢1"  //角色名称
                 }
             ],
