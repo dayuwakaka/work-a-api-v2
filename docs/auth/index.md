@@ -1022,3 +1022,209 @@
             ......
         ]
     }    
+
+
+
+### QX-41. 关注列表
+
+#### 模块负责人
+    王子悦
+#### 请求
+    GET    /v2/authfollow/focus
+#### 参数
+    name   //角色名称
+    status //状态 INVALID 未通过 REFUSE 拒绝 PASS 通过
+    pageNo //页码
+    pageSize //页条数
+    
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissionPage": {},
+            "buttonPermissions": [],
+            "dataSums": null,
+            "datas": [
+                {
+                    "befocusName": "樊嘉辉",//被关注人角色
+                    "checkRole": 0,
+                    "checkTime": "",
+                    "checkUser": 0,
+                    "createRole": 29319,
+                    "createTime": "2019-04-24 15:46:58",//创建时间
+                    "createUser": 518,
+                    "createUsername": "孙启萌",//创建人
+                    "deleteFlg": 0,
+                    "focusName": "孙启萌",//关注人角色
+                    "followRid": 1,
+                    "id": 138,
+                    "rid": 29319,
+                    "status": "PASS"//状态 INVALID 未通过 REFUSE 拒绝 PASS 通过
+                }
+            ],
+            "pageNo": 1,
+            "total": 1
+        }
+    }
+### QX-42. 被关注列表
+
+#### 模块负责人
+    王子悦
+#### 请求
+    GET    /v2/authfollow/focus
+#### 参数
+    name   //角色名称
+    status //状态 INVALID 未通过 REFUSE 拒绝 PASS 通过
+    pageNo //页码
+    pageSize //页条数
+    
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissionPage": {},
+            "buttonPermissions": [
+                {
+                    "cancelButton": true,   //作废按钮
+                    "refuseButton": false,  //拒绝按钮
+                    "agreeButton": false    //通过按钮
+                }
+            ],
+            "dataSums": null,
+            "datas": [
+                {
+                    "befocusName": "樊嘉辉",//被关注人角色
+                    "checkRole": 1,
+                    "checkTime": "2019-04-24 15:39:27",
+                    "checkUser": 518,
+                    "createRole": 29319,
+                    "createTime": "2019-04-24 15:16:49",//创建时间
+                    "createUser": 518,
+                    "createUsername": "孙启萌",//创建人
+                    "deleteFlg": 0,
+                    "focusName": "孙启萌",//关注人角色
+                    "followRid": 1,
+                    "id": 137,
+                    "rid": 29319,
+                    "status": "REFUSE"//状态 INVALID 未通过 REFUSE 拒绝 PASS 通过
+                }
+            ],
+            "pageNo": 1,
+            "total": 1
+        }
+    }
+
+### QX-43. 添加关注
+
+#### 模块负责人
+    王子悦
+#### 请求
+    POST    /v2/authfollow/
+#### 参数
+    {
+	    "followRoleIds":[29365,29364,29363]   //关注角色集合
+    }
+    
+#### 响应
+    {"code":100000,"msg":"","data":null}
+
+### QX-44. 通过关注
+
+#### 模块负责人
+    王子悦
+#### 请求
+    PUT    /v2/authfollow/agree/{id}
+#### 参数
+    无
+#### 响应
+    {"code":100000,"msg":"","data":null}
+
+#### 响应
+    {"code":100000,"msg":"","data":null}
+
+### QX-45. 拒绝关注
+
+#### 模块负责人
+    王子悦
+#### 请求
+    PUT    /v2/authfollow/refuse/{id}
+#### 参数
+    无
+#### 响应
+    {"code":100000,"msg":"","data":null}
+
+### QX-46. 作废关注
+
+#### 模块负责人
+    王子悦
+#### 请求
+    DELETE    /v2/authfollow/cancel/{id}
+#### 参数
+    无
+#### 响应
+    {"code":100000,"msg":"","data":null}
+
+### QX-47. 角色列表
+
+#### 模块负责人
+    王子悦
+#### 请求
+    GET    /v2/authfollow/roles
+#### 参数
+
+    name      //角色名称
+    pageNo    //页码
+    pageSize  //页条数
+
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissionPage": {},
+            "buttonPermissions": [],
+            "dataSums": null,
+            "datas": [
+                {
+                    "gid": 42,
+                    "rid": 2200,//角色ID
+                    "roleName": "李欢欢1"  //角色名称
+                }
+            ],
+            "pageNo": 1,
+            "total": 18
+        }
+    }
+
+### QX-48. 提供当前SS拥有的，关注SS所拥有的客户ID集合
+
+#### 模块负责人
+    王子悦
+#### 请求
+    GET    /v2/authfollow/customerIds
+#### 参数
+    无
+
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [//依据角色id找出的客户id集合
+            30943,
+            31010,
+            31012,
+            31032,
+            31355,
+            31372,
+            31612,
+            31646,
+            31679,
+            32056,
+            32829,
+            32935,
+            32938,
+            32940
+        ]
+    }
