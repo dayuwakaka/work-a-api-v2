@@ -181,8 +181,8 @@
 #### 请求
     GET /report/contract
 #### 参数
-    contactNum : 'ASA-1000001818319574'        	//合同号
-	rebateNode : 'YEAR'							//季度节点
+    contractNum : 'ASA-1000001818319574'  //合同号
+	rebateNode : 'YEAR'  //季度节点
 #### 响应
 	{
     "code": 100000,
