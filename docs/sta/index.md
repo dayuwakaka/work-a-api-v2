@@ -188,36 +188,37 @@
     "code": 100000,
     "msg": "",
     "data": {
-        "effective": [											//订购并计入销售优惠客户明细
+        "effective": [	//订购并计入销售优惠客户明细
             {
-                "orderAmount": 194993.5,						//订单金额
-                "salesAmount": 194993.5,						//总额
-                "contractNum": "ASA-1000001818319574",			//合同号
-                "apAmount": 0,									//调价单金额
-                "customerName": "赣州市惠旺三达食品商行-南昌",		//客户名称
-                "refundAmount": 0								//退单金额
+                "orderAmount": 194993.5,  //订单金额
+                "salesAmount": 194993.5,  //总额
+                "contractNum": "ASA-1000001818319574",  //合同号
+                "apAmount": 0,  //调价单金额
+                "customerName": "赣州市惠旺三达食品商行-南昌",  //客户名称
+				"customerId": 1,  //客户id
+                "refundAmount": 0  //退单金额
             },
             ...
         ],
-        "ineffective": [										//订购但不计入优惠产品明细
+        "ineffective": [  //订购但不计入优惠产品明细
             {
-                "pno": "908C(908)",								//品号
-                "specs": "1000g*10袋",							//规格
-                "amount": 1170,									//金额
-                "ineffectiveSalesAmount": 819,					//不计入金额
-                "pname": "海鲜三合一料包",						//品名
-                "count": 2,										//数量
-                "ineffectiveSalesRatio": 0.7					//不计入比例
+                "pno": "908C(908)",  //品号
+                "specs": "1000g*10袋",  //规格
+                "amount": 1170,  //金额
+                "ineffectiveSalesAmount": 819,  //不计入金额
+                "pname": "海鲜三合一料包",  //品名
+                "count": 2,  //数量
+                "ineffectiveSalesRatio": 0.7  //不计入比例
             },
 			...
         ],
-        "sales": {												//销售优惠金额确认
-            "salesPlan": 3500000,								//任务额
-            "preferentialAmount": 112690.06,					//优惠金额
-            "salesAmount": 3757154.39,							//总额
-            "ineffectiveSalesAmount": 819,						//不计入优惠金额
-            "rebateRate": 3,									//优惠比例
-            "effectiveSalesAmount": 3756335.39					//应记优惠金额
+        "sales": {  //销售优惠金额确认
+            "salesPlan": 3500000,  //任务额
+            "preferentialAmount": 112690.06,  //优惠金额
+            "salesAmount": 3757154.39,  //总额
+            "ineffectiveSalesAmount": 819,  //不计入优惠金额
+            "rebateRate": 3,  //优惠比例
+            "effectiveSalesAmount": 3756335.39  //应记优惠金额
         }
     }
 }
