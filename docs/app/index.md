@@ -2866,6 +2866,8 @@
         "data": {
             "hasBind": false,       // ture 已绑定  false 未绑定
             "officalOpenId": "34857397593475982345729"  // openId
+            "mobile": "xxx" // 手机号
+            "nickName": "xxx" // 昵称
         }
     }
     
