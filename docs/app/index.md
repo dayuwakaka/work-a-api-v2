@@ -2821,7 +2821,6 @@
 #### 参数
     *loginName  // 登录名
     *verifyCode // 验证码
-    *customerId // 客户ID
     *ipAddress  // ip地址
     *cartId     // 设备号
 #### 响应
