@@ -358,6 +358,9 @@
                 }
             ]
         },
+        *"budgetType": "其它品类费用", // 分组类型
+        *"specialType": "PT专项", // 分项类型
+        "remark": "我是预算券备注", // 预算券备注
         "effectStime": "2019-03-26 00:00:00",   // 有效开始时间
         "effectEtime": "2019-04-26 23:59:59",   // 有效结束时间
         "onlyCode": "294376S334"                // 唯一码
@@ -389,12 +392,14 @@
     尹洪明
 #### 请求
 
-    GET    /v2/coupon/customer_askfors
+    GET    /v2/coupon/askfor
 
 #### 参数
 
     keyword // 优惠券名称/客户名称
     buttonPermissionFlg // 按钮权限 1 查询 0 不查询
+    budgetType: "其它品类费用" // 分组类型
+    specialType: "PT专项", // 分项类型
     pageNo  // 页码
     pageSize    // 页条数
 
@@ -428,6 +433,8 @@
                     "effectStime": "2018-09-11 00:00:00.0",     // 优惠券开始时间
                     "id": 87426,                                // 优惠券编号
                     "note": "",
+                    "budgetType": "其它品类费用" // 分组类型
+                    "specialType": "PT专项", // 分项类型
                     "pageId": 0,
                     "promoName": "",
                     "ruleName": "小饺丫（荠菜鱿鱼饺）优惠券",   // 优惠券名称
@@ -520,12 +527,14 @@
 #### 模块负责人
     尹洪明
 #### 请求
-    GET     /v2/coupon/customers
+    GET     /v2/coupon
 #### 参数
     keyword     // 优惠券名称/客户名称
     source      // 发放源
     status      // normal 正常 lock 锁定 invalid 作废
     used        // YES: 已使用; NO: 未使用
+    budgetType: "其它品类费用" // 分组类型
+    specialType: "PT专项", // 分项类型
     buttonPermissionFlg     // 0 不查询按钮权限  1 查询
     pageNo      // 页码
     pageSize    // 页条数
@@ -548,9 +557,12 @@
                     "businessName": "",
                     "couponRuleId": 12374,          // 券规id
                     "createRole": 0,
-                    "createTime": "2019-03-26 18:23:06.0",
+                    "createTime": "2019-03-26 18:23:06", // 创建时间 
                     "createUser": 0,
-                    "createUserName": "樊嘉辉",
+                    "createUserName": "樊嘉辉", // 创建人
+                    "remark": "我是预算券备注", // 备注
+                    "budgetType": "其它品类费用" // 分组类型
+                    "specialType": "PT专项", // 分项类型
                     "customerId": 32938,
                     "customerName": "82年凯龙",    // 客户名
                     "effectEtime": "2019-04-26 23:59:59",   // 结束日志
@@ -2132,4 +2144,38 @@
          "code": 100000,
          "msg": "",
          "data": null
+     }
+
+### YX-55 预算-分组类型列表
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/coupon-budget/types
+#### 参数
+    无
+#### 响应
+     {
+         "code": 100000,
+         "msg": "",
+         "data": [
+            "其它品类费用"
+            ...
+         ]
+     }
+
+### YX-56 预算-分项类型列表
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/coupon-budget/special/types
+#### 参数
+    无
+#### 响应
+     {
+         "code": 100000,
+         "msg": "",
+         "data": [
+            "PT专项"
+            ...
+         ]
      }

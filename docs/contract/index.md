@@ -1528,3 +1528,136 @@
     	"msg": "",
     	"data": null
     }
+    
+### XSYH-43. 通过客户id获取合同履约数据 for app
+#### 模块负责人
+    梁铁骐
+#### 请求url
+    GET /router/v5/contract/rebate/{customerId}
+#### 请求参数
+    customerId: 客户id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "completedAmt": 0, // 已完成金额
+                "completedPercentage": 0, // 已完成比例
+                "contractNum": "ASA-C-2886440289797120", // 合同号
+                "contractType": "CONTINUE", // 合同类型
+                "createUserName": "",
+                "endDate": "2018-05-31 23:59:59", // 季度或年度结束时间
+                "fileUrl": "",
+                "performanceStatus": "PASS",
+                "preferentialAmt": 0, // 优惠金额
+                "rebateEndDate": "",
+                "rebateNode": "FIRST",
+                "rebateRate": 2,
+                "rebateStartDate": "",
+                "salesPercentage": "0.00%",
+                "salesPlan": 200000, // 目标
+                "shouldExistAmt": 0,
+                "startDate": "2018-03-01 00:00:00", // 季度或年度结束时间
+                "subjectName": "惠州市隆冠丰商贸有限公司",
+                "uncompletedAmt": 200000, // 未完成金额
+                "uncompletedPercentage": 1 // 未完成比例
+            },
+            {
+                "completedAmt": 0,
+                "completedPercentage": 0,
+                "contractEndDate": "2019-02-28 23:59:59",
+                "contractNum": "ASA-C-2886440289797120",
+                "contractStartDate": "2018-03-01 00:00:00",
+                "contractType": "CONTINUE",
+                "createUserName": "",
+                "endDate": "2018-08-31 23:59:59",
+                "fileUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20181025144309122-7680",
+                "performanceStatus": "PASS",
+                "preferentialAmt": 0,
+                "rebateEndDate": "",
+                "rebateNode": "SECOND",
+                "rebateRate": 2,
+                "rebateStartDate": "",
+                "salesPercentage": "0.00%",
+                "salesPlan": 200000,
+                "shouldExistAmt": 0,
+                "startDate": "2018-06-01 00:00:00",
+                "subjectName": "惠州市隆冠丰商贸有限公司",
+                "uncompletedAmt": 200000,
+                "uncompletedPercentage": 1
+            },
+            {
+                "completedAmt": 0,
+                "completedPercentage": 0,
+                "contractEndDate": "2019-02-28 23:59:59",
+                "contractNum": "ASA-C-2886440289797120",
+                "contractStartDate": "2018-03-01 00:00:00",
+                "contractType": "CONTINUE",
+                "createUserName": "",
+                "endDate": "2018-11-30 23:59:59",
+                "fileUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190112112003309-2365",
+                "performanceStatus": "PASS",
+                "preferentialAmt": 5363.31,
+                "rebateEndDate": "",
+                "rebateNode": "THIRD",
+                "rebateRate": 2,
+                "rebateStartDate": "",
+                "salesPercentage": "1.340826",
+                "salesPlan": 200000,
+                "shouldExistAmt": 0,
+                "startDate": "2018-09-01 00:00:00",
+                "subjectName": "惠州市隆冠丰商贸有限公司",
+                "uncompletedAmt": 200000,
+                "uncompletedPercentage": 1
+            },
+            {
+                "completedAmt": 0,
+                "completedPercentage": 0,
+                "contractEndDate": "2019-02-28 23:59:59",
+                "contractNum": "ASA-C-2886440289797120",
+                "contractStartDate": "2018-03-01 00:00:00",
+                "contractType": "CONTINUE",
+                "createUserName": "",
+                "endDate": "2019-02-28 23:59:59",
+                "fileUrl": "",
+                "performanceStatus": "NORMAL",
+                "preferentialAmt": 5589.75,
+                "rebateEndDate": "",
+                "rebateNode": "FOURTH",
+                "rebateRate": 2,
+                "rebateStartDate": "",
+                "salesPercentage": "1.397438",
+                "salesPlan": 200000,
+                "shouldExistAmt": 0,
+                "startDate": "2018-12-01 00:00:00",
+                "subjectName": "惠州市隆冠丰商贸有限公司",
+                "uncompletedAmt": 200000,
+                "uncompletedPercentage": 1
+            },
+            {
+                "completedAmt": 0,
+                "completedPercentage": 0,
+                "contractEndDate": "2019-02-28 23:59:59",
+                "contractNum": "ASA-C-2886440289797120",
+                "contractStartDate": "2018-03-01 00:00:00",
+                "contractType": "CONTINUE",
+                "createUserName": "",
+                "endDate": "2019-02-28 23:59:59",
+                "fileUrl": "",
+                "performanceStatus": "NORMAL",
+                "preferentialAmt": 5217.36,
+                "rebateEndDate": "",
+                "rebateNode": "YEAR",
+                "rebateRate": 0.5,
+                "rebateStartDate": "",
+                "salesPercentage": "1.304339",
+                "salesPlan": 800000,
+                "shouldExistAmt": 0,
+                "startDate": "2018-03-01 00:00:00",
+                "subjectName": "惠州市隆冠丰商贸有限公司",
+                "uncompletedAmt": 800000,
+                "uncompletedPercentage": 1
+            }
+        ]
+    }
