@@ -2878,7 +2878,6 @@
 #### 参数
     *loginName  // 登录号
     password // 密码
-    *customerId // 客户ID
     *ipAddress  // ip地址
     *cartId     // 设备号
     officalOpenId   // openId   绑定时必须
