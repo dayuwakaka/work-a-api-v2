@@ -2282,3 +2282,15 @@
     *date: "" // 时间 2018-01 yyyy-MM
 #### 响应
     数据流
+
+
+### FP-91 发票信息导出
+#### 模块负责人
+    刘宏宇
+#### 请求
+    GET /v2/invoice/info/export
+#### 参数
+    *customerType:"PERSON" // PERSON 个人 COMPANY 公司 INDIVIDUALLY个体工商
+    *checkToken:"xxx" // 下载码
+#### 响应
+    流
