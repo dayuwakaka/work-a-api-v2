@@ -786,21 +786,14 @@
     }
     
 ### QX-27. 不分页的功能权限列表
-#### 对接负责人
-    尹洪明
 #### 模块负责人
     尹洪明
 #### 请求
-
     GET     /v2/menupower/nopage
-
 #### 参数
-
     asigned     // 是否分配 YES 分配 NO 未分配
     uid         // 用户id
-    
 #### 响应
-
     {
         "code": 100000,
         "msg": "",
@@ -816,150 +809,20 @@
                 "status": "NORMAL",
                 "sys": "a",
                 "uid": 0
-            },
-            {
-                "createTime": "",
-                "gid": 21,
-                "id": 8,
-                "isAuto": 0,
-                "menuIds": null,
-                "name": "CEO",
-                "remark": "",
-                "status": "NORMAL",
-                "sys": "a",
-                "uid": 0
             }
         ]
     }
 
-
-### QX-28. 根据SS\SR类型获取角色权限列表
-#### 对接负责人
-    尹洪明
-#### 模块负责人
-    尹洪明
-#### 请求
-
-    GET     /v2/datapower/roles
-
-#### 参数
-
-    type    // * 角色类型   可取值 ss  或  sr
-
-#### 响应
-
-    {
-        "code":100000,
-        "msg":"",
-        "data":[
-            {
-                "gid":24,
-                "rid":40,                   // 角色id
-                "roleName":"高成举-SRM-T"   // 角色名称
-            },
-            {
-                "gid":24,
-                "rid":479,
-                "roleName":"王振华"
-            },
-            {
-                "gid":24,
-                "rid":856,
-                "roleName":"SRM-W-冯松"
-            }
-        ]
-    }
-
-
-### QX-29. 用户登陆后获取菜单
-#### 对接负责人
-    尹洪明
-#### 模块负责人
-    尹洪明
-#### 请求
-
-    GET     /v2/auth/getAllMenu
-
-#### 参数
-
-    token // * 
-    source // * 系统类型 a A网 sta 统计
-
-#### 29.4 请求示例
-    无
-
-
-#### 响应
-
-    {
-        "code": 100000,
-        "msg": "",
-        "data": [
-            {
-                "action": "",       // 二级路由
-                "createTime": "",
-                "ctrl": "user",     // 一级路由
-                "id": 143,
-                "level": 1,         // 菜单等级
-                "name": "账号管理", // 菜单名称
-                "params": "",
-                "parentId": 0,      // 上级菜单
-                "sort": 0,          
-                "status": "",
-                "sys": "a",
-                "icon":"abcde"      // 图标
-            }
-            ......
-        ]
-    }
-    
-    
-
-### QX-30. 获取登录用户信息
-#### 对接负责人
-    尹洪明
-#### 模块负责人
-    尹洪明
-#### 请求
-
-    GET     /v2/auth/userInfo
-
-#### 参数
-
-    token // * 
-    source // * 系统类型 a A网 sta 统计
-
-#### 响应
-
-    {
-        "code": 100000,
-        "msg": "",
-        "data": {
-            "workno": "0101",       // 工号
-            "mobile": "13478445016",    // 手机
-            "id": 101,              // 用户id
-            "fullname": "樊嘉辉"    // 用户名
-        }
-    }
-    
-    
     
 ### QX-31. 不分页的数据权限列表
-#### 对接负责人
-    尹洪明
 #### 模块负责人
     尹洪明
 #### 请求
-
     GET     /v2/datapower/nopage
-
 #### 参数
-
     asigned     // 是否分配 YES 分配 NO 未分配
     uid         // 用户id
-    
 #### 响应
-
     {
         "code": 100000,
         "msg": "",
@@ -970,41 +833,18 @@
                 "rid": 5046,
                 "rname": "宁丽丽",
                 "uid": 0
-            },
-            {
-                "gid": 22,
-                "gname": "事业部总经理",
-                "rid": 4947,
-                "rname": "宁丽丽经理",
-                "uid": 0
-            },
-            {
-                "gid": 21,
-                "gname": "CEO",
-                "rid": 3966,
-                "rname": "宁丽丽",
-                "uid": 0
             }
         ]
     }
-
-
-                               
+                    
 ### QX-32. 收款人、复核、开票人
-#### 对接负责人
-    尹洪明
 #### 模块负责人
     尹洪明
 #### 请求
-
     GET    /v2/userpower/employee
-    
 #### 参数
-    
     keyword     // 员工编号、姓名、手机号
-    
 #### 响应
-
     {
         "code": 100000,
         "msg": "",
@@ -1019,25 +859,9 @@
                 "status": "NORMAL",
                 "workno": "0229"            //工号
             }
-            ......
         ]
     }    
     
-### QX-33. 权限切换
-#### 模块负责人
-    尹洪明
-#### 请求
-    GET /v2/auth/switchpower
-#### 参数
-    *token
-    *rid    // 数据权限ID
-    *gid    // 功能权限ID
-#### 响应    
-    {
-        "code": 100000,
-        "msg": "",
-        "data": "***"   // 切换权限后的token
-    }
 
 ### QX-41. 关注列表
 
@@ -1225,17 +1049,225 @@
         "data": [//依据角色id找出的客户id集合
             30943,
             31010,
-            31012,
-            31032,
-            31355,
-            31372,
-            31612,
-            31646,
-            31679,
-            32056,
-            32829,
-            32935,
-            32938,
-            32940
+            31012
         ]
     }
+
+### QX-100. 微信code解析
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /v2/wx/code2session
+#### 参数
+    *code   // 微信授权code
+#### 响应    
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "openId": "***",            // 绑定employee使用
+            "accessToken": "***",   // 获取userinfo使用
+            "refreshToken": "***"   // 刷新过期accessToken使用
+        }
+    }
+    
+### QX-101. 微信refreshToken
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /v2/wx/refreshToken
+#### 参数
+    *refreshToken   // code2session获得
+#### 响应    
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "openId": "***",            // 绑定employee使用
+            "accessToken": "***",   // 获取userinfo使用
+            "refreshToken": "***"   // 刷新过期accessToken使用
+        }
+    }
+    
+    
+### QX-102. 微信扫码登录
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /v2/wx/login
+#### 参数
+    *openId   // code2session获得
+#### 响应    
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "hasBind": true,            // false 未绑定，跳转到输入工号&密码页    true 已绑定 
+            "loginInfo": {
+                "token": "***",         // token
+                "rid": [                 // 数据权限
+                    {
+                        "rid": 1,
+                        "rname": "***"
+                    }
+                ],
+                "gid": [                // 功能权限
+                    {
+                        "gid": 42,
+                        "gname": "***"
+                    }
+                ],
+                "userinfo": {          // 登录用户信息
+                    "id": 1,               // employeeId
+                    "workno": "***",    // 工号
+                    "fullname": "***",  // 全名
+                    "mobile": "***",    // 手机号
+                    "wxNickName": "***",    // 微信昵称
+                    "wxHeadUrl": "***"          // 微信头像
+                }
+            }
+        }
+    }
+   
+   
+### QX-103. 微信绑定登录
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /v2/wx/bindLogin
+#### 参数
+    *openId   // code2session获得
+    *accessToken    // code2session获得
+    *loginName      // 登录名（工号）
+    *password       // 密码
+#### 响应     
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "token": "***",        // token
+            "rid": [                 // 数据权限
+                {
+                    "rid": 1,
+                    "rname": "***"
+                }
+            ],
+            "gid": [                // 功能权限
+                {
+                    "gid": 42,
+                    "gname": "***"
+                }
+            ],
+            "userinfo": {          // 登录用户信息
+                "id": 1,                // employeeId
+                "workno": "***",   // 工号
+                "fullname": "***", // 全名
+                "mobile": "***",   // 手机号
+                "wxNickName": "***",   // 微信昵称
+                "wxHeadUrl": "***"         // 微信头像
+            }
+        }
+    }
+    
+
+### QX-104. 微信解绑
+#### 模块负责人
+    尹洪明
+#### 请求
+    DELETE /v2/wx/unbinding/{workno}
+#### 参数
+    *workno   // 工号
+#### 响应     
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+
+### QX-150. 权限切换
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /v2/auth/loginToken
+#### 参数
+    *token
+    *rid    // 数据权限ID
+    *gid    // 功能权限ID
+#### 响应    
+    {
+        "code": 100000,
+        "msg": "",
+        "data": "***"   // 切换权限后的token
+    }
+    
+### QX-151. 用户菜单权限获取
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET     /v2/auth/getAllMenu
+#### 参数
+    *token  // token
+    *source //  系统类型 a A网 sta 统计
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "action": "",       // 二级路由
+                "createTime": "",
+                "ctrl": "user",     // 一级路由
+                "id": 143,
+                "level": 1,         // 菜单等级
+                "name": "账号管理", // 菜单名称
+                "params": "",
+                "parentId": 0,      // 上级菜单
+                "sort": 0,          
+                "status": "",
+                "sys": "a",
+                "icon":"abcde"      // 图标
+            }
+        ]
+    }
+    
+    
+### QX-152. 登录用户信息获取
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET     /v2/auth/userInfo
+#### 参数
+    *token // token 
+    *source // 系统类型 a A网 sta 统计
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "workno": "0101",               // 工号
+            "mobile": "13478445016",    // 手机
+            "id": 101,                          // 用户id
+            "fullname": "樊嘉辉"           // 用户名
+        }
+    }
+    
+### QX-153. 角色权限列表获取(SS\SR)
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET     /v2/datapower/roles
+#### 参数
+    *type    // 角色类型   可取值 ss  或  sr
+#### 响应
+    {
+        "code":100000,
+        "msg":"",
+        "data":[
+            {
+                "gid":24,                   // gid
+                "rid":40,                   // rid
+                "roleName":"高成举-SRM-T"   // 角色名称
+            }
+        ]
+    }        
