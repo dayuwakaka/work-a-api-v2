@@ -2894,8 +2894,74 @@
     } 
 
 
+### APP-110. 图片上传OSS
+#### 模块负责人
+    刘宏宇  
+#### 请求
+    POST /router/v5/common/upload
+#### 参数
+    用form-data方式上传多个文件
+#### 返回
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "1": "http://asae.oss-cn-beijing.aliyuncs.com/20180910145054951-timg.jpg", //返回的上传文件 key 是上传时名称，value是oss上传后名称
+            "2": "http://asae.oss-cn-beijing.aliyuncs.com/20180910145106937-timg.jpg"
+        }
+    }
 
-### APP-110. 发票信息查询接口
+### APP-111. 微信绑定
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /router/v5/wx/binding
+#### 参数
+    *customerId     // 客户ID
+    *code             // 微信授权码
+    type               // OFFICALOPEN  微信绑定 MICROOPEN 小程序绑定 默认为OFFICALOPEN
+#### 返回
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "nickName":"***",       // 微信昵称
+            "headImgUrl":"***"      // 微信头像
+        }
+    }
+
+### APP-112. 微信解绑
+#### 模块负责人
+    尹洪明
+#### 请求
+    DELETE /router/v5/wx/unbinding
+#### 参数
+    *customerId     // 客户ID
+    type               // OFFICALOPEN  微信绑定 MICROOPEN 小程序绑定 默认为OFFICALOPEN
+#### 返回
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### APP-113. 微信绑定信息
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /router/v5/wx/bindInfo
+#### 参数
+    *customerId     // 客户ID
+#### 返回
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "nickName":"***",       // 微信昵称
+            "headImgUrl":"***"      // 微信头像
+        }
+    }
+### APP-150. 发票信息查询接口
 #### 模块负责人
     刘宏宇
 #### 请求
@@ -2965,7 +3031,7 @@
         }
     }
 
-### APP-111. 发票信息维护
+### APP-151. 发票信息维护
 #### 模块负责人
     刘宏宇  
 #### 请求
@@ -3019,7 +3085,7 @@
     }    
 
 
-### APP-112. 发票信息修改
+### APP-152. 发票信息修改
 #### 模块负责人
     刘宏宇
 #### 请求
@@ -3046,20 +3112,3 @@
         "msg": "",
         "data": null
     } 
-
-### APP-113. 图片上传OSS
-#### 模块负责人
-    刘宏宇  
-#### 请求
-    POST /router/v5/common/upload
-#### 参数
-    用form-data方式上传多个文件
-#### 返回
-    {
-        "code": 100000,
-        "msg": "",
-        "data": {
-            "1": "http://asae.oss-cn-beijing.aliyuncs.com/20180910145054951-timg.jpg", //返回的上传文件 key 是上传时名称，value是oss上传后名称
-            "2": "http://asae.oss-cn-beijing.aliyuncs.com/20180910145106937-timg.jpg"
-        }
-    }
