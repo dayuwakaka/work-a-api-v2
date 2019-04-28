@@ -2179,3 +2179,19 @@
             ...
          ]
      }
+     
+### YX-56 预算-分组类型列表
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/coupon/export
+#### 参数
+     date: 2019-01, // 月份 yyyy-MM
+     businessUnitId:1, // 事业部id
+     checkCode: 1234 // 下载校验码
+#### 响应
+    stream
+
+
+
+

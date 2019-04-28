@@ -74,6 +74,7 @@
 |name|合同主体名称、合同号、创建人名称|String
 |contractType|合同类型|String|default-value: ALL, ALONE: 独立合同, SHARE: 共享合同, CONTINUE: 续接合同, P2P: P2P合同
 |status|合同状态|String|default-value: ALL, DRAFT：草稿;ASKFOR：转正式待审核;FORMAL：正式;CANCELASKFOR：作废待审核;CANCEL：已作废;INVALID：过期|
+|date|年份|String|2019|
 |pageNo|当前页|Number|default-value: 1
 |pageSize|页面容量|Number|default-value: 25
 |buttonPermissionFlg|按钮权限|Number|1-查询按钮权限 0-不查询|
