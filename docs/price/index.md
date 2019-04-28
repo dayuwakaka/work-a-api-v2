@@ -1433,11 +1433,11 @@
 #### 响应
     stream
 
-### JG-45 PA价格审核-列表导出
+### JG-45 客户签约价格-列表导出
 #### 模块负责人
     梁铁骐
 #### 请求
-    GET /v2/price/pa/export
+    GET /v2/price/sign/export
 #### 参数
     customerId // 客户id
     productKeyWord // 品名/品号

@@ -1195,7 +1195,8 @@
 #### 参数
     statuses[] 订单状态集合,
     dateType: "send" // send-发出时间 create-创建时间
-    date: '2019-01' // yyyy-MM
+    startDate: '2019-01-01' // yyyy-MM-dd
+    endDate: '2019-01-31' // yyyy-MM-dd
     checkCode: 下载码
 #### 响应  
     stream
