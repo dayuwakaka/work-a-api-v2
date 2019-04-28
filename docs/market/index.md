@@ -2191,7 +2191,33 @@
      checkCode: 1234 // 下载校验码
 #### 响应
     stream
+    
 
+### YX-57 预算券日志列表
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/coupon/{id}/logs
+#### 参数
+    id: 客户优惠券id
+#### 响应
+     {
+         "code": 100000,
+         "msg": "",
+         "data": [
+            {
+                "action": "USE", // 使用类型 GRANT 发放 CANCEL 作废 LOCK 锁定 UNLOCK 解锁 USE 使用 RELEASE 释放
+                "actionValue": "SA160329107770", // 订单号/操作人
+                "couponId": 47,
+                "couponRuleId": 48,
+                "createTime": "2016-03-29 09:50:14", // 时间
+                "customerId": 5811,
+                "id": 15,
+                "source": "HANDWORK",
+                "sourceValue": 0
+            }
+         ]
+     }
 
 
 
