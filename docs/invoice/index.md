@@ -967,6 +967,27 @@
         "data": null
     }    
 
+### FP-39. 产品资料导出
+#### 模块负责人
+    王子悦
+#### 请求
+
+    GET    /v2/invoice/product/export
+    
+#### 参数
+    keyword         //品名或品号
+    productName     //品名
+    pno             //品号
+    businesstype    //业态编号
+    taxCategory     //税收分类编号
+    productStatus   //产品状态 NORMAL 上架 LOCK 下架   CUSTOM 定制     LACK 断货
+    status          //发票状态 EMPTY 待审核 NORMAL 已审核
+    checkCode       //下载授权码
+    
+    
+#### 响应
+    数据流
+
                             
 ### FP-41. 发票信息变更(维护)
 #### 模块负责人
