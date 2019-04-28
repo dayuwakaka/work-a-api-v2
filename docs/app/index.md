@@ -2817,11 +2817,10 @@
 #### 模块负责人
     尹洪明
 #### 请求
-    GET /router/v5/wx/verifyCodeLogin
+    GET /router/v5/auth/verifyCodeLogin
 #### 参数
     *loginName  // 登录名
     *verifyCode // 验证码
-    *customerId // 客户ID
     *ipAddress  // ip地址
     *cartId     // 设备号
 #### 响应
@@ -2865,8 +2864,9 @@
         "msg": "",
         "data": {
             "hasBind": false,       // ture 已绑定  false 未绑定
-            "officalOpenId": "34857397593475982345729"  // openId
             "mobile": "xxx" // 手机号
+            "officalOpenId": "34857397593475982345729",  // openId
+            "accessToken":"90234582093485891235792",    // accessToken
             "nickName": "xxx" // 昵称
         }
     }
@@ -2879,10 +2879,10 @@
 #### 参数
     *loginName  // 登录号
     password // 密码
-    *customerId // 客户ID
     *ipAddress  // ip地址
     *cartId     // 设备号
-    officalOpenId   // openId   绑定时必须
+    officalOpenId   // openId   绑定时需要
+    accessToken     // accessToken 绑定时需要
 #### 响应
     {
         "code": 100000,
