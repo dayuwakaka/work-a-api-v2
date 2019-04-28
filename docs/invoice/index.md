@@ -1218,6 +1218,9 @@
                     "changeButton": true        //变更
                 }
             ],
+            "buttonPermissionPage":{
+                "downloadButton": true // 下载按钮
+            }
             "dataSums": null,
             "datas": [
                 {
@@ -2293,4 +2296,4 @@
     *customerType:"PERSON" // PERSON 个人 COMPANY 公司 INDIVIDUALLY个体工商
     *checkToken:"xxx" // 下载码
 #### 响应
-    流
+    数据流
