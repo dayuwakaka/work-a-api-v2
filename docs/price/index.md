@@ -1411,7 +1411,7 @@
 #### 响应
     stream
 
-### JG-44 PA价格审核-列表导出
+### JG-44 PA价格-列表导出
 #### 模块负责人
     梁铁骐
 #### 请求
@@ -1429,7 +1429,6 @@
     rawFlg // 原料品 YES-是 NO-否
     runType // 定时修改价格 NOW - 否 TASK - 是
     *checkCode // 下载码
-    *date // 导出日期 yyyy-MM
 #### 响应
     stream
 

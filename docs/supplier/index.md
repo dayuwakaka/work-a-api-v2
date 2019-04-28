@@ -2271,3 +2271,13 @@
         "msg": "",
         "data": null
     }
+
+### CG-108. 采购供货价导出
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/supplier/price/export
+#### 参数
+    *checkCode: 下载吗
+#### 响应
+    stream
