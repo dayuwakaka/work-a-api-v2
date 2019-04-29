@@ -209,6 +209,7 @@
                 "pushTime": "2091-05-19 00:00:00", // 推送时间
                 "readFlg": 0, // 0：未读 1:已读
                 "readTime": "",
+                "marketType":"SPECIAL" // COUPON:领券, GIFT: 满赠, REDUCE: 满减, DISCOUNT: 满折, COLUMN: 专栏（产品列表）, SPECIAL: 专题（自己设置页面图片）
                 "type": "INVOICE_ASK_FOR" // 消息类别 INVOICE_ASK_FOR：发票信息审核 ORDER：订单通知 ACTIVITY：优惠促销 NOTICE：系统公告
                 "relationValue": "354", // 对应的关联值 优惠促销：活动id 系统公告：url 订单通知：订单号
                 "title": "2019-04-12测试" // 标题
