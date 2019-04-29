@@ -167,7 +167,7 @@
 #### 模块负责人
     梁铁骐
 #### 请求
-    PUT /router/v5/message/{customerId}
+    PUT /router/v5/message/{customerId}/all
 #### 参数
     *customerId: 客户id
 #### 响应
@@ -181,7 +181,7 @@
 #### 模块负责人
     梁铁骐
 #### 请求
-    PUT /router/v5/message/{customerId}/{messageId}
+    PUT /router/v5/message/{messageId}
 #### 参数
     *customerId: 客户id
     *messageId: 消息id
