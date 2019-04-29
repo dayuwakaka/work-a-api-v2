@@ -183,7 +183,6 @@
 #### 请求
     PUT /router/v5/message/{messageId}
 #### 参数
-    *customerId: 客户id
     *messageId: 消息id
 #### 响应
     {
