@@ -1110,9 +1110,23 @@
                 }
             ],
             "marketSpecialSkip": {      // 活动跳转信息
-                "extra": "4749",        // productId 或者 h5页面url
+                "extra": "www.baidu.com",        // productId 或者 h5页面url
                 "id": 1,
                 "marketId": 367,
+                "product": {            
+                    "customFlg": 1,
+                    "customFlgMore": 2,
+                    "id": 4749,        // 产品ID
+                    "longName": "",
+                    "mainBgImg": "",
+                    "mainImg": "",
+                    "name": "SHH的七珍鲜虾堡",    // 产品名
+                    "newHotFlg": "",
+                    "nowFutureFlg": "",
+                    "pno": "1981",          // 规格
+                    "productLack": null,
+                    "status": "NORMAL"
+                },
                 "type": "PRODUCT"       // PRODUCT 跳转至产品 H5 跳转至h5
             },
             "name": "专题活动测试",       // 活动名
