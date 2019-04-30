@@ -167,7 +167,7 @@
 #### 模块负责人
     梁铁骐
 #### 请求
-    PUT /router/v5/message/{customerId}
+    PUT /router/v5/message/{customerId}/all
 #### 参数
     *customerId: 客户id
 #### 响应
@@ -181,9 +181,8 @@
 #### 模块负责人
     梁铁骐
 #### 请求
-    PUT /router/v5/message/{customerId}/{messageId}
+    PUT /router/v5/message/{messageId}
 #### 参数
-    *customerId: 客户id
     *messageId: 消息id
 #### 响应
     {
@@ -210,6 +209,7 @@
                 "pushTime": "2091-05-19 00:00:00", // 推送时间
                 "readFlg": 0, // 0：未读 1:已读
                 "readTime": "",
+                "marketType":"SPECIAL" // COUPON:领券, GIFT: 满赠, REDUCE: 满减, DISCOUNT: 满折, COLUMN: 专栏（产品列表）, SPECIAL: 专题（自己设置页面图片）
                 "type": "INVOICE_ASK_FOR" // 消息类别 INVOICE_ASK_FOR：发票信息审核 ORDER：订单通知 ACTIVITY：优惠促销 NOTICE：系统公告
                 "relationValue": "354", // 对应的关联值 优惠促销：活动id 系统公告：url 订单通知：订单号
                 "title": "2019-04-12测试" // 标题
@@ -275,6 +275,7 @@
         msgType: "ORDER" // 消息类别 INVOICE_ASK_FOR：发票信息审核 ORDER：订单通知 ACTIVITY：优惠促销 NOTICE：系统公告
         title: "订单发货通知",
         body: 您的订单：SA1904100001已发车，请注意查收",
+        id: 1, // 客户消息id
         value: "SA1904100001", // 订单通知时存放订单号 优惠促销时存放活动id 系统公告时存放url
     }
 

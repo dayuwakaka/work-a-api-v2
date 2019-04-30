@@ -2150,7 +2150,7 @@
 #### 参数
     {
         id: 事业部组预算id
-        budgetAmount: 金额
+        amount: 金额
         type: "REDUCE" // REDUCE-削减 ADD-增加
     }
 #### 响应

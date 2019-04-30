@@ -1417,17 +1417,6 @@
 #### 请求
     GET /v2/price/pa/export
 #### 参数
-    keyword // 品名/品号
-    processContent // 内容信息完整度 0-待维护 1-已完善
-    processPrice // 发票信息完整度 0-待维护 1-已完善
-    processInvoice // 价格信息完整度 0-待维护 1-已完善
-    productStatus // 产品状态 NORMAL-正常or上架 LOCK-下架
-    status // 审核状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
-    productName // 品名
-    pno // 品号
-    businessTypeId // 餐饮业态
-    rawFlg // 原料品 YES-是 NO-否
-    runType // 定时修改价格 NOW - 否 TASK - 是
     *checkCode // 下载码
 #### 响应
     stream
@@ -1438,14 +1427,7 @@
 #### 请求
     GET /v2/price/sign/export
 #### 参数
-    customerId // 客户id
-    productKeyWord // 品名/品号
-    customerType // 客户类型 A、P、P2P、C
-    status // 签约状态 NORMAL-正常 LOCK-锁定
-    buttonPermissionFlg // 是否获取权限按钮 0-否 1-是
-    priceFlg // 低于P价格 0 全部 1 低于P价格
     *checkCode // 下载码
-    *date // 导出日期 yyyy-MM
 #### 响应
     stream
 
