@@ -1096,7 +1096,7 @@
 #### 请求
     GET /v2/wx/login
 #### 参数
-    *openId   // code2session获得
+    *code   // 微信授权码
 #### 响应    
     {
         "code": 100000,
