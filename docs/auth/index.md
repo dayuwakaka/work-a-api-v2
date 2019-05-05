@@ -1189,7 +1189,7 @@
 #### 模块负责人
     尹洪明
 #### 请求
-    GET /v2/auth/loginToken
+    GET /v2/auth/switchToken
 #### 参数
     *token
     *rid    // 数据权限ID
@@ -1270,4 +1270,41 @@
                 "roleName":"高成举-SRM-T"   // 角色名称
             }
         ]
-    }        
+    }   
+    
+    
+### QX-154. 登录走个小后门
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET     /v2/auth/backdoor/login
+#### 参数
+    *loginName      // 登录名
+    *password       // 密码
+    *code           // 后门钥匙
+#### 响应
+{
+    "code": 100000,
+    "msg": "",
+    "data": {
+        "gid": [
+            {
+                "gid": 11,
+                "gname": "系统管理员"
+            }
+        ],
+        "rid": [
+            {
+                "rid": 1,
+                "rname": "管理员"
+            }
+        ],
+        "token": "95261ce28b7cf1f10e7a4ddfb2158e1a",
+        "userinfo": {
+            "fullname": "孙启萌",
+            "id": 518,
+            "mobile": "13212216966",
+            "workno": "0299"
+        }
+    }
+}         
