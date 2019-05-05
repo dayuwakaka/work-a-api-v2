@@ -881,7 +881,11 @@
         "msg": "",
         "data": {
             "buttonPermissionPage": {},
-            "buttonPermissions": [],
+            "buttonPermissions": [
+                {
+                "cancelButton": false  //作废按钮
+                }
+            ],
             "dataSums": null,
             "datas": [
                 {
@@ -925,7 +929,6 @@
             "buttonPermissionPage": {},
             "buttonPermissions": [
                 {
-                    "cancelButton": true,   //作废按钮
                     "refuseButton": false,  //拒绝按钮
                     "agreeButton": false    //通过按钮
                 }
