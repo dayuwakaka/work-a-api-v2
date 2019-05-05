@@ -387,107 +387,6 @@
     	"data": null
     }
 
-### YX-9.客户优惠券申请列表（废弃）
-#### 模块负责人
-    尹洪明
-#### 请求
-
-    GET    /v2/coupon/askfor
-
-#### 参数
-
-    keyword // 优惠券名称/客户名称
-    buttonPermissionFlg // 按钮权限 1 查询 0 不查询
-    budgetType: "其它品类费用" // 分组类型
-    specialType: "PT专项", // 分项类型
-    pageNo  // 页码
-    pageSize    // 页条数
-
-#### 响应
-
-    {
-        "code": 100000,
-        "msg": "",
-        "data": {
-            "buttonPermissions": [
-                
-            ],
-            "dataSums": null,
-            "datas": [
-                {
-                    "businessName": "PDOD",
-                    "checkRole": 0,
-                    "checkTime": "2018-09-21 16:48:14.0",
-                    "checkUser": 0,
-                    "checkUserName": "姜晓",
-                    "couponAmount": 1,
-                    "couponCustomerId": 0,
-                    "couponId": 0,
-                    "createRole": 0,
-                    "createTime": "2018-09-11 09:18:40.0",      // 创建时间
-                    "createUser": 0,
-                    "createUserName": "",                       // 创建人
-                    "customerId": 946,
-                    "customerName": "946",                      // 客户名称
-                    "effectEtime": "2018-12-12 23:59:59.0",     // 优惠券结束时间
-                    "effectStime": "2018-09-11 00:00:00.0",     // 优惠券开始时间
-                    "id": 87426,                                // 优惠券编号
-                    "note": "",
-                    "budgetType": "其它品类费用" // 分组类型
-                    "specialType": "PT专项", // 分项类型
-                    "pageId": 0,
-                    "promoName": "",
-                    "ruleName": "小饺丫（荠菜鱿鱼饺）优惠券",   // 优惠券名称
-                    "ruleType": "REDUCE",
-                    "status": "PASS"                            // 状态
-                },
-                ......
-            ],
-            "pageNo": 1,
-            "total": 4
-        }
-    }
-
-### YX-10.客户优惠券申请审批（废弃）
-#### 模块负责人
-    尹洪明
-#### 请求
-
-    PUT    /v2/coupon/customer_askfors/{id}
-
-#### 参数
-
-    id // * 申请id
-    status // * 状态 PASS 通过 REFUSE 拒绝
-    
-#### 响应
-
-    {
-    	"code": 100000,
-    	"msg": "",
-    	"data": null
-    }
-
-### YX-11.客户优惠券申请批量审批（废弃）
-#### 模块负责人
-    尹洪明
-#### 请求
-
-    PUT    /v2/coupon/customer_askfors/batch
-
-#### 参数
-
-    ids // * 申请id列表 [3,5,6]
-    status  // * 状态 PASS 通过 REFUSE 拒绝
-    
-#### 响应
-
-    {
-    	"code": 100000,
-    	"msg": "",
-    	"data": null
-    }
-
 ### YX-12.客户优惠券申请批量新增（废弃）
 #### 模块负责人
     尹洪明
@@ -523,131 +422,6 @@
         note: '我就是打个酱油'
     }
 
-### YX-9.客户优惠券列表
-#### 模块负责人
-    尹洪明
-#### 请求
-    GET     /v2/coupon
-#### 参数
-    keyword     // 优惠券名称/客户名称
-    source      // 发放源
-    status      // normal 正常 lock 锁定 invalid 作废
-    used        // YES: 已使用; NO: 未使用
-    budgetType: "其它品类费用" // 分组类型
-    specialType: "PT专项", // 分项类型
-    buttonPermissionFlg     // 0 不查询按钮权限  1 查询
-    pageNo      // 页码
-    pageSize    // 页条数
-#### 响应
-    {
-        "code": 100000,
-        "msg": "",
-        "data": {
-            "buttonPermissions": [
-                {
-                    "invalidButton": false,  // 作废
-                    "lockButton": false,    // 锁定
-                    "unlockButton": false   // 解锁
-                }
-            ],
-            "dataSums": null,
-            "datas": [
-                {
-                    "actionValue": 1,               // 减
-                    "businessName": "",
-                    "couponRuleId": 12374,          // 券规id
-                    "createRole": 0,
-                    "createTime": "2019-03-26 18:23:06", // 创建时间 
-                    "createUser": 0,
-                    "createUserName": "樊嘉辉", // 创建人
-                    "remark": "我是预算券备注", // 备注
-                    "budgetType": "其它品类费用" // 分组类型
-                    "specialType": "PT专项", // 分项类型
-                    "customerId": 32938,
-                    "customerName": "82年凯龙",    // 客户名
-                    "effectEtime": "2019-04-26 23:59:59",   // 结束日志
-                    "effectStime": "2019-03-26 00:00:00",   // 开始日期
-                    "id": 186186,               // 优惠券编号
-                    "marketId": 0,
-                    "rangeType": "PRODUCTUNIT",         // ALL 全部品 PRODUCTUNIT 指定品 EXCLUDE 排除品
-                    "ranges": [         // 指定品 或 排除品
-                        {
-                            "couponRuleId": 12411,
-                            "deleteFlg": 0,
-                            "id": 16869,
-                            "productUnitId": 8066
-                        },
-                        {
-                            "couponRuleId": 12411,
-                            "deleteFlg": 0,
-                            "id": 16870,
-                            "productUnitId": 8061
-                        }
-                    ],
-                    "rebate": 0,
-                    "ruleName": "2019年预算券", // 优惠券名
-                    "ruleType": "",
-                    "source": "HANDWORK",   // 发放源 HANDWORK 手工 ACTIVE 活动
-                    "sourceName": "",
-                    "status": "LOCK",       // 优惠券状态    NORMAL 正常 LOCK 锁定 CANCEL 作废
-                    "targetValue": 100,     // 满
-                    "type": "REDUCE",
-                    "unit": "PRICE",        // PRICE 金额  COUNT 数量
-                    "used": "NO"        // 使用情况  YES 已使用  NO 未使用
-                }
-            ],
-            "pageNo": 1,
-            "total": 7334
-        }
-    }
-### YX-10.客户优惠券批量锁定
-#### 模块负责人
-    尹洪明
-#### 请求
-    PUT     /v2/coupon/lock
-#### 参数
-    [
-        186186,
-        186185
-    ]
-#### 响应
-    {
-        "code": 100000,
-        "msg": "",
-        "data": null
-    }
-### YX-11.客户优惠券批量解锁
-#### 模块负责人
-    尹洪明
-#### 请求
-    PUT     /v2/coupon/unlock
-#### 参数
-    [
-        186186,
-        186185
-    ]
-#### 响应
-    {
-        "code": 100000,
-        "msg": "",
-        "data": null
-    }
-### YX-12.客户优惠券批量作废
-#### 模块负责人
-    尹洪明
-#### 请求
-    PUT     /v2/coupon/cancel
-#### 参数
-    [
-        186186,
-        186185
-    ]
-#### 响应
-    {
-        "code": 100000,
-        "msg": "",
-        "data": null
-    }
 ### YX-13.客户所属事业组的预算
 #### 模块负责人
     尹洪明
@@ -2194,7 +1968,128 @@
          ]
      }
      
-### YX-58 预算券导出
+     
+
+### YX-60. 客户预算券-列表
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET     /v2/coupon
+#### 参数
+    keyword     // 优惠券名称/客户名称
+    source      // 发放源
+    status      // normal 正常 lock 锁定 invalid 作废
+    used        // YES: 已使用; NO: 未使用
+    businessunitGroupId        // 事业主ID
+    budgetType: "其它品类费用" // 分组类型
+    specialType: "PT专项", // 分项类型
+    buttonPermissionFlg     // 0 不查询按钮权限  1 查询
+    pageNo      // 页码
+    pageSize    // 页条数
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [
+                {
+                    "invalidButton": false,  // 作废
+                    "lockButton": false,    // 锁定
+                    "unlockButton": false   // 解锁
+                }
+            ],
+            "dataSums": null,
+            "datas": [
+                {
+                    "actionValue": 1,               // 减
+                    "businessName": "",
+                    "couponRuleId": 12374,          // 券规id
+                    "createRole": 0,
+                    "createTime": "2019-03-26 18:23:06", // 创建时间 
+                    "createUser": 0,
+                    "createUserName": "樊嘉辉", // 创建人
+                    "remark": "我是预算券备注", // 备注
+                    "budgetType": "其它品类费用" // 分组类型
+                    "specialType": "PT专项", // 分项类型
+                    "customerId": 32938,
+                    "customerName": "82年凯龙",    // 客户名
+                    "effectEtime": "2019-04-26 23:59:59",   // 结束日志
+                    "effectStime": "2019-03-26 00:00:00",   // 开始日期
+                    "id": 186186,               // 优惠券编号
+                    "marketId": 0,
+                    "rangeType": "PRODUCTUNIT",         // ALL 全部品 PRODUCTUNIT 指定品 EXCLUDE 排除品
+                    "ranges": [         // 指定品 或 排除品
+                        {
+                            "couponRuleId": 12411,
+                            "deleteFlg": 0,
+                            "id": 16869,
+                            "productUnitId": 8066
+                        },
+                        {
+                            "couponRuleId": 12411,
+                            "deleteFlg": 0,
+                            "id": 16870,
+                            "productUnitId": 8061
+                        }
+                    ],
+                    "rebate": 0,
+                    "ruleName": "2019年预算券", // 优惠券名
+                    "ruleType": "",
+                    "source": "HANDWORK",   // 发放源 HANDWORK 手工 ACTIVE 活动
+                    "sourceName": "",
+                    "status": "LOCK",       // 优惠券状态    NORMAL 正常 LOCK 锁定 CANCEL 作废
+                    "targetValue": 100,     // 满
+                    "type": "REDUCE",
+                    "unit": "PRICE",        // PRICE 金额  COUNT 数量
+                    "used": "NO"        // 使用情况  YES 已使用  NO 未使用
+                }
+            ],
+            "pageNo": 1,
+            "total": 7334
+        }
+    }
+### YX-61. 客户预算券-锁定
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT     /v2/coupon/lock
+#### 参数
+    *[186186,186185]    // 预算券ID列表
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+    
+### YX-62. 客户预算券-解锁
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT     /v2/coupon/unlock
+#### 参数
+    *[186186,186185]    // 预算券ID列表
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+### YX-63. 客户预算券-作废
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT     /v2/coupon/cancel
+#### 参数
+    *[186186,186185]    // 预算券ID列表
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+         
+### YX-64 客户预算券-导出
 #### 模块负责人
     梁铁骐
 #### 请求
@@ -2207,7 +2102,7 @@
     stream
     
 
-### YX-59 预算券日志列表
+### YX-65 客户预算券-日志
 #### 模块负责人
     梁铁骐
 #### 请求
@@ -2233,5 +2128,88 @@
          ]
      }
 
+### YX-70. 预算券申请-列表
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET    /v2/coupon/askfor
+#### 参数
+    keyword                 // 预算券名、客户名
+    businessunitGroupId     // 事业组ID
+    budgetType: "其它品类费用" // 分组类型
+    specialType: "PT专项"    // 分项类型
+    buttonPermissionFlg     // 按钮权限 1 查询 0 不查询
+    pageNo                  // 页码
+    pageSize                // 页条数
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [
+                
+            ],
+            "dataSums": null,
+            "datas": [
+                {
+                    "businessName": "PDOD",
+                    "checkRole": 0,
+                    "checkTime": "2018-09-21 16:48:14.0",
+                    "checkUser": 0,
+                    "checkUserName": "姜晓",
+                    "couponAmount": 1,
+                    "couponCustomerId": 0,
+                    "couponId": 0,
+                    "createRole": 0,
+                    "createTime": "2018-09-11 09:18:40.0",      // 创建时间
+                    "createUser": 0,
+                    "createUserName": "",                       // 创建人
+                    "customerId": 946,
+                    "customerName": "946",                      // 客户名称
+                    "effectEtime": "2018-12-12 23:59:59.0",     // 优惠券结束时间
+                    "effectStime": "2018-09-11 00:00:00.0",     // 优惠券开始时间
+                    "id": 87426,                                // 优惠券编号
+                    "note": "",
+                    "budgetType": "其它品类费用" // 分组类型
+                    "specialType": "PT专项", // 分项类型
+                    "pageId": 0,
+                    "promoName": "",
+                    "ruleName": "小饺丫（荠菜鱿鱼饺）优惠券",   // 优惠券名称
+                    "ruleType": "REDUCE",
+                    "status": "PASS"                            // 状态
+                },
+                ......
+            ],
+            "pageNo": 1,
+            "total": 4
+        }
+    }
 
+### YX-71. 预算券申请-审核通过
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT    /v2/coupon/askfor/pass
+#### 参数
+    *[32848,23920] // 申请id列表
+#### 响应
+    {
+    	"code": 100000,
+    	"msg": "",
+    	"data": null
+    }
+
+### YX-72. 预算券申请-审核拒绝
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT    /v2/coupon/askfor/refuse
+#### 参数
+    *[32848,23920] // 申请id列表
+#### 响应
+    {
+    	"code": 100000,
+    	"msg": "",
+    	"data": null
+    }
 
