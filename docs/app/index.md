@@ -3114,7 +3114,7 @@
 #### 模块负责人
     刘宏宇
 #### 请求
-    GET /v2/common/adCode2pathId
+    GET /router/v5/common/adCode2pathId
 #### 参数
     *adCode:"xxx"
 #### 响应
