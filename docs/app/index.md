@@ -3109,3 +3109,17 @@
         "msg": "",
         "data": null
     } 
+
+### APP-153. 高德adCode转pathId
+#### 模块负责人
+    刘宏宇
+#### 请求
+    GET /v2/common/adCode2pathId
+#### 参数
+    *adCode:"xxx"
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": "xxx" // pathId
+    }  
