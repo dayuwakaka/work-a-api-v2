@@ -184,6 +184,7 @@
     PUT /router/v5/message/{customerId}/{messageId}
 #### 参数
     *messageId: 消息id
+    *customerId: 客户id
 #### 响应
     {
         "code": 100000,
