@@ -1290,24 +1290,24 @@
         "code": 100000,
         "msg": "",
         "data": {
-            "gid": [
+            "gid": [                // 功能权限
                 {
                     "gid": 11,
                     "gname": "系统管理员"
                 }
             ],
-            "rid": [
+            "rid": [                // 数据权限
                 {
                     "rid": 1,
                     "rname": "管理员"
                 }
             ],
-            "token": "95261ce28b7cf1f10e7a4ddfb2158e1a",
+            "token": "95261ce28b7cf1f10e7a4ddfb2158e1a",        // 假token
             "userinfo": {
-                "fullname": "孙启萌",
-                "id": 518,
-                "mobile": "13212216966",
-                "workno": "0299"
+                "fullname": "孙启萌",          // 用户名
+                "id": 518,                  // 用户ID
+                "mobile": "13212216966",        // 用户手机号
+                "workno": "0299"            // 工号
             }
         }
     }         
