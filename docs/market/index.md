@@ -216,115 +216,10 @@
 ### YX-4. 营销作废
 #### 模块负责人
     尹洪明
-#### 4.1 请求URL
-    /v2/market/{id}
-
-#### 4.2 请求类型
-    DELETE
-
-
-#### 4.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|id|营销id|
-
-
-#### 4.4 请求示例
-    无
-
-#### 4.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|code|编号|100000成功；0 失败；|
-|msg|消息|异常信息|
-|data|null|
-
-
-#### 4.6 返回示例
-    {
-    	"code": 100000,
-    	"msg": "",
-    	"data": null
-    }
-
-### YX-5 券规列表
-#### 模块负责人
-    尹洪明
 #### 请求
-    GET     /v2/coupon/rule
+    DELETE /v2/market/{id}
 #### 参数
-    name                // 券规名称
-    deleteFlg           // 状态 0 正常 1 作废
-    buttonPermissionFlg // 按钮权限 0 不查询 1 查询
-    pageNo              // 页码
-    pageSize            // 页条数
-##### 响应
-    {
-        "code": 100000,
-        "msg": "",
-        "data": {
-            "buttonPermissions": [],
-            "dataSums": null,
-            "datas": [
-                {
-                    "actionValue": 1,           // 减
-                    "budgetFlg": 0,
-                    "createRole": 0,
-                    "createTime": "2019-03-26 18:35:29",
-                    "createUser": 0,
-                    "createUserName": "樊嘉辉",
-                    "deleteFlg": 0,         // 0 正常 1 作废
-                    "id": 12375,            // 券规id
-                    "material": 0,
-                    "name": "2019年新券规", // 券规名
-                    "onlyCode": "",
-                    "ranges": "PRODUCTUNIT", // 产品限制    ALL 全部品 PRODUCTUNIT 指定品 EXCLUDE 排除品
-                    "ruleRanges": [
-                        {
-                            "couponRuleId": 12375,
-                            "deleteFlg": 0,
-                            "id": 16793,
-                            "productUnitId": 1  // 指定品或排除品规格id
-                        },
-                        {
-                            "couponRuleId": 12375,
-                            "deleteFlg": 0,
-                            "id": 16794,
-                            "productUnitId": 2
-                        }
-                    ],
-                    "targetValue": 101, // 满
-                    "type": "REDUCE",   
-                    "unit": "PRICE"     // 满减类型
-                }
-            ],
-            "pageNo": 1,
-            "total": 1
-        }
-    }
-
-### YX-6.券规新增
-#### 模块负责人
-    尹洪明
-#### 请求
-    POST    /v2/coupon/rule
-#### 参数
-    {
-        "name": "2019年新券规",     // 券规名
-        "unit": "PRICE",            // 满减类型
-        "targetValue": 101,         // 满
-        "actionValue": 1,           // 减
-        "ranges": "PRODUCTUNIT",    // ALL 全部品 PRODUCTUNIT 指定品 EXCLUDE 排除品
-        "ruleRanges": [         // 指定品或排除品规格id列表
-            {
-                "productUnitId": 1
-            },
-            {
-                "productUnitId": 2
-            }
-        ],
-        "onlyCode": "_153905sd99956"    // 唯一码
-    }
+    *id     // 营销id
 #### 响应
     {
     	"code": 100000,
@@ -332,7 +227,7 @@
     	"data": null
     }
 
-### YX-7.客户发放预算券
+### YX-7.客户发放预算券（作废）
 #### 模块负责人
     尹洪明
 #### 请求
@@ -372,699 +267,274 @@
         "data": null
     }
     
-        
-### YX-8.券规作废
+### YX-16 活动详情（领券）
 #### 模块负责人
     尹洪明
 #### 请求
-    DELETE  /v2/coupon/rule/{id}
+    GET /v2/market/coupon/{id}
 #### 参数
-    *id  // 券规id
-#### 响应
-    {
-    	"code": 100000,
-    	"msg": "",
-    	"data": null
-    }
-
-### YX-9.客户优惠券申请列表（废弃）
-#### 模块负责人
-    尹洪明
-#### 请求
-
-    GET    /v2/coupon/askfor
-
-#### 参数
-
-    keyword // 优惠券名称/客户名称
-    buttonPermissionFlg // 按钮权限 1 查询 0 不查询
-    budgetType: "其它品类费用" // 分组类型
-    specialType: "PT专项", // 分项类型
-    pageNo  // 页码
-    pageSize    // 页条数
-
-#### 响应
-
-    {
-        "code": 100000,
-        "msg": "",
-        "data": {
-            "buttonPermissions": [
-                
-            ],
-            "dataSums": null,
-            "datas": [
-                {
-                    "businessName": "PDOD",
-                    "checkRole": 0,
-                    "checkTime": "2018-09-21 16:48:14.0",
-                    "checkUser": 0,
-                    "checkUserName": "姜晓",
-                    "couponAmount": 1,
-                    "couponCustomerId": 0,
-                    "couponId": 0,
-                    "createRole": 0,
-                    "createTime": "2018-09-11 09:18:40.0",      // 创建时间
-                    "createUser": 0,
-                    "createUserName": "",                       // 创建人
-                    "customerId": 946,
-                    "customerName": "946",                      // 客户名称
-                    "effectEtime": "2018-12-12 23:59:59.0",     // 优惠券结束时间
-                    "effectStime": "2018-09-11 00:00:00.0",     // 优惠券开始时间
-                    "id": 87426,                                // 优惠券编号
-                    "note": "",
-                    "budgetType": "其它品类费用" // 分组类型
-                    "specialType": "PT专项", // 分项类型
-                    "pageId": 0,
-                    "promoName": "",
-                    "ruleName": "小饺丫（荠菜鱿鱼饺）优惠券",   // 优惠券名称
-                    "ruleType": "REDUCE",
-                    "status": "PASS"                            // 状态
-                },
-                ......
-            ],
-            "pageNo": 1,
-            "total": 4
-        }
-    }
-
-### YX-10.客户优惠券申请审批（废弃）
-#### 模块负责人
-    尹洪明
-#### 请求
-
-    PUT    /v2/coupon/customer_askfors/{id}
-
-#### 参数
-
-    id // * 申请id
-    status // * 状态 PASS 通过 REFUSE 拒绝
-    
-#### 响应
-
-    {
-    	"code": 100000,
-    	"msg": "",
-    	"data": null
-    }
-
-### YX-11.客户优惠券申请批量审批（废弃）
-#### 模块负责人
-    尹洪明
-#### 请求
-
-    PUT    /v2/coupon/customer_askfors/batch
-
-#### 参数
-
-    ids // * 申请id列表 [3,5,6]
-    status  // * 状态 PASS 通过 REFUSE 拒绝
-    
-#### 响应
-
-    {
-    	"code": 100000,
-    	"msg": "",
-    	"data": null
-    }
-
-### YX-12.客户优惠券申请批量新增（废弃）
-#### 模块负责人
-    尹洪明
-#### 请求url
-    /v2/coupon/customer_askfors/batch
-
-#### 请求类型
-    POST
-
-#### 请求参数
-|参数|名称|类型|描述|
-|---|---|---|---|
-|*customerIds|客户id|Array
-|*couponAmounts|优惠券规则id和发放张数用逗号相隔|Array|例 ["3,2"]逗号前为优惠券规则id，逗号后为发放张数]
-|*effectStime|优惠券有效期开始时间|String|日期为客户所选 时间为自动补全 00:00:00
-|*effectEtime|优惠券有效期结束时间|String|日期为客户所选 时间为自动补全 23:59:59
-|note|备注|String|200字符以内|
-|*onlyCode|本次提交携带的唯一码|String|防止重复提交用
-
-#### 返回值
-|参数|名称|描述|
-|---|---|---|
-|code|编号|100000：成功；0 ~ 99999：失败|
-|msg|消息|修改成功/异常信息|
-|data|数据|
-
-#### 请求体示例
-    {
-        customerIds: [11,33,55],
-        couponAmounts: ["3,3", "5,5"],
-        effectStime: '2018-09-05 00:00:00',
-        effectEtime: '2018-12-12 00:00:00',
-        note: '我就是打个酱油'
-    }
-
-### YX-9.客户优惠券列表
-#### 模块负责人
-    尹洪明
-#### 请求
-    GET     /v2/coupon
-#### 参数
-    keyword     // 优惠券名称/客户名称
-    source      // 发放源
-    status      // normal 正常 lock 锁定 invalid 作废
-    used        // YES: 已使用; NO: 未使用
-    budgetType: "其它品类费用" // 分组类型
-    specialType: "PT专项", // 分项类型
-    buttonPermissionFlg     // 0 不查询按钮权限  1 查询
-    pageNo      // 页码
-    pageSize    // 页条数
+    *id // 活动id
 #### 响应
     {
         "code": 100000,
         "msg": "",
         "data": {
-            "buttonPermissions": [
-                {
-                    "invalidButton": false,  // 作废
-                    "lockButton": false,    // 锁定
-                    "unlockButton": false   // 解锁
-                }
-            ],
-            "dataSums": null,
-            "datas": [
-                {
-                    "actionValue": 1,               // 减
-                    "businessName": "",
-                    "couponRuleId": 12374,          // 券规id
-                    "createRole": 0,
-                    "createTime": "2019-03-26 18:23:06", // 创建时间 
-                    "createUser": 0,
-                    "createUserName": "樊嘉辉", // 创建人
-                    "remark": "我是预算券备注", // 备注
-                    "budgetType": "其它品类费用" // 分组类型
-                    "specialType": "PT专项", // 分项类型
-                    "customerId": 32938,
-                    "customerName": "82年凯龙",    // 客户名
-                    "effectEtime": "2019-04-26 23:59:59",   // 结束日志
-                    "effectStime": "2019-03-26 00:00:00",   // 开始日期
-                    "id": 186186,               // 优惠券编号
-                    "marketId": 0,
-                    "rangeType": "PRODUCTUNIT",         // ALL 全部品 PRODUCTUNIT 指定品 EXCLUDE 排除品
-                    "ranges": [         // 指定品 或 排除品
-                        {
-                            "couponRuleId": 12411,
-                            "deleteFlg": 0,
-                            "id": 16869,
-                            "productUnitId": 8066
-                        },
-                        {
-                            "couponRuleId": 12411,
-                            "deleteFlg": 0,
-                            "id": 16870,
-                            "productUnitId": 8061
-                        }
-                    ],
-                    "rebate": 0,
-                    "ruleName": "2019年预算券", // 优惠券名
-                    "ruleType": "",
-                    "source": "HANDWORK",   // 发放源 HANDWORK 手工 ACTIVE 活动
-                    "sourceName": "",
-                    "status": "LOCK",       // 优惠券状态    NORMAL 正常 LOCK 锁定 CANCEL 作废
-                    "targetValue": 100,     // 满
-                    "type": "REDUCE",
-                    "unit": "PRICE",        // PRICE 金额  COUNT 数量
-                    "used": "NO"        // 使用情况  YES 已使用  NO 未使用
-                }
-            ],
-            "pageNo": 1,
-            "total": 7334
-        }
-    }
-### YX-10.客户优惠券批量锁定
-#### 模块负责人
-    尹洪明
-#### 请求
-    PUT     /v2/coupon/lock
-#### 参数
-    [
-        186186,
-        186185
-    ]
-#### 响应
-    {
-        "code": 100000,
-        "msg": "",
-        "data": null
-    }
-### YX-11.客户优惠券批量解锁
-#### 模块负责人
-    尹洪明
-#### 请求
-    PUT     /v2/coupon/unlock
-#### 参数
-    [
-        186186,
-        186185
-    ]
-#### 响应
-    {
-        "code": 100000,
-        "msg": "",
-        "data": null
-    }
-### YX-12.客户优惠券批量作废
-#### 模块负责人
-    尹洪明
-#### 请求
-    PUT     /v2/coupon/cancel
-#### 参数
-    [
-        186186,
-        186185
-    ]
-#### 响应
-    {
-        "code": 100000,
-        "msg": "",
-        "data": null
-    }
-### YX-13.客户所属事业组的预算
-#### 模块负责人
-    尹洪明
-#### 请求
-    GET     /v2/market/coupon/budget/{customerId}
-#### 参数
-    *customerId // 客户id
-#### 响应    
-     {
-         "code": 100000,
-         "msg": "",
-         "data": {
-             "budgetAmount": 893890,            // 剩余预算额
-             "budgetYm": "2019-03",
-             "businessunitGroupId": 4,
-             "createRole": 1,
-             "createTime": "2019-03-27 16:40:20.0",
-             "createUser": 1,
-             "createUsername": "樊佳慧",
-             "id": 1,
-             "modifyTime": "2019-03-28 00:53:37.0"
-         }
-     }   
-### YX-14. 客户优惠券批量解锁、锁定、作废（废弃）
-#### 模块负责人
-    尹洪明
-#### 请求
-
-    PUT     /v2/coupon/customers/batch
-    
-#### 参数
-
-    {
-    	"ids": [3,4,5],                // 客户优惠券id 列表
-    	"status": "CANCEL"      // 状态 NORMAL 解锁 LOCK 锁定 CANCEL 作废
-    }
-    
-#### 响应
-
-    {
-    	"code": 100000,
-    	"msg": "操作成功",
-    	"data": null
-    }
-    
-    
-
-### YX-15.客户优惠券解锁、锁定、作废（废弃）
-#### 模块负责人
-    尹洪明
-#### 请求
-
-    PUT     /v2/coupon/customers/{id}
-
-#### 参数
-
-    id  // * 优惠券id
-    status  // * 状态 NORMAL 解锁 LOCK 锁定 CANCEL 作废
-
-#### 响应
-
-    {
-    	"code": 100000,
-    	"msg": "操作成功",
-    	"data": null
-    }
-
-### YX-16 领券活动详情
-#### 模块负责人
-    尹洪明
-#### 16.1 请求URL
-    /v2/market/coupon/{id}
-#### 16.2 请求类型
-    GET
-#### 16.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|id|活动id|
-    
-#### 16.4 请求示例
-    无
-
-#### 16.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|createTime|创建时间|
-|createUser|创建人|
-|createUserName|创建人姓名|
-|customerRange|客户类型 all 全部客户 new 新客户|
-|deleteFlg|活动状态|0 正常 1 作废|
-|effectEtime|结束时间|
-|effectStime|开始时间|
-|id|活动ID|
-|marketBusinessunitRanges|事业部范围|
-|marketCouponCondition|领券限制|
-|marketCouponGiveConditions|优惠券限制列表|
-|marketImages|图片列表|
-|name|营销名称|
-|overdue|是否过期|0 未过期  1 已过期|
-|type|营销类型|coupon 领券 gift 满赠 reduce 满减 discount 满折 column 专栏 special 专题|
-
-
-#### 16.6 返回示例
-
-    {
-        "code": 100000,
-        "msg": "",
-        "data": {
-            "createTime": "2018-09-13 18:25:24", 
-            "createUser": 101, 
-            "createUserName": "樊嘉辉", 
-            "customerRange": "NEW",
+            "bannerPic": "",
+            "createTime": "2019-02-14 10:43:46",
+            "createUser": 232,
+            "createUserName": "赵江敏",    
+            "customerRange": "ALL",                 // 客户限制 ALL 无限制 NEW 新客户
             "deleteFlg": 0,
-            "effectEtime": "2018-10-13 08:40:17",
-            "effectStime": "2018-09-13 08:40:17",
-            "id": 1,
-            "marketBusinessunitRanges": [{
-                    "extra": "A事业部", // 事业部名称
-                    "id": 1,
-                    "marketId": 1,
-                    "rangeId": 1, // 事业部id
+            "effectEtime": "2019-02-28 23:59:59",   // 有效结束日期
+            "effectStime": "2019-02-14 00:00:00",   // 有效开始日期
+            "id": 222,                              // 活动id
+            "marketBusinessunitRanges": [           // 事业部范围
+                {
+                    "extra": "P2P-ZJ",
+                    "id": 16549,
+                    "marketId": 222,
+                    "rangeId": 19,
                     "type": "BUSINESSUNIT"
-                },
-                ......
-                ]
-            "marketCouponCondition": {
-                "id": 1,
-                "limitNum": 1, // 1-仅领一次, 0-用完再领
-                "marketId": 1
-            },
-            "marketCouponGiveConditions": [
-                {
-                    "actionValue": 50,
-                    "couponRuleId": 3, // 券规ID
-                    "couponRuleName": "小饺丫（荠菜鱿鱼饺）优惠券",
-                    "effectEtime": "2018-10-13 08:40:17", // 有效结束时间
-                    "effectStime": "2018-09-13 08:40:17", // 有效结束时间
-                    "id": 1,
-                    "marketId": 1,
-                    "num": 1, // 券数量
-                    "targetValue": 50
-                },
-                {
-                    "actionValue": 50,
-                    "couponRuleId": 4,
-                    "couponRuleName": "小饺丫（荠菜鱿鱼饺）优惠券",
-                    "effectEtime": "2018-10-13 08:40:17",
-                    "effectStime": "2018-09-13 08:40:17",
-                    "id": 2,
-                    "marketId": 1,
-                    "num": 2,
-                    "targetValue": 50
                 }
             ],
-            "marketImages": [
+            "marketCouponCondition": {              // 条件
+                "id": 137,
+                "limitNum": 1,
+                "marketId": 222
+            },
+            "marketCouponGiveConditions": [         // 规格
                 {
-                    "id": 1,
-                    "marketId": 1,
-                    "picUrl": "http://ad.asagroup.cn/asae-h5/v2/activity/index/1200",
-                    "position": "NOLIMIT", // nolimit 无限制 top 上部图 middle 中间图 bottom 底部图
-                    "type": "BANNER" // banner 轮播图 popup 弹屏图 detail 详情图
+                    "actionValue": 80,
+                    "couponRuleId": 12359,
+                    "couponRuleName": "满5000元立减80元",
+                    "effectEtime": "2019-02-28 23:59:59",
+                    "effectStime": "2019-02-14 00:00:00",
+                    "id": 1060,
+                    "marketId": 222,
+                    "num": 10,
+                    "targetValue": 5000
                 },
                 {
-                    "id": 2,
-                    "marketId": 1,
-                    "picUrl": "http://ad.asagroup.cn/asae-h5/v2/activity/index/1200",
+                    "actionValue": 200,
+                    "couponRuleId": 12360,
+                    "couponRuleName": "满10000元立减200元",
+                    "effectEtime": "2019-02-28 23:59:59",
+                    "effectStime": "2019-02-14 00:00:00",
+                    "id": 1061,
+                    "marketId": 222,
+                    "num": 10,
+                    "targetValue": 10000
+                }
+            ],
+            "marketImages": [               // 活动图片
+                {
+                    "id": 423,
+                    "marketId": 222,
+                    "picUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190214104310027-6623.jpg",
+                    "position": "NOLIMIT",
+                    "type": "BANNER"
+                },
+                {
+                    "id": 424,
+                    "marketId": 222,
+                    "picUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190214104314974-5671.png",
                     "position": "NOLIMIT",
                     "type": "POPUP"
                 },
                 {
-                    "id": 3,
-                    "marketId": 1,
-                    "picUrl": "http://ad.asagroup.cn/asae-h5/v2/activity/index/1200",
+                    "id": 425,
+                    "marketId": 222,
+                    "picUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190214104332690-1961.jpg",
                     "position": "TOP",
                     "type": "DETAIL"
                 },
                 {
-                    "id": 4,
-                    "marketId": 1,
-                    "picUrl": "http://ad.asagroup.cn/asae-h5/v2/activity/index/1200",
+                    "id": 426,
+                    "marketId": 222,
+                    "picUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190214104336990-5646.jpg",
                     "position": "MIDDLE",
                     "type": "DETAIL"
                 },
                 {
-                    "id": 5,
-                    "marketId": 1,
-                    "picUrl": "http://ad.asagroup.cn/asae-h5/v2/activity/index/1200",
+                    "id": 427,
+                    "marketId": 222,
+                    "picUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190214104342653-5743.jpg",
                     "position": "BOTTOM",
                     "type": "DETAIL"
                 }
             ],
-            "name": "领券活动名称", 
+            "name": "2019年2月份线上优惠券活动ZJ",    // 活动名
             "overdue": 0,
-            "type": "COUPON"
+            "remark": "",                       // 活动说明
+            "type": "COUPON"                    // 活动类型
         }
     }
 
-
-### YX-17 满赠、满减、满折活动详情
+### YX-17 活动详情（满赠、满减、满折）
 #### 模块负责人
     尹洪明
-#### 17.1 请求URL
-    /v2/market/full/{id}
-#### 17.2 请求类型
-    GET
-#### 17.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|id|活动id|
-
-#### 17.4 请求示例
-    无
-
-#### 17.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|createTime|创建时间|
-|createUser|创建人|
-|createUserName|创建人姓名|
-|customerRange|客户类型 all 全部客户 new 新客户|
-|deleteFlg|活动状态|0 正常 1 作废|
-|effectEtime|结束时间|
-|effectStime|开始时间|
-|id|活动ID|
-|marketBusinessunitRanges|事业部范围|
-|marketActiveCondition|满赠、减条件、满赠类别|
-|marketActiveGiveConditions|满赠、满减、满折规则|
-|marketImages|图片列表|
-|marketProductRanges|产品限制|
-|name|营销名称|
-|overdue|是否过期|0 未过期  1 已过期|
-|type|营销类型|coupon 领券 gift 满赠 reduce 满减 discount 满折 column 专栏 special 专题|
-
-#### 17.6 返回示例
-    
+#### 请求
+    GET /v2/market/full/{id}
+#### 参数
+    *id // 活动id
+#### 响应
     {
         "code": 100000,
         "msg": "",
         "data": {
-            "createTime": "2018-09-13 18:58:41",
-            "createUser": 101,
-            "createUserName": "樊嘉辉",
-            "customerRange": "ALL",
+            "bannerPic": "",
+            "createTime": "2019-05-06 08:40:44",
+            "createUser": 602,
+            "createUserName": "尹洪明",
+            "customerRange": "NEW",         // ALL 客户无限制 NEW 新客户 
             "deleteFlg": 0,
-            "effectEtime": "2018-10-13 08:40:17",
-            "effectStime": "2018-09-13 08:40:17",
-            "id": 6,
-            "marketActiveCondition": {
-                "accumulative": "LADDER",
-                "id": 5,
-                "marketId": 6,
-                "unit": "COUNT"
+            "effectEtime": "2019-05-15 23:59:59",       // 活动结束时间
+            "effectStime": "2019-05-06 00:00:00",       // 活动开始时间
+            "id": 422,
+            "marketActiveCondition": {          // 条件
+                "accumulative": "LADDER",       // LADDER 阶梯 EACH 每满
+                "id": 239,
+                "marketId": 422,
+                "unit": "COUNT"                 // COUNT 数量 PRICE 金额
             },
-            "marketActiveGiveConditions": [
+            "marketActiveGiveConditions": [     // 每满、阶梯规则
                 {
-                    "actionValue": 2,               // 赠、减、折
-                    "extra": "4151:7380",           // gift productId:productUnitId
-                    "id": 9,
-                    "marketId": 6,
-                    "productName":"西瓜霜",         // 赠品名称
-                    "guige":"10袋/箱"               // 赠品规格
-                     @@"shiftFlg": 0,               // 阶梯转每满标识 0 非 1 是
-                     @@"shiftType": "EACH",
-                    "targetValue": 100            // 满
+                    "actionValue": 2,
+                    "extra": "4747:8314",
+                    "guige": "500g（20枚）/袋*10袋/箱",
+                    "id": 367,
+                    "marketId": 422,
+                    "pno": "1968",
+                    "productName": "榴莲大福",
+                    "shiftFlg": 0,
+                    "shiftType": "EACH",
+                    "targetValue": 20
                 },
                 {
-                    "actionValue": 5,
+                    "actionValue": 0,
                     "extra": "",
-                    "id": 10,
-                    "marketId": 6,
-                    "productName":"",
-                    "guige":""
-                     @@"shiftFlg": 1,
-                     @@"shiftType": "EACH",
-                    "targetValue": 200
+                    "guige": "",
+                    "id": 368,
+                    "marketId": 422,
+                    "pno": "",
+                    "productName": "",
+                    "shiftFlg": 1,
+                    "shiftType": "EACH",
+                    "targetValue": 20
                 }
             ],
-            @@"marketActiveShiftCondition":{  // 转每满
-                    "targetValue": 20,      // 目标值
-                    "actionValue": 2,       // 执行值
-                    "extra": "4749:8322"    // gift productId:productUnitId
+            "marketActiveShiftCondition": {     // 转每满
+                "actionValue": 1,               // 赠 1 个
+                "extra": "4745:8309",           // 赠品ID productId:productUnitId 
+                "giveConditionId": 368,         // 阶梯规则ID
+                "guige": "4kg/袋",               // 赠品规格
+                "id": 21,
+                "pno": "M081",                      // 赠品品号
+                "productName": "去皮巴沙鱼柳（粗修）",    // 赠品名
+                "targetValue": 5                // 每满 5 个
             },
-            "marketBusinessunitRanges": [{
-                    "extra": "",    // 事业部名称
-                    "id": 19,
-                    "marketId": 6,
-                    "rangeId": 3,   // 事业部id
-                    "type": "BUSINESSUNIT"
-                },
-                ......
-                ]
-            "marketImages": [
+            "marketBusinessunitRanges": [       // 事业部限制    size = 0 表示 无限制
                 {
-                    "id": 6,
-                    "marketId": 6,
-                    "picUrl": "http://ad.asagroup.cn/asae-h5/v2/activity/index/1200", // 轮播图URL
-                    "position": "NOLIMIT", // 位置无限制
-                    "type": "BANNER" // 轮播图
+                    "extra": "PS",              // 事业部名
+                    "id": 23034,
+                    "marketId": 422,
+                    "rangeId": 75,              // 事业部ID
+                    "type": "BUSINESSUNIT"  
                 }
             ],
-            "marketProductRanges": [
+            "marketImages": [       // 活动图片
                 {
-                    "extra": "",
-                    "id": 21,
-                    "marketId": 6,
-                    "rangeId": 7383,                    // 产品ID
-                    "type": "PRODUCTUNIT",
-                    "productName":"粉丝蒜蓉贝",         // 活动产品名称
-                    "guige":"50袋/箱"                   // 活动产品规格
+                    "id": 537,
+                    "marketId": 422,
+                    "picUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190506084020805-4907.jpg",
+                    "position": "NOLIMIT",
+                    "type": "BANNER"
                 },
                 {
-                    "extra": "",
-                    "id": 22,
-                    "marketId": 6,
-                    "rangeId": 7382,
-                    "type": "PRODUCTUNIT",
-                    "productName":"粉丝蒜蓉贝",
-                    "guige":"50袋/箱"               
+                    "id": 538,
+                    "marketId": 422,
+                    "picUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190506084025058-8663.jpg",
+                    "position": "NOLIMIT",
+                    "type": "DETAIL"
                 }
             ],
-            "name": "满赠活动名称",
+            "marketProductRanges": [                // 限制产品 size = 0 表示无限制
+                {
+                    "extra": "",
+                    "guige": "700g（20枚）/袋",
+                    "id": 0,
+                    "marketId": 0,
+                    "pno": "YY102",
+                    "productName": "三重馅香橙大福（样品装）",
+                    "rangeId": 8094,
+                    "type": "PRODUCTUNIT"       // PRODUCTUNIT 指定品 EXCLUDE 排除品
+                }
+            ],
+            "name": "2019年5月上旬满赠活动",            // 活动名
             "overdue": 0,
-            "type": "GIFT"
+            "remark": "测试满赠返回结果",               // 活动说明
+            "type": "GIFT"                          // 活动类型
         }
     }
 
-
-
-
-### YX-18 专栏活动详情
+### YX-18 活动详情（专栏）
 #### 模块负责人
     尹洪明
-#### 18.1 请求URL
-    /v2/market/column/{id}
-#### 18.2 请求类型
-    GET
-#### 18.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|id|活动id|
-
-#### 18.4 请求示例
-    无
-
-#### 18.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|createTime|创建时间|
-|createUser|创建人|
-|createUserName|创建人姓名|
-|customerRange|客户类型 all 全部客户 new 新客户|
-|deleteFlg|活动状态|0 正常 1 作废|
-|effectEtime|结束时间|
-|effectStime|开始时间|
-|id|活动ID|
-|marketBusinessunitRanges|事业部范围|
-|marketImages|图片列表|
-|marketProductRanges|产品限制|
-|name|营销名称|
-|overdue|是否过期|0 未过期  1 已过期|
-|type|营销类型|coupon 领券 gift 满赠 reduce 满减 discount 满折 column 专栏 special 专题|
-
-#### 18.6 返回示例
-    
+#### 请求
+    GET /v2/market/column/{id}
+#### 参数
+    *id     // 活动id
+#### 响应
     {
         "code": 100000,
         "msg": "",
         "data": {
-            "createTime": "2018-09-13 19:01:23",
-            "createUser": 101,
-            "createUserName": "樊嘉辉",
-            "customerRange": "ALL",
+            "bannerPic": "",
+            "createTime": "2019-05-05 16:03:17",
+            "createUser": 602,
+            "createUserName": "尹洪明",
+            "customerRange": "NEW",             // 客户限制 ALL 无限制 NEW 新客户 
             "deleteFlg": 0,
-            "effectEtime": "2018-10-13 08:40:17",
-            "effectStime": "2018-09-13 08:40:17",
-            "id": 7,
-            "marketBusinessunitRanges": [{
-                    "extra": "",    // 事业部名称
-                    "id": 23,
-                    "marketId": 7,
-                    "rangeId": 3, // 事业部id
+            "effectEtime": "2019-05-15 23:59:59",   // 有效结束时间
+            "effectStime": "2019-05-05 00:00:00",   // 有效开始时间
+            "id": 419,
+            "marketBusinessunitRanges": [       // 事业部范围
+                {
+                    "extra": "PS-C",            // 事业部名
+                    "id": 23028,
+                    "marketId": 419,
+                    "rangeId": 76,              // 事业部ID
                     "type": "BUSINESSUNIT"
-                },
-                ......
-                ]
-            "marketImages": [
-                {
-                    "id": 11,
-                    "marketId": 7,
-                    "picUrl": "http://ad.asagroup.cn/asae-h5/v2/activity/index/1200", // 轮播图URL
-                    "position": "NOLIMIT", // 位置 无限制
-                    "type": "BANNER" // 轮播图
                 }
             ],
-            "marketProductRanges": [
+            "marketImages": [                   // 图片
                 {
-                    "extra": "",
-                    "id": 25,
-                    "marketId": 7,
-                    "rangeId": 7383, // 产品规格ID
-                    "type": "PRODUCTUNIT"
-                },
-                {
-                    "extra": "",
-                    "id": 26,
-                    "marketId": 7,
-                    "rangeId": 7382,
-                    "type": "PRODUCTUNIT"
+                    "id": 534,
+                    "marketId": 419,
+                    "picUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190505160312845-2499.jpg",
+                    "position": "NOLIMIT",
+                    "type": "BANNER"
                 }
             ],
-            "name": "专栏活动名称",
+            "marketProductRanges": [            // 指定产品
+                {
+                    "extra": "",
+                    "guige": "4kg/袋",                       // 规格
+                    "id": 0,
+                    "marketId": 0,
+                    "pno": "M081",                          // 品号
+                    "productName": "去皮巴沙鱼柳（粗修）",   // 产品名
+                    "rangeId": 0,
+                    "type": ""
+                }
+            ],
+            "name": "2019年5月上旬专栏活动",        // 活动名
             "overdue": 0,
-            "type": "COLUMN"
+            "remark": "",                       // 活动说明
+            "type": "COLUMN"                    // 活动类型
         }
     }
-
-### YX-19 专题活动详情
+### YX-19 活动详情（专题）
 #### 模块负责人
     尹洪明
 #### 请求
@@ -1141,11 +611,9 @@
     尹洪明
 #### 请求
     GET /v2/market/{customerId}
-    
 #### 参数
     customerId
 #### 响应
-
     {
         "code": 100000,
         "msg": "",
@@ -1167,8 +635,7 @@
                     "rebate": 0,
                     "type": "",
                     "unit": ""
-                },
-                ......
+                }
             ],
             "coupons": [
                 {
@@ -1195,8 +662,7 @@
                     "type": "REDUCE",
                     "unit": "PRICE",
                     "used": "NO"
-                },
-                ......
+                }
             ],
             "rebates": [
                 {
@@ -1221,8 +687,7 @@
                     "status": "NORMAL",
                     "type": "REBATE",
                     "value": 1110
-                },
-                ......
+                }
             ]
         }
     }
@@ -2194,7 +1659,151 @@
          ]
      }
      
-### YX-58 预算券导出
+
+### YX-58.事业组预算-客户所属事业组的预算
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET     /v2/market/coupon/budget/{customerId}
+#### 参数
+    *customerId // 客户id
+#### 响应    
+     {
+         "code": 100000,
+         "msg": "",
+         "data": {
+             "budgetAmount": 893890,            // 剩余预算额
+             "budgetYm": "2019-03",
+             "businessunitGroupId": 4,
+             "createRole": 1,
+             "createTime": "2019-03-27 16:40:20.0",
+             "createUser": 1,
+             "createUsername": "樊佳慧",
+             "id": 1,
+             "modifyTime": "2019-03-28 00:53:37.0"
+         }
+     }        
+
+### YX-60. 客户预算券-列表
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET     /v2/coupon
+#### 参数
+    keyword     // 优惠券名称/客户名称
+    source      // 发放源
+    status      // normal 正常 lock 锁定 invalid 作废
+    used        // YES: 已使用; NO: 未使用
+    businessunitGroupId        // 事业主ID
+    budgetType: "其它品类费用" // 分组类型
+    specialType: "PT专项", // 分项类型
+    buttonPermissionFlg     // 0 不查询按钮权限  1 查询
+    pageNo      // 页码
+    pageSize    // 页条数
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [
+                {
+                    "invalidButton": false,  // 作废
+                    "lockButton": false,    // 锁定
+                    "unlockButton": false   // 解锁
+                }
+            ],
+            "dataSums": null,
+            "datas": [
+                {
+                    "actionValue": 1,               // 减
+                    "businessName": "",
+                    "couponRuleId": 12374,          // 券规id
+                    "createRole": 0,
+                    "createTime": "2019-03-26 18:23:06", // 创建时间 
+                    "createUser": 0,
+                    "createUserName": "樊嘉辉", // 创建人
+                    "remark": "我是预算券备注", // 备注
+                    "budgetType": "其它品类费用" // 分组类型
+                    "specialType": "PT专项", // 分项类型
+                    "customerId": 32938,
+                    "customerName": "82年凯龙",    // 客户名
+                    "effectEtime": "2019-04-26 23:59:59",   // 结束日志
+                    "effectStime": "2019-03-26 00:00:00",   // 开始日期
+                    "id": 186186,               // 优惠券编号
+                    "marketId": 0,
+                    "rangeType": "PRODUCTUNIT",         // ALL 全部品 PRODUCTUNIT 指定品 EXCLUDE 排除品
+                    "ranges": [         // 指定品 或 排除品
+                        {
+                            "couponRuleId": 12411,
+                            "deleteFlg": 0,
+                            "id": 16869,
+                            "productUnitId": 8066
+                        },
+                        {
+                            "couponRuleId": 12411,
+                            "deleteFlg": 0,
+                            "id": 16870,
+                            "productUnitId": 8061
+                        }
+                    ],
+                    "rebate": 0,
+                    "ruleName": "2019年预算券", // 优惠券名
+                    "ruleType": "",
+                    "source": "HANDWORK",   // 发放源 HANDWORK 手工 ACTIVE 活动
+                    "sourceName": "",
+                    "status": "LOCK",       // 优惠券状态    NORMAL 正常 LOCK 锁定 CANCEL 作废
+                    "targetValue": 100,     // 满
+                    "type": "REDUCE",
+                    "unit": "PRICE",        // PRICE 金额  COUNT 数量
+                    "used": "NO"        // 使用情况  YES 已使用  NO 未使用
+                }
+            ],
+            "pageNo": 1,
+            "total": 7334
+        }
+    }
+### YX-61. 客户预算券-锁定
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT     /v2/coupon/lock
+#### 参数
+    *[186186,186185]    // 预算券ID列表
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+    
+### YX-62. 客户预算券-解锁
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT     /v2/coupon/unlock
+#### 参数
+    *[186186,186185]    // 预算券ID列表
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+### YX-63. 客户预算券-作废
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT     /v2/coupon/cancel
+#### 参数
+    *[186186,186185]    // 预算券ID列表
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+         
+### YX-64 客户预算券-导出
 #### 模块负责人
     梁铁骐
 #### 请求
@@ -2207,7 +1816,7 @@
     stream
     
 
-### YX-59 预算券日志列表
+### YX-65 客户预算券-日志
 #### 模块负责人
     梁铁骐
 #### 请求
@@ -2233,5 +1842,186 @@
          ]
      }
 
+### YX-70. 预算券申请-列表
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET    /v2/coupon/askfor
+#### 参数
+    keyword                 // 预算券名、客户名
+    businessunitGroupId     // 事业组ID
+    budgetType: "其它品类费用" // 分组类型
+    specialType: "PT专项"    // 分项类型
+    buttonPermissionFlg     // 按钮权限 1 查询 0 不查询
+    pageNo                  // 页码
+    pageSize                // 页条数
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [
+                
+            ],
+            "dataSums": null,
+            "datas": [
+                {
+                    "businessName": "PDOD",
+                    "checkRole": 0,
+                    "checkTime": "2018-09-21 16:48:14.0",
+                    "checkUser": 0,
+                    "checkUserName": "姜晓",
+                    "couponAmount": 1,
+                    "couponCustomerId": 0,
+                    "couponId": 0,
+                    "createRole": 0,
+                    "createTime": "2018-09-11 09:18:40.0",      // 创建时间
+                    "createUser": 0,
+                    "createUserName": "",                       // 创建人
+                    "customerId": 946,
+                    "customerName": "946",                      // 客户名称
+                    "effectEtime": "2018-12-12 23:59:59.0",     // 优惠券结束时间
+                    "effectStime": "2018-09-11 00:00:00.0",     // 优惠券开始时间
+                    "id": 87426,                                // 优惠券编号
+                    "note": "",
+                    "budgetType": "其它品类费用" // 分组类型
+                    "specialType": "PT专项", // 分项类型
+                    "pageId": 0,
+                    "promoName": "",
+                    "ruleName": "小饺丫（荠菜鱿鱼饺）优惠券",   // 优惠券名称
+                    "ruleType": "REDUCE",
+                    "status": "PASS"                            // 状态
+                },
+                ......
+            ],
+            "pageNo": 1,
+            "total": 4
+        }
+    }
 
+### YX-71. 预算券申请-审核通过
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT    /v2/coupon/askfor/pass
+#### 参数
+    *[32848,23920] // 申请id列表
+#### 响应
+    {
+    	"code": 100000,
+    	"msg": "",
+    	"data": null
+    }
 
+### YX-72. 预算券申请-审核拒绝
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT    /v2/coupon/askfor/refuse
+#### 参数
+    *[32848,23920] // 申请id列表
+#### 响应
+    {
+    	"code": 100000,
+    	"msg": "",
+    	"data": null
+    }
+
+### YX-80 券规列表
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET     /v2/coupon/rule
+#### 参数
+    name                // 券规名称
+    deleteFlg           // 状态 0 正常 1 作废
+    buttonPermissionFlg // 按钮权限 0 不查询 1 查询
+    pageNo              // 页码
+    pageSize            // 页条数
+##### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [],
+            "dataSums": null,
+            "datas": [
+                {
+                    "actionValue": 1,           // 减
+                    "budgetFlg": 0,
+                    "createRole": 0,
+                    "createTime": "2019-03-26 18:35:29",
+                    "createUser": 0,
+                    "createUserName": "樊嘉辉",
+                    "deleteFlg": 0,         // 0 正常 1 作废
+                    "id": 12375,            // 券规id
+                    "material": 0,
+                    "name": "2019年新券规", // 券规名
+                    "onlyCode": "",
+                    "ranges": "PRODUCTUNIT", // 产品限制    ALL 全部品 PRODUCTUNIT 指定品 EXCLUDE 排除品
+                    "ruleRanges": [
+                        {
+                            "couponRuleId": 12375,
+                            "deleteFlg": 0,
+                            "id": 16793,
+                            "productUnitId": 1  // 指定品或排除品规格id
+                        },
+                        {
+                            "couponRuleId": 12375,
+                            "deleteFlg": 0,
+                            "id": 16794,
+                            "productUnitId": 2
+                        }
+                    ],
+                    "targetValue": 101, // 满
+                    "type": "REDUCE",   
+                    "unit": "PRICE"     // 满减类型
+                }
+            ],
+            "pageNo": 1,
+            "total": 1
+        }
+    }
+
+### YX-81.券规新增
+#### 模块负责人
+    尹洪明
+#### 请求
+    POST    /v2/coupon/rule
+#### 参数
+    {
+        "name": "2019年新券规",     // 券规名
+        "unit": "PRICE",            // 满减类型
+        "targetValue": 101,         // 满
+        "actionValue": 1,           // 减
+        "ranges": "PRODUCTUNIT",    // ALL 全部品 PRODUCTUNIT 指定品 EXCLUDE 排除品
+        "ruleRanges": [         // 指定品或排除品规格id列表
+            {
+                "productUnitId": 1
+            },
+            {
+                "productUnitId": 2
+            }
+        ],
+        "onlyCode": "_153905sd99956"    // 唯一码
+    }
+#### 响应
+    {
+    	"code": 100000,
+    	"msg": "",
+    	"data": null
+    }
+ 
+### YX-82.券规作废
+#### 模块负责人
+    尹洪明
+#### 请求
+    DELETE  /v2/coupon/rule/{id}
+#### 参数
+    *id  // 券规id
+#### 响应
+    {
+    	"code": 100000,
+    	"msg": "",
+    	"data": null
+    }

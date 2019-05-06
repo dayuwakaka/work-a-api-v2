@@ -536,7 +536,7 @@
         "data": 9 // 优惠券数量
     }
 
-### APP-21 我的优惠券（可用）
+### APP-21 我的可用优惠券
 #### 对接负责人
     刘宏宇
 #### 模块负责人
@@ -589,7 +589,7 @@
         ]
     }
 
-### APP-22 我的优惠券（过期）
+### APP-22 我的过期优惠券
 #### 对接负责人
     刘宏宇
 #### 模块负责人
@@ -1951,12 +1951,9 @@
 #### 请求
     GET /router/v5/auth/wxLogin
 #### 参数
-    appId:"**************"
-    secret:"*************"
-    grantType:"authorization_code" // 默认authorization_code
-    *jsCode:"**************"        // code
-    *encrypteddata:"*********" // 手机号密文
-    *iv:"*********"             // iv
+    openId:"***"           // openId
+    mobile:"***"           // 手机号
+    platformCode:"0101"     // 平台商码
     businessTypeId:16           // 业态id
 #### 响应
     {
@@ -2490,7 +2487,7 @@
             "hasProductunitRange": 10,
             "id": 253,
             "limitNum": 0,
-            "name": "超哥专栏001",
+            "name": "专栏001",
             "popupPic": "",
             "productunit": [
                         {
