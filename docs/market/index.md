@@ -216,31 +216,11 @@
 ### YX-4. 营销作废
 #### 模块负责人
     尹洪明
-#### 4.1 请求URL
-    /v2/market/{id}
-
-#### 4.2 请求类型
-    DELETE
-
-
-#### 4.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|id|营销id|
-
-
-#### 4.4 请求示例
-    无
-
-#### 4.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|code|编号|100000成功；0 失败；|
-|msg|消息|异常信息|
-|data|null|
-
-
-#### 4.6 返回示例
+#### 请求
+    DELETE /v2/market/{id}
+#### 参数
+    *id     // 营销id
+#### 响应
     {
     	"code": 100000,
     	"msg": "",
@@ -287,356 +267,274 @@
         "data": null
     }
     
-### YX-16 领券活动详情
+### YX-16 活动详情（领券）
 #### 模块负责人
     尹洪明
-#### 16.1 请求URL
-    /v2/market/coupon/{id}
-#### 16.2 请求类型
-    GET
-#### 16.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|id|活动id|
-    
-#### 16.4 请求示例
-    无
-
-#### 16.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|createTime|创建时间|
-|createUser|创建人|
-|createUserName|创建人姓名|
-|customerRange|客户类型 all 全部客户 new 新客户|
-|deleteFlg|活动状态|0 正常 1 作废|
-|effectEtime|结束时间|
-|effectStime|开始时间|
-|id|活动ID|
-|marketBusinessunitRanges|事业部范围|
-|marketCouponCondition|领券限制|
-|marketCouponGiveConditions|优惠券限制列表|
-|marketImages|图片列表|
-|name|营销名称|
-|overdue|是否过期|0 未过期  1 已过期|
-|type|营销类型|coupon 领券 gift 满赠 reduce 满减 discount 满折 column 专栏 special 专题|
-
-
-#### 16.6 返回示例
-
+#### 请求
+    GET /v2/market/coupon/{id}
+#### 参数
+    *id // 活动id
+#### 响应
     {
         "code": 100000,
         "msg": "",
         "data": {
-            "createTime": "2018-09-13 18:25:24", 
-            "createUser": 101, 
-            "createUserName": "樊嘉辉", 
-            "customerRange": "NEW",
+            "bannerPic": "",
+            "createTime": "2019-02-14 10:43:46",
+            "createUser": 232,
+            "createUserName": "赵江敏",    
+            "customerRange": "ALL",                 // 客户限制 ALL 无限制 NEW 新客户
             "deleteFlg": 0,
-            "effectEtime": "2018-10-13 08:40:17",
-            "effectStime": "2018-09-13 08:40:17",
-            "id": 1,
-            "marketBusinessunitRanges": [{
-                    "extra": "A事业部", // 事业部名称
-                    "id": 1,
-                    "marketId": 1,
-                    "rangeId": 1, // 事业部id
+            "effectEtime": "2019-02-28 23:59:59",   // 有效结束日期
+            "effectStime": "2019-02-14 00:00:00",   // 有效开始日期
+            "id": 222,                              // 活动id
+            "marketBusinessunitRanges": [           // 事业部范围
+                {
+                    "extra": "P2P-ZJ",
+                    "id": 16549,
+                    "marketId": 222,
+                    "rangeId": 19,
                     "type": "BUSINESSUNIT"
-                },
-                ......
-                ]
-            "marketCouponCondition": {
-                "id": 1,
-                "limitNum": 1, // 1-仅领一次, 0-用完再领
-                "marketId": 1
-            },
-            "marketCouponGiveConditions": [
-                {
-                    "actionValue": 50,
-                    "couponRuleId": 3, // 券规ID
-                    "couponRuleName": "小饺丫（荠菜鱿鱼饺）优惠券",
-                    "effectEtime": "2018-10-13 08:40:17", // 有效结束时间
-                    "effectStime": "2018-09-13 08:40:17", // 有效结束时间
-                    "id": 1,
-                    "marketId": 1,
-                    "num": 1, // 券数量
-                    "targetValue": 50
-                },
-                {
-                    "actionValue": 50,
-                    "couponRuleId": 4,
-                    "couponRuleName": "小饺丫（荠菜鱿鱼饺）优惠券",
-                    "effectEtime": "2018-10-13 08:40:17",
-                    "effectStime": "2018-09-13 08:40:17",
-                    "id": 2,
-                    "marketId": 1,
-                    "num": 2,
-                    "targetValue": 50
                 }
             ],
-            "marketImages": [
+            "marketCouponCondition": {              // 条件
+                "id": 137,
+                "limitNum": 1,
+                "marketId": 222
+            },
+            "marketCouponGiveConditions": [         // 规格
                 {
-                    "id": 1,
-                    "marketId": 1,
-                    "picUrl": "http://ad.asagroup.cn/asae-h5/v2/activity/index/1200",
-                    "position": "NOLIMIT", // nolimit 无限制 top 上部图 middle 中间图 bottom 底部图
-                    "type": "BANNER" // banner 轮播图 popup 弹屏图 detail 详情图
+                    "actionValue": 80,
+                    "couponRuleId": 12359,
+                    "couponRuleName": "满5000元立减80元",
+                    "effectEtime": "2019-02-28 23:59:59",
+                    "effectStime": "2019-02-14 00:00:00",
+                    "id": 1060,
+                    "marketId": 222,
+                    "num": 10,
+                    "targetValue": 5000
                 },
                 {
-                    "id": 2,
-                    "marketId": 1,
-                    "picUrl": "http://ad.asagroup.cn/asae-h5/v2/activity/index/1200",
+                    "actionValue": 200,
+                    "couponRuleId": 12360,
+                    "couponRuleName": "满10000元立减200元",
+                    "effectEtime": "2019-02-28 23:59:59",
+                    "effectStime": "2019-02-14 00:00:00",
+                    "id": 1061,
+                    "marketId": 222,
+                    "num": 10,
+                    "targetValue": 10000
+                }
+            ],
+            "marketImages": [               // 活动图片
+                {
+                    "id": 423,
+                    "marketId": 222,
+                    "picUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190214104310027-6623.jpg",
+                    "position": "NOLIMIT",
+                    "type": "BANNER"
+                },
+                {
+                    "id": 424,
+                    "marketId": 222,
+                    "picUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190214104314974-5671.png",
                     "position": "NOLIMIT",
                     "type": "POPUP"
                 },
                 {
-                    "id": 3,
-                    "marketId": 1,
-                    "picUrl": "http://ad.asagroup.cn/asae-h5/v2/activity/index/1200",
+                    "id": 425,
+                    "marketId": 222,
+                    "picUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190214104332690-1961.jpg",
                     "position": "TOP",
                     "type": "DETAIL"
                 },
                 {
-                    "id": 4,
-                    "marketId": 1,
-                    "picUrl": "http://ad.asagroup.cn/asae-h5/v2/activity/index/1200",
+                    "id": 426,
+                    "marketId": 222,
+                    "picUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190214104336990-5646.jpg",
                     "position": "MIDDLE",
                     "type": "DETAIL"
                 },
                 {
-                    "id": 5,
-                    "marketId": 1,
-                    "picUrl": "http://ad.asagroup.cn/asae-h5/v2/activity/index/1200",
+                    "id": 427,
+                    "marketId": 222,
+                    "picUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190214104342653-5743.jpg",
                     "position": "BOTTOM",
                     "type": "DETAIL"
                 }
             ],
-            "name": "领券活动名称", 
+            "name": "2019年2月份线上优惠券活动ZJ",    // 活动名
             "overdue": 0,
-            "type": "COUPON"
+            "remark": "",                       // 活动说明
+            "type": "COUPON"                    // 活动类型
         }
     }
 
-
-### YX-17 满赠、满减、满折活动详情
+### YX-17 活动详情（满赠、满减、满折）
 #### 模块负责人
     尹洪明
-#### 17.1 请求URL
-    /v2/market/full/{id}
-#### 17.2 请求类型
-    GET
-#### 17.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|id|活动id|
-
-#### 17.4 请求示例
-    无
-
-#### 17.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|createTime|创建时间|
-|createUser|创建人|
-|createUserName|创建人姓名|
-|customerRange|客户类型 all 全部客户 new 新客户|
-|deleteFlg|活动状态|0 正常 1 作废|
-|effectEtime|结束时间|
-|effectStime|开始时间|
-|id|活动ID|
-|marketBusinessunitRanges|事业部范围|
-|marketActiveCondition|满赠、减条件、满赠类别|
-|marketActiveGiveConditions|满赠、满减、满折规则|
-|marketImages|图片列表|
-|marketProductRanges|产品限制|
-|name|营销名称|
-|overdue|是否过期|0 未过期  1 已过期|
-|type|营销类型|coupon 领券 gift 满赠 reduce 满减 discount 满折 column 专栏 special 专题|
-
-#### 17.6 返回示例
-    
+#### 请求
+    GET /v2/market/full/{id}
+#### 参数
+    *id // 活动id
+#### 响应
     {
         "code": 100000,
         "msg": "",
         "data": {
-            "createTime": "2018-09-13 18:58:41",
-            "createUser": 101,
-            "createUserName": "樊嘉辉",
-            "customerRange": "ALL",
+            "bannerPic": "",
+            "createTime": "2019-05-06 08:40:44",
+            "createUser": 602,
+            "createUserName": "尹洪明",
+            "customerRange": "NEW",         // ALL 客户无限制 NEW 新客户 
             "deleteFlg": 0,
-            "effectEtime": "2018-10-13 08:40:17",
-            "effectStime": "2018-09-13 08:40:17",
-            "id": 6,
-            "marketActiveCondition": {
-                "accumulative": "LADDER",
-                "id": 5,
-                "marketId": 6,
-                "unit": "COUNT"
+            "effectEtime": "2019-05-15 23:59:59",       // 活动结束时间
+            "effectStime": "2019-05-06 00:00:00",       // 活动开始时间
+            "id": 422,
+            "marketActiveCondition": {          // 条件
+                "accumulative": "LADDER",       // LADDER 阶梯 EACH 每满
+                "id": 239,
+                "marketId": 422,
+                "unit": "COUNT"                 // COUNT 数量 PRICE 金额
             },
-            "marketActiveGiveConditions": [
+            "marketActiveGiveConditions": [     // 每满、阶梯规则
                 {
-                    "actionValue": 2,               // 赠、减、折
-                    "extra": "4151:7380",           // gift productId:productUnitId
-                    "id": 9,
-                    "marketId": 6,
-                    "productName":"西瓜霜",         // 赠品名称
-                    "guige":"10袋/箱"               // 赠品规格
-                     @@"shiftFlg": 0,               // 阶梯转每满标识 0 非 1 是
-                     @@"shiftType": "EACH",
-                    "targetValue": 100            // 满
+                    "actionValue": 2,
+                    "extra": "4747:8314",
+                    "guige": "500g（20枚）/袋*10袋/箱",
+                    "id": 367,
+                    "marketId": 422,
+                    "pno": "1968",
+                    "productName": "榴莲大福",
+                    "shiftFlg": 0,
+                    "shiftType": "EACH",
+                    "targetValue": 20
                 },
                 {
-                    "actionValue": 5,
+                    "actionValue": 0,
                     "extra": "",
-                    "id": 10,
-                    "marketId": 6,
-                    "productName":"",
-                    "guige":""
-                     @@"shiftFlg": 1,
-                     @@"shiftType": "EACH",
-                    "targetValue": 200
+                    "guige": "",
+                    "id": 368,
+                    "marketId": 422,
+                    "pno": "",
+                    "productName": "",
+                    "shiftFlg": 1,
+                    "shiftType": "EACH",
+                    "targetValue": 20
                 }
             ],
-            @@"marketActiveShiftCondition":{  // 转每满
-                    "targetValue": 20,      // 目标值
-                    "actionValue": 2,       // 执行值
-                    "extra": "4749:8322"    // gift productId:productUnitId
+            "marketActiveShiftCondition": {     // 转每满
+                "actionValue": 1,               // 赠 1 个
+                "extra": "4745:8309",           // 赠品ID productId:productUnitId 
+                "giveConditionId": 368,         // 阶梯规则ID
+                "guige": "4kg/袋",               // 赠品规格
+                "id": 21,
+                "pno": "M081",                      // 赠品品号
+                "productName": "去皮巴沙鱼柳（粗修）",    // 赠品名
+                "targetValue": 5                // 每满 5 个
             },
-            "marketBusinessunitRanges": [{
-                    "extra": "",    // 事业部名称
-                    "id": 19,
-                    "marketId": 6,
-                    "rangeId": 3,   // 事业部id
-                    "type": "BUSINESSUNIT"
-                },
-                ......
-                ]
-            "marketImages": [
+            "marketBusinessunitRanges": [       // 事业部限制    size = 0 表示 无限制
                 {
-                    "id": 6,
-                    "marketId": 6,
-                    "picUrl": "http://ad.asagroup.cn/asae-h5/v2/activity/index/1200", // 轮播图URL
-                    "position": "NOLIMIT", // 位置无限制
-                    "type": "BANNER" // 轮播图
+                    "extra": "PS",              // 事业部名
+                    "id": 23034,
+                    "marketId": 422,
+                    "rangeId": 75,              // 事业部ID
+                    "type": "BUSINESSUNIT"  
                 }
             ],
-            "marketProductRanges": [
+            "marketImages": [       // 活动图片
                 {
-                    "extra": "",
-                    "id": 21,
-                    "marketId": 6,
-                    "rangeId": 7383,                    // 产品ID
-                    "type": "PRODUCTUNIT",
-                    "productName":"粉丝蒜蓉贝",         // 活动产品名称
-                    "guige":"50袋/箱"                   // 活动产品规格
+                    "id": 537,
+                    "marketId": 422,
+                    "picUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190506084020805-4907.jpg",
+                    "position": "NOLIMIT",
+                    "type": "BANNER"
                 },
                 {
-                    "extra": "",
-                    "id": 22,
-                    "marketId": 6,
-                    "rangeId": 7382,
-                    "type": "PRODUCTUNIT",
-                    "productName":"粉丝蒜蓉贝",
-                    "guige":"50袋/箱"               
+                    "id": 538,
+                    "marketId": 422,
+                    "picUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190506084025058-8663.jpg",
+                    "position": "NOLIMIT",
+                    "type": "DETAIL"
                 }
             ],
-            "name": "满赠活动名称",
+            "marketProductRanges": [                // 限制产品 size = 0 表示无限制
+                {
+                    "extra": "",
+                    "guige": "700g（20枚）/袋",
+                    "id": 0,
+                    "marketId": 0,
+                    "pno": "YY102",
+                    "productName": "三重馅香橙大福（样品装）",
+                    "rangeId": 8094,
+                    "type": "PRODUCTUNIT"       // PRODUCTUNIT 指定品 EXCLUDE 排除品
+                }
+            ],
+            "name": "2019年5月上旬满赠活动",            // 活动名
             "overdue": 0,
-            "type": "GIFT"
+            "remark": "测试满赠返回结果",               // 活动说明
+            "type": "GIFT"                          // 活动类型
         }
     }
 
-
-
-
-### YX-18 专栏活动详情
+### YX-18 活动详情（专栏）
 #### 模块负责人
     尹洪明
-#### 18.1 请求URL
-    /v2/market/column/{id}
-#### 18.2 请求类型
-    GET
-#### 18.3 请求参数
-|参数|名称|描述|
-|---|---|---|
-|id|活动id|
-
-#### 18.4 请求示例
-    无
-
-#### 18.5 返回值
-|参数|名称|描述|
-|---|---|---|
-|createTime|创建时间|
-|createUser|创建人|
-|createUserName|创建人姓名|
-|customerRange|客户类型 all 全部客户 new 新客户|
-|deleteFlg|活动状态|0 正常 1 作废|
-|effectEtime|结束时间|
-|effectStime|开始时间|
-|id|活动ID|
-|marketBusinessunitRanges|事业部范围|
-|marketImages|图片列表|
-|marketProductRanges|产品限制|
-|name|营销名称|
-|overdue|是否过期|0 未过期  1 已过期|
-|type|营销类型|coupon 领券 gift 满赠 reduce 满减 discount 满折 column 专栏 special 专题|
-
-#### 18.6 返回示例
-    
+#### 请求
+    GET /v2/market/column/{id}
+#### 参数
+    *id     // 活动id
+#### 响应
     {
         "code": 100000,
         "msg": "",
         "data": {
-            "createTime": "2018-09-13 19:01:23",
-            "createUser": 101,
-            "createUserName": "樊嘉辉",
-            "customerRange": "ALL",
+            "bannerPic": "",
+            "createTime": "2019-05-05 16:03:17",
+            "createUser": 602,
+            "createUserName": "尹洪明",
+            "customerRange": "NEW",             // 客户限制 ALL 无限制 NEW 新客户 
             "deleteFlg": 0,
-            "effectEtime": "2018-10-13 08:40:17",
-            "effectStime": "2018-09-13 08:40:17",
-            "id": 7,
-            "marketBusinessunitRanges": [{
-                    "extra": "",    // 事业部名称
-                    "id": 23,
-                    "marketId": 7,
-                    "rangeId": 3, // 事业部id
+            "effectEtime": "2019-05-15 23:59:59",   // 有效结束时间
+            "effectStime": "2019-05-05 00:00:00",   // 有效开始时间
+            "id": 419,
+            "marketBusinessunitRanges": [       // 事业部范围
+                {
+                    "extra": "PS-C",            // 事业部名
+                    "id": 23028,
+                    "marketId": 419,
+                    "rangeId": 76,              // 事业部ID
                     "type": "BUSINESSUNIT"
-                },
-                ......
-                ]
-            "marketImages": [
-                {
-                    "id": 11,
-                    "marketId": 7,
-                    "picUrl": "http://ad.asagroup.cn/asae-h5/v2/activity/index/1200", // 轮播图URL
-                    "position": "NOLIMIT", // 位置 无限制
-                    "type": "BANNER" // 轮播图
                 }
             ],
-            "marketProductRanges": [
+            "marketImages": [                   // 图片
                 {
-                    "extra": "",
-                    "id": 25,
-                    "marketId": 7,
-                    "rangeId": 7383, // 产品规格ID
-                    "type": "PRODUCTUNIT"
-                },
-                {
-                    "extra": "",
-                    "id": 26,
-                    "marketId": 7,
-                    "rangeId": 7382,
-                    "type": "PRODUCTUNIT"
+                    "id": 534,
+                    "marketId": 419,
+                    "picUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190505160312845-2499.jpg",
+                    "position": "NOLIMIT",
+                    "type": "BANNER"
                 }
             ],
-            "name": "专栏活动名称",
+            "marketProductRanges": [            // 指定产品
+                {
+                    "extra": "",
+                    "guige": "4kg/袋",                       // 规格
+                    "id": 0,
+                    "marketId": 0,
+                    "pno": "M081",                          // 品号
+                    "productName": "去皮巴沙鱼柳（粗修）",   // 产品名
+                    "rangeId": 0,
+                    "type": ""
+                }
+            ],
+            "name": "2019年5月上旬专栏活动",        // 活动名
             "overdue": 0,
-            "type": "COLUMN"
+            "remark": "",                       // 活动说明
+            "type": "COLUMN"                    // 活动类型
         }
     }
-
-### YX-19 专题活动详情
+### YX-19 活动详情（专题）
 #### 模块负责人
     尹洪明
 #### 请求
@@ -713,11 +611,9 @@
     尹洪明
 #### 请求
     GET /v2/market/{customerId}
-    
 #### 参数
     customerId
 #### 响应
-
     {
         "code": 100000,
         "msg": "",
@@ -739,8 +635,7 @@
                     "rebate": 0,
                     "type": "",
                     "unit": ""
-                },
-                ......
+                }
             ],
             "coupons": [
                 {
@@ -767,8 +662,7 @@
                     "type": "REDUCE",
                     "unit": "PRICE",
                     "used": "NO"
-                },
-                ......
+                }
             ],
             "rebates": [
                 {
@@ -793,8 +687,7 @@
                     "status": "NORMAL",
                     "type": "REBATE",
                     "value": 1110
-                },
-                ......
+                }
             ]
         }
     }
