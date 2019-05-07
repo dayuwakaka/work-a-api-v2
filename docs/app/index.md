@@ -3121,5 +3121,15 @@
     {
         "code": 100000,
         "msg": "",
-        "data": "xxx" // pathId
-    }  
+        "data": {
+            "adcode": "110000",
+            "amap": "116.405285,39.904989",
+            "areaName": "北京", //  区域名
+            "children": null,
+            "id": 2,
+            "parentId": 0,
+            "pathid": "01",
+            "pycode": "BJ",
+            "zipcode": "0"
+        }
+    } 
