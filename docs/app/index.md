@@ -1048,11 +1048,12 @@
                         {
                             "marketId": 402,                // 活动ID
                             "marketName": "测试阶梯1",      // 活动名
-                            "marketType": "GIFT",           // 活动类型 GIFT 满赠 REDUCE 满减 DISCOUNT 满折
+                            "marketType": "GIFT",// 活动类型 GIFT 满赠 REDUCE 满减 DISCOUNT 满折
                             "remark": "",               // 活动说明
-                            "accumulative": "LADDER",       // LADDER 阶梯 EACH 每满
+                            "accumulative": "LADDER",  // LADDER 阶梯 EACH 每满
                             "unit": "COUNT",            // PRICE 金额 COUNT 数量
-                            "giveCondition": [                      // 活动规则  满10 赠1 ；满20 赠3；超出20（shiftFlg=1），每满5 赠1
+                            // 活动规则  满10 赠1 ；满20 赠3；超出20（shiftFlg=1），每满5 赠1
+                            "giveCondition": [
                                 {                           
                                     "actionValue": 1,               // 赠1
                                     "extra": "4749:8322",
