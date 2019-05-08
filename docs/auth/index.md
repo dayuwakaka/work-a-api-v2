@@ -1106,6 +1106,8 @@
         "msg": "",
         "data": {
             "hasBind": true,            // false 未绑定，跳转到输入工号&密码页    true 已绑定 
+            "openId": "***",        // 微信 openId
+            "accessToken": "***",   // 微信 accessToken
             "loginInfo": {
                 "token": "***",         // token
                 "rid": [                 // 数据权限
