@@ -181,9 +181,10 @@
 #### 模块负责人
     梁铁骐
 #### 请求
-    PUT /router/v5/message/{messageId}
+    PUT /router/v5/message/{customerId}/{messageId}
 #### 参数
     *messageId: 消息id
+    *customerId: 客户id
 #### 响应
     {
         "code": 100000,
