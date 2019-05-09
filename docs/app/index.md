@@ -773,7 +773,8 @@
                 "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201809/bf4f1596765356a6bec573ccf302e8d2.jpg", // 产品包装图
                 "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201809/5de6f5e608e5fa07f08e637a8c940f6c.jpg", // 产品图
                 "name": "天妇罗虾（裹粉炸虾）预炸", // 产品名
-                @@"nowfuture": "NOW",         // NOW 现货  FUTURE 期货
+                "myFollowFlg":"YES",    //我常购标识  YES  NO
+                "nowfuture": "NOW",         // NOW 现货  FUTURE 期货
                 "pno": "1680", // 品号
                 "process": 4, 
                 "processContent": 1,
@@ -964,6 +965,7 @@
             "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/18fac0d524ee62b46672ddf787c6ad83.jpg@!app-s",
             "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/5c2e8b23f8fbe16cd20c2152636e33c0.jpg@!app-s",
             "marketActive": [],
+            "myFollowFlg":"YES",    //我常购标识  YES  NO
             "name": "玉兔水晶虾饺",
             "newHotFlg": "",
             "nowFutureFlg": "",
@@ -1193,7 +1195,8 @@
                             "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/643130529230f29af376829e0c96d208.jpg", // 产品包装图
                             "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/1f91464a8a09dc642230ad0259074be9.jpg", // 产品主图
                             "name": "鱿点Q（裹粉鱿鱼）", // 产品名
-                            @@"nowfuture": "NOW",         // NOW 现货  FUTURE 期货
+                            "myFollowFlg":"YES",    //我常购标识  YES  NO
+                            "nowfuture": "NOW",         // NOW 现货  FUTURE 期货
                             "pno": "0118", // 品号
                             "process": 4,
                             "processContent": 1,
@@ -2615,6 +2618,7 @@
                                 "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201502/03/1422929379-GttZ.jpg@!app-s",
                                 "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201804/6a4d88ee11383bdaa031b430c673823b.jpg@!app-s",
                                 "name": "黄金蟹宝A（裹屑模拟蟹肉）",
+                                "myFollowFlg":"YES",    //我常购标识  YES  NO
                                 "newHotFlg": "NEW",                 // NEW 新品 HOT 热销
                                 "nowfuture": "",
                                 "pno": "N0.0022",
