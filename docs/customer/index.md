@@ -1368,3 +1368,103 @@
             "remarks": ""
         }
     }
+
+
+### KH-61.列表查询邀请码
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /v2/customer/code
+#### 参数
+    srRoleId   //SR角色id
+    type       //客户类型 A,P,P2P,C 
+    isParent   //总分设置：0时表示普通客户  1表示总店   2表示分店
+    pageNo      //页码
+    pageSize    //页显示数
+#### 响应 
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissionPage": {},
+            "buttonPermissions": [],
+            "dataSums": null,
+            "datas": [
+                {
+                "businessunit": {//部门信息
+                    "bcFlg": 0,
+                    "groupId": 2,
+                    "groupName": "PT事业组",
+                    "id": 24,
+                    "name": "P2P-QZBW",//部门名称
+                    "platformId": 1,
+                    "sort": 10
+                },
+                "businessunitId": 24,//部门id
+                "createRole": 29319,
+                "createTime": "2019-05-13 06:14:48",//创建时间
+                "createUser": 518,
+                "createUserName": "孙启萌",//创建人
+                "deleteFlg": 0,
+                "id": 6,//邀请码
+                "isParent": 1,//总分设置：0时表示普通客户1表示总店2表示分店
+                "isParentName": "总店",//总分名称
+                "parentId": 0,
+                "srRole": {//SR信息
+                    "gid": 24,
+                    "rid": 2037,
+                    "roleName": "颜廷文"//SR名称
+                },
+                "srRoleId": 2037,
+                "ssRole": {//SS信息
+                    "gid": 42,
+                    "rid": 29319,
+                    "roleName": "孙启萌"//SS名称
+                },
+                "ssRoleId": 29319,
+                "status": "NORMAL",//邀请码状态 '普通 NORMAL', 锁定 'LOCK'
+                "statusName": "普通",//状态名称
+                "type": "P"//客户类型 A,P,P2P,C
+            }
+            ],
+            "pageNo": 1,
+            "total": 5
+        }
+    }   
+
+
+
+### KH-62.新增邀请码
+#### 模块负责人
+    王子悦
+#### 请求
+    POST /v2/customer/code
+#### 参数
+    srRoleId            //SR角色id
+    businessunitId      //部门id
+    *type                //客户类型 A,P,P2P,C
+    parentId            //父客户ID
+    *isParent           //总分设置：0时表示普通客户  1表示总店   2表示分店
+#### 响应 
+    {"code":100000,"msg":"","data":null}
+
+### KH-63.停用邀请码
+#### 模块负责人
+    王子悦
+#### 请求
+    PUT /v2/customer/code/lock/{id}
+#### 参数
+    无
+#### 响应 
+    {"code":100000,"msg":"","data":null}
+
+
+### KH-64.删除邀请码
+#### 模块负责人
+    王子悦
+#### 请求
+    DELETE /v2/customer/code/{id}
+#### 参数
+    无
+#### 响应 
+    {"code":100000,"msg":"","data":null}

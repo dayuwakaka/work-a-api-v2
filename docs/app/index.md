@@ -773,7 +773,8 @@
                 "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201809/bf4f1596765356a6bec573ccf302e8d2.jpg", // 产品包装图
                 "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201809/5de6f5e608e5fa07f08e637a8c940f6c.jpg", // 产品图
                 "name": "天妇罗虾（裹粉炸虾）预炸", // 产品名
-                @@"nowfuture": "NOW",         // NOW 现货  FUTURE 期货
+                "myFollowFlg":"YES",    //我常购标识  YES  NO
+                "nowfuture": "NOW",         // NOW 现货  FUTURE 期货
                 "pno": "1680", // 品号
                 "process": 4, 
                 "processContent": 1,
@@ -949,141 +950,210 @@
         "msg": "",
         "data": {
             "businessTypeIds": null,
-            "cookBookLites": [ // 关联菜谱
-                {
-                    "cookBookId": 18,       // 菜谱id
-                    "followFlg": 0,
-                    "name": "水果全缤纷",    // 菜谱名
-                    "styleId": 0,
-                    // 菜谱图片
-                    "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg"
-                },
-                {
-                    "cookBookId": 17,
-                    "followFlg": 0,
-                    "name": "水果全缤纷",
-                    "styleId": 0,
-                    "url": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190119115020082-9456.jpg"
-                }
-            ],
-            "createTime": "2014-06-21 11:26:58", // 创建时间
-            "customFlg": 0, // 是否定制 0 非定制 1 定制
-            "customerIds": null, 
+            "businessTypes": [],
+            "businessunit": [],
+            "cookBookLites": [],
+            "createTime": "2014-07-10 18:56:06",
+            "custom": null,
+            "customFlg": 0,
+            "customFlgMore": 0,
+            "customers": [],
             "deleteFlg": 0,
-            "followFlg": 0,         // 常订购标识 0 非常订购商品，1 常订购商品
-            "id": 1, // 产品ID
-            "longName": "香草凤尾虾-专业开背，秘制加工，中西餐厅新食尚~", // 产品带广告名
-            "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/f9ce32e007fc796722466531c86d5cd9.jpg", // 产品包装图
-            "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg", // 产品主图
-            "name": "香草凤尾虾", // 产品名
-            @@"newHotFlg":"NEW"    // NEW  新品  HOT 热销 
-            @@"nowfuture": "NOW",         // NOW 现货  FUTURE 期货
-            "pno": "0151", // 品号
+            "followFlg": 0,
+            "id": 621, 
+            "longName": "玉兔水晶虾饺，笋的爽脆搭配虾的弹滑，使人回味无穷~",
+            "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/18fac0d524ee62b46672ddf787c6ad83.jpg@!app-s",
+            "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/5c2e8b23f8fbe16cd20c2152636e33c0.jpg@!app-s",
+            "marketActive": [],
+            "myFollowFlg":"YES",    //我常购标识  YES  NO
+            "name": "玉兔水晶虾饺",
+            "newHotFlg": "",
+            "nowFutureFlg": "",
+            "pno": "0010",
             "process": 4,
             "processContent": 1,
             "processInvoice": 1,
             "processPrice": 1,
-            "productExtra": { // 产品扩展信息 
-                "attributeName": "裹面制品 生制冻结品", // 产品标准分类
-                "attributes": 4, // 产品标准分类ID
-                "barCode": "盒上条码：6926603301518；外箱条码：6926603312149", // 产品条码
-                "cookWay": "取本品，无需解冻，175℃油温炸2分钟，至金黄色即可食用。", // 产品烹饪方式
-                "description": "<p>优质面包糠联手浪漫罗勒叶，包裹住南美白虾，带来异域香草风情，&nbsp;</p><p>炸后赤黄凤尾造型引人垂涎，造型美观乖巧，受众广泛，惹人喜爱，&nbsp;</p><p>西餐厅、快餐厅，搭配酱料，与其他食品共同出餐，高效便捷。</p>", // 产品描述
-                "id": 2, // 规格ID
-                "intro": "", // 介绍
-                "material": "南美白虾、面包糠（小麦粉、水、面用酵母、起酥油（精炼植物油、卵磷脂、维生素E)、食用盐、食用葡萄糖、辣椒红）、水、南美白虾仁、裹粉（小麦粉、淀粉、玉米粉、食用盐、黄原胶、碳酸氢钠、焦磷酸二氢二钠、辣椒红、香辛料、脱脂乳粉）、鱿鱼、复合调味料（食用盐、淀粉、白砂糖、谷氨酸钠、二氧化硅、大蒜粉、洋葱粉、水解植物蛋白、白胡椒粉、香辛料、食用香料、酵母提取物）、淀粉、碎紫苏、白胡椒粉、食用盐、复配酸度调节剂（碳酸氢钠、碳酸钠、柠檬酸钠、乙酸钠、谷氨酸钠、麦芽糊精）、柠檬酸、三聚磷酸钠", // 产品原料
-                "place": "辽宁省 大连市", // 产品产地
-                "productId": 1, //  产品ID
-                "saveType": "FROZEN", // 保温方式 NORMAL:常温 FROZEN:冷冻 ALL:常温/冷冻
-                "shelfLife": "12个月", // 保质期
-                "standards": 1, // 标准号ID
-                "standardsName": "SB/T 10379  速冻调制食品", // 标准号
-                "store": "-18℃冷冻储藏" // 保存方法
+            "productAttrs": null,
+            "productExtra": {
+                "attributeName": "含肉类",
+                "attributes": 20,
+                "barCode": "盒上条码：6926603300108；外箱条码：6926603312194",
+                "cookWay": "取本品，无需解冻，待蒸锅上汽后放入产品，中汽蒸7-8分钟即可",
+                "description": "栩栩如生的玉兔水晶饺 外表可爱呆萌味道鲜香 中汽蒸8分钟即可出锅",
+                "id": 481,
+                "intro": "",
+                "material": "南美白虾仁",
+                "place": "山东省 威海市",
+                "productId": 621,
+                "saveType": "FROZEN",
+                "saveTypeName": "冷冻",
+                "shelfLife": "12个月",
+                "standards": 21,
+                "standardsName": "GB 19295  速冻面米制品",
+                "store": "-18℃以下"
             },
-            "productImgs": { // 产品图片 图片类型 PHOTO 产品图 QUALITY 质检图 MAINBG 包装图 DETAIL 详情图
-                "MAINBG": [ // 包装图
+            "productImgs": {
+                "QUALITY": [
+                    {
+                        "id": 9385,
+                        "productId": 621,
+                        "type": "QUALITY",
+                        "url": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/61b150a3fb0cfca1f9c9e01839eb2d23.png"
+                    }
+                ],
+                "MAINBG": [
                     {
                         "id": 0,
-                        "productId": 1,
+                        "productId": 621,
                         "type": "MAINBG",
-                        "url": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/f9ce32e007fc796722466531c86d5cd9.jpg"
+                        "url": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/18fac0d524ee62b46672ddf787c6ad83.jpg@!app-lg"
                     }
                 ],
-                "MAIN": [ // 主图
+                "MAIN": [
                     {
                         "id": 0,
-                        "productId": 1,
+                        "productId": 621,
                         "type": "MAIN",
-                        "url": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg"
+                        "url": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/5c2e8b23f8fbe16cd20c2152636e33c0.jpg@!app-lg"
                     }
                 ],
-                "PHOTO": [ // 产品图
+                "PHOTO": [
                     {
-                        "id": 4472,
-                        "productId": 1,
+                        "id": 4286,
+                        "productId": 621,
                         "type": "PHOTO",
-                        "url": "http://asae.oss-cn-beijing.aliyuncs.com/http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201804/9262e06c437f99accdcf5a740dbc8c79.jpg"
+                        "url": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/40933881a95ea5f0c69d0def3c563998.jpg@!app-lg"
+                    }
+                ],
+                "DETAIL": [
+                    {
+                        "id": 12733,
+                        "productId": 621,
+                        "type": "DETAIL",
+                        "url": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201804/cf6cd031f30c82bd4ddc7d2d0c7def03.jpg"
                     }
                 ]
             },
-            "productLack": {  // 缺货标识 null 不缺货
-                "productId": 1,
-                "startTime": "2018-01-01" // 缺货开始日期
-                "endTime": "2018-11-11" // 缺货结束日期
-            },
-            "productUnits": [ // 规格
+            "productLack": null,
+            "productSaleRange": null,
+            "productUnits": [
                 {
-                    "cubage": 1512, // 体积
-                    "grossweight": 0.55, // 毛重 
-                    "guige": "500g(23-25枚）/盒", // 规格
-                    "height": 5, // 高度
-                    "id": 1, // 规格ID
-                    "length": 19.5, // 长度
-                    "minimum": 0, // 最小起订量
-                    "minimumType": "NONE", // 最小起订量类型 NONE 无 BEGIN 递增 STEP 步增
-                    "netweight": 0.5, // 净重
-                    "perunit": 1, // 转化率
-                    "price": { // 价格
-                        "aPrice": 40.12, // a价格
-                        "areaPrice": 0,
-                        "decideType": "A",
-                        "finallyPrice": 40.12, // 执行价格
-                        "pPrice": 32.5,
-                        "productUnitId": 1,
-                        "rawFlg": "NONE", // 是否原料 YES 为是 NONE NO 为否
-                        "signPrice": 0, 
+                    "createTime": "2019-01-15 18:31:25",
+                    "cubage": 27304,
+                    "grossweight": 13.05,
+                    "guige": "600g（20枚）/盒*18盒",
+                    "height": 13.4,
+                    "id": 1068,
+                    "length": 47.7,
+                    "marketActive": [                   // 产品规格对应的活动
+                        {
+                            "marketId": 402,                // 活动ID
+                            "marketName": "测试阶梯1",      // 活动名
+                            "marketType": "GIFT",// 活动类型 GIFT 满赠 REDUCE 满减 DISCOUNT 满折
+                            "remark": "",               // 活动说明
+                            "accumulative": "LADDER",  // LADDER 阶梯 EACH 每满
+                            "unit": "COUNT",            // PRICE 金额 COUNT 数量
+                            // 活动规则  满10 赠1 ；满20 赠3；超出20（shiftFlg=1），每满5 赠1
+                            "giveCondition": [
+                                {                           
+                                    "actionValue": 1,               // 赠1
+                                    "extra": "4749:8322",
+                                    "guige": "1.68kg（24枚）/盒*6盒/箱",
+                                    "id": 361,
+                                    "marketId": 402,
+                                    "pno": "1981",
+                                    "productName": "SHH的七珍鲜虾堡",
+                                    "shiftFlg": 0,
+                                    "shiftType": "EACH",
+                                    "targetValue": 10           // 满10
+                                },
+                                {
+                                    "actionValue": 3,               // 赠3
+                                    "extra": "4747:8313",
+                                    "guige": "500g（20枚）/袋",
+                                    "id": 362,
+                                    "marketId": 402,
+                                    "pno": "1968",
+                                    "productName": "榴莲大福",
+                                    "shiftFlg": 0,
+                                    "shiftType": "EACH",
+                                    "targetValue": 20           // 满20
+                                },
+                                {
+                                    "actionValue": 0,
+                                    "extra": "",
+                                    "guige": "",
+                                    "id": 363,
+                                    "marketId": 402,
+                                    "pno": "",
+                                    "productName": "",
+                                    "shiftFlg": 1,              // shiftFlg = 1 转每满
+                                    "shiftType": "EACH",
+                                    "targetValue": 20           // 超出20
+                                }
+                            ],
+                            "shiftCondition": {
+                                "actionValue": 1,               // 赠1
+                                "extra": "4780:8376",
+                                "giveConditionId": 363,
+                                "guige": "200g（10枚）/盒*12盒/箱",
+                                "id": 20,
+                                "pno": "8888",
+                                "productName": "测试产品",
+                                "targetValue": 5            // 每满5
+                            }
+                        }
+                    ],
+                    "minimum": 0,
+                    "minimumType": "NONE",
+                    "modifyTime": "",
+                    "netweight": 10.8,
+                    "perunit": 18,
+                    "price": {
+                        "aPrice": 859,
+                        "areaPrice": 716,
+                        "decideType": "Q",
+                        "finallyPrice": 716,
+                        "pPrice": 644.4,
+                        "productUnitId": 1068,
+                        "rate": 0,
+                        "rawFlg": "NO",
+                        "signPrice": 0,
                         "specialPrice": 0
                     },
-                    "productCart": { // 购物车信息 null 为未加入购物车
-                        ...
-                        "pcount": 11 // 已入购物车数量
+                    "product": null,
+                    "productCart": {
+                        "createTime": "",
+                        "id": 0,
+                        "ownerId": "",
+                        "pcount": 0,
+                        "productId": 0,
+                        "productUnitId": 0
                     },
-                    "productId": 1,
-                    "unit": "盒", // 单位
-                    "unitId": 2, 
-                    "width": 15.5 // 宽度
+                    "productId": 621,
+                    "stock": null,
+                    "unit": "件",
+                    "unitId": 3,
+                    "width": 39.6
                 }
             ],
             "pyAll": "",
             "pyCode": "",
+            "rangeType": "ALL",
             "relatePnos": [
                 {
                     "id": 0,
-                    "productId": 1315,
-                    "relatePno": "A272",
-                    "relateProductId": 1284
-                },
-                {
-                    "id": 0,
-                    "productId": 1315,
-                    "relatePno": "A273",
-                    "relateProductId": 1285
+                    "productId": 621,
+                    "relatePno": "0010",
+                    "relateProductId": 621
                 }
             ],
-            "status": "NORMAL", // 状态 NORMAL 正常
-            "stock": { // 库存
-                "amount": 0, // 最小单位数量 与规格内的perunit相除，取整则是各个规格应该显示的库存数量
-                "productId": 0
+            "saleRange": "",
+            "status": "NORMAL",
+            "stock": {
+                "amount": 999999,
+                "productId": 621
             },
             "taxRate": 0
         }
@@ -1125,7 +1195,8 @@
                             "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/643130529230f29af376829e0c96d208.jpg", // 产品包装图
                             "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/1f91464a8a09dc642230ad0259074be9.jpg", // 产品主图
                             "name": "鱿点Q（裹粉鱿鱼）", // 产品名
-                            @@"nowfuture": "NOW",         // NOW 现货  FUTURE 期货
+                            "myFollowFlg":"YES",    //我常购标识  YES  NO
+                            "nowfuture": "NOW",         // NOW 现货  FUTURE 期货
                             "pno": "0118", // 品号
                             "process": 4,
                             "processContent": 1,
@@ -2547,6 +2618,7 @@
                                 "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201502/03/1422929379-GttZ.jpg@!app-s",
                                 "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201804/6a4d88ee11383bdaa031b430c673823b.jpg@!app-s",
                                 "name": "黄金蟹宝A（裹屑模拟蟹肉）",
+                                "myFollowFlg":"YES",    //我常购标识  YES  NO
                                 "newHotFlg": "NEW",                 // NEW 新品 HOT 热销
                                 "nowfuture": "",
                                 "pno": "N0.0022",
@@ -2773,7 +2845,7 @@
     {
         "loginName":"18698665798",      // 登录手机号
         "password":"111111",            // 密码
-        "ssName":"高成举",                 // 备注客服名
+        "codeId":"6",                 // 邀请码id
         "registerType":"COMPANY",       // 注册类型 COMPANY 企业 PERSON 个人
         "customerPerson":{              // 个人信息
             "name":"火云邪神",      // 客户名
@@ -3121,5 +3193,45 @@
     {
         "code": 100000,
         "msg": "",
-        "data": "xxx" // pathId
-    }  
+        "data": {
+            "adcode": "110000",
+            "amap": "116.405285,39.904989",
+            "areaName": "北京", //  区域名
+            "children": null,
+            "id": 2,
+            "parentId": 0,
+            "pathid": "01",
+            "pycode": "BJ",
+            "zipcode": "0"
+        }
+    }
+
+### APP-154. 获取银行账户信息
+#### 模块负责人
+    刘宏宇
+#### 请求
+    GET /router/v5/app/payAccount
+#### 参数
+    无
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "accountBank": "中国建设银行大连沙河口支行", // 开户行
+                "accountName": "亚洲渔港股份有限公司", // 账户名
+                "accountNo": "2120 1500 4000 5300 8645" // 账户
+            },
+            {
+                "accountBank": "中国农业银行大连长兴支行",
+                "accountName": "亚洲渔港股份有限公司",
+                "accountNo": "3426 2001 0400 30059"
+            },
+            {
+                "accountBank": "工商银行大连香炉礁物流园区支行",
+                "accountName": "亚洲渔港股份有限公司",
+                "accountNo": "3400 0022 1930 0001 411"
+            }
+        ]
+    }

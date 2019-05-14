@@ -1106,6 +1106,8 @@
         "msg": "",
         "data": {
             "hasBind": true,            // false 未绑定，跳转到输入工号&密码页    true 已绑定 
+            "openId": "***",        // 微信 openId
+            "accessToken": "***",   // 微信 accessToken
             "loginInfo": {
                 "token": "***",         // token
                 "rid": [                 // 数据权限
@@ -1311,3 +1313,23 @@
             }
         }
     }         
+
+### QX-155. 获取业务最新消息
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /v2/notice
+#### 参数
+    ctrl: 'v5-order', // 控制器
+    action: 'order-sa' // 行为
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "num": 0, // 新订单数量
+                "type": "orderSa" // 销售订单
+            }
+        ]
+    }
