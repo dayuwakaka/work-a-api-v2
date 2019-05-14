@@ -193,8 +193,8 @@
 |pathIdRange|区域列表|
 |excludeType|排除客户类型|必 ALL 无限制 PART 部分|
 |excludeRange|排除客户列表|
-|startDate|开始时间|必 日期为客户所选 时间固定 00:00:00|
-|endDate|结束时间|必 日期为客户所选 时间固定 23:59:59|
+|startDate|开始时间|必 日期、时间为客户所选 yyyy-MM-dd HH:mm:ss|
+|endDate|结束时间|必 日期、时间为客户所选 yyyy-MM-dd HH:mm:ss|
 
 #### 3.4 请求示例
     {
@@ -209,8 +209,8 @@
         "pathIdRange":["0101"],
         "excludeType":"PART",
         "excludeRange":[1],
-        "startDate":"2019-01-01 00:00:00",
-        "endDate":"2019-04-01 23:59:59"
+        "startDate":"2019-01-01 10:22:22",
+        "endDate":"2019-04-01 18:18:56"
     }
 
 #### 3.5 返回值
