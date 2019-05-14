@@ -2281,3 +2281,25 @@
     *checkCode: 下载吗
 #### 响应
     stream
+
+### CG-109. 采购订单-校验采购订单能否发车
+#### 模块负责人
+    梁铁骐
+#### 请求
+    POST /v2/paorder/send/status
+    Headrs: {
+        "token": "923o4yu8tr3q94theriuot"
+    }
+#### 参数
+    json body
+    ["PA1812290001","pa1812290002"] // 采购订单号集合
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "PA1812290001": true,
+            "pa1812290002": false
+        }
+    }
+
