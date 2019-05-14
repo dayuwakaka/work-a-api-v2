@@ -1318,7 +1318,7 @@
 #### 模块负责人
     尹洪明
 #### 请求
-    GET /v2/auth/notice
+    GET /v2/notice
 #### 参数
     ctrl: 'v5-order', // 控制器
     action: 'order-sa' // 行为
