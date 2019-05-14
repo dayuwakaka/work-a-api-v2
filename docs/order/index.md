@@ -1969,3 +1969,14 @@
             "total": 0
         }
     }
+    
+### DD-136. 销售订单-确认单导出(APP端)
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /router/v5/order/{customerId}/export/single
+#### 参数
+    *customerId: 客户id,
+    *orderId: 'SA19000001' // 单号
+#### 响应  
+    stream
