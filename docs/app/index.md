@@ -2845,7 +2845,7 @@
     {
         "loginName":"18698665798",      // 登录手机号
         "password":"111111",            // 密码
-        "codeId":"6",                 // 邀请码id
+        "ssName":"6",                 // 邀请码id
         "registerType":"COMPANY",       // 注册类型 COMPANY 企业 PERSON 个人
         "customerPerson":{              // 个人信息
             "name":"火云邪神",      // 客户名
