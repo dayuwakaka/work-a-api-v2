@@ -3235,3 +3235,20 @@
             }
         ]
     }
+
+### APP-155. 销售订单-订单确认发EMAIL
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /router/v5/order/{customerId}/email
+#### 参数
+    *customerId: 客户id,
+    *orderId: 'SA19000001' // 单号
+    *email:'xxx@qq.com' // email
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+    
