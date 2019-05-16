@@ -1376,6 +1376,7 @@
 #### 请求
     GET /v2/customer/code
 #### 参数
+    businessunitId  //事业部id
     srRoleId   //SR角色id
     type       //客户类型 A,P,P2P,C 
     isParent   //总分设置：0时表示普通客户  1表示总店   2表示分店
@@ -1440,13 +1441,13 @@
 #### 请求
     POST /v2/customer/code
 #### 参数
-    srRoleId            //SR角色id
-    businessunitId      //部门id
+    *srRoleId            //SR角色id
+    *businessunitId      //部门id
     *type                //客户类型 A,P,P2P,C
-    parentId            //父客户ID
+    *parentId            //父客户ID
     *isParent           //总分设置：0时表示普通客户  1表示总店   2表示分店
 #### 响应 
-    {"code":100000,"msg":"","data":null}
+    {"code":100000,"msg":"生成邀请码：7","data":null}
 
 ### KH-63.停用邀请码
 #### 模块负责人
