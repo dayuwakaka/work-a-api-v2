@@ -1444,7 +1444,7 @@
     *srRoleId            //SR角色id
     *businessunitId      //部门id
     *type                //客户类型 A,P,P2P,C
-    *parentId            //父客户ID
+    parentId            //父客户ID
     *isParent           //总分设置：0时表示普通客户  1表示总店   2表示分店
 #### 响应 
     {"code":100000,"msg":"生成邀请码：7","data":null}
