@@ -2845,7 +2845,7 @@
     {
         "loginName":"18698665798",      // 登录手机号
         "password":"111111",            // 密码
-        "codeId":"6",                 // 邀请码id
+        "ssName":"6",                 // 邀请码id
         "registerType":"COMPANY",       // 注册类型 COMPANY 企业 PERSON 个人
         "customerPerson":{              // 个人信息
             "name":"火云邪神",      // 客户名
@@ -3235,3 +3235,30 @@
             }
         ]
     }
+
+### APP-155. 销售订单-订单确认发EMAIL
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /router/v5/order/{customerId}/email
+#### 参数
+    *customerId: 客户id,
+    *orderId: 'SA19000001' // 单号
+    *email:'xxx@qq.com' // email
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### APP-156. 销售订单-确认单导出
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /router/v5/order/{customerId}/export/single
+#### 参数
+    *customerId: 客户id,
+    *orderId: 'SA19000001' // 单号
+#### 响应  
+    stream
