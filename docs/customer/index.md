@@ -1411,6 +1411,7 @@
                 "isParent": 1,//总分设置：0时表示普通客户1表示总店2表示分店
                 "isParentName": "总店",//总分名称
                 "parentId": 0,
+                "parentName": "刘永和",
                 "srRole": {//SR信息
                     "gid": 24,
                     "rid": 2037,
