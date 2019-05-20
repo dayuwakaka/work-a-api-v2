@@ -2265,7 +2265,7 @@
         "code": 100000,
         "msg": "",
         "data": {
-            "BANNER": [//广告位 BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告
+            "BANNER": [//广告位 BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告   H5
                 {
                     "businesstypeRange": "ALL",//业态范围 ALL 全部业态 PART 部分
                     "createRole": 0,
@@ -2408,7 +2408,29 @@
                     "productBusinessTypepArray": null,
                     "type": "ROWUP"
                 }
-            ]
+            ],
+            "H5": [
+            {
+                "businesstypeRange": "PART",//业态范围 ALL 全部业态 PART 部分
+                "createRole": 0,
+                "createTime": "2019-05-05 14:14:46",//创建时间
+                "createUser": 0,
+                "createUsername": "孙启萌",//创建人
+                "deleteFlg": 0,
+                "extra": "12,10",
+                "id": 99,
+                "image": "http://www.163.com",//链接地址
+                "length": "12",//长度
+                "market": null,
+                "marketId": 0,
+                "modifyTime": "",
+                "name": "测试H5广告1",//名称
+                "productBusinessTypepArray": null,
+                "sort": 3,//排序
+                "type": "H5",//广告类型  BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告   H5
+                "width": "10"//宽度
+            }
+          ]
         }
     }
 ### APP-50. app端查询广告位详情数据
@@ -2451,6 +2473,32 @@
             "name": "测试广告位7",//广告名称
             "productBusinessTypepArray": null,
             "type": "BANNER"//BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告
+        }
+    }
+
+    //H5类型广告位返回值
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "businesstypeRange": "PART",//业态范围 ALL 全部业态 PART 部分
+            "createRole": 0,
+            "createTime": "2019-05-05 14:14:46",//创建时间
+            "createUser": 0,
+            "createUsername": "孙启萌",//创建人
+            "deleteFlg": 0,
+            "extra": "12,10",
+            "id": 99,
+            "image": "http://www.163.com",//链接地址
+            "length": "12",//长度
+            "market": null,
+            "marketId": 0,
+            "modifyTime": "",
+            "name": "测试H5广告1",//名称
+            "productBusinessTypepArray": null,
+            "sort": 3,//排序
+            "type": "H5",//类型  BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告   H5
+            "width": "10"//宽度
         }
     }
 
