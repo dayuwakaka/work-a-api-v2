@@ -2143,6 +2143,18 @@
                         8,
                         10
                     ],
+                    "productRange": [ // 指定品或排除品
+                        {
+                            "extra": "",
+                            "guige": "425g（15串）*20袋",
+                            "id": 22829,
+                            "marketId": 319,
+                            "pno": "0068",
+                            "productName": "新奥尔良烤虾",
+                            "rangeId": 32,
+                            "type": "PRODUCTUNIT"
+                        }
+                    ],
                     "productId": 0,
                     "productName": "",
                     "productUnitId": 0,
