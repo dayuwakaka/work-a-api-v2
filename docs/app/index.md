@@ -2110,6 +2110,47 @@
         "code": 100000,
         "msg": "",
         "data": {
+            "invalidActiveCoupon": [
+                {
+                    "id": 252,                                  // 活动ID
+                    "name": "满折003",                        // 活动名
+                    "type": "DISCOUNT",                     // 类型 REDUCE 满减 DISCOUNT 满折
+                    "effectStime": "2019-03-15 00:00:00",   // 开始日期
+                    "effectEtime": "2020-04-01 23:59:59",   // 结束日期
+                    "accumulative": "LADDER",               // LADDER 阶梯 EACH 每满
+                    "unit": "PRICE",                        // PRICE 金额 COUNT 数量
+                    "way": "DISCOUNT",
+                    "used": "NO",
+                    "rebate": 0,
+                    "hitGiveConditionId": 0,
+                    "giveCondition": {
+                        "169": {
+                            "actionValue": 80,  // 减80元（80折）
+                            "extra": "",
+                            "guige": "",
+                            "id": 169,
+                            "marketId": 252,
+                            "pno": "",
+                            "productName": "",
+                            "targetValue": 100  // （每）满 100 元（个）
+                                                注：满或每满根据accumulative判断
+                                                    元或个根据unit判断
+                        }
+                    },
+                    "rangeType": "PRODUCTUNIT", // PRODUCTUNIT 指定品 EXCLUDE 排除品 ALL 无限制
+                    "ranges": [ // 指定品或排除品productunitId
+                        2,
+                        8,
+                        10
+                    ],
+                    "productId": 0,
+                    "productName": "",
+                    "productUnitId": 0,
+                    "guige": "",
+                    "giftNum": 0,
+                    "giftMainImg": ""
+                }
+            ],
             "activeCoupon": [
                 {
                     "accumulative": "LADDER",   // LADDER 阶梯 EACH 每满
