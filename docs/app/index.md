@@ -754,6 +754,7 @@
     keyword: 'xx' // 模糊搜索 品号、品名
     filterFollow：'YES' // 是否常订购搜索   YES 是 默认NO 不是
     productUnitIds[]:3,4,5 // 规格id字符串或数组
+    excludeProductUnitIds[]: 3,4,5 // 排除品规格id字符串或数组
     excludeBusinessTypeCode[]:["-16-11-","-16-12-"]
     pageNo: 1 //页码 默认1
     pageSize: 10 // 页条数 默认10
