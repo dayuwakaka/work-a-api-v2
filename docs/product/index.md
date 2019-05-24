@@ -1714,19 +1714,36 @@
                     "id": 7,
                     "keyword": "本季热卖鞋品3",//热搜词
                     "market": {//关联活动
-                        "bannerPic": "",
-                        "createTime": "2018-03-13 14:00:12",
-                        "createUser": 101,
-                        "createUserName": "樊嘉辉",
-                        "customerRange": "NEW",
-                        "deleteFlg": 0,
-                        "effectEtime": "2018-04-30 23:59:59",//结束时间
-                        "effectStime": "2018-03-01 00:00:00",//开始时间
-                        "id": 5,
-                        "name": "新用户满减活动",//活动名称
-                        "overdue": 0,
+                        "accumulative": "",//LADDER 阶梯, EACH: 每满
+                        "activeConditionId": 0,
+                        "bannerPic": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190506164501365-9899.jpg",
+                        "couponConditionId": 0,
+                        "createTime": "2019-05-06 16:45:05",
+                        "createUser": 518,
+                        "createUserName": "孙启萌",
+                        "customerRange": "ALL",
+                        "deleteFlg": 2,
+                        "detailPic": null,
+                        "effectEtime": "2019-05-10 23:59:59",
+                        "effectStime": "2019-05-06 00:00:00",
+                        "hasBusinessunitRange": 0,//指定事业部数量
+                        "hasExcludeProductunitRange": 0,
+                        "hasProductunitRange": 0,//指定产品数量
+                        "id": 426,
+                        "limitNum": 0,//领取规则: 最大1-仅领一次, 0-用完再领
+                        "marketSpecialSkip": {//活动跳转
+                            "extra": "4697",//PRODUCT 产品ID，H5存入H5页面链接
+                            "id": 15,
+                            "marketId": 426,//活动id
+                            "type": "PRODUCT"//类型  PRODUCT, H5
+                        },
+                        "name": "2019年5月上旬专题报告",//活动名称
+                        "overdue": 1,
+                        "popupPic": "",
                         "remark": "",
-                        "type": "COUPON"//活动类型 COUPON领券 GIFT满赠 REDUCE满减 DISCOUNT满折 COLUMN专栏 SPECIAL专题
+                        "saOrderIds": null,
+                        "type": "SPECIAL",//活动类型 COUPON领券 GIFT满赠 REDUCE满减 DISCOUNT满折 COLUMN专栏 SPECIAL专题
+                        "unit": ""//执行单位 PRICE 价格，COUNT 数量
                     },
                     "modifyTime": "2019-03-25 13:18:19",
                     "product": null,
@@ -1959,19 +1976,36 @@
             "id": 7,
             "keyword": "本季热卖鞋品3",//热搜词
             "market": {//关联活动信息
-                "bannerPic": "",
-                "createTime": "2018-03-13 14:00:12",
-                "createUser": 101,
-                "createUserName": "樊嘉辉",
-                "customerRange": "NEW",
-                "deleteFlg": 0,
-                "effectEtime": "2018-04-30 23:59:59",//结束时间
-                "effectStime": "2018-03-01 00:00:00",//开始时间
-                "id": 5,
-                "name": "新用户满减活动",//活动id
-                "overdue": 0,
+                "accumulative": "",//LADDER 阶梯, EACH: 每满
+                "activeConditionId": 0,
+                "bannerPic": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190506164501365-9899.jpg",
+                "couponConditionId": 0,
+                "createTime": "2019-05-06 16:45:05",
+                "createUser": 518,
+                "createUserName": "孙启萌",
+                "customerRange": "ALL",
+                "deleteFlg": 2,
+                "detailPic": null,
+                "effectEtime": "2019-05-10 23:59:59",
+                "effectStime": "2019-05-06 00:00:00",
+                "hasBusinessunitRange": 0,//指定事业部数量
+                "hasExcludeProductunitRange": 0,
+                "hasProductunitRange": 0,//指定产品数量
+                "id": 426,
+                "limitNum": 0,//领取规则: 最大1-仅领一次, 0-用完再领
+                "marketSpecialSkip": {//活动跳转
+                    "extra": "4697",//PRODUCT 产品ID，H5存入H5页面链接
+                    "id": 15,
+                    "marketId": 426,//活动id
+                    "type": "PRODUCT"//类型  PRODUCT, H5
+                },
+                "name": "2019年5月上旬专题报告",//活动名称
+                "overdue": 1,
+                "popupPic": "",
                 "remark": "",
-                "type": "COUPON"//活动类型 COUPON领券 GIFT满赠 REDUCE满减 DISCOUNT满折 COLUMN专栏 SPECIAL专题
+                "saOrderIds": null,
+                "type": "SPECIAL",//活动类型 COUPON领券 GIFT满赠 REDUCE满减 DISCOUNT满折 COLUMN专栏 SPECIAL专题
+                "unit": ""//执行单位 PRICE 价格，COUNT 数量
             },
             "modifyTime": "2019-03-25 13:18:19",
             "product": null,
