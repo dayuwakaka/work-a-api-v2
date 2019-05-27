@@ -754,6 +754,7 @@
     keyword: 'xx' // 模糊搜索 品号、品名
     filterFollow：'YES' // 是否常订购搜索   YES 是 默认NO 不是
     productUnitIds[]:3,4,5 // 规格id字符串或数组
+    excludeProductUnitIds[]: 3,4,5 // 排除品规格id字符串或数组
     excludeBusinessTypeCode[]:["-16-11-","-16-12-"]
     pageNo: 1 //页码 默认1
     pageSize: 10 // 页条数 默认10
@@ -2110,6 +2111,59 @@
         "code": 100000,
         "msg": "",
         "data": {
+            "invalidActiveCoupon": [
+                {
+                    "id": 252,                                  // 活动ID
+                    "name": "满折003",                        // 活动名
+                    "type": "DISCOUNT",                     // 类型 REDUCE 满减 DISCOUNT 满折
+                    "effectStime": "2019-03-15 00:00:00",   // 开始日期
+                    "effectEtime": "2020-04-01 23:59:59",   // 结束日期
+                    "accumulative": "LADDER",               // LADDER 阶梯 EACH 每满
+                    "unit": "PRICE",                        // PRICE 金额 COUNT 数量
+                    "way": "DISCOUNT",
+                    "used": "NO",
+                    "rebate": 0,
+                    "hitGiveConditionId": 0,
+                    "giveCondition": {
+                        "169": {
+                            "actionValue": 80,  // 减80元（80折）
+                            "extra": "",
+                            "guige": "",
+                            "id": 169,
+                            "marketId": 252,
+                            "pno": "",
+                            "productName": "",
+                            "targetValue": 100  // （每）满 100 元（个）
+                                                注：满或每满根据accumulative判断
+                                                    元或个根据unit判断
+                        }
+                    },
+                    "rangeType": "PRODUCTUNIT", // PRODUCTUNIT 指定品 EXCLUDE 排除品 ALL 无限制
+                    "ranges": [ // 指定品或排除品productunitId
+                        2,
+                        8,
+                        10
+                    ],
+                    "productRange": [ // 指定品或排除品
+                        {
+                            "extra": "",
+                            "guige": "425g（15串）*20袋",
+                            "id": 22829,
+                            "marketId": 319,
+                            "pno": "0068",
+                            "productName": "新奥尔良烤虾",
+                            "rangeId": 32,
+                            "type": "PRODUCTUNIT"
+                        }
+                    ],
+                    "productId": 0,
+                    "productName": "",
+                    "productUnitId": 0,
+                    "guige": "",
+                    "giftNum": 0,
+                    "giftMainImg": ""
+                }
+            ],
             "activeCoupon": [
                 {
                     "accumulative": "LADDER",   // LADDER 阶梯 EACH 每满
@@ -2224,7 +2278,7 @@
         "code": 100000,
         "msg": "",
         "data": {
-            "BANNER": [//广告位 BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告
+            "BANNER": [//广告位 BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告   H5
                 {
                     "businesstypeRange": "ALL",//业态范围 ALL 全部业态 PART 部分
                     "createRole": 0,
@@ -2235,39 +2289,40 @@
                     "id": 64,
                     "image": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190328175533452-1765.jpg",//广告图片
                     "market": {//关联活动
-                        "bannerPic": "",
-                        "createTime": "2018-03-13 14:00:12",
-                        "createUser": 101,
-                        "createUserName": "樊嘉辉",
-                        "customerRange": "NEW",
-                        "deleteFlg": 0,
-                        "effectEtime": "2018-04-30 23:59:59",
-                        "effectStime": "2018-03-01 00:00:00",
-                        "id": 5,
-                        "name": "新用户满减活动",//活动名称
-                        "overdue": 0,
-                        "remark": "",
-                        "type": "COUPON"//活动类型 COUPON领券 GIFT满赠 REDUCE满减 DISCOUNT满折 COLUMN专栏 SPECIAL专题
+                            "accumulative": "",//LADDER 阶梯, EACH: 每满
+                            "activeConditionId": 0,
+                            "bannerPic": "",
+                            "couponConditionId": 0,
+                            "createTime": "2019-05-08 00:59:24",
+                            "createUser": 518,
+                            "createUserName": "孙启萌",
+                            "customerRange": "ALL",
+                            "deleteFlg": 0,
+                            "detailPic": null,
+                            "effectEtime": "2019-06-10 23:59:59",
+                            "effectStime": "2019-05-10 00:00:00",
+                            "hasBusinessunitRange": 0,//指定事业部数量
+                            "hasExcludeProductunitRange": 0,
+                            "hasProductunitRange": 0,//指定产品数量
+                            "id": 436,
+                            "limitNum": 0,//领取规则: 最大1-仅领一次, 0-用完再领
+                            "marketSpecialSkip": {//活动跳转
+                                "extra": "4777",//PRODUCT 产品ID，H5存入H5页面链接
+                                "id": 17,
+                                "marketId": 436,//活动id
+                                "type": "PRODUCT"//类型  PRODUCT, H5
+                            },
+                            "name": "111",//活动名称
+                            "overdue": 0,
+                            "popupPic": "",
+                            "remark": "",
+                            "saOrderIds": null,
+                            "type": "SPECIAL",//活动类型 COUPON领券 GIFT满赠 REDUCE满减 DISCOUNT满折 COLUMN专栏 SPECIAL专题
+                            "unit": ""//执行单位 PRICE 价格，COUNT 数量
                     },
-                    "marketId": 0,
+                    "marketId": 436,//活动id
                     "modifyTime": "",
                     "name": "测试广告位8",//广告名称
-                    "productBusinessTypepArray": null,
-                    "type": "BANNER"
-                },
-                {
-                    "businesstypeRange": "PART",
-                    "createRole": 0,
-                    "createTime": "2019-03-25 19:46:52",
-                    "createUser": 0,
-                    "createUsername": "孙启萌",
-                    "deleteFlg": 0,
-                    "id": 58,
-                    "image": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190328174847892-2989.jpg",
-                    "market": null,
-                    "marketId": 5,
-                    "modifyTime": "",
-                    "name": "测试广告位1",
                     "productBusinessTypepArray": null,
                     "type": "BANNER"
                 }
@@ -2283,21 +2338,38 @@
                     "id": 25,
                     "image": "http://beijing.aliyuncs.com/businesstype/w02.png",
                     "market": {
-                        "bannerPic": "",
-                        "createTime": "2018-03-13 14:00:12",
-                        "createUser": 101,
-                        "createUserName": "樊嘉辉",
-                        "customerRange": "NEW",
-                        "deleteFlg": 0,
-                        "effectEtime": "2018-04-30 23:59:59",
-                        "effectStime": "2018-03-01 00:00:00",
-                        "id": 5,
-                        "name": "新用户满减活动",
-                        "overdue": 0,
-                        "remark": "",
-                        "type": "COUPON"
+                            "accumulative": "",//LADDER 阶梯, EACH: 每满
+                            "activeConditionId": 0,
+                            "bannerPic": "",
+                            "couponConditionId": 0,
+                            "createTime": "2019-05-08 00:59:24",
+                            "createUser": 518,
+                            "createUserName": "孙启萌",
+                            "customerRange": "ALL",
+                            "deleteFlg": 0,
+                            "detailPic": null,
+                            "effectEtime": "2019-06-10 23:59:59",
+                            "effectStime": "2019-05-10 00:00:00",
+                            "hasBusinessunitRange": 0,//指定事业部数量
+                            "hasExcludeProductunitRange": 0,
+                            "hasProductunitRange": 0,//指定产品数量
+                            "id": 436,
+                            "limitNum": 0,//领取规则: 最大1-仅领一次, 0-用完再领
+                            "marketSpecialSkip": {//活动跳转
+                                "extra": "4777",//PRODUCT 产品ID，H5存入H5页面链接
+                                "id": 17,
+                                "marketId": 436,//活动id
+                                "type": "PRODUCT"//类型  PRODUCT, H5
+                            },
+                            "name": "111",//活动名称
+                            "overdue": 0,
+                            "popupPic": "",
+                            "remark": "",
+                            "saOrderIds": null,
+                            "type": "SPECIAL",//活动类型 COUPON领券 GIFT满赠 REDUCE满减 DISCOUNT满折 COLUMN专栏 SPECIAL专题
+                            "unit": ""//执行单位 PRICE 价格，COUNT 数量
                     },
-                    "marketId": 5,
+                    "marketId": 436,
                     "modifyTime": "",
                     "name": "测试广告位4",
                     "productBusinessTypepArray": null,
@@ -2315,21 +2387,38 @@
                     "id": 62,
                     "image": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190328111308458-4149.png",
                     "market": {
-                        "bannerPic": "",
-                        "createTime": "2018-03-13 14:00:12",
-                        "createUser": 101,
-                        "createUserName": "樊嘉辉",
-                        "customerRange": "NEW",
-                        "deleteFlg": 0,
-                        "effectEtime": "2018-04-30 23:59:59",
-                        "effectStime": "2018-03-01 00:00:00",
-                        "id": 5,
-                        "name": "新用户满减活动",
-                        "overdue": 0,
-                        "remark": "",
-                        "type": "COUPON"
+                            "accumulative": "",//LADDER 阶梯, EACH: 每满
+                            "activeConditionId": 0,
+                            "bannerPic": "",
+                            "couponConditionId": 0,
+                            "createTime": "2019-05-08 00:59:24",
+                            "createUser": 518,
+                            "createUserName": "孙启萌",
+                            "customerRange": "ALL",
+                            "deleteFlg": 0,
+                            "detailPic": null,
+                            "effectEtime": "2019-06-10 23:59:59",
+                            "effectStime": "2019-05-10 00:00:00",
+                            "hasBusinessunitRange": 0,//指定事业部数量
+                            "hasExcludeProductunitRange": 0,
+                            "hasProductunitRange": 0,//指定产品数量
+                            "id": 436,
+                            "limitNum": 0,//领取规则: 最大1-仅领一次, 0-用完再领
+                            "marketSpecialSkip": {//活动跳转
+                                "extra": "4777",//PRODUCT 产品ID，H5存入H5页面链接
+                                "id": 17,
+                                "marketId": 436,//活动id
+                                "type": "PRODUCT"//类型  PRODUCT, H5
+                            },
+                            "name": "111",//活动名称
+                            "overdue": 0,
+                            "popupPic": "",
+                            "remark": "",
+                            "saOrderIds": null,
+                            "type": "SPECIAL",//活动类型 COUPON领券 GIFT满赠 REDUCE满减 DISCOUNT满折 COLUMN专栏 SPECIAL专题
+                            "unit": ""//执行单位 PRICE 价格，COUNT 数量
                     },
-                    "marketId": 0,
+                    "marketId": 436,
                     "modifyTime": "",
                     "name": "ag",
                     "productBusinessTypepArray": null,
@@ -2347,27 +2436,66 @@
                     "id": 66,
                     "image": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190328180207163-8064.png",
                     "market": {
-                        "bannerPic": "",
-                        "createTime": "2018-03-13 14:00:12",
-                        "createUser": 101,
-                        "createUserName": "樊嘉辉",
-                        "customerRange": "NEW",
-                        "deleteFlg": 0,
-                        "effectEtime": "2018-04-30 23:59:59",
-                        "effectStime": "2018-03-01 00:00:00",
-                        "id": 5,
-                        "name": "新用户满减活动",
-                        "overdue": 0,
-                        "remark": "",
-                        "type": "COUPON"
+                            "accumulative": "",//LADDER 阶梯, EACH: 每满
+                            "activeConditionId": 0,
+                            "bannerPic": "",
+                            "couponConditionId": 0,
+                            "createTime": "2019-05-08 00:59:24",
+                            "createUser": 518,
+                            "createUserName": "孙启萌",
+                            "customerRange": "ALL",
+                            "deleteFlg": 0,
+                            "detailPic": null,
+                            "effectEtime": "2019-06-10 23:59:59",
+                            "effectStime": "2019-05-10 00:00:00",
+                            "hasBusinessunitRange": 0,//指定事业部数量
+                            "hasExcludeProductunitRange": 0,
+                            "hasProductunitRange": 0,//指定产品数量
+                            "id": 436,
+                            "limitNum": 0,//领取规则: 最大1-仅领一次, 0-用完再领
+                            "marketSpecialSkip": {//活动跳转
+                                "extra": "4777",//PRODUCT 产品ID，H5存入H5页面链接
+                                "id": 17,
+                                "marketId": 436,//活动id
+                                "type": "PRODUCT"//类型  PRODUCT, H5
+                            },
+                            "name": "111",//活动名称
+                            "overdue": 0,
+                            "popupPic": "",
+                            "remark": "",
+                            "saOrderIds": null,
+                            "type": "SPECIAL",//活动类型 COUPON领券 GIFT满赠 REDUCE满减 DISCOUNT满折 COLUMN专栏 SPECIAL专题
+                            "unit": ""//执行单位 PRICE 价格，COUNT 数量
                     },
-                    "marketId": 277,
+                    "marketId": 436,
                     "modifyTime": "",
                     "name": "胖胖的页",
                     "productBusinessTypepArray": null,
                     "type": "ROWUP"
                 }
-            ]
+            ],
+            "H5": [
+            {
+                "businesstypeRange": "PART",//业态范围 ALL 全部业态 PART 部分
+                "createRole": 0,
+                "createTime": "2019-05-05 14:14:46",//创建时间
+                "createUser": 0,
+                "createUsername": "孙启萌",//创建人
+                "deleteFlg": 0,
+                "extra": "12,10",
+                "id": 99,
+                "image": "http://www.163.com",//链接地址
+                "length": "12",//长度
+                "market": null,
+                "marketId": 0,
+                "modifyTime": "",
+                "name": "测试H5广告1",//名称
+                "productBusinessTypepArray": null,
+                "sort": 3,//排序
+                "type": "H5",//广告类型  BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告   H5
+                "width": "10"//宽度
+            }
+          ]
         }
     }
 ### APP-50. app端查询广告位详情数据
@@ -2391,25 +2519,68 @@
             "id": 60,
             "image": "http://beijing.aliyuncs.com/businesstype/w02.png",//广告图片
             "market": {//关联活动信息
-                    "bannerPic": "",
-                    "createTime": "2018-03-13 14:00:12",
-                    "createUser": 101,
-                    "createUserName": "樊嘉辉",
-                    "customerRange": "NEW",
-                    "deleteFlg": 0,
-                    "effectEtime": "2018-04-30 23:59:59",//活动结束时间
-                    "effectStime": "2018-03-01 00:00:00",//活动开始时间
-                    "id": 5,
-                    "name": "新用户满减活动",//活动名称
-                    "overdue": 0,
-                    "remark": "",
-                    "type": "COUPON"//活动类型 COUPON领券 GIFT满赠 REDUCE满减 DISCOUNT满折 COLUMN专栏 SPECIAL专题
+                            "accumulative": "",//LADDER 阶梯, EACH: 每满
+                            "activeConditionId": 0,
+                            "bannerPic": "",
+                            "couponConditionId": 0,
+                            "createTime": "2019-05-08 00:59:24",
+                            "createUser": 518,
+                            "createUserName": "孙启萌",
+                            "customerRange": "ALL",
+                            "deleteFlg": 0,
+                            "detailPic": null,
+                            "effectEtime": "2019-06-10 23:59:59",
+                            "effectStime": "2019-05-10 00:00:00",
+                            "hasBusinessunitRange": 0,//指定事业部数量
+                            "hasExcludeProductunitRange": 0,
+                            "hasProductunitRange": 0,//指定产品数量
+                            "id": 436,
+                            "limitNum": 0,//领取规则: 最大1-仅领一次, 0-用完再领
+                            "marketSpecialSkip": {//活动跳转
+                                "extra": "4777",//PRODUCT 产品ID，H5存入H5页面链接
+                                "id": 17,
+                                "marketId": 436,//活动id
+                                "type": "PRODUCT"//类型  PRODUCT, H5
+                            },
+                            "name": "111",//活动名称
+                            "overdue": 0,
+                            "popupPic": "",
+                            "remark": "",
+                            "saOrderIds": null,
+                            "type": "SPECIAL",//活动类型 COUPON领券 GIFT满赠 REDUCE满减 DISCOUNT满折 COLUMN专栏 SPECIAL专题
+                            "unit": ""//执行单位 PRICE 价格，COUNT 数量
                 },
             "marketId": 5,
             "modifyTime": "2019-03-26 10:29:21",
             "name": "测试广告位7",//广告名称
             "productBusinessTypepArray": null,
             "type": "BANNER"//BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告
+        }
+    }
+
+    //H5类型广告位返回值
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "businesstypeRange": "PART",//业态范围 ALL 全部业态 PART 部分
+            "createRole": 0,
+            "createTime": "2019-05-05 14:14:46",//创建时间
+            "createUser": 0,
+            "createUsername": "孙启萌",//创建人
+            "deleteFlg": 0,
+            "extra": "12,10",
+            "id": 99,
+            "image": "http://www.163.com",//链接地址
+            "length": "12",//长度
+            "market": null,
+            "marketId": 0,
+            "modifyTime": "",
+            "name": "测试H5广告1",//名称
+            "productBusinessTypepArray": null,
+            "sort": 3,//排序
+            "type": "H5",//类型  BANNER 轮播位 ROWUP横上 ROWDOWN 横下 COLUMN 竖广告   H5
+            "width": "10"//宽度
         }
     }
 

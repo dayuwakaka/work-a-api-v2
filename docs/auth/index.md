@@ -1,142 +1,107 @@
 ## 权限接口
 ### QX-1. 开户
-#### 对接负责人
-    尹洪明
 #### 模块负责人
     尹洪明
 #### 请求
-
     POST    /v2/userpower
-    
 #### 参数
-
     {
     	"id":517,               // * 用户id
     	"workno":"0517",        // * 工号
     	"mobile":"18666664848" // * 手机号
     }
-
 #### 响应
-
     {
     	"code": 100000,
     	"msg": "",
     	"data": null
     }
-
-
+    
 ### QX-2. 锁定、解锁
-#### 对接负责人
-    尹洪明
 #### 模块负责人
     尹洪明
 #### 请求
-
     PUT     /v2/userpower/{id}
-    
 #### 参数
-
-    id // * 用户id
+    *id // 用户id
     {
-        "status": "lock" // * lock 锁定 normal 解锁
+        *"status": "lock" // lock 锁定 normal 解锁
     }
-
 #### 响应
-
     {
     	"code": 100000,
     	"msg": "",
     	"data": null
     }
-
 
 ### QX-3. 用户权限列表
-#### 对接负责人
-    尹洪明
 #### 模块负责人
     尹洪明
 #### 请求
-
     GET     /v2/userpower
-
 #### 参数
-
-    keyword // 用户名/手机号
-    status // 状态  NORMAL 正常 LOCK 锁定 NOACCOUNT 未开户
-    buttonPermissionFlg // 0 不查询按钮权限 1 查询
-    pageNo  // 页码
-    pageSize // 页条数
-
+    keyword                 // 用户名/手机号
+    status                  // 状态  NORMAL 正常 LOCK 锁定 NOACCOUNT 未开户
+    gid                     // 功能权限编号
+    buttonPermissionFlg     // 0 不查询按钮权限 1 查询
+    pageNo              // 页码
+    pageSize            // 页条数
 #### 响应
-
     {
         "code": 100000,
         "msg": "",
         "data": {
-            "buttonPermissions": [
-                {
-                    "bindDataPower": true,  // 绑定数据权限
-                    "lockButton": true, // 锁定
-                    "unlockButton": false,  // 解锁
-                    "newAccountButton": false,  开户
-                    "reset": true,  // 重置密码
-                    "bindMenuPower": true   绑定功能权限
-                }
-            ],
+            "buttonPermissionPage": {},
+            "buttonPermissions": [],
             "dataSums": null,
             "datas": [
                 {
-                    "authDataPowers": [
+                    "authDataPowers": [        // 数据权限列表
                         {
                             "gid": 0,
-                            "gname": "",    
-                            "rid": 1,   // 数据权限编号
-                            "rname": "",    // 数据权限名称
-                            "uid": 101
+                            "gname": "",
+                            "rid": 1,           // 数据权限ID
+                            "rname": "管理员",     // 数据权限名
+                            "uid": 239
                         }
                     ],
-                    "authMenuPowers": [
+                    "authMenuPowers": [         // 功能权限列表
                         {
                             "createTime": "",
-                            "gid": 11,  // 功能权限编号
-                            "id": 1,
+                            "gid": 68,          // 功能权限ID
+                            "id": 71,
                             "isAuto": 0,
                             "menuIds": null,
-                            "name": "系统管理员",   // 功能权限名称
+                            "name": "测试",       // 功能权限名
                             "remark": "",
                             "status": "",
                             "sys": "a",
-                            "uid": 101
+                            "uid": 239
                         }
                     ],
-                    "fullname": "樊嘉辉",   // 用户名
-                    "id": 101,  // 用户ID
-                    "isOpen": "1",  
-                    "mobile": "13478445016",    // 手机号
-                    "status": "normal", // 状态 NOACCOUNT 未开户 LOCK 锁定 NORMAL 解锁
-                    "workno": "0101"    // 工号
+                    "bindWxNumCurrent": 0,      // 当前绑定的微信数量
+                    "bindWxNumLimit": 1,        // 可以绑定微信的最大数量
+                    "fullname": "刘健",           // 用户名
+                    "id": 239,                  // 用户id
+                    "isOpen": "1",              // 是否已开户  1 已开户  0 未开户
+                    "mobile": "18611318343",        // 用户手机号
+                    "status": "NORMAL",   // 用户状态 NORMAL 正常  LOCK 锁定
+                    "workno": "0248"            // 用户工号
                 }
             ],
             "pageNo": 1,
             "total": 1
         }
     }
-   
+
 ### QX-4. 重置密码
-#### 对接负责人
-    尹洪明
 #### 模块负责人
     尹洪明
 #### 请求
-
     PUT     /v2/userpower/reset/{id}
-
 #### 参数
-    
     id // * 用户id
-
 #### 响应
-
     {
     	"code": 100000,
     	"msg": "",
@@ -145,68 +110,86 @@
 
 
 ### QX-5. 用户分配功能权限
-#### 对接负责人
-    尹洪明
 #### 模块负责人
     尹洪明
 #### 请求
-
     POST    /v2/userpower/menupower
-
 #### 参数
-    
     {
         "uid":101,  // * 用户id
         "gids":[82, 83]    // * 功能权限id列表
     }
-
 #### 响应
-
     {
     	"code": 100000,
     	"msg": "",
     	"data": null
     }
-    
-
-    
-### QX-7. 用户分配数据权限
-#### 对接负责人
-    尹洪明
+   
+### QX-6. 用户绑定微信数量上限调整
 #### 模块负责人
     尹洪明
 #### 请求
-
-    POST    /v2/userpower/datapower
-
+    PUT    /bindwx/limit/{id}
 #### 参数
-
+    *id     // 用户ID
+    {
+        *"limitNum":3,  // 上限数量 
+    }
+#### 响应
+    {
+    	"code": 100000,
+    	"msg": "",
+    	"data": null
+    }
+     
+### QX-7. 用户分配数据权限
+#### 模块负责人
+    尹洪明
+#### 请求
+    POST    /v2/userpower/datapower
+#### 参数
     {
         "uid":101, // * 用户id
         "rids":[82, 83]    // * 数据权限id列表
     }
-
 #### 响应
-
     {
     	"code": 100000,
     	"msg": "",
     	"data": null
     }
     
-
-
-### QX-9. 功能权限新增
-#### 对接负责人
-    尹洪明
+### QX-8. 用户已绑定微信列表
 #### 模块负责人
     尹洪明
 #### 请求
-
-    POST /v2/menupower
-
+    GET    /v2/userpower/bindwx
 #### 参数
-
+    *workno     // 工号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "createTime": "2019-05-17 13:53:34.0",         // 绑定时间
+                "deleteFlg": 0,
+                "id": 7,
+                "workno": "0383",
+                "wxHeadUrl": "http://thirdwx.qlogo.cn/mmopen",  // 微信头像
+                "wxName": "莫凡",                             // 微信昵称
+                "wxOpenId": "ozGRk1ttO6v_zQOHljI_SUHS8s4k"
+            }
+        ]
+    }
+    
+### QX-9. 功能权限新增
+#### 模块负责人
+    尹洪明
+#### 请求
+    POST /v2/menupower
+#### 参数
     {
     	"name":"测试权限",  // * 权限名称
     	"isAuto":1,         // * 0 非自动生成编号 1 自动生成编号
@@ -214,9 +197,7 @@
     	"remark":"备注",    // 备注
     	"menuIds":[3,5,11]  // 菜单id列表
     }
-
 #### 响应
-
     {
     	"code": 100000,
     	"msg": "",
@@ -225,16 +206,11 @@
 
 
 ### QX-10. 功能权限修改
-#### 对接负责人
-    尹洪明
 #### 模块负责人
     尹洪明
 #### 请求
-
     PUT /v2/menupower/{id}
-
 #### 参数
-
     id // * 权限id
     {
     	"name":"测试权限",  //  权限名称
@@ -242,9 +218,7 @@
     	"gid": 250,         // * 权限编号
     	"menuIds":[3,5,11]  // 菜单id列表
     }
-    
 #### 响应
-
     {
     	"code": 100000,
     	"msg": "",
@@ -252,23 +226,16 @@
     }
     
 ### QX-11. 功能权限的锁定、解锁
-#### 对接负责人
-    尹洪明
 #### 模块负责人
     尹洪明
 #### 请求
-
     PUT /v2/menupower/status/{id}
-    
 #### 参数
-
     id  // * 权限id
     {
         "status":"lock" // * lock 锁定 normal 解锁
     }
-
 #### 响应
-
     {
     	"code": 100000,
     	"msg": "",
@@ -276,24 +243,17 @@
     }
 
 ### QX-12. 功能权限列表
-#### 对接负责人
-    尹洪明
 #### 模块负责人
     尹洪明
 #### 请求
-
     GET /v2/menupower
-
 #### 参数
-
     keyword // 权限编号/权限名称
     status  // 状态 lock 锁定 normal 解锁
     buttonPermissionFlg // 0 不查询按钮权限 1 查询
     pageNo  // 页码
     pageSize    // 页条数
-
 #### 响应
-
     {
         "code": 100000,
         "msg": "",
@@ -326,20 +286,13 @@
     }
     
 ### QX-13. 功能权限详情
-#### 对接负责人
-    尹洪明
 #### 模块负责人
     尹洪明
 #### 请求
-
     GET /v2/menupower/detail
-
 #### 参数
-
     id  // * 权限id
-
 #### 响应
-
     {
         "code": 100000,
         "msg": "",
@@ -368,92 +321,61 @@
 #### 模块负责人
     尹洪明
 #### 请求
-
     POST /v2/datapower
-
 #### 参数
-
     {
         "name":"陆贞逸",  // * 数据权限名称
         "gid":42    // * 功能权限编号
     }
-
 #### 响应
-
     {
     	"code": 100000,
     	"msg": "",
     	"data": null
     }
 
-
 ### QX-15. 数据权限修改
-#### 对接负责人
-    尹洪明
 #### 模块负责人
     尹洪明
 #### 请求
-
     PUT /v2/datapower/{id}
-
 #### 参数
-
     id // * 数据权限id
     {
         "name":"陆贞逸",    // 数据权限名称
         "gid":42    // 功能权限编号
     }
-
-
 #### 响应
-
     {
     	"code": 100000,
     	"msg": "",
     	"data": null
     }
-
 
 ### QX-16. 数据权限删除
-#### 对接负责人
-    尹洪明
 #### 模块负责人
     尹洪明
 #### 请求
-
     DELETE  /v2/datapower/{id}
-
 #### 参数
-
     id // * 数据权限id
-
 #### 响应
-
     {
     	"code": 100000,
     	"msg": "",
     	"data": null
     }
 
-
-
 ### QX-17. 数据权限列表
-#### 对接负责人
-    尹洪明
 #### 模块负责人
     尹洪明
 #### 请求
-
     GET /v2/datapower
-
 #### 参数
-
     keyword // 权限编号/权限名称
     pageNo  // 页码
-    pageSize    // 页条数
-
+    pageSize    // 页条
 #### 响应
-
     {
         "code": 100000,
         "msg": "",
@@ -475,20 +397,13 @@
     }
 
 ### QX-18. 数据权限详情
-#### 对接负责人
-    尹洪明
 #### 模块负责人
     尹洪明
 #### 请求
-
     GET /v2/datapower/detail
-
 #### 参数
-
     rid // * 数据权限编号
-
 #### 响应
-
     {
         "code": 100000,
         "msg": "",
@@ -501,18 +416,12 @@
         }
     }
 
-
 ### QX-19. 菜单新增
-#### 对接负责人
-    尹洪明
 #### 模块负责人
     尹洪明
 #### 请求
-
     POST    /v2/menu
-
 #### 参数
-
     {
         "name":"商品统计",  // * 菜单名称
         "level":1,          // * 菜单等级
@@ -521,27 +430,19 @@
         "parentId":0,       // 上级菜单id,level=2时，必选
         "icon":"aware-syn"  // 一级菜单图标，level=1时，必选
     }
-
 #### 响应
-
     {
     	"code": 100000,
     	"msg": "",
     	"data": null
     }
 
-
 ### QX-20. 菜单修改
-#### 对接负责人
-    尹洪明
 #### 模块负责人
     尹洪明
 #### 请求
-
     PUT     /v2/menu/{id}
-
 #### 参数
-
     id  // * 菜单id
     {
         "name":"商品统计",  // * 菜单名称
@@ -551,10 +452,7 @@
         "parentId":0,       // 上级菜单id,level=2时，必选
         "icon":"aware-syn" // 一级菜单图标，level=1时，必选
     }
-
-
 #### 响应
-
     {
     	"code": 100000,
     	"msg": "操作成功",
@@ -562,24 +460,16 @@
     }
 
 ### QX-21. 菜单显示、隐藏
-#### 对接负责人
-    尹洪明
 #### 模块负责人
     尹洪明
 #### 请求
-
     PUT     /v2/menu/status
-
 #### 参数
-
     {
         "ids":[3,5,7],      // 菜单id列表
         "status":"hidden",  // * show 显示 hidden 隐藏
     }
-
-
 #### 响应
-
     {
     	"code": 100000,
     	"msg": "操作成功",
@@ -587,24 +477,16 @@
     }
 
 ### QX-22. 菜单排序
-#### 对接负责人
-    尹洪明
 #### 模块负责人
     尹洪明
 #### 请求
-
     PUT     /v2/menu/sort/{id}
-
 #### 参数
-
     id  // * 菜单id
     {
         "sort":2,  // * 顺序
     }
-
-
 #### 响应
-
     {
     	"code": 100000,
     	"msg": "操作成功",
@@ -612,21 +494,13 @@
     }
 
 ### QX-23. 菜单删除
-#### 对接负责人
-    尹洪明
 #### 模块负责人
     尹洪明
 #### 请求
-
     DELETE     /v2/menu/{id}
-
 #### 参数
-
     id  // * 菜单id
-
-
 #### 响应
-
     {
     	"code": 100000,
     	"msg": "操作成功",
@@ -634,21 +508,14 @@
     }
 
 ### QX-24. 菜单列表
-#### 对接负责人
-    尹洪明
 #### 模块负责人
     尹洪明
 #### 请求
-
     GET     /v2/menu
-
 #### 参数
-
     level   // 1：只获取一级菜单 其它：全部获取
     buttonPermissionFlg //  1 查询按钮权限 0 不查询
-
 #### 响应
-
     {
         "code": 100000,
         "msg": "",
@@ -682,23 +549,14 @@
         }
     }
 
-
-
 ### QX-25. 菜单详情
-#### 对接负责人
-    尹洪明
 #### 模块负责人
     尹洪明
 #### 请求
-
     GET     /v2/menu/detail
-
 #### 参数
-
     id // * 菜单id
-
 #### 响应
-
     {
         "code": 100000,
         "msg": "",
@@ -717,26 +575,15 @@
             "sys": ""
         }
     }
-    
-    
-    
-    
 
 ### QX-26. 操作日志列表
-#### 对接负责人
-    尹洪明
 #### 模块负责人
     尹洪明
 #### 请求
-
     GET     /v2/systemlog
-
 #### 参数
-
     type    // 日志类型 请参考下面操作类型说明
-    
 #### 响应
-
     操作类型说明：
     1 开户，2 用户锁定，3 用户解锁，4 重置密码，
     5 用户分配功能权限，6 用户取消分配功能权限，7 用户分配数据权限，
@@ -813,7 +660,6 @@
         ]
     }
 
-    
 ### QX-31. 不分页的数据权限列表
 #### 模块负责人
     尹洪明
@@ -862,9 +708,7 @@
         ]
     }    
     
-
 ### QX-41. 关注列表
-
 #### 模块负责人
     王子悦
 #### 请求
@@ -1073,7 +917,7 @@
             "refreshToken": "***"   // 刷新过期accessToken使用
         }
     }
-    
+
 ### QX-101. 微信refreshToken
 #### 模块负责人
     尹洪明
@@ -1091,8 +935,7 @@
             "refreshToken": "***"   // 刷新过期accessToken使用
         }
     }
-    
-    
+
 ### QX-102. 微信扫码登录
 #### 模块负责人
     尹洪明
@@ -1133,8 +976,7 @@
             }
         }
     }
-   
-   
+
 ### QX-103. 微信绑定登录
 #### 模块负责人
     尹洪明
@@ -1173,15 +1015,14 @@
             }
         }
     }
-    
 
-### QX-104. 微信解绑
+### QX-104. 微信解绑(作废)
 #### 模块负责人
     尹洪明
 #### 请求
     DELETE /v2/wx/unbinding/{workno}
 #### 参数
-    *workno   // 工号
+    *workno // 工号
 #### 响应     
     {
         "code": 100000,
@@ -1189,7 +1030,23 @@
         "data": null
     }
 
-
+### QX-105. 微信解绑
+#### 模块负责人
+    尹洪明
+#### 请求
+    DELETE /v2/wx/unbind
+#### 参数
+    {
+        *"loginName": "0299",              // 账号
+        *"wxOpenId": "ozGRk1ttO6v_zQOHljI_SUHS8s33" // 微信授权唯一标识
+    }
+#### 响应     
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+    
 ### QX-150. 权限切换
 #### 模块负责人
     尹洪明

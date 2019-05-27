@@ -874,10 +874,10 @@
     statuses: ['INVALID', 'RUN', 'SEND'] 订单状态 INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收
     payFlg： 结款状态 0-未结款 1-已结款
     createUserName： 创建人
-    createStartDate: 创建开始日期
-    createEndDate: 创建结束日期
-    sendStartDate: 发货开始日期
-    sendEndDate: 发货结束日期
+    createStartDate: 创建开始日期 yyyy-MM-dd HH:mm:ss
+    createEndDate: 创建结束日期 yyyy-MM-dd HH:mm:ss
+    sendStartDate: 发货开始日期 yyyy-MM-dd HH:mm:ss
+    sendEndDate: 发货结束日期 yyyy-MM-dd HH:mm:ss
 #### 响应
     {
         "code": 100000,
