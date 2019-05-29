@@ -179,4 +179,239 @@
 
 
 
+### BH-50 线路新增
+#### 模块负责人
+    王子悦
+#### 对接负责人
+    尹洪明
+#### 请求
+    POST /v2/stockup/line
+#### 参数
+    {
+        "stockupLine": {
+            "name": "天津燕山区",        // 线路名
+            "fromPathid": "0203",       // 起点
+            "toDepotId": 50,            // 终点
+            "paFlg": 1,             // 采购单类型
+            "trFlg": 1              // 调拨单类型
+        },
+        "supplier": [               // 供应商
+            5563
+        ],
+        "depot": [              // 出库仓ID
+            25
+        ]
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
 
+
+### BH-51 线路修改
+#### 模块负责人
+    王子悦
+#### 对接负责人
+    尹洪明
+#### 请求
+    PUT /v2/stockup/line/{id}
+#### 参数
+    *id // 线路ID
+    {
+        "stockupLine": {
+            "name": "天津燕山区",    // 线路名
+            "fromPathid": "0203",   // 起点
+            "toDepotId": 50,        // 终点
+            "paFlg": 1,         // 采购单
+            "trFlg": 1          // 调拨单
+        },
+        "supplier": [           // 供应商
+            5563
+        ],
+        "depot": [              // 出库仓
+            25
+        ]
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### BH-52 线路作废
+#### 模块负责人
+    王子悦
+#### 对接负责人
+    尹洪明
+#### 请求
+    PUT /v2/stockup/line/cancel/{id}
+#### 参数
+    *id // 线路ID
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### BH-53 线路列表
+#### 模块负责人
+    王子悦
+#### 对接负责人
+    尹洪明
+#### 请求
+    GET /v2/stockup/line
+#### 参数
+    name            // 线路名
+    toDepotId       // 入库仓
+    deleteFlg       // 状态 0 正常 1 作废
+    buttonPermissionFlg // 0 不查询按钮权限  1 查询按钮权限
+    pageNo              // 页码 默认1
+    pageSize            // 页条数 默认25
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissionPage": {},
+            "buttonPermissions": [
+                {
+                    "cancelButton": true,           // 作废
+                    "editButton": true,         // 编辑
+                    "logButton": true           // 日志
+                }
+            ],
+            "dataSums": null,
+            "datas": [
+                {
+                    "createRole": 0,
+                    "createTime": "2019-05-29 10:00:30",
+                    "createUser": 0,
+                    "createUserName": "孙启萌",
+                    "deleteFlg": 0,
+                    "depot": [                      // 出库仓
+                        {
+                            "deleteFlg": 0,
+                            "dutyId": 25,                   // 出库仓ID
+                            "dutyName": "VC（退货不入仓）",        // 出库仓名
+                            "id": 20,
+                            "lineId": 6,
+                            "type": "TR"
+                        }
+                    ],
+                    "fromPathName": "黑龙江鸡西市",       // 起点名
+                    "fromPathid": "0803",               // 起点
+                    "id": 6,                        // 线路ID
+                    "name": "天津燕山区-DC(大连仓)",    // 线路名
+                    "paFlg": 1,                     // 采购单类型
+                    "stockupPlanVOS": null,
+                    "supplier": [                   // 供应商
+                        {
+                            "deleteFlg": 0,
+                            "dutyId": 5563,                 // 供应商ID
+                            "dutyName": "优合集团有限公司",     // 供应商名
+                            "id": 19,
+                            "lineId": 6,
+                            "type": "PA"
+                        }
+                    ],
+                    "toDepotId": 40,                    // 入库仓ID
+                    "toDepotName": "DC（大连铁越仓）",     // 入库仓名
+                    "trFlg": 1,                     // 调拨单类型
+                    "unAllocationPlans": null
+                }
+            ],
+            "pageNo": 0,
+            "total": 0
+        }
+    }
+
+
+### BH-54 线路明细
+#### 模块负责人
+    王子悦
+#### 对接负责人
+    尹洪明
+#### 请求
+    GET /v2/stockup/line/{id}
+#### 参数
+    *id     // 线路ID
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "createRole": 0,
+            "createTime": "2019-05-29 10:00:30",
+            "createUser": 0,
+            "createUserName": "孙启萌",
+            "deleteFlg": 0,
+            "depot": [                      // 出库仓
+                {
+                    "deleteFlg": 0,
+                    "dutyId": 25,               // 出库仓ID
+                    "dutyName": "VC（退货不入仓）",    // 出库仓名
+                    "id": 20,
+                    "lineId": 6,
+                    "type": "TR"
+                }
+            ],
+            "fromPathName": "黑龙江鸡西市",       // 起点名
+            "fromPathid": "0803",               // 起点
+            "id": 6,                        // 线路ID
+            "name": "天津燕山区-DC(大连仓)",        // 线路名
+            "paFlg": 1,                         // 采购单类型
+            "stockupPlanVOS": null,
+            "supplier": [                   // 供应商
+                {
+                    "deleteFlg": 0,
+                    "dutyId": 5563,                 // 供应商ID
+                    "dutyName": "优合集团有限公司",     // 供应商名
+                    "id": 19,
+                    "lineId": 6,
+                    "type": "PA"
+                }
+            ],
+            "toDepotId": 40,                    // 入库仓ID
+            "toDepotName": "DC（大连铁越仓）",     // 入库仓名
+            "trFlg": 1,                         // 调拨单类型
+            "unAllocationPlans": null
+        }
+    }
+
+
+### BH-55 线路日志
+#### 模块负责人
+    王子悦
+#### 对接负责人
+    尹洪明
+#### 请求
+    GET /v2/stockup/line/log/{id}
+#### 参数
+    *id     // 线路ID
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissionPage": {},
+            "buttonPermissions": [],
+            "dataSums": null,
+            "datas": [
+                {
+                    "id": 6,
+                    "lineId": 6,
+                    "opInfo": "线路作废",
+                    "opRole": 1,
+                    "opTime": "2019-05-29 10:43:25",
+                    "opUser": 518,
+                    "opUserName": "孙启萌"
+                }
+            ],
+            "pageNo": 0,
+            "total": 0
+        }
+    }
