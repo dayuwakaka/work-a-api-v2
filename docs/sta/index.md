@@ -221,4 +221,21 @@
             "effectiveSalesAmount": 3756335.39  //应记优惠金额
         }
     }
-}
+
+### STA-11. 履约合同重算
+#### 模块负责人
+    石博孚
+#### 请求
+    GET /report/task/syncReportContract
+#### 参数
+    contractNum : 'ASA-1000001818319574'  //合同号
+	rebateNode : 'YEAR'  //季度节点
+	token: 'ME0154uoR5rnnzEQ62c4Npz1hbqCS71T' //令牌
+#### 响应
+	{
+	    "code": 100000,
+	    "msg": "同步合同明细成功",
+	    "data": null
+	}
+#### *注意
+	在重算履约合同前先确保订单数据与客户数据已同步到统计系统。
