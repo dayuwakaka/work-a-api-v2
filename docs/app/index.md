@@ -3246,6 +3246,7 @@
                 "name": "心有猛虎，细嗅蔷薇，他人勿动",         //发票名称
                 "taxCode": "23458939458927"                 //税收编号
             },
+            // 'CARD_FRONT' 身份证正面,'CARD_BACK' 身份证背面,'NOTICE' 变更附件, 'BUSINESS' 营业执照 'TAX' 税务证明
             "invoiceInfoImgs": [{
                             *"type":"INVOICEDATA",   // 开票资料
                             *"imgUrl":"http://omgzp8h38.bkt.clouddn.com/Fpye2K9ygMMiLKwCDFE3xYA4z927" 
@@ -3275,7 +3276,7 @@
 #### 模块负责人
     刘宏宇  
 #### 请求
-    PUT /router/v5/info/{id}
+    PUT /router/v5/invoice/info/{id}
 
 #### 参数
     *id //发票id
