@@ -41,6 +41,7 @@
 |---|---|---|
 |marketProductRanges|产品限制|
 |marketImages|轮播图|banner 轮播图|
+|marketColumnProductType|活动产品类型|
 
 ##### 专题参数
 |参数|名称|描述|
@@ -81,6 +82,9 @@
     			"effectStime":"2018-09-13 08:40:17",
     			"effectEtime":"2018-10-13 08:40:17"	
     		}],
+    	"marketColumnProductType":{
+    	    "type":"PRODUCTUNTI",       // PRODUCTUNIT 指定品  DYNAMIC 动态获取
+    	},
         "marketProductRanges":[
             {
             "type":"PRODUCTUNIT", // PRODUCTUNIT 指定品   EXCLUDE 排除品  ALL 无限制
@@ -534,6 +538,11 @@
                     "type": "BANNER"
                 }
             ],
+            "marketColumnProductType":{
+                "id":1,
+                "marketId":2,
+                "type":"DYNAMIC"        // 专栏产品类型 PRODUCTUNIT 指定品  DYNAMIC 动态获取
+            },
             "marketProductRanges": [            // 指定产品
                 {
                     "extra": "",
