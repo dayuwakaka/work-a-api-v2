@@ -2291,5 +2291,16 @@
         "data": 555 // 规则值
     }
 
-
+### DD-144. 大单-列表导出
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/bigorder/export
+#### 参数
+    statuses[] 订单状态集合 INVALID,RUN,
+    startDate: '2019-01-01' // yyyy-MM-dd
+    endDate: '2019-01-31' // yyyy-MM-dd
+    checkCode: 下载码
+#### 响应  
+    stream
 
