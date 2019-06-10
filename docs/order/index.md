@@ -2263,6 +2263,7 @@
         fromDepotId2: 13, // 剩余产品出库仓id
         fromDepotName2: "", // 剩余产品出库仓名称
         modifyDepotFlg: 0, // 是否修改出库仓 0-否 1-是
+        source: "BIG_ORDER_LIST", // 固定传BIG_ORDER_LIST
         splitOrderSaPros: [
             {
                 id: 12087, // 产品明细id,
