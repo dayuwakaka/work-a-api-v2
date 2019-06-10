@@ -647,3 +647,298 @@
             "total": 0
         }
     }
+    
+### BH-100 安全库存规则列表
+#### 模块负责人
+    王子悦
+#### 对接负责人
+    尹洪明
+#### 请求
+    GET /v2/stockup/safe/rule
+#### 参数
+    无
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "deleteFlg": 0,
+                "endNum": 100,          // 最大值
+                "id": 1,
+                "paramType": "B3AVG",   // B3AVG 前三月平均出货量 目前只有一种类型
+                "safeNum": 0,           // 手动设置的安全库存值
+                "safeType": "FULL",     // 安全库存值
+                "startNum": 1           // 最小值
+            },
+            {
+                "deleteFlg": 0,
+                "endNum": 300,
+                "id": 2,
+                "paramType": "B3AVG",
+                "safeNum": 0,
+                "safeType": "HALF",
+                "startNum": 100
+            },
+            {
+                "deleteFlg": 0,
+                "endNum": 1000000,
+                "id": 3,
+                "paramType": "B3AVG",
+                "safeNum": 300,
+                "safeType": "HAND",
+                "startNum": 300
+            }
+        ]
+    }  
+
+### BH-101 安全库存规则修改
+#### 模块负责人
+    王子悦
+#### 对接负责人
+    尹洪明
+#### 请求
+    PUT /v2/stockup/safe/rule
+#### 参数
+    [
+        {
+            *"paramType": "B3AVG",   // B3AVG 前三个月平均出货量 目前只有这一种类型
+            *"startNum": "1",        // 最小值
+            *"endNum": "200",        // 最大值
+            *"safeType": "FULL",     // 安全库存值   FULL 基础参数 HALF 基础参数一半 HAND 其它
+            *"safeNum": 0            // 手动设置的安全库存值，非手动设置时，需赋值0
+        },
+        {
+            "paramType": "B3AVG",
+            "startNum": "200",
+            "endNum": "500",
+            "safeType": "HALF",
+            "safeNum": 0
+        },
+        {
+            "paramType": "B3AVG",
+            "startNum": "500",
+            "endNum": "10000000",
+            "safeType": "HAND",
+            "safeNum": 1000
+        }
+    ]
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }    
+    
+    
+### BH-102 安全库存规则日志
+#### 模块负责人
+    王子悦
+#### 对接负责人
+    尹洪明
+#### 请求
+    GET /v2/stockup/safe/rule/log
+#### 参数
+    pageNo      页码
+    pageSize    页大小
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissionPage": {},
+            "buttonPermissions": [],
+            "dataSums": null,
+            "datas": [
+                {
+                    "id": 2,
+                    "opInfo": "修改安全库存规则",           // 操作内容
+                    "opRole": 1,
+                    "opTime": "2019-06-10 11:25:47",      // 操作时间
+                    "opUser": 518,
+                    "opUserName": "孙启萌"                 // 操作人
+                },
+                {
+                    "id": 1,
+                    "opInfo": "新增安全库存规则",
+                    "opRole": 29319,
+                    "opTime": "2019-06-10 09:52:20",
+                    "opUser": 518,
+                    "opUserName": "孙启萌"
+                }
+            ],
+            "pageNo": 0,
+            "total": 0
+        }
+    }
+
+
+### BH-110 期货现货定制品列表
+#### 模块负责人
+    王子悦
+#### 对接负责人
+    尹洪明
+#### 请求
+    GET /v2/stockup/nowfuture
+#### 参数
+    *depotId    仓库ID
+    *type       查询类型 NOW 查询现货列表 FUTURE 查询期货列表 CUSTOM 查询定制品列表
+    keyword     品号、品名
+    buttonPermissionFlg 是否查询按钮权限
+    pageNo      页码
+    pageSize    页大小
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissionPage": {},
+            "buttonPermissions": [
+                {
+                    "cancelButton": false,      // 取消手动
+                    "toFutureButton": true,     // 转期货
+                    "toNowButton": false        // 转现货
+                }
+            ],
+            "dataSums": null,
+            "datas": [
+                {
+                    "customerCnt": 59,          // 服务客户数
+                    "customerFlg": 0,           // 定制表示 0 非定制 1 普通定制 2 专属定制
+                    "depotId": 40,              // 仓库ID
+                    "id": 0,
+                    "jian": 18578,              // 平均出货量
+                    "lockFlg": 0,               // 类型来源 0 自动 1 手动
+                    "num": 18578,
+                    "pno": "0151",              // 品号
+                    "productId": 1,             // 品ID
+                    "productName": "香草凤尾虾", // 品名
+                    "san": 18,
+                    "type": "NOW"
+                }
+            ],
+            "pageNo": 0,
+            "total": 0
+        }
+    }
+
+### BH-111 期货现货定制品统计列表
+#### 模块负责人
+    王子悦
+#### 对接负责人
+    尹洪明
+#### 请求
+    GET /v2/stockup/nowfuture/profile
+#### 参数
+    depotId    仓库ID
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "customCnt": 236,                   // 定制品数
+                "customerCnt": 190,                  // 服务客户数
+                "depotId": 40,                      // 仓库ID
+                "depotName": "DC（大连铁越仓）",       // 仓库名
+                "futureCnt": 93,                    // 期货数
+                "nowCnt": 211,                      // 现货数
+                "saleCnt": 550149,                  // 出货量
+                "saleProductCnt": 395               // 出货品类
+            }
+        ]
+    }
+    
+
+### BH-112 期货转现货
+#### 模块负责人
+    王子悦
+#### 对接负责人
+    尹洪明
+#### 请求
+    PUT /v2/stockup/nowfuture/now
+#### 参数
+    {
+        *"depotId": "40",
+        *"productId": 4748
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }    
+    
+
+### BH-113 现货转期货
+#### 模块负责人
+    王子悦
+#### 对接负责人
+    尹洪明
+#### 请求
+    PUT /v2/stockup/nowfuture/future
+#### 参数
+    {
+        *"depotId": "40",
+        *"productId": 4748
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }       
+
+### BH-114 取消手动
+#### 模块负责人
+    王子悦
+#### 对接负责人
+    尹洪明
+#### 请求
+    PUT /v2/stockup/nowfuture/cancel
+#### 参数
+    {
+        *"depotId": "40",
+        *"productId": 4748
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }      
+
+### BH-115 期货现货操作日志
+#### 模块负责人
+    王子悦
+#### 对接负责人
+    尹洪明
+#### 请求
+    GET /v2/stockup/nowfuture/log
+#### 参数
+    *depotId    // 仓库ID
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissionPage": {},
+            "buttonPermissions": [],
+            "dataSums": null,
+            "datas": [
+                {
+                    "depotId": 40,
+                    "id": 0,
+                    "opInfo": "期货->现货",             // 操作内容
+                    "opRole": 0,
+                    "opTime": "2019-06-10 15:50:56",    // 操作时间
+                    "opUser": 0,
+                    "opUserName": "孙启萌",                // 操作人
+                    "productId": 2281,
+                    "productName": "好虾仁 (51/60）挑肠"      // 操作产品
+                }
+            ],
+            "pageNo": 0,
+            "total": 0
+        }
+    }        
