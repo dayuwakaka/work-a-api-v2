@@ -706,6 +706,7 @@
     paymode // 支付方式 INBUY 入结 OUTBUY 出结
     priceFlg // 采购价格调整 0 未修改价格 1 修改价格待审核 2 已修改价格
     buttonPermissionFlg // 获取权限按钮 0-否 1-是
+    createUserName // 创建人名称
     pageNo // 页码
     pageSize // 行数
 #### 响应
@@ -726,8 +727,8 @@
             "datas": [
                 {
                     "completeTime": "", // 完成时间
-                    "createTime": "2018-12-10 09:46:43",
-                    "createUserName": "0",
+                    "createTime": "2018-12-10 09:46:43", // 创建时间
+                    "createUserName": "test", // 创建人
                     "deleteFlg": 0,
                     "deliverType": "THIRD", // 配送方式 SELF 自送 THIRD 物流配送
                     "depotId": 1,
@@ -2015,6 +2016,7 @@
     fromDepotId 出库仓id
     toDepotId 入库仓id
     status 订单状态 INVALID:订单未生效,RUN:订单生效,SEND:已发出,COMPLETE:已签收
+    createUserName 创建人名称
 #### 响应
     {
         "code": 100000,
