@@ -32,12 +32,42 @@
 #### 参数
     orderId  //采购单号/调拨单号
     depotId  //入库仓id
+    lineId   //线路id
 #### 响应
+
+    1.未分配线路数据
+        {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "unAllocationLines": {//未分配线路的订单基本信息
+                "san": 12,//散数量
+                "data": [
+                    {
+                        "fromDepot": "大连宏兴食品有限公司",//供应商名称/出库仓名称
+                        "jian": 0,//件数量
+                        "orderId": "PA19053000007",//订单号
+                        "planCompleteTime": "2019-05-31 00:00:00",//计划完成时间
+                        "planSendTime": "2019-05-31 00:00:00",//计划发出时间
+                        "remark": "12345qwert",//备注
+                        "san": 1,//散数量
+                        "status": "INVALID",//订单状态 PA单的状态： INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 
+                        "toDepot": "DC（天津优和仓 ）",//入库仓名称
+                        "totalprice": 26.4,//金额
+                        "type": "PA",//单据类型 PA 采购 TR 调拨
+                        "waybillInfo": ""//承运单号
+                    }
+                ],
+                "jian": 0
+            }
+        }
+    }
+    2.已分配线路数据
     {
         "code": 100000,
         "msg": "",
         "data": {
-            "linesInfo": [//调拨线路基本信息
+            "linesInfo": [
                 {
                     "createRole": 0,
                     "createTime": "2019-06-03 11:56:42",//创建时间
@@ -54,7 +84,7 @@
                             "type": "TR"//配送职能： PA 采购配送 TR 调拨配送
                         }
                     ],
-                    "fromPathName": "辽宁",//线路起点省
+                    "fromPathName": "",//线路起点省
                     "fromPathid": "0203",//起点区域id
                     "id": 7,
                     "name": "天津燕山区",//线路名称
@@ -62,14 +92,14 @@
                     "stockupPlanVOS": [//调货计划基本信息
                         {
                             "buttonPermission": {//按钮权限，由后台提供
-                                "cancel": true, //取消计划
+                                "cancel": false,//取消计划
                                 "modify": true, //修改计划 
-                                "synchronization": true,  //同步物流数据
-                                "complete": false, //完成计划
+                                "synchronization": true,//同步物流数据
+                                "complete": false,//完成计划
                                 "delete": true, //删除计划
-                                "push": true  //执行计划
+                                "push": true//执行计划
                             },
-                            "carInfo": "12米超级超限", //车类型 4.2米 等等
+                            "carInfo": "12米超级超限",//车类型 4.2米 等等
                             "createRole": 29319,
                             "createTime": "2019-06-03 04:03:41",//创建时间
                             "createUser": 518,
@@ -79,18 +109,18 @@
                             "lineId": 7,//关联线路id
                             "name": "test线路3",//关联线路名称
                             "orderVOS": {//已分配调货线路，并且分配调货计划的订单基本信息
-                                "san": 1,//散数量
+                                "san": 3,//散数量
                                 "data": [//订单基本信息
                                     {
                                         "fromDepot": "大连宏兴食品有限公司",//  供应商名称/出库仓名称
                                         "jian": 0,//件数量
-                                        "orderId": "PA19060300005",//订单号
-                                        "planCompleteTime": "2019-06-05 00:00:00",//计划完成时间
-                                        "planSendTime": "2019-06-05 00:00:00",//计划发出时间
+                                        "orderId": "PA19060300003",//订单号
+                                        "planCompleteTime": "2019-05-31 00:00:00",//计划完成时间
+                                        "planSendTime": "2019-06-05 00:00:00",,//计划发出时间
                                         "remark": "12345qwert",//备注
-                                        "san": 1,//散数量
-                                        "status": "INVALID",//订单状态 PA单的状态： INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已完成
-                                                            //     TR单的状态：INVALID 未生效 RUN 已生效 SEND 已发出 COMPLETE 已签收
+                                        "san": 1,,//散数量
+                                        "status": "RUN",//订单状态 PA单的状态： INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已完成
+                                         //     TR单的状态：INVALID 未生效 RUN 已生效 SEND 已发出 COMPLETE 已签收
                                         "toDepot": "DC（天津优和仓 ）",//入库仓名称
                                         "totalprice": 26.4,//金额
                                         "type": "PA",//单据类型 PA 采购 TR 调拨
@@ -102,7 +132,7 @@
                             "planCompleteTime": "2019-06-07 00:00:00",//计划入库时间
                             "planSendTime": "2019-06-05 00:00:00",//计划发出时间
                             "splitFlg": 0,//是否拆分 0 未拆分 1 拆分
-                            "status": "INVALID",//调货计划状态 INVALID 待执行 RUN 已执行 COMPLETE 完成
+                            "status": "COMPLETE",//调货计划状态 INVALID 待执行 RUN 已执行 COMPLETE 完成
                             "type": "正常"//调货计划的物流类型：【正常，物流拆分】
                         }
                     ],
@@ -120,51 +150,31 @@
                     "toDepotName": "DC（天津优和仓 ）",//入库仓名称
                     "trFlg": 1,//是否配送TR单 0 不配送 1 配送
                     "unAllocationPlans": {//已分配线路，但是未分配计划的订单基本信息
-                        "san": 2,//散数量
+                        "san": 7,//散数量
                         "data": [
                             {
                                 "fromDepot": "大连宏兴食品有限公司",//  供应商名称/出库仓名称
                                 "jian": 0,//件数量
-                                "orderId": "PA19060300003",//订单号
-                                "planCompleteTime": "2019-05-31 00:00:00",//计划完成时间
-                                "planSendTime": "2019-05-31 00:00:00",//计划发出时间
-                                "remark": "12345qwert",//备注
-                                "san": 1,//散数量
-                                "status": "INVALID",//订单状态 PA单的状态： INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已完成
+                                "orderId": "PA19061000003",//订单号
+                                "planCompleteTime": "2019-06-19 00:00:00",//计划完成时间
+                                "planSendTime": "2019-06-19 00:00:00",//计划发出时间
+                                "remark": "",//备注
+                                "san": 7,//散数量
+                                "status": "RUN","INVALID",//订单状态 PA单的状态： INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已完成
                                                     //     TR单的状态：INVALID 未生效 RUN 已生效 SEND 已发出 COMPLETE 已签收
                                 "toDepot": "DC（天津优和仓 ）",//入库仓名称
-                                "totalprice": 26.4,//金额
+                                "totalprice": 127.3,//金额
                                 "type": "PA",//单据类型 PA 采购 TR 调拨
                                 "waybillInfo": ""//承运单号
                             }
                         ],
-                        "jian": 0   //件数量
+                        "jian": 0//件数量
                     }
                 }
-            ],
-            "unAllocationLines": {//未分配线路的订单基本信息
-                "san": 6,//散数量
-                "data": [
-                    {
-                        "fromDepot": "大连宏兴食品有限公司",//供应商名称/出库仓名称
-                        "jian": 0,//件数量
-                        "orderId": "PA19053000007",//订单号
-                        "planCompleteTime": "2019-05-31 00:00:00",//计划完成时间
-                        "planSendTime": "2019-05-31 00:00:00",//计划发出时间
-                        "remark": "12345qwert",//备注
-                        "san": 1,//散数量
-                        "status": "INVALID",//订单状态 PA单的状态： INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已完成
-                                            //     TR单的状态：INVALID 未生效 RUN 已生效 SEND 已发出 COMPLETE 已签收
-                        "toDepot": "DC（天津优和仓 ）",//入库仓名称
-                        "totalprice": 26.4,//金额
-                        "type": "PA",//单据类型 PA 采购 TR 调拨
-                        "waybillInfo": ""//承运单号
-                    }
-                ],
-                "jian": 0//件数量
-            }
+            ]
         }
-    }
+    }    
+    
 
 ### BH-3.调货计划-分配调货线路（也用于【转移至其他线路】）
 #### 模块负责人
