@@ -942,3 +942,248 @@
             "total": 0
         }
     }        
+    
+### BH-120 安全库存修改
+#### 模块负责人
+    王子悦
+#### 对接负责人
+    尹洪明
+#### 请求
+    POST /v2/stockup/safe/askfor
+#### 参数
+    {
+        *"depotId": 40,         // 仓库ID
+        *"productId": 2506,     // 产品ID
+        *"turnover": 5,         // 周转率
+        *"safeNum": 201         // 安全库存
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }       
+    
+### BH-121 安全库存审核通过
+#### 模块负责人
+    王子悦
+#### 对接负责人
+    尹洪明
+#### 请求
+    PUT /v2/stockup/safe/askfor/pass
+#### 参数
+    {
+        "askIds": [ // 申请ID
+            1,
+            2,
+            3
+        ]
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }   
+    
+### BH-122 安全库存审核拒绝
+#### 模块负责人
+    王子悦
+#### 对接负责人
+    尹洪明
+#### 请求
+    PUT /v2/stockup/safe/askfor/refuse
+#### 参数
+    {
+        "askIds": [ // 申请ID
+            1,
+            2,
+            3
+        ],
+        "reason":"拒绝理由"
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }       
+    
+    
+### BH-123 安全库存列表
+#### 模块负责人
+    王子悦
+#### 对接负责人
+    尹洪明
+#### 请求
+    GET /v2/stockup/safe
+#### 参数
+    keyword     // 品号、品名
+    depotId     // 仓库ID
+    status          // 库存状态 'NORMAL' 正常,'LOCK' 锁定
+    enableAmountOp  // 过滤可用库存操作符
+    enableAmount    // 可用库存值
+    normalAmountOp  // 过滤实际库存操作符
+    normalAmount    // 实际库存值
+    pageNo      // 页码
+    pageSize    // 页大小
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissionPage": {},
+            "buttonPermissions": [
+                {
+                    "editButton":true,         // 编辑按钮
+                    "cancelButton":false        // 取消手动按钮
+                }
+            ],
+            "dataSums": null,
+            "datas": [
+                {
+                    "avgCustomer": 2,
+                    "avgJian": 75,      // 平均出货量件
+                    "avgNum": 1250, 
+                    "avgSan": 0,        // 平均出货量散
+                    "b1Customer": 0,        // 月平均购买客户数
+                    "b1Jian": 0,        // 前一个月件
+                    "b1Num": 0,
+                    "b1San": 0,         // 前一个月散
+                    "b2Customer": 0,
+                    "b2Jian": 0,        // 前两个月件
+                    "b2Num": 0,
+                    "b2San": 0,         // 前两个月散
+                    "b3Customer": 7,
+                    "b3Jian": 225,      // 前三个月件
+                    "b3Num": 3750,
+                    "b3San": 0,         // 前三个月散
+                    "createTime": "",
+                    "depotId": 57,                      // 仓库ID
+                    "depotName": "DC（昆山仓A）ASA",     // 仓库名
+                    "enableAmountJian": 100,        // 可用库存件
+                    "enableAmountSan": 39,          // 可用库存散
+                    "guige": "150g/袋*50袋",      // 品规格
+                    "id": 0, // 安全库存ID   存在id=0的情况，需要传递id时， id 是多久就传多少，是0就传0
+                    "lockFlg": 0,               // 是否锁定 0 未锁定  1 已锁定
+                    "modifyRole": 0,
+                    "modifyTime": "",
+                    "modifyUser": 0,
+                    "modifyUserName": "",
+                    "normalAmountJian": 100,        // 实际库存件
+                    "normalAmountSan": 39,          // 实际库存散
+                    "perunit": 50,              // 品转化率
+                    "pno": "0162",                  // 品号
+                    "productId": 811,           // 品ID
+                    "productName": "香辣鱼皮",      // 品名
+                    "safeNum": 75,
+                    "safeNumJian": 1.5,         // 安全库存计算值
+                    "safeNumManual": -1,        // 手动设置的安全库存 -1 未设置过，显示空
+                    "safeNumSan": 0,
+                    "b0NumJian": 10237,        // 本月已发件
+                    "b0NumSan": 21,            // 本月已发散
+                    "status": "NORMAL",         // 库存状态  NORMAL 正常 LOCK 锁定
+                    "turnover": 2,      // 周转率
+                    "type": "NOW",              // 产品类型 NOW 现货 FUTURE 期货 CUSTOM 定制品
+                    "unit": "件"             // 品单位
+                }
+            ],
+            "pageNo": 0,
+            "total": 1
+        }
+    }   
+        
+### BH-124 安全库存列表导出
+#### 模块负责人
+    王子悦
+#### 对接负责人
+    尹洪明
+#### 请求
+    GET /v2/stockup/safe/export
+#### 参数
+    keyword     // 品号、品名
+    *depotId     // 仓库ID
+    status          // 库存状态 'NORMAL' 正常,'LOCK' 锁定
+    enableAmountOp  // 过滤可用库存操作符
+    enableAmount    // 可用库存值
+    normalAmountOp  // 过滤实际库存操作符
+    normalAmount    // 实际库存值
+#### 响应
+    流    
+    
+### BH-125 安全库存审核列表
+#### 模块负责人
+    王子悦
+#### 对接负责人
+    尹洪明
+#### 请求
+    GET /v2/stockup/safe/askfor
+#### 参数
+    keyword     // 品号、品名
+    depotId     // 仓库ID
+    status          // 库存状态 'NORMAL' 正常,'LOCK' 锁定
+    buttonPermissionFlg 是否返回按钮权限  1 返回 0 不返回
+    pageNo      // 页码
+    pageSize    // 页大小
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissionPage": {},
+            "buttonPermissions": [
+                {
+                    "checkButton": false // 是否显示审核拒绝按钮
+                }
+            ],
+            "dataSums": null,
+            "datas": [
+                {
+                    "checkRole": 1,
+                    "checkTime": "2019-06-11 16:15:16",     // 申请时间
+                    "checkUser": 518,
+                    "checkUserName": "孙启萌",             // 申请人
+                    "createRole": 1,
+                    "createTime": "2019-06-11 15:31:35",        // 审核人
+                    "createUser": 518,
+                    "createUserName": "孙启萌",                // 审核时间
+                    "depotId": 40,                  // 仓库ID
+                    "depotName": "DC（大连铁越仓）",   // 仓库名
+                    "id": 1,                    申请ID
+                    "normalAmountJian": 0,          // 实际库存件
+                    "normalAmountSan": 0,           // 实际库存散
+                    "originalSafeNum": 0,           // 安全库存旧值
+                    "originalTurnover": 2,      // 周转率旧值
+                    "pno": "lb703",             // 品号
+                    "productId": 2506,              // 产品ID
+                    "productName": "中粮烤全腿",         // 产品名
+                    "reason": "拒绝你",        // 拒绝理由
+                    "remark": "",           // 申请备注
+                    "safeNum": 201,             // 安全库存新值
+                    "b0NumJian": 0,            // 本月已发件
+                    "b0NumSan": 0,             // 本月已发散
+                    "status": "PASS",           // 审核状态  ASKFOR 申请 PASS 通过 REFUSE 拒绝
+                    "turnover": 5,              // 周转率新值
+                    "type": "NOW"              // 产品类型 NOW 现货 FUTURE 期货 CUSTOM 定制品
+                }
+            ],
+            "pageNo": 0,
+            "total": 0
+        }
+    }
+    
+### BH-126 安全库存取消手动
+#### 模块负责人
+    王子悦
+#### 对接负责人
+    尹洪明
+#### 请求
+    PUT /v2/stockup/safe/cancel/{id}
+#### 参数
+    *id // 安全库存ID
+#### 响应   
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }  
