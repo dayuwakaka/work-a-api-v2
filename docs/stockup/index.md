@@ -1033,7 +1033,12 @@
         "msg": "",
         "data": {
             "buttonPermissionPage": {},
-            "buttonPermissions": [],
+            "buttonPermissions": [
+                {
+                    "editButton":true,         // 编辑按钮
+                    "cancelButton":false        // 取消手动按钮
+                }
+            ],
             "dataSums": null,
             "datas": [
                 {
@@ -1059,8 +1064,8 @@
                     "enableAmountJian": 100,        // 可用库存件
                     "enableAmountSan": 39,          // 可用库存散
                     "guige": "150g/袋*50袋",      // 品规格
-                    "id": 0,
-                    "lockFlg": 0,
+                    "id": 0, // 安全库存ID   存在id=0的情况，需要传递id时， id 是多久就传多少，是0就传0
+                    "lockFlg": 0,               // 是否锁定 0 未锁定  1 已锁定
                     "modifyRole": 0,
                     "modifyTime": "",
                     "modifyUser": 0,
@@ -1075,8 +1080,8 @@
                     "safeNumJian": 1.5,         // 安全库存计算值
                     "safeNumManual": -1,        // 手动设置的安全库存 -1 未设置过，显示空
                     "safeNumSan": 0,
-                    "saleAmountJian": 10237,        // 本月已发件
-                    "saleAmountSan": 21,            // 本月已发散
+                    "b0NumJian": 10237,        // 本月已发件
+                    "b0NumSan": 21,            // 本月已发散
                     "status": "NORMAL",         // 库存状态  NORMAL 正常 LOCK 锁定
                     "turnover": 2,      // 周转率
                     "type": "NOW",              // 产品类型 NOW 现货 FUTURE 期货 CUSTOM 定制品
@@ -1088,7 +1093,7 @@
         }
     }   
         
-### BH-124 安全库存列表
+### BH-124 安全库存列表导出
 #### 模块负责人
     王子悦
 #### 对接负责人
@@ -1155,8 +1160,8 @@
                     "reason": "拒绝你",        // 拒绝理由
                     "remark": "",           // 申请备注
                     "safeNum": 201,             // 安全库存新值
-                    "saleAmountJian": 0,            // 本月已发件
-                    "saleAmountSan": 0,             // 本月已发散
+                    "b0NumJian": 0,            // 本月已发件
+                    "b0NumSan": 0,             // 本月已发散
                     "status": "PASS",           // 审核状态  ASKFOR 申请 PASS 通过 REFUSE 拒绝
                     "turnover": 5,              // 周转率新值
                     "type": "NOW"              // 产品类型 NOW 现货 FUTURE 期货 CUSTOM 定制品
@@ -1166,3 +1171,19 @@
             "total": 0
         }
     }
+    
+### BH-126 安全库存取消手动
+#### 模块负责人
+    王子悦
+#### 对接负责人
+    尹洪明
+#### 请求
+    PUT /v2/stockup/safe/cancel/{id}
+#### 参数
+    *id // 安全库存ID
+#### 响应   
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }  
