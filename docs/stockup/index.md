@@ -851,6 +851,7 @@
     GET /v2/stockup/line/list
 #### 参数
     toDepotId       // 入库仓
+    splitNum        // 平铺展示个数
 #### 响应
     {
         "code": 100000,
