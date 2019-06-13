@@ -463,7 +463,6 @@
     *id // 线路ID
     {
         "stockupLine": {
-            "name": "天津燕山区",    // 线路名
             "fromPathid": "0203",   // 起点
             "toDepotId": 50,        // 终点
             "paFlg": 1,         // 采购单
@@ -658,6 +657,79 @@
         }
     }
     
+### BH-56 线路修改名称
+#### 模块负责人
+    王子悦
+#### 对接负责人
+    尹洪明
+#### 请求
+    PUT /v2/stockup/line/name/{id}
+#### 参数
+    *id // 线路ID
+    {
+        "name": "昆山-DC大连仓"
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+ 
+### BH-57 线路列表（不分页）
+#### 模块负责人
+    王子悦
+#### 对接负责人
+    尹洪明
+#### 请求
+    GET /v2/stockup/line/list
+#### 参数
+    toDepotId       // 入库仓
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "createRole": 0,
+                "createTime": "2019-05-29 10:00:30",
+                "createUser": 0,
+                "createUserName": "孙启萌",
+                "deleteFlg": 0,
+                "depot": [                      // 出库仓
+                    {
+                        "deleteFlg": 0,
+                        "dutyId": 25,                   // 出库仓ID
+                        "dutyName": "VC（退货不入仓）",        // 出库仓名
+                        "id": 20,
+                        "lineId": 6,
+                        "type": "TR"
+                    }
+                ],
+                "fromPathName": "黑龙江鸡西市",       // 起点名
+                "fromPathid": "0803",               // 起点
+                "id": 6,                        // 线路ID
+                "name": "天津燕山区-DC(大连仓)",    // 线路名
+                "paFlg": 1,                     // 采购单类型
+                "stockupPlanVOS": null,
+                "supplier": [                   // 供应商
+                    {
+                        "deleteFlg": 0,
+                        "dutyId": 5563,                 // 供应商ID
+                        "dutyName": "优合集团有限公司",     // 供应商名
+                        "id": 19,
+                        "lineId": 6,
+                        "type": "PA"
+                    }
+                ],
+                "toDepotId": 40,                    // 入库仓ID
+                "toDepotName": "DC（大连铁越仓）",     // 入库仓名
+                "trFlg": 1,                     // 调拨单类型
+                "unAllocationPlans": null
+            }
+        ]
+    }
+   
 ### BH-100 安全库存规则列表
 #### 模块负责人
     王子悦
@@ -870,7 +942,10 @@
 #### 参数
     {
         *"depotId": "40",
-        *"productId": 4748
+        *"productId": [
+            4748,
+            4747
+        ]
     }
 #### 响应
     {
@@ -890,7 +965,10 @@
 #### 参数
     {
         *"depotId": "40",
-        *"productId": 4748
+        *"productId": [
+            4748,
+            4747
+        ]
     }
 #### 响应
     {
@@ -909,7 +987,9 @@
 #### 参数
     {
         *"depotId": "40",
-        *"productId": 4748
+        *"productId": [
+            4748
+        ]
     }
 #### 响应
     {
