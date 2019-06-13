@@ -7,20 +7,23 @@
 #### 请求
     GET /v2/stockup/plan/detail/depot
 #### 参数
-    无
+    splitNum: 6 // 返回[[],[]],第一个数组是下拉，第二个数组是平铺
 #### 响应
     {
         "code": 100000,
         "msg": "",
         "data": [
-            {
-                "cnt": 0, // 订单数量
-                "depot": {
-                    "id": 51,
-                    "level": "DC",
-                    "name": "DC（天津优和仓 ）"
+            [
+                {
+                    "cnt": 0, // 订单数量
+                    "depot": {
+                        "id": 51,
+                        "level": "DC",
+                        "name": "DC（天津优和仓 ）"
+                    }
                 }
-            }
+            ],
+            []
         ]
     }
 
@@ -429,8 +432,171 @@
         "msg": "",
         "data": null
     }
+    
+### BH-37 仓库管理-列表
+#### 对接负责人
+    梁铁骐
+#### 请求
+    GET /v2/stockup/depots
+#### 参数
+    depotId: 仓库id
+    type: 仓库类型 SELF-自有仓 PLATFORM-平台仓
+    level: 仓库级别
+    pageNo: 页码
+    pageSize: 行数
+#### 响应
+    {
+        "code": 100000,
+            "msg": "",
+            "data": {
+                "datas": [
+                    {
+                        "areaFlg": 1, // 是否关联区域 0-否 1-是
+                        "deleteFlg": 0,
+                        "depot": {
+                            "address": "天津市武清区大良镇新良道01号", // 详细地址
+                            "contactMobile": "13101727028", // 联系电话
+                            "contactName": "秦超杰", // 联系人 
+                            "id": 51,
+                            "lat": "0",
+                            "level": "DC", // 仓级别
+                            "lng": "0",
+                            "name": "DC（天津优和仓 ）", // 仓名称
+                            "pathId": "020114",
+                            "pathName": "武清区天津市天津", // 仓所在区域
+                            "type": "SELF" // 仓库类型 SELF-自有仓 PLATFORM-平台仓
+                        },
+                        "depotId": 51,
+                        "id": 67,
+                        "sort": 0
+                    },
+                    ...
+                ],
+                "pageNo": 1,
+                "total": 0
+            }
+    }
+    
+### BH-38 仓库管理-获取级别列表
+#### 对接负责人
+    梁铁骐
+#### 请求
+    GET /v2/stockup/depots
+#### 参数
+    无
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            "DC",
+            "FDC",
+            "VR"
+        ]
+    }
+    
+### BH-39 仓库管理-校验是否有重复区域仓设置
+#### 说明
+    保存前调用，如果data为null 说明不存在重叠区域仓，如果有值，说明存在重叠区域仓
+#### 对接负责人
+    梁铁骐
+#### 请求
+    PUT /v2/stockup/depots
+#### 参数
+    [
+        {
+            depotId: 1,
+            pathId: 0204 // 必须精确到地级市
+        },
+        ...
+    ]
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "depot": {
+                    "id": 111,
+                    "level": "DC",
+                    "name": "DC（沈阳铁越仓）" // 仓名称
+                },
+                "depotId": 111,
+                "id": 277,
+                "pathName": "内蒙古-赤峰市", // 区域名称
+                "sort": 0
+            }
+        ]
+    }
 
+### BH-40 仓库管理-获取仓对应的区域列表
+#### 对接负责人
+    梁铁骐
+#### 请求
+    GET /v2/stockup/depots/{depotId}
+#### 参数
+    depotId: 仓id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            "0601", // 区域编号
+            "0602",
+            "0603"
+        ]
+    }
 
+### BH-41 仓库管理-设置关联区域
+#### 对接负责人
+    梁铁骐
+#### 请求
+    PUT /v2/stockup/depots/{depotId}
+#### 参数
+    depotId: 仓id
+    body: [
+        {
+            "depotId": 1,
+            "pathId": "0202"
+        },
+        ...
+    ]
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### BH-42 仓库管理-获取日志列表
+#### 对接负责人
+    梁铁骐
+#### 请求
+    GET /v2/stockup/depots/{depotId}/logs
+#### 参数
+    depotId: 仓id
+    pageNo: 页码
+    pageSize: 行数
+#### 响应
+         {
+             "code": 100000,
+             "msg": "",
+             "data": {
+                 "datas": [
+                     {
+                         "depotId": 40,
+                         "id": 1,
+                         "opInfo": "修改", // 操作内容
+                         "opRole": 1,
+                         "opTime": "2019-06-13 11:12:20", // 操作时间
+                         "opUser": 1,
+                         "opUserName": "test" // 操作者
+                     }
+                 ],
+                 "pageNo": 1,
+                 "total": 0
+             }
+         }
 
 ### BH-50 线路新增
 #### 模块负责人
@@ -474,7 +640,6 @@
     *id // 线路ID
     {
         "stockupLine": {
-            "name": "天津燕山区",    // 线路名
             "fromPathid": "0203",   // 起点
             "toDepotId": 50,        // 终点
             "paFlg": 1,         // 采购单
@@ -669,6 +834,81 @@
         }
     }
     
+### BH-56 线路修改名称
+#### 模块负责人
+    王子悦
+#### 对接负责人
+    尹洪明
+#### 请求
+    PUT /v2/stockup/line/name/{id}
+#### 参数
+    *id // 线路ID
+    {
+        "name": "昆山-DC大连仓"
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+ 
+### BH-57 线路列表（不分页）
+#### 模块负责人
+    王子悦
+#### 对接负责人
+    尹洪明
+#### 请求
+    GET /v2/stockup/line/list
+#### 参数
+    toDepotId       // 入库仓
+    splitNum        // 平铺展示个数
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            [
+                "createRole": 0,
+                "createTime": "2019-05-29 10:00:30",
+                "createUser": 0,
+                "createUserName": "孙启萌",
+                "deleteFlg": 0,
+                "depot": [                      // 出库仓
+                    {
+                        "deleteFlg": 0,
+                        "dutyId": 25,                   // 出库仓ID
+                        "dutyName": "VC（退货不入仓）",        // 出库仓名
+                        "id": 20,
+                        "lineId": 6,
+                        "type": "TR"
+                    }
+                ],
+                "fromPathName": "黑龙江鸡西市",       // 起点名
+                "fromPathid": "0803",               // 起点
+                "id": 6,                        // 线路ID
+                "name": "天津燕山区-DC(大连仓)",    // 线路名
+                "paFlg": 1,                     // 采购单类型
+                "stockupPlanVOS": null,
+                "supplier": [                   // 供应商
+                    {
+                        "deleteFlg": 0,
+                        "dutyId": 5563,                 // 供应商ID
+                        "dutyName": "优合集团有限公司",     // 供应商名
+                        "id": 19,
+                        "lineId": 6,
+                        "type": "PA"
+                    }
+                ],
+                "toDepotId": 40,                    // 入库仓ID
+                "toDepotName": "DC（大连铁越仓）",     // 入库仓名
+                "trFlg": 1,                     // 调拨单类型
+                "unAllocationPlans": null
+            ],
+            []
+        ]
+    }
+   
 ### BH-100 安全库存规则列表
 #### 模块负责人
     王子悦
@@ -881,7 +1121,10 @@
 #### 参数
     {
         *"depotId": "40",
-        *"productId": 4748
+        *"productId": [
+            4748,
+            4747
+        ]
     }
 #### 响应
     {
@@ -901,7 +1144,10 @@
 #### 参数
     {
         *"depotId": "40",
-        *"productId": 4748
+        *"productId": [
+            4748,
+            4747
+        ]
     }
 #### 响应
     {
@@ -920,7 +1166,9 @@
 #### 参数
     {
         *"depotId": "40",
-        *"productId": 4748
+        *"productId": [
+            4748
+        ]
     }
 #### 响应
     {

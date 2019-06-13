@@ -1978,9 +1978,10 @@
 #### 参数
     customerName: 客户名称,
     orderId: 销售订单号,
-    statuses: ['INVALID', 'RUN', 'SEND'] 订单状态 INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收
+    statuses: ['INVALID', 'RUN'] 订单状态 INVALID:订单未生效,SET:提交物流中,RUN:订单生效。 默认传递 [INVALID,RUN]
     payFlg： 结款状态 0-未结款 1-已结款
     bigFlg： 是否大单 0-非大单 1-大单
+    greaterValue: 购买数量 （0 或 正整数）
     pageNo: 页码
     pageSize: 行数
 #### 响应
