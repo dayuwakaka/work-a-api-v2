@@ -706,6 +706,7 @@
     paymode // 支付方式 INBUY 入结 OUTBUY 出结
     priceFlg // 采购价格调整 0 未修改价格 1 修改价格待审核 2 已修改价格
     buttonPermissionFlg // 获取权限按钮 0-否 1-是
+    createUserName // 创建人名称
     pageNo // 页码
     pageSize // 行数
 #### 响应
@@ -726,8 +727,8 @@
             "datas": [
                 {
                     "completeTime": "", // 完成时间
-                    "createTime": "2018-12-10 09:46:43",
-                    "createUserName": "0",
+                    "createTime": "2018-12-10 09:46:43", // 创建时间
+                    "createUserName": "test", // 创建人
                     "deleteFlg": 0,
                     "deliverType": "THIRD", // 配送方式 SELF 自送 THIRD 物流配送
                     "depotId": 1,
@@ -2015,6 +2016,7 @@
     fromDepotId 出库仓id
     toDepotId 入库仓id
     status 订单状态 INVALID:订单未生效,RUN:订单生效,SEND:已发出,COMPLETE:已签收
+    createUserName 创建人名称
 #### 响应
     {
         "code": 100000,
@@ -2303,3 +2305,79 @@
         }
     }
 
+### CG-109. 采购订单-批量新增
+#### 模块负责人
+    梁铁骐
+#### 请求
+    POST /v2/paorder/batch
+#### 参数
+    {
+        onlyCode: 123123, // 唯一校验码
+        orderPas: [
+            {
+                *supplierId: 1, // 经销商id
+                contactName: '阎锡山', // 联系人
+                contactMobile： 13333333333, // 联系电话
+                contactPathId: 060202, // 区域id
+                contactAddress: "山西忻州代县", // 经销商地址
+                *depotId: 6, // 入库仓id
+                *depotName: "大连铁越仓", // 入库仓名称
+                *deliverType: "THIRD", // 配送方式 SELF 自送 THIRD 物流配送
+                *planCompleteTime: "2018-12-12 12:12:12", // 计划入库时间
+                *planSendTime: "2018-12-12 12:12:12", // 计划发出时间
+                *remark: "采购入货", // 备注
+                *orderPaProList: [
+                    {
+                        *productId: 1, // 产品id
+                        *productUnitId: 1, // 产品规格id
+                        *pcount: 2, // 采购数量
+                        *giftCount: 3 // 赠品数量
+                    }
+                ]
+            },
+            ...
+        ]
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+    
+### CG-110. 调拨单-批量新增
+#### 模块负责人
+    梁铁骐
+#### 请求
+    POST /v2/trorder/batch
+#### 参数
+    {
+        onlyCode: 123123, // 唯一校验码
+        trOrders: [
+            {
+                "orderTr": {
+                    *"fromDepotId": 40, // 出库仓id
+                    *"fromDepotName": "大连铁越", // 出库仓名称
+                    *"toDepotId": 2, // 入库仓id
+                    *"toDepotName": "沈阳铁越", // 入库仓名称
+                    "remark": "首单测试", // 备注 0 ~ 255 前端同事请做校验
+                    *"planSendTime": "2019-01-20", // 计划出库时间
+                    *"planCompleteTime": "2019-01-22" // 计划入库时间
+                },
+                "orderTrProList": [
+                    {
+                        *"productId": 1, // 产品id
+                        *"productUnitId": 1, // 产品规格id
+                        *"pcount": 1 // 数量
+                    }
+                ],
+                "onlyCode": 123123 // 唯一码
+            }
+        ]
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
