@@ -856,7 +856,7 @@
         "code": 100000,
         "msg": "",
         "data": [
-            {
+            [
                 "createRole": 0,
                 "createTime": "2019-05-29 10:00:30",
                 "createUser": 0,
@@ -892,7 +892,8 @@
                 "toDepotName": "DC（大连铁越仓）",     // 入库仓名
                 "trFlg": 1,                     // 调拨单类型
                 "unAllocationPlans": null
-            }
+            ],
+            []
         ]
     }
    
