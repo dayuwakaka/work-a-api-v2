@@ -7,20 +7,23 @@
 #### 请求
     GET /v2/stockup/plan/detail/depot
 #### 参数
-    无
+    splitNum: 6 // 拆分数量,若不传，返回值是 data内结构为[[]],若传递，则会拆分出[[],[]]
 #### 响应
     {
         "code": 100000,
         "msg": "",
         "data": [
-            {
-                "cnt": 0, // 订单数量
-                "depot": {
-                    "id": 51,
-                    "level": "DC",
-                    "name": "DC（天津优和仓 ）"
+            [
+                {
+                    "cnt": 0, // 订单数量
+                    "depot": {
+                        "id": 51,
+                        "level": "DC",
+                        "name": "DC（天津优和仓 ）"
+                    }
                 }
-            }
+            ],
+            []
         ]
     }
 
