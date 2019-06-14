@@ -384,6 +384,7 @@
                     "name": "test线路", // 计划名称
                     "planCompleteTime": "2019-06-01 00:00:00", // 计划入库时间
                     "planSendTime": "2019-05-29 00:00:00", // 计划发出时间
+                    "lineName": "test", // 线路名称
                     "splitFlg": 0,
                     "status": "INVALID", // 状态 INVALID 待执行 RUN 已执行
                     "stockupPlanDetailVOS": null
