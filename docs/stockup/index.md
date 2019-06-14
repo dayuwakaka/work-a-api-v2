@@ -470,7 +470,7 @@
 #### 参数
     depotId: 仓库id
     type: 仓库类型 SELF-自有仓 PLATFORM-平台仓
-    level: 仓库级别
+    level: 仓库级别 DC FDC VR(虚拟)
     pageNo: 页码
     pageSize: 行数
 #### 响应
@@ -488,7 +488,7 @@
                             "contactName": "秦超杰", // 联系人 
                             "id": 51,
                             "lat": "0",
-                            "level": "DC", // 仓级别
+                            "level": "DC", // 仓级别 DC FDC VR(虚拟)
                             "lng": "0",
                             "name": "DC（天津优和仓 ）", // 仓名称
                             "pathId": "020114",
@@ -508,7 +508,9 @@
     
 ### BH-39 仓库管理-级别枚举
 #### 枚举值
-    "DC","FDC","VR"
+    DC,
+    FDC,
+    VR - 虚拟
     
 ### BH-40 仓库管理-类型枚举
 #### 枚举值
