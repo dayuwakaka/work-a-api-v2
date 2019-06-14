@@ -1329,6 +1329,7 @@
     enableAmount    // 可用库存值
     normalAmountOp  // 过滤实际库存操作符
     normalAmount    // 实际库存值
+    buttonPermissionFlg  // 1 查权限  0 不查权限
     pageNo      // 页码
     pageSize    // 页大小
 #### 响应
