@@ -1193,6 +1193,7 @@
                     "opUser": 0,
                     "opUserName": "孙启萌",                // 操作人
                     "productId": 2281,
+                    "pno": 1889,                            // 品号
                     "productName": "好虾仁 (51/60）挑肠"      // 操作产品
                 }
             ],
