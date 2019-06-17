@@ -1861,3 +1861,51 @@
         "msg": "",
         "data": null
     }  
+    
+    
+### BH-123 安全库存列表
+#### 模块负责人
+    王子悦
+#### 对接负责人
+    尹洪明
+#### 请求
+    GET /v2/stockup/safe/{id}
+#### 参数
+    *id // 安全库存ID  注：有些安全库存ID=0，没关系 ，放心传递即可
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "avgCustomer": 0,
+            "avgJian": 0,
+            "avgNum": 0,
+            "avgSan": 0,
+            "b1Customer": 0,
+            "b1Jian": 0,
+            "b1Num": 0,
+            "b1San": 0,
+            "b2Customer": 0,
+            "b2Jian": 0,
+            "b2Num": 0,
+            "b2San": 0,
+            "b3Customer": 0,
+            "b3Jian": 0,
+            "b3Num": 0,
+            "b3San": 0,
+            "createTime": "",
+            "depotId": 0,
+            "id": 0,
+            "lockFlg": 0,
+            "modifyRole": 0,
+            "modifyTime": "",
+            "modifyUser": 0,
+            "modifyUserName": "",
+            "productId": 0,
+            "safeNum": 0,
+            "safeNumJian": 0,       // 安全库存（件）
+            "safeNumManual": 0,
+            "safeNumSan": 0,
+            "turnover": 2           // 周转率
+        }
+    }
