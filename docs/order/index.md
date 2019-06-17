@@ -2283,7 +2283,7 @@
 #### 模块负责人
     梁铁骐
 #### 请求
-    PUT /v2/bigorder/rule
+    GET /v2/bigorder/rule
 #### 参数
     无
 #### 响应
