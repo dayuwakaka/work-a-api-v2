@@ -865,13 +865,15 @@
     PUT /v2/stockup/depots/{depotId}
 #### 参数
     depotId: 仓id
-    body: [
-        {
-            "depotId": 1,
-            "pathId": "0202"
-        },
-        ...
-    ]
+    body: {
+        stockupDepotAreaDTOList: [
+            {
+                "depotId": 1,
+                "pathId": "0202"
+            },
+            ...
+        ]
+    }
 #### 响应
     {
         "code": 100000,
