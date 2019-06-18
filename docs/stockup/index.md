@@ -286,53 +286,39 @@
     supplierId    //供应商id
     producttype   //期现货标识 NOW 现货 FUTURE 期货 CUSTOM 定制
     depotId       //仓id
+    orderlack     //是否仅看订单缺货 如果仅看订单缺货：传值yes 否则传空
 #### 响应
     1.查询条件：【全部】
     {
         "code": 100000,
         "msg": "",
-        "data": {
-            "4667-冻南美白虾60/70": [//产品id-品名，这里采用对象属性来装载产品信息，如果前端需要集合形式数据，后端可以修改
+        "data": [
+        {
+            "id": 4708,//产品id
+            "lackNum": -6,//缺货【件】数
+            "name": "黑金鱿鱼圈",//产品名称
+            "stockupNeeds": [//备货需求详情列表
                 {
-                    "depotId": 40,//仓id
-                    "depotName": "DC（大连铁越仓）",//仓名称
+                    "depotId": 57,//仓id
+                    "depotName": "DC（昆山众品仓）",//仓名称
                     "inRodeNum": 0,//在途库存
-                    "invalidNum": 2400,//未生效数量
-                    "lackNum": -2400,//缺口数量
-                    "needNum": 0,
+                    "invalidNum": 6,//未生效数量
+                    "lackNum": -6,//缺口数量
+                    "needNum": 0,//需求数量
                     "orderLackNum": 0,//订单缺口数量
-                    "productId": 4667,//产品id
-                    "productName": "冻南美白虾60/70",//产品名称
+                    "productId": 4708,//产品id
+                    "productName": "黑金鱿鱼圈",//产品名称
                     "realNum": 0,//实际库存
                     "safeLackNum": 0,//安全库存缺口数量
-                    "safeNum": 0,
+                    "safeNum": 0,//安全库存
                     "status": "",//如果是【ji】，显示【急】标识
-                    "supplierId": 0,
+                    "supplierId": 2634,
                     "supplierName": "",
                     "type": "CUSTOM" //产品属性 NOW 现货 FUTURE 期货 CUSTOM 定制
                 }
-            ],
-            "4639-萌面人猪福包（豆沙包）": [
-                {
-                    "depotId": 40,
-                    "depotName": "DC（大连铁越仓）",
-                    "inRodeNum": 0,
-                    "invalidNum": 60,
-                    "lackNum": -95,
-                    "needNum": 0,
-                    "orderLackNum": 0,
-                    "productId": 4639,
-                    "productName": "萌面人猪福包（豆沙包）",
-                    "realNum": 0,
-                    "safeLackNum": 35,
-                    "safeNum": 35,
-                    "status": "",
-                    "supplierId": 0,
-                    "supplierName": "",
-                    "type": "NOW"
-                }
             ]
-        }
+        }    
+        ]
     }
     2.查询条件：某个仓
 
@@ -391,100 +377,41 @@
     supplierId    //供应商id
     producttype   //期现货标识 NOW 现货 FUTURE 期货 CUSTOM 定制
     depotId       //仓id
+    orderlack     //是否仅看订单缺货 如果仅看订单缺货：传值yes 否则传空
 #### 响应
-1.查询条件：【全部】
-
     {
         "code": 100000,
         "msg": "",
-        "data": {
-            "5563-优合集团有限公司": [//供应商id-供应商名称，这里采用对象属性来装载产品信息，如果前端需要集合形式数据，后端可以修改
+        "data": [
+        {
+            "id": 5563,//供应商id
+            "lackNum": -10,
+            "name": "优合集团有限公司",//供应商名称
+            "stockupNeeds": [//备货需求详情列表
                 {
                     "depotId": 40,//仓id
-                    "depotName": "DC（大连铁越仓）",//仓名称
+                    "depotName": "DC（大连仓）ASA",//仓名称
                     "inRodeNum": 0,//在途库存
                     "invalidNum": 10,//未生效数量
                     "lackNum": -10,//缺口数量
                     "needNum": 0,//需求数量
                     "orderLackNum": 0,//订单缺口数量
-                    "productId": 4683,//产品id
-                    "productName": "冻南美白虾（50/60）",//产品名称
+                    "productId": 4679,//产品id
+                    "productName": "冻南美白虾(50/60)",//产品名称
                     "realNum": 0,//实际库存
                     "safeLackNum": 0,//安全库存缺口数量
-                    "safeNum": 0,
+                    "safeNum": 0,//安全库存
                     "status": "",//如果是【ji】，显示【急】标识
                     "supplierId": 5563,//供应商id
                     "supplierName": "优合集团有限公司",//供应商名称
-                    "type": "FUTURE"//产品属性 NOW 现货 FUTURE 期货 CUSTOM 定制
-                }
-            ],
-            "5559-41": [
-                {
-                    "depotId": 40,
-                    "depotName": "DC（大连铁越仓）",
-                    "inRodeNum": 0,
-                    "invalidNum": 0,
-                    "lackNum": 3,
-                    "needNum": 3,
-                    "orderLackNum": 3,
-                    "productId": 4748,
-                    "productName": "唐扬鱿鱼圈",
-                    "realNum": 0,
-                    "safeLackNum": 0,
-                    "safeNum": 0,
-                    "status": "ji",
-                    "supplierId": 5559,
-                    "supplierName": "41",
-                    "type": "FUTURE"
-                }
-            ]
-    }
-
-    2.查询条件：某个仓
-    {
-        "code": 100000,
-        "msg": "",
-        "data": {
-            "5567-亚洲渔港海燕号(济南）食品有限公司": [
-                {
-                    "depotId": 51,//仓id
-                    "depotName": "DC（天津优和仓 ）",//仓名称
-                    "inRodeNum": 0,//在途库存
-                    "invalidNum": 600,//未生效数量
-                    "lackNum": -600,//缺口数量
-                    "needNum": 0,//需求数量
-                    "orderLackNum": 0,//订单缺口数量
-                    "productId": 4696,//产品id
-                    "productName": "王牌-冻南美白虾（40/50）",//产品名称
-                    "realNum": 0,//实际库存
-                    "safeLackNum": 0,//安全库存缺口数量
-                    "safeNum": 0,
-                    "status": "",//如果是【ji】，显示【急】标识
-                    "supplierId": 5567,//供应商id
-                    "supplierName": "亚洲渔港海燕号(济南）食品有限公司",//供应商名称
-                    "type": "CUSTOM"//产品属性 NOW 现货 FUTURE 期货 CUSTOM 定制
-                },
-                {
-                    "depotId": 51,
-                    "depotName": "DC（天津优和仓 ）",
-                    "inRodeNum": 0,
-                    "invalidNum": 606,
-                    "lackNum": -606,
-                    "needNum": 0,
-                    "orderLackNum": 0,
-                    "productId": 4695,
-                    "productName": "王牌-冻南美白虾（30/40）",
-                    "realNum": 0,
-                    "safeLackNum": 0,
-                    "safeNum": 0,
-                    "status": "",
-                    "supplierId": 5567,
-                    "supplierName": "亚洲渔港海燕号(济南）食品有限公司",
-                    "type": "CUSTOM"
+                    "type": "NOW"//产品属性 NOW 现货 FUTURE 期货 CUSTOM 定制
                 }
             ]
         }
+        ]
     }
+
+   
 
 ### BH-13.备货采购转化需求查询
 #### 模块负责人
