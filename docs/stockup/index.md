@@ -286,6 +286,7 @@
     supplierId    //供应商id
     producttype   //期现货标识 NOW 现货 FUTURE 期货 CUSTOM 定制
     depotId       //仓id
+    orderlack     //是否仅看订单缺货 如果仅看订单缺货：传值yes 否则传空
 #### 响应
     1.查询条件：【全部】
     {
@@ -376,6 +377,7 @@
     supplierId    //供应商id
     producttype   //期现货标识 NOW 现货 FUTURE 期货 CUSTOM 定制
     depotId       //仓id
+    orderlack     //是否仅看订单缺货 如果仅看订单缺货：传值yes 否则传空
 #### 响应
     {
         "code": 100000,
