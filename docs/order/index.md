@@ -2299,7 +2299,7 @@
 #### 请求
     GET /v2/bigorder/export
 #### 参数
-    statuses[] 订单状态集合 INVALID,RUN,
+    status 订单状态 INVALID,RUN, 全部状态不用传
     startDate: '2019-01-01' // yyyy-MM-dd
     endDate: '2019-01-31' // yyyy-MM-dd
     checkCode: 下载码
