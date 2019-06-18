@@ -709,9 +709,9 @@
 #### 对接负责人
     梁铁骐
 #### 请求
-    GET /v2/stockup/plan/{lmsNo}/info
+    GET /v2/stockup/plan/{wbNo}/info
 #### 参数
-    lmsNo: 承运单号
+    wbNo: 承运单号
 #### 响应
     {
         "code": 100000,
