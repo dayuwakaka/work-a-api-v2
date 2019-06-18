@@ -2930,11 +2930,11 @@
 #### 模块负责人
     尹洪明
 #### 请求
-    DELETE /router/v5/product/follow/batch
+    POST /router/v5/product/follow/batch
 #### 参数
     {
         "customerId":123,
-        "productId":[
+        "productIds":[
             1,
             2,
             3
