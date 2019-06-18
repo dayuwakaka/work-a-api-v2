@@ -444,18 +444,22 @@
     {
         "code": 100000,
         "msg": "",
-        "data": {
-            "5566-亚洲渔港（大连）食品有限公司（IN）": [//供应商id-供应商名称，这里采用对象属性来装载产品信息，如果前端需要集合形式数据，后端可以修改
+        "data": [
+        {
+            "id": 5566,//供应商id
+            "lackNum": 0,
+            "name": "亚洲渔港（大连）食品有限公司（IN）",//供应商名称
+            "stockupCreatePAList": [
                 {
-                    "depotId": 0,//仓id
-                    "lackNum": 0,//缺口数量
+                    "depotId": 0,
+                    "lackNum": 606,//缺口数量
                     "orderLackNum": 0,//订单缺口数量
-                    "paNum": 0,//采购数量
+                    "paNum": 606,//采购数量
                     "productId": 4708,//产品id
                     "productName": "黑金鱿鱼圈",//品名
                     "productNo": "Y1945",//品号
-                    "productStatus": "",//产品类型 NOW 现货 FUTURE 期货 CUSTOM 定制
-                    "productUnit": "袋",//产品单位
+                    "productStatus": "",//产品属性 NOW 现货 FUTURE 期货 CUSTOM 定制
+                    "productUnit": "袋",/产品单位
                     "productUnitId": 8247,//产品规格id
                     "productUnitName": "75g/袋",//产品规格
                     "realNum": 0,//实际库存
@@ -467,31 +471,9 @@
                     "toDepotId": 0,
                     "toDepotroductStatus": ""
                 }
-            ],
-            "5567-亚洲渔港海燕号(济南）食品有限公司": [
-                {
-                    "depotId": 0,
-                    "lackNum": 0,
-                    "orderLackNum": 0,
-                    "paNum": 0,
-                    "productId": 4696,
-                    "productName": "王牌-冻南美白虾（40/50）",
-                    "productNo": "HYH01014",
-                    "productStatus": "",
-                    "productUnit": "件",
-                    "productUnitId": 8226,
-                    "productUnitName": "1.5kg/盒*6盒/件",
-                    "realNum": 0,
-                    "safeLackNum": 0,
-                    "safeNum": 0,
-                    "supplierId": 5567,
-                    "supplierName": "亚洲渔港海燕号(济南）食品有限公司",
-                    "supplierPrice": 460,
-                    "toDepotId": 0,
-                    "toDepotroductStatus": ""
-                }
             ]
         }
+        ]
     }
 ### BH-14.备货调拨转化需求查询
 #### 模块负责人
