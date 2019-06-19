@@ -1002,6 +1002,7 @@
                 "isPass": 1, // 0：待审，1：通过，2：未通过
             },
             "fromDepotId": 51,
+            "partButton": false, // 部分进入大单按钮
             "fromDepotName": "DC（天津优和仓 ）", // 出库仓
             "giftFlg": 0,
             "id": 66,
@@ -2313,8 +2314,6 @@
     PUT /v2/bigorder/{orderId}/split
 #### 参数
     {
-        fromDepotId2: 13, // 原出库仓id
-        fromDepotName2: "", // 原出库仓名称
         source: "BIG_ORDER_LIST", // 固定传BIG_ORDER_LIST
         splitOrderSaPros: [
             {
