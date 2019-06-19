@@ -632,7 +632,11 @@
                     "remark": "",
                     "san": 0,
                     "send": "20",//供应商/出库仓
-                    "status": "SEND",
+                    "status": "SEND",//当前状态
+                    //PA单的状态： INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已完成
+                    //TR单的状态：INVALID 未生效 RUN 已生效 SEND 已发出 COMPLETE 已签收
+                    //SA单状态：INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收
+                    
                     "toDepotName": "",
                     "unit": "件"
                 }
