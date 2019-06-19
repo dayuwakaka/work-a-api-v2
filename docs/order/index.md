@@ -2305,4 +2305,28 @@
     checkCode: 下载码
 #### 响应  
     stream
+    
+### DD-145. 大单-部分移入
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/bigorder/{orderId}/split
+#### 参数
+    {
+        fromDepotId2: 13, // 原出库仓id
+        fromDepotName2: "", // 原出库仓名称
+        source: "BIG_ORDER_LIST", // 固定传BIG_ORDER_LIST
+        splitOrderSaPros: [
+            {
+                id: 12087, // 产品明细id,
+                pcount: 12 // 数量
+            },
+        ]
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": 123
+    }
 
