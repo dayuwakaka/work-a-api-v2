@@ -511,6 +511,7 @@
         "data": [
             {
                 "depotId": 0,//入库仓id
+                "fromDepotroductStatus": "NOW",//// 入库仓产品属性 NOW 现货 FUTURE 期货 CUSTOM 定制
                 "lackNum": 2,//缺口数量
                 "orderLackNum": 0,//订单缺口数量
                 "paNum": 0,//采购数量
@@ -532,6 +533,7 @@
             },
             {
                 "depotId": 0,
+                "fromDepotroductStatus": "NOW",//// 入库仓产品属性 NOW 现货 FUTURE 期货 CUSTOM 定制
                 "lackNum": 600,
                 "orderLackNum": 0,
                 "paNum": 0,
