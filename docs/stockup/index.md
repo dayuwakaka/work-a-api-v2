@@ -34,7 +34,7 @@
      GET  /v2/stockup/plan/detail
 #### 参数
     orderId  //采购单号/调拨单号
-    depotId  //入库仓id
+    *depotId  //入库仓id
     lineId   //线路id
 #### 响应
 
@@ -557,6 +557,90 @@
             }
         ]
     }
+### BH-15.查询需求数量订单明细
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /v2/stockup/need/getStockupNeedInfo
+#### 参数
+    *depotId   //仓id
+    *productId  //产品id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "depotName": "DC（大连铁越仓）",//仓名称
+            "stockupNeedDetails": [//需求订单详情
+                {
+                    "address": "香炉礁五金几点大厦",//收货地址【用于SA单】
+                    "createTime": "2019-06-19",//创建时间
+                    "createUserName": "孙启萌",//创建人
+                    "depotId": 40,
+                    "depotName": "DC（大连铁越仓）",
+                    "jian": 0,//需求【件】数量
+                    "orderId": "SA19061900001",//订单号
+                    "planCompleteTime": "",
+                    "planSendTime": "2019-06-21",//指定发货时间
+                    "productId": 4748,
+                    "productName": "唐扬鱿鱼圈",
+                    "receive": "王颖",//收货人【用于SA单】 附：这里收货信息与入库仓用两个不同字段传值，考虑到前台可能用收货人，收货地址进行排版。如果需要收货信息与入库仓合并到一个数据项中，后台可以修改。
+                    "remark": "",//备注
+                    "san": 1,//需求【散】数量
+                    "send": "摩加迪沙有限公司6",//客户/出库仓
+                    "status": "INVALID",//订单状态
+                        //PA单的状态： INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已完成
+                        //TR单的状态：INVALID 未生效 RUN 已生效 SEND 已发出 COMPLETE 已签收
+                        //SA单状态：INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收
+                    "toDepotName": "",//入库仓 【用于TR单】
+                    "unit": "件"
+                }
+            ],
+            "productName": "唐扬鱿鱼圈"//产品名称
+        }
+    }
+
+### BH-16.查询在途/未生效数量订单明细
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /v2/stockup/need/getStockupInRodeInvalid
+#### 参数
+    *type       //查询类型    inroad  在途  invalid 未生效
+    *depotId   //仓id
+    *productId  //产品id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "depotName": "DC（大连仓）ASA",//仓名称
+            "stockupNeedDetails": [
+                {
+                    "address": "",
+                    "createTime": "2019-03-19",//创建时间
+                    "createUserName": "姜蕾",//创建人
+                    "depotId": 40,
+                    "depotName": "DC（大连仓）ASA",
+                    "jian": 28,//入库数量
+                    "orderId": "PA1903190000009",//采购单号/调拨单号
+                    "planCompleteTime": "2019-03-20",//计划入库时间
+                    "planSendTime": "2019-03-19",//计划发货时间
+                    "productId": 4,
+                    "productName": "COCO虾(冻裹面包屑虾）",
+                    "receive": "",
+                    "remark": "",
+                    "san": 0,
+                    "send": "20",//供应商/出库仓
+                    "status": "SEND",
+                    "toDepotName": "",
+                    "unit": "件"
+                }
+            ],
+            "productName": "COCO虾(冻裹面包屑虾）"//产品名称
+        }
+    }
+
 
 ### BH-30 计划-新增
 #### 模块负责人
