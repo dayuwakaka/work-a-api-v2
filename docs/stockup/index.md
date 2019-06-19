@@ -452,7 +452,9 @@
             "stockupCreatePAList": [
                 {
                     "depotId": 0,
+                    "fromDepotroductStatus": "",
                     "lackNum": 606,//缺口数量
+                    "moreCount": 1,//变红是1，不变是0  逻辑：如果一个产品关联多个供应商，此产品显示红色
                     "orderLackNum": 0,//订单缺口数量
                     "paNum": 606,//采购数量
                     "productId": 4708,//产品id
