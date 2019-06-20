@@ -853,6 +853,7 @@
     depotId: 仓库id
     type: 仓库类型 SELF-自有仓 PLATFORM-平台仓
     level: 仓库级别 DC FDC VR(虚拟)
+    name: 仓库名称
     pageNo: 页码
     pageSize: 行数
 #### 响应
