@@ -2533,10 +2533,10 @@
 #### 模块负责人
     梁铁骐
 #### 请求
-    GET /v2/supplier/cooperation/{supplierId}/{productId}/lock
+    GET /v2/supplier/cooperation/{supplierId}/lock
 #### 参数
     supplierId 供应商id
-    productId 产品id
+    body: [1,2,3,4,5] // 产品id集合
 #### 响应
     {
         "code": 100000,
@@ -2548,10 +2548,10 @@
 #### 模块负责人
     梁铁骐
 #### 请求
-    GET /v2/supplier/cooperation/{supplierId}/{productId}/normal
+    GET /v2/supplier/cooperation/{supplierId}/normal
 #### 参数
     supplierId 供应商id
-    productId 产品id
+    body: [1,2,3,4,5] // 产品id集合
 #### 响应
     {
         "code": 100000,
