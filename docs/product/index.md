@@ -801,7 +801,7 @@
     depotId: 1 // 仓ID， 传递仓ID，是需要产品匹配库存存量
     productunitIds[]:1,2,7  // 产品规格
     excludeIds[]:1,27       // 排除的产品规格
-    @@isAsign: 0              // 0 未签约 1 已签约
+    isAsign: 0              // 0 未签约 1 已签约
     ---------------------------以下三个has开头的参数决定是否查询价格和库存 ture查询 & false不查询-----------------------------------------
     hasPrice:           // 客户某个区域产品价格
 		customerId
@@ -813,7 +813,6 @@
 	hasStock3:          // 供应商某个仓库产品库存
 		*supplierId
 		*depotId
-	hasStockSale:true        // 是否查询平均库存出货量、库存出货差
     ----------------------------------------------------------------------------------------------------------------------------------
     pageNo: 1 // 页码 默认 1 
     pageSize: 25 // 页面条数 默认 25
@@ -848,13 +847,13 @@
                     }, 
                     "product": {
                         "customFlg": 0, // 定制标识
-                        @@"customFlgMore": 0, // 定制标志 0 非定制 1 普通定制 2 专属定制
+                        "customFlgMore": 0, // 定制标志 0 非定制 1 普通定制 2 专属定制
                         "id": 1, // 产品ID
                         "longName": "香草凤尾虾-专业开背，秘制加工，中西餐厅新食尚~", // 广告名
                         "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/f9ce32e007fc796722466531c86d5cd9.jpg", // 主图背景图
                         "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg", // 主图
                         "name": "香草凤尾虾", // 产品名
-                        @@"nowfuture": "NOW",         // NOW 现货  FUTURE 期货
+                        "nowfuture": "NOW",         // NOW 现货  FUTURE 期货
                         "pno": "0151", // 品号
                         "productLack": { // 缺货标识，若未null 则不缺货
                             "productId": 1，
@@ -870,19 +869,6 @@
                         "amountJian": 97,       // 件
                         "amountSan": 11,        // 散
                         "productId": 4664
-                    },
-                    "stockupSale":{// 库存出货量
-                            "avgNum": 81,       // 平均出货量
-                            "depotId": 40,      // 仓ID
-                            "id": 0,
-                            "productId": 4664,
-                            "subNum": -20       // 出货库存差
-                    },
-                    "supplierPrice":{// 供应商采购价
-                            "price": 0,         // 采购价
-                            "productId": 0,
-                            "productUnitId": 0,
-                            "supplierId": 0     // 供应商ID
                     },
                     "unit": "盒", // 单位名
                     "unitId": 2,  // 单位ID

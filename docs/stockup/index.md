@@ -1953,3 +1953,81 @@
     
 
 
+
+### BH-130 产品规格列表
+#### 模块负责人
+    王子悦
+#### 对接负责人
+    尹洪明
+#### 请求
+    GET /v2/stockup/plan/guige
+#### 参数
+    keyword         // 品号、品名
+    toDepotId       // 入库仓
+    fromDepotId     // 出库仓
+    supplierId      // 供应商ID
+    excludeIds      // 排除规格ID
+    pageNo
+    pageSize
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissionPage": {},
+            "buttonPermissions": [],
+            "dataSums": null,
+            "datas": [
+                {
+                    "id": 1227,                         // 规格ID
+                    "productId": 705,                   // 产品ID
+                    "guige": "200g（6枚）/袋*12袋/件",    // 规格
+                    "perunit": 12,                      // 转化率
+                    "unitId": 3,                        // 单位ID
+                    "unit": "件",                        // 单位名
+                    "subNum": 10,                       // 出货库存差
+                    "avgNum": 10,                       // 平均出货量
+                    "safeNumJian": 0,                   // 安全库存
+                    "toDepotNowFutureType": "FUTURE",   // 入库仓产品类型  NOW 现货 FUTURE 期货 CUSTOM 定制品
+                    "fromDepotNowFutureType": "FUTURE", // 出库仓产品类型  同上
+                    "supplierPrice": 100.39,            // 供应商采购价（签约价）
+                    "product": {
+                        "id": 705,
+                        "pno": "0004",                  // 品号
+                        "name": "宝宝贝（蒜蓉粉丝扇贝）",      // 品名
+                        "status": "NORMAL",             // 上下架      NORMAL 上架 LOCK 下架
+                        "customFlg": 0,
+                        "customFlgMore": 0,             // 定制标志     0 非定制  1 普通定制 2 专属定制
+                        "longName": "宝宝贝（蒜蓉粉丝蒸扇贝），平价海鲜大餐， 8分钟明星！",
+                        "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/6da0bffb9f05f4ad08464553c2b2da21.jpg",
+                        "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201501/13/1421138625-qVDJ.jpg",
+                        "myFollowFlg": "NO",
+                        "newHotFlg": "",
+                        "nowFutureFlg": "",
+                        "productLack": null,            // 是否断货 null 非断货
+                    },
+                    "stock": {
+                        "productId": 705,
+                        "amount": 1704,
+                        "amountJian": 142,          // 实际库存（件）
+                        "amountSan": 0              // 实际库存（散）
+                    },
+                    "price": null,
+                    "productCart": null,
+                    "width": 31.2,
+                    "grossweight": 5.55,
+                    "height": 20,
+                    "length": 48.2,
+                    "marketActive": null,
+                    "minimum": 0,
+                    "minimumType": "NONE",
+                    "modifyTime": "",
+                    "netweight": 2.4,
+                    "cubage": 0,
+                    "createTime": ""
+                }
+            ],
+            "pageNo": 0,
+            "total": 0
+        }
+    }
