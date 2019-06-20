@@ -299,6 +299,8 @@
             "name": "黑金鱿鱼圈",//产品名称
             "stockupNeeds": [//备货需求详情列表
                 {
+                    "createTime": "2019-02-15",//操作时间
+                    "createUserName": "李凤",//操作人
                     "depotId": 57,//仓id
                     "depotName": "DC（昆山众品仓）",//仓名称
                     "inRodeNum": 0,//在途库存
@@ -327,6 +329,8 @@
         "msg": "",
         "data": [
             {
+                "createTime": "2019-02-15",//操作时间
+                "createUserName": "李凤",//操作人
                 "depotId": 40,//仓id
                 "depotName": "DC（大连铁越仓）",//仓名称
                 "inRodeNum": 0,//在途库存
@@ -345,6 +349,8 @@
                 "type": "CUSTOM" //产品属性 NOW 现货 FUTURE 期货 CUSTOM 定制
             },
             {
+                "createTime": "2019-02-15",//操作时间
+                "createUserName": "李凤",//操作人
                 "depotId": 40,
                 "depotName": "DC（大连铁越仓）",
                 "inRodeNum": 0,
@@ -389,6 +395,8 @@
             "name": "优合集团有限公司",//供应商名称
             "stockupNeeds": [//备货需求详情列表
                 {
+                    "createTime": "2019-02-15",//操作时间
+                    "createUserName": "李凤",//操作人
                     "depotId": 40,//仓id
                     "depotName": "DC（大连仓）ASA",//仓名称
                     "inRodeNum": 0,//在途库存
