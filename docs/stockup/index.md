@@ -601,8 +601,9 @@
                     "status": "INVALID",//订单状态
                         //PA单的状态： INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已完成
                         //TR单的状态：INVALID 未生效 RUN 已生效 SEND 已发出 COMPLETE 已签收
-                        //SA单状态：INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收
+                        //SA单状态：INVALID:未生效,SET:已提交,RUN:已生效,SEND:已发出,COMPLETE:已签收
                     "toDepotName": "",//入库仓 【用于TR单】
+                    "type": "PA",//订单类型 PA 销售单  TR   调拨单  SA 采购单
                     "unit": "件"
                 }
             ],
@@ -645,9 +646,10 @@
                     "status": "SEND",//当前状态
                     //PA单的状态： INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已完成
                     //TR单的状态：INVALID 未生效 RUN 已生效 SEND 已发出 COMPLETE 已签收
-                    //SA单状态：INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收
+                    //SA单状态：INVALID:未生效,SET:已提交,RUN:已生效,SEND:已发出,COMPLETE:已签收
                     
                     "toDepotName": "",
+                    "type": "PA",//订单类型 PA 销售单  TR   调拨单  SA 采购单
                     "unit": "件"
                 }
             ],
