@@ -863,10 +863,29 @@
                     },
                     "productCart": null,
                     "productId": 1,
-                    "stock": { // 库存
-                        "productId": 1,
-                        "amount": 20 // 最小单位数量
+                    "stock": {              // 实际库存
+                        "amount": 1931,         
+                        "amountJian": 97,       // 件
+                        "amountSan": 11,        // 散
+                        "productId": 4664
                     },
+                    "stockupSale": [       // 库存出货量
+                        {
+                            "avgNum": 81,       // 平均出货量
+                            "depotId": 40,      // 仓ID
+                            "id": 0,
+                            "productId": 4664,
+                            "subNum": -20       // 出货库存差
+                        }
+                    ],
+                    "supplierPrice": [          // 供应商采购价
+                        {
+                            "price": 0,         // 采购价
+                            "productId": 0,
+                            "productUnitId": 0,
+                            "supplierId": 0     // 供应商ID
+                        }
+                    ],
                     "unit": "盒", // 单位名
                     "unitId": 2,  // 单位ID
                     "width": 15.5 // 宽度
