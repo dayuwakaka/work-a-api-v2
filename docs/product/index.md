@@ -800,6 +800,7 @@
     supplierId: 1 // 供应商ID， 传递供应商ID 是在进行产品定价的时候 需要带出产品的供应商价格
     depotId: 1 // 仓ID， 传递仓ID，是需要产品匹配库存存量
     productunitIds[]:1,2,7  // 产品规格
+    excludeIds[]:1,27       // 排除的产品规格
     @@isAsign: 0              // 0 未签约 1 已签约
     ---------------------------以下三个has开头的参数决定是否查询价格和库存 ture查询 & false不查询-----------------------------------------
     hasPrice:           // 客户某个区域产品价格
@@ -812,6 +813,7 @@
 	hasStock3:          // 供应商某个仓库产品库存
 		*supplierId
 		*depotId
+	hasStockSale:true        // 是否查询平均库存出货量、库存出货差
     ----------------------------------------------------------------------------------------------------------------------------------
     pageNo: 1 // 页码 默认 1 
     pageSize: 25 // 页面条数 默认 25
@@ -869,23 +871,19 @@
                         "amountSan": 11,        // 散
                         "productId": 4664
                     },
-                    "stockupSale": [       // 库存出货量
-                        {
+                    "stockupSale":{// 库存出货量
                             "avgNum": 81,       // 平均出货量
                             "depotId": 40,      // 仓ID
                             "id": 0,
                             "productId": 4664,
                             "subNum": -20       // 出货库存差
-                        }
-                    ],
-                    "supplierPrice": [          // 供应商采购价
-                        {
+                    },
+                    "supplierPrice":{// 供应商采购价
                             "price": 0,         // 采购价
                             "productId": 0,
                             "productUnitId": 0,
                             "supplierId": 0     // 供应商ID
-                        }
-                    ],
+                    },
                     "unit": "盒", // 单位名
                     "unitId": 2,  // 单位ID
                     "width": 15.5 // 宽度
