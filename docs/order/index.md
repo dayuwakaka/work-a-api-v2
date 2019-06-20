@@ -1002,6 +1002,7 @@
                 "isPass": 1, // 0：待审，1：通过，2：未通过
             },
             "fromDepotId": 51,
+            "partButton": false, // 部分进入大单按钮
             "fromDepotName": "DC（天津优和仓 ）", // 出库仓
             "giftFlg": 0,
             "id": 66,
@@ -2299,10 +2300,32 @@
 #### 请求
     GET /v2/bigorder/export
 #### 参数
-    statuses[] 订单状态集合 INVALID,RUN,
+    status 订单状态 INVALID,RUN, 全部状态不用传
     startDate: '2019-01-01' // yyyy-MM-dd
     endDate: '2019-01-31' // yyyy-MM-dd
     checkCode: 下载码
 #### 响应  
     stream
+    
+### DD-145. 大单-部分移入
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /v2/bigorder/{orderId}/split
+#### 参数
+    {
+        source: "BIG_ORDER_LIST", // 固定传BIG_ORDER_LIST
+        splitOrderSaPros: [
+            {
+                id: 12087, // 产品明细id,
+                pcount: 12 // 数量
+            },
+        ]
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": 123
+    }
 

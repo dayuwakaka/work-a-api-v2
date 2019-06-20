@@ -34,7 +34,7 @@
      GET  /v2/stockup/plan/detail
 #### 参数
     orderId  //采购单号/调拨单号
-    depotId  //入库仓id
+    *depotId  //入库仓id
     lineId   //线路id
 #### 响应
 
@@ -299,6 +299,8 @@
             "name": "黑金鱿鱼圈",//产品名称
             "stockupNeeds": [//备货需求详情列表
                 {
+                    "createTime": "2019-02-15",//操作时间
+                    "createUserName": "李凤",//操作人
                     "depotId": 57,//仓id
                     "depotName": "DC（昆山众品仓）",//仓名称
                     "inRodeNum": 0,//在途库存
@@ -327,6 +329,8 @@
         "msg": "",
         "data": [
             {
+                "createTime": "2019-02-15",//操作时间
+                "createUserName": "李凤",//操作人
                 "depotId": 40,//仓id
                 "depotName": "DC（大连铁越仓）",//仓名称
                 "inRodeNum": 0,//在途库存
@@ -345,6 +349,8 @@
                 "type": "CUSTOM" //产品属性 NOW 现货 FUTURE 期货 CUSTOM 定制
             },
             {
+                "createTime": "2019-02-15",//操作时间
+                "createUserName": "李凤",//操作人
                 "depotId": 40,
                 "depotName": "DC（大连铁越仓）",
                 "inRodeNum": 0,
@@ -389,6 +395,8 @@
             "name": "优合集团有限公司",//供应商名称
             "stockupNeeds": [//备货需求详情列表
                 {
+                    "createTime": "2019-02-15",//操作时间
+                    "createUserName": "李凤",//操作人
                     "depotId": 40,//仓id
                     "depotName": "DC（大连仓）ASA",//仓名称
                     "inRodeNum": 0,//在途库存
@@ -444,18 +452,24 @@
     {
         "code": 100000,
         "msg": "",
-        "data": {
-            "5566-亚洲渔港（大连）食品有限公司（IN）": [//供应商id-供应商名称，这里采用对象属性来装载产品信息，如果前端需要集合形式数据，后端可以修改
+        "data": [
+        {
+            "id": 5566,//供应商id
+            "lackNum": 0,
+            "name": "亚洲渔港（大连）食品有限公司（IN）",//供应商名称
+            "stockupCreatePAList": [
                 {
-                    "depotId": 0,//仓id
-                    "lackNum": 0,//缺口数量
+                    "depotId": 0,
+                    "fromDepotroductStatus": "",
+                    "lackNum": 606,//缺口数量
+                    "moreCount": 1,//变红是1，不变是0  逻辑：如果一个产品关联多个供应商，此产品显示红色
                     "orderLackNum": 0,//订单缺口数量
-                    "paNum": 0,//采购数量
+                    "paNum": 606,//采购数量
                     "productId": 4708,//产品id
                     "productName": "黑金鱿鱼圈",//品名
                     "productNo": "Y1945",//品号
-                    "productStatus": "",//产品类型 NOW 现货 FUTURE 期货 CUSTOM 定制
-                    "productUnit": "袋",//产品单位
+                    "productStatus": "",//产品属性 NOW 现货 FUTURE 期货 CUSTOM 定制
+                    "productUnit": "袋",/产品单位
                     "productUnitId": 8247,//产品规格id
                     "productUnitName": "75g/袋",//产品规格
                     "realNum": 0,//实际库存
@@ -467,31 +481,9 @@
                     "toDepotId": 0,
                     "toDepotroductStatus": ""
                 }
-            ],
-            "5567-亚洲渔港海燕号(济南）食品有限公司": [
-                {
-                    "depotId": 0,
-                    "lackNum": 0,
-                    "orderLackNum": 0,
-                    "paNum": 0,
-                    "productId": 4696,
-                    "productName": "王牌-冻南美白虾（40/50）",
-                    "productNo": "HYH01014",
-                    "productStatus": "",
-                    "productUnit": "件",
-                    "productUnitId": 8226,
-                    "productUnitName": "1.5kg/盒*6盒/件",
-                    "realNum": 0,
-                    "safeLackNum": 0,
-                    "safeNum": 0,
-                    "supplierId": 5567,
-                    "supplierName": "亚洲渔港海燕号(济南）食品有限公司",
-                    "supplierPrice": 460,
-                    "toDepotId": 0,
-                    "toDepotroductStatus": ""
-                }
             ]
         }
+        ]
     }
 ### BH-14.备货调拨转化需求查询
 #### 模块负责人
@@ -529,6 +521,7 @@
         "data": [
             {
                 "depotId": 0,//入库仓id
+                "fromDepotroductStatus": "NOW",//// 入库仓产品属性 NOW 现货 FUTURE 期货 CUSTOM 定制
                 "lackNum": 2,//缺口数量
                 "orderLackNum": 0,//订单缺口数量
                 "paNum": 0,//采购数量
@@ -550,6 +543,7 @@
             },
             {
                 "depotId": 0,
+                "fromDepotroductStatus": "NOW",//// 入库仓产品属性 NOW 现货 FUTURE 期货 CUSTOM 定制
                 "lackNum": 600,
                 "orderLackNum": 0,
                 "paNum": 0,
@@ -571,6 +565,94 @@
             }
         ]
     }
+### BH-15.查询需求数量订单明细
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /v2/stockup/need/getStockupNeedInfo
+#### 参数
+    *depotId   //仓id
+    *productId  //产品id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "depotName": "DC（大连铁越仓）",//仓名称
+            "stockupNeedDetails": [//需求订单详情
+                {
+                    "address": "香炉礁五金几点大厦",//收货地址【用于SA单】
+                    "createTime": "2019-06-19",//创建时间
+                    "createUserName": "孙启萌",//创建人
+                    "depotId": 40,
+                    "depotName": "DC（大连铁越仓）",
+                    "jian": 0,//需求【件】数量
+                    "orderId": "SA19061900001",//订单号
+                    "planCompleteTime": "",
+                    "planSendTime": "2019-06-21",//指定发货时间
+                    "productId": 4748,
+                    "productName": "唐扬鱿鱼圈",
+                    "receive": "王颖",//收货人【用于SA单】 附：这里收货信息与入库仓用两个不同字段传值，考虑到前台可能用收货人，收货地址进行排版。如果需要收货信息与入库仓合并到一个数据项中，后台可以修改。
+                    "remark": "",//备注
+                    "san": 1,//需求【散】数量
+                    "send": "摩加迪沙有限公司6",//客户/出库仓
+                    "status": "INVALID",//订单状态
+                        //PA单的状态： INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已完成
+                        //TR单的状态：INVALID 未生效 RUN 已生效 SEND 已发出 COMPLETE 已签收
+                        //SA单状态：INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收
+                    "toDepotName": "",//入库仓 【用于TR单】
+                    "unit": "件"
+                }
+            ],
+            "productName": "唐扬鱿鱼圈"//产品名称
+        }
+    }
+
+### BH-16.查询在途/未生效数量订单明细
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /v2/stockup/need/getStockupInRodeInvalid
+#### 参数
+    *type       //查询类型    inroad  在途  invalid 未生效
+    *depotId   //仓id
+    *productId  //产品id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "depotName": "DC（大连仓）ASA",//仓名称
+            "stockupNeedDetails": [
+                {
+                    "address": "",
+                    "createTime": "2019-03-19",//创建时间
+                    "createUserName": "姜蕾",//创建人
+                    "depotId": 40,
+                    "depotName": "DC（大连仓）ASA",
+                    "jian": 28,//入库数量
+                    "orderId": "PA1903190000009",//采购单号/调拨单号
+                    "planCompleteTime": "2019-03-20",//计划入库时间
+                    "planSendTime": "2019-03-19",//计划发货时间
+                    "productId": 4,
+                    "productName": "COCO虾(冻裹面包屑虾）",
+                    "receive": "",
+                    "remark": "",
+                    "san": 0,
+                    "send": "20",//供应商/出库仓
+                    "status": "SEND",//当前状态
+                    //PA单的状态： INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已完成
+                    //TR单的状态：INVALID 未生效 RUN 已生效 SEND 已发出 COMPLETE 已签收
+                    //SA单状态：INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收
+                    
+                    "toDepotName": "",
+                    "unit": "件"
+                }
+            ],
+            "productName": "COCO虾(冻裹面包屑虾）"//产品名称
+        }
+    }
+
 
 ### BH-30 计划-新增
 #### 模块负责人
@@ -709,9 +791,9 @@
 #### 对接负责人
     梁铁骐
 #### 请求
-    GET /v2/stockup/plan/{lmsNo}/info
+    GET /v2/stockup/plan/{wbNo}/info
 #### 参数
-    lmsNo: 承运单号
+    wbNo: 承运单号
 #### 响应
     {
         "code": 100000,
@@ -779,6 +861,7 @@
     depotId: 仓库id
     type: 仓库类型 SELF-自有仓 PLATFORM-平台仓
     level: 仓库级别 DC FDC VR(虚拟)
+    name: 仓库名称
     pageNo: 页码
     pageSize: 行数
 #### 响应
@@ -883,13 +966,15 @@
     PUT /v2/stockup/depots/{depotId}
 #### 参数
     depotId: 仓id
-    body: [
-        {
-            "depotId": 1,
-            "pathId": "0202"
-        },
-        ...
-    ]
+    body: {
+        stockupDepotAreaDTOList: [
+            {
+                "depotId": 1,
+                "pathId": "0202"
+            },
+            ...
+        ]
+    }
 #### 响应
     {
         "code": 100000,
@@ -927,18 +1012,33 @@
              }
          }
          
-### BH-45 仓库管理-仓地图展示（结构未定，接口欠缺）
+### BH-45 仓库管理-仓地图展示
 #### 对接负责人
     梁铁骐
 #### 请求
-    GET /v2/stockup/depots/???
+    GET /v2/stockup/depots/areas
 #### 参数
 #### 响应
     {
          "code": 100000,
          "msg": "",
-         "data": ???
+         "data": [
+            {
+                "name": "DC（天津优和仓 ）"
+                "point": ['xxxxx', 'yyyy'] // 经纬
+                "areas": [
+                    {
+                        "name": "石家庄市" // 城市名称
+                        "point": ['xxxxx', 'yyyy'] // 经纬
+                    }
+                ]
+            },
+         ]
     }
+
+
+
+
 
 ### BH-50 线路新增
 #### 模块负责人
@@ -1848,3 +1948,6 @@
             "turnover": 2           // 周转率
         }
     }
+    
+
+

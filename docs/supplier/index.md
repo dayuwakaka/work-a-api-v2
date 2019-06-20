@@ -2305,7 +2305,7 @@
         }
     }
 
-### CG-109. 采购订单-批量新增
+### CG-110. 采购订单-批量新增
 #### 模块负责人
     梁铁骐
 #### 请求
@@ -2345,7 +2345,7 @@
         "data": null
     }
     
-### CG-110. 调拨单-批量新增
+### CG-111. 调拨单-批量新增
 #### 模块负责人
     梁铁骐
 #### 请求
@@ -2380,4 +2380,32 @@
         "code": 100000,
         "msg": "",
         "data": null
+    }
+    
+### CG-112. 供应商价格-查询
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/supplier/price/product/{productUnitId}
+#### 参数
+    productUnitId 产品规格id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "city": "大连市", // 市
+                "contactAddress": "谭家", // 详细地址
+                "contactMobile": "13942003822", // 联系电话
+                "contactName": "谭", // 联系人
+                "county": "瓦房店市", // 区
+                "price": 220.85, // 价格
+                "productId": 0,
+                "productUnitId": 3909,
+                "province": "辽宁", // 省
+                "supplierId": 2674,
+                "supplierName": "10" // 供应商名称
+            }
+        ]
     }
