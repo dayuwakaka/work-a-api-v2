@@ -109,6 +109,7 @@
                             "createUserName": "孙启萌",//创建人
                             "deleteFlg": 0,
                             "id": 3,
+                            "jian": 0,//件数
                             "lineId": 7,//关联线路id
                             "name": "test线路3",//关联线路名称
                             "orderVOS": {//已分配调货线路，并且分配调货计划的订单基本信息
@@ -134,6 +135,7 @@
                             },
                             "planCompleteTime": "2019-06-07 00:00:00",//计划入库时间
                             "planSendTime": "2019-06-05 00:00:00",//计划发出时间
+                            "san": 3,//散数
                             "splitFlg": 0,//是否拆分 0 未拆分 1 拆分
                             "status": "COMPLETE",//调货计划状态 INVALID 待执行 RUN 已执行 COMPLETE 完成
                             "type": "正常"//调货计划的物流类型：【正常，物流拆分】
