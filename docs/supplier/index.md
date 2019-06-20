@@ -2416,7 +2416,7 @@
 #### 请求
     GET /v2/supplier/cooperation/{supplierId}
 #### 参数
-    supplierId 供应商id
+    *supplierId 供应商id（必传参数！）
     *status: 状态 NORMAL-正常（必传参数！）
     pageNo: 页码
     pageSize: 行数
@@ -2457,7 +2457,7 @@
 #### 请求
     GET /v2/supplier/cooperation/{supplierId}
 #### 参数
-    supplierId 供应商id
+    *supplierId 供应商id（必传参数！）
     *status: 状态 LOCK-暂停（必传参数！）
     pageNo: 页码
     pageSize: 行数
