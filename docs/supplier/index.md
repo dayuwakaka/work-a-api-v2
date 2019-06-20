@@ -2409,3 +2409,152 @@
             }
         ]
     }
+    
+### CG-120 供应商供货-正常供货产品列表
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/supplier/cooperation/{supplierId}
+#### 参数
+    supplierId 供应商id
+    *status: 状态 NORMAL-正常（必传参数！）
+    pageNo: 页码
+    pageSize: 行数
+    buttonPermissionFlg：权限按钮
+    keyword: 品号/品名
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissionPage": {},
+            "buttonPermissions": [
+                {
+                    "startButton": true, // 开启供货按钮
+                    "stopButton": false // 暂停供货按钮
+                }
+            ],
+            "dataSums": null,
+            "datas": [
+                {
+                    "id": 5454,
+                    "modifyTime": "2019-06-20 03:18:03",
+                    "pno": "M018", // 品号
+                    "productId": 4446,
+                    "productName": "去皮巴沙鱼柳(300-400)", // 品名
+                    "status": "NORMAL", // 状态 NORMAL-正常 LOCK-暂停
+                    "supplierId": 5566
+                }
+            ],
+            "pageNo": 1,
+            "total": -1
+        }
+    }
+    
+### CG-121 供应商供货-暂停供货产品列表
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/supplier/cooperation/{supplierId}
+#### 参数
+    supplierId 供应商id
+    *status: 状态 LOCK-暂停（必传参数！）
+    pageNo: 页码
+    pageSize: 行数
+    buttonPermissionFlg：权限按钮
+    keyword: 品号/品名
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissionPage": {},
+            "buttonPermissions": [
+                {
+                    "startButton": true, // 开启供货按钮
+                    "stopButton": false // 暂停供货按钮
+                }
+            ],
+            "dataSums": null,
+            "datas": [
+                {
+                    "id": 5454,
+                    "modifyTime": "2019-06-20 03:18:03",
+                    "pno": "M018", // 品号
+                    "productId": 4446,
+                    "productName": "去皮巴沙鱼柳(300-400)", // 品名
+                    "status": "LOCK", // 状态 NORMAL-正常 LOCK-暂停
+                    "supplierId": 5566
+                }
+            ],
+            "pageNo": 1,
+            "total": -1
+        }
+    }
+    
+### CG-122 供应商供货-日志列表
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/supplier/cooperation/{supplierId}/logs
+#### 参数
+    supplierId 供应商id
+    pageNo: 页码
+    pageSize: 行数
+    keyword: 品号/品名
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissionPage": {},
+            "buttonPermissions": [],
+            "dataSums": null,
+            "datas": [
+                {
+                    "id": 1,
+                    "opInfo": "test", // 操作内容
+                    "opRole": 1,
+                    "opTime": "2019-06-20 11:32:45", // 操作时间
+                    "opUser": 1,
+                    "opUserName": "孙启萌", // 操作人
+                    "pno": "M018", // 品号
+                    "productId": 4446,
+                    "productName": "去皮巴沙鱼柳(300-400)", // 品名
+                    "supplierId": 5566
+                }
+            ],
+            "pageNo": 1,
+            "total": -1
+        }
+    }
+
+### CG-123 供应商供货-暂停供货
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/supplier/cooperation/{supplierId}/{productId}/lock
+#### 参数
+    supplierId 供应商id
+    productId 产品id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### CG-124 供应商供货-开始供货
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/supplier/cooperation/{supplierId}/{productId}/normal
+#### 参数
+    supplierId 供应商id
+    productId 产品id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
