@@ -312,6 +312,8 @@
                     "orderLackNum": 0,//订单缺口数量
                     "productId": 4708,//产品id
                     "productName": "黑金鱿鱼圈",//产品名称
+                    "productunitId": 76,//产品规格id
+                    "pno": "0021",//品号
                     "realNum": 0,//实际库存
                     "safeLackNum": 0,//安全库存缺口数量
                     "safeNum": 0,//安全库存
@@ -342,6 +344,8 @@
                 "orderLackNum": 0,//订单缺口数量
                 "productId": 4570,//产品id
                 "productName": "青占鱼(150/200)",//产品名称
+                "productunitId": 76,//产品规格id
+                 "pno": "0021",//品号
                 "realNum": 0,//实际库存
                 "safeLackNum": 0,//安全库存缺口数量
                 "safeNum": 0,
@@ -408,6 +412,8 @@
                     "orderLackNum": 0,//订单缺口数量
                     "productId": 4679,//产品id
                     "productName": "冻南美白虾(50/60)",//产品名称
+                    "productunitId": 76,//产品规格id
+                    "pno": "0021",//品号
                     "realNum": 0,//实际库存
                     "safeLackNum": 0,//安全库存缺口数量
                     "safeNum": 0,//安全库存
