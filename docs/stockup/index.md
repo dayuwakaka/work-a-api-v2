@@ -486,29 +486,14 @@
 #### 请求
     POST /v2/stockup/need/getTransformOrderTRList
 #### 参数
-    {
-        "depotId":40,
-        "stockupNeeds":[
-            {
-                "productId":"4696",//产品id
-                "lackNum":"600",//缺口数量
-                "orderLackNum":"0",//订单缺口数量
-                "safeLackNum":"0",//安全库存缺口数量
-                "type":"NOW",//产品属性 NOW 现货 FUTURE 期货 CUSTOM 定制
-                "realNum":"100",//实际库存
-                "safeNum":"80"//安全库存
-            },
-            {
-                "productId":"4708",
-                "lackNum":"606",
-                "orderLackNum":"0",
-                "safeLackNum":"0",
-                "type":"FUTURE",
-                "realNum":"90",
-                "safeNum":"70"
-            }
-        ]
-    }
+{
+	"depotId":51,"fromDepotId":40,
+	"productIds":
+	[4696,4708,4647,837]
+	
+	
+	
+}
 #### 响应
     {
         "code": 100000,
@@ -516,7 +501,7 @@
         "data": [
             {
                 "depotId": 0,//入库仓id
-                "fromDepotroductStatus": "NOW",//// 入库仓产品属性 NOW 现货 FUTURE 期货 CUSTOM 定制
+                "fromDepotroductStatus": "NOW",//// 出库仓产品属性 NOW 现货 FUTURE 期货 CUSTOM 定制
                 "lackNum": 2,//缺口数量
                 "orderLackNum": 0,//订单缺口数量
                 "paNum": 0,//采购数量
@@ -534,7 +519,7 @@
                 "supplierName": "",
                 "supplierPrice": 135.84,
                 "toDepotId": 0,//调拨仓id
-                "toDepotroductStatus": "FUTURE"// 调拨仓产品属性 NOW 现货 FUTURE 期货 CUSTOM 定制
+                "toDepotroductStatus": "FUTURE"// 入库仓产品属性 NOW 现货 FUTURE 期货 CUSTOM 定制
             },
             {
                 "depotId": 0,
