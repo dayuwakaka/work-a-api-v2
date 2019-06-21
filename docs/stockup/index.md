@@ -165,7 +165,7 @@
                                 "planSendTime": "2019-06-19 00:00:00",//计划发出时间
                                 "remark": "",//备注
                                 "san": 7,//散数量
-                                "status": "RUN","INVALID",//订单状态 PA单的状态： INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已完成
+                                "status": "RUN",//订单状态 PA单的状态： INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已完成
                                                     //     TR单的状态：INVALID 未生效 RUN 已生效 SEND 已发出 COMPLETE 已签收
                                 "toDepot": "DC（天津优和仓 ）",//入库仓名称
                                 "totalprice": 127.3,//金额
