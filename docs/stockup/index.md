@@ -2011,8 +2011,11 @@
                     "stock": {
                         "productId": 705,
                         "amount": 1704,
-                        "amountJian": 142,          // 实际库存（件）
-                        "amountSan": 0              // 实际库存（散）
+                        "amountJian": 142,          // 可用库存（件）
+                        "amountSan": 0              // 可用库存（散）
+                        "normalAmount":777,    
+                        "normalAmountJian":110,         // 实际库存（件）
+                        "normalAmountSan":7             // 实际库存（散）
                     },
                     "price": null,
                     "productCart": null,
