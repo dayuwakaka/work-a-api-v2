@@ -436,9 +436,8 @@
     POST /v2/stockup/need/getTransformOrderPAList
 #### 参数
     {
-	"depotId":51,
-	"productIds":
-	[4696,4708,4647,837]
+	*"depotId":51,//仓id
+	*"productIds":[4696,4708,4647,837]//产品集合
 	
 	
 	
@@ -487,9 +486,10 @@
     POST /v2/stockup/need/getTransformOrderTRList
 #### 参数
 {
-	"depotId":51,"fromDepotId":40,
+	"depotId":51,//仓id
+    "fromDepotId":40,//出库仓id
 	"productIds":
-	[4696,4708,4647,837]
+	[4696,4708,4647,837]//产品集合
 	
 	
 	
