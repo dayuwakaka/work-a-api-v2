@@ -436,26 +436,13 @@
     POST /v2/stockup/need/getTransformOrderPAList
 #### 参数
     {
-        "depotId":51,//仓id
-        "stockupNeeds"://备货信息集合
-        [
-        {
-        "productId": "4696",//产品id
-        "lackNum": "600",//缺口数量
-        "orderLackNum": "0",//订单缺口数量
-        "safeLackNum": "0",//安全库存缺口数量
-        "type":"NOW"  //产品属性 NOW 现货 FUTURE 期货 CUSTOM 定制
-        },
-        {
-        "productId": "4708",
-        "lackNum": "606",
-        "orderLackNum": "0",
-        "safeLackNum": "0",
-        "type":"FUTURE"
-        }
-        ]
-
-    }
+	"depotId":51,
+	"productIds":
+	[4696,4708,4647,837]
+	
+	
+	
+}
 #### 响应
     {
         "code": 100000,
