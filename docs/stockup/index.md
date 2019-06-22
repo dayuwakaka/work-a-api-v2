@@ -291,8 +291,8 @@
         "code": 100000,
         "msg": "",
         "data": {
-            "depotId": 85,
-            "lindId": 11
+            "depotId": 85,//仓id
+            "lindId": 11 //线路id
         }
     }
 
