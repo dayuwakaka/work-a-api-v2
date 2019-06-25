@@ -702,7 +702,7 @@
     supplierId // 供应商id
     deliverType // 配送方式 SELF 自送 THIRD 物流配送
     depotId // 仓id
-    status // 订单状态 INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
+    status // 订单状态 INVALID 未生效 SET 提交物流中 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
     paymode // 支付方式 INBUY 入结 OUTBUY 出结
     priceFlg // 采购价格调整 0 未修改价格 1 修改价格待审核 2 已修改价格
     buttonPermissionFlg // 获取权限按钮 0-否 1-是
@@ -745,7 +745,7 @@
                     "remark": "test", // 备注
                     "runTime": "", // 执行时间(生效时间)
                     "sendTime": "", // 发车时间
-                    "status": "INVALID", // 订单状态 INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
+                    "status": "INVALID", // 订单状态 INVALID 未生效 RUN SET 提交物流中 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
                     "supplierAddress": "山西代县文庙附近", // 经销商名称
                     "supplierId": 1, // 供应商id
                     "supplierName": "山西代县文庙超市", // 供应商名称
@@ -810,7 +810,7 @@
             "runTime": "", // 生效时间
             "san": 1, // 散货
             "sendTime": "2018-12-18 12:12:12", // 发出时间
-            "status": "INVALID", // INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
+            "status": "INVALID", // INVALID 未生效 RUN 已生效 SET 提交物流中 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
             "supplierId": 2637, // 供应商id
             "supplierName": "山西代县文庙超市", // 供应商名称
             "totalprice": 1 // 总计
@@ -2015,7 +2015,7 @@
     keyword 单号
     fromDepotId 出库仓id
     toDepotId 入库仓id
-    status 订单状态 INVALID:订单未生效,RUN:订单生效,SEND:已发出,COMPLETE:已签收
+    status 订单状态 INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收
     createUserName 创建人名称
 #### 响应
     {
@@ -2053,7 +2053,7 @@
                     "runTime": "2019-01-16 00:00:00", // 生效时间
                     "san": 1, // 散
                     "sendTime": "2019-01-16 00:00:00", // 发出时间
-                    "status": "RUN", // 订单状态 INVALID:订单未生效,RUN:订单生效,SEND:已发出,COMPLETE:已签收
+                    "status": "RUN", // 订单状态 INVALID:订单未生效,SET:提交物流中，RUN:订单生效,SEND:已发出,COMPLETE:已签收
                     "toDepotId": 22, // 入库仓id
                     "toDepotName": "DC（郑州信基仓）" // 入库仓名称
                 }
@@ -2164,7 +2164,7 @@
                 "runTime": "", // 生效时间
                 "san": 1, // 散
                 "sendTime": "", // 发出时间
-                "status": "INVALID", // 订单状态 INVALID:订单未生效,RUN:订单生效,SEND:已发出,COMPLETE:已签收
+                "status": "INVALID", // 订单状态 INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收
                 "toDepotId": 21, // 入库仓id
                 "toDepotName": "沈阳铁越" // 入库仓名称
             },
