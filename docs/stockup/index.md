@@ -1820,10 +1820,6 @@
     keyword     // 品号、品名
     *depotId     // 仓库ID
     status          // 库存状态 'NORMAL' 正常,'LOCK' 锁定
-    enableAmountOp  // 过滤可用库存操作符
-    enableAmount    // 可用库存值
-    normalAmountOp  // 过滤实际库存操作符
-    normalAmount    // 实际库存值
 #### 响应
     流    
     
