@@ -2259,6 +2259,8 @@
 #### 请求
     PUT /v2/bigorder/{orderId}/split
 #### 参数
+    orderId: 订单号,
+    json body: 
     {
         fromDepotId1: 12, // 被拆分产品出库仓id
         fromDepotName1: "", // 被拆分产品出库仓名称
