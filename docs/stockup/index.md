@@ -1856,13 +1856,13 @@
             "datas": [
                 {
                     "checkRole": 1,
-                    "checkTime": "2019-06-11 16:15:16",     // 申请时间
+                    "checkTime": "2019-06-11 16:15:16",     // 审核时间
                     "checkUser": 518,
-                    "checkUserName": "孙启萌",             // 申请人
+                    "checkUserName": "孙启萌",             // 审核人
                     "createRole": 1,
-                    "createTime": "2019-06-11 15:31:35",        // 审核人
+                    "createTime": "2019-06-11 15:31:35",        // 申请人
                     "createUser": 518,
-                    "createUserName": "孙启萌",                // 审核时间
+                    "createUserName": "孙启萌",                // 申请时间
                     "depotId": 40,                  // 仓库ID
                     "depotName": "DC（大连铁越仓）",   // 仓库名
                     "id": 1,                    申请ID
