@@ -1758,11 +1758,11 @@
             "dataSums": null,
             "datas": [
                 {
-                    "avgCustomer": 2,
+                    "avgCustomer": 2,   // 月平均购买客户数
                     "avgJian": 75,      // 平均出货量件
                     "avgNum": 1250, 
                     "avgSan": 0,        // 平均出货量散
-                    "b1Customer": 0,        // 月平均购买客户数
+                    "b1Customer": 0, 
                     "b1Jian": 0,        // 前一个月件
                     "b1Num": 0,
                     "b1San": 0,         // 前一个月散
