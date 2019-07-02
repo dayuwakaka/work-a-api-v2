@@ -3456,3 +3456,18 @@
     *orderId: 'SA19000001' // 单号
 #### 响应  
     stream
+    
+    
+### APP-157. 微信消息推送
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /router/v5/wx/app/sendmessage
+#### 参数
+    *openId
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
