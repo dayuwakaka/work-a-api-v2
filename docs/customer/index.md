@@ -76,7 +76,7 @@
                     "printPrice": 1,
                     "province": "辽宁",
                     "shortName": "32164", // 客户名
-                    @"source": "1",              // 客户来源 0：自主注册  1：后台添加, 2: 小程序
+                    "source": "1",              // 客户来源 0：自主注册  1：后台添加, 2: 小程序
                     "srRoleId": 29247,// SRID
                     "srRoleName": "", // SR名
                     "ssRoleId": 29324,// SSID
@@ -84,6 +84,7 @@
                     "state": "NORMAL",  // 客户状态 NORMAL 正常 LOCK 休眠
                     "type": "A" // 客户类型
                     "remark": "" // 客户备注
+                    @@"saleArea":"京津冀"    // 客户销区
                 }
             ],
             "pageNo": 1, //页码
@@ -103,6 +104,7 @@
         ssRoleId: 1 //SSID
         srRoleId: 1//SRID
         businessunit: 1 //部门ID
+        @@saleArea: 1    // 客户销区ID
     }
 #### 响应
     {
@@ -161,7 +163,7 @@
     json body
     {
         *"shortName":"test1", //客户名
-        @@*"type":"P", // 客户类型           //'A','P','P2P','C' 原来的基础上增加C类型客户，通P客户一样，可以设置“普通”，“分店”，“总店” 
+        *"type":"P", // 客户类型           //'A','P','P2P','C' 原来的基础上增加C类型客户，通P客户一样，可以设置“普通”，“分店”，“总店” 
         *"businessunit":1, //部门
         *"srRoleId": 40, //SRID
         *"isParent": 2, //总分店 0 普通客户 1 总店 2 分店
@@ -170,6 +172,7 @@
         *"customerAccount":{
             *"mobile":"18842889150" //绑定手机号
         }
+        @@*"saleArea":1     // 客户销区
     }
 #### 响应
     {
@@ -186,7 +189,7 @@
 #### 参数
     {
         *"shortName":"test2", // 客户名
-        @@*"type":"P", //客户类型                 //'A','P','P2P','C' 原来的基础上增加C类型客户，通P客户一样，可以设置“普通”，“分店”，“总店” 
+        *"type":"P", //客户类型                 //'A','P','P2P','C' 原来的基础上增加C类型客户，通P客户一样，可以设置“普通”，“分店”，“总店” 
         *"businessunit":1, //部门ID
         *"srRoleId": 40, // SRID
         *"isParent": 2, //总分店 0 普通客户 1 总店 2 分店
@@ -213,6 +216,7 @@
                 "isDefault":0
             }
         ]
+        @@*"saleArea":1     // 客户销区
     }
 #### 响应
     {
@@ -326,6 +330,7 @@
             "ssRoleName": "解冰", // SS名
             "state": "NORMAL",
             "type": "A" // 客户类型
+            @@"saleArea":1     // 客户销区
         }
     }
 
@@ -455,6 +460,7 @@
                 "isDefault":0
             }
         ]
+        @@*"saleArea":1     // 客户销区
     }
 #### 响应
     {
@@ -1096,7 +1102,7 @@
         *"groupId":1, // 客户属性组ID
         *"name":"aaa", // 客户属性名
         *"freightFlg":1, // 免运费标识 0 未开启 1 开启
-        @@*"stocklimitFlg":1 //库存无限制标识 0 未开启 1 开启 
+        *"stocklimitFlg":1 //库存无限制标识 0 未开启 1 开启 
     }
 #### 响应
     {
@@ -1126,7 +1132,7 @@
                 "groupName": "", // 客户属性组名
                 "id": 5, // 客户属性ID
                 "name": "aaa" // 客户属性名
-                @@"stocklimitFlg":1 //库存无限制标识 0 未开启 1 开启 
+                "stocklimitFlg":1 //库存无限制标识 0 未开启 1 开启 
             }
         ]
     }
@@ -1470,3 +1476,88 @@
     无
 #### 响应 
     {"code":100000,"msg":"","data":null}
+    
+    
+    
+### KH-70. 客户销区列表
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /v2/customer/sale/area
+#### 参数
+    areaName    // 销区名
+    pageNo
+    pageSize
+#### 响应 
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissionPage": {},
+            "buttonPermissions": [],
+            "dataSums": null,
+            "datas": [
+                {
+                    "areaName": "京津冀",          // 销区名
+                    "createTime": "2019-07-03 17:45:27", // 创建时间
+                    "deleteFlg": 0,
+                    "id": 1                         // 销区编号
+                }
+            ],
+            "pageNo": 1,
+            "total": 0
+        }
+    }
+    
+    
+    
+    
+### KH-71. 客户销区新增
+#### 模块负责人
+    尹洪明
+#### 请求
+    POST /v2/customer/sale/area
+#### 参数
+    {
+        *"areaName":"京津冀"    // 销区名
+    }
+#### 响应 
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+    
+    
+    
+### KH-72. 客户销区修改
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT /v2/customer/sale/area/{id}
+#### 参数
+    *id     // 销区ID
+    {
+        *"areaName":"京津冀"    // 销区名
+    }
+#### 响应 
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+    
+      
+### KH-73. 客户销区删除
+#### 模块负责人
+    尹洪明
+#### 请求
+    DELETE /v2/customer/sale/area/{id}
+#### 参数
+    *id     // 销区ID
+#### 响应 
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
