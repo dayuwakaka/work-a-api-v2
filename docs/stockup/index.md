@@ -47,6 +47,7 @@
                 "san": 12,//散数量
                 "data": [
                     {
+                        "clickFlg": 1,//可点击标识 1是可点击   0是不可点击
                         "fromDepot": "大连宏兴食品有限公司",//供应商名称/出库仓名称
                         "jian": 0,//件数量
                         "orderId": "PA19053000007",//订单号
@@ -101,6 +102,9 @@
                                 "complete": false,//完成计划
                                 "delete": true, //删除计划
                                 "push": true//执行计划
+                                "otherline": false,//转移至其他线路计划
+                                "unplan": false,//移至未分配计划
+                                "excute": false//执行
                             },
                             "carInfo": "12米超级超限",//车类型 4.2米 等等
                             "createRole": 29319,
@@ -116,6 +120,7 @@
                                 "san": 3,//散数量
                                 "data": [//订单基本信息
                                     {
+                                        "clickFlg": 1,//可点击标识 1是可点击   0是不可点击
                                         "fromDepot": "大连宏兴食品有限公司",//  供应商名称/出库仓名称
                                         "jian": 0,//件数量
                                         "orderId": "PA19060300003",//订单号
@@ -158,6 +163,7 @@
                         "san": 7,//散数量
                         "data": [
                             {
+                                "clickFlg": 1,//可点击标识 1是可点击   0是不可点击
                                 "fromDepot": "大连宏兴食品有限公司",//  供应商名称/出库仓名称
                                 "jian": 0,//件数量
                                 "orderId": "PA19061000003",//订单号
@@ -458,11 +464,9 @@
 #### 参数
     {
 	*"depotId":51,//仓id
+    "supplierId":"4605",//20190703修改 如果是供应商维度，需要传给后台供应商id。如果是产品维度，传空即可。
 	*"productIds":[4696,4708,4647,837]//产品集合
-	
-	
-	
-}
+	    }
 #### 响应
     {
         "code": 100000,
@@ -1490,6 +1494,7 @@
     *depotId    仓库ID
     *type       查询类型 NOW 查询现货列表 FUTURE 查询期货列表 CUSTOM 查询定制品列表
     keyword     品号、品名
+    lockFlg     自动手动类型   1 手动  0 自动
     buttonPermissionFlg 是否查询按钮权限
     pageNo      页码
     pageSize    页大小
