@@ -702,7 +702,7 @@
     supplierId // 供应商id
     deliverType // 配送方式 SELF 自送 THIRD 物流配送
     depotId // 仓id
-    status // 订单状态 INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
+    status // 订单状态 INVALID 未生效 SET 提交物流中 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
     paymode // 支付方式 INBUY 入结 OUTBUY 出结
     priceFlg // 采购价格调整 0 未修改价格 1 修改价格待审核 2 已修改价格
     buttonPermissionFlg // 获取权限按钮 0-否 1-是
@@ -742,10 +742,12 @@
                     "priceFlg": 0, // 采购价格调整 0 未修改价格 1 修改价格待审核 2 已修改价格
                     "jian": 12, // 件
                     "san": 2, // 散
+                    "waybillInfo": "", // 承运单信息
+                    "type": "NORMAL", // 采购单类型 NORMAL: 正常单 CONTROL_PRODUCT:品控单
                     "remark": "test", // 备注
                     "runTime": "", // 执行时间(生效时间)
                     "sendTime": "", // 发车时间
-                    "status": "INVALID", // 订单状态 INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
+                    "status": "INVALID", // 订单状态 INVALID 未生效 RUN SET 提交物流中 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
                     "supplierAddress": "山西代县文庙附近", // 经销商名称
                     "supplierId": 1, // 供应商id
                     "supplierName": "山西代县文庙超市", // 供应商名称
@@ -778,6 +780,8 @@
             "depotId": 1,
             "depotName": "大连铁越仓", // 入库仓
             "id": 3,
+            "waybillInfo": "", // 承运单信息
+            "type": "NORMAL", // 采购单类型 NORMAL: 正常单 CONTROL_PRODUCT:品控单
             "jian": 0, // 总件数
             "remark": "", // 备注
             "orderId": "PA1812100000008", // 订单号
@@ -810,7 +814,7 @@
             "runTime": "", // 生效时间
             "san": 1, // 散货
             "sendTime": "2018-12-18 12:12:12", // 发出时间
-            "status": "INVALID", // INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
+            "status": "INVALID", // INVALID 未生效 RUN 已生效 SET 提交物流中 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
             "supplierId": 2637, // 供应商id
             "supplierName": "山西代县文庙超市", // 供应商名称
             "totalprice": 1 // 总计
@@ -843,6 +847,7 @@
         contactMobile： 13333333333, // 联系电话
         contactPathId: 060202, // 区域id
         contactAddress: "山西忻州代县", // 经销商地址
+        *type: "NORMAL", // 采购单类型 正常单 CONTROL_PRODUCT:品控单
         *depotId: 6, // 入库仓id
         *depotName: "大连铁越仓", // 入库仓名称
         *deliverType: "THIRD", // 配送方式 SELF 自送 THIRD 物流配送
@@ -878,6 +883,7 @@
         contactMobile： 13333333333, // 联系电话
         contactPathId: 060202, // 区域id
         contactAddress: "山西忻州代县", // 经销商地址
+        *type: "NORMAL", // 采购单类型 正常单 CONTROL_PRODUCT:品控单
         *depotId: 6, // 入库仓id
         *depotName: "大连铁越仓", // 入库仓名称
         *paymode: INBUY, // 支付方式
@@ -2015,7 +2021,7 @@
     keyword 单号
     fromDepotId 出库仓id
     toDepotId 入库仓id
-    status 订单状态 INVALID:订单未生效,RUN:订单生效,SEND:已发出,COMPLETE:已签收
+    status 订单状态 INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收
     createUserName 创建人名称
 #### 响应
     {
@@ -2053,7 +2059,7 @@
                     "runTime": "2019-01-16 00:00:00", // 生效时间
                     "san": 1, // 散
                     "sendTime": "2019-01-16 00:00:00", // 发出时间
-                    "status": "RUN", // 订单状态 INVALID:订单未生效,RUN:订单生效,SEND:已发出,COMPLETE:已签收
+                    "status": "RUN", // 订单状态 INVALID:订单未生效,SET:提交物流中，RUN:订单生效,SEND:已发出,COMPLETE:已签收
                     "toDepotId": 22, // 入库仓id
                     "toDepotName": "DC（郑州信基仓）" // 入库仓名称
                 }
@@ -2164,7 +2170,7 @@
                 "runTime": "", // 生效时间
                 "san": 1, // 散
                 "sendTime": "", // 发出时间
-                "status": "INVALID", // 订单状态 INVALID:订单未生效,RUN:订单生效,SEND:已发出,COMPLETE:已签收
+                "status": "INVALID", // 订单状态 INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收
                 "toDepotId": 21, // 入库仓id
                 "toDepotName": "沈阳铁越" // 入库仓名称
             },
@@ -2556,4 +2562,28 @@
         "code": 100000,
         "msg": "",
         "data": null
+    }
+
+### CG-125 通过承运单号获取物流配送信息
+#### 模块负责人
+    梁铁骐
+#### 对接负责人
+    梁铁骐
+#### 请求
+    GET /v2/paorder/{wbNo}/wbinfo
+#### 参数
+    wbNo: 承运单号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "carInfo": "18.8米", // 车型
+            "carNo": "演C 80001", // 车牌
+            "driverMobile": "13333333333", // 司机联系电话
+            "driverName": "xxx", // 司机名称
+            "jian": 100, // 件
+            "logisticsName": "东风快递，使命必达", // 物流商名称
+            "san": 50 // 散
+        }
     }

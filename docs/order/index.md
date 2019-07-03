@@ -2197,7 +2197,7 @@
 #### 模块负责人
     梁铁骐
 #### 请求
-    PUT /v2/bigorder/{orderId}/in
+    PUT /v2/bigorder/{orderId}/all/in
 #### 参数
     orderId: 销售订单号
 #### 响应
@@ -2259,6 +2259,8 @@
 #### 请求
     PUT /v2/bigorder/{orderId}/split
 #### 参数
+    orderId: 订单号,
+    json body: 
     {
         fromDepotId1: 12, // 被拆分产品出库仓id
         fromDepotName1: "", // 被拆分产品出库仓名称
@@ -2311,7 +2313,7 @@
 #### 模块负责人
     梁铁骐
 #### 请求
-    PUT /v2/bigorder/{orderId}/split
+    PUT /v2/bigorder/{orderId}/part/in
 #### 参数
     {
         source: "BIG_ORDER_LIST", // 固定传BIG_ORDER_LIST
