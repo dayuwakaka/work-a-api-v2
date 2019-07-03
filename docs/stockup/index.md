@@ -1490,6 +1490,7 @@
     *depotId    仓库ID
     *type       查询类型 NOW 查询现货列表 FUTURE 查询期货列表 CUSTOM 查询定制品列表
     keyword     品号、品名
+    lockFlg     自动手动类型   1 手动  0 自动
     buttonPermissionFlg 是否查询按钮权限
     pageNo      页码
     pageSize    页大小
