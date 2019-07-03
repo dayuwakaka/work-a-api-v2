@@ -742,6 +742,8 @@
                     "priceFlg": 0, // 采购价格调整 0 未修改价格 1 修改价格待审核 2 已修改价格
                     "jian": 12, // 件
                     "san": 2, // 散
+                    "waybillInfo": "", // 承运单信息
+                    "type": "NORMAL", // 采购单类型 NORMAL: 正常单 CONTROL_PRODUCT:品控单
                     "remark": "test", // 备注
                     "runTime": "", // 执行时间(生效时间)
                     "sendTime": "", // 发车时间
@@ -778,6 +780,8 @@
             "depotId": 1,
             "depotName": "大连铁越仓", // 入库仓
             "id": 3,
+            "waybillInfo": "", // 承运单信息
+            "type": "NORMAL", // 采购单类型 NORMAL: 正常单 CONTROL_PRODUCT:品控单
             "jian": 0, // 总件数
             "remark": "", // 备注
             "orderId": "PA1812100000008", // 订单号
@@ -843,6 +847,7 @@
         contactMobile： 13333333333, // 联系电话
         contactPathId: 060202, // 区域id
         contactAddress: "山西忻州代县", // 经销商地址
+        *type: "NORMAL", // 采购单类型 正常单 CONTROL_PRODUCT:品控单
         *depotId: 6, // 入库仓id
         *depotName: "大连铁越仓", // 入库仓名称
         *deliverType: "THIRD", // 配送方式 SELF 自送 THIRD 物流配送
@@ -878,6 +883,7 @@
         contactMobile： 13333333333, // 联系电话
         contactPathId: 060202, // 区域id
         contactAddress: "山西忻州代县", // 经销商地址
+        *type: "NORMAL", // 采购单类型 正常单 CONTROL_PRODUCT:品控单
         *depotId: 6, // 入库仓id
         *depotName: "大连铁越仓", // 入库仓名称
         *paymode: INBUY, // 支付方式
@@ -2556,4 +2562,28 @@
         "code": 100000,
         "msg": "",
         "data": null
+    }
+
+### CG-125 通过承运单号获取物流配送信息
+#### 模块负责人
+    梁铁骐
+#### 对接负责人
+    梁铁骐
+#### 请求
+    GET /v2/paorder/{wbNo}/wbinfo
+#### 参数
+    wbNo: 承运单号
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "carInfo": "18.8米", // 车型
+            "carNo": "演C 80001", // 车牌
+            "driverMobile": "13333333333", // 司机联系电话
+            "driverName": "xxx", // 司机名称
+            "jian": 100, // 件
+            "logisticsName": "东风快递，使命必达", // 物流商名称
+            "san": 50 // 散
+        }
     }
