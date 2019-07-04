@@ -23,6 +23,7 @@
     showAttr：                          // 是否显示客户属性 true 显示 false 不显示
     showInvoice：                       // 是否显示发票状态 true 显示 false 不显示
     source:                             // 客户来源 0 自主注册 1 后台添加 2 小程序
+    saleArea:                           // 销区ID
 #### 响应
     {
         "code": 100000,
@@ -84,7 +85,8 @@
                     "state": "NORMAL",  // 客户状态 NORMAL 正常 LOCK 休眠
                     "type": "A" // 客户类型
                     "remark": "" // 客户备注
-                    @@"saleArea":"京津冀"    // 客户销区
+                    @@"saleArea":1    // 客户销区ID
+                    @@"saleAreaName":"京津冀" // 客户销区
                 }
             ],
             "pageNo": 1, //页码
