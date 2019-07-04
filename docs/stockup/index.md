@@ -463,9 +463,9 @@
     POST /v2/stockup/need/getTransformOrderPAList
 #### 参数
     {
-	*"depotId":51,//仓id
-    "supplierId":"4605",//20190703修改 如果是供应商维度，需要传给后台供应商id。如果是产品维度，传空即可。
-	*"productIds":[4696,4708,4647,837]//产品集合
+	*"depotId":40,//仓id
+    "supplierIds":[4605,2889],//20190703修改 如果是供应商维度，需要传给后台供应商id。如果是产品维度，传空即可。
+	*"productIds":[1359]//产品集合
 	    }
 #### 响应
     {
