@@ -428,6 +428,7 @@
             "name": "优合集团有限公司",//供应商名称
             "stockupNeeds": [//备货需求详情列表
                 {
+                    "clickFlg": 0,//是否可选中标识  1是可选中   0是不可选中
                     "createTime": "2019-02-15",//操作时间
                     "createUserName": "李凤",//操作人
                     "depotId": 40,//仓id
