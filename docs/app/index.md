@@ -3465,6 +3465,7 @@
     GET /router/v5/wx/app/sendmessage
 #### 参数
     *openId
+    *scene
 #### 响应  
     {
         "code": 100000,
