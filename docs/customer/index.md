@@ -1502,6 +1502,9 @@
                 {
                     "areaName": "京津冀",          // 销区名
                     "createTime": "2019-07-03 17:45:27", // 创建时间
+                    "createRole":1,
+                    "createUser":518,
+                    "createUserName":"孙启蒙",         // 创建人
                     "deleteFlg": 0,
                     "id": 1                         // 销区编号
                 }
@@ -1578,9 +1581,43 @@
         "data": [
             {
                 "areaName": "京津冀1",             // 销区名
-                "createTime": "2019-07-03 17:45:27",
+                "createTime": "2019-07-03 17:45:27",    // 创建时间
+                "createRole":1,
+                "createUser":518,
+                "createUserName":"孙启蒙",         // 创建人
                 "deleteFlg": 0,
                 "id": 1                         // 销区ID
             }
         ]
+    }
+            
+### KH-75. 客户销区日志列表
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /v2/customer/sale/area/log/{id}
+#### 参数
+    *id        // 销区ID
+#### 响应 
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissionPage": {},
+            "buttonPermissions": [],
+            "dataSums": null,
+            "datas": [
+                {
+                    "id": 1,
+                    "opInfo": "新增销区",           // 操作内容
+                    "opRole": 0,
+                    "opTime": "2019-07-04 13:36:59",    // 操作时间
+                    "opUser": 0,
+                    "opUserName": "孙启萌",        // 操作人
+                    "saleArea": 1
+                }
+            ],
+            "pageNo": 1,
+            "total": 0
+        }
     }
