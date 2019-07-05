@@ -34,6 +34,7 @@
 |marketActiveCondition|满赠条件、类别|
 |marketActiveGiveConditions|满赠规则|
 |marketImages|轮播图|banner 轮播图|
+|customerSaleAreaRange|销区类型|ALL 无限制 PART 部分|
 
 
 ##### 专栏参数
@@ -59,6 +60,14 @@
     	"effectStime":"2018-09-13 08:40:17",
     	"effectEtime":"2018-10-13 08:40:17",
     	"onlyCode":"QWIOEUROIASJDKLFAJLSKDFJALSDKF",
+    	"customerSaleAreaRange":"PART",     // ALL 无限制  PART 部分
+    	"marketSaleAreaRanges":[        // 销区范围
+            {
+                "type":"SALEAREA",      // 固定 SALEAREA
+                "rangeId":1,            // 销区ID
+                "extra":""	
+            }
+    	]
     	"marketBusinessunitRanges":[{
     			"type":"businessunit", // businessunit
     			"rangeId":3, // 事业部id
@@ -413,6 +422,14 @@
             "effectEtime": "2019-05-15 23:59:59",       // 活动结束时间
             "effectStime": "2019-05-06 00:00:00",       // 活动开始时间
             "id": 422,
+            "customerSaleAreaRange":"PART",     // ALL 无限制  PART 部分
+            "marketSaleAreaRanges":[     // 销区范围
+                {
+                    "type":"SALEAREA", 
+                    "rangeId":1,            // 销区ID
+                    "extra":"京津冀"       // 销区名	
+                }
+            ],
             "marketActiveCondition": {          // 条件
                 "accumulative": "LADDER",       // LADDER 阶梯 EACH 每满
                 "id": 239,
