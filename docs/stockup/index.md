@@ -428,6 +428,7 @@
             "name": "优合集团有限公司",//供应商名称
             "stockupNeeds": [//备货需求详情列表
                 {
+                    "clickFlg": 0,//是否可选中标识  1是可选中   0是不可选中
                     "createTime": "2019-02-15",//操作时间
                     "createUserName": "李凤",//操作人
                     "depotId": 40,//仓id
@@ -463,9 +464,9 @@
     POST /v2/stockup/need/getTransformOrderPAList
 #### 参数
     {
-	*"depotId":51,//仓id
-    "supplierId":"4605",//20190703修改 如果是供应商维度，需要传给后台供应商id。如果是产品维度，传空即可。
-	*"productIds":[4696,4708,4647,837]//产品集合
+	*"depotId":40,//仓id
+    "supplierIds":[4605,2889],//20190703修改 如果是供应商维度，需要传给后台供应商id。如果是产品维度，传空即可。
+	*"productIds":[1359]//产品集合
 	    }
 #### 响应
     {
