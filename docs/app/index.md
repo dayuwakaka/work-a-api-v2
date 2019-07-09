@@ -309,6 +309,7 @@
     *password:"222222" // 登录密码
     *ipAddress:"0.0.0.0" // 登录IP
     *cartId:"1" //登录设备号
+    encryptFlg: 1       // 0 非加密密码登录  1 加密密码登录     默认0
 #### 响应
     {
         "code": "100000",
@@ -3145,6 +3146,7 @@
     *cartId     // 设备号
     officalOpenId   // openId   绑定时需要
     accessToken     // accessToken 绑定时需要
+    encryptFlg: 1       // 0 非加密密码登录  1 加密密码登录     默认0
 #### 响应
     {
         "code": 100000,
