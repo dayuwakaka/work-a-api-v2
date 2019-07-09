@@ -29,6 +29,11 @@
         "code": 100000,
         "msg": "",
         "data": {
+            "buttonPermissionPage": {
+                "addButton": false          // 是否显示新增、快速新增按钮
+            },
+            "buttonPermissions": [],
+            "dataSums": null,
             "datas": [
                 {
                     "accountId": "32856",  //登录帐号ID
@@ -85,8 +90,8 @@
                     "state": "NORMAL",  // 客户状态 NORMAL 正常 LOCK 休眠
                     "type": "A" // 客户类型
                     "remark": "" // 客户备注
-                    @@"saleArea":1    // 客户销区ID
-                    @@"saleAreaName":"京津冀" // 客户销区
+                    "saleArea":1    // 客户销区ID
+                    "saleAreaName":"京津冀" // 客户销区
                 }
             ],
             "pageNo": 1, //页码
