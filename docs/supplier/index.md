@@ -707,6 +707,7 @@
     priceFlg // 采购价格调整 0 未修改价格 1 修改价格待审核 2 已修改价格
     buttonPermissionFlg // 获取权限按钮 0-否 1-是
     createUserName // 创建人名称
+    type // NORMAL 正常单 CONTROL_PRODUCT 品控单
     pageNo // 页码
     pageSize // 行数
 #### 响应
