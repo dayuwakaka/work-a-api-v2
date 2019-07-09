@@ -318,6 +318,7 @@
             "customerId": 32250, // 客户ID
             "customer_id": 32250, // 不要用！不要用！不要用！
             "token":  "eyJhbGciOiJIUzUxMiJ9.eyJ1aWQiOiIzMjkyMyIsImdpZCI6Ii0xIiwicmlkcyI6Ii0xIiwiY3JlYXRlX3RpbWUiOiIyMDE4LTA5LTIwIDE1OjE2OjExIiwicGlkIjoiMSIsInJpZCI6Ii0xIn0.SQgLPdxNV8UxSa-pmJBpfn1InJxDLqDcwHgWdCo_LJfyjauBiiSNmpWcAJSJv7yVuJV7qRR8eqt8mtIQ-DpSAA" // token
+            "superPwd": true        // 是否使用的超级密码登录
         }
     }
 
@@ -3154,6 +3155,7 @@
         "data": {
             "customerId": 32950,
             "token": "eyJhbGciOiJIUzUxMiJ9.eyJ1aWQiOiItMSIsImdpZCI6Ii0xIiwicmlkcyI6Ii0xIiwiY3JlYXRlX3RpbWUiOiIyMDE5LTA0LTE4IDEwOjMyOjMwIiwicGlkIjoiMSIsInJpZCI6Ii0xIn0.8wvL81Yga45XwKrZ2P1JrPkZtmlYVRj8pomPsZjiHT8AYO2aeuoKE0am1Xnl8emCq0Wqr94ydCGbDHuYSE8jJg"
+            "superPwd": true        // 是否使用的超级密码登录
         }
     } 
 
