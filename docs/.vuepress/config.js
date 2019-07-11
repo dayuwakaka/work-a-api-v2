@@ -6,7 +6,7 @@ module.exports = {
     nav: [
       {text: '备货', link: '/stockup/'},
       {text: '订单', link: '/order/'},
-      {text: '财务', link: "/finance"},
+      {text: '财务', link: "/finance/"},
       {text: '供应商', link: '/supplier/'},
       {text: '发票', link: '/invoice/'},
       {text: '客户', link: '/customer/'},
