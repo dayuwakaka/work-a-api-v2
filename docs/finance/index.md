@@ -496,7 +496,52 @@
         "data": null
     }
 
-
+### CW-58. 订金审核管理-获取规则详情
+#### 模块负责人
+    王子悦
+#### 对接负责人
+    梁铁骐
+#### 请求
+    GET /v2/finance/deposit/askfors/{id}/rules
+#### 参数
+    id: 111 // 申请id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "checkUser": 518,
+            "checkUserName": "系统操作",
+            "createRemark": "我就是测试撒", // 备注
+            "createRole": 1,
+            "createTime": "2019-07-12 14:15:54",
+            "createUser": 518,
+            "createUserName": "孙启萌",
+            "customer": {
+                "shortName": "珠海恒海食品有限公司", // 客户名称
+            },
+            "deleteFlg": 0,
+            "depositId": 0,
+            "effectEtime": "2019-09-11 10:10:00", // 订金有效期结束时间
+            "effectRange": "4691,4687",
+            "effectStime": "2019-07-11 10:10:00", // 订金有效期开始时间
+            "id": 544,
+            "money": 10000,
+            "opAccount": 1,
+            "payTime": "2019-07-10 00:00:00.0",
+            "products": [ // 产品列表
+                {
+                    "customFlgMore": 1, // 0 普通品  1 普通定制品  2 专属定制品
+                    "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190314104529003-3509.jpg", // 主图
+                    "name": "洋风椰蓉榴莲大福 ", // 品名
+                    "pno": "1935", // 品号
+                    "status": "LOCK", // NORMAL 上架 LOCK 下架
+                },
+                ...
+            ],
+            "ratio": 90, // 订金比例
+        }
+    }
 
 
 
