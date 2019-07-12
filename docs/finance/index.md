@@ -164,7 +164,7 @@
                 {
                     "actionType": "DEPOSIT_TRANSFER_BALANCE", // 调整类型
                     "checkRemark": "", // 审批备注
-                    "checkTime": "", // 审批时间
+                    "checkTime": "2019-07-10 12:00:00", // 审批时间
                     "checkUserName": "", // 审批人名称
                     "createRemark": "", // 创建备注
                     "createTime": "2019-06-18 13:54:12", // 创建时间
@@ -173,16 +173,17 @@
                         "shortName": "常州协瑞国际贸易有限公司", // 客户名称
                     },
                     "depositId": 0,
-                    "effectEtime": "", // 订金有效期结束时间
-                    "effectRange": "",
-                    "effectStime": "", // 订金有效期开始时间
+                    "effectEtime": "2019-07-10 00:00:00", // 订金有效期结束时间
+                    "effectRange": "111,333",
+                    "effectStime": "2019-08-10 23:59:59", // 订金有效期开始时间
                     "id": 0, // 申请主键id
                     "money": -19292, // 金额
                     "opAccount": 3885, // 客户id（客户账户id）
                     "ratio": 0, // 比例
                     "relationSid": 0,
                     "status": "PASS" // 审核状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
-                }
+                },
+                ...
             ],
             "pageNo": 1,
             "total": 0
@@ -239,7 +240,7 @@
     		{
     			*opAccount: 1, // 客户账户id
     			*actionType: "DEPOSIT_ADD" // 固定传
-    			*moeny: 10000, // 金额
+    			*money: 10000, // 金额
     			*ratio: 90, // 比例 90%
     			*effectRange: "111,222" // 产品id范围 以","相隔
     			*effectStime: "2019-07-11 10:10:00" // 订金有效期开始时间
@@ -251,7 +252,7 @@
     		{
     			*opAccount: 1, // 客户账户id
     			*actionType: "BANK_TRANSFER_NEW_DEPOSIT" //固定传
-    			*moeny: 10000, // 金额
+    			*money: 10000, // 金额
     			*ratio: 90, // 比例 90%
     			*bankAccount: "", // 汇款人账号
     			*bankAccountName: "", // 汇款人名
@@ -267,7 +268,7 @@
     		{
     			*opAccount: 1, // 客户账户id
     			*actionType: "BALANCE_TRANSFER_NEW_DEPOSIT" // 固定传
-    			*moeny: 10000, // 金额
+    			*money: 10000, // 金额
     			*ratio: 90, // 比例 90%
     			*effectRange: "111,222" // 产品id范围 以","相隔
     			*effectStime: "2019-07-11 10:10:00" // 订金有效期开始时间
@@ -281,7 +282,7 @@
     			*depositId: 1 // 订金账户id
     			*opAccount: 1, // 客户账户id
     			*actionType: "DEPOSIT_HAND_ADD" // 固定传
-    			*moeny: 10000, // 金额
+    			*money: 10000, // 金额
     			*payTime: "2019-07-10 00:00:00" // 充值时间
     			createRemark: "" // 备注
     		}
@@ -290,7 +291,7 @@
     			*depositId: 1, // 订金账户id
     			*opAccount: 1, // 客户账户id
     			*actionType: "BANK_TRANSFER_DEPOSIT" // 固定传
-    			*moeny: 10000, // 金额
+    			*money: 10000, // 金额
     			*bankAccount: "", // 汇款账号
     			*bankAccountName: "", // 汇款人名称
     			*receiveBankAccount: "", // 收款账号
@@ -303,7 +304,7 @@
     			*depositId: 1, // 订金id
     			*opAccount: 1, // 客户账户id
     			*actionType: "BALANCE_TRANSFER_DEPOSIT" // 固定传
-    			*moeny: 10000, // 金额
+    			*money: 10000, // 金额
     			*payTime: "2019-07-10 00:00:00" // 充值时间
     			createRemark: "" // 备注
     		}
@@ -313,7 +314,7 @@
     			*depositId: 1, // 订金id
     			*opAccount: 1, // 客户账户id
     			*actionType: "DEPOSIT_HAND_REDUCE" // 固定传
-    			*moeny: 10000, // 金额
+    			*money: 10000, // 金额
     			*payTime: "2019-07-10 00:00:00" // 扣款时间
     			createRemark: "" // 备注
     		}
@@ -322,7 +323,7 @@
     			*depositId: 1, // 订金id
     			*opAccount: 1, // 客户账户id
     			*actionType: "DEPOSIT_TRANSFER_BANK" // 固定传
-    			*moeny: 10000, // 金额
+    			*money: 10000, // 金额
     			*bankAccount: "", // 收款账号
     			*bankAccountName: "", // 收款人名称
     			*receiveBankAccount: "", // 转出账号
@@ -334,7 +335,7 @@
     			*depositId: 1, // 订金id
     			*opAccount: 1, // 客户账户id
     			*actionType: "DEPOSIT_TRANSFER_BALANCE" // 固定传
-    			*moeny: 10000, // 金额
+    			*money: 10000, // 金额
     			*payTime: "2019-07-10 00:00:00" // 扣款时间
     			createRemark: "" // 备注
     		}
@@ -355,7 +356,7 @@
     				*depositId: 1, // 订金id
     				*opAccount: 1, // 客户账户id
     				*actionType: "DEPOSIT_HAND_ADD" // 固定传
-    				*moeny: 10000, // 金额
+    				*money: 10000, // 金额
     				*payTime: "2019-07-10 00:00:00" // 充值时间
     				createRemark: "" // 备注
     			}
@@ -363,7 +364,7 @@
     			{
     				*opAccount: 1, // 客户账户id
     				*actionType: "DEPOSIT_ADD" // 固定传
-    				*moeny: 10000, // 金额
+    				*money: 10000, // 金额
     				*ratio: 90, // 比例 90%
     				*effectRange: "111,222" // 产品id范围 以","相隔
     				*effectStime: "2019-07-11 10:10:00" // 订金有效期开始时间
@@ -377,7 +378,7 @@
     				*depositId: 1, // 订金id
     				*opAccount: 1, // 客户账户id
     				*actionType: "BANK_TRANSFER_DEPOSIT" // 固定传
-    				*moeny: 10000, // 金额
+    				*money: 10000, // 金额
     				*bankAccount: "", // 汇款账号
     				*bankAccountName: "", // 汇款人名称
     				*receiveBankAccount: "", // 收款账户
@@ -388,7 +389,7 @@
     			{
     				*opAccount: 1, // 客户账户id
     				*actionType: "BANK_TRANSFER_NEW_DEPOSIT" // 固定传
-    				*moeny: 10000, // 金额
+    				*money: 10000, // 金额
     				*ratio: 90, // 比例90%
     				*effectRange: "111,222" // 产品id范围 以","相隔
     				*effectStime: "2019-07-11 10:10:00" // 订金有效期开始时间
@@ -406,7 +407,7 @@
     				*depositId: 1, // 订金id
     				*opAccount: 1, // 客户账户id
     				*actionType: "BALANCE_TRANSFER_DEPOSIT" // 固定传
-    				*moeny: 10000, // 金额
+    				*money: 10000, // 金额
     				*payTime: "2019-07-10 00:00:00" // 充值时间
     				createRemark: "" // 备注
     			}
@@ -414,7 +415,7 @@
     			{
     				*opAccount: 1, // 客户账户id
     				*actionType: "BALANCE_TRANSFER_NEW_DEPOSIT" // 固定传
-    				*moeny: 10000, // 金额
+    				*money: 10000, // 金额
     				*ratio: 90, // 比例90%
     				*effectRange: "111,222" // 产品id范围 以","相隔
     				*effectStime: "2019-07-11 10:10:00" // 订金有效期开始时间
@@ -428,7 +429,7 @@
     			*depositId: 1, // 订金id
     			*opAccount: 1, // 客户账户id
     			*actionType: "DEPOSIT_HAND_REDUCE" // 固定传
-    			*moeny: 10000, // 金额
+    			*money: 10000, // 金额
     			*payTime: "2019-07-10 00:00:00" // 扣款时间
     			createRemark: "" // 备注
     		}
@@ -437,7 +438,7 @@
     			*depositId: 1, // 订金id
     			*opAccount: 1, // 客户账户id
     			*actionType: "DEPOSIT_TRANSFER_BANK" // 固定传
-    			*moeny: 10000, // 金额
+    			*money: 10000, // 金额
     			*bankAccount: "", // 收款账号
     			*bankAccountName: "", // 收款人名称
     			*receiveBankAccount: "", // 转出帐号
@@ -449,7 +450,7 @@
     			*depositId: 1, // 订金id
     			*opAccount: 1, // 客户账户id
     			*actionType: "DEPOSIT_TRANSFER_BALANCE" // 固定传
-    			*moeny: 10000, // 金额
+    			*money: 10000, // 金额
     			*payTime: "2019-07-10 00:00:00" // 扣款时间
     			createRemark: "" // 备注
     		}
@@ -459,7 +460,7 @@
     			*depositId: 1, // 订金id
     			*opAccount: 1, // 客户账户id
     			*actionType: "BANK_TRANSFER_DEPOSIT" // 固定传
-    			*moeny: 10000, // 金额
+    			*money: 10000, // 金额
     			*bankAccount: "", // 汇款账号
     			*bankAccountName: "", // 汇款人名称 
     			*receiveBankAccount: "", // 收款账号
@@ -473,7 +474,7 @@
     		{
     			*opAccount: 1, // 客户账户id
     			*actionType: "BANK_TRANSFER_NEW_DEPOSIT" // 固定传
-    			*moeny: 10000, // 金额
+    			*money: 10000, // 金额
     			*ratio: 90, // 比例90%
     			*bankAccount: "", // 汇款账号
     			*bankAccountName: "", // 汇款人名称
