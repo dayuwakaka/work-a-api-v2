@@ -102,7 +102,7 @@
 #### 参数
     id: 32769 // 订金id
 #### 着重说明
-    effectStime、effectEtime、money、ratio 这四个个属性为【设计数据列】，有哪个就显示哪个
+    effectStime、effectEtime、money、ratio 这四个个属性为【涉及数据列】，有哪个就显示哪个
 #### 响应
     {
         "code": 100000,
