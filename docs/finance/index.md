@@ -70,9 +70,44 @@
             "total": 0
         }
     }
-    
 
-### CW-3 银行账号明细
+
+### CW-3 银行账号列表(不分页)
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /finance/account/bank/list
+#### 参数
+    opAccount  // 账户ID
+    bankName        // 开户行名
+    bankAccount     // 开户行账号
+    bankAccountName     // 开户行户名
+    status      // 状态   NORMAL 正常 LOCK 锁定
+#### 响应   
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "id": 16384,            
+                "platformId": 1,    
+                "opAccount": 33314,         // 账号ID
+                "status": "NORMAL",         // 状态
+                "bankAccount": "622812268819998777374", // 银行账号
+                "bankAccountName": "苏小妹儿",          // 户名
+                "bankName": "工商银行",             // 开户行
+                "createRole": 0,
+                "createTime": "2019-07-12",
+                "createUser": 0,
+                "createUserName": "孙启萌",
+                "deleteFlg": 0
+            }
+        ]
+    }    
+
+### CW-4 银行账号明细
 #### 对接负责人
     尹洪明
 #### 模块负责人
@@ -102,7 +137,7 @@
     }
     
     
-### CW-4 银行账号修改
+### CW-5 银行账号修改
 #### 对接负责人
     尹洪明
 #### 模块负责人
@@ -124,7 +159,7 @@
         "data": null
     }
  
-### CW-5 银行账号锁定
+### CW-6 银行账号锁定
 #### 对接负责人
     尹洪明
 #### 模块负责人
@@ -140,7 +175,7 @@
         "data": null
     }    
      
-### CW-6 银行账号解锁
+### CW-7 银行账号解锁
 #### 对接负责人
     尹洪明
 #### 模块负责人
@@ -156,7 +191,7 @@
         "data": null
     }   
      
-### CW-7 银行账号操作日志
+### CW-8 银行账号操作日志
 #### 对接负责人
     尹洪明
 #### 模块负责人
@@ -188,7 +223,8 @@
             "total": 0
         }
     } 
-    
+ 
+ 
 
 ### CW-11 账期变动申请
 #### 对接负责人
@@ -275,7 +311,7 @@
 #### 参数
     *id     // 申请ID
     {
-        *"reason": "未填写账期有效期"    // 决绝理由
+        *"reason": "未填写账期有效期"    // 拒绝理由
     }
 #### 响应
     {
@@ -392,7 +428,7 @@
 #### 参数
     *id     // 申请ID
     {
-        *"reason": "未填写账期有效期"    // 决绝理由
+        *"reason": "未填写账期有效期"    // 拒绝理由
     }
 #### 响应
     {
@@ -417,8 +453,157 @@
         "data": null
     }
     
+ 
+ 
+### CW-21 预付款变动申请
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    王子悦
+#### 请求
+    POST /finance/handwork/askfor
+#### 参数
+##### 手动出入款参数说明
+    {
+        *"opAccount": "33314",
+        *"money": "100",
+        *"payTime": "2019-07-15 14:00:00",
+        "createRemark": "手动充值100元"
+    }
+##### 银行汇款出入款参数说明
+    {
+        *"opAccount": "33314",
+        *"money": "100",
+        *"bankType": "ICBC",
+        *"bankAccount": "622812268819998777374",
+        *"bankAccountName": "苏小妹儿",
+        *"receiveBankAccount": "262001040030059",
+        *"receiveBankAccountName": "亚洲渔港供应链管理（大连）有限公司",
+        *"payTime": "2019-07-15 14:00:00",
+        "createRemark": "手动充值100元"
+    }
+##### 银企互联入款参数说明
+    {
+        *"opAccount": "33314",
+        *"relationSid": "0",
+        *"money": "100",
+        *"bankType": "ICBC",
+        *"bankAccount": "622812268819998777374",
+        *"bankAccountName": "苏小妹儿",
+        *"receiveBankAccount": "262001040030059",
+        *"receiveBankAccountName": "亚洲渔港供应链管理（大连）有限公司",
+        *"bankSerialsid": "ABC-20161017090253125485155673739",
+        *"payTime": "2019-07-15 14:00:00",
+        "createRemark": "手动充值100元"
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+    
+     
+### CW-22 预付款变动申请列表
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /finance/handwork/askfor
+#### 参数
+    shortName           // 客户名   
+    status              // 状态 ASKFOR 待审核 PASS 通过 REFUSE 拒绝
+    type                // HAND 手动 BANK 银行汇款 BES 银企互联
+    buttonPermissionFlg     // 是否查询按钮权限 0 不查询 1 查询 默认0
+    pageNo          // 页码 默认1
+    pageSize        // 页大小 默认25
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissionPage": {},
+            "buttonPermissions": [
+                {
+                    "refuseButton": true,       // 拒绝按钮
+                    "passButton": true          // 通过按钮
+                }
+            ],
+            "dataSums": null,
+            "datas": [
+                {
+                    "id": 131071,              // 申请ID
+                    "opAccount": 33314,         // 账户ID
+                    "shortname": "苏家屯走司",       // 公司名
+                    "status": "ASKFOR",         // 申请状态 ASKFOR 待审核 PASS 通过 REFUSE 拒绝
+                    "type": "BES",          // 类型 HAND 手工 BANK 银行汇款 BES 银企互联
+                    "leftMoney": 0,         // 当前余额
+                    "money": 300,           // 出入款额
+                    "payTime": "2019-07-15 15:30:00",   // 支付时间
+                    "relationSid": 37761,               // 银企互联 matchId
+                    "bankSerialsid": "ABC-20190701150246028955413061379", // 银行流水
+                    "bankType": "ABC", // 银行类型 ABC 农业银行 ICBC 供应商银行 CCB 建设银行 CHAOS 无法区分
+                    "bankAccount": "122005517010010678",        // 打款银行账号
+                    "bankAccountName": "广州市珑琥商贸发展有限公司", // 打款银行户名
+                    "receiveBankAccount": "262001040030059",        // 收款银行账号
+                    "receiveBankAccountName": "亚洲渔港供应链管理（大连）有限公司", // 收款银行户名
+                    "createRemark": "银企互联充值300元",       // 申请备注
+                    "createRole": 1,
+                    "createTime": "2019-07-15 15:41:31",        // 申请时间
+                    "createUser": 518,
+                    "createUserName": "孙启萌",                // 申请人
+                    "checkRemark": "",                  // 审核备注
+                    "checkRole": 0,
+                    "checkTime": "",                    // 审核时间
+                    "checkUser": 0,
+                    "checkUserName": "",                // 审核人
+                    "deleteFlg": 0
+                }
+            ],
+            "pageNo": 0,
+            "total": 1
+        }
+    }
+    
+    
+### CW-23 预付款变动申请拒绝
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    王子悦
+#### 请求
+    PUT /finance/handwork/askfor/refuse/{id}
+#### 参数
+    *id     // 申请ID
+    {
+        *"reason": "未填写账期有效期"    // 拒绝理由
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+          
+### CW-24 预付款变动申请通过
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    王子悦
+#### 请求
+    PUT /finance/handwork/askfor/pass/{id}
+#### 参数
+    *id     // 申请ID
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+ 
          
-### CW-21 财务账户列表
+### CW-31 财务账户列表
 #### 对接负责人
     尹洪明
 #### 模块负责人
@@ -524,8 +709,79 @@
         }
     } 
     
-  
-### CW-22 财务账户明细
+      
+### CW-32 财务账户列表(不分页)
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /finance/account/list
+#### 参数
+    keyword // 客户名、客户号
+    state   // 客户状态 NORMAL 正常 DELETE 休眠
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "id": 32772,
+                "platformId": 1,
+                "opAccount": 33315,                 // 账户ID
+                "shortName": "苏家屯走司沈阳分公司",  // 客户名
+                "state": "NORMAL",                  // 客户状态 NORMAL 正常 DELETE 休眠
+                "businessunit": 27,                 // 事业部ID
+                "businessunitName": "AH沈阳",         // 事业部名
+                "srRoleId": 4217,                   // sr role Id
+                "srRoleName": "许晓慧",            // sr role name
+                "ssRoleId": 29376,                  // ss role id
+                "ssRoleName": "测试数据权限（用完删除）",  // ss role name
+                "type": "P"                     // 客户类型 'A','P','P2P','C'
+                "parentId": 33314,              // 总公司ID
+                "parentName": "苏家屯走司",      // 总公司名
+                "parentType": 0,                // 公司类型 0 普通 1 总公司 2 分公司
+                "paymentType": "CASH",          // CASH 现款 LATER 到付 DEBT 账期
+                "sharePay": 0,                  // 是否为分公司代付 0 否  1 是
+                "status": "NORMAL",
+                "debtEffectEtime": "",          // 账期有效期
+                "debtMoney": 0,                 // 账期额度
+                "financeBalance": [
+                    {
+                        "createTime": "2019-07-12 10:31:31",
+                        "deleteFlg": 0,
+                        "financeBalanceRule": null,
+                        "id": 32785,
+                        "money": 0,             // 余额
+                        "opAccount": 33315,
+                        "platformId": 1,
+                        "ruleId": 0,
+                        "status": "NORMAL",     // 状态 NORMAL 正常 LOCK 锁定
+                        "type": "BALANCE"       // BALANCE 预付款
+                    },
+                    {
+                        "createTime": "2019-07-12 10:31:31",
+                        "deleteFlg": 0,
+                        "financeBalanceRule": null,
+                        "id": 32785,
+                        "money": 0,             // 余额
+                        "opAccount": 33315,
+                        "platformId": 1,
+                        "ruleId": 0,
+                        "status": "NORMAL",     // 状态 NORMAL 正常 LOCK 锁定
+                        "type": "DEPOSIT"       // 定金
+                    }
+                ],
+                "bank": null,
+                "modifyTime": "",
+                "createTime": "",
+                "deleteFlg": 0
+            }
+        ]
+    }
+
+ 
+### CW-33 财务账户明细
 #### 对接负责人
     尹洪明
 #### 模块负责人
@@ -620,7 +876,7 @@
     }     
  
   
-### CW-23 财务账户操作日志
+### CW-34 财务账户操作日志
 #### 对接负责人
     尹洪明
 #### 模块负责人
@@ -662,7 +918,7 @@
         }
     }
 
-### CW-24 财务账户锁定
+### CW-35 财务账户锁定
 #### 对接负责人
     尹洪明
 #### 模块负责人
@@ -678,7 +934,7 @@
         "data": null
     }
    
-### CW-25 财务账户解锁
+### CW-36 财务账户解锁
 #### 对接负责人
     尹洪明
 #### 模块负责人
@@ -695,7 +951,7 @@
     }
     
     
-### CW-26 资金账户锁定
+### CW-37 资金账户锁定
 #### 对接负责人
     尹洪明
 #### 模块负责人
@@ -712,7 +968,7 @@
     }
 
 
-### CW-27 资金账户解锁
+### CW-38 资金账户解锁
 #### 对接负责人
     尹洪明
 #### 模块负责人
