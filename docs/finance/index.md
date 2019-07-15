@@ -189,8 +189,236 @@
         }
     } 
     
+
+### CW-11 账期变动申请
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    王子悦
+#### 请求
+    POST /finance/payment/askfor
+#### 参数
+    {
+        *"opAccount": "33314",              // 账户ID
+        *"askforDebtBalance": "9000",       // 申请的账期额度
+        *"effectEtime": "2019-07-31 23:59:59",  // 账期有效期
+        "createRemark": "到本月末账期"            // 申请备注
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+    
+    
+### CW-12 账期变动申请列表
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /finance/payment/askfor
+#### 参数
+    shortName   // 客户名
+    status      // 状态   ASKFOR 待审核 PASS 通过 REFUSE 拒绝
+    buttonPermissionFlg // 是否查询按钮权限 0 不查询 1 查询
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissionPage": {},
+            "buttonPermissions": [
+                {
+                    "refuseButton": true,       // 拒绝
+                    "passButton": true          // 通过
+                }
+            ],
+            "dataSums": null,
+            "datas": [
+                {
+                    "id": 2049,             // 申请ID
+                    "opAccount": 33314,     // 账户ID
+                    "shortname": "苏家屯走司",   // 客户名
+                    "status": "ASKFOR",     // 状态 ASKFOR 待审核 PASS 通过 REFUSE 拒绝
+                    "orignalPayment": "CASH",   // 原支付方式
+                    "orignalDebtBalance": 0,    // 原账期额度
+                    "askforPayment": "DEBT",    // 申请支付方式
+                    "askforDebtBalance": 9000,  // 申请账期额度
+                    "effectEtime": "2019-07-31 23:59:59",   // 申请账期有效期
+                    "createRemark": "到本月末账期",   // 申请备注
+                    "createRole": 0,
+                    "createTime": "2019-07-12 15:24:50",    // 申请时间
+                    "createUser": 0,
+                    "createUserName": "孙启萌",        // 申请人
+                    "checkRemark": "",              // 拒绝理由
+                    "checkRole": 0,
+                    "checkTime": "",                // 审核时间
+                    "checkUser": 0,
+                    "checkUserName": "",            // 审核人
+                    "deleteFlg": 0
+                }
+            ],
+            "pageNo": 1,
+            "total": 0
+        }
+    }
+      
+### CW-13 账期变动申请拒绝
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    王子悦
+#### 请求
+    PUT /finance/payment/askfor/refuse/{id}
+#### 参数
+    *id     // 申请ID
+    {
+        *"reason": "未填写账期有效期"    // 决绝理由
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+          
+### CW-14 账期变动申请通过
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    王子悦
+#### 请求
+    PUT /finance/payment/askfor/pass/{id}
+#### 参数
+    *id     // 申请ID
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+    
+    
+### CW-16 总分关系变动申请
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    王子悦
+#### 请求
+    POST /finance/account/askfor
+#### 参数
+    {
+        *"opAccount": "33314",           // 账户ID
+        *"askforParentType": "0",        // 总分类型 0 普通 1 总公司  2 分公司
+        "askforParentId": "0",           // 总公司ID   askforParentType=2时必传
+        "askforSharePay": "0",          // 是否为分公司代付 askforParentType=1时必传
+        "createRemark": "变成普通公司"    // 申请备注
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+    
      
-### CW-10 财务账户列表
+### CW-17 总分关系变动申请列表
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /finance/account/askfor
+#### 参数
+    shortName           // 客户名   
+    status              // 状态 ASKFOR 待审核 PASS 通过 REFUSE 拒绝
+    buttonPermissionFlg     // 是否查询按钮权限 0 不查询 1 查询 默认0
+    pageNo          // 页码 默认1
+    pageSize        // 页大小 默认25
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissionPage": {},
+            "buttonPermissions": [
+                {
+                    "refuseButton": true,
+                    "passUpButton": false
+                }
+            ],
+            "dataSums": null,
+            "datas": [
+                {
+                    "id": 258,                  // 申请ID
+                    "opAccount": 33314,         // 账户ID
+                    "shortname": "苏家屯走司",       // 客户名
+                    "status": "ASKFOR"          // 申请状态     ASKFOR 待审核 PASS 通过 REFUSE 拒绝
+                    "orignalParentId": 0,
+                    "orignalParentType": 1,
+                    "orignalSharePay": 0,
+                    "askforParentId": 0,        // 总公司ID
+                    "parentName": "",           // 总公司名
+                    "askforParentType": 0,      // 总分类型 0 普通 1 总公司 2 分公司
+                    "askforSharePay": 0,        // 是否为分公司代付 0 否 1 是
+                    "createRemark": "变成普通公司",   // 申请备注
+                    "createRole": 0,
+                    "createTime": "2019-07-12 17:36:24",    // 申请时间
+                    "createUser": 0,
+                    "createUserName": "孙启萌",    // 申请人
+                    "checkRemark": "",              // 审核备注
+                    "checkRole": 0,
+                    "checkTime": "",                // 审核时间
+                    "checkUser": 0,
+                    "checkUserName": "",            // 审核人
+                    "deleteFlg": 0,
+                }
+            ],
+            "pageNo": 1,
+            "total": 0
+        }
+    }
+    
+    
+### CW-18 总分关系变动申请拒绝
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    王子悦
+#### 请求
+    PUT /finance/account/askfor/refuse/{id}
+#### 参数
+    *id     // 申请ID
+    {
+        *"reason": "未填写账期有效期"    // 决绝理由
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+          
+### CW-19 总分关系变动申请通过
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    王子悦
+#### 请求
+    PUT /finance/account/askfor/pass/{id}
+#### 参数
+    *id     // 申请ID
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+    
+         
+### CW-21 财务账户列表
 #### 对接负责人
     尹洪明
 #### 模块负责人
@@ -297,7 +525,7 @@
     } 
     
   
-### CW-11 财务账户明细
+### CW-22 财务账户明细
 #### 对接负责人
     尹洪明
 #### 模块负责人
@@ -392,7 +620,7 @@
     }     
  
   
-### CW-12 财务账户操作日志
+### CW-23 财务账户操作日志
 #### 对接负责人
     尹洪明
 #### 模块负责人
@@ -434,7 +662,7 @@
         }
     }
 
-### CW-13 财务账户锁定
+### CW-24 财务账户锁定
 #### 对接负责人
     尹洪明
 #### 模块负责人
@@ -450,7 +678,7 @@
         "data": null
     }
    
-### CW-14 财务账户解锁
+### CW-25 财务账户解锁
 #### 对接负责人
     尹洪明
 #### 模块负责人
@@ -467,7 +695,7 @@
     }
     
     
-### CW-15 资金账户锁定
+### CW-26 资金账户锁定
 #### 对接负责人
     尹洪明
 #### 模块负责人
@@ -484,7 +712,7 @@
     }
 
 
-### CW-16 资金账户解锁
+### CW-27 资金账户解锁
 #### 对接负责人
     尹洪明
 #### 模块负责人
@@ -500,232 +728,6 @@
         "data": null
     }
     
-### CW-21 账期变动申请
-#### 对接负责人
-    尹洪明
-#### 模块负责人
-    王子悦
-#### 请求
-    POST /finance/payment/askfor
-#### 参数
-    {
-        *"opAccount": "33314",              // 账户ID
-        *"askforDebtBalance": "9000",       // 申请的账期额度
-        *"effectEtime": "2019-07-31 23:59:59",  // 账期有效期
-        "createRemark": "到本月末账期"            // 申请备注
-    }
-#### 响应
-    {
-        "code": 100000,
-        "msg": "",
-        "data": null
-    }
-    
-    
-### CW-22 账期变动申请列表
-#### 对接负责人
-    尹洪明
-#### 模块负责人
-    王子悦
-#### 请求
-    GET /finance/payment/askfor
-#### 参数
-    shortName   // 客户名
-    status      // 状态   ASKFOR 待审核 PASS 通过 REFUSE 拒绝
-    buttonPermissionFlg // 是否查询按钮权限 0 不查询 1 查询
-#### 响应
-    {
-        "code": 100000,
-        "msg": "",
-        "data": {
-            "buttonPermissionPage": {},
-            "buttonPermissions": [
-                {
-                    "refuseButton": true,       // 拒绝
-                    "passButton": true          // 通过
-                }
-            ],
-            "dataSums": null,
-            "datas": [
-                {
-                    "id": 2049,             // 申请ID
-                    "opAccount": 33314,     // 账户ID
-                    "shortname": "苏家屯走司",   // 客户名
-                    "status": "ASKFOR",     // 状态 ASKFOR 待审核 PASS 通过 REFUSE 拒绝
-                    "orignalPayment": "CASH",   // 原支付方式
-                    "orignalDebtBalance": 0,    // 原账期额度
-                    "askforPayment": "DEBT",    // 申请支付方式
-                    "askforDebtBalance": 9000,  // 申请账期额度
-                    "effectEtime": "2019-07-31 23:59:59",   // 申请账期有效期
-                    "createRemark": "到本月末账期",   // 申请备注
-                    "createRole": 0,
-                    "createTime": "2019-07-12 15:24:50",    // 申请时间
-                    "createUser": 0,
-                    "createUserName": "孙启萌",        // 申请人
-                    "checkRemark": "",              // 拒绝理由
-                    "checkRole": 0,
-                    "checkTime": "",                // 审核时间
-                    "checkUser": 0,
-                    "checkUserName": "",            // 审核人
-                    "deleteFlg": 0
-                }
-            ],
-            "pageNo": 1,
-            "total": 0
-        }
-    }
-      
-### CW-23 账期变动申请拒绝
-#### 对接负责人
-    尹洪明
-#### 模块负责人
-    王子悦
-#### 请求
-    PUT /finance/payment/askfor/refuse/{id}
-#### 参数
-    *id     // 申请ID
-    {
-        *"reason": "未填写账期有效期"    // 决绝理由
-    }
-#### 响应
-    {
-        "code": 100000,
-        "msg": "",
-        "data": null
-    }
-          
-### CW-24 账期变动申请通过
-#### 对接负责人
-    尹洪明
-#### 模块负责人
-    王子悦
-#### 请求
-    PUT /finance/payment/askfor/pass/{id}
-#### 参数
-    *id     // 申请ID
-#### 响应
-    {
-        "code": 100000,
-        "msg": "",
-        "data": null
-    }
-    
-    
-### CW-31 总分关系变动申请
-#### 对接负责人
-    尹洪明
-#### 模块负责人
-    王子悦
-#### 请求
-    POST /finance/account/askfor
-#### 参数
-    {
-        *"opAccount": "33314",           // 账户ID
-        *"askforParentType": "0",        // 总分类型 0 普通 1 总公司  2 分公司
-        "askforParentId": "0",           // 总公司ID   askforParentType=2时必传
-        "askforSharePay": "0",          // 是否为分公司代付 askforParentType=1时必传
-        "createRemark": "变成普通公司"    // 申请备注
-    }
-#### 响应
-    {
-        "code": 100000,
-        "msg": "",
-        "data": null
-    }
-    
-     
-### CW-32 总分关系变动申请列表
-#### 对接负责人
-    尹洪明
-#### 模块负责人
-    王子悦
-#### 请求
-    GET /finance/account/askfor
-#### 参数
-    shortName           // 客户名   
-    status              // 状态 ASKFOR 待审核 PASS 通过 REFUSE 拒绝
-    buttonPermissionFlg     // 是否查询按钮权限 0 不查询 1 查询 默认0
-    pageNo          // 页码 默认1
-    pageSize        // 页大小 默认25
-#### 响应
-    {
-        "code": 100000,
-        "msg": "",
-        "data": {
-            "buttonPermissionPage": {},
-            "buttonPermissions": [
-                {
-                    "refuseButton": true,
-                    "passUpButton": false
-                }
-            ],
-            "dataSums": null,
-            "datas": [
-                {
-                    "id": 258,                  // 申请ID
-                    "opAccount": 33314,         // 账户ID
-                    "shortname": "苏家屯走司",       // 客户名
-                    "status": "ASKFOR"          // 申请状态     ASKFOR 待审核 PASS 通过 REFUSE 拒绝
-                    "orignalParentId": 0,
-                    "orignalParentType": 1,
-                    "orignalSharePay": 0,
-                    "askforParentId": 0,        // 总公司ID
-                    "parentName": "",           // 总公司名
-                    "askforParentType": 0,      // 总分类型 0 普通 1 总公司 2 分公司
-                    "askforSharePay": 0,        // 是否为分公司代付 0 否 1 是
-                    "createRemark": "变成普通公司",   // 申请备注
-                    "createRole": 0,
-                    "createTime": "2019-07-12 17:36:24",    // 申请时间
-                    "createUser": 0,
-                    "createUserName": "孙启萌",    // 申请人
-                    "checkRemark": "",              // 审核备注
-                    "checkRole": 0,
-                    "checkTime": "",                // 审核时间
-                    "checkUser": 0,
-                    "checkUserName": "",            // 审核人
-                    "deleteFlg": 0,
-                }
-            ],
-            "pageNo": 1,
-            "total": 0
-        }
-    }
-    
-    
-### CW-33 总分关系变动申请拒绝
-#### 对接负责人
-    尹洪明
-#### 模块负责人
-    王子悦
-#### 请求
-    PUT /finance/account/askfor/refuse/{id}
-#### 参数
-    *id     // 申请ID
-    {
-        *"reason": "未填写账期有效期"    // 决绝理由
-    }
-#### 响应
-    {
-        "code": 100000,
-        "msg": "",
-        "data": null
-    }
-          
-### CW-34 总分关系变动申请通过
-#### 对接负责人
-    尹洪明
-#### 模块负责人
-    王子悦
-#### 请求
-    PUT /finance/account/askfor/pass/{id}
-#### 参数
-    *id     // 申请ID
-#### 响应
-    {
-        "code": 100000,
-        "msg": "",
-        "data": null
-    }
     
 ### CW-51. 订金管理-列表
 #### 模块负责人
