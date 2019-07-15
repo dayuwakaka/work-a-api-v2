@@ -178,8 +178,9 @@
                     "effectStime": "2019-08-10 23:59:59", // 订金有效期开始时间
                     "id": 0, // 申请主键id
                     "money": -19292, // 金额
+                    "payTime": "2019-07-15 12:30:00", // 充值/扣款时间
                     "opAccount": 3885, // 客户id（客户账户id）
-                    "ratio": 0, // 比例
+                    "ratio": 20, // 比例
                     "relationSid": 0,
                     "status": "PASS" // 审核状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
                 },
