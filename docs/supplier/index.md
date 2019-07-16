@@ -86,14 +86,25 @@
     POST /v2/supplier
 #### 参数
     {
-        *"name":"供应商1", // 供应商名
-        *"payMode":"INBUY", // 供应商结算方式
-        *"contactName":"contactName", // 供应商联系人
-        *"contactMobile":"contactMobile", // 供应商联系人手机号
-        *"contactPathId":"0101", // 供应商联系地址PathId
-        *"contactAddress":"contactAddress", // 供应商联系详细地址
-        *"account":"account" // 供应商帐号
+        supplier: {
+            *"name":"供应商1", // 供应商名
+            *"payMode":"INBUY", // 供应商结算方式
+            *"taxCode":"123123123", // 纳税人识别号
+            *"shortName":"shortName", // 供应商编号
+            *"account":"account" // 供应商帐号
+            *"companyIds": [1,2,3,4,5,6,7,8,9] // 所属企业id
+        },
+        supplierContacts: [ // 取货信息
+            {
+                *contactName: "", // 联系人
+                *contactMobile: "", // 联系电话
+                *contactPathId: "", // 供应商联系地址PathId
+                *contactAddress: "", // 供应商联系详细地址
+            },
+            ...
+        ]
     }
+    
 #### 响应
     {
         "code": 100000,
@@ -752,7 +763,10 @@
                     "supplierAddress": "山西代县文庙附近", // 经销商名称
                     "supplierId": 1, // 供应商id
                     "supplierName": "山西代县文庙超市", // 供应商名称
-                    "totalprice": 1 // 金额
+                    "totalprice": 1, // 金额
+                    "supplierShortName": "12", // 供应商编号
+                    "companyId": 0, // 所属企业id
+                    "companyName": "", // 所属企业名称
                 }
             ],
             "pageNo": 1,
@@ -777,6 +791,8 @@
             "contactMobile": "", // 联系电话
             "contactName": "", // 联系人
             "contactPathId": "", // 区域code
+            "companyId": 1, // 所属公司id
+            "companyName": "阿里巴巴", // 所属公司名称
             "deliverType": "THIRD", // 配送方式 SELF 自送 THIRD 物流配送
             "depotId": 1,
             "depotName": "大连铁越仓", // 入库仓
@@ -849,6 +865,7 @@
         contactPathId: 060202, // 区域id
         contactAddress: "山西忻州代县", // 经销商地址
         *type: "NORMAL", // 采购单类型 正常单 CONTROL_PRODUCT:品控单
+        *companyId: 1, // 所属公司id
         *depotId: 6, // 入库仓id
         *depotName: "大连铁越仓", // 入库仓名称
         *deliverType: "THIRD", // 配送方式 SELF 自送 THIRD 物流配送
@@ -1090,6 +1107,7 @@
         contactPathId: 060202, // 区域id
         contactAddress: "山西忻州代县", // 经销商地址
         *depotId: 1, // 仓库id
+        *companyId: 1, // 所属公司id
         *depotName: "rrr" // 仓库名称
         *deliverType: "SELF" // 配送方式 SELF 自送 THIRD 物流配送
         *remark: "kkk", // 备注
@@ -1167,6 +1185,8 @@
             "contactMobile": "13333333336", // 联系电话
             "contactName": "李斯", // 联系人
             "contactPathId": "060202", // 联系地址code
+            "companyId": 1, // 所属公司id
+            "companyName": "阿里巴巴", // 所属公司名称
             "deliverType": "THIRD", // 配送方式 SELF 自送 THIRD 物流配送
             "depotName": "大连铁越仓", // 入库仓
             "jian": 0, // 总件数
@@ -2588,3 +2608,256 @@
             "san": 50 // 散
         }
     }
+    
+### CG-126 企业管理-列表
+#### 模块负责人
+    梁铁骐
+#### 对接负责人
+    梁铁骐
+#### 请求
+    GET /v2/companies
+#### 参数
+    keyword: 企业名称
+    pageNo: 页码
+    pageSize: 页面行数
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissionPage": {},
+            "buttonPermissions": [],
+            "dataSums": null,
+            "datas": [
+                {
+                    "code": "alibab", 金蝶编号
+                    "createTime": "2019-07-16 10:50:13", // 创建时间
+                    "createUserName": "1",// 创建人
+                    "id": 1, // 主键id
+                    "name": "阿里巴巴" // 企业名称
+                },
+                ...
+            ],
+            "pageNo": 1,
+            "total": 0
+        }
+    }
+
+### CG-127 企业管理-详情
+#### 模块负责人
+    梁铁骐
+#### 对接负责人
+    梁铁骐
+#### 请求
+    GET /v2/companies/{id}
+#### 参数
+    id: 企业主键id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "code": "alibab", // 金蝶编号
+            "createRole": 1,
+            "createTime": "2019-07-16 10:50:13",
+            "createUser": 1,
+            "createUserName": "1",
+            "deleteFlg": 0,
+            "id": 1,
+            "name": "阿里巴巴" // 企业名称
+        }
+    }
+
+### CG-128 企业管理-修改
+#### 模块负责人
+    梁铁骐
+#### 对接负责人
+    梁铁骐
+#### 请求
+    PUT /v2/companies/{id}
+#### 参数
+    id: 企业主键id
+    json body
+    {
+        "code": "alibab", // 金蝶编号
+        "name": "阿里巴巴" // 企业名称
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### CG-129 企业管理-删除
+#### 模块负责人
+    梁铁骐
+#### 对接负责人
+    梁铁骐
+#### 请求
+    DELETE /v2/companies/{id}
+#### 参数
+    id: 企业主键id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### CG-130 企业管理-列表(无分页)
+#### 模块负责人
+    梁铁骐
+#### 对接负责人
+    梁铁骐
+#### 请求
+    GET /v2/companies/all
+#### 参数
+    supplierId: 1 // 供应商id 如传递则代表获取供应商下所属的公司列表 入不传则代表获取所有公司列表
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "code": "alibab", 金蝶编号
+                "createTime": "2019-07-16 10:50:13", // 创建时间
+                "createUserName": "1",// 创建人
+                "id": 1, // 主键id
+                "name": "阿里巴巴" // 企业名称
+            },
+            ...
+        ],
+        }
+    }
+
+### CG-131 供应商管理-获取默认收获地址
+#### 模块负责人
+    梁铁骐
+#### 对接负责人
+    梁铁骐
+#### 请求
+    GET /v2/supplier/{supplierId}/default/contact
+#### 参数
+    supplierId: 1 // 供应商id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "contactAddress": "北京长安街", // 详细地址
+            "contactMobile": "13368686868", // 联系电话
+            "contactName": "哔哩哔哩", // 联系人名称
+            "contactPathId": "0101", // 区域pathid
+            "createRole": 1,
+            "createTime": "2019-07-16 11:37:23",
+            "createUser": 518,
+            "defaultFlg": 1,
+            "deleteFlg": 0,
+            "id": 522,
+            "lastModified": "2019-07-16 11:37:23",
+            "remark": "我是备注", // 备注
+            "supplierId": 5588
+        }
+    }
+
+### CG-132 供应商管理-获取默认收获地址
+#### 模块负责人
+    梁铁骐
+#### 对接负责人
+    梁铁骐
+#### 请求
+    GET /v2/supplier/{supplierId}/contacts
+#### 参数
+    supplierId: 1 // 供应商id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "contactAddress": "北京长安街", // 详细地址
+                "contactMobile": "13368686868", // 联系电话
+                "contactName": "哔哩哔哩", // 联系人名称
+                "contactPathId": "0101", // 区域pathid
+                "createRole": 1,
+                "createTime": "2019-07-16 11:37:23",
+                "createUser": 518,
+                "defaultFlg": 1, // 是否默认收获地址 0-否 1-是
+                "deleteFlg": 0,
+                "id": 522,
+                "lastModified": "2019-07-16 11:37:23",
+                "remark": "我是备注", // 备注
+                "supplierId": 5588
+            },
+            ...
+        ]
+    }
+
+### CG-133 供应商管理-修改取货信息
+#### 模块负责人
+    梁铁骐
+#### 对接负责人
+    梁铁骐
+#### 请求
+    PUT /v2/supplier/contact/{id}
+#### 参数
+    id: 1 // 主键id
+    json body
+    {
+    	"contactName": "李靖777", // 联系人
+    	"contactMobile": "13336688991", // 联系电话
+    	"contactPathid": "0101", // 区域id
+    	"contactAddress": "naannan", // 详细地址
+    	"defaultFlg": 0, // 是否默认收获地址 0-否 1-是
+    	"remark": "asdfasd" // 备注
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### CG-134 供应商管理-删除取货信息
+#### 模块负责人
+    梁铁骐
+#### 对接负责人
+    梁铁骐
+#### 请求
+    DELETE /v2/supplier/contact/{id}
+#### 参数
+    id: 1 // 主键id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### CG-135 供应商管理-新增取货信息
+#### 模块负责人
+    梁铁骐
+#### 对接负责人
+    梁铁骐
+#### 请求
+    POST /v2/supplier/{supplierId}/contact
+#### 参数
+    id: 1 // 主键id
+    json body 
+    {
+    	"contactName": "李靖321", // 联系人
+    	"contactMobile": "13336688991", // 联系电话
+    	"contactPathid": "0101", // 区域id
+    	"contactAddress": "nananana", // 详细地址
+    	"defaultFlg": 0, // 是否默认收获地址 0-否 1-是
+    	"remark": "asdfasd" // 备注
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+
