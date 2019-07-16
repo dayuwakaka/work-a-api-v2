@@ -1757,6 +1757,7 @@
     depotId     // 仓库ID
     status          // 库存状态 'NORMAL' 正常,'LOCK' 锁定
     type            //产品类型 NOW 现货,FUTURE 期货,CUSTOM 定制品
+    meituan         //美团品标识  1是美团品，0是非美团品  空是所有产品
     enableAmountOp  // 过滤可用库存操作符
     enableAmount    // 可用库存值
     normalAmountOp  // 过滤实际库存操作符
