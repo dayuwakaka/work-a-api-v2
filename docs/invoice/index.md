@@ -793,6 +793,7 @@
     pno         // 品号
     businesstype // 餐饮业态id
     taxCategory // 税收分类id
+    taxCategoryGroup //税收8大类编号
     productStatus   // 产品状态     NORMAL 上架 LOCK 下架   CUSTOM 定制     LACK 断货
     status // 发票状态 EMPTY 待审核 NORMAL 已审核
     pageNo          // 页码
@@ -851,6 +852,8 @@
                     "status": null,
                     "taxCategory": 2,                              //税收分类id
                     "taxCategoryName": "方便食品类",               //税收分类名称
+                    "taxCategoryGroup": "xxx", //税收8大类编码
+                    "taxCategoryGroupName": "xxx", // 税收8大类名称
                     "taxRate": 0.17                              //税率
                     "status": "EMPTY" // 待审核 已审核
                 }
@@ -893,6 +896,8 @@
             "status": null,
             "taxCategory": 0,                                                           //税收分类
             "taxCategoryName": "冷冻半成品",                                             //税率
+            "taxCategoryGroup": "xxx", //税收8大类编码
+            "taxCategoryGroupName": "xxx", // 税收8大类名称
             "taxRate": 0.16,
             "unitGuige": "盒:500g（20枚）/盒,件:500g（20枚）/盒*10盒"
         }
@@ -957,6 +962,7 @@
         "ids":[3,4,5],        //id列表
         "taxRate":0.15,     //税率
         "taxCategory":6     //税收分类
+        "taxCategoryGroup":"xxx" // 税收8大类编码
     }
     
 #### 响应
@@ -980,6 +986,7 @@
     pno             //品号
     businesstype    //业态编号
     taxCategory     //税收分类编号
+    taxCategoryGroup //税收8大类编号
     productStatus   //产品状态 NORMAL 上架 LOCK 下架   CUSTOM 定制     LACK 断货
     status          //发票状态 EMPTY 待审核 NORMAL 已审核
     checkCode       //下载授权码
@@ -2318,3 +2325,23 @@
     *checkToken:"xxx" // 下载码
 #### 响应
     数据流
+
+### FP-92 税收8大类查询接口
+#### 模块负责人
+    刘宏宇
+#### 请求
+    GET /v2/invoice/category/group
+#### 参数
+    无
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "name": "xxx", // 名称
+                "code": "xxx", // 编号
+                "createTime": "xxx" // 创建时间
+            }
+        ]
+    }
