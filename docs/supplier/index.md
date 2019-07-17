@@ -151,6 +151,7 @@
                 *contactMobile: "", // 联系电话
                 *contactPathId: "", // 供应商联系地址PathId
                 *contactAddress: "", // 供应商联系详细地址
+                *defaultFlg: 1 // 默认地址 1 默认 0 非默认
             },
             ...
         ]
