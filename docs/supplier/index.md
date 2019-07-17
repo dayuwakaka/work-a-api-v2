@@ -1075,6 +1075,7 @@
     depotId // 仓id
     status // 订单状态 INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
     buttonPermissionFlg // 获取权限按钮 0-否 1-是
+    createUserName // 创建人
     pageNo // 页码
     pageSize // 行数
 #### 响应
@@ -1093,6 +1094,8 @@
             "datas": [
                 {
                     "createTime": "2018-12-12 05:52:03", // 创建时间
+                    "createUserName": "陈阵", // 创建人
+                    "remark": "test", // 备注
                     "deleteFlg": 0,
                     "deliverType": "SELF", // 配送方式 SELF 自送 THIRD 物流配送
                     "depotId": 0,
