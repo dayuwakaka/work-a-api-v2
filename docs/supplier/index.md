@@ -172,14 +172,12 @@
 #### 参数
     *id: 1 // 供应商ID
     {
-        "name":"供应商2", // 供应商名
-        "payMode":"INBUY", // 供应商结算方式
-        "account":"account" // 供应商帐号
-        
-        *"contactName":"contactName", // 供应商联系人
-        *"contactMobile":"contactMobile", // 供应商联系人手机号
-        *"contactPathId":"0101", // 供应商联系地址PathId
-        *"contactAddress":"contactAddress", // 供应商联系详细地址
+        *"name":"供应商1", // 供应商名
+        *"payMode":"INBUY", // 供应商结算方式
+        *"taxCode":"123123123", // 纳税人识别号
+        *"shortName":"shortName", // 供应商编号
+        *"account":"account" // 供应商帐号
+        *"companyIds": [1,2,3,4,5,6,7,8,9] // 所属企业id
     }
 #### 响应
     {
