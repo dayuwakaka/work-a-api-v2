@@ -26,6 +26,20 @@
                     "contactName": "陈经理", // 联系人
                     "contactPathId": "1908", // 联系地址PathId
                     "county": "湛江市", // 县
+                    "companies": [
+                        {
+                            "code": "alibaba", // 金蝶编号
+                            "createRole": 1,
+                            "createTime": "2019-07-16 10:50:13",
+                            "createUser": 1,
+                            "createUserName": "1",
+                            "deleteFlg": 0,
+                            "id": 1,
+                            "name": "阿里巴巴", // 企业名称
+                            "supplierId": 5588
+                        },
+                        ...
+                    ]
                     "createRole": 29157, // 创建角色ID
                     "createTime": "2018-01-31 13:31:40", // 创建就时间
                     "createUser": 89, // 创建人ID
@@ -37,6 +51,8 @@
                     "payMode": "INBUY", // 支付方式 INBUY 入结、OUTBUY 出结
                     "platformId": 1, // 所属平台 1 亚洲渔港 ，目前只有一家 亚洲渔港
                     "province": "广东", // 省
+                    "shortName": "shortName", // 供应商编号
+                    "taxCode": "23123123123", // 纳税人识别号
                     "status": "NORMAL" // 登录帐号状态 NORMAL 正常 LOCK 锁定
                 }
             ],
@@ -68,13 +84,48 @@
             "createTime": "2018-12-11 10:57:29", // 创建时间
             "createUser": 101, // 创建人ID
             "createUserName": "系统操作", // 创建人名
-            "deleteFlg": 0, 
+            "deleteFlg": 0,
+            "companies": [
+                {
+                    "code": "alibaba",
+                    "createRole": 1,
+                    "createTime": "2019-07-16 10:50:13",
+                    "createUser": 1,
+                    "createUserName": "1",
+                    "deleteFlg": 0,
+                    "id": 1, // 主键id
+                    "name": "阿里巴巴", // 企业名称
+                    "supplierId": 5588
+                },
+                ...
+            ],
+            "supplierContacts": [
+                {
+                    "contactAddress": "北京长安街", // 详细地址
+                    "contactMobile": "13368686868", // 联系电话
+                    "contactName": "哔哩哔哩", // 联系人
+                    "contactPathId": "0101", // 区域pathid
+                    "pathName": "内蒙古呼和浩特市回民区", // 详细地址
+                    "createRole": 1,
+                    "createTime": "2019-07-16 11:37:23",
+                    "createUser": 518,
+                    "defaultFlg": 0, // 是否默认取货信息 0-否 1-是
+                    "deleteFlg": 0,
+                    "id": 522, // 主键id
+                    "lastModified": "2019-07-16 08:08:23",
+                    "remark": "我是备注", // 备注
+                    "supplierId": 5588
+                },
+                ...
+            ],
             "id": 5557, // 供应商ID
             "name": "", // 供应商名
             "password": "14e1b600b1fd579f47433b88e8d85291", // 供应商密码 MD5MD5 加密
             "payMode": "INBUY", // 供应商结算方式
             "platformId": 1, // 供应商所属平台
             "province": "北京", // 供应商联系方式省份
+            "shortName": "shortName", // 供应商编号
+            "taxCode": "123123123", // 纳税人识别号
             "status": "NORMAL" // 供应商帐号状态 NORMAL 正常 LOCK 锁定
         }
     }
