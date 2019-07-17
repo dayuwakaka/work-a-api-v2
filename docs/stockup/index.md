@@ -316,6 +316,7 @@
     producttype   //期现货标识 NOW 现货 FUTURE 期货 CUSTOM 定制
     depotId       //仓id
     orderlack     //是否仅看订单缺货 如果仅看订单缺货：传值yes 否则传空
+    meituan       //美团品标识  1是美团品，0是非美团品  空是所有产品
 #### 响应
     1.查询条件：【全部】
     {
@@ -417,6 +418,7 @@
     producttype   //期现货标识 NOW 现货 FUTURE 期货 CUSTOM 定制
     depotId       //仓id
     orderlack     //是否仅看订单缺货 如果仅看订单缺货：传值yes 否则传空
+    meituan       //美团品标识  1是美团品，0是非美团品  空是所有产品
 #### 响应
     {
         "code": 100000,
@@ -1755,6 +1757,7 @@
     depotId     // 仓库ID
     status          // 库存状态 'NORMAL' 正常,'LOCK' 锁定
     type            //产品类型 NOW 现货,FUTURE 期货,CUSTOM 定制品
+    meituan         //美团品标识  1是美团品，0是非美团品  空是所有产品
     enableAmountOp  // 过滤可用库存操作符
     enableAmount    // 可用库存值
     normalAmountOp  // 过滤实际库存操作符
