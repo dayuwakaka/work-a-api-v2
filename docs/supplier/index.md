@@ -101,9 +101,9 @@
             ],
             "supplierContacts": [
                 {
-                    "contactAddress": "北京长安街", // 详细地址
+                    "contactAddress": "大安街320号", // 详细地址
                     "contactMobile": "13368686868", // 联系电话
-                    "contactName": "哔哩哔哩", // 联系人
+                    "contactName": "哔哩哔哩", // 取货人
                     "contactPathId": "0101", // 区域pathid
                     "pathName": "内蒙古呼和浩特市回民区", // 详细地址
                     "createRole": 1,
