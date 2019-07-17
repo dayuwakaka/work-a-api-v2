@@ -2855,9 +2855,10 @@
     id: 1 // 主键id
     json body
     {
+        "supplierId": 1 // 供应商ID
     	"contactName": "李靖777", // 联系人
     	"contactMobile": "13336688991", // 联系电话
-    	"contactPathid": "0101", // 区域id
+    	"contactPathId": "0101", // 区域id
     	"contactAddress": "naannan", // 详细地址
     	"defaultFlg": 0, // 是否默认收获地址 0-否 1-是
     	"remark": "asdfasd" // 备注
@@ -2898,7 +2899,7 @@
     {
     	"contactName": "李靖321", // 联系人
     	"contactMobile": "13336688991", // 联系电话
-    	"contactPathid": "0101", // 区域id
+    	"contactPathId": "0101", // 区域id
     	"contactAddress": "nananana", // 详细地址
     	"defaultFlg": 0, // 是否默认收获地址 0-否 1-是
     	"remark": "asdfasd" // 备注
