@@ -1072,8 +1072,141 @@
         "msg": "",
         "data": null
     }  
-    
+  
         
+### CW-41 主流水
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /finance/flow
+#### 参数
+    opBalance   // 账户类型 BALANCE 预付款 DEPOSIT 定金
+    payStime    // 开始时间
+    payEtime    // 结束时间
+    pageNo      // 页码 默认 1
+    pageSize    // 页大小 默认25
+#### 响应 
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissionPage": {},
+            "buttonPermissions": [],
+            "dataSums": null,
+            "datas": [
+                {
+                    "id": 0,
+                    "platformId": 1,
+                    "opAccount": 27787,             // 账户ID
+                    "opBalance": "BALANCE", // 账户类型 BALANCE 预付款 DEPOSIT 定金
+                    "opBusiness": "ORDER", // 业务类型 WX ALI BANK ORDER TRANSFER HAND
+                    "opBusinessName": "销售订单支付", // 摘要
+                    "serialsid": "15619478510088497184247500831880-1", // 流水号
+                    "payTime": "2019-07-01 10:25:05", // 支付时间
+                    "money": -5596.4,       // 充值、扣款金额
+                    "aftBalance": 0,        // 变动前余额
+                    "preBalance": 5596.4,   // 变动后余额
+                    "status": "NORMAL",
+                    "orderType": "SA",      // SA 销售订单 SR 销售退 TR 调拨 AP 调价
+                    "trAccount": 27787
+                    "createTime": "",
+                    "deleteFlg": 0,
+                    "oid": 831880,
+                }
+            ],
+            "pageNo": 0,
+            "total": 2
+        }
+    }
+  
+  
+### CW-42 微信子流水（opBusiness=WX）
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /finance/flow/wx/{serialSid}
+#### 参数
+    *serialSid  // 流水号
+#### 响应 
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "id": 16321,
+            "opAccount": 27787,        // 账户ID
+            "serialsid": "15619478510088497184247500831880", // 订单号
+            "transactionId": "4200000313201907014386388531" // 微信支付订单号
+            "tradeType": "APP",             //  微信交易类型
+            "bankType": "CMB_CREDIT",       // 微信付款银行
+            "appId": "wxd15f69fcf1f3a388",  // 公众号ID
+            "cashFee": 5596.4,          // 交易金额
+            "resultCode": "SUCCESS",        // 微信业务结果
+            "mchId": "1484184462",      // 微信商户号
+            "openId": "o2F0GxMapYIKhxrmZY_Ak18xD0G0",   // 唯一标识
+            "payTime": "2019-07-01 10:25:05",     // 创建时间
+        }
+    }
+
+### CW-43 支付宝子流水（opBusiness=ALI）
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /finance/flow/ali/{serialSid}
+#### 参数
+    *serialSid  // 流水号
+#### 响应 
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "id": 1,
+            "opAccount": 2730,          // 账户ID
+            "serialsid": "15057145010021063126888700605203", // 订单号
+            "buyerId": "2088802666172422",  // 买家支付宝用户号
+            "buyerLogonId": "",             // 买家支付宝号
+            "sellerId": "2088211612270167",     // 卖家支付宝用户号
+            "sellerEmail": "asagroup@aliyun.com",   // 卖家支付宝号
+            "totalFee": 0.01,                       // 交易金额
+            "payTime": "2017-09-18 14:01:54",       // 交易时间
+            "tradeNo": "2017091821001004420248542003",  // 支付宝交易号
+            "tradeStatus": "TRADE_SUCCESS"              // 交易状态
+        }
+    }
+    
+### CW-44 手工、银行、定金子流水（opBusiness in ('BANK','TRANSFER','HAND')）
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /finance/flow/full/{serialSid}
+#### 参数
+    *serialSid  // 流水号
+#### 响应 
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "opBalance": "BALANCE",    // 流程名称 BALANCE 预付款 DEPOSIT 定金
+            "relationSid": 0,   // 流程id
+            "money": 97100,     // 操作金额
+            "opBusinessName": "预付款手工转入",   // 流程类型
+            "opTime": "2015-08-28 08:24:40", // 操作时间
+            "remark": " 8.27"           // 备注
+            "checkTime": "",        // 审核时间
+            "checkUserName": "",        // 审核人
+            "createTime": "",       // 创建时间
+            "createUserName": "",   // 创建人
+        }
+    }
+
+  
 ### CW-51. 订金管理-列表
 #### 模块负责人
     王子悦
