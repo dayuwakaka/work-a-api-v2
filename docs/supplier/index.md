@@ -151,6 +151,7 @@
                 *contactMobile: "", // 联系电话
                 *contactPathId: "", // 供应商联系地址PathId
                 *contactAddress: "", // 供应商联系详细地址
+                *defaultFlg: 1 // 默认地址 1 默认 0 非默认
             },
             ...
         ]
@@ -171,14 +172,12 @@
 #### 参数
     *id: 1 // 供应商ID
     {
-        "name":"供应商2", // 供应商名
-        "payMode":"INBUY", // 供应商结算方式
-        "account":"account" // 供应商帐号
-        
-        *"contactName":"contactName", // 供应商联系人
-        *"contactMobile":"contactMobile", // 供应商联系人手机号
-        *"contactPathId":"0101", // 供应商联系地址PathId
-        *"contactAddress":"contactAddress", // 供应商联系详细地址
+        *"name":"供应商1", // 供应商名
+        *"payMode":"INBUY", // 供应商结算方式
+        *"taxCode":"123123123", // 纳税人识别号
+        *"shortName":"shortName", // 供应商编号
+        *"account":"account" // 供应商帐号
+        *"companyIds": [1,2,3,4,5,6,7,8,9] // 所属企业id
     }
 #### 响应
     {
@@ -2859,9 +2858,10 @@
     id: 1 // 主键id
     json body
     {
+        "supplierId": 1 // 供应商ID
     	"contactName": "李靖777", // 联系人
     	"contactMobile": "13336688991", // 联系电话
-    	"contactPathid": "0101", // 区域id
+    	"contactPathId": "0101", // 区域id
     	"contactAddress": "naannan", // 详细地址
     	"defaultFlg": 0, // 是否默认收获地址 0-否 1-是
     	"remark": "asdfasd" // 备注
@@ -2902,7 +2902,7 @@
     {
     	"contactName": "李靖321", // 联系人
     	"contactMobile": "13336688991", // 联系电话
-    	"contactPathid": "0101", // 区域id
+    	"contactPathId": "0101", // 区域id
     	"contactAddress": "nananana", // 详细地址
     	"defaultFlg": 0, // 是否默认收获地址 0-否 1-是
     	"remark": "asdfasd" // 备注
