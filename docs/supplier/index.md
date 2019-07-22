@@ -2957,7 +2957,7 @@
             "createUser": 89,
             "defaultFlg": 1, // 是否默认收获地址 0-否 1-是
             "deleteFlg": 0,
-            "id": 282,
+            "id": 282, // 取货信息主键id
             "lastModified": "2019-02-15 15:52:40",
             "pathName": "山东济南市历下区",
             "remark": "", // 备注
