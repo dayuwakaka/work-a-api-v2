@@ -541,3 +541,46 @@
     eDate: "2018-10-01" // 结束时间
 #### 响应
     流
+
+### FYGL-19. 应付货款供应商清单接口
+#### 模块负责人
+    刘宏宇
+#### 请求
+    GET /v2/fee/pay/goods/has
+#### 参数
+    *sDate:"2019-01-01" // 开始日期
+    *eDate:"2019-01-31" // 结束日期
+
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "account": "shipin",
+                "city": "大连市",
+                "companies": null,
+                "companyIds": null,
+                "contactAddress": "大连",
+                "contactMobile": "13624264901",
+                "contactName": "鲁",
+                "contactPathId": "060210",
+                "county": "庄河市",
+                "createRole": 29118,
+                "createTime": "2019-01-25 16:03:19",
+                "createUser": 89,
+                "createUserName": "郭倩",
+                "deleteFlg": 0,
+                "id": 5566,
+                "name": "亚洲渔港（大连）食品有限公司（IN）", // 名称
+                "password": "14e1b600b1fd579f47433b88e8d85291",
+                "payMode": "INBUY",
+                "platformId": 1,
+                "province": "辽宁",
+                "shortName": "亚洲渔港（大连）食品有限公司（IN）", // 简称
+                "status": "NORMAL",
+                "supplierContacts": null,
+                "taxCode": ""
+            }
+        ]
+    }
