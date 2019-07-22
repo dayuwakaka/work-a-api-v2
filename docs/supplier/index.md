@@ -2773,7 +2773,7 @@
         "msg": "",
         "data": [
             {
-                "code": "alibab", 金蝶编号
+                "code": "alibab", // 金蝶编号
                 "createTime": "2019-07-16 10:50:13", // 创建时间
                 "createUserName": "1",// 创建人
                 "id": 1, // 主键id
