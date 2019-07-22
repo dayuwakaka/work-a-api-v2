@@ -675,6 +675,27 @@
 #### 响应
     导出文件
 
+### BH-28.调货和MPPR总表需求-分仓导出
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /v2/stockup/need/export/need/depot
+#### 参数
+    *depotId   //仓id
+    *checkCode //下载授权码
+#### 响应
+    导出文件
+
+### BH-29.调货和MPPR总表需求-全仓导出
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /v2/stockup/need/export/need/depot/all
+#### 参数
+    *checkCode //下载授权码
+#### 响应
+    导出文件
+
 
 ### BH-30 计划-新增
 #### 模块负责人

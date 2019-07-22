@@ -151,6 +151,7 @@
                 *contactMobile: "", // 联系电话
                 *contactPathId: "", // 供应商联系地址PathId
                 *contactAddress: "", // 供应商联系详细地址
+                *defaultFlg: 1 // 默认地址 1 默认 0 非默认
             },
             ...
         ]
@@ -171,14 +172,12 @@
 #### 参数
     *id: 1 // 供应商ID
     {
-        "name":"供应商2", // 供应商名
-        "payMode":"INBUY", // 供应商结算方式
-        "account":"account" // 供应商帐号
-        
-        *"contactName":"contactName", // 供应商联系人
-        *"contactMobile":"contactMobile", // 供应商联系人手机号
-        *"contactPathId":"0101", // 供应商联系地址PathId
-        *"contactAddress":"contactAddress", // 供应商联系详细地址
+        *"name":"供应商1", // 供应商名
+        *"payMode":"INBUY", // 供应商结算方式
+        *"taxCode":"123123123", // 纳税人识别号
+        *"shortName":"shortName", // 供应商编号
+        *"account":"account" // 供应商帐号
+        *"companyIds": [1,2,3,4,5,6,7,8,9] // 所属企业id
     }
 #### 响应
     {
@@ -1075,6 +1074,7 @@
     depotId // 仓id
     status // 订单状态 INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
     buttonPermissionFlg // 获取权限按钮 0-否 1-是
+    createUserName // 创建人
     pageNo // 页码
     pageSize // 行数
 #### 响应
@@ -1093,6 +1093,8 @@
             "datas": [
                 {
                     "createTime": "2018-12-12 05:52:03", // 创建时间
+                    "createUserName": "陈阵", // 创建人
+                    "remark": "test", // 备注
                     "deleteFlg": 0,
                     "deliverType": "SELF", // 配送方式 SELF 自送 THIRD 物流配送
                     "depotId": 0,
@@ -2764,14 +2766,14 @@
 #### 请求
     GET /v2/companies/all
 #### 参数
-    supplierId: 1 // 供应商id 如传递则代表获取供应商下所属的公司列表 入不传则代表获取所有公司列表
+    supplierId: 1 // 供应商id 传递则代表获取供应商下所属的公司列表 不传则代表获取所有公司列表
 #### 响应
     {
         "code": 100000,
         "msg": "",
         "data": [
             {
-                "code": "alibab", 金蝶编号
+                "code": "alibab", // 金蝶编号
                 "createTime": "2019-07-16 10:50:13", // 创建时间
                 "createUserName": "1",// 创建人
                 "id": 1, // 主键id
@@ -2856,9 +2858,10 @@
     id: 1 // 主键id
     json body
     {
+        "supplierId": 1 // 供应商ID
     	"contactName": "李靖777", // 联系人
     	"contactMobile": "13336688991", // 联系电话
-    	"contactPathid": "0101", // 区域id
+    	"contactPathId": "0101", // 区域id
     	"contactAddress": "naannan", // 详细地址
     	"defaultFlg": 0, // 是否默认收获地址 0-否 1-是
     	"remark": "asdfasd" // 备注
@@ -2899,7 +2902,7 @@
     {
     	"contactName": "李靖321", // 联系人
     	"contactMobile": "13336688991", // 联系电话
-    	"contactPathid": "0101", // 区域id
+    	"contactPathId": "0101", // 区域id
     	"contactAddress": "nananana", // 详细地址
     	"defaultFlg": 0, // 是否默认收获地址 0-否 1-是
     	"remark": "asdfasd" // 备注
