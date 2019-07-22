@@ -2814,7 +2814,7 @@
         }
     }
 
-### CG-132 供应商管理-获取默认收获地址
+### CG-132 供应商管理-获取供应商收获地址列表
 #### 模块负责人
     梁铁骐
 #### 对接负责人
@@ -2931,4 +2931,36 @@
         "code": 100000,
         "msg": "",
         "data": null
+    }
+
+
+### CG-137 供应商管理-获取取货信息详情
+#### 模块负责人
+    梁铁骐
+#### 对接负责人
+    梁铁骐
+#### 请求
+    GET /v2/supplier/supplier/contact/{id}
+#### 参数
+    id: 1 // 取货信息主键id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "contactAddress": "济南市", // 详细地址
+            "contactMobile": "13256678221", // 联系电话
+            "contactName": "王佳佳", // 取货人
+            "contactPathId": "150101", // 详细地址pathid
+            "createRole": 29118,
+            "createTime": "2019-02-15 15:52:40",
+            "createUser": 89,
+            "defaultFlg": 1, // 是否默认收获地址 0-否 1-是
+            "deleteFlg": 0,
+            "id": 282,
+            "lastModified": "2019-02-15 15:52:40",
+            "pathName": "山东济南市历下区",
+            "remark": "", // 备注
+            "supplierId": 5567
+        }
     }
