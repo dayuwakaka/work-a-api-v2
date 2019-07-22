@@ -3476,3 +3476,26 @@
         "msg": "",
         "data": null
     }
+    
+    
+### APP-160. 微信app预支付
+#### 模块负责人
+    尹洪明
+#### 请求
+    POST /router/v5/finance/pay/prepay
+#### 参数
+    {
+        *"serialSid": "scm20190719010018",   // 支付策略ID
+        *"totalFee": "102.36",              // 客户需要支付的费用（元）
+        *"spbillCreateIp": "14.23.150.211"  // 支付客户端机器ip
+    }
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "appid": "wxd15f69fcf1f3a388",              // 应用ID
+            "partnerid": "1484184462",                 // 商户号
+            "prepayid": "wx22105353353346cf9ec8ddaa1433564300" // 预支付交易会话ID
+        }
+    }
