@@ -768,6 +768,7 @@
     {
         "taxRate":0.15,     //税率
         "taxCategory":6     //税收分类
+        "taxCategoryGroup": 8 // 税收八大类
     }
     
 #### 响应
