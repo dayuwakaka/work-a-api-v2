@@ -1099,6 +1099,9 @@
                     "deliverType": "SELF", // 配送方式 SELF 自送 THIRD 物流配送
                     "depotId": 0,
                     "depotName": "大连铁越仓", // 出库仓
+                    "companyId": 1, // 企业id
+                    "companyName": "", // 企业名称
+                    "supplierShortName": "asdfa", // 供应商编号
                     "id": 1,
                     "jian": 0,
                     "orderId": "PA1812100000001", // 采购退单号
