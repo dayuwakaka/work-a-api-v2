@@ -2941,7 +2941,7 @@
 #### 对接负责人
     梁铁骐
 #### 请求
-    GET /v2/supplier/supplier/contact/{id}
+    GET /v2/supplier/contact/{id}
 #### 参数
     id: 1 // 取货信息主键id
 #### 响应
