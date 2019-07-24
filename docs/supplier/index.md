@@ -2399,6 +2399,7 @@
         orderPas: [
             {
                 *supplierId: 1, // 经销商id
+                *companyId: 1, // 企业id
                 contactName: '阎锡山', // 联系人
                 contactMobile： 13333333333, // 联系电话
                 contactPathId: 060202, // 区域id
