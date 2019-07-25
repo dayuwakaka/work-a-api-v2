@@ -1291,10 +1291,10 @@
         "msg": "",
         "data": [
             {
-                "createTime": "",
-                "deleteFlg": 0,
                 "id": 1,                // 分类id
-                "name": "特殊安全库存"    // 分类名称
+                "name": "特殊安全库存",    // 分类名称
+                "createTime": "",
+                "deleteFlg": 0
             }
         ]
     }
@@ -1307,8 +1307,8 @@
 #### 参数
     {
         "categoryId":1,                     // 分类id
-        "name":"运输周期超过一周以上的产品", // 属性名
-        "depotSafeFlg":1            // 是否计入安全库存(0 不计入 1 计入)
+        "name":"美团品",               // 属性名
+        "meituanFlg":1            // 是否美团品 0 否 1 是
     }
 #### 响应
     {
@@ -1325,9 +1325,9 @@
 #### 参数
     *id // 属性id
     {
-        "categoryId":1,                     // 分类id
-        "name":"运输周期超过一周以上的产品", // 属性名
-        "depotSafeFlg":1            // 是否计入安全库存(0 不计入 1 计入)
+        "categoryId":1,   // 分类id
+        "name":"美团品", // 属性名
+        "meituanFlg":1   // 是否美团品 0 否 1 是
     }
 #### 响应
     {
@@ -1363,15 +1363,14 @@
         "msg": "",
         "data": [
             {
+                "id": 1,      
+                "name": "运输周期超过一周以上的产品",    // 属性名称      
                 "categoryId": 0,
                 "categoryName": "特殊安全库存",       // 属性分类名
+                "meituanFlg": 1,    // 是否美团品 0 否 1 是
+                "productId": 0,
                 "createTime": "",
-                "deleteFlg": 0,
-                "depotSafeFlg": 0,
-                "id": 1,                            // 属性id
-                "isDepotSafe": "不计算安全库存",       // 属性特权
-                "name": "运输周期超过一周以上的产品",    // 属性名称
-                "productId": 0
+                "deleteFlg": 0
             }
         ]
     }
@@ -1388,12 +1387,12 @@
         "code": 100000,
         "msg": "",
         "data": {
+            "id": 1,                // 属性id
+            "name": "美团品",         // 属性名称
             "categoryId": 1,        // 分类id
+            "meituanFlg": 1,     // 是否美团品 0 否 1 是
             "createTime": "",
-            "deleteFlg": 0,
-            "depotSafeFlg": 1,                      // 是否计入安全库存(0 不计入 1 计入)
-            "id": 1,                                // 属性id
-            "name": "运输周期超过一周以上的产品"         // 属性名称
+            "deleteFlg": 0
         }
     }  
     
@@ -1410,44 +1409,20 @@
         "msg": "",
         "data": [
             {
-                "createTime": "",
-                "deleteFlg": 0,
                 "id": 2,                // 分类id
                 "name": "属性分类二",    // 分类名
                 "productAttr": [
                     {
-                        "categoryId": 2,
-                        "createTime": "",
-                        "deleteFlg": 0,
-                        "depotSafeFlg": 0,
                         "id": 2,        // 属性id
-                        "name": "特惠"    // 属性名
+                        "name": "特惠",    // 属性名
+                        "categoryId": 2,
+                        "meituanFlg": 0,
+                        "createTime": "",
+                        "deleteFlg": 0
                     }
-                ]
-            },
-            {
+                ],
                 "createTime": "",
-                "deleteFlg": 0,
-                "id": 1,
-                "name": "属性分类一",
-                "productAttr": [
-                    {
-                        "categoryId": 1,
-                        "createTime": "",
-                        "deleteFlg": 0,
-                        "depotSafeFlg": 0,
-                        "id": 3,
-                        "name": "特性图"
-                    },
-                    {
-                        "categoryId": 1,
-                        "createTime": "",
-                        "deleteFlg": 0,
-                        "depotSafeFlg": 0,
-                        "id": 1,
-                        "name": "特长属性"
-                    }
-                ]
+                "deleteFlg": 0
             }
         ]
     }
