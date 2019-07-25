@@ -1099,6 +1099,9 @@
                     "deliverType": "SELF", // 配送方式 SELF 自送 THIRD 物流配送
                     "depotId": 0,
                     "depotName": "大连铁越仓", // 出库仓
+                    "companyId": 1, // 企业id
+                    "companyName": "", // 企业名称
+                    "supplierShortName": "asdfa", // 供应商编号
                     "id": 1,
                     "jian": 0,
                     "orderId": "PA1812100000001", // 采购退单号
@@ -2396,6 +2399,7 @@
         orderPas: [
             {
                 *supplierId: 1, // 经销商id
+                *companyId: 1, // 企业id
                 contactName: '阎锡山', // 联系人
                 contactMobile： 13333333333, // 联系电话
                 contactPathId: 060202, // 区域id
@@ -2766,6 +2770,7 @@
 #### 请求
     GET /v2/companies/all
 #### 参数
+    keyword: // 搜索关键字
     supplierId: 1 // 供应商id 传递则代表获取供应商下所属的公司列表 不传则代表获取所有公司列表
 #### 响应
     {
@@ -2814,7 +2819,7 @@
         }
     }
 
-### CG-132 供应商管理-获取默认收获地址
+### CG-132 供应商管理-获取供应商收获地址列表
 #### 模块负责人
     梁铁骐
 #### 对接负责人
@@ -2914,4 +2919,53 @@
         "data": null
     }
 
+### CG-136 企业管理-新增
+#### 模块负责人
+    梁铁骐
+#### 对接负责人
+    梁铁骐
+#### 请求
+    POST /v2/companies
+#### 参数
+    {
+    	"name": "ALIBABA", // 企业名称
+    	"code": "123123" // 金蝶编号
+    }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
 
+
+### CG-137 供应商管理-获取取货信息详情
+#### 模块负责人
+    梁铁骐
+#### 对接负责人
+    梁铁骐
+#### 请求
+    GET /v2/supplier/contact/{id}
+#### 参数
+    id: 1 // 取货信息主键id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "contactAddress": "济南市", // 详细地址
+            "contactMobile": "13256678221", // 联系电话
+            "contactName": "王佳佳", // 取货人
+            "contactPathId": "150101", // 详细地址pathid
+            "createRole": 29118,
+            "createTime": "2019-02-15 15:52:40",
+            "createUser": 89,
+            "defaultFlg": 1, // 是否默认收获地址 0-否 1-是
+            "deleteFlg": 0,
+            "id": 282, // 取货信息主键id
+            "lastModified": "2019-02-15 15:52:40",
+            "pathName": "山东济南市历下区",
+            "remark": "", // 备注
+            "supplierId": 5567
+        }
+    }

@@ -1249,9 +1249,18 @@
                     "money": 7.68, // 订金余额
                     "opAccount": 925, // 客户id（客户账户id）
                     "orignalAmount": 241920, // 订金原始金额
+                    "timeout": 1, // 订金是否过期 0-否 1-是
                     "platformId": 0,
                     "ratio": 100, // 订金比例
                     "status": "NORMAL", // 订金状态 NORMAL 正常 LOCK 锁定
+                    "products": [
+                        {
+                            "id": 274, // 产品id
+                            "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190516153141129-7292.jpg", // 主图url
+                            "name": "黄金蝴蝶虾（特制）", // 品名
+                            "pno": "0181", // 品号
+                        }
+                    ],
                 },
                 ...
             ],
@@ -1357,6 +1366,8 @@
     BANK_TRANSFER_NEW_DEPOSIT 银行转入新增订金
     BANK_TRANSFER_DEPOSIT 银行转入订金
     MODIFY_DEPOSIT_RULE 修改订金规则
+#### 说明
+    只有当action_type == MODIFY_DEPOSIT_RULE时， "规则调整" 列才做显示
 #### 响应
     {
         "code": 100000,
@@ -1389,7 +1400,7 @@
                     "payTime": "2019-07-15 12:30:00", // 充值/扣款时间
                     "opAccount": 3885, // 客户id（客户账户id）
                     "ratio": 20, // 比例
-                    "relationSid": 0,
+                    "relationSid": 0, // 大于0则为"银企"
                     "status": "PASS" // 审核状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
                 },
                 ...
