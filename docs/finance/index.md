@@ -1400,7 +1400,7 @@
                     "payTime": "2019-07-15 12:30:00", // 充值/扣款时间
                     "opAccount": 3885, // 客户id（客户账户id）
                     "ratio": 20, // 比例
-                    "relationSid": 0,
+                    "relationSid": 0, // 大于0则为"银企"
                     "status": "PASS" // 审核状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
                 },
                 ...
