@@ -1249,6 +1249,7 @@
                     "money": 7.68, // 订金余额
                     "opAccount": 925, // 客户id（客户账户id）
                     "orignalAmount": 241920, // 订金原始金额
+                    "timeout": 1, // 订金是否过期 0-否 1-是
                     "platformId": 0,
                     "ratio": 100, // 订金比例
                     "status": "NORMAL", // 订金状态 NORMAL 正常 LOCK 锁定
