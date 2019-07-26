@@ -766,6 +766,7 @@
     status // 订单状态 INVALID 未生效 SET 提交物流中 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
     paymode // 支付方式 INBUY 入结 OUTBUY 出结
     priceFlg // 采购价格调整 0 未修改价格 1 修改价格待审核 2 已修改价格
+    supplierShortName // 供应商编号
     buttonPermissionFlg // 获取权限按钮 0-否 1-是
     createUserName // 创建人名称
     type // NORMAL 正常单 CONTROL_PRODUCT 品控单
@@ -1074,6 +1075,7 @@
     depotId // 仓id
     status // 订单状态 INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
     buttonPermissionFlg // 获取权限按钮 0-否 1-是
+    supplierShortName // 供应商编号
     createUserName // 创建人
     pageNo // 页码
     pageSize // 行数
