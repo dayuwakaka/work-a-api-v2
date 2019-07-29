@@ -1219,6 +1219,7 @@
     status: "NORMAL" // 状态 NORMAL 正常 LOCK 锁定
     opAccount: 1 // 客户账户ID
     buttonPermissionFlg: 1, // 是否获取权限按钮
+    timeoutFlg: 1 // 订金是否过期 0-否 1-是
     pageNo:"1" // 页码 默认1
     pageSize: "25" // 页面条数 默认25
 #### 响应
@@ -1368,7 +1369,7 @@
     BANK_TRANSFER_DEPOSIT 银行转入订金
     MODIFY_DEPOSIT_RULE 修改订金规则
 #### 说明
-    只有当action_type == MODIFY_DEPOSIT_RULE时， "规则调整" 列才做显示
+    只有当action_type == MODIFY_DEPOSIT_RULE、DEPOSIT_ADD、BALANCE_TRANSFER_NEW_DEPOSIT、BANK_TRANSFER_NEW_DEPOSIT时， "规则调整" 列才做显示
 #### 响应
     {
         "code": 100000,
