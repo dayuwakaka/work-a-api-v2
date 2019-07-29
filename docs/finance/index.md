@@ -1259,6 +1259,7 @@
                             "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190516153141129-7292.jpg", // 主图url
                             "name": "黄金蝴蝶虾（特制）", // 品名
                             "pno": "0181", // 品号
+                            "status": "NORMAL" // 产品状态 NORMAL-正常 LOCK-下架
                         }
                     ],
                 },
