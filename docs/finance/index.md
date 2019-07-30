@@ -1712,6 +1712,41 @@
     			*************
     			createRemark: "" // 备注
     		}
+    8、资金账户 - 账户信息 - 预付款扣款 - 扣款方式
+        8-1 转出至已有订金
+        	{
+        		*depositId: 1, // 订金id
+        		*opAccount: 1, // 客户账户id
+        		*actionType: "BALANCE_TRANSFER_DEPOSIT" // 固定传
+        		*money: 10000, // 金额
+        		*payTime: "2019-07-10 00:00:00" // 充值时间
+        		createRemark: "" // 备注
+        	}
+        8-2 转出至新增订金
+        	{
+        		*opAccount: 1, // 客户账户id
+        		*actionType: "BALANCE_TRANSFER_NEW_DEPOSIT" // 固定传
+        		*money: 10000, // 金额
+        		*ratio: 90, // 比例90%
+        		*effectRange: "111,222" // 产品id范围 以","相隔
+        		*effectStime: "2019-07-11 10:10:00" // 订金有效期开始时间
+        		*effectEtime: "2019-09-11 10:10:00" // 订金有效期结束时间
+        		*payTime: "2019-07-10 00:00:00" // 充值时间
+        		createRemark: "" // 备注
+        	}
+    9、资金账户 - 账户信息 - 预付款充值 - 充值方式
+        9-1 订金转入
+            {
+            	*depositId: 1, // 订金id
+            	*opAccount: 1, // 客户账户id
+            	*actionType: "DEPOSIT_TRANSFER_BALANCE" // 固定传
+            	*money: 10000, // 金额
+            	*payTime: "2019-07-10 00:00:00" // 扣款时间
+            	createRemark: "" // 备注
+            }
+    
+    
+    
 #### 响应
     {
         "code": 100000,
