@@ -1104,6 +1104,7 @@
                     "opBusiness": "ORDER", // 业务类型 WX ALI BANK ORDER TRANSFER HAND
                     "opBusinessName": "销售订单支付", // 摘要
                     "serialsid": "15619478510088497184247500831880-1", // 流水号
+                    "thirdSerialsid": "4200000026201709203183289573",   // 第三方流水号
                     "payTime": "2019-07-01 10:25:05", // 支付时间
                     "money": -5596.4,       // 充值、扣款金额
                     "aftBalance": 0,        // 变动前余额
