@@ -1220,6 +1220,7 @@
     status: "NORMAL" // 状态 NORMAL 正常 LOCK 锁定
     opAccount: 1 // 客户账户ID
     buttonPermissionFlg: 1, // 是否获取权限按钮
+    timeoutFlg: 1 // 订金是否过期 0-否 1-是
     pageNo:"1" // 页码 默认1
     pageSize: "25" // 页面条数 默认25
 #### 响应
@@ -1233,6 +1234,7 @@
                     "addButton": true, // 充值按钮
                     "logButton": true, // 查看日志按钮
                     "modifyRuleButton": true // 修改规则按钮
+                    "chooseButton": true // 选择按钮（只有在扣款或者新增的时候选择按钮才做展示）
                 },
                 ...
             ],
@@ -1260,6 +1262,7 @@
                             "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190516153141129-7292.jpg", // 主图url
                             "name": "黄金蝴蝶虾（特制）", // 品名
                             "pno": "0181", // 品号
+                            "status": "NORMAL" // 产品状态 NORMAL-正常 LOCK-下架
                         }
                     ],
                 },
@@ -1368,7 +1371,7 @@
     BANK_TRANSFER_DEPOSIT 银行转入订金
     MODIFY_DEPOSIT_RULE 修改订金规则
 #### 说明
-    只有当action_type == MODIFY_DEPOSIT_RULE时， "规则调整" 列才做显示
+    只有当action_type == MODIFY_DEPOSIT_RULE、DEPOSIT_ADD、BALANCE_TRANSFER_NEW_DEPOSIT、BANK_TRANSFER_NEW_DEPOSIT时， "规则调整" 列才做显示
 #### 响应
     {
         "code": 100000,
