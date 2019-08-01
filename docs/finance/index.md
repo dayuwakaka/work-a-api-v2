@@ -1745,6 +1745,146 @@
             	*payTime: "2019-07-10 00:00:00" // 扣款时间
             	createRemark: "" // 备注
             }
+    10、资金账户 - 充值 - 充值账户
+        10-1 预付款
+            10-1-1 订金转入
+                {
+                	*depositId: 1, // 订金id
+                	*opAccount: 1, // 客户账户id
+                	*actionType: "DEPOSIT_TRANSFER_BALANCE" // 固定传
+                	*money: 10000, // 金额
+                	*payTime: "2019-07-10 00:00:00" // 扣款时间
+                	createRemark: "" // 备注
+                }
+        10-2 订金
+            10-2-1 手动充值
+                10-2-1-1 充值至已有订金
+                    {
+                    	*depositId: 1 // 订金账户id
+                    	*opAccount: 1, // 客户账户id
+                    	*actionType: "DEPOSIT_HAND_ADD" // 固定传
+                    	*money: 10000, // 金额
+                    	*payTime: "2019-07-10 00:00:00" // 充值时间
+                    	createRemark: "" // 备注
+                    }
+                10-2-1-2 充值至新增订金
+                    {
+                    	*opAccount: 1, // 客户账户id
+                    	*actionType: "DEPOSIT_ADD" // 固定传
+                    	*money: 10000, // 金额
+                    	*ratio: 90, // 比例 90%
+                    	*effectRange: "111,222" // 产品id范围 以","相隔
+                    	*effectStime: "2019-07-11 10:10:00" // 订金有效期开始时间
+                    	*effectEtime: "2019-09-11 10:10:00" // 订金有效期结束时间
+                    	*payTime: "2019-07-10 00:00:00" // 充值时间
+                    	createRemark: "" // 备注
+                    }
+            10-2-2 银行转入
+                10-2-2-1 充值至已有订金
+                    {
+                    	*depositId: 1, // 订金id
+                    	*opAccount: 1, // 客户账户id
+                    	*actionType: "BANK_TRANSFER_DEPOSIT" // 固定传
+                    	*money: 10000, // 金额
+                    	*bankAccount: "", // 汇款账号
+                    	*bankAccountName: "", // 汇款人名称
+                    	*receiveBankAccount: "", // 收款账户
+                    	*receiveBankAccountName: "", // 收款人名称
+                    	createRemark: "" // 备注
+                    }
+                10-2-2-2 充值至新增订金
+                    {
+                    	*opAccount: 1, // 客户账户id
+                    	*actionType: "BANK_TRANSFER_NEW_DEPOSIT" // 固定传
+                    	*money: 10000, // 金额
+                    	*ratio: 90, // 比例90%
+                    	*effectRange: "111,222" // 产品id范围 以","相隔
+                    	*effectStime: "2019-07-11 10:10:00" // 订金有效期开始时间
+                    	*effectEtime: "2019-09-11 10:10:00" // 订金有效期结束时间
+                    	*payTime: "2019-07-10 00:00:00" // 充值时间
+                    	*bankAccount: "", // 汇款账号
+                    	*bankAccountName: "", // 汇款人名称
+                    	*receiveBankAccount: "", // 收款账号
+                    	*receiveBankAccountName: "", // 收款人名称
+                    	createRemark: "" // 备注
+                    }
+            10-2-3 预付款转入
+                10-2-3-1 充值至已有订金
+                    {
+                    	*depositId: 1, // 订金id
+                    	*opAccount: 1, // 客户账户id
+                    	*actionType: "BALANCE_TRANSFER_DEPOSIT" // 固定传
+                    	*money: 10000, // 金额
+                    	*payTime: "2019-07-10 00:00:00" // 充值时间
+                    	createRemark: "" // 备注
+                    }
+                10-2-3-2 充值至新增订金
+                    {
+                    	*opAccount: 1, // 客户账户id
+                    	*actionType: "BALANCE_TRANSFER_NEW_DEPOSIT" // 固定传
+                    	*money: 10000, // 金额
+                    	*ratio: 90, // 比例90%
+                    	*effectRange: "111,222" // 产品id范围 以","相隔
+                    	*effectStime: "2019-07-11 10:10:00" // 订金有效期开始时间
+                    	*effectEtime: "2019-09-11 10:10:00" // 订金有效期结束时间
+                    	*payTime: "2019-07-10 00:00:00" // 充值时间
+                    	createRemark: "" // 备注
+                    }
+    11、资金账户 - 扣款 - 扣款账户
+        11-1 预付款
+            11-1-1 转出至订金
+                11-1-1-1 转出至已有订金
+                    {
+                    	*depositId: 1 // 订金账户id
+                    	*opAccount: 1, // 客户账户id
+                    	*actionType: "DEPOSIT_HAND_ADD" // 固定传
+                    	*money: 10000, // 金额
+                    	*payTime: "2019-07-10 00:00:00" // 充值时间
+                    	createRemark: "" // 备注
+                    }
+                11-1-1-2 转出至新增订金
+                    {
+                    	*opAccount: 1, // 客户账户id
+                    	*actionType: "DEPOSIT_ADD" // 固定传
+                    	*money: 10000, // 金额
+                    	*ratio: 90, // 比例 90%
+                    	*effectRange: "111,222" // 产品id范围 以","相隔
+                    	*effectStime: "2019-07-11 10:10:00" // 订金有效期开始时间
+                    	*effectEtime: "2019-09-11 10:10:00" // 订金有效期结束时间
+                    	*payTime: "2019-07-10 00:00:00" // 充值时间
+                    	createRemark: "" // 备注
+                    }
+        11-2 订金
+            11-2-1 手动扣款
+                {
+                	*depositId: 1, // 订金id
+                	*opAccount: 1, // 客户账户id
+                	*actionType: "DEPOSIT_HAND_REDUCE" // 固定传
+                	*money: 10000, // 金额
+                	*payTime: "2019-07-10 00:00:00" // 扣款时间
+                	createRemark: "" // 备注
+                }
+            11-2-2 转出至银行
+                {
+                	*depositId: 1, // 订金id
+                	*opAccount: 1, // 客户账户id
+                	*actionType: "DEPOSIT_TRANSFER_BANK" // 固定传
+                	*money: 10000, // 金额
+                	*bankAccount: "", // 收款账号
+                	*bankAccountName: "", // 收款人名称
+                	*receiveBankAccount: "", // 转出账号
+                	*receiveBankAccountName: "", // 转出人名称
+                	createRemark: "" // 备注
+                }
+            11-2-3 转出至预付款
+                {
+                	*depositId: 1, // 订金id
+                	*opAccount: 1, // 客户账户id
+                	*actionType: "DEPOSIT_TRANSFER_BALANCE" // 固定传
+                	*money: 10000, // 金额
+                	*payTime: "2019-07-10 00:00:00" // 扣款时间
+                	createRemark: "" // 备注
+                }
     
 #### 响应
     {
