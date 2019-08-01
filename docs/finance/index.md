@@ -1459,8 +1459,8 @@
     POST /v2/finance/deposit/askfors
 #### 参数
     页面各节点对应的请求数据结构
-    1、订金管理 - 新增 - 充值方式
-    	1-1 手动充值: 
+    1、订金管理 - 新增
+    	（充值方式）手动充值: 
     		{
     			*opAccount: 1, // 客户账户id
     			*actionType: "DEPOSIT_ADD" // 固定传
@@ -1472,7 +1472,7 @@
     			*payTime: "2019-07-10 00:00:00" // 充值时间
     			createRemark: "" // 备注
     		}
-    	1-2 银行转入
+    	（充值方式）银行转入
     		{
     			*opAccount: 1, // 客户账户id
     			*actionType: "BANK_TRANSFER_NEW_DEPOSIT" //固定传
@@ -1488,7 +1488,7 @@
     			*payTime: "2019-07-10 00:00:00" // 充值时间
     			createRemark: "" // 备注
     		}
-    	1-3 预付款转入
+    	（充值方式）预付款转入
     		{
     			*opAccount: 1, // 客户账户id
     			*actionType: "BALANCE_TRANSFER_NEW_DEPOSIT" // 固定传
@@ -1500,8 +1500,8 @@
     			*payTime: "2019-07-10 00:00:00" // 充值时间
     			createRemark: "" // 备注
     		}
-    2、订金管理 - 充值 - 充值方式
-    	2-1 手动充值
+    2、订金管理 - 充值
+    	（充值方式）手动充值
     		{
     			*depositId: 1 // 订金账户id
     			*opAccount: 1, // 客户账户id
@@ -1510,7 +1510,7 @@
     			*payTime: "2019-07-10 00:00:00" // 充值时间
     			createRemark: "" // 备注
     		}
-    	2-2 银行转入
+    	（充值方式）银行转入
     		{
     			*depositId: 1, // 订金账户id
     			*opAccount: 1, // 客户账户id
@@ -1523,7 +1523,7 @@
     			*payTime: "2019-07-10 00:00:00" // 充值时间
     			createRemark: "" // 备注
     		}
-    	2-3 预付款转入
+    	（充值方式）预付款转入
     		{
     			*depositId: 1, // 订金id
     			*opAccount: 1, // 客户账户id
@@ -1532,8 +1532,8 @@
     			*payTime: "2019-07-10 00:00:00" // 充值时间
     			createRemark: "" // 备注
     		}
-    3、订金管理 - 扣款 - 充值方式
-    	3-1 手动扣款
+    3、订金管理 - 扣款
+    	（扣款方式）手动扣款
     		{
     			*depositId: 1, // 订金id
     			*opAccount: 1, // 客户账户id
@@ -1542,7 +1542,7 @@
     			*payTime: "2019-07-10 00:00:00" // 扣款时间
     			createRemark: "" // 备注
     		}
-    	3-2 转出至银行
+    	（扣款方式）转出至银行
     		{
     			*depositId: 1, // 订金id
     			*opAccount: 1, // 客户账户id
@@ -1554,7 +1554,7 @@
     			*receiveBankAccountName: "", // 转出人名称
     			createRemark: "" // 备注
     		}
-    	3-3 转出至预付款
+    	（扣款方式）转出至预付款
     		{
     			*depositId: 1, // 订金id
     			*opAccount: 1, // 客户账户id
@@ -1573,9 +1573,8 @@
     		*effectEtime: "2019-09-11 10:10:00" // 订金有效期结束时间
     		createRemark: "" // 备注
     	}
-    5、资金账户 - 账户信息 - 订金充值 - 充值方式
-    	5-1 手动充值
-    		5-1-1 充值至已有订金
+    5、资金账户 - 账户信息 - 订金充值
+    	（充值方式）手动充值
     			{
     				*depositId: 1, // 订金id
     				*opAccount: 1, // 客户账户id
@@ -1584,20 +1583,7 @@
     				*payTime: "2019-07-10 00:00:00" // 充值时间
     				createRemark: "" // 备注
     			}
-    		5-1-2 充值至新增订金
-    			{
-    				*opAccount: 1, // 客户账户id
-    				*actionType: "DEPOSIT_ADD" // 固定传
-    				*money: 10000, // 金额
-    				*ratio: 90, // 比例 90%
-    				*effectRange: "111,222" // 产品id范围 以","相隔
-    				*effectStime: "2019-07-11 10:10:00" // 订金有效期开始时间
-    				*effectEtime: "2019-09-11 10:10:00" // 订金有效期结束时间
-    				*payTime: "2019-07-10 00:00:00" // 充值时间
-    				createRemark: "" // 备注
-    			}
-    	5-2 银行转入
-    		5-2-1 充值至已有订金
+    	（充值方式）银行转入
     			{
     				*depositId: 1, // 订金id
     				*opAccount: 1, // 客户账户id
@@ -1609,24 +1595,7 @@
     				*receiveBankAccountName: "", // 收款人名称
     				createRemark: "" // 备注
     			}
-    		5-2-2 充值至新增订金
-    			{
-    				*opAccount: 1, // 客户账户id
-    				*actionType: "BANK_TRANSFER_NEW_DEPOSIT" // 固定传
-    				*money: 10000, // 金额
-    				*ratio: 90, // 比例90%
-    				*effectRange: "111,222" // 产品id范围 以","相隔
-    				*effectStime: "2019-07-11 10:10:00" // 订金有效期开始时间
-    				*effectEtime: "2019-09-11 10:10:00" // 订金有效期结束时间
-    				*payTime: "2019-07-10 00:00:00" // 充值时间
-    				*bankAccount: "", // 汇款账号
-    				*bankAccountName: "", // 汇款人名称
-    				*receiveBankAccount: "", // 收款账号
-    				*receiveBankAccountName: "", // 收款人名称
-    				createRemark: "" // 备注
-    			}
-    	5-3 预付款转入
-    		5-3-1 充值至已有订金
+    	（充值方式）预付款转入
     			{
     				*depositId: 1, // 订金id
     				*opAccount: 1, // 客户账户id
@@ -1635,20 +1604,8 @@
     				*payTime: "2019-07-10 00:00:00" // 充值时间
     				createRemark: "" // 备注
     			}
-    		5-3-2 充值至新增订金
-    			{
-    				*opAccount: 1, // 客户账户id
-    				*actionType: "BALANCE_TRANSFER_NEW_DEPOSIT" // 固定传
-    				*money: 10000, // 金额
-    				*ratio: 90, // 比例90%
-    				*effectRange: "111,222" // 产品id范围 以","相隔
-    				*effectStime: "2019-07-11 10:10:00" // 订金有效期开始时间
-    				*effectEtime: "2019-09-11 10:10:00" // 订金有效期结束时间
-    				*payTime: "2019-07-10 00:00:00" // 充值时间
-    				createRemark: "" // 备注
-    			}
-    6、资金账户 - 账户信息 - 订金扣款 - 充值方式
-    	6-1 手动扣款
+    6、资金账户 - 账户信息 - 订金扣款
+    	（扣款方式）手动扣款
     		{
     			*depositId: 1, // 订金id
     			*opAccount: 1, // 客户账户id
@@ -1657,7 +1614,7 @@
     			*payTime: "2019-07-10 00:00:00" // 扣款时间
     			createRemark: "" // 备注
     		}
-    	6-2 转出至银行
+    	（扣款方式）转出至银行
     		{
     			*depositId: 1, // 订金id
     			*opAccount: 1, // 客户账户id
@@ -1669,7 +1626,7 @@
     			*receiveBankAccountName: "", // 转出人名称
     			createRemark: "" // 备注
     		}
-    	6-3 转出至预付款
+    	（扣款方式）转出至预付款
     		{
     			*depositId: 1, // 订金id
     			*opAccount: 1, // 客户账户id
@@ -1679,7 +1636,7 @@
     			createRemark: "" // 备注
     		}
     7、银企互联 - 入款
-    	7-1 充值至已有订金
+    	（充值账户）定金 - （定金类型）充值至已有订金
     		{
     			*depositId: 1, // 订金id
     			*opAccount: 1, // 客户账户id
@@ -1694,7 +1651,7 @@
     			*************
     			createRemark: "" // 备注
     		}
-    	7-2 充值至新增订金
+    	（充值账户）定金 - （定金类型）充值至新增订金
     		{
     			*opAccount: 1, // 客户账户id
     			*actionType: "BANK_TRANSFER_NEW_DEPOSIT" // 固定传
@@ -1713,8 +1670,8 @@
     			*************
     			createRemark: "" // 备注
     		}
-    8、资金账户 - 账户信息 - 预付款扣款 - 扣款方式
-        8-1 转出至已有订金
+    8、资金账户 - 账户信息 - 预付款扣款
+        （扣款方式）转出至定金 -（定金类型）转出至已有订金
         	{
         		*depositId: 1, // 订金id
         		*opAccount: 1, // 客户账户id
@@ -1723,7 +1680,7 @@
         		*payTime: "2019-07-10 00:00:00" // 充值时间
         		createRemark: "" // 备注
         	}
-        8-2 转出至新增订金
+        （扣款方式）转出至定金 - （定金类型）转出至新增订金
         	{
         		*opAccount: 1, // 客户账户id
         		*actionType: "BALANCE_TRANSFER_NEW_DEPOSIT" // 固定传
@@ -1735,8 +1692,8 @@
         		*payTime: "2019-07-10 00:00:00" // 充值时间
         		createRemark: "" // 备注
         	}
-    9、资金账户 - 账户信息 - 预付款充值 - 充值方式
-        9-1 订金转入
+    9、资金账户 - 账户信息 - 预付款充值
+        （充值方式）订金转入
             {
             	*depositId: 1, // 订金id
             	*opAccount: 1, // 客户账户id
@@ -1745,9 +1702,8 @@
             	*payTime: "2019-07-10 00:00:00" // 扣款时间
             	createRemark: "" // 备注
             }
-    10、资金账户 - 充值 - 充值账户
-        10-1 预付款
-            10-1-1 订金转入
+    10、资金账户 - 充值
+        （充值账户）预付款 - （充值方式）订金转入
                 {
                 	*depositId: 1, // 订金id
                 	*opAccount: 1, // 客户账户id
@@ -1756,135 +1712,128 @@
                 	*payTime: "2019-07-10 00:00:00" // 扣款时间
                 	createRemark: "" // 备注
                 }
-        10-2 订金
-            10-2-1 手动充值
-                10-2-1-1 充值至已有订金
-                    {
-                    	*depositId: 1 // 订金账户id
-                    	*opAccount: 1, // 客户账户id
-                    	*actionType: "DEPOSIT_HAND_ADD" // 固定传
-                    	*money: 10000, // 金额
-                    	*payTime: "2019-07-10 00:00:00" // 充值时间
-                    	createRemark: "" // 备注
-                    }
-                10-2-1-2 充值至新增订金
-                    {
-                    	*opAccount: 1, // 客户账户id
-                    	*actionType: "DEPOSIT_ADD" // 固定传
-                    	*money: 10000, // 金额
-                    	*ratio: 90, // 比例 90%
-                    	*effectRange: "111,222" // 产品id范围 以","相隔
-                    	*effectStime: "2019-07-11 10:10:00" // 订金有效期开始时间
-                    	*effectEtime: "2019-09-11 10:10:00" // 订金有效期结束时间
-                    	*payTime: "2019-07-10 00:00:00" // 充值时间
-                    	createRemark: "" // 备注
-                    }
-            10-2-2 银行转入
-                10-2-2-1 充值至已有订金
-                    {
-                    	*depositId: 1, // 订金id
-                    	*opAccount: 1, // 客户账户id
-                    	*actionType: "BANK_TRANSFER_DEPOSIT" // 固定传
-                    	*money: 10000, // 金额
-                    	*bankAccount: "", // 汇款账号
-                    	*bankAccountName: "", // 汇款人名称
-                    	*receiveBankAccount: "", // 收款账户
-                    	*receiveBankAccountName: "", // 收款人名称
-                    	createRemark: "" // 备注
-                    }
-                10-2-2-2 充值至新增订金
-                    {
-                    	*opAccount: 1, // 客户账户id
-                    	*actionType: "BANK_TRANSFER_NEW_DEPOSIT" // 固定传
-                    	*money: 10000, // 金额
-                    	*ratio: 90, // 比例90%
-                    	*effectRange: "111,222" // 产品id范围 以","相隔
-                    	*effectStime: "2019-07-11 10:10:00" // 订金有效期开始时间
-                    	*effectEtime: "2019-09-11 10:10:00" // 订金有效期结束时间
-                    	*payTime: "2019-07-10 00:00:00" // 充值时间
-                    	*bankAccount: "", // 汇款账号
-                    	*bankAccountName: "", // 汇款人名称
-                    	*receiveBankAccount: "", // 收款账号
-                    	*receiveBankAccountName: "", // 收款人名称
-                    	createRemark: "" // 备注
-                    }
-            10-2-3 预付款转入
-                10-2-3-1 充值至已有订金
-                    {
-                    	*depositId: 1, // 订金id
-                    	*opAccount: 1, // 客户账户id
-                    	*actionType: "BALANCE_TRANSFER_DEPOSIT" // 固定传
-                    	*money: 10000, // 金额
-                    	*payTime: "2019-07-10 00:00:00" // 充值时间
-                    	createRemark: "" // 备注
-                    }
-                10-2-3-2 充值至新增订金
-                    {
-                    	*opAccount: 1, // 客户账户id
-                    	*actionType: "BALANCE_TRANSFER_NEW_DEPOSIT" // 固定传
-                    	*money: 10000, // 金额
-                    	*ratio: 90, // 比例90%
-                    	*effectRange: "111,222" // 产品id范围 以","相隔
-                    	*effectStime: "2019-07-11 10:10:00" // 订金有效期开始时间
-                    	*effectEtime: "2019-09-11 10:10:00" // 订金有效期结束时间
-                    	*payTime: "2019-07-10 00:00:00" // 充值时间
-                    	createRemark: "" // 备注
-                    }
-    11、资金账户 - 扣款 - 扣款账户
-        11-1 预付款
-            11-1-1 转出至订金
-                11-1-1-1 转出至已有订金
-                    {
-                    	*depositId: 1 // 订金账户id
-                    	*opAccount: 1, // 客户账户id
-                    	*actionType: "DEPOSIT_HAND_ADD" // 固定传
-                    	*money: 10000, // 金额
-                    	*payTime: "2019-07-10 00:00:00" // 充值时间
-                    	createRemark: "" // 备注
-                    }
-                11-1-1-2 转出至新增订金
-                    {
-                    	*opAccount: 1, // 客户账户id
-                    	*actionType: "DEPOSIT_ADD" // 固定传
-                    	*money: 10000, // 金额
-                    	*ratio: 90, // 比例 90%
-                    	*effectRange: "111,222" // 产品id范围 以","相隔
-                    	*effectStime: "2019-07-11 10:10:00" // 订金有效期开始时间
-                    	*effectEtime: "2019-09-11 10:10:00" // 订金有效期结束时间
-                    	*payTime: "2019-07-10 00:00:00" // 充值时间
-                    	createRemark: "" // 备注
-                    }
-        11-2 订金
-            11-2-1 手动扣款
+        （充值账户）订金 - （充值方式）手动充值 - （定金类型）充值至已有订金
+                {
+                	*depositId: 1 // 订金账户id
+                	*opAccount: 1, // 客户账户id
+                	*actionType: "DEPOSIT_HAND_ADD" // 固定传
+                	*money: 10000, // 金额
+                	*payTime: "2019-07-10 00:00:00" // 充值时间
+                	createRemark: "" // 备注
+                }
+        （充值账户）订金 - （充值方式）手动充值 - （定金类型）充值至新增订金
+                {
+                	*opAccount: 1, // 客户账户id
+                	*actionType: "DEPOSIT_ADD" // 固定传
+                	*money: 10000, // 金额
+                	*ratio: 90, // 比例 90%
+                	*effectRange: "111,222" // 产品id范围 以","相隔
+                	*effectStime: "2019-07-11 10:10:00" // 订金有效期开始时间
+                	*effectEtime: "2019-09-11 10:10:00" // 订金有效期结束时间
+                	*payTime: "2019-07-10 00:00:00" // 充值时间
+                	createRemark: "" // 备注
+                }
+        （充值账户）订金 - （充值方式）银行转入 - （定金类型）充值至已有订金
                 {
                 	*depositId: 1, // 订金id
                 	*opAccount: 1, // 客户账户id
-                	*actionType: "DEPOSIT_HAND_REDUCE" // 固定传
+                	*actionType: "BANK_TRANSFER_DEPOSIT" // 固定传
                 	*money: 10000, // 金额
-                	*payTime: "2019-07-10 00:00:00" // 扣款时间
+                	*bankAccount: "", // 汇款账号
+                	*bankAccountName: "", // 汇款人名称
+                	*receiveBankAccount: "", // 收款账户
+                	*receiveBankAccountName: "", // 收款人名称
                 	createRemark: "" // 备注
                 }
-            11-2-2 转出至银行
+        （充值账户）订金 - （充值方式）银行转入 - （定金类型）充值至新增订金
+                {
+                	*opAccount: 1, // 客户账户id
+                	*actionType: "BANK_TRANSFER_NEW_DEPOSIT" // 固定传
+                	*money: 10000, // 金额
+                	*ratio: 90, // 比例90%
+                	*effectRange: "111,222" // 产品id范围 以","相隔
+                	*effectStime: "2019-07-11 10:10:00" // 订金有效期开始时间
+                	*effectEtime: "2019-09-11 10:10:00" // 订金有效期结束时间
+                	*payTime: "2019-07-10 00:00:00" // 充值时间
+                	*bankAccount: "", // 汇款账号
+                	*bankAccountName: "", // 汇款人名称
+                	*receiveBankAccount: "", // 收款账号
+                	*receiveBankAccountName: "", // 收款人名称
+                	createRemark: "" // 备注
+                }
+        （充值账户）订金 - （充值方式）预付款转入 - （定金类型）充值至已有订金
                 {
                 	*depositId: 1, // 订金id
                 	*opAccount: 1, // 客户账户id
-                	*actionType: "DEPOSIT_TRANSFER_BANK" // 固定传
+                	*actionType: "BALANCE_TRANSFER_DEPOSIT" // 固定传
                 	*money: 10000, // 金额
-                	*bankAccount: "", // 收款账号
-                	*bankAccountName: "", // 收款人名称
-                	*receiveBankAccount: "", // 转出账号
-                	*receiveBankAccountName: "", // 转出人名称
+                	*payTime: "2019-07-10 00:00:00" // 充值时间
                 	createRemark: "" // 备注
                 }
-            11-2-3 转出至预付款
+        （充值账户）订金 - （充值方式）预付款转入 - （定金类型）充值至新增订金
                 {
-                	*depositId: 1, // 订金id
                 	*opAccount: 1, // 客户账户id
-                	*actionType: "DEPOSIT_TRANSFER_BALANCE" // 固定传
+                	*actionType: "BALANCE_TRANSFER_NEW_DEPOSIT" // 固定传
                 	*money: 10000, // 金额
-                	*payTime: "2019-07-10 00:00:00" // 扣款时间
+                	*ratio: 90, // 比例90%
+                	*effectRange: "111,222" // 产品id范围 以","相隔
+                	*effectStime: "2019-07-11 10:10:00" // 订金有效期开始时间
+                	*effectEtime: "2019-09-11 10:10:00" // 订金有效期结束时间
+                	*payTime: "2019-07-10 00:00:00" // 充值时间
                 	createRemark: "" // 备注
                 }
+    11、资金账户 - 扣款
+        （扣款账户）预付款 - （扣款方式）转出至订金 - （定金类型）转出至已有订金
+            {
+            	*depositId: 1 // 订金账户id
+            	*opAccount: 1, // 客户账户id
+            	*actionType: "DEPOSIT_HAND_ADD" // 固定传
+            	*money: 10000, // 金额
+            	*payTime: "2019-07-10 00:00:00" // 充值时间
+            	createRemark: "" // 备注
+            }
+        （扣款账户）预付款 - （扣款方式）转出至订金 - （定金类型）转出至新增订金
+            {
+            	*opAccount: 1, // 客户账户id
+            	*actionType: "DEPOSIT_ADD" // 固定传
+            	*money: 10000, // 金额
+            	*ratio: 90, // 比例 90%
+            	*effectRange: "111,222" // 产品id范围 以","相隔
+            	*effectStime: "2019-07-11 10:10:00" // 订金有效期开始时间
+            	*effectEtime: "2019-09-11 10:10:00" // 订金有效期结束时间
+            	*payTime: "2019-07-10 00:00:00" // 充值时间
+            	createRemark: "" // 备注
+            }
+        （扣款账户）订金 - （扣款方式）手动扣款
+            {
+            	*depositId: 1, // 订金id
+            	*opAccount: 1, // 客户账户id
+            	*actionType: "DEPOSIT_HAND_REDUCE" // 固定传
+            	*money: 10000, // 金额
+            	*payTime: "2019-07-10 00:00:00" // 扣款时间
+            	createRemark: "" // 备注
+            }
+        （扣款账户）订金 - （扣款方式）转出至银行
+            {
+            	*depositId: 1, // 订金id
+            	*opAccount: 1, // 客户账户id
+            	*actionType: "DEPOSIT_TRANSFER_BANK" // 固定传
+            	*money: 10000, // 金额
+            	*bankAccount: "", // 收款账号
+            	*bankAccountName: "", // 收款人名称
+            	*receiveBankAccount: "", // 转出账号
+            	*receiveBankAccountName: "", // 转出人名称
+            	createRemark: "" // 备注
+            }
+        （扣款账户）订金 - （扣款方式）转出至预付款
+            {
+            	*depositId: 1, // 订金id
+            	*opAccount: 1, // 客户账户id
+            	*actionType: "DEPOSIT_TRANSFER_BALANCE" // 固定传
+            	*money: 10000, // 金额
+            	*payTime: "2019-07-10 00:00:00" // 扣款时间
+            	createRemark: "" // 备注
+            }
     
 #### 响应
     {
