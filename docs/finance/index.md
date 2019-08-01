@@ -1940,6 +1940,7 @@
     王子悦
 #### 请求
     GET /router/v5/finance/pay/app
+    备注：此接口需要传token
 #### 参数
     *orderSerialSid // 订单流水号
 #### 响应
