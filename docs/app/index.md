@@ -47,7 +47,7 @@
                 "balance": 0, // 余额
                 "freeze": 0, // 冻结
                 "id": 0, 
-                "prepaid": 0 // 订金
+                "prepaid": 0 // 定金
             },
             "customerContacts": [ // 客户联系方式
                 { 
