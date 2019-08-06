@@ -608,7 +608,7 @@
 #### 模块负责人
     王子悦
 #### 请求
-    PUT /finance/handwork/askfor/{id}
+    GET /finance/handwork/askfor/{id}
 #### 参数
     *id     // 申请ID
 #### 响应
