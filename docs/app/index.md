@@ -3507,7 +3507,6 @@
     GET /router/v5/finance/pay
 #### 参数
     *orderId // sa单id
-    *payType // 支付方式：ALIPAY 支付宝 WX 微信  BALANCE  账余
     *opAccount // 用户id
 #### 响应
     {

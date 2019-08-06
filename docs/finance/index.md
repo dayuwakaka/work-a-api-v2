@@ -514,7 +514,7 @@
 #### 参数
     shortName           // 客户名   
     status              // 状态 ASKFOR 待审核 PASS 通过 REFUSE 拒绝
-    type                // HAND 手动 BANK 银行汇款 BES 银企互联
+    type                // HAND 手动 BANK 银行汇款
     buttonPermissionFlg     // 是否查询按钮权限 0 不查询 1 查询 默认0
     pageNo          // 页码 默认1
     pageSize        // 页大小 默认25
@@ -537,7 +537,7 @@
                     "opAccount": 33314,         // 账户ID
                     "shortname": "苏家屯走司",       // 公司名
                     "status": "ASKFOR",         // 申请状态 ASKFOR 待审核 PASS 通过 REFUSE 拒绝
-                    "type": "BES",          // 类型 HAND 手工 BANK 银行汇款 BES 银企互联
+                    "type": "HAND",          // 类型 HAND 手工 BANK 银行汇款
                     "leftMoney": 0,         // 当前余额
                     "money": 300,           // 出入款额
                     "payTime": "2019-07-15 15:30:00",   // 支付时间
@@ -1057,7 +1057,7 @@
         "data": null
     }   
       
-### CW-39 银企互联忽略
+### CW-39 银企互联入款（其它）
 #### 对接负责人
     尹洪明
 #### 模块负责人
