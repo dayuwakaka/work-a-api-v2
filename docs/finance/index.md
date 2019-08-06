@@ -601,6 +601,50 @@
         "msg": "",
         "data": null
     }
+   
+### CW-23 银行汇款信息
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    王子悦
+#### 请求
+    PUT /finance/handwork/askfor/{id}
+#### 参数
+    *id     // 申请ID
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "id": 84473,        // 申请ID
+            "bankType": "ABC",                  // 汇款银行类型 ABC 农业银行 ICBC 供应商银行 CCB 建设银行 CHAOS 无法区分
+            "bankAccount": "6226191300216738",  // 汇款银行账号
+            "bankAccountName": "爱新觉罗绪良",    // 汇款银行账户名
+            "receiveBankName": "中国建设银行",        // 收款银行名
+            "receiveBankAccount": "",               // 收款银行账号  
+            "receiveBankAccountName": "",           // 收款银行账户名
+            "money": 11033,             // 汇款金额
+            "payTime": "",              // 汇款时间
+            "bankSerialsid": "",
+            "checkRemark": "",
+            "checkRole": 0,
+            "checkTime": "",
+            "checkUser": 0,
+            "checkUserName": "",
+            "createRemark": "7.1工行",
+            "createRole": 0,
+            "createTime": "2019-07-01 15:29:55.0",
+            "createUser": 685,
+            "createUserName": "姜静",
+            "deleteFlg": 0,
+            "leftMoney": 0,
+            "opAccount": 32122,
+            "relationSid": 0,
+            "shortname": "",
+            "status": "ASKFOR",
+            "type": ""
+        }
+    }
  
          
 ### CW-26 财务账户列表
@@ -1082,6 +1126,7 @@
 #### 请求
     GET /finance/flow
 #### 参数
+    *opAccount  // 账户ID
     opBalance   // 账户类型 BALANCE 预付款 DEPOSIT 定金
     payStime    // 开始时间
     payEtime    // 结束时间
