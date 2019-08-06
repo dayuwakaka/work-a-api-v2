@@ -1264,7 +1264,7 @@
 #### 响应  
     参考 DD-106
       
-### CW-44 退单子流水（opBusiness = 'ORDER' and orderType = 'SR')
+### CW-46 退单子流水（opBusiness = 'ORDER' and orderType = 'SR')
 #### 对接负责人
     尹洪明、梁铁骑
 #### 模块负责人
@@ -1276,7 +1276,7 @@
 #### 响应
     参考 DD-54
       
-### CW-44 调价子流水（opBusiness = 'ORDER' and orderType = 'AP')
+### CW-47 调价子流水（opBusiness = 'ORDER' and orderType = 'AP')
 #### 对接负责人
     尹洪明、梁铁骑
 #### 模块负责人
