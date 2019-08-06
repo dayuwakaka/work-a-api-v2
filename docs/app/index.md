@@ -3555,3 +3555,20 @@
     *orderSerialSid // 订单流水号
 #### 响应
     {"code":100000,"msg":"","data":null}
+    
+### APP-163. app支付宝预支付
+#### 模块负责人
+    梁铁骐
+#### 请求
+    POST /router/v5/finance/pay/ali/prepay
+#### 参数
+    {
+        *"serialSid": "scm20190719010018",   // 支付策略ID
+        *"totalFee": "102.36",              // 客户需要支付的费用（元）
+    }
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": "902734584hewrt9q2384y" // orderString
+    }
