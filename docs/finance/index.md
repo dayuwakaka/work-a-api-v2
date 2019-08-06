@@ -1890,63 +1890,9 @@
     }
 
 
-### CW-71. 支付管理-移动端生成SA单支付策略
-#### 模块负责人
-    王子悦
-#### 请求
-    GET /router/v5/finance/pay
-#### 参数
-    *orderId // sa单id
-    *payType // 支付方式：ALIPAY 支付宝 WX 微信  BALANCE  账余
-    *opAccount // 用户id
-#### 响应
-    {
-        "code": 100000,
-        "msg": "",
-        "data": {
-            "canBalanceMoney": 50,
-            "canDebtMoney": 0,
-            "depositMoney": 449.94,//订金使用金额
-            "financePayDepositStrategys": [//订金使用信息
-                {
-                    "balanceId": 32786,//订金id
-                    "depositMoney": 37.62,//某个产品使用订金金额
-                    "depositSerialsid": "15645424660100000000000000000001",//订金流水号
-                    "id": 236,
-                    "orderSerialsid": "15645424660100000000000000000009"//订单流水号
-                }
-            ],
-            "fromTransferSerialsid": "15645424660100000000000000000006",//总公司代付流水号
-            "id": 40,
-            "opAccount": 33303,//用户id
-            "orderId": "SA19071100003",//订单id
-            "orderMoney": 1024.4,//订单需支付金额
-            "orderSerialsid": "15645424660100000000000000000009",//订单流水
-            "payMoney": 404.46000000000004,//app端需支付金额
-            "paySerialsid": "15645424660100000000000000000008",//app支付流水号
-            "rebateMoney": 0,
-            "rebateSerialsid": "",
-            "toTransferSerialsid": "15645424660100000000000000000007",//子公司接收总公司代付流水号
-            "transferFromMoney": 120,
-            "transferMoney": 120,//代付金额
-            "transferToMoney": 120,
-            "unAssignMoney": 404.46000000000004,
-            "useBalanceMoney": 50,//账户使用余额的金额
-            "useDebtMoney": 0//账户使用账期的金额
-        }
-    }
-### CW-72. 支付管理-移动端直接支付,不允许补款
-#### 模块负责人
-    王子悦
-#### 请求
-    GET /router/v5/finance/pay/app
-    备注：此接口需要传token
-#### 参数
-    *orderSerialSid // 订单流水号
-#### 响应
-    {"code":100000,"msg":"","data":null}
 
-### CW-73. 支付管理-PC端支付，不允许补款
+
+### CW-71. 支付管理-PC端支付，不允许补款
 #### 模块负责人
     王子悦
 #### 请求
@@ -1957,7 +1903,7 @@
 #### 响应
     {"code":100000,"msg":"","data":null}
 
-### CW-74. 支付管理-SA单取消结款
+### CW-72. 支付管理-SA单取消结款
 #### 模块负责人
     王子悦
 #### 请求
@@ -1968,7 +1914,7 @@
 #### 响应
     {"code":100000,"msg":"","data":null}
 
-### CW-75. 支付管理-销售退单(SR单)
+### CW-73. 支付管理-销售退单(SR单)
 #### 模块负责人
     王子悦
 #### 请求
@@ -1979,7 +1925,7 @@
 #### 响应
     {"code":100000,"msg":"","data":null}
 
-### CW-76. 支付管理-调价单(AP单)
+### CW-74. 支付管理-调价单(AP单)
 #### 模块负责人
     王子悦
 #### 请求
