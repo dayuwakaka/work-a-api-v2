@@ -1251,7 +1251,42 @@
             "createUserName": "",   // 创建人
         }
     }
-
+  
+### CW-45 订单子流水（opBusiness = 'ORDER' and orderType = 'SA')
+#### 对接负责人
+    尹洪明、梁铁骑
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /finance/flow/order/sa/{serialSid}
+#### 参数
+    *serialSid  // 流水号  
+#### 响应  
+    参考 DD-106
+      
+### CW-44 退单子流水（opBusiness = 'ORDER' and orderType = 'SR')
+#### 对接负责人
+    尹洪明、梁铁骑
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /finance/flow/order/sr/{serialSid}
+#### 参数
+    *serialSid  // 流水号   
+#### 响应
+    参考 DD-54
+      
+### CW-44 调价子流水（opBusiness = 'ORDER' and orderType = 'AP')
+#### 对接负责人
+    尹洪明、梁铁骑
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /finance/flow/order/ap/{serialSid}
+#### 参数
+    *serialSid  // 流水号  
+#### 响应 
+    参考 DD-6
   
 ### CW-51. 定金管理-列表
 #### 模块负责人
