@@ -1503,6 +1503,10 @@
     PUT /v2/finance/deposit/askfors/{id}/refuse
 #### 参数
     id: 定金申请id
+    body: 
+    {
+        remark: "123"
+    }
 #### 响应
     {
         "code": 100000,
