@@ -3482,7 +3482,7 @@
 #### 模块负责人
     尹洪明
 #### 请求
-    POST /router/v5/finance/pay/prepay
+    POST /router/v5/finance/pay/wx/prepay
 #### 参数
     {
         *"serialSid": "scm20190719010018",   // 支付策略ID
@@ -3494,9 +3494,12 @@
         "code": 100000,
         "msg": "",
         "data": {
-            "appid": "wxd15f69fcf1f3a388",              // 应用ID
-            "partnerid": "1484184462",                 // 商户号
-            "prepayid": "wx22105353353346cf9ec8ddaa1433564300" // 预支付交易会话ID
+            "appid": "wxd15f69fcf1f3a388",  // 应用ID        
+            "nonceStr": "lRzhLLF7lEkspWeu", // 随机码
+            "partnerid": "1484184462",  // 商户ID
+            "prepayid": "wx0710134866367916e23c0bbd1304363800", // 预支付交易单号
+            "sign": "39184C61D7E4246A6DCA5AD3D88995F2", // 签名
+            "timeStamp": "1565144028678"    // 签名
         }
     }
 
