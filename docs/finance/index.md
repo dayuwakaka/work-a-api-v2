@@ -1314,7 +1314,9 @@
                     "addButton": true, // 充值按钮
                     "logButton": true, // 查看日志按钮
                     "modifyRuleButton": true // 修改规则按钮
-                    "chooseButton": true // 选择按钮（只有在扣款或者新增的时候选择按钮才做展示）
+                    "lockButton": true, // 锁定按钮
+                    "unlockButton": true, // 解锁按钮
+                    "chooseButton": true // 选择按钮（只有在选择定金规则弹出层才做展示）
                 },
                 ...
             ],
@@ -1336,15 +1338,7 @@
                     "platformId": 0,
                     "ratio": 100, // 定金比例
                     "status": "NORMAL", // 定金状态 NORMAL 正常 LOCK 锁定
-                    "products": [
-                        {
-                            "id": 274, // 产品id
-                            "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190516153141129-7292.jpg", // 主图url
-                            "name": "黄金蝴蝶虾（特制）", // 品名
-                            "pno": "0181", // 品号
-                            "status": "NORMAL" // 产品状态 NORMAL-正常 LOCK-下架
-                        }
-                    ],
+                    "productSize": 3 // 产品数量
                 },
                 ...
             ],
@@ -1973,7 +1967,31 @@
         }
     }
 
-
+### CW-59. 订金管理-获取定金对应的产品列表
+#### 模块负责人
+    王子悦
+#### 对接负责人
+    梁铁骐
+#### 请求
+    GET /v2/finance/deposits/{id}/products
+#### 参数
+    id: 111 // 定金主键id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "datas": [
+                {
+                    "customFlgMore": 1, // 0 普通品  1 普通定制品  2 专属定制品
+                    "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/146fb8cee80515f7178d086966cae4d7.jpg", // 主图
+                    "name": "原味羊肉串", // 品名
+                    "pno": "A471", // 品号
+                    "status": "LOCK" // NORMAL 上架 LOCK 下架
+                }
+            ],
+        }
+    }
 
 
 ### CW-71. 支付管理-PC端支付，不允许补款
