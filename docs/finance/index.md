@@ -1974,8 +1974,6 @@
     GET /v2/finance/deposits/{id}/products
 #### 参数
     id: 111 // 定金主键id
-    pageNo // 页码
-    pageSize // 行数
 #### 响应
     {
         "code": 100000,
@@ -1990,8 +1988,6 @@
                     "status": "LOCK" // NORMAL 上架 LOCK 下架
                 }
             ],
-            "pageNo": 1, // 页码
-            "total": 0
         }
     }
 
