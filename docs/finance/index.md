@@ -1314,7 +1314,7 @@
                     "addButton": true, // 充值按钮
                     "logButton": true, // 查看日志按钮
                     "modifyRuleButton": true // 修改规则按钮
-                    "chooseButton": true // 选择按钮（只有在扣款或者新增的时候选择按钮才做展示）
+                    "chooseButton": true // 选择按钮（只有在选择定金规则弹出层才做展示）
                 },
                 ...
             ],
