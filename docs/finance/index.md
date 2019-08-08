@@ -1971,7 +1971,7 @@
 #### 对接负责人
     梁铁骐
 #### 请求
-    GET /v2/finance/deposit/askfors/{id}/rules
+    GET /v2/finance/deposits/{id}/products
 #### 参数
     id: 111 // 定金主键id
     pageNo // 页码
