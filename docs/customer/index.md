@@ -302,7 +302,8 @@
                 "balance": 0, // 余额
                 "freeze": 0, // 冻结金额
                 "id": 0,     // id
-                "prepaid": 0 // 定金额
+                "prepaid": 0, // 定金额
+                "balanceStatus": "NORMAL" // 预付款账户状态 NORMAL 正常 LOCK 锁定
             },
             "customerContacts": [ // 客户联系方式
                 {
