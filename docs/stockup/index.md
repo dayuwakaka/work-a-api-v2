@@ -2082,6 +2082,7 @@
     GET /v2/stockup/lack/export/depot
 #### 参数
     *depotId   //仓id
+    date       //导出日期（非必填项）
     *checkCode //下载授权码
 #### 响应
     导出文件

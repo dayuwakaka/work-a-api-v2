@@ -1381,6 +1381,7 @@
                 }
             ],
             "money": 7.68, // 定金余额
+            "balanceMoney": 1000, // 预付款余额
             "opAccount": 925, // 客户id（客户账户id）
             "orignalAmount": 241920, // 定金原始金额
             "platformId": 0,
