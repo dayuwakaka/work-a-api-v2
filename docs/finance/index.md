@@ -704,28 +704,40 @@
                     "debtMoney": 0,                 // 账期额度
                     "financeBalance": [
                         {
+                            "id": 32785,
+                            "opAccount": 33315,
+                            "type": "BALANCE"       // BALANCE 预付款账户
+                            "money": 0,             // 余额
+                            "status": "NORMAL",     // 状态 NORMAL 正常 LOCK 锁定
                             "createTime": "2019-07-12 10:31:31",
                             "deleteFlg": 0,
                             "financeBalanceRule": null,
-                            "id": 32785,
-                            "money": 0,             // 余额
-                            "opAccount": 33315,
                             "platformId": 1,
-                            "ruleId": 0,
-                            "status": "NORMAL",     // 状态 NORMAL 正常 LOCK 锁定
-                            "type": "BALANCE"       // BALANCE 预付款
+                            "ruleId": 0
                         },
                         {
+                            "id": 32785,
+                            "opAccount": 33315,
+                            "type": "DEPOSIT"       // DEPOSIT 定金账户
+                            "money": 0,             // 余额
+                            "status": "NORMAL",     // 状态 NORMAL 正常 LOCK 锁定
                             "createTime": "2019-07-12 10:31:31",
                             "deleteFlg": 0,
                             "financeBalanceRule": null,
-                            "id": 32785,
-                            "money": 0,             // 余额
-                            "opAccount": 33315,
                             "platformId": 1,
-                            "ruleId": 0,
+                            "ruleId": 0
+                        },
+                        {
+                            "id": 32785,
+                            "opAccount": 33315,
+                            "type": "FREEZE"       // FREEZE 冻结账户
+                            "money": 0,             // 余额
                             "status": "NORMAL",     // 状态 NORMAL 正常 LOCK 锁定
-                            "type": "DEPOSIT"       // 定金
+                            "createTime": "2019-07-12 10:31:31",
+                            "deleteFlg": 0,
+                            "financeBalanceRule": null,
+                            "platformId": 1,
+                            "ruleId": 0
                         }
                     ],
                     "bank": [
@@ -794,28 +806,40 @@
                 "debtMoney": 0,                 // 账期额度
                 "financeBalance": [
                     {
+                        "id": 32785,
+                        "opAccount": 33315,
+                        "type": "BALANCE"       // BALANCE 预付款账户
+                        "money": 0,             // 余额
+                        "status": "NORMAL",     // 状态 NORMAL 正常 LOCK 锁定
                         "createTime": "2019-07-12 10:31:31",
                         "deleteFlg": 0,
                         "financeBalanceRule": null,
-                        "id": 32785,
-                        "money": 0,             // 余额
-                        "opAccount": 33315,
                         "platformId": 1,
-                        "ruleId": 0,
-                        "status": "NORMAL",     // 状态 NORMAL 正常 LOCK 锁定
-                        "type": "BALANCE"       // BALANCE 预付款
+                        "ruleId": 0
                     },
                     {
+                        "id": 32785,
+                        "opAccount": 33315,
+                        "type": "DEPOSIT"       // DEPOSIT 定金账户
+                        "money": 0,             // 余额
+                        "status": "NORMAL",     // 状态 NORMAL 正常 LOCK 锁定
                         "createTime": "2019-07-12 10:31:31",
                         "deleteFlg": 0,
                         "financeBalanceRule": null,
-                        "id": 32785,
-                        "money": 0,             // 余额
-                        "opAccount": 33315,
                         "platformId": 1,
-                        "ruleId": 0,
+                        "ruleId": 0
+                    },
+                    {
+                        "id": 32785,
+                        "opAccount": 33315,
+                        "type": "FREEZE"       // FREEZE 冻结账户
+                        "money": 0,             // 余额
                         "status": "NORMAL",     // 状态 NORMAL 正常 LOCK 锁定
-                        "type": "DEPOSIT"       // 定金
+                        "createTime": "2019-07-12 10:31:31",
+                        "deleteFlg": 0,
+                        "financeBalanceRule": null,
+                        "platformId": 1,
+                        "ruleId": 0
                     }
                 ],
                 "bank": null,
