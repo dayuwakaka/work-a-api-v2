@@ -10,6 +10,7 @@
 #### 参数
     {
         *"opAccount": 33315,         // 账户ID
+        *"bankType":"CCB",    // ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
         *"bankName": "建设银行",      // 开户行名称
         *"bankAccount": "62281226881299875646",  // 开户行卡号
         *"bankAccountName": "苏小妹"    // 开户行户名
@@ -55,6 +56,7 @@
                     "id": 16384,            // 银行账号ID
                     "platformId": 1,
                     "opAccount": 33314,     // 账户ID
+                    "bankType": "CHAOS",    // ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
                     "bankName": "建设银行",  // 开户行名称
                     "bankAccount": "62281226881299875646",  // 开户行卡号
                     "bankAccountName": "苏小妹",    // 开户行户名
@@ -95,9 +97,10 @@
                 "platformId": 1,    
                 "opAccount": 33314,         // 账号ID
                 "status": "NORMAL",         // 状态
+                "bankType": "CHAOS",    // ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+                "bankName": "工商银行",             // 开户行
                 "bankAccount": "622812268819998777374", // 银行账号
                 "bankAccountName": "苏小妹儿",          // 户名
-                "bankName": "工商银行",             // 开户行
                 "createRole": 0,
                 "createTime": "2019-07-12",
                 "createUser": 0,
@@ -124,6 +127,7 @@
             "id": 16384,
             "platformId": 1,
             "opAccount": 33314,    // 账户ID
+            "bankType": "CHAOS",    // ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
             "bankName": "建设银行",  // 开户行名称
             "bankAccount": "62281226881299875646",  // 开户行卡号
             "bankAccountName": "苏小妹",    // 开户行户名
@@ -148,6 +152,7 @@
     *id     // 银行账号ID
     {
         *"opAccount": 33315,         // 账户ID
+        *"bankType":"CCB",     // ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它         
         *"bankName": "建设银行",      // 开户行名称
         *"bankAccount": "62281226881299875646",  // 开户行卡号
         *"bankAccountName": "苏小妹"    // 开户行户名
