@@ -224,7 +224,34 @@
         }
     } 
  
- 
+### CW-9 银行类型
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /finance/account/bank/type
+#### 参数
+    无
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "bankType": "ABC",              // 类型编码
+                "bankTypeName": "农业银行"      // 类型名
+            },
+            {
+                "bankType": "ICBC",
+                "bankTypeName": "工商银行"
+            },
+            {
+                "bankType": "CCB",
+                "bankTypeName": "建设银行"
+            }
+        ]
+    }
 
 ### CW-11 账期变动申请
 #### 对接负责人
