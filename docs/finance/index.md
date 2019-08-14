@@ -472,29 +472,29 @@
     }
 ##### 银行汇款出入款参数说明
     {
-        *"opAccount": "33314",
-        *"money": "100",
-        *"bankType": "ICBC",
+        *"opAccount": "33314",      // 入款账户
+        *"money": "100",            // 入款金额
+        *"bankType": "ICBC",        // 银行类型
         *"bankAccount": "622812268819998777374",
         *"bankAccountName": "苏小妹儿",
         *"receiveBankAccount": "262001040030059",
         *"receiveBankAccountName": "亚洲渔港供应链管理（大连）有限公司",
-        *"payTime": "2019-07-15 14:00:00",
-        "createRemark": "手动充值100元"
+        *"payTime": "2019-07-15 14:00:00",  // 充值时间
+        "createRemark": "手动充值100元"      // 备注
     }
 ##### 银企互联入款参数说明
     {
-        *"opAccount": "33314",
-        *"relationSid": "0",
-        *"money": "100",
-        *"bankType": "ICBC",
-        *"bankAccount": "622812268819998777374",
-        *"bankAccountName": "苏小妹儿",
-        *"receiveBankAccount": "262001040030059",
-        *"receiveBankAccountName": "亚洲渔港供应链管理（大连）有限公司",
-        *"bankSerialsid": "ABC-20161017090253125485155673739",
-        *"payTime": "2019-07-15 14:00:00",
-        "createRemark": "手动充值100元"
+        *"opAccount": "33314",      // 入款账户
+        *"relationSid": "0",        // matchId
+        *"money": "100",            // 交易金额
+        *"bankType": "ICBC",        // 汇款银行类型
+        *"bankAccount": "622812268819998777374", // 汇款银行账号
+        *"bankAccountName": "苏小妹儿",             // 汇款银行账户名
+        *"receiveBankAccount": "262001040030059",   // 收款银行账号
+        *"receiveBankAccountName": "亚洲渔港供应链管理（大连）有限公司", // 收款银行账户名
+        *"bankSerialsid": "ABC-20161017090253125485155673739",  // 银行流水号
+        *"payTime": "2019-07-15 14:00:00",              // 交易时间
+        "createRemark": "手动充值100元"          // 备注
     }
 #### 响应
     {
@@ -1160,6 +1160,43 @@
         "msg": "",
         "data": null
     }  
+    
+### CW-40 银企互联明细
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /finance/bes/{abcId}
+#### 参数
+    *abcId      // CW-46已返回
+#### 响应 
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "id": 1,                        // matchId
+            "relationSid": 1,               // abcId
+            "abs": "0199",
+            "accno": "262001040030059",                     // 收款银行账号
+            "accname": "亚洲渔港供应链管理（大连）有限公司",     // 收款银行账户名
+            "bankType": "ABC",                          // 汇款银行类型
+            "oppaccno": "6228480298991950973",          // 汇款银行账号
+            "oppname": "刘会军",                         // 汇款银行账户名
+            "bankSerialsid": "ABC-20161017090253125485155673739",   // 银行流水号
+            "matchAccount": 0,                          // 对比账户opAccount
+            "matchAccountName": "比对有多个客户",         // 对比账户名
+            "opAccount": 0,                         // 实际入款账户
+            "opAccountName": "",                    // 时间入款账户名
+            "amt": 42723,                               // 交易金额
+            "bal": 4850507.1,
+            "preamt": 4807784.1,
+            "status": "WAIT",
+            "timestab": "2016-10-17 09:02:53",              // 交易时间
+            "totchg": 0,
+            "trdate": "20161017"
+        }
+    }
   
         
 ### CW-41 主流水
