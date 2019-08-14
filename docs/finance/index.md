@@ -2082,3 +2082,14 @@
     *opAccount // 用户id
 #### 响应
     {"code":100000,"msg":"","data":null}
+
+### CW-75.资金账户流水导出
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /finance/flow/export
+#### 参数
+    opAccount   //客户id
+    *checkCode //下载授权码
+#### 响应
+    导出文件
