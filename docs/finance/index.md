@@ -10,6 +10,7 @@
 #### 参数
     {
         *"opAccount": 33315,         // 账户ID
+        *"bankType":"CCB",    // ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
         *"bankName": "建设银行",      // 开户行名称
         *"bankAccount": "62281226881299875646",  // 开户行卡号
         *"bankAccountName": "苏小妹"    // 开户行户名
@@ -55,6 +56,7 @@
                     "id": 16384,            // 银行账号ID
                     "platformId": 1,
                     "opAccount": 33314,     // 账户ID
+                    "bankType": "CHAOS",    // ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
                     "bankName": "建设银行",  // 开户行名称
                     "bankAccount": "62281226881299875646",  // 开户行卡号
                     "bankAccountName": "苏小妹",    // 开户行户名
@@ -95,9 +97,10 @@
                 "platformId": 1,    
                 "opAccount": 33314,         // 账号ID
                 "status": "NORMAL",         // 状态
+                "bankType": "CHAOS",    // ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+                "bankName": "工商银行",             // 开户行
                 "bankAccount": "622812268819998777374", // 银行账号
                 "bankAccountName": "苏小妹儿",          // 户名
-                "bankName": "工商银行",             // 开户行
                 "createRole": 0,
                 "createTime": "2019-07-12",
                 "createUser": 0,
@@ -124,6 +127,7 @@
             "id": 16384,
             "platformId": 1,
             "opAccount": 33314,    // 账户ID
+            "bankType": "CHAOS",    // ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
             "bankName": "建设银行",  // 开户行名称
             "bankAccount": "62281226881299875646",  // 开户行卡号
             "bankAccountName": "苏小妹",    // 开户行户名
@@ -148,6 +152,7 @@
     *id     // 银行账号ID
     {
         *"opAccount": 33315,         // 账户ID
+        *"bankType":"CCB",     // ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它         
         *"bankName": "建设银行",      // 开户行名称
         *"bankAccount": "62281226881299875646",  // 开户行卡号
         *"bankAccountName": "苏小妹"    // 开户行户名
@@ -224,7 +229,34 @@
         }
     } 
  
- 
+### CW-9 银行类型
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /finance/account/bank/type
+#### 参数
+    无
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "bankType": "ABC",              // 类型编码
+                "bankTypeName": "农业银行"      // 类型名
+            },
+            {
+                "bankType": "ICBC",
+                "bankTypeName": "工商银行"
+            },
+            {
+                "bankType": "CCB",
+                "bankTypeName": "建设银行"
+            }
+        ]
+    }
 
 ### CW-11 账期变动申请
 #### 对接负责人
@@ -472,29 +504,29 @@
     }
 ##### 银行汇款出入款参数说明
     {
-        *"opAccount": "33314",
-        *"money": "100",
-        *"bankType": "ICBC",
+        *"opAccount": "33314",      // 入款账户
+        *"money": "100",            // 入款金额
+        *"bankType": "ICBC",        // 银行类型
         *"bankAccount": "622812268819998777374",
         *"bankAccountName": "苏小妹儿",
         *"receiveBankAccount": "262001040030059",
         *"receiveBankAccountName": "亚洲渔港供应链管理（大连）有限公司",
-        *"payTime": "2019-07-15 14:00:00",
-        "createRemark": "手动充值100元"
+        *"payTime": "2019-07-15 14:00:00",  // 充值时间
+        "createRemark": "手动充值100元"      // 备注
     }
 ##### 银企互联入款参数说明
     {
-        *"opAccount": "33314",
-        *"relationSid": "0",
-        *"money": "100",
-        *"bankType": "ICBC",
-        *"bankAccount": "622812268819998777374",
-        *"bankAccountName": "苏小妹儿",
-        *"receiveBankAccount": "262001040030059",
-        *"receiveBankAccountName": "亚洲渔港供应链管理（大连）有限公司",
-        *"bankSerialsid": "ABC-20161017090253125485155673739",
-        *"payTime": "2019-07-15 14:00:00",
-        "createRemark": "手动充值100元"
+        *"opAccount": "33314",      // 入款账户
+        *"relationSid": "0",        // matchId
+        *"money": "100",            // 交易金额
+        *"bankType": "ICBC",        // 汇款银行类型
+        *"bankAccount": "622812268819998777374", // 汇款银行账号
+        *"bankAccountName": "苏小妹儿",             // 汇款银行账户名
+        *"receiveBankAccount": "262001040030059",   // 收款银行账号
+        *"receiveBankAccountName": "亚洲渔港供应链管理（大连）有限公司", // 收款银行账户名
+        *"bankSerialsid": "ABC-20161017090253125485155673739",  // 银行流水号
+        *"payTime": "2019-07-15 14:00:00",              // 交易时间
+        "createRemark": "手动充值100元"          // 备注
     }
 #### 响应
     {
@@ -657,6 +689,7 @@
 #### 参数
     keyword // 客户名、客户号
     state   // 客户状态 NORMAL 正常 DELETE 休眠
+    parentType // 客户类型 0:普通客户，1:总店， 2:分店， 不传：全部
     buttonPermissionFlg // 是否查询按钮权限  1 查询 0 不查询  默认0
     pageNo  // 页码 默认1
     pageSize    // 页大小 默认25
@@ -703,28 +736,40 @@
                     "debtMoney": 0,                 // 账期额度
                     "financeBalance": [
                         {
+                            "id": 32785,
+                            "opAccount": 33315,
+                            "type": "BALANCE"       // BALANCE 预付款账户
+                            "money": 0,             // 余额
+                            "status": "NORMAL",     // 状态 NORMAL 正常 LOCK 锁定
                             "createTime": "2019-07-12 10:31:31",
                             "deleteFlg": 0,
                             "financeBalanceRule": null,
-                            "id": 32785,
-                            "money": 0,             // 余额
-                            "opAccount": 33315,
                             "platformId": 1,
-                            "ruleId": 0,
-                            "status": "NORMAL",     // 状态 NORMAL 正常 LOCK 锁定
-                            "type": "BALANCE"       // BALANCE 预付款
+                            "ruleId": 0
                         },
                         {
+                            "id": 32785,
+                            "opAccount": 33315,
+                            "type": "DEPOSIT"       // DEPOSIT 定金账户
+                            "money": 0,             // 余额
+                            "status": "NORMAL",     // 状态 NORMAL 正常 LOCK 锁定
                             "createTime": "2019-07-12 10:31:31",
                             "deleteFlg": 0,
                             "financeBalanceRule": null,
-                            "id": 32785,
-                            "money": 0,             // 余额
-                            "opAccount": 33315,
                             "platformId": 1,
-                            "ruleId": 0,
+                            "ruleId": 0
+                        },
+                        {
+                            "id": 32785,
+                            "opAccount": 33315,
+                            "type": "FREEZE"       // FREEZE 冻结账户
+                            "money": 0,             // 余额
                             "status": "NORMAL",     // 状态 NORMAL 正常 LOCK 锁定
-                            "type": "DEPOSIT"       // 定金
+                            "createTime": "2019-07-12 10:31:31",
+                            "deleteFlg": 0,
+                            "financeBalanceRule": null,
+                            "platformId": 1,
+                            "ruleId": 0
                         }
                     ],
                     "bank": [
@@ -764,6 +809,7 @@
 #### 参数
     keyword // 客户名、客户号
     state   // 客户状态 NORMAL 正常 DELETE 休眠
+    parentType // 客户类型 0:普通客户，1:总店， 2:分店， 不传：全部
 #### 响应
     {
         "code": 100000,
@@ -792,28 +838,40 @@
                 "debtMoney": 0,                 // 账期额度
                 "financeBalance": [
                     {
+                        "id": 32785,
+                        "opAccount": 33315,
+                        "type": "BALANCE"       // BALANCE 预付款账户
+                        "money": 0,             // 余额
+                        "status": "NORMAL",     // 状态 NORMAL 正常 LOCK 锁定
                         "createTime": "2019-07-12 10:31:31",
                         "deleteFlg": 0,
                         "financeBalanceRule": null,
-                        "id": 32785,
-                        "money": 0,             // 余额
-                        "opAccount": 33315,
                         "platformId": 1,
-                        "ruleId": 0,
-                        "status": "NORMAL",     // 状态 NORMAL 正常 LOCK 锁定
-                        "type": "BALANCE"       // BALANCE 预付款
+                        "ruleId": 0
                     },
                     {
+                        "id": 32785,
+                        "opAccount": 33315,
+                        "type": "DEPOSIT"       // DEPOSIT 定金账户
+                        "money": 0,             // 余额
+                        "status": "NORMAL",     // 状态 NORMAL 正常 LOCK 锁定
                         "createTime": "2019-07-12 10:31:31",
                         "deleteFlg": 0,
                         "financeBalanceRule": null,
-                        "id": 32785,
-                        "money": 0,             // 余额
-                        "opAccount": 33315,
                         "platformId": 1,
-                        "ruleId": 0,
+                        "ruleId": 0
+                    },
+                    {
+                        "id": 32785,
+                        "opAccount": 33315,
+                        "type": "FREEZE"       // FREEZE 冻结账户
+                        "money": 0,             // 余额
                         "status": "NORMAL",     // 状态 NORMAL 正常 LOCK 锁定
-                        "type": "DEPOSIT"       // 定金
+                        "createTime": "2019-07-12 10:31:31",
+                        "deleteFlg": 0,
+                        "financeBalanceRule": null,
+                        "platformId": 1,
+                        "ruleId": 0
                     }
                 ],
                 "bank": null,
@@ -1029,6 +1087,24 @@
     }
     
     
+### CW-34 资金账户导出
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /finance/account/export
+#### 参数
+    keyword     // 客户编号、客户名称
+    state           // 客户状态     NORMAL 正常 DELETE 休眠
+    parentType // 账户类型 0:普通客户，1:总店， 2:分店， 不传：全部
+    createTime  // 什么时间之后的资金账户
+    *checkCode   // 校验码
+#### 响应
+    流
+
+    
+    
 ### CW-37 银企互联列表
 #### 对接负责人
     尹洪明
@@ -1116,6 +1192,43 @@
         "msg": "",
         "data": null
     }  
+    
+### CW-40 银企互联明细
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /finance/bes/{abcId}
+#### 参数
+    *abcId      // CW-46已返回
+#### 响应 
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "id": 1,                        // matchId
+            "relationSid": 1,               // abcId
+            "abs": "0199",
+            "accno": "262001040030059",                     // 收款银行账号
+            "accname": "亚洲渔港供应链管理（大连）有限公司",     // 收款银行账户名
+            "bankType": "ABC",                          // 汇款银行类型
+            "oppaccno": "6228480298991950973",          // 汇款银行账号
+            "oppname": "刘会军",                         // 汇款银行账户名
+            "bankSerialsid": "ABC-20161017090253125485155673739",   // 银行流水号
+            "matchAccount": 0,                          // 对比账户opAccount
+            "matchAccountName": "比对有多个客户",         // 对比账户名
+            "opAccount": 0,                         // 实际入款账户
+            "opAccountName": "",                    // 时间入款账户名
+            "amt": 42723,                               // 交易金额
+            "bal": 4850507.1,
+            "preamt": 4807784.1,
+            "status": "WAIT",
+            "timestab": "2016-10-17 09:02:53",              // 交易时间
+            "totchg": 0,
+            "trdate": "20161017"
+        }
+    }
   
         
 ### CW-41 主流水
@@ -2042,3 +2155,14 @@
     *opAccount // 用户id
 #### 响应
     {"code":100000,"msg":"","data":null}
+
+### CW-75.资金账户流水导出
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /finance/flow/export
+#### 参数
+    opAccount   //客户id
+    *checkCode //下载授权码
+#### 响应
+    导出文件
