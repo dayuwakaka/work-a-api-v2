@@ -1614,6 +1614,10 @@
                 {
                     "actionType": "DEPOSIT_TRANSFER_BALANCE", // 调整类型
                     "checkRemark": "", // 审批备注
+                    "bankAccount": "", // 打款人账号
+                    "bankAccountName": "", // 打款人名称
+                    "receiveBankAccount": "", // 收款人账号
+                    "receiveBankAccountName": "", // 收款人名称
                     "checkTime": "2019-07-10 12:00:00", // 审批时间
                     "checkUserName": "", // 审批人名称
                     "createRemark": "", // 创建备注
@@ -2022,7 +2026,7 @@
             {
             	*depositId: 1 // 订金账户id
             	*opAccount: 1, // 客户账户id
-            	*actionType: "DEPOSIT_HAND_ADD" // 固定传
+            	*actionType: "BALANCE_TRANSFER_DEPOSIT" // 固定传
             	*money: 10000, // 金额
             	*payTime: "2019-07-10 00:00:00" // 充值时间
             	createRemark: "" // 备注
@@ -2030,7 +2034,7 @@
         （扣款账户）预付款 - （扣款方式）转出至订金 - （定金类型）转出至新增订金
             {
             	*opAccount: 1, // 客户账户id
-            	*actionType: "DEPOSIT_ADD" // 固定传
+            	*actionType: "BALANCE_TRANSFER_NEW_DEPOSIT" // 固定传
             	*money: 10000, // 金额
             	*ratio: 90, // 比例 90%
             	*effectRange: "111,222" // 产品id范围 以","相隔
@@ -2155,10 +2159,12 @@
 #### 模块负责人
     王子悦
 #### 请求
-    GET /v2/finance/paystrategy/pay
+    PUT /v2/finance/paystrategy/pay
 #### 参数
-    *orderId // 订单id
-    *opAccount // 用户id
+    {
+	"orderId":"SA19081500001",
+	"opAccount":"33303"
+    }
 #### 响应
     {"code":100000,"msg":"","data":null}
 
@@ -2166,10 +2172,12 @@
 #### 模块负责人
     王子悦
 #### 请求
-    GET /v2/finance/paystrategy/cancelPay
+    PUT /v2/finance/paystrategy/cancelPay
 #### 参数
-    *orderId // 订单id
-    *opAccount // 用户id
+    {
+	"orderId":"SA19081500001",
+	"opAccount":"33303"
+    }
 #### 响应
     {"code":100000,"msg":"","data":null}
 
@@ -2177,10 +2185,12 @@
 #### 模块负责人
     王子悦
 #### 请求
-    GET /v2/finance/paystrategy/srReturnPay
+    PUT /v2/finance/paystrategy/srReturnPay
 #### 参数
-    *orderId // 订单id
-    *opAccount // 用户id
+    {
+	"orderId":"SA19081500001",
+	"opAccount":"33303"
+    }
 #### 响应
     {"code":100000,"msg":"","data":null}
 
@@ -2188,10 +2198,12 @@
 #### 模块负责人
     王子悦
 #### 请求
-    GET /v2/finance/paystrategy/apReturnPay
+    PUT /v2/finance/paystrategy/apReturnPay
 #### 参数
-    *orderId // 订单id
-    *opAccount // 用户id
+    {
+	"orderId":"SA19081500001",
+	"opAccount":"33303"
+    }
 #### 响应
     {"code":100000,"msg":"","data":null}
 
@@ -2201,6 +2213,10 @@
 #### 请求
     GET /finance/flow/export
 #### 参数
+    keyword  //客户名称/客户手机号
+    status   //客户状态 NORMAL 正常 DELETE 删除
+    sDate    //查询开始日期 2019-08-15
+    eDate    //查询结束日期
     opAccount   //客户id
     *checkCode //下载授权码
 #### 响应
