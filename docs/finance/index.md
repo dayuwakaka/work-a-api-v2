@@ -2152,10 +2152,12 @@
 #### 模块负责人
     王子悦
 #### 请求
-    GET /v2/finance/paystrategy/pay
+    PUT /v2/finance/paystrategy/pay
 #### 参数
-    *orderId // 订单id
-    *opAccount // 用户id
+    {
+	"orderId":"SA19081500001",
+	"opAccount":"33303"
+    }
 #### 响应
     {"code":100000,"msg":"","data":null}
 
@@ -2163,10 +2165,12 @@
 #### 模块负责人
     王子悦
 #### 请求
-    GET /v2/finance/paystrategy/cancelPay
+    PUT /v2/finance/paystrategy/cancelPay
 #### 参数
-    *orderId // 订单id
-    *opAccount // 用户id
+    {
+	"orderId":"SA19081500001",
+	"opAccount":"33303"
+    }
 #### 响应
     {"code":100000,"msg":"","data":null}
 
@@ -2174,10 +2178,12 @@
 #### 模块负责人
     王子悦
 #### 请求
-    GET /v2/finance/paystrategy/srReturnPay
+    PUT /v2/finance/paystrategy/srReturnPay
 #### 参数
-    *orderId // 订单id
-    *opAccount // 用户id
+    {
+	"orderId":"SA19081500001",
+	"opAccount":"33303"
+    }
 #### 响应
     {"code":100000,"msg":"","data":null}
 
@@ -2185,10 +2191,12 @@
 #### 模块负责人
     王子悦
 #### 请求
-    GET /v2/finance/paystrategy/apReturnPay
+    PUT /v2/finance/paystrategy/apReturnPay
 #### 参数
-    *orderId // 订单id
-    *opAccount // 用户id
+    {
+	"orderId":"SA19081500001",
+	"opAccount":"33303"
+    }
 #### 响应
     {"code":100000,"msg":"","data":null}
 
