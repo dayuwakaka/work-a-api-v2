@@ -1983,7 +1983,7 @@
             {
             	*depositId: 1 // 订金账户id
             	*opAccount: 1, // 客户账户id
-            	*actionType: "DEPOSIT_HAND_ADD" // 固定传
+            	*actionType: "BALANCE_TRANSFER_DEPOSIT" // 固定传
             	*money: 10000, // 金额
             	*payTime: "2019-07-10 00:00:00" // 充值时间
             	createRemark: "" // 备注
@@ -1991,7 +1991,7 @@
         （扣款账户）预付款 - （扣款方式）转出至订金 - （定金类型）转出至新增订金
             {
             	*opAccount: 1, // 客户账户id
-            	*actionType: "DEPOSIT_ADD" // 固定传
+            	*actionType: "BALANCE_TRANSFER_NEW_DEPOSIT" // 固定传
             	*money: 10000, // 金额
             	*ratio: 90, // 比例 90%
             	*effectRange: "111,222" // 产品id范围 以","相隔
