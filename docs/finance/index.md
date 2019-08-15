@@ -1817,6 +1817,7 @@
     				*bankAccountName: "", // 汇款人名称
     				*receiveBankAccount: "", // 收款账户
     				*receiveBankAccountName: "", // 收款人名称
+    				*payTime: "2019-07-10 00:00:00" // 充值时间
     				createRemark: "" // 备注
     			}
     	（充值方式）预付款转入
@@ -1846,6 +1847,7 @@
     			*money: 10000, // 金额
     			*bankAccount: "", // 收款账号
     			*bankAccountName: "", // 收款人名称
+    			*payTime: "2019-07-10 00:00:00" // 扣款时间
     			*receiveBankAccount: "", // 转出帐号
     			*receiveBankAccountName: "", // 转出人名称
     			createRemark: "" // 备注
@@ -1870,6 +1872,7 @@
     			*bankAccountName: "", // 汇款人名称 
     			*receiveBankAccount: "", // 收款账号
     			*receiveBankAccountName: "", // 收款人名称
+    			*payTime: "2019-07-10 00:00:00" // 充值时间
     			*************
     		*****relationSid: 1 // 银企互联数据id
     			*************
@@ -1967,6 +1970,7 @@
                 	*bankAccountName: "", // 汇款人名称
                 	*receiveBankAccount: "", // 收款账户
                 	*receiveBankAccountName: "", // 收款人名称
+                	*payTime: "2019-07-10 00:00:00" // 充值时间
                 	createRemark: "" // 备注
                 }
         （充值账户）定金 - （充值方式）银行转入 - （定金类型）充值至新增定金
