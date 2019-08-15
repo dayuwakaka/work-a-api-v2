@@ -2206,6 +2206,10 @@
 #### 请求
     GET /finance/flow/export
 #### 参数
+    keyword  //客户名称/客户手机号
+    status   //客户状态 NORMAL 正常 DELETE 删除
+    sDate    //查询开始日期 2019-08-15
+    eDate    //查询结束日期
     opAccount   //客户id
     *checkCode //下载授权码
 #### 响应
