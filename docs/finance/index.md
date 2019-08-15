@@ -1607,6 +1607,10 @@
                 {
                     "actionType": "DEPOSIT_TRANSFER_BALANCE", // 调整类型
                     "checkRemark": "", // 审批备注
+                    "bankAccount": "", // 打款人账号
+                    "bankAccountName": "", // 打款人名称
+                    "receiveBankAccount": "", // 收款人账号
+                    "receiveBankAccountName": "", // 收款人名称
                     "checkTime": "2019-07-10 12:00:00", // 审批时间
                     "checkUserName": "", // 审批人名称
                     "createRemark": "", // 创建备注
