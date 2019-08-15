@@ -257,6 +257,38 @@
             }
         ]
     }
+    
+### CW-10 亚洲渔港银行账号列表
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /finance/account/bank/asiasea/list
+#### 参数
+    无
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "bankAccount": "2120 1500 4000 5300 8645",  // 账号
+                "bankAccountName": "亚洲渔港股份有限公司",    // 账户名
+                "bankName": "中国建设银行大连沙河口支行",    // 银行名
+                "bankType": "CCB",      // 银行类型
+                "createRole": 0,
+                "createTime": "",
+                "createUser": 0,
+                "createUserName": "",
+                "deleteFlg": 0,
+                "id": 0,
+                "opAccount": 0,
+                "platformId": 0,
+                "status": null
+            }
+        ]
+    }
 
 ### CW-11 账期变动申请
 #### 对接负责人
