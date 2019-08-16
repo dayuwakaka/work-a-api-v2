@@ -57,6 +57,7 @@
                     "platformId": 1,
                     "opAccount": 33314,     // 账户ID
                     "bankType": "CHAOS",    // ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+                    "bankTypeName":"其它",      // 银行类型名
                     "bankName": "建设银行",  // 开户行名称
                     "bankAccount": "62281226881299875646",  // 开户行卡号
                     "bankAccountName": "苏小妹",    // 开户行户名
@@ -98,6 +99,7 @@
                 "opAccount": 33314,         // 账号ID
                 "status": "NORMAL",         // 状态
                 "bankType": "CHAOS",    // ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+                "bankTypeName":"其它",      // 银行类型名
                 "bankName": "工商银行",             // 开户行
                 "bankAccount": "622812268819998777374", // 银行账号
                 "bankAccountName": "苏小妹儿",          // 户名
@@ -128,6 +130,7 @@
             "platformId": 1,
             "opAccount": 33314,    // 账户ID
             "bankType": "CHAOS",    // ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+            "bankTypeName":"其它",      // 银行类型名
             "bankName": "建设银行",  // 开户行名称
             "bankAccount": "62281226881299875646",  // 开户行卡号
             "bankAccountName": "苏小妹",    // 开户行户名
@@ -244,14 +247,17 @@
         "msg": "",
         "data": [
             {
+                "id":"1",                      // id 
                 "bankType": "ABC",              // 类型编码
                 "bankTypeName": "农业银行"      // 类型名
             },
             {
+                "id":"2",                      // id
                 "bankType": "ICBC",
                 "bankTypeName": "工商银行"
             },
             {
+                "id":"3",                      // id
                 "bankType": "CCB",
                 "bankTypeName": "建设银行"
             }
@@ -277,12 +283,13 @@
                 "bankAccountName": "亚洲渔港股份有限公司",    // 账户名
                 "bankName": "中国建设银行大连沙河口支行",    // 银行名
                 "bankType": "CCB",      // 银行类型
+                "bankTypeName":"中国建设银行", // 银行类型名
                 "createRole": 0,
                 "createTime": "",
                 "createUser": 0,
                 "createUserName": "",
                 "deleteFlg": 0,
-                "id": 0,
+                "id": 1,
                 "opAccount": 0,
                 "platformId": 0,
                 "status": null
@@ -2207,6 +2214,10 @@
 #### 请求
     GET /finance/flow/export
 #### 参数
+    keyword  //客户名称/客户手机号
+    status   //客户状态 NORMAL 正常 DELETE 删除
+    sDate    //查询开始日期 2019-08-15
+    eDate    //查询结束日期
     opAccount   //客户id
     *checkCode //下载授权码
 #### 响应
