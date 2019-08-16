@@ -10,6 +10,7 @@
 #### 参数
     {
         *"opAccount": 33315,         // 账户ID
+        *"bankType":"CCB",    // ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
         *"bankName": "建设银行",      // 开户行名称
         *"bankAccount": "62281226881299875646",  // 开户行卡号
         *"bankAccountName": "苏小妹"    // 开户行户名
@@ -55,6 +56,8 @@
                     "id": 16384,            // 银行账号ID
                     "platformId": 1,
                     "opAccount": 33314,     // 账户ID
+                    "bankType": "CHAOS",    // ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+                    "bankTypeName":"其它",      // 银行类型名
                     "bankName": "建设银行",  // 开户行名称
                     "bankAccount": "62281226881299875646",  // 开户行卡号
                     "bankAccountName": "苏小妹",    // 开户行户名
@@ -95,9 +98,11 @@
                 "platformId": 1,    
                 "opAccount": 33314,         // 账号ID
                 "status": "NORMAL",         // 状态
+                "bankType": "CHAOS",    // ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+                "bankTypeName":"其它",      // 银行类型名
+                "bankName": "工商银行",             // 开户行
                 "bankAccount": "622812268819998777374", // 银行账号
                 "bankAccountName": "苏小妹儿",          // 户名
-                "bankName": "工商银行",             // 开户行
                 "createRole": 0,
                 "createTime": "2019-07-12",
                 "createUser": 0,
@@ -124,6 +129,8 @@
             "id": 16384,
             "platformId": 1,
             "opAccount": 33314,    // 账户ID
+            "bankType": "CHAOS",    // ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+            "bankTypeName":"其它",      // 银行类型名
             "bankName": "建设银行",  // 开户行名称
             "bankAccount": "62281226881299875646",  // 开户行卡号
             "bankAccountName": "苏小妹",    // 开户行户名
@@ -148,6 +155,7 @@
     *id     // 银行账号ID
     {
         *"opAccount": 33315,         // 账户ID
+        *"bankType":"CCB",     // ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它         
         *"bankName": "建设银行",      // 开户行名称
         *"bankAccount": "62281226881299875646",  // 开户行卡号
         *"bankAccountName": "苏小妹"    // 开户行户名
@@ -224,7 +232,70 @@
         }
     } 
  
- 
+### CW-9 银行类型
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /finance/account/bank/type
+#### 参数
+    无
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "id":"1",                      // id 
+                "bankType": "ABC",              // 类型编码
+                "bankTypeName": "农业银行"      // 类型名
+            },
+            {
+                "id":"2",                      // id
+                "bankType": "ICBC",
+                "bankTypeName": "工商银行"
+            },
+            {
+                "id":"3",                      // id
+                "bankType": "CCB",
+                "bankTypeName": "建设银行"
+            }
+        ]
+    }
+    
+### CW-10 亚洲渔港银行账号列表
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /finance/account/bank/asiasea/list
+#### 参数
+    无
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "bankAccount": "2120 1500 4000 5300 8645",  // 账号
+                "bankAccountName": "亚洲渔港股份有限公司",    // 账户名
+                "bankName": "中国建设银行大连沙河口支行",    // 银行名
+                "bankType": "CCB",      // 银行类型
+                "bankTypeName":"中国建设银行", // 银行类型名
+                "createRole": 0,
+                "createTime": "",
+                "createUser": 0,
+                "createUserName": "",
+                "deleteFlg": 0,
+                "id": 1,
+                "opAccount": 0,
+                "platformId": 0,
+                "status": null
+            }
+        ]
+    }
 
 ### CW-11 账期变动申请
 #### 对接负责人
@@ -472,29 +543,29 @@
     }
 ##### 银行汇款出入款参数说明
     {
-        *"opAccount": "33314",
-        *"money": "100",
-        *"bankType": "ICBC",
+        *"opAccount": "33314",      // 入款账户
+        *"money": "100",            // 入款金额
+        *"bankType": "ICBC",        // 银行类型
         *"bankAccount": "622812268819998777374",
         *"bankAccountName": "苏小妹儿",
         *"receiveBankAccount": "262001040030059",
         *"receiveBankAccountName": "亚洲渔港供应链管理（大连）有限公司",
-        *"payTime": "2019-07-15 14:00:00",
-        "createRemark": "手动充值100元"
+        *"payTime": "2019-07-15 14:00:00",  // 充值时间
+        "createRemark": "手动充值100元"      // 备注
     }
 ##### 银企互联入款参数说明
     {
-        *"opAccount": "33314",
-        *"relationSid": "0",
-        *"money": "100",
-        *"bankType": "ICBC",
-        *"bankAccount": "622812268819998777374",
-        *"bankAccountName": "苏小妹儿",
-        *"receiveBankAccount": "262001040030059",
-        *"receiveBankAccountName": "亚洲渔港供应链管理（大连）有限公司",
-        *"bankSerialsid": "ABC-20161017090253125485155673739",
-        *"payTime": "2019-07-15 14:00:00",
-        "createRemark": "手动充值100元"
+        *"opAccount": "33314",      // 入款账户
+        *"relationSid": "0",        // matchId
+        *"money": "100",            // 交易金额
+        *"bankType": "ICBC",        // 汇款银行类型
+        *"bankAccount": "622812268819998777374", // 汇款银行账号
+        *"bankAccountName": "苏小妹儿",             // 汇款银行账户名
+        *"receiveBankAccount": "262001040030059",   // 收款银行账号
+        *"receiveBankAccountName": "亚洲渔港供应链管理（大连）有限公司", // 收款银行账户名
+        *"bankSerialsid": "ABC-20161017090253125485155673739",  // 银行流水号
+        *"payTime": "2019-07-15 14:00:00",              // 交易时间
+        "createRemark": "手动充值100元"          // 备注
     }
 #### 响应
     {
@@ -514,7 +585,7 @@
 #### 参数
     shortName           // 客户名   
     status              // 状态 ASKFOR 待审核 PASS 通过 REFUSE 拒绝
-    type                // HAND 手动 BANK 银行汇款 BES 银企互联
+    type                // HAND 手动 BANK 银行汇款
     buttonPermissionFlg     // 是否查询按钮权限 0 不查询 1 查询 默认0
     pageNo          // 页码 默认1
     pageSize        // 页大小 默认25
@@ -537,7 +608,7 @@
                     "opAccount": 33314,         // 账户ID
                     "shortname": "苏家屯走司",       // 公司名
                     "status": "ASKFOR",         // 申请状态 ASKFOR 待审核 PASS 通过 REFUSE 拒绝
-                    "type": "BES",          // 类型 HAND 手工 BANK 银行汇款 BES 银企互联
+                    "type": "HAND",          // 类型 HAND 手工 BANK 银行汇款
                     "leftMoney": 0,         // 当前余额
                     "money": 300,           // 出入款额
                     "payTime": "2019-07-15 15:30:00",   // 支付时间
@@ -601,6 +672,50 @@
         "msg": "",
         "data": null
     }
+   
+### CW-23 银行汇款信息
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /finance/handwork/askfor/{id}
+#### 参数
+    *id     // 申请ID
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "id": 84473,        // 申请ID
+            "bankType": "ABC",                  // 汇款银行类型 ABC 农业银行 ICBC 供应商银行 CCB 建设银行 CHAOS 无法区分
+            "bankAccount": "6226191300216738",  // 汇款银行账号
+            "bankAccountName": "爱新觉罗绪良",    // 汇款银行账户名
+            "receiveBankName": "中国建设银行",        // 收款银行名
+            "receiveBankAccount": "",               // 收款银行账号  
+            "receiveBankAccountName": "",           // 收款银行账户名
+            "money": 11033,             // 汇款金额
+            "payTime": "",              // 汇款时间
+            "bankSerialsid": "",
+            "checkRemark": "",
+            "checkRole": 0,
+            "checkTime": "",
+            "checkUser": 0,
+            "checkUserName": "",
+            "createRemark": "7.1工行",
+            "createRole": 0,
+            "createTime": "2019-07-01 15:29:55.0",
+            "createUser": 685,
+            "createUserName": "姜静",
+            "deleteFlg": 0,
+            "leftMoney": 0,
+            "opAccount": 32122,
+            "relationSid": 0,
+            "shortname": "",
+            "status": "ASKFOR",
+            "type": ""
+        }
+    }
  
          
 ### CW-26 财务账户列表
@@ -613,6 +728,7 @@
 #### 参数
     keyword // 客户名、客户号
     state   // 客户状态 NORMAL 正常 DELETE 休眠
+    parentType // 客户类型 0:普通客户，1:总店， 2:分店， 不传：全部
     buttonPermissionFlg // 是否查询按钮权限  1 查询 0 不查询  默认0
     pageNo  // 页码 默认1
     pageSize    // 页大小 默认25
@@ -659,28 +775,40 @@
                     "debtMoney": 0,                 // 账期额度
                     "financeBalance": [
                         {
+                            "id": 32785,
+                            "opAccount": 33315,
+                            "type": "BALANCE"       // BALANCE 预付款账户
+                            "money": 0,             // 余额
+                            "status": "NORMAL",     // 状态 NORMAL 正常 LOCK 锁定
                             "createTime": "2019-07-12 10:31:31",
                             "deleteFlg": 0,
                             "financeBalanceRule": null,
-                            "id": 32785,
-                            "money": 0,             // 余额
-                            "opAccount": 33315,
                             "platformId": 1,
-                            "ruleId": 0,
-                            "status": "NORMAL",     // 状态 NORMAL 正常 LOCK 锁定
-                            "type": "BALANCE"       // BALANCE 预付款
+                            "ruleId": 0
                         },
                         {
+                            "id": 32785,
+                            "opAccount": 33315,
+                            "type": "DEPOSIT"       // DEPOSIT 定金账户
+                            "money": 0,             // 余额
+                            "status": "NORMAL",     // 状态 NORMAL 正常 LOCK 锁定
                             "createTime": "2019-07-12 10:31:31",
                             "deleteFlg": 0,
                             "financeBalanceRule": null,
-                            "id": 32785,
-                            "money": 0,             // 余额
-                            "opAccount": 33315,
                             "platformId": 1,
-                            "ruleId": 0,
+                            "ruleId": 0
+                        },
+                        {
+                            "id": 32785,
+                            "opAccount": 33315,
+                            "type": "FREEZE"       // FREEZE 冻结账户
+                            "money": 0,             // 余额
                             "status": "NORMAL",     // 状态 NORMAL 正常 LOCK 锁定
-                            "type": "DEPOSIT"       // 定金
+                            "createTime": "2019-07-12 10:31:31",
+                            "deleteFlg": 0,
+                            "financeBalanceRule": null,
+                            "platformId": 1,
+                            "ruleId": 0
                         }
                     ],
                     "bank": [
@@ -720,6 +848,7 @@
 #### 参数
     keyword // 客户名、客户号
     state   // 客户状态 NORMAL 正常 DELETE 休眠
+    parentType // 客户类型 0:普通客户，1:总店， 2:分店， 不传：全部
 #### 响应
     {
         "code": 100000,
@@ -748,28 +877,40 @@
                 "debtMoney": 0,                 // 账期额度
                 "financeBalance": [
                     {
+                        "id": 32785,
+                        "opAccount": 33315,
+                        "type": "BALANCE"       // BALANCE 预付款账户
+                        "money": 0,             // 余额
+                        "status": "NORMAL",     // 状态 NORMAL 正常 LOCK 锁定
                         "createTime": "2019-07-12 10:31:31",
                         "deleteFlg": 0,
                         "financeBalanceRule": null,
-                        "id": 32785,
-                        "money": 0,             // 余额
-                        "opAccount": 33315,
                         "platformId": 1,
-                        "ruleId": 0,
-                        "status": "NORMAL",     // 状态 NORMAL 正常 LOCK 锁定
-                        "type": "BALANCE"       // BALANCE 预付款
+                        "ruleId": 0
                     },
                     {
+                        "id": 32785,
+                        "opAccount": 33315,
+                        "type": "DEPOSIT"       // DEPOSIT 定金账户
+                        "money": 0,             // 余额
+                        "status": "NORMAL",     // 状态 NORMAL 正常 LOCK 锁定
                         "createTime": "2019-07-12 10:31:31",
                         "deleteFlg": 0,
                         "financeBalanceRule": null,
-                        "id": 32785,
-                        "money": 0,             // 余额
-                        "opAccount": 33315,
                         "platformId": 1,
-                        "ruleId": 0,
+                        "ruleId": 0
+                    },
+                    {
+                        "id": 32785,
+                        "opAccount": 33315,
+                        "type": "FREEZE"       // FREEZE 冻结账户
+                        "money": 0,             // 余额
                         "status": "NORMAL",     // 状态 NORMAL 正常 LOCK 锁定
-                        "type": "DEPOSIT"       // 定金
+                        "createTime": "2019-07-12 10:31:31",
+                        "deleteFlg": 0,
+                        "financeBalanceRule": null,
+                        "platformId": 1,
+                        "ruleId": 0
                     }
                 ],
                 "bank": null,
@@ -985,6 +1126,24 @@
     }
     
     
+### CW-34 资金账户导出
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /finance/account/export
+#### 参数
+    keyword     // 客户编号、客户名称
+    state           // 客户状态     NORMAL 正常 DELETE 休眠
+    parentType // 账户类型 0:普通客户，1:总店， 2:分店， 不传：全部
+    createTime  // 什么时间之后的资金账户
+    *checkCode   // 校验码
+#### 响应
+    流
+
+    
+    
 ### CW-37 银企互联列表
 #### 对接负责人
     尹洪明
@@ -1058,7 +1217,7 @@
         "data": null
     }   
       
-### CW-39 银企互联忽略
+### CW-39 银企互联入款（其它）
 #### 对接负责人
     尹洪明
 #### 模块负责人
@@ -1073,6 +1232,43 @@
         "msg": "",
         "data": null
     }  
+    
+### CW-40 银企互联明细
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /finance/bes/{abcId}
+#### 参数
+    *abcId      // CW-46已返回
+#### 响应 
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "id": 1,                        // matchId
+            "relationSid": 1,               // abcId
+            "abs": "0199",
+            "accno": "262001040030059",                     // 收款银行账号
+            "accname": "亚洲渔港供应链管理（大连）有限公司",     // 收款银行账户名
+            "bankType": "ABC",                          // 汇款银行类型
+            "oppaccno": "6228480298991950973",          // 汇款银行账号
+            "oppname": "刘会军",                         // 汇款银行账户名
+            "bankSerialsid": "ABC-20161017090253125485155673739",   // 银行流水号
+            "matchAccount": 0,                          // 对比账户opAccount
+            "matchAccountName": "比对有多个客户",         // 对比账户名
+            "opAccount": 0,                         // 实际入款账户
+            "opAccountName": "",                    // 时间入款账户名
+            "amt": 42723,                               // 交易金额
+            "bal": 4850507.1,
+            "preamt": 4807784.1,
+            "status": "WAIT",
+            "timestab": "2016-10-17 09:02:53",              // 交易时间
+            "totchg": 0,
+            "trdate": "20161017"
+        }
+    }
   
         
 ### CW-41 主流水
@@ -1083,6 +1279,7 @@
 #### 请求
     GET /finance/flow
 #### 参数
+    *opAccount  // 账户ID
     opBalance   // 账户类型 BALANCE 预付款 DEPOSIT 定金
     payStime    // 开始时间
     payEtime    // 结束时间
@@ -1105,6 +1302,7 @@
                     "opBusiness": "ORDER", // 业务类型 WX ALI BANK ORDER TRANSFER HAND
                     "opBusinessName": "销售订单支付", // 摘要
                     "serialsid": "15619478510088497184247500831880-1", // 流水号
+                    "thirdSerialsid": "4200000026201709203183289573",   // 第三方流水号
                     "payTime": "2019-07-01 10:25:05", // 支付时间
                     "money": -5596.4,       // 充值、扣款金额
                     "aftBalance": 0,        // 变动前余额
@@ -1206,9 +1404,44 @@
             "createUserName": "",   // 创建人
         }
     }
-
   
-### CW-51. 订金管理-列表
+### CW-45 订单子流水（opBusiness = 'ORDER' and orderType = 'SA')
+#### 对接负责人
+    尹洪明、梁铁骑
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /finance/flow/order/sa/{serialSid}
+#### 参数
+    *serialSid  // 流水号  
+#### 响应  
+    参考 DD-106
+      
+### CW-46 退单子流水（opBusiness = 'ORDER' and orderType = 'SR')
+#### 对接负责人
+    尹洪明、梁铁骑
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /finance/flow/order/sr/{serialSid}
+#### 参数
+    *serialSid  // 流水号   
+#### 响应
+    参考 DD-54
+      
+### CW-47 调价子流水（opBusiness = 'ORDER' and orderType = 'AP')
+#### 对接负责人
+    尹洪明、梁铁骑
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /finance/flow/order/ap/{serialSid}
+#### 参数
+    *serialSid  // 流水号  
+#### 响应 
+    参考 DD-6
+  
+### CW-51. 定金管理-列表
 #### 模块负责人
     王子悦
 #### 对接负责人
@@ -1220,7 +1453,7 @@
     status: "NORMAL" // 状态 NORMAL 正常 LOCK 锁定
     opAccount: 1 // 客户账户ID
     buttonPermissionFlg: 1, // 是否获取权限按钮
-    timeoutFlg: 1 // 订金是否过期 0-否 1-是
+    timeoutFlg: 1 // 定金是否过期 0-否 1-是
     pageNo:"1" // 页码 默认1
     pageSize: "25" // 页面条数 默认25
 #### 响应
@@ -1234,7 +1467,9 @@
                     "addButton": true, // 充值按钮
                     "logButton": true, // 查看日志按钮
                     "modifyRuleButton": true // 修改规则按钮
-                    "chooseButton": true // 选择按钮（只有在扣款或者新增的时候选择按钮才做展示）
+                    "lockButton": true, // 锁定按钮
+                    "unlockButton": true, // 解锁按钮
+                    "chooseButton": true // 选择按钮（只有在选择定金规则弹出层才做展示）
                 },
                 ...
             ],
@@ -1245,26 +1480,18 @@
                         "shortName": "西安迈德思餐饮管理有限公司", // 客户名称
                     },
                     "deleteFlg": 0,
-                    "effectEtime": "2019-06-17 23:59:59", // 订金有效期结束时间
-                    "effectRange": "4417,122", // 订金产品范围（产品id，以','相隔）
-                    "effectStime": "2019-06-04 00:00:00", // 订金有效期开始时间
-                    "id": 32768, // 订金id
-                    "money": 7.68, // 订金余额
+                    "effectEtime": "2019-06-17 23:59:59", // 定金有效期结束时间
+                    "effectRange": "4417,122", // 定金产品范围（产品id，以','相隔）
+                    "effectStime": "2019-06-04 00:00:00", // 定金有效期开始时间
+                    "id": 32768, // 定金id
+                    "money": 7.68, // 定金余额
                     "opAccount": 925, // 客户id（客户账户id）
-                    "orignalAmount": 241920, // 订金原始金额
-                    "timeout": 1, // 订金是否过期 0-否 1-是
+                    "orignalAmount": 241920, // 定金原始金额
+                    "timeout": 1, // 定金是否过期 0-否 1-是
                     "platformId": 0,
-                    "ratio": 100, // 订金比例
-                    "status": "NORMAL", // 订金状态 NORMAL 正常 LOCK 锁定
-                    "products": [
-                        {
-                            "id": 274, // 产品id
-                            "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190516153141129-7292.jpg", // 主图url
-                            "name": "黄金蝴蝶虾（特制）", // 品名
-                            "pno": "0181", // 品号
-                            "status": "NORMAL" // 产品状态 NORMAL-正常 LOCK-下架
-                        }
-                    ],
+                    "ratio": 100, // 定金比例
+                    "status": "NORMAL", // 定金状态 NORMAL 正常 LOCK 锁定
+                    "productSize": 3 // 产品数量
                 },
                 ...
             ],
@@ -1273,7 +1500,7 @@
         }
     }
 
-### CW-52. 订金管理-详情
+### CW-52. 定金管理-详情
 #### 模块负责人
     王子悦
 #### 对接负责人
@@ -1281,7 +1508,7 @@
 #### 请求
     GET /v2/finance/deposits/{id}
 #### 参数
-    id: 32769 // 订金id
+    id: 32769 // 定金id
 #### 响应
     {
         "code": 100000,
@@ -1292,10 +1519,10 @@
                 "shortName": "西安迈德思餐饮管理有限公司", // 客户名称
             },
             "deleteFlg": 0,
-            "effectEtime": "2019-06-17 23:59:59", // 订金有效期结束时间
-            "effectRange": "4417,122", // 订金产品范围（产品id，以','相隔）
-            "effectStime": "2019-06-04 00:00:00", // 订金有效期开始时间
-            "id": 32768, // 订金id
+            "effectEtime": "2019-06-17 23:59:59", // 定金有效期结束时间
+            "effectRange": "4417,122", // 定金产品范围（产品id，以','相隔）
+            "effectStime": "2019-06-04 00:00:00", // 定金有效期开始时间
+            "id": 32768, // 定金id
             "products": [ // 产品范围列表
                 {
                     "id": 274, // 产品id
@@ -1304,16 +1531,17 @@
                     "pno": "0181", // 品号
                 }
             ],
-            "money": 7.68, // 订金余额
+            "money": 7.68, // 定金余额
+            "balanceMoney": 1000, // 预付款余额
             "opAccount": 925, // 客户id（客户账户id）
-            "orignalAmount": 241920, // 订金原始金额
+            "orignalAmount": 241920, // 定金原始金额
             "platformId": 0,
-            "ratio": 100, // 订金比例
-            "status": "NORMAL", // 订金状态 NORMAL 正常 LOCK 锁定
+            "ratio": 100, // 定金比例
+            "status": "NORMAL", // 定金状态 NORMAL 正常 LOCK 锁定
         }
     }
 
-### CW-53. 订金管理-日志列表
+### CW-53. 定金管理-日志列表
 #### 模块负责人
     王子悦
 #### 对接负责人
@@ -1321,7 +1549,7 @@
 #### 请求
     GET /v2/finance/deposits/{id}/logs
 #### 参数
-    id: 32769 // 订金id
+    id: 32769 // 定金id
 #### 着重说明
     effectStime、effectEtime、money、ratio 这四个个属性为【涉及数据列】，有哪个就显示哪个
 #### 响应
@@ -1331,13 +1559,13 @@
         "data": {
             "datas": [
                 {
-                    "effectStime": "2018-03-08 00:00:00", // 订金有效期开始时间
-                    "effectEtime": "2018-03-30 23:59:59", // 订金有效期结束时间
+                    "effectStime": "2018-03-08 00:00:00", // 定金有效期开始时间
+                    "effectEtime": "2018-03-30 23:59:59", // 定金有效期结束时间
                     "money": 24600, // 涉及金额
-                    "opInfo": "预付款转新增订金", // 操作内容
+                    "opInfo": "预付款转新增定金", // 操作内容
                     "opTime": "2018-03-08 15:00:00", // 操作时间
                     "opUserName": "崔洋洋", // 操作人
-                    "ratio": 100 // 订金比例
+                    "ratio": 100 // 定金比例
                 }
             ],
             "pageNo": 1, // 页码
@@ -1345,7 +1573,7 @@
         }
     }
 
-### CW-54. 订金审核管理-列表
+### CW-54. 定金审核管理-列表
 #### 模块负责人
     王子悦
 #### 对接负责人
@@ -1360,16 +1588,16 @@
     pageNo,
     pageSize
 #### 调整类型枚举
-    DEPOSIT_ADD 订金新增
-    DEPOSIT_HAND_ADD 订金手动充值
-    DEPOSIT_HAND_REDUCE 订金手动扣款
-    DEPOSIT_TRANSFER_BALANCE 订金转预付款
-    BALANCE_TRANSFER_DEPOSIT 预付款转已有订金
-    BALANCE_TRANSFER_NEW_DEPOSIT 预付款转新增订金
-    DEPOSIT_TRANSFER_BANK 订金转出银行
-    BANK_TRANSFER_NEW_DEPOSIT 银行转入新增订金
-    BANK_TRANSFER_DEPOSIT 银行转入订金
-    MODIFY_DEPOSIT_RULE 修改订金规则
+    DEPOSIT_ADD 定金新增
+    DEPOSIT_HAND_ADD 定金手动充值
+    DEPOSIT_HAND_REDUCE 定金手动扣款
+    DEPOSIT_TRANSFER_BALANCE 定金转预付款
+    BALANCE_TRANSFER_DEPOSIT 预付款转已有定金
+    BALANCE_TRANSFER_NEW_DEPOSIT 预付款转新增定金
+    DEPOSIT_TRANSFER_BANK 定金转出银行
+    BANK_TRANSFER_NEW_DEPOSIT 银行转入新增定金
+    BANK_TRANSFER_DEPOSIT 银行转入定金
+    MODIFY_DEPOSIT_RULE 修改定金规则
 #### 说明
     只有当action_type == MODIFY_DEPOSIT_RULE、DEPOSIT_ADD、BALANCE_TRANSFER_NEW_DEPOSIT、BANK_TRANSFER_NEW_DEPOSIT时， "规则调整" 列才做显示
 #### 响应
@@ -1387,6 +1615,10 @@
                 {
                     "actionType": "DEPOSIT_TRANSFER_BALANCE", // 调整类型
                     "checkRemark": "", // 审批备注
+                    "bankAccount": "", // 打款人账号
+                    "bankAccountName": "", // 打款人名称
+                    "receiveBankAccount": "", // 收款人账号
+                    "receiveBankAccountName": "", // 收款人名称
                     "checkTime": "2019-07-10 12:00:00", // 审批时间
                     "checkUserName": "", // 审批人名称
                     "createRemark": "", // 创建备注
@@ -1396,9 +1628,9 @@
                         "shortName": "常州协瑞国际贸易有限公司", // 客户名称
                     },
                     "depositId": 0,
-                    "effectEtime": "2019-07-10 00:00:00", // 订金有效期结束时间
+                    "effectEtime": "2019-07-10 00:00:00", // 定金有效期结束时间
                     "effectRange": "111,333",
-                    "effectStime": "2019-08-10 23:59:59", // 订金有效期开始时间
+                    "effectStime": "2019-08-10 23:59:59", // 定金有效期开始时间
                     "id": 1, // 申请主键id
                     "money": -19292, // 金额
                     "payTime": "2019-07-15 12:30:00", // 充值/扣款时间
@@ -1414,7 +1646,7 @@
         }
     }
 
-### CW-55. 订金审核管理-拒绝
+### CW-55. 定金审核管理-拒绝
 #### 模块负责人
     王子悦
 #### 对接负责人
@@ -1422,7 +1654,11 @@
 #### 请求
     PUT /v2/finance/deposit/askfors/{id}/refuse
 #### 参数
-    id: 订金申请id
+    id: 定金申请id
+    body: 
+    {
+        remark: "123"
+    }
 #### 响应
     {
         "code": 100000,
@@ -1430,7 +1666,7 @@
         "data": null
     }
 
-### CW-56. 订金审核管理-通过
+### CW-56. 定金审核管理-通过
 #### 模块负责人
     王子悦
 #### 对接负责人
@@ -1438,7 +1674,7 @@
 #### 请求
     PUT /v2/finance/deposit/askfors/{id}/pass
 #### 参数
-    id: 订金申请id
+    id: 定金申请id
     json body:
         {
             remark: 备注
@@ -1450,7 +1686,7 @@
         "data": null
     }
 
-### CW-57. 订金审核管理-新增
+### CW-57. 定金审核管理-新增
 #### 模块负责人
     王子悦
 #### 对接负责人
@@ -1459,20 +1695,20 @@
     POST /v2/finance/deposit/askfors
 #### 参数
     页面各节点对应的请求数据结构
-    1、订金管理 - 新增 - 充值方式
-    	1-1 手动充值: 
+    1、定金管理 - 新增
+    	（充值方式）手动充值: 
     		{
     			*opAccount: 1, // 客户账户id
     			*actionType: "DEPOSIT_ADD" // 固定传
     			*money: 10000, // 金额
     			*ratio: 90, // 比例 90%
     			*effectRange: "111,222" // 产品id范围 以","相隔
-    			*effectStime: "2019-07-11 10:10:00" // 订金有效期开始时间
-    			*effectEtime: "2019-09-11 10:10:00" // 订金有效期结束时间
+    			*effectStime: "2019-07-11 10:10:00" // 定金有效期开始时间
+    			*effectEtime: "2019-09-11 10:10:00" // 定金有效期结束时间
     			*payTime: "2019-07-10 00:00:00" // 充值时间
     			createRemark: "" // 备注
     		}
-    	1-2 银行转入
+    	（充值方式）银行转入
     		{
     			*opAccount: 1, // 客户账户id
     			*actionType: "BANK_TRANSFER_NEW_DEPOSIT" //固定传
@@ -1483,36 +1719,36 @@
     			*receiveBankAccount: "", // 收款账号
     			*receiveBankAccountName: "", // 收款人名
     			*effectRange: "111,222" // 产品id范围 以","相隔
-    			*effectStime: "2019-07-11 10:10:00" // 订金有效期开始时间
-    			*effectEtime: "2019-09-11 10:10:00" // 订金有效期结束时间
+    			*effectStime: "2019-07-11 10:10:00" // 定金有效期开始时间
+    			*effectEtime: "2019-09-11 10:10:00" // 定金有效期结束时间
     			*payTime: "2019-07-10 00:00:00" // 充值时间
     			createRemark: "" // 备注
     		}
-    	1-3 预付款转入
+    	（充值方式）预付款转入
     		{
     			*opAccount: 1, // 客户账户id
     			*actionType: "BALANCE_TRANSFER_NEW_DEPOSIT" // 固定传
     			*money: 10000, // 金额
     			*ratio: 90, // 比例 90%
     			*effectRange: "111,222" // 产品id范围 以","相隔
-    			*effectStime: "2019-07-11 10:10:00" // 订金有效期开始时间
-    			*effectEtime: "2019-09-11 10:10:00" // 订金有效期开始时间
+    			*effectStime: "2019-07-11 10:10:00" // 定金有效期开始时间
+    			*effectEtime: "2019-09-11 10:10:00" // 定金有效期开始时间
     			*payTime: "2019-07-10 00:00:00" // 充值时间
     			createRemark: "" // 备注
     		}
-    2、订金管理 - 充值 - 充值方式
-    	2-1 手动充值
+    2、定金管理 - 充值
+    	（充值方式）手动充值
     		{
-    			*depositId: 1 // 订金账户id
+    			*depositId: 1 // 定金账户id
     			*opAccount: 1, // 客户账户id
     			*actionType: "DEPOSIT_HAND_ADD" // 固定传
     			*money: 10000, // 金额
     			*payTime: "2019-07-10 00:00:00" // 充值时间
     			createRemark: "" // 备注
     		}
-    	2-2 银行转入
+    	（充值方式）银行转入
     		{
-    			*depositId: 1, // 订金账户id
+    			*depositId: 1, // 定金账户id
     			*opAccount: 1, // 客户账户id
     			*actionType: "BANK_TRANSFER_DEPOSIT" // 固定传
     			*money: 10000, // 金额
@@ -1523,28 +1759,28 @@
     			*payTime: "2019-07-10 00:00:00" // 充值时间
     			createRemark: "" // 备注
     		}
-    	2-3 预付款转入
+    	（充值方式）预付款转入
     		{
-    			*depositId: 1, // 订金id
+    			*depositId: 1, // 定金id
     			*opAccount: 1, // 客户账户id
     			*actionType: "BALANCE_TRANSFER_DEPOSIT" // 固定传
     			*money: 10000, // 金额
     			*payTime: "2019-07-10 00:00:00" // 充值时间
     			createRemark: "" // 备注
     		}
-    3、订金管理 - 扣款 - 充值方式
-    	3-1 手动扣款
+    3、定金管理 - 扣款
+    	（扣款方式）手动扣款
     		{
-    			*depositId: 1, // 订金id
+    			*depositId: 1, // 定金id
     			*opAccount: 1, // 客户账户id
     			*actionType: "DEPOSIT_HAND_REDUCE" // 固定传
     			*money: 10000, // 金额
     			*payTime: "2019-07-10 00:00:00" // 扣款时间
     			createRemark: "" // 备注
     		}
-    	3-2 转出至银行
+    	（扣款方式）转出至银行
     		{
-    			*depositId: 1, // 订金id
+    			*depositId: 1, // 定金id
     			*opAccount: 1, // 客户账户id
     			*actionType: "DEPOSIT_TRANSFER_BANK" // 固定传
     			*money: 10000, // 金额
@@ -1554,52 +1790,39 @@
     			*receiveBankAccountName: "", // 转出人名称
     			createRemark: "" // 备注
     		}
-    	3-3 转出至预付款
+    	（扣款方式）转出至预付款
     		{
-    			*depositId: 1, // 订金id
+    			*depositId: 1, // 定金id
     			*opAccount: 1, // 客户账户id
     			*actionType: "DEPOSIT_TRANSFER_BALANCE" // 固定传
     			*money: 10000, // 金额
     			*payTime: "2019-07-10 00:00:00" // 扣款时间
     			createRemark: "" // 备注
     		}
-    4、订金管理 - 修改规则信息
+    4、定金管理 - 修改规则信息
     	{
-    		*depositId: 1,
+    		*depositId: 1, // 定金id
+    		*opAccount: 2, // 客户账号id
     		*actionType: "MODIFY_DEPOSIT_RULE" // 固定传
     		*ratio: 90, // 比例 90%
     		*effectRange: "111,222" // 产品id范围 以","相隔
-    		*effectStime: "2019-07-11 10:10:00" // 订金有效期开始时间
-    		*effectEtime: "2019-09-11 10:10:00" // 订金有效期结束时间
+    		*effectStime: "2019-07-11 10:10:00" // 定金有效期开始时间
+    		*effectEtime: "2019-09-11 10:10:00" // 定金有效期结束时间
     		createRemark: "" // 备注
     	}
-    5、资金账户 - 账户信息 - 订金充值 - 充值方式
-    	5-1 手动充值
-    		5-1-1 充值至已有订金
+    5、资金账户 - 账户信息 - 定金充值
+    	（充值方式）手动充值
     			{
-    				*depositId: 1, // 订金id
+    				*depositId: 1, // 定金id
     				*opAccount: 1, // 客户账户id
     				*actionType: "DEPOSIT_HAND_ADD" // 固定传
     				*money: 10000, // 金额
     				*payTime: "2019-07-10 00:00:00" // 充值时间
     				createRemark: "" // 备注
     			}
-    		5-1-2 充值至新增订金
+    	（充值方式）银行转入
     			{
-    				*opAccount: 1, // 客户账户id
-    				*actionType: "DEPOSIT_ADD" // 固定传
-    				*money: 10000, // 金额
-    				*ratio: 90, // 比例 90%
-    				*effectRange: "111,222" // 产品id范围 以","相隔
-    				*effectStime: "2019-07-11 10:10:00" // 订金有效期开始时间
-    				*effectEtime: "2019-09-11 10:10:00" // 订金有效期结束时间
-    				*payTime: "2019-07-10 00:00:00" // 充值时间
-    				createRemark: "" // 备注
-    			}
-    	5-2 银行转入
-    		5-2-1 充值至已有订金
-    			{
-    				*depositId: 1, // 订金id
+    				*depositId: 1, // 定金id
     				*opAccount: 1, // 客户账户id
     				*actionType: "BANK_TRANSFER_DEPOSIT" // 固定传
     				*money: 10000, // 金额
@@ -1607,71 +1830,44 @@
     				*bankAccountName: "", // 汇款人名称
     				*receiveBankAccount: "", // 收款账户
     				*receiveBankAccountName: "", // 收款人名称
-    				createRemark: "" // 备注
-    			}
-    		5-2-2 充值至新增订金
-    			{
-    				*opAccount: 1, // 客户账户id
-    				*actionType: "BANK_TRANSFER_NEW_DEPOSIT" // 固定传
-    				*money: 10000, // 金额
-    				*ratio: 90, // 比例90%
-    				*effectRange: "111,222" // 产品id范围 以","相隔
-    				*effectStime: "2019-07-11 10:10:00" // 订金有效期开始时间
-    				*effectEtime: "2019-09-11 10:10:00" // 订金有效期结束时间
     				*payTime: "2019-07-10 00:00:00" // 充值时间
-    				*bankAccount: "", // 汇款账号
-    				*bankAccountName: "", // 汇款人名称
-    				*receiveBankAccount: "", // 收款账号
-    				*receiveBankAccountName: "", // 收款人名称
     				createRemark: "" // 备注
     			}
-    	5-3 预付款转入
-    		5-3-1 充值至已有订金
+    	（充值方式）预付款转入
     			{
-    				*depositId: 1, // 订金id
+    				*depositId: 1, // 定金id
     				*opAccount: 1, // 客户账户id
     				*actionType: "BALANCE_TRANSFER_DEPOSIT" // 固定传
     				*money: 10000, // 金额
     				*payTime: "2019-07-10 00:00:00" // 充值时间
     				createRemark: "" // 备注
     			}
-    		5-3-2 充值至新增订金
-    			{
-    				*opAccount: 1, // 客户账户id
-    				*actionType: "BALANCE_TRANSFER_NEW_DEPOSIT" // 固定传
-    				*money: 10000, // 金额
-    				*ratio: 90, // 比例90%
-    				*effectRange: "111,222" // 产品id范围 以","相隔
-    				*effectStime: "2019-07-11 10:10:00" // 订金有效期开始时间
-    				*effectEtime: "2019-09-11 10:10:00" // 订金有效期结束时间
-    				*payTime: "2019-07-10 00:00:00" // 充值时间
-    				createRemark: "" // 备注
-    			}
-    6、资金账户 - 账户信息 - 订金扣款 - 充值方式
-    	6-1 手动扣款
+    6、资金账户 - 账户信息 - 定金扣款
+    	（扣款方式）手动扣款
     		{
-    			*depositId: 1, // 订金id
+    			*depositId: 1, // 定金id
     			*opAccount: 1, // 客户账户id
     			*actionType: "DEPOSIT_HAND_REDUCE" // 固定传
     			*money: 10000, // 金额
     			*payTime: "2019-07-10 00:00:00" // 扣款时间
     			createRemark: "" // 备注
     		}
-    	6-2 转出至银行
+    	（扣款方式）转出至银行
     		{
-    			*depositId: 1, // 订金id
+    			*depositId: 1, // 定金id
     			*opAccount: 1, // 客户账户id
     			*actionType: "DEPOSIT_TRANSFER_BANK" // 固定传
     			*money: 10000, // 金额
     			*bankAccount: "", // 收款账号
     			*bankAccountName: "", // 收款人名称
+    			*payTime: "2019-07-10 00:00:00" // 扣款时间
     			*receiveBankAccount: "", // 转出帐号
     			*receiveBankAccountName: "", // 转出人名称
     			createRemark: "" // 备注
     		}
-    	6-3 转出至预付款
+    	（扣款方式）转出至预付款
     		{
-    			*depositId: 1, // 订金id
+    			*depositId: 1, // 定金id
     			*opAccount: 1, // 客户账户id
     			*actionType: "DEPOSIT_TRANSFER_BALANCE" // 固定传
     			*money: 10000, // 金额
@@ -1679,9 +1875,9 @@
     			createRemark: "" // 备注
     		}
     7、银企互联 - 入款
-    	7-1 充值至已有订金
+    	（充值账户）定金 - （定金类型）充值至已有定金
     		{
-    			*depositId: 1, // 订金id
+    			*depositId: 1, // 定金id
     			*opAccount: 1, // 客户账户id
     			*actionType: "BANK_TRANSFER_DEPOSIT" // 固定传
     			*money: 10000, // 金额
@@ -1689,12 +1885,13 @@
     			*bankAccountName: "", // 汇款人名称 
     			*receiveBankAccount: "", // 收款账号
     			*receiveBankAccountName: "", // 收款人名称
+    			*payTime: "2019-07-10 00:00:00" // 充值时间
     			*************
     		*****relationSid: 1 // 银企互联数据id
     			*************
     			createRemark: "" // 备注
     		}
-    	7-2 充值至新增订金
+    	（充值账户）定金 - （定金类型）充值至新增定金
     		{
     			*opAccount: 1, // 客户账户id
     			*actionType: "BANK_TRANSFER_NEW_DEPOSIT" // 固定传
@@ -1705,14 +1902,180 @@
     			*receiveBankAccount: "", // 收款账号
     			*receiveBankAccountName: "", // 收款人名称
     			*effectRange: "111,222" // 产品id范围 以","相隔
-    			*effectStime: "2019-07-11 10:10:00" // 订金有效期开始时间
-    			*effectEtime: "2019-09-11 10:10:00" // 订金有效期结束时间
+    			*effectStime: "2019-07-11 10:10:00" // 定金有效期开始时间
+    			*effectEtime: "2019-09-11 10:10:00" // 定金有效期结束时间
     			*payTime: "2019-07-10 00:00:00" // 充值时间
     			*************
     		*****relationSid: 1 // 银企互联数据id
     			*************
     			createRemark: "" // 备注
     		}
+    8、资金账户 - 账户信息 - 预付款扣款
+        （扣款方式）转出至定金 -（定金类型）转出至已有定金
+        	{
+        		*depositId: 1, // 定金id
+        		*opAccount: 1, // 客户账户id
+        		*actionType: "BALANCE_TRANSFER_DEPOSIT" // 固定传
+        		*money: 10000, // 金额
+        		*payTime: "2019-07-10 00:00:00" // 充值时间
+        		createRemark: "" // 备注
+        	}
+        （扣款方式）转出至定金 - （定金类型）转出至新增定金
+        	{
+        		*opAccount: 1, // 客户账户id
+        		*actionType: "BALANCE_TRANSFER_NEW_DEPOSIT" // 固定传
+        		*money: 10000, // 金额
+        		*ratio: 90, // 比例90%
+        		*effectRange: "111,222" // 产品id范围 以","相隔
+        		*effectStime: "2019-07-11 10:10:00" // 定金有效期开始时间
+        		*effectEtime: "2019-09-11 10:10:00" // 定金有效期结束时间
+        		*payTime: "2019-07-10 00:00:00" // 充值时间
+        		createRemark: "" // 备注
+        	}
+    9、资金账户 - 账户信息 - 预付款充值
+        （充值方式）定金转入
+            {
+            	*depositId: 1, // 定金id
+            	*opAccount: 1, // 客户账户id
+            	*actionType: "DEPOSIT_TRANSFER_BALANCE" // 固定传
+            	*money: 10000, // 金额
+            	*payTime: "2019-07-10 00:00:00" // 扣款时间
+            	createRemark: "" // 备注
+            }
+    10、资金账户 - 充值
+        （充值账户）预付款 - （充值方式）定金转入
+                {
+                	*depositId: 1, // 定金id
+                	*opAccount: 1, // 客户账户id
+                	*actionType: "DEPOSIT_TRANSFER_BALANCE" // 固定传
+                	*money: 10000, // 金额
+                	*payTime: "2019-07-10 00:00:00" // 扣款时间
+                	createRemark: "" // 备注
+                }
+        （充值账户）定金 - （充值方式）手动充值 - （定金类型）充值至已有定金
+                {
+                	*depositId: 1 // 定金账户id
+                	*opAccount: 1, // 客户账户id
+                	*actionType: "DEPOSIT_HAND_ADD" // 固定传
+                	*money: 10000, // 金额
+                	*payTime: "2019-07-10 00:00:00" // 充值时间
+                	createRemark: "" // 备注
+                }
+        （充值账户）定金 - （充值方式）手动充值 - （定金类型）充值至新增定金
+                {
+                	*opAccount: 1, // 客户账户id
+                	*actionType: "DEPOSIT_ADD" // 固定传
+                	*money: 10000, // 金额
+                	*ratio: 90, // 比例 90%
+                	*effectRange: "111,222" // 产品id范围 以","相隔
+                	*effectStime: "2019-07-11 10:10:00" // 定金有效期开始时间
+                	*effectEtime: "2019-09-11 10:10:00" // 定金有效期结束时间
+                	*payTime: "2019-07-10 00:00:00" // 充值时间
+                	createRemark: "" // 备注
+                }
+        （充值账户）定金 - （充值方式）银行转入 - （定金类型）充值至已有定金
+                {
+                	*depositId: 1, // 定金id
+                	*opAccount: 1, // 客户账户id
+                	*actionType: "BANK_TRANSFER_DEPOSIT" // 固定传
+                	*money: 10000, // 金额
+                	*bankAccount: "", // 汇款账号
+                	*bankAccountName: "", // 汇款人名称
+                	*receiveBankAccount: "", // 收款账户
+                	*receiveBankAccountName: "", // 收款人名称
+                	*payTime: "2019-07-10 00:00:00" // 充值时间
+                	createRemark: "" // 备注
+                }
+        （充值账户）定金 - （充值方式）银行转入 - （定金类型）充值至新增定金
+                {
+                	*opAccount: 1, // 客户账户id
+                	*actionType: "BANK_TRANSFER_NEW_DEPOSIT" // 固定传
+                	*money: 10000, // 金额
+                	*ratio: 90, // 比例90%
+                	*effectRange: "111,222" // 产品id范围 以","相隔
+                	*effectStime: "2019-07-11 10:10:00" // 定金有效期开始时间
+                	*effectEtime: "2019-09-11 10:10:00" // 定金有效期结束时间
+                	*payTime: "2019-07-10 00:00:00" // 充值时间
+                	*bankAccount: "", // 汇款账号
+                	*bankAccountName: "", // 汇款人名称
+                	*receiveBankAccount: "", // 收款账号
+                	*receiveBankAccountName: "", // 收款人名称
+                	createRemark: "" // 备注
+                }
+        （充值账户）订金 - （充值方式）预付款转入 - （定金类型）充值至已有订金
+                {
+                	*depositId: 1, // 订金id
+                	*opAccount: 1, // 客户账户id
+                	*actionType: "BALANCE_TRANSFER_DEPOSIT" // 固定传
+                	*money: 10000, // 金额
+                	*payTime: "2019-07-10 00:00:00" // 充值时间
+                	createRemark: "" // 备注
+                }
+        （充值账户）订金 - （充值方式）预付款转入 - （定金类型）充值至新增订金
+                {
+                	*opAccount: 1, // 客户账户id
+                	*actionType: "BALANCE_TRANSFER_NEW_DEPOSIT" // 固定传
+                	*money: 10000, // 金额
+                	*ratio: 90, // 比例90%
+                	*effectRange: "111,222" // 产品id范围 以","相隔
+                	*effectStime: "2019-07-11 10:10:00" // 订金有效期开始时间
+                	*effectEtime: "2019-09-11 10:10:00" // 订金有效期结束时间
+                	*payTime: "2019-07-10 00:00:00" // 充值时间
+                	createRemark: "" // 备注
+                }
+    11、资金账户 - 扣款
+        （扣款账户）预付款 - （扣款方式）转出至订金 - （定金类型）转出至已有订金
+            {
+            	*depositId: 1 // 订金账户id
+            	*opAccount: 1, // 客户账户id
+            	*actionType: "BALANCE_TRANSFER_DEPOSIT" // 固定传
+            	*money: 10000, // 金额
+            	*payTime: "2019-07-10 00:00:00" // 充值时间
+            	createRemark: "" // 备注
+            }
+        （扣款账户）预付款 - （扣款方式）转出至订金 - （定金类型）转出至新增订金
+            {
+            	*opAccount: 1, // 客户账户id
+            	*actionType: "BALANCE_TRANSFER_NEW_DEPOSIT" // 固定传
+            	*money: 10000, // 金额
+            	*ratio: 90, // 比例 90%
+            	*effectRange: "111,222" // 产品id范围 以","相隔
+            	*effectStime: "2019-07-11 10:10:00" // 订金有效期开始时间
+            	*effectEtime: "2019-09-11 10:10:00" // 订金有效期结束时间
+            	*payTime: "2019-07-10 00:00:00" // 充值时间
+            	createRemark: "" // 备注
+            }
+        （扣款账户）订金 - （扣款方式）手动扣款
+            {
+            	*depositId: 1, // 订金id
+            	*opAccount: 1, // 客户账户id
+            	*actionType: "DEPOSIT_HAND_REDUCE" // 固定传
+            	*money: 10000, // 金额
+            	*payTime: "2019-07-10 00:00:00" // 扣款时间
+            	createRemark: "" // 备注
+            }
+        （扣款账户）订金 - （扣款方式）转出至银行
+            {
+            	*depositId: 1, // 订金id
+            	*opAccount: 1, // 客户账户id
+            	*actionType: "DEPOSIT_TRANSFER_BANK" // 固定传
+            	*money: 10000, // 金额
+            	*bankAccount: "", // 收款账号
+            	*bankAccountName: "", // 收款人名称
+            	*receiveBankAccount: "", // 转出账号
+            	*receiveBankAccountName: "", // 转出人名称
+            	createRemark: "" // 备注
+            }
+        （扣款账户）订金 - （扣款方式）转出至预付款
+            {
+            	*depositId: 1, // 订金id
+            	*opAccount: 1, // 客户账户id
+            	*actionType: "DEPOSIT_TRANSFER_BALANCE" // 固定传
+            	*money: 10000, // 金额
+            	*payTime: "2019-07-10 00:00:00" // 扣款时间
+            	createRemark: "" // 备注
+            }
+    
 #### 响应
     {
         "code": 100000,
@@ -1767,7 +2130,96 @@
         }
     }
 
+### CW-59. 订金管理-获取定金对应的产品列表
+#### 模块负责人
+    王子悦
+#### 对接负责人
+    梁铁骐
+#### 请求
+    GET /v2/finance/deposits/{id}/products
+#### 参数
+    id: 111 // 定金主键id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "datas": [
+                {
+                    "customFlgMore": 1, // 0 普通品  1 普通定制品  2 专属定制品
+                    "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/146fb8cee80515f7178d086966cae4d7.jpg", // 主图
+                    "name": "原味羊肉串", // 品名
+                    "pno": "A471", // 品号
+                    "status": "LOCK" // NORMAL 上架 LOCK 下架
+                }
+            ],
+        }
+    }
 
 
+### CW-71. 支付管理-PC端支付，不允许补款
+#### 模块负责人
+    王子悦
+#### 请求
+    PUT /v2/finance/paystrategy/pay
+#### 参数
+    {
+	"orderId":"SA19081500001",
+	"opAccount":"33303"
+    }
+#### 响应
+    {"code":100000,"msg":"","data":null}
 
+### CW-72. 支付管理-SA单取消结款
+#### 模块负责人
+    王子悦
+#### 请求
+    PUT /v2/finance/paystrategy/cancelPay
+#### 参数
+    {
+	"orderId":"SA19081500001",
+	"opAccount":"33303"
+    }
+#### 响应
+    {"code":100000,"msg":"","data":null}
 
+### CW-73. 支付管理-销售退单(SR单)
+#### 模块负责人
+    王子悦
+#### 请求
+    PUT /v2/finance/paystrategy/srReturnPay
+#### 参数
+    {
+	"orderId":"SA19081500001",
+	"opAccount":"33303"
+    }
+#### 响应
+    {"code":100000,"msg":"","data":null}
+
+### CW-74. 支付管理-调价单(AP单)
+#### 模块负责人
+    王子悦
+#### 请求
+    PUT /v2/finance/paystrategy/apReturnPay
+#### 参数
+    {
+	"orderId":"SA19081500001",
+	"opAccount":"33303"
+    }
+#### 响应
+    {"code":100000,"msg":"","data":null}
+
+### CW-75.资金账户流水导出
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /finance/flow/export
+#### 参数
+    keyword  //客户名称/客户手机号
+    status   //客户状态 NORMAL 正常 DELETE 删除
+    sDate    //查询开始日期 2019-08-15
+    eDate    //查询结束日期
+    opAccount   //客户id
+    *checkCode //下载授权码
+#### 响应
+    导出文件

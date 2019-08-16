@@ -2074,3 +2074,15 @@
             "total": 0
         }
     }
+
+### BH-131.断货信息导出
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /v2/stockup/lack/export/depot
+#### 参数
+    *depotId   //仓id
+    date       //导出日期（非必填项）
+    *checkCode //下载授权码
+#### 响应
+    导出文件

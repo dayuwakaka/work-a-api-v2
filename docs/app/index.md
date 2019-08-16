@@ -47,7 +47,7 @@
                 "balance": 0, // 余额
                 "freeze": 0, // 冻结
                 "id": 0, 
-                "prepaid": 0 // 订金
+                "prepaid": 0 // 定金
             },
             "customerContacts": [ // 客户联系方式
                 { 
@@ -3482,7 +3482,7 @@
 #### 模块负责人
     尹洪明
 #### 请求
-    POST /router/v5/finance/pay/prepay
+    POST /router/v5/finance/pay/wx/prepay
 #### 参数
     {
         *"serialSid": "scm20190719010018",   // 支付策略ID
@@ -3494,8 +3494,84 @@
         "code": 100000,
         "msg": "",
         "data": {
-            "appid": "wxd15f69fcf1f3a388",              // 应用ID
-            "partnerid": "1484184462",                 // 商户号
-            "prepayid": "wx22105353353346cf9ec8ddaa1433564300" // 预支付交易会话ID
+            "appid": "wxd15f69fcf1f3a388",  // 应用ID        
+            "nonceStr": "lRzhLLF7lEkspWeu", // 随机码
+            "partnerid": "1484184462",  // 商户ID
+            "prepayid": "wx0710134866367916e23c0bbd1304363800", // 预支付交易单号
+            "sign": "39184C61D7E4246A6DCA5AD3D88995F2", // 签名
+            "timeStamp": "1565144028678"    // 签名
         }
+    }
+
+### APP-161. 支付管理-移动端生成SA单支付策略
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /router/v5/finance/pay
+#### 参数
+    *orderId // sa单id
+    *opAccount // 用户id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "canBalanceMoney": 50,
+            "canDebtMoney": 0,
+            "depositMoney": 449.94,//订金使用金额
+            "financePayDepositStrategys": [//订金使用信息
+                {
+                    "balanceId": 32786,//订金id
+                    "depositMoney": 37.62,//某个产品使用订金金额
+                    "depositSerialsid": "15645424660100000000000000000001",//订金流水号
+                    "id": 236,
+                    "orderSerialsid": "15645424660100000000000000000009"//订单流水号
+                }
+            ],
+            "fromTransferSerialsid": "15645424660100000000000000000006",//总公司代付流水号
+             "hadPayMoney": 295,//余额金额：用户账户已支付金额，总公司代付+子公司账余+子公司账期
+            "id": 40,
+            "opAccount": 33303,//用户id
+            "orderId": "SA19071100003",//订单id
+            "orderMoney": 1024.4,//订单需支付金额
+            "orderSerialsid": "15645424660100000000000000000009",//订单流水
+            "payMoney": 404.46000000000004,//app端需支付金额
+            "paySerialsid": "15645424660100000000000000000008",//app支付流水号
+            "rebateMoney": 0,
+            "rebateSerialsid": "",
+            "toTransferSerialsid": "15645424660100000000000000000007",//子公司接收总公司代付流水号
+            "transferFromMoney": 120,
+            "transferMoney": 120,//代付金额
+            "transferToMoney": 120,
+            "unAssignMoney": 404.46000000000004,
+            "useBalanceMoney": 50,//账户使用余额的金额
+            "useDebtMoney": 0//账户使用账期的金额
+        }
+    }
+### APP-162. 支付管理-移动端直接支付,不允许补款
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /router/v5/finance/pay/app
+    备注：此接口需要传token
+#### 参数
+    *orderSerialSid // 订单流水号
+#### 响应
+    {"code":100000,"msg":"","data":null}
+    
+### APP-163. app支付宝预支付
+#### 模块负责人
+    梁铁骐
+#### 请求
+    POST /router/v5/finance/pay/ali/prepay
+#### 参数
+    {
+        *"serialSid": "scm20190719010018",   // 支付策略ID
+        *"totalFee": "102.36",              // 客户需要支付的费用（元）
+    }
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": "902734584hewrt9q2384y" // orderString
     }
