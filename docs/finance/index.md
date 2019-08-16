@@ -1793,7 +1793,8 @@
     		}
     4、定金管理 - 修改规则信息
     	{
-    		*depositId: 1,
+    		*depositId: 1, // 定金id
+    		*opAccount: 2, // 客户账号id
     		*actionType: "MODIFY_DEPOSIT_RULE" // 固定传
     		*ratio: 90, // 比例 90%
     		*effectRange: "111,222" // 产品id范围 以","相隔
