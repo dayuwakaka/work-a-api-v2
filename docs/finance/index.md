@@ -1184,6 +1184,7 @@
                     "bal": 11845864.34,             // 账户余额
                     "totchg": 0,                    // 手续费用
                     "bankType": "ABC",              // 银行类型
+                    "bankTypeName": "中国农业银行"   // 银行类型中文名
                     "matchAccount": 33239,          // 系统比对账户
                     "matchAccountName": "绍兴市咭味哆餐饮管理有限公司", // 系统比对账户名
                     "opAccount": 33239,                     // 实际入款账户
