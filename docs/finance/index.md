@@ -1615,6 +1615,8 @@
                 {
                     "actionType": "DEPOSIT_TRANSFER_BALANCE", // 调整类型
                     "checkRemark": "", // 审批备注
+                    "bankType": "CCB", // 汇款银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+                    "receiveBankType": "CCB", // 收款银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
                     "bankAccount": "", // 打款人账号
                     "bankAccountName": "", // 打款人名称
                     "receiveBankAccount": "", // 收款人账号
