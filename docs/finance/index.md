@@ -548,6 +548,7 @@
         *"bankType": "ICBC",        // 银行类型
         *"bankAccount": "622812268819998777374",
         *"bankAccountName": "苏小妹儿",
+        *"receiveBankType": "ICBC" // 收款银行类型
         *"receiveBankAccount": "262001040030059",
         *"receiveBankAccountName": "亚洲渔港供应链管理（大连）有限公司",
         *"payTime": "2019-07-15 14:00:00",  // 充值时间
@@ -561,9 +562,10 @@
         *"bankType": "ICBC",        // 汇款银行类型
         *"bankAccount": "622812268819998777374", // 汇款银行账号
         *"bankAccountName": "苏小妹儿",             // 汇款银行账户名
+        *"receiveBankType": "ICBC", // 收款银行类型
         *"receiveBankAccount": "262001040030059",   // 收款银行账号
         *"receiveBankAccountName": "亚洲渔港供应链管理（大连）有限公司", // 收款银行账户名
-        *"bankSerialsid": "ABC-20161017090253125485155673739",  // 银行流水号
+        "bankSerialsid": "ABC-20161017090253125485155673739",  // 银行流水号
         *"payTime": "2019-07-15 14:00:00",              // 交易时间
         "createRemark": "手动充值100元"          // 备注
     }
@@ -1143,7 +1145,28 @@
     流
 
     
-    
+### CW-36 银企互联账户对比结果
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /finance/bes/bankaccount/match
+#### 参数
+    bankAccount // 银行账户号
+#### 响应
+    {
+        "code": 100000, // 成功，返回对比账户信息、失败返回错误信息
+        "msg": "",
+        "data": {
+          "opAccount": xxx // 客户资金账户号
+          "customer" : {
+            "shortName" : "xxx" // 客户名
+          }
+        }
+    }
+
+
 ### CW-37 银企互联列表
 #### 对接负责人
     尹洪明
