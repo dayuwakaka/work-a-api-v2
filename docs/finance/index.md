@@ -1638,6 +1638,8 @@
                 {
                     "actionType": "DEPOSIT_TRANSFER_BALANCE", // 调整类型
                     "checkRemark": "", // 审批备注
+                    "bankType": "CCB", // 汇款银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+                    "receiveBankType": "CCB", // 收款银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
                     "bankAccount": "", // 打款人账号
                     "bankAccountName": "", // 打款人名称
                     "receiveBankAccount": "", // 收款人账号
@@ -1737,6 +1739,8 @@
     			*actionType: "BANK_TRANSFER_NEW_DEPOSIT" //固定传
     			*money: 10000, // 金额
     			*ratio: 90, // 比例 90%
+    			*bankType: "CCB", // 汇款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+                *receiveBankType: "CCB", // 收款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
     			*bankAccount: "", // 汇款人账号
     			*bankAccountName: "", // 汇款人名
     			*receiveBankAccount: "", // 收款账号
@@ -1775,6 +1779,8 @@
     			*opAccount: 1, // 客户账户id
     			*actionType: "BANK_TRANSFER_DEPOSIT" // 固定传
     			*money: 10000, // 金额
+    			*bankType: "CCB", // 汇款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+                *receiveBankType: "CCB", // 收款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
     			*bankAccount: "", // 汇款账号
     			*bankAccountName: "", // 汇款人名称
     			*receiveBankAccount: "", // 收款账号
@@ -1807,6 +1813,8 @@
     			*opAccount: 1, // 客户账户id
     			*actionType: "DEPOSIT_TRANSFER_BANK" // 固定传
     			*money: 10000, // 金额
+    			*bankType: "CCB", // 收款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+                *receiveBankType: "CCB", // 转出银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
     			*bankAccount: "", // 收款账号
     			*bankAccountName: "", // 收款人名称
     			*receiveBankAccount: "", // 转出账号
@@ -1849,6 +1857,8 @@
     				*opAccount: 1, // 客户账户id
     				*actionType: "BANK_TRANSFER_DEPOSIT" // 固定传
     				*money: 10000, // 金额
+    				*bankType: "CCB", // 汇款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+                    *receiveBankType: "CCB", // 收款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
     				*bankAccount: "", // 汇款账号
     				*bankAccountName: "", // 汇款人名称
     				*receiveBankAccount: "", // 收款账户
@@ -1881,6 +1891,8 @@
     			*opAccount: 1, // 客户账户id
     			*actionType: "DEPOSIT_TRANSFER_BANK" // 固定传
     			*money: 10000, // 金额
+    			*bankType: "CCB", // 收款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+                *receiveBankType: "CCB", // 转出银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
     			*bankAccount: "", // 收款账号
     			*bankAccountName: "", // 收款人名称
     			*payTime: "2019-07-10 00:00:00" // 扣款时间
@@ -1904,6 +1916,8 @@
     			*opAccount: 1, // 客户账户id
     			*actionType: "BANK_TRANSFER_DEPOSIT" // 固定传
     			*money: 10000, // 金额
+    			*bankType: "ABC", // 固定传
+                *receiveBankType: "ABC", // 固定传
     			*bankAccount: "", // 汇款账号
     			*bankAccountName: "", // 汇款人名称 
     			*receiveBankAccount: "", // 收款账号
@@ -1920,6 +1934,9 @@
     			*actionType: "BANK_TRANSFER_NEW_DEPOSIT" // 固定传
     			*money: 10000, // 金额
     			*ratio: 90, // 比例90%
+    			*money: 10000, // 金额
+                *bankType: "ABC", // 固定传
+                *receiveBankType: "ABC", // 固定传
     			*bankAccount: "", // 汇款账号
     			*bankAccountName: "", // 汇款人名称
     			*receiveBankAccount: "", // 收款账号
@@ -2002,6 +2019,8 @@
                 	*opAccount: 1, // 客户账户id
                 	*actionType: "BANK_TRANSFER_DEPOSIT" // 固定传
                 	*money: 10000, // 金额
+                	*bankType: "CCB", // 汇款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+                    *receiveBankType: "CCB", // 收款银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
                 	*bankAccount: "", // 汇款账号
                 	*bankAccountName: "", // 汇款人名称
                 	*receiveBankAccount: "", // 收款账户
@@ -2019,6 +2038,8 @@
                 	*effectStime: "2019-07-11 10:10:00" // 定金有效期开始时间
                 	*effectEtime: "2019-09-11 10:10:00" // 定金有效期结束时间
                 	*payTime: "2019-07-10 00:00:00" // 充值时间
+                	*bankType: "CCB", // 汇款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+                    *receiveBankType: "CCB", // 收款银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
                 	*bankAccount: "", // 汇款账号
                 	*bankAccountName: "", // 汇款人名称
                 	*receiveBankAccount: "", // 收款账号
@@ -2083,6 +2104,8 @@
             	*opAccount: 1, // 客户账户id
             	*actionType: "DEPOSIT_TRANSFER_BANK" // 固定传
             	*money: 10000, // 金额
+            	*bankType: "CCB", // 收款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+                *receiveBankType: "CCB", // 转出银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
             	*bankAccount: "", // 收款账号
             	*bankAccountName: "", // 收款人名称
             	*receiveBankAccount: "", // 转出账号
