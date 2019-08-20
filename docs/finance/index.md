@@ -1924,7 +1924,7 @@
     			*receiveBankAccountName: "", // 收款人名称
     			*payTime: "2019-07-10 00:00:00" // 充值时间
     			*************
-    		*****relationSid: 1 // 银企互联数据id
+    		    *****relationSid: 1 // 银企互联数据id
     			*************
     			createRemark: "" // 备注
     		}
@@ -1946,7 +1946,7 @@
     			*effectEtime: "2019-09-11 10:10:00" // 定金有效期结束时间
     			*payTime: "2019-07-10 00:00:00" // 充值时间
     			*************
-    		*****relationSid: 1 // 银企互联数据id
+    		    *****relationSid: 1 // 银企互联数据id
     			*************
     			createRemark: "" // 备注
     		}
@@ -2121,7 +2121,41 @@
             	*payTime: "2019-07-10 00:00:00" // 扣款时间
             	createRemark: "" // 备注
             }
-    
+    12、银企互联 - 银行汇款
+        	（充值账户）定金 - （定金类型）充值至已有定金
+        		{
+        			*depositId: 1, // 定金id
+        			*opAccount: 1, // 客户账户id
+        			*actionType: "BANK_TRANSFER_DEPOSIT" // 固定传
+        			*money: 10000, // 金额
+        			*bankType: "ABC", // 汇款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+                    *receiveBankType: "ABC", // 收款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+        			*bankAccount: "", // 汇款账号
+        			*bankAccountName: "", // 汇款人名称 
+        			*receiveBankAccount: "", // 收款账号
+        			*receiveBankAccountName: "", // 收款人名称
+        			*payTime: "2019-07-10 00:00:00" // 充值时间
+        			createRemark: "" // 备注
+        		}
+        	（充值账户）定金 - （定金类型）充值至新增定金
+        		{
+        			*opAccount: 1, // 客户账户id
+        			*actionType: "BANK_TRANSFER_NEW_DEPOSIT" // 固定传
+        			*money: 10000, // 金额
+        			*ratio: 90, // 比例90%
+        			*money: 10000, // 金额
+                    *bankType: "ABC", // 汇款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+                    *receiveBankType: "ABC", // 收款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+        			*bankAccount: "", // 汇款账号
+        			*bankAccountName: "", // 汇款人名称
+        			*receiveBankAccount: "", // 收款账号
+        			*receiveBankAccountName: "", // 收款人名称
+        			*effectRange: "111,222" // 产品id范围 以","相隔
+        			*effectStime: "2019-07-11 10:10:00" // 定金有效期开始时间
+        			*effectEtime: "2019-09-11 10:10:00" // 定金有效期结束时间
+        			*payTime: "2019-07-10 00:00:00" // 充值时间
+        			createRemark: "" // 备注
+        		}
 #### 响应
     {
         "code": 100000,
