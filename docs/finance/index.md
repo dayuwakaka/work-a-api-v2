@@ -1160,7 +1160,7 @@
         "msg": "",
         "data": {
           "opAccount": xxx , // 客户资金账户号
-          "customer" : {
+          "customerLite" : {
             "shortName" : "xxx" // 客户名
           },
           "financeAccountBank": {
