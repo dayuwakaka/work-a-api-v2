@@ -1159,9 +1159,15 @@
         "code": 100000, // 成功，返回对比账户信息、失败返回错误信息
         "msg": "",
         "data": {
-          "opAccount": xxx // 客户资金账户号
+          "opAccount": xxx , // 客户资金账户号
           "customer" : {
             "shortName" : "xxx" // 客户名
+          },
+          "financeAccountBank": {
+            "bankType":"ICBC" // 银行类型
+            "bankTypeName": "工商银行" // 银行类型名
+            "bankName":"工商银行大连支行" // 银行名称
+            "bankAccountName": "李雪梅" // 开户名
           }
         }
     }
