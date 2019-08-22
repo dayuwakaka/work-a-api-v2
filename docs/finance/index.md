@@ -548,6 +548,7 @@
         *"bankType": "ICBC",        // 银行类型
         *"bankAccount": "622812268819998777374",
         *"bankAccountName": "苏小妹儿",
+        *"receiveBankType": "ICBC" // 收款银行类型
         *"receiveBankAccount": "262001040030059",
         *"receiveBankAccountName": "亚洲渔港供应链管理（大连）有限公司",
         *"payTime": "2019-07-15 14:00:00",  // 充值时间
@@ -561,9 +562,10 @@
         *"bankType": "ICBC",        // 汇款银行类型
         *"bankAccount": "622812268819998777374", // 汇款银行账号
         *"bankAccountName": "苏小妹儿",             // 汇款银行账户名
+        *"receiveBankType": "ICBC", // 收款银行类型
         *"receiveBankAccount": "262001040030059",   // 收款银行账号
         *"receiveBankAccountName": "亚洲渔港供应链管理（大连）有限公司", // 收款银行账户名
-        *"bankSerialsid": "ABC-20161017090253125485155673739",  // 银行流水号
+        "bankSerialsid": "ABC-20161017090253125485155673739",  // 银行流水号
         *"payTime": "2019-07-15 14:00:00",              // 交易时间
         "createRemark": "手动充值100元"          // 备注
     }
@@ -1143,7 +1145,34 @@
     流
 
     
-    
+### CW-36 银企互联账户对比结果
+#### 对接负责人
+    尹洪明
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /finance/bes/bankaccount/match
+#### 参数
+    bankAccount // 银行账户号
+#### 响应
+    {
+        "code": 100000, // 成功，返回对比账户信息、失败返回错误信息
+        "msg": "",
+        "data": {
+          "opAccount": xxx , // 客户资金账户号
+          "customerLite" : {
+            "shortName" : "xxx" // 客户名
+          },
+          "financeAccountBank": {
+            "bankType":"ICBC" // 银行类型
+            "bankTypeName": "工商银行" // 银行类型名
+            "bankName":"工商银行大连支行" // 银行名称
+            "bankAccountName": "李雪梅" // 开户名
+          }
+        }
+    }
+
+
 ### CW-37 银企互联列表
 #### 对接负责人
     尹洪明
@@ -1184,6 +1213,7 @@
                     "bal": 11845864.34,             // 账户余额
                     "totchg": 0,                    // 手续费用
                     "bankType": "ABC",              // 银行类型
+                    "bankTypeName": "中国农业银行"   // 银行类型中文名
                     "matchAccount": 33239,          // 系统比对账户
                     "matchAccountName": "绍兴市咭味哆餐饮管理有限公司", // 系统比对账户名
                     "opAccount": 33239,                     // 实际入款账户
@@ -1615,6 +1645,8 @@
                 {
                     "actionType": "DEPOSIT_TRANSFER_BALANCE", // 调整类型
                     "checkRemark": "", // 审批备注
+                    "bankType": "CCB", // 汇款银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+                    "receiveBankType": "CCB", // 收款银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
                     "bankAccount": "", // 打款人账号
                     "bankAccountName": "", // 打款人名称
                     "receiveBankAccount": "", // 收款人账号
@@ -1714,6 +1746,8 @@
     			*actionType: "BANK_TRANSFER_NEW_DEPOSIT" //固定传
     			*money: 10000, // 金额
     			*ratio: 90, // 比例 90%
+    			*bankType: "CCB", // 汇款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+                *receiveBankType: "CCB", // 收款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
     			*bankAccount: "", // 汇款人账号
     			*bankAccountName: "", // 汇款人名
     			*receiveBankAccount: "", // 收款账号
@@ -1752,6 +1786,8 @@
     			*opAccount: 1, // 客户账户id
     			*actionType: "BANK_TRANSFER_DEPOSIT" // 固定传
     			*money: 10000, // 金额
+    			*bankType: "CCB", // 汇款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+                *receiveBankType: "CCB", // 收款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
     			*bankAccount: "", // 汇款账号
     			*bankAccountName: "", // 汇款人名称
     			*receiveBankAccount: "", // 收款账号
@@ -1784,6 +1820,8 @@
     			*opAccount: 1, // 客户账户id
     			*actionType: "DEPOSIT_TRANSFER_BANK" // 固定传
     			*money: 10000, // 金额
+    			*bankType: "CCB", // 收款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+                *receiveBankType: "CCB", // 转出银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
     			*bankAccount: "", // 收款账号
     			*bankAccountName: "", // 收款人名称
     			*receiveBankAccount: "", // 转出账号
@@ -1801,7 +1839,8 @@
     		}
     4、定金管理 - 修改规则信息
     	{
-    		*depositId: 1,
+    		*depositId: 1, // 定金id
+    		*opAccount: 2, // 客户账号id
     		*actionType: "MODIFY_DEPOSIT_RULE" // 固定传
     		*ratio: 90, // 比例 90%
     		*effectRange: "111,222" // 产品id范围 以","相隔
@@ -1825,6 +1864,8 @@
     				*opAccount: 1, // 客户账户id
     				*actionType: "BANK_TRANSFER_DEPOSIT" // 固定传
     				*money: 10000, // 金额
+    				*bankType: "CCB", // 汇款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+                    *receiveBankType: "CCB", // 收款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
     				*bankAccount: "", // 汇款账号
     				*bankAccountName: "", // 汇款人名称
     				*receiveBankAccount: "", // 收款账户
@@ -1857,6 +1898,8 @@
     			*opAccount: 1, // 客户账户id
     			*actionType: "DEPOSIT_TRANSFER_BANK" // 固定传
     			*money: 10000, // 金额
+    			*bankType: "CCB", // 收款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+                *receiveBankType: "CCB", // 转出银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
     			*bankAccount: "", // 收款账号
     			*bankAccountName: "", // 收款人名称
     			*payTime: "2019-07-10 00:00:00" // 扣款时间
@@ -1880,13 +1923,15 @@
     			*opAccount: 1, // 客户账户id
     			*actionType: "BANK_TRANSFER_DEPOSIT" // 固定传
     			*money: 10000, // 金额
+    			*bankType: "ABC", // 固定传
+                *receiveBankType: "ABC", // 固定传
     			*bankAccount: "", // 汇款账号
     			*bankAccountName: "", // 汇款人名称 
     			*receiveBankAccount: "", // 收款账号
     			*receiveBankAccountName: "", // 收款人名称
     			*payTime: "2019-07-10 00:00:00" // 充值时间
     			*************
-    		*****relationSid: 1 // 银企互联数据id
+    		    *****relationSid: 1 // 银企互联数据id
     			*************
     			createRemark: "" // 备注
     		}
@@ -1896,6 +1941,9 @@
     			*actionType: "BANK_TRANSFER_NEW_DEPOSIT" // 固定传
     			*money: 10000, // 金额
     			*ratio: 90, // 比例90%
+    			*money: 10000, // 金额
+                *bankType: "ABC", // 固定传
+                *receiveBankType: "ABC", // 固定传
     			*bankAccount: "", // 汇款账号
     			*bankAccountName: "", // 汇款人名称
     			*receiveBankAccount: "", // 收款账号
@@ -1905,7 +1953,7 @@
     			*effectEtime: "2019-09-11 10:10:00" // 定金有效期结束时间
     			*payTime: "2019-07-10 00:00:00" // 充值时间
     			*************
-    		*****relationSid: 1 // 银企互联数据id
+    		    *****relationSid: 1 // 银企互联数据id
     			*************
     			createRemark: "" // 备注
     		}
@@ -1978,6 +2026,8 @@
                 	*opAccount: 1, // 客户账户id
                 	*actionType: "BANK_TRANSFER_DEPOSIT" // 固定传
                 	*money: 10000, // 金额
+                	*bankType: "CCB", // 汇款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+                    *receiveBankType: "CCB", // 收款银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
                 	*bankAccount: "", // 汇款账号
                 	*bankAccountName: "", // 汇款人名称
                 	*receiveBankAccount: "", // 收款账户
@@ -1995,6 +2045,8 @@
                 	*effectStime: "2019-07-11 10:10:00" // 定金有效期开始时间
                 	*effectEtime: "2019-09-11 10:10:00" // 定金有效期结束时间
                 	*payTime: "2019-07-10 00:00:00" // 充值时间
+                	*bankType: "CCB", // 汇款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+                    *receiveBankType: "CCB", // 收款银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
                 	*bankAccount: "", // 汇款账号
                 	*bankAccountName: "", // 汇款人名称
                 	*receiveBankAccount: "", // 收款账号
@@ -2059,6 +2111,8 @@
             	*opAccount: 1, // 客户账户id
             	*actionType: "DEPOSIT_TRANSFER_BANK" // 固定传
             	*money: 10000, // 金额
+            	*bankType: "CCB", // 收款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+                *receiveBankType: "CCB", // 转出银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
             	*bankAccount: "", // 收款账号
             	*bankAccountName: "", // 收款人名称
             	*receiveBankAccount: "", // 转出账号
@@ -2074,7 +2128,41 @@
             	*payTime: "2019-07-10 00:00:00" // 扣款时间
             	createRemark: "" // 备注
             }
-    
+    12、银企互联 - 银行汇款
+        	（充值账户）定金 - （定金类型）充值至已有定金
+        		{
+        			*depositId: 1, // 定金id
+        			*opAccount: 1, // 客户账户id
+        			*actionType: "BANK_TRANSFER_DEPOSIT" // 固定传
+        			*money: 10000, // 金额
+        			*bankType: "ABC", // 汇款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+                    *receiveBankType: "ABC", // 收款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+        			*bankAccount: "", // 汇款账号
+        			*bankAccountName: "", // 汇款人名称 
+        			*receiveBankAccount: "", // 收款账号
+        			*receiveBankAccountName: "", // 收款人名称
+        			*payTime: "2019-07-10 00:00:00" // 充值时间
+        			createRemark: "" // 备注
+        		}
+        	（充值账户）定金 - （定金类型）充值至新增定金
+        		{
+        			*opAccount: 1, // 客户账户id
+        			*actionType: "BANK_TRANSFER_NEW_DEPOSIT" // 固定传
+        			*money: 10000, // 金额
+        			*ratio: 90, // 比例90%
+        			*money: 10000, // 金额
+                    *bankType: "ABC", // 汇款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+                    *receiveBankType: "ABC", // 收款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+        			*bankAccount: "", // 汇款账号
+        			*bankAccountName: "", // 汇款人名称
+        			*receiveBankAccount: "", // 收款账号
+        			*receiveBankAccountName: "", // 收款人名称
+        			*effectRange: "111,222" // 产品id范围 以","相隔
+        			*effectStime: "2019-07-11 10:10:00" // 定金有效期开始时间
+        			*effectEtime: "2019-09-11 10:10:00" // 定金有效期结束时间
+        			*payTime: "2019-07-10 00:00:00" // 充值时间
+        			createRemark: "" // 备注
+        		}
 #### 响应
     {
         "code": 100000,
