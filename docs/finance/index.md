@@ -1307,7 +1307,8 @@
                     "aftBalance": 0,        // 变动前余额
                     "preBalance": 5596.4,   // 变动后余额
                     "status": "NORMAL",
-                    "orderType": "SA",      // SA 销售订单 SR 销售退 TR 调拨 AP 调价
+                    "orderType": "SA",      // SA 销售订单 SR 销售退 AP 调价
+                    "orderId":"SA20190505050505", // 订单号、腿单号、调价单号
                     "trAccount": 27787
                     "createTime": "",
                     "deleteFlg": 0,
