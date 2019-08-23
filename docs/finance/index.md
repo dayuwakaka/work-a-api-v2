@@ -958,7 +958,7 @@
             "status": "NORMAL",
             "debtEffectEtime": "",          // 账期有效期
             "debtMoney": 0,                 // 账期额度
-            "financeBalance": [  &#10084;***BALANCE只能有一条，DEPOSIT可以有多条***   
+            "financeBalance": {  &#10084;***BALANCE只能有一条，DEPOSIT可以有多条***   
                 "rowPermissions": {
                     0: {
                         "buttonPermission": {
@@ -1026,7 +1026,7 @@
                         "type": "DEPOSIT"       // 定金
                     }
                 ]
-            ],
+            },
             "bank": [
                 {
                     "bankAccount": "62281226881299875646",  // 开户行账号
