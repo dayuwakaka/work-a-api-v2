@@ -1214,6 +1214,7 @@
 #### 参数
     keyword     // 客户名、客户编号
     status          // 状态   WAIT 待处理 ASKFOR 申请中 COMPLETE 已自动入款 IGNORE 忽略
+    oppKeyword      // 对方户名、账户号
     buttonPermissionFlg // 是否查询按钮权限 0 不查询 1 查询  默认0
     pageNo              // 页码  默认1
     pageSize            // 页大小 默认25
@@ -1253,6 +1254,7 @@
                     "abs": "0199",          // 摘要
                     "trdate": "20190701"    // 交易日期
                     "timestab": "2019-07-01 14:47:41",  // 交易时间
+                    "postscript":"附言"
                 }
             ],
             "pageNo": 0,
