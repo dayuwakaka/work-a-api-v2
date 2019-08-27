@@ -958,44 +958,75 @@
             "status": "NORMAL",
             "debtEffectEtime": "",          // 账期有效期
             "debtMoney": 0,                 // 账期额度
-            "financeBalance": [  &#10084;***BALANCE只能有一条，DEPOSIT可以有多条***       
-                {
-                    "createTime": "2019-07-12 10:31:31",
-                    "deleteFlg": 0,
-                    "financeBalanceRule": null,
-                    "id": 32785,
-                    "money": 0,             // 余额
-                    "opAccount": 33315,
-                    "platformId": 1,
-                    "ruleId": 0,
-                    "status": "NORMAL",     // 状态 NORMAL 正常 LOCK 锁定
-                    "type": "BALANCE"       // BALANCE 预付款
-                },
-                {
-                    "createTime": "2019-07-12 10:31:31",
-                    "deleteFlg": 0,
-                    "financeBalanceRule": null,
-                    "id": 32785,
-                    "money": 0,             // 余额
-                    "opAccount": 33315,
-                    "platformId": 1,
-                    "ruleId": 0,            // 定金规则ID
-                    "status": "NORMAL",     // 状态 NORMAL 正常 LOCK 锁定
-                    "type": "DEPOSIT"       // 定金
-                },
-                {
-                    "createTime": "2019-07-12 10:31:31",
-                    "deleteFlg": 0,
-                    "financeBalanceRule": null,
-                    "id": 32785,
-                    "money": 0,             // 余额
-                    "opAccount": 33315,
-                    "platformId": 1,
-                    "ruleId": 0,            // 定金规则ID
-                    "status": "NORMAL",     // 状态 NORMAL 正常 LOCK 锁定
-                    "type": "DEPOSIT"       // 定金
-                }
-            ],
+            "financeBalance": {  &#10084;***BALANCE只能有一条，DEPOSIT可以有多条***   
+                "rowPermissions": {
+                    0: {
+                        "buttonPermission": {
+                            "reduce": true,
+                            "unlock": false,
+                            "lock": true,
+                            "pay": true,
+                            "rule": true
+                        }
+                    },
+                    1: {
+                        "buttonPermission": {
+                            "reduce": true,
+                            "unlock": false,
+                            "lock": true,
+                            "pay": true,
+                            "rule": true
+                        }
+                    },
+                    2: {
+                        "buttonPermission": {
+                            "reduce": true,
+                            "unlock": false,
+                            "lock": true,
+                            "pay": true,
+                            "rule": false
+                        }
+                    }
+                },    
+                rows:[
+                    {
+                        "createTime": "2019-07-12 10:31:31",
+                        "deleteFlg": 0,
+                        "financeBalanceRule": null,
+                        "id": 32785,
+                        "money": 0,             // 余额
+                        "opAccount": 33315,
+                        "platformId": 1,
+                        "ruleId": 0,
+                        "status": "NORMAL",     // 状态 NORMAL 正常 LOCK 锁定
+                        "type": "BALANCE"       // BALANCE 预付款
+                    },
+                    {
+                        "createTime": "2019-07-12 10:31:31",
+                        "deleteFlg": 0,
+                        "financeBalanceRule": null,
+                        "id": 32785,
+                        "money": 0,             // 余额
+                        "opAccount": 33315,
+                        "platformId": 1,
+                        "ruleId": 0,            // 定金规则ID
+                        "status": "NORMAL",     // 状态 NORMAL 正常 LOCK 锁定
+                        "type": "DEPOSIT"       // 定金
+                    },
+                    {
+                        "createTime": "2019-07-12 10:31:31",
+                        "deleteFlg": 0,
+                        "financeBalanceRule": null,
+                        "id": 32785,
+                        "money": 0,             // 余额
+                        "opAccount": 33315,
+                        "platformId": 1,
+                        "ruleId": 0,            // 定金规则ID
+                        "status": "NORMAL",     // 状态 NORMAL 正常 LOCK 锁定
+                        "type": "DEPOSIT"       // 定金
+                    }
+                ]
+            },
             "bank": [
                 {
                     "bankAccount": "62281226881299875646",  // 开户行账号
@@ -1183,6 +1214,7 @@
 #### 参数
     keyword     // 客户名、客户编号
     status          // 状态   WAIT 待处理 ASKFOR 申请中 COMPLETE 已自动入款 IGNORE 忽略
+    oppKeyword      // 对方户名、账户号
     buttonPermissionFlg // 是否查询按钮权限 0 不查询 1 查询  默认0
     pageNo              // 页码  默认1
     pageSize            // 页大小 默认25
@@ -1222,6 +1254,7 @@
                     "abs": "0199",          // 摘要
                     "trdate": "20190701"    // 交易日期
                     "timestab": "2019-07-01 14:47:41",  // 交易时间
+                    "postscript":"附言"
                 }
             ],
             "pageNo": 0,
@@ -1337,7 +1370,8 @@
                     "aftBalance": 0,        // 变动前余额
                     "preBalance": 5596.4,   // 变动后余额
                     "status": "NORMAL",
-                    "orderType": "SA",      // SA 销售订单 SR 销售退 TR 调拨 AP 调价
+                    "orderType": "SA",      // SA 销售订单 SR 销售退 AP 调价
+                    "orderId":"SA20190505050505", // 订单号、腿单号、调价单号
                     "trAccount": 27787
                     "createTime": "",
                     "deleteFlg": 0,
