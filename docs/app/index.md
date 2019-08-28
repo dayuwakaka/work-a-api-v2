@@ -3615,3 +3615,30 @@
     *uid: 1 // uid
 #### 响应  
     string
+
+
+### APP-165. 配仓接口
+#### 模块负责人
+    刘宏宇
+#### 请求
+    GET /router/v5/common/depot/match
+#### 参数
+    *pathId: '0201' // 区域pathId
+#### 响应  
+    {
+      "code": 100000,
+      "msg": "",
+      "data": {
+        "address": "天津市武清区大良镇新良道01号", // 地址
+        "contactMobile": "18602694330", // 联系方式
+        "contactName": "张慧鹏", // 联系人
+        "id": 51, // 仓ID
+        "lat": "39.543299", // 坐标
+        "level": "DC", // 类型
+        "lng": "117.100493", // 坐标
+        "name": "DC（天津仓）ASA", // 仓名
+        "pathId": "020114", // 所在区域pathId
+        "pathName": "武清区天津市天津", // 区域地址
+        "type": "SELF" // 仓类型
+    }
+  }
