@@ -3575,3 +3575,43 @@
         "msg": "",
         "data": "902734584hewrt9q2384y" // orderString
     }
+
+### APP-163. 新老支付过渡跳转接口（wx）
+#### 模块负责人
+    王子悦
+#### 请求
+    POST /wxpay/pay/index.php
+#### 参数
+    *customer_id: 1 // 客户ID
+    *ip: 'xxx' // IP
+    *order_id: 'xxx' // 订单ID
+    *order_price: 0.01 // 订单价格
+    *price: 0.01 // 
+    *uid: 1 // uid
+#### 响应
+    {
+      "code":100000,
+      "msg":"",
+      "data":{
+        "prepayId":"xxx",
+        "partnerId": "xxx",
+        "nonceStr": "xxx",
+        "sign": "xxx",
+        "timeStamp": "xxx"
+      }
+    }
+    
+### APP-164. 新老支付过度接口（alipay）
+#### 模块负责人
+    王子悦
+#### 请求
+    POST /alipay/alipay.php
+#### 参数
+    *customer_id: 1 // 客户ID
+    *ip: 'xxx' // IP
+    *order_id: 'xxx' // 订单ID
+    *order_price: 0.01 // 订单价格
+    *price: 0.01 // 
+    *uid: 1 // uid
+#### 响应  
+    string
