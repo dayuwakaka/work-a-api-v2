@@ -731,6 +731,7 @@
     keyword // 客户名、客户号
     state   // 客户状态 NORMAL 正常 DELETE 休眠
     parentType // 客户类型 0:普通客户，1:总店， 2:分店， 不传：全部
+    balanceStatus   // 预付款账户状态  NORMAL 正常 LOCK 锁定
     buttonPermissionFlg // 是否查询按钮权限  1 查询 0 不查询  默认0
     pageNo  // 页码 默认1
     pageSize    // 页大小 默认25
@@ -851,6 +852,7 @@
     keyword // 客户名、客户号
     state   // 客户状态 NORMAL 正常 DELETE 休眠
     parentType // 客户类型 0:普通客户，1:总店， 2:分店， 不传：全部
+    balanceStatus   // 预付款账户状态  NORMAL 正常 LOCK 锁定
 #### 响应
     {
         "code": 100000,
