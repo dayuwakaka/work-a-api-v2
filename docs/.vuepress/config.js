@@ -4,6 +4,7 @@ module.exports = {
   themeConfig: {
     lastUpdated: 'Last Updated',
     nav: [
+      {text: 'A网话术', link: '/problem/'},
       {text: '备货', link: '/stockup/'},
       {text: '订单', link: '/order/'},
       {text: '财务', link: "/finance/"},
