@@ -1374,6 +1374,16 @@
     		},
     		...
     	],
+    	"saOrderExtra": {
+            deviceInfo: 手机型号
+            osVersion: 系统版本
+            versionName: 软件版本
+            providers: 运营商
+            deviceNumber: 设备号
+            wifiName: WIFI名称
+            wifiMac: MAC地址
+            ip: ip
+    	}
     	*"onlyCode": 1123.9663 // 唯一码
     }
 #### 响应  
