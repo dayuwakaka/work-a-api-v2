@@ -1468,7 +1468,7 @@
             "checkUserName": "",        // 审核人
             "createTime": "",       // 创建时间
             "createUserName": "",   // 创建人
-            "bankType": "建设银行",  //银行类型 
+            "bankType": "ABC",  //银行类型 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
             "outBankAccount": "91210155300001256", //汇出账户
             "outBankAccountName": "湊湊餐饮管理有限公司", //汇出账户名
             "inBankAccount": "262001040030059", //汇入账户
