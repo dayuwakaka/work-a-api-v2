@@ -1347,6 +1347,7 @@
     opBalance   // 账户类型 BALANCE 预付款 DEPOSIT 定金
     payStime    // 开始时间
     payEtime    // 结束时间
+    orderId     // 订单号 2019-09-18 添加查询条件
     pageNo      // 页码 默认 1
     pageSize    // 页大小 默认25
 #### 响应 
@@ -1467,6 +1468,11 @@
             "checkUserName": "",        // 审核人
             "createTime": "",       // 创建时间
             "createUserName": "",   // 创建人
+            "bankType": "建设银行",  //银行类型 
+            "outBankAccount": "91210155300001256", //汇出账户
+            "outBankAccountName": "湊湊餐饮管理有限公司", //汇出账户名
+            "inBankAccount": "262001040030059", //汇入账户
+            "inBankAccountName": "亚洲渔港供应链管理（大连）有限公司", //汇入账户名
         }
     }
   
@@ -2370,3 +2376,60 @@
             "year": "2018" //年份
         } 
     ]
+
+### CW-77.根据银行账户号查询关联的客户信息
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /finance/bes/bankaccount/list
+#### 参数
+    account //银行账户号
+#### 响应    
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissionPage": {},
+            "buttonPermissions": null,
+            "dataSums": null,
+            "datas": [
+                {
+                    "customerLite": {
+                        "businessunit": 89,
+                        "businessunitName": "东北",
+                        "companyName": "沈阳市大东区碧明水果批发商行\t \t",
+                        "customerId": 32922,
+                        "isParent": 0,
+                        "isStockLimit": 0,
+                        "platformId": 1,
+                        "shortName": "沈阳市大东区碧明水果批发商行\t \t", // 客户名
+                        "srRoleId": 40,
+                        "srRoleName": "高成举",
+                        "ssRoleId": 29296,
+                        "ssRoleName": "赵馨妍",
+                        "state": "NORMAL",
+                        "type": "P"
+                    },
+                    "financeAccountBank": {
+                        "bankAccount": "622908426071716410",
+                        "bankAccountName": "魏娜", // 开户名
+                        "bankName": "建行", // 银行名称
+                        "bankType": "CHAOS", // 银行类型 ABC 农行 ICBC 工商银行 CCB 建设银行 CHAOS 未区分
+                        "bankTypeName": "其它", // 银行类型名
+                        "createRole": 0,
+                        "createTime": "2019-03-16",
+                        "createUser": 0,
+                        "createUserName": "刘路敏",
+                        "deleteFlg": 0,
+                        "id": 8933,
+                        "opAccount": 32922,
+                        "platformId": 1,
+                        "status": "NORMAL"
+                    },
+                    "opAccount": 32922 //客户资金账户号
+                }
+                ],
+            "pageNo": 0,
+            "total": 0
+        }
+    }
