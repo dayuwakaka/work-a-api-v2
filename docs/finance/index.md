@@ -2398,16 +2398,16 @@
                         "businessunit": 89,
                         "businessunitName": "东北",
                         "companyName": "沈阳市大东区碧明水果批发商行\t \t",
-                        "customerId": 32922,
+                        "customerId": 32922,  //客户编号
                         "isParent": 0,
                         "isStockLimit": 0,
                         "platformId": 1,
-                        "shortName": "沈阳市大东区碧明水果批发商行\t \t", // 客户名
+                        "shortName": "沈阳市大东区碧明水果批发商行\t \t", // 客户名称
                         "srRoleId": 40,
                         "srRoleName": "高成举",
                         "ssRoleId": 29296,
                         "ssRoleName": "赵馨妍",
-                        "state": "NORMAL",
+                        "state": "NORMAL",  //客户状态 NORMAL 正常 DELETE 删除
                         "type": "P"
                     },
                     "financeAccountBank": {
