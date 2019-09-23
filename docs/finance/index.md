@@ -1348,6 +1348,7 @@
     payStime    // 开始时间
     payEtime    // 结束时间
     orderId     // 订单号 2019-09-18 添加查询条件
+    serialsId   // 支付流水/第三方流水
     pageNo      // 页码 默认 1
     pageSize    // 页大小 默认25
 #### 响应 
@@ -2384,6 +2385,8 @@
     GET /finance/bes/bankaccount/list
 #### 参数
     account //银行账户号
+    pageNo  //页码
+    pageSize //页数据数
 #### 响应    
     {
         "code": 100000,
