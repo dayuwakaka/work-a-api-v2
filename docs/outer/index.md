@@ -5,7 +5,7 @@
 #### 模块负责人
     尹洪明
 #### 请求
-    POST    /v2/product/cooperation/sku
+    POST    /cooperation/sku
 #### 参数
     {
         *"cooperationId":"1",            // 合作商ID
@@ -25,7 +25,7 @@
 #### 模块负责人
     尹洪明
 #### 请求
-    PUT    /v2/product/cooperation/sku/{id}
+    PUT    /cooperation/sku/{id}
 #### 参数
     *id     // 关联ID
     {
@@ -45,7 +45,7 @@
 #### 模块负责人
     尹洪明
 #### 请求
-    DELETE    /v2/product/cooperation/sku/{id}
+    DELETE    /cooperation/sku/{id}
 #### 参数
     *id     // 关联ID
 #### 响应
@@ -60,7 +60,7 @@
 #### 模块负责人
     尹洪明
 #### 请求
-    GET     /v2/product/cooperation/sku
+    GET     /cooperation/sku
 #### 参数
     cooperationId           // 合作商ID
     cooperationSkuKeyword   // 第三方sku
@@ -108,7 +108,7 @@
 #### 模块负责人
     尹洪明
 #### 请求
-    GET     /v2/product/cooperation/sku/{id}
+    GET     /cooperation/sku/{id}
 #### 参数
     *id     // sku id
 #### 响应
@@ -141,7 +141,7 @@
 #### 模块负责人
     尹洪明
 #### 请求
-    POST    /v2/customer/cooperation
+    POST    /cooperation/customer
 #### 参数
     {
         *"cooperationId": "1",              // 合作商ID
@@ -161,7 +161,7 @@
 #### 模块负责人
     尹洪明
 #### 请求
-    PUT    /v2/customer/cooperation/{id}
+    PUT    /cooperation/customer/{id}
 #### 参数
     *id     // 关联ID
     {
@@ -181,7 +181,7 @@
 #### 模块负责人
     尹洪明
 #### 请求
-    DELETE    /v2/customer/cooperation/{id}
+    DELETE    /cooperation/customer/{id}
 #### 参数
     *id     // 关联ID
 #### 响应
@@ -197,7 +197,7 @@
 #### 模块负责人
     尹洪明
 #### 请求
-    GET     /v2/customer/cooperation
+    GET     /cooperation/customer
 #### 参数
     cooperationId           // 合作商ID
     cooperationKeyword   // 关键字
@@ -238,7 +238,7 @@
 #### 模块负责人
     尹洪明
 #### 请求
-    GET     /v2/customer/cooperation/{id}
+    GET     /cooperation/customer/{id}
 #### 参数
     *id     // 关联 id
 #### 响应
@@ -261,7 +261,26 @@
         }
     }
     
-    
+### WBHZS-16. 合作商列表
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET     /cooperation
+#### 参数
+    keyword     // 合作商名过滤
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "id": 1,            // 合作商ID
+                "name": "美团",       // 合作商名
+                "createTime": ""
+            }
+        ]
+    }
+        
     
 ### 模版
 #### 模块负责人
