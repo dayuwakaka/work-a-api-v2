@@ -290,7 +290,7 @@
 #### 模块负责人
     梁铁骐
 #### 请求方式
-    POST
+    POST /v2/outer/saorders
 #### 参数
     {
     	"outerSaOrder": { // 订单主体信息
