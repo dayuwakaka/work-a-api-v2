@@ -219,8 +219,10 @@
                     "cooperationCustomer": "上海嘉悦仓",     // 关键字
                     "customerId": 33266,                // 我方客户ID
                     "customerName": "甘肃海润冷链食品有限责任公司",       // 我方客户名
+                    "customerStatus": "NORMAL",      // 客户状态 NORMAL 正常 LOCK 休眠
                     "deliveryId": 53029,            // 我方客户地址ID
                     "deliveryName": "甘肃/兰州市/城关区 甘肃省兰州市城关区焦家湾路38号华陇饮料厂", // 地址名
+                    "deliveryDeleteFlg": 0,         // 收货地址是否删除标记 1 已删除 0 未删除
                     "createRole": 1,
                     "createTime": "2019-10-12", // 创建时间
                     "createUser": 518,
@@ -251,8 +253,10 @@
             "cooperationCustomer": "上海嘉悦仓",     // 关键字
             "customerId": 33266,                // 我方客户ID
             "customerName": "甘肃海润冷链食品有限责任公司",       // 我方客户名
+            "customerStatus": "NORMAL",      // 客户状态 NORMAL 正常 LOCK 休眠
             "deliveryId": 53029,            // 我方客户地址ID
             "deliveryName": "甘肃/兰州市/城关区 甘肃省兰州市城关区焦家湾路38号华陇饮料厂", // 地址名
+            "deliveryDeleteFlg": 0,         // 收货地址是否删除标记 1 已删除 0 未删除
             "createRole": 1,
             "createTime": "2019-10-12", // 创建时间
             "createUser": 518,
