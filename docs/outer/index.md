@@ -286,7 +286,8 @@
     }
         
 
-### WBDD-30 excel定时任务通知A网创建美团订单
+### WBDD-30 excel定时任务通知A网创建订单
+
 #### 模块负责人
     梁铁骐
 #### 请求方式
@@ -296,7 +297,7 @@
     	"outerSaOrder": { // 订单主体信息
     		"uploadId": 1, // 上传id
     		"customer": "上海嘉悦仓", // 仓库
-    		"orderId": "CG20191014000001", // 采购订单号
+    		"orderId": "CG20191014000001", // 美团单号
     		"createUser": 1, // 创建人id
     		"createUserName": "123123123", // 创建人名称
     		"createRole": 1, // 创建角色
