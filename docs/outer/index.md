@@ -1,5 +1,5 @@
 
-## 外部合作商
+## 外部订单管理
 
 ### WBHZS-1. SKU关联新增
 #### 模块负责人
@@ -285,11 +285,49 @@
         ]
     }
         
-    
-### 模版
+
+### WBDD-30 excel定时任务通知A网创建美团订单
 #### 模块负责人
-#### 请求
+    梁铁骐
+#### 请求方式
+    POST
 #### 参数
-#### 响应
+    {
+    	"outerSaOrder": { // 订单主体信息
+    		"uploadId": 1, // 上传id
+    		"customer": "上海嘉悦仓", // 仓库
+    		"orderId": "CG20191014000001", // 采购订单号
+    		"createUser": 1, // 创建人id
+    		"createUserName": "123123123", // 创建人名称
+    		"createRole": 1, // 创建角色
+    		"cooperationId": 1 // 合作商id
+    	},
+    	"outerSaOrderPros": [ // 订单产品信息
+    		{
+    			"orderId": "CG20191014000001", // 美团单号
+    			"sku": "10034716", // sku
+    			"productName": "香草凤尾虾", // 产品名称（excel里的产品名称）
+    			"skuName": "10KG/箱", // 规格名称（excel里的规格名称）
+    			"cnt": 10, // 数量
+    			"price": 165, // 单价
+    			"totalprice": 120 // 产品小计
+    		}
+    	]
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
