@@ -314,11 +314,179 @@
     		}
     	]
     }
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+    
+### WBDD-32 美团订单-列表
+#### 模块负责人
+    梁铁骐
+#### 请求方式
+    GET /v2/outer/saorders
+#### 参数
+    keyword1 // 第三方订单号、关键字
+    keyword2 // 客户名称订单号
+    effectStime // 开始日期
+    effectEtime // 结束日期
+    status // 状态 DONE-解析成功 ERROR-解析失败 INVALID-解析中 DATAERROR-数据匹配失败
+    pageNo // 页码
+    pageSize // 行数
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissions": [
+                {
+                    "deleteButton": false, // 删除按钮
+                    "reasonButton": false, // 查看原因按钮
+                    "parseButton": false // 重新解析按钮
+                }
+            ],
+            "datas": [
+                {
+                    "createTime": "2019-10-14 08:32:11", // 导入时间
+                    "customer": {
+                        "businessunitName": "RM", // 事业部名称
+                        "shortName": "甘肃海润冷链食品有限责任公司", // 客户名称
+                    },
+                    "customerId": 33266, // 客户id
+                    "excelName": "ceshi20191014", // 导入文件名
+                    "keyword": "上海嘉悦仓", // 关键字
+                    "orderId": "CG20191014000001", // 第三方单号
+                    "outerId": 18, // outerId
+                    "refOrderId": "", // 订单号
+                    "status": "INVALID", // 状态 DONE-解析成功 ERROR-解析失败 INVALID-解析中 DATAERROR-数据匹配失败
+                    "uploadId": 1 // uploadId
+                }
+            ],
+            "pageNo": 1
+        }
+    }
 
-### WBDD-31 
+
+### WBDD-33 美团订单-错误信息查看
+#### 模块负责人
+    梁铁骐
+#### 请求方式
+    GET /v2/outer/saorders/{uploadId}/errors?outerId=16
+#### 参数
+    uploadId（必传）
+    outerId（必传）
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "baseError": { // 基础信息错误
+                "errorInfo": "未检测到有效收获地址", // 错误类型
+                "keyword": "上海嘉悦仓", // 第三方客户名
+                "orderId": "CG20191014000001" // 第三方单号
+            },
+            "skuErrors": [  // sku错误
+                {
+                    "cnt": 10, // 采购数量
+                    "errorInfo": "产品小计不一致", // 错误类型
+                    "id": 15,
+                    "matchPrice": 165, // 订单价格
+                    "matchPriceType": "A", // 订单价格类别 T-特价 S-签约价 Q -区域价 A-A价 P-P价
+                    "matchProductSku": 4807,
+                    "matchProductunitSku": 8405,
+                    "orderId": "CG20191014000001",
+                    "outerOrderId": 18,
+                    "price": 165, // 第三方采购价
+                    "productName": "香草凤尾虾", // 第三方货品名称
+                    "productUnit": { // A网产品信息
+                        "guige": "510g/盒*4盒", // 规格
+                        "product": {
+                            "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190423150821939-6818.jpg", // 图片
+                            "name": "黄金贝（粉丝扇贝） ", // 品名
+                            "pno": "A687", // 品号
+                        },
+                        "unit": "件", // 单位
+                    },
+                    "sku": "10034716", // 第三方sku编号
+                    "skuName": "10KG/箱", // 第三方货品规格
+                    "status": "ERROR",
+                    "totalprice": 120 // 供货价价格小计
+                }
+            ]
+        }
+    }
+
+### WBDD-34 美团订单-删除
+#### 模块负责人
+    梁铁骐 
+#### 请求方式
+    DELETE /v2/outer/saorders/{uploadId}
+#### 参数
+    uploadId
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### WBDD-35 美团订单-导出
+#### 模块负责人
+    梁铁骐
+#### 请求方式
+    GET /v2/outer/saorders/export?startDate=2019-10-01&checkCode=2802
+#### 参数
+    startDate // 开始事件 yyyy-MM-dd
+    checkCode // 下载码
+#### 响应
+    stream
 
 
 
+### WBDD-36 美团订单-重新解析
+#### 模块负责人
+    梁铁骐
+#### 请求方式
+    POST /v2/outer/saorders/{uploadId}
+#### 参数
+    无
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+
+### WBDD-37
+#### 模块负责人
+    梁铁骐
+#### 请求方式
+
+#### 参数
+
+#### 响应
+
+### WBDD-38
+#### 模块负责人
+    梁铁骐
+#### 请求方式
+
+#### 参数
+
+#### 响应
+
+
+
+### WBDD-39
+#### 模块负责人
+    梁铁骐
+#### 请求方式
+
+#### 参数
+
+#### 响应
 
 
 
