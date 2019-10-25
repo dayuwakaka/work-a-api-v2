@@ -1558,6 +1558,8 @@
     sendSTime 订单发出开始时间
     sendETime 订单发出截止时间
     orderType 订单类型 ALL：全部，SA：销售订单，SR：销售退单，AP：调价单
+    invoiceType 发票类型 ALL 全部（默认） NORMAL 普票 SPECIAL 专票
+
     pageNo 页码默认1
     pageSize 页面数据条数
 #### 响应
@@ -1577,6 +1579,8 @@
                     "sendTime": "2018-05-16 16:38:01", // 订单发出时间
                     "status": "NO",
                     "totalprice": 150 // 订单实收金额
+                    "invoiceType": "NORMAL" // NORMAL 增值税普通发票 SPECIAL 增值税专用发票
+                    "exportTime": "2019-01-01 12:12:12" //  导出时间
                 },
                 ...
             ]
@@ -2312,6 +2316,8 @@
 #### 参数
     *checkCode: "" // 下载授权码 0035
     *date: "" // 时间 2018-01 yyyy-MM
+    invoiceType: "ALL" // 发票类型 ALL 全部 NORMAL 普票 SPECIAL 专票
+    range: "ALL" // 范围 ALL 全部数据 PART 仅未导出数据
 #### 响应
     数据流
 
