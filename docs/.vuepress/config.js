@@ -5,6 +5,7 @@ module.exports = {
     lastUpdated: 'Last Updated',
     nav: [
       {text: 'A网话术', link: '/problem/'},
+      {text: '插件', link: '/addon/'},
       {text: '合作商', link: '/outer/'},
       {text: '备货', link: '/stockup/'},
       {text: '订单', link: '/order/'},
