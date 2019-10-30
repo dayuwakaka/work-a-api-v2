@@ -7,6 +7,9 @@
 #### JSON结构
     {
       "customerId": 1 // 客户ID
+    }
+    {
+      "customerId": 1 // 客户ID
       "authenNo":"xx" // 第三方认证号
       "customerType": "COMPANY" // 客户类型： COMPANY 公司 INDIVIDUALLY 个体工商 PERSON 个人
       "invoiceType": "NORMAL" // 发票类型： NORMAL 普票 SPECIAL 专票
