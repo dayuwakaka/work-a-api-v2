@@ -5,6 +5,7 @@ module.exports = {
     lastUpdated: 'Last Updated',
     nav: [
       {text: '金蝶', link: '/ufo/'},
+      {text: '插件', link: '/addon/'},
       {text: '合作商', link: '/outer/'},
       {text: '备货', link: '/stockup/'},
       {text: '订单', link: '/order/'},

@@ -87,6 +87,7 @@
                             "type": "CUSTOMER"
                         }
                     ],
+                    "certType":"MSC/ASC",       // 认证类型 MSC ASC MSC/ASC
                     "customFlg": 1,                 
                     "customFlgMore": 2,         // 0 普通品  1 普通定制品  2 专属定制品
                     "customers": [],                // 定制客户
@@ -230,7 +231,8 @@
             *"name":"测试01", // 产品名
             *"pno":"pnotest01", // 品号 不可重复
             *"taxRate":0.1, // 税率
-            *"customFlg":1 // 是否定制 0 未定制 1 常规定制 2 专属定制
+            *"customFlg":1, // 是否定制 0 未定制 1 常规定制 2 专属定制
+            "certType":"MSC/ASC"       // 认证类型 MSC ASC MSC/ASC
         },
         *"productExtra":{ // 产品扩展信息
             "attributes": 1, // 标准类别
@@ -305,6 +307,7 @@
                 }
             ],
             "businessunit": [],             // 定制事业部
+            "certType":"MSC/ASC",       // 认证类型 MSC ASC MSC/ASC
             "cookBookLites": null,
             "createTime": "2019-04-16 15:31:43",    
             "custom": [                     // 定制列表
@@ -532,7 +535,8 @@
             *"name":"测试01", // 产品名
             *"pno":"pnotest01", // 品号 不可重复
             *"taxRate":0.1, // 税率
-            *"customFlg":1 // 是否定制 0 未定制 1 定制
+            *"customFlg":1, // 是否定制 0 未定制 1 定制
+            "certType":"MSC/ASC"       // 认证类型 MSC ASC MSC/ASC
         },
         *"productExtra":{ // 产品扩展信息
             "attributes": 1, // 标准类别
