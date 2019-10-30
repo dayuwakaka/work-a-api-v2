@@ -5,30 +5,30 @@
 #### 类型
   CUSTOMER
 #### JSON结构
-  {
-    "customerId": 1 // 客户ID
-    "authenNo":"xx" // 第三方认证号
-    "customerType": "COMPANY" // 客户类型： COMPANY 公司 INDIVIDUALLY 个体工商 PERSON 个人
-    "invoiceType": "NORMAL" // 发票类型： NORMAL 普票 SPECIAL 专票
-    "deliverAddress": "xxx" // 邮寄地址
-    "email": "xxx" // email
-    "contactName": "xxx" // 联系人
-    "mobile": "xxx" // 手机
-    "status": "EMPYT" // 状态：EMPTY 待维护 NORMAL 正常 ASKFOR 待审核 REFUSE 拒绝
-    "invoiceInfoCompany": {
-      "name": "xxx" // 发票名头
-      "taxCode": "xxx" // 发票税号
-      "address": "xxx" // 地址
-      "mobile": "xxx" // 联系电话
-      "bankName": "xxx" // 开户行
-      "bankNo": "xxx" // 银行账号
-      "legalPerson": "xxx" // 法人
-    },
-    "invoiceInfoPerson": {
-      "name": "xxx" // 发票名头
-      "cardNo": "xxx" // 身份证号
-    },
-  }
+    {
+      "customerId": 1 // 客户ID
+      "authenNo":"xx" // 第三方认证号
+      "customerType": "COMPANY" // 客户类型： COMPANY 公司 INDIVIDUALLY 个体工商 PERSON 个人
+      "invoiceType": "NORMAL" // 发票类型： NORMAL 普票 SPECIAL 专票
+      "deliverAddress": "xxx" // 邮寄地址
+      "email": "xxx" // email
+      "contactName": "xxx" // 联系人
+      "mobile": "xxx" // 手机
+      "status": "EMPYT" // 状态：EMPTY 待维护 NORMAL 正常 ASKFOR 待审核 REFUSE 拒绝
+      "invoiceInfoCompany": {
+        "name": "xxx" // 发票名头
+        "taxCode": "xxx" // 发票税号
+        "address": "xxx" // 地址
+        "mobile": "xxx" // 联系电话
+        "bankName": "xxx" // 开户行
+        "bankNo": "xxx" // 银行账号
+        "legalPerson": "xxx" // 法人
+      },
+      "invoiceInfoPerson": {
+        "name": "xxx" // 发票名头
+        "cardNo": "xxx" // 身份证号
+      }
+    }
 
 ### JD-2. 供应商
 #### 类型
@@ -287,7 +287,6 @@
       "runTime": "xxx" // 确认时间
       "sendTime": "xxx" // 发出时间
       "completeTime": "xxx" // 完成时间
-
     },
     "orderPrPros": [
       {
