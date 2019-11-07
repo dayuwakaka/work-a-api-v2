@@ -421,9 +421,12 @@
 #### 模块负责人
     梁铁骐 
 #### 请求方式
-    DELETE /v2/outer/saorders/{uploadId}
+    POST /v2/outer/saorders/batch/del
 #### 参数
-    uploadId
+    JSON body:
+    {
+        uploadIds: [1, 2, 3, 4, 5] // uploadId集合
+    }
 #### 响应
     {
         "code": 100000,
