@@ -461,7 +461,18 @@
         "data": null
     }
 
-
+### WBDD-37 上传阿里云excel信息录入系统
+#### 模块负责人
+    王子悦
+#### 请求方式
+    POST /v2/outer/cooperationUpload
+#### 参数
+    {
+	"aliyunUrlList":["http://asae-e.oss-cn-beijing.aliyuncs.com/上海1-亚洲渔港股份有限公司_20191008_CG201910080000002005599.xls"],  //excel地址信息集合
+	"fileNameList":["1"]                                                                                                          //excel文件名信息集合  
+    }
+#### 响应
+    {"code":100000,"msg":"","data":null}
 
 
 
