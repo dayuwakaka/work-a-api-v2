@@ -451,9 +451,9 @@
 #### 模块负责人
     梁铁骐
 #### 请求方式
-    POST /v2/outer/saorders/{uploadId}
+    POST /v2/outer/saorders/{outerId}
 #### 参数
-    无
+    outerId
 #### 响应
     {
         "code": 100000,
