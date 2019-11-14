@@ -440,7 +440,8 @@
 #### 请求方式
     GET /v2/outer/saorders/export?startDate=2019-10-01&checkCode=2802
 #### 参数
-    startDate // 开始事件 yyyy-MM-dd
+    startDate // 开始时间 yyyy-MM-dd HH:mm:ss
+    endDate // 结束时间 yyyy-MM-dd HH:mm:ss
     checkCode // 下载码
 #### 响应
     stream
