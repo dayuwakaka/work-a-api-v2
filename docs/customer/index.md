@@ -1406,6 +1406,7 @@
             "dataSums": null,
             "datas": [
                 {
+                 "businessTypeName": "农贸市集",//业态名称
                 "businesstype": 0,//业态id
                 "businessunit": {//部门信息
                     "bcFlg": 0,
