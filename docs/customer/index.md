@@ -1406,6 +1406,7 @@
             "dataSums": null,
             "datas": [
                 {
+                "businesstype": 0,//业态id
                 "businessunit": {//部门信息
                     "bcFlg": 0,
                     "groupId": 2,
@@ -1461,6 +1462,8 @@
     *type                //客户类型 A,P,P2P,C
     parentId            //父客户ID
     *isParent           //总分设置：0时表示普通客户  1表示总店   2表示分店
+    ssRoleId            //SS角色id
+    businesstype        //业态id
 #### 响应 
     {"code":100000,"msg":"生成邀请码：7","data":null}
 
