@@ -4,6 +4,7 @@ module.exports = {
   themeConfig: {
     lastUpdated: 'Last Updated',
     nav: [
+      {text: 'WMS仓储', link: '/wms/'},
       {text: '金蝶', link: '/ufo/'},
       {text: '插件', link: '/addon/'},
       {text: '合作商', link: '/outer/'},
@@ -24,7 +25,6 @@ module.exports = {
       {text: 'APP', link: '/app/'},
       {text: '库存', link: '/depot/'},
       {text: '费用', link: '/fee/'},
-      {text: 'WMS仓储', link: '/wms/'},
       {text: '消息通知（作废）', link: '/notice/'},
       {text: '变更', link: '/changelog/'},
       {text: '代理接口', link: '/feign/'},
