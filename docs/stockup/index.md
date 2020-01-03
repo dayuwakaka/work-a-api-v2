@@ -915,6 +915,8 @@
                 "datas": [
                     {
                         "areaFlg": 1, // 是否关联区域 0-否 1-是
+                        "businessUnitFlg": 1 // 是否关联事业部 0 否 1 是
+                        "customerCnt": 1 // 专属仓客户数
                         "deleteFlg": 0,
                         "depot": {
                             "address": "天津市武清区大良镇新良道01号", // 详细地址
@@ -1079,8 +1081,43 @@
          ]
     }
 
+### BH-46 仓库管理-查询关联事业部
+#### 对接负责人
+    刘宏宇
+#### 请求
+    GET /v2/stockup/depots/businessUnit/{depotId}
+#### 参数
+    *depotId 仓ID
+#### 响应
+    {
+         "code": 100000,
+         "msg": "",
+         "data": [
+            {
+                "id": 1 // 事业部ID
+                "name": "xx" // 事业部名
+            }
+         ]
+    }
 
-
+### BH-47 仓库管理-更新关联事业部
+#### 对接负责人
+    刘宏宇
+#### 请求
+    PUT /v2/stockup/depots/businessUnit
+#### 参数
+    [
+      {
+        *depotId: 1, // 仓ID
+        *businessUnitId: 1, // 事业部ID
+      }
+    ]
+#### 响应
+    {
+         "code": 100000,
+         "msg": "",
+         "data": null
+    }
 
 
 ### BH-50 线路新增
