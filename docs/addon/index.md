@@ -4,7 +4,7 @@
 #### 模块负责人
     梁铁骐
 #### 请求
-    GET /export{typeId}/{keyword}/url
+    GET /export/{typeId}/{keyword}/url
 #### 参数
     typeId： 类型id
     keyword：文件提取码

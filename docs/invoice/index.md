@@ -1559,7 +1559,8 @@
     sendETime 订单发出截止时间
     orderType 订单类型 ALL：全部，SA：销售订单，SR：销售退单，AP：调价单
     invoiceType 发票类型 ALL 全部（默认） NORMAL 普票 SPECIAL 专票
-
+    customerType 发票名头类型 COMPANY 公司 PERSON 个人 INDIVIDUALLY 个体经商
+    invoiceStatus 发票状态 EMPTY 待维护 NORMAL 正常 ASKFOR 申请中 REFUSE 拒绝
     pageNo 页码默认1
     pageSize 页面数据条数
 #### 响应
@@ -1581,6 +1582,9 @@
                     "totalprice": 150 // 订单实收金额
                     "invoiceType": "NORMAL" // NORMAL 增值税普通发票 SPECIAL 增值税专用发票
                     "exportTime": "2019-01-01 12:12:12" //  导出时间
+                    "customerType": "PERSON" // 发票名头类型 COMPANY 公司 PERSON 个人 INDIVIDUALLY 个体经商
+                    "invoiceTitle": "xxx" // 发票名头
+                    "invoiceStatus": "NORMAL" // 发票状态 EMPTY 待维护 NORMAL 正常 ASKFOR 申请中 REFUSE 拒绝
                 },
                 ...
             ]

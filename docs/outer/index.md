@@ -421,9 +421,12 @@
 #### 模块负责人
     梁铁骐 
 #### 请求方式
-    DELETE /v2/outer/saorders/{uploadId}
+    POST /v2/outer/saorders/batch/del
 #### 参数
-    uploadId
+    JSON body:
+    {
+        uploadIds: [1, 2, 3, 4, 5] // uploadId集合
+    }
 #### 响应
     {
         "code": 100000,
@@ -437,7 +440,8 @@
 #### 请求方式
     GET /v2/outer/saorders/export?startDate=2019-10-01&checkCode=2802
 #### 参数
-    startDate // 开始事件 yyyy-MM-dd
+    startDate // 开始时间 yyyy-MM-dd HH:mm:ss
+    endDate // 结束时间 yyyy-MM-dd HH:mm:ss
     checkCode // 下载码
 #### 响应
     stream
@@ -448,9 +452,9 @@
 #### 模块负责人
     梁铁骐
 #### 请求方式
-    POST /v2/outer/saorders/{uploadId}
+    POST /v2/outer/saorders/{outerId}
 #### 参数
-    无
+    outerId
 #### 响应
     {
         "code": 100000,
@@ -458,7 +462,18 @@
         "data": null
     }
 
-
+### WBDD-37 上传阿里云excel信息录入系统
+#### 模块负责人
+    王子悦
+#### 请求方式
+    POST /v2/outer/cooperationUpload
+#### 参数
+    {
+	"aliyunUrlList":["http://asae-e.oss-cn-beijing.aliyuncs.com/上海1-亚洲渔港股份有限公司_20191008_CG201910080000002005599.xls"],  //excel地址信息集合
+	"fileNameList":["1"]                                                                                                          //excel文件名信息集合  
+    }
+#### 响应
+    {"code":100000,"msg":"","data":null}
 
 
 

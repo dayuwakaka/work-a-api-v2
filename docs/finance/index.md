@@ -633,7 +633,9 @@
                     "checkTime": "",                    // 审核时间
                     "checkUser": 0,
                     "checkUserName": "",                // 审核人
-                    "deleteFlg": 0
+                    "deleteFlg": 0,
+                    "ignoreFlg":1,                      //2019-11-04 导出忽略 0 不忽略 1 忽略
+                    "payRelationType":"CB"              //2019-11-04 付款人与付款单位关系 P 本人 C2C 公对公 CP 经营者
                 }
             ],
             "pageNo": 0,
@@ -717,7 +719,9 @@
             "relationSid": 0,
             "shortname": "",
             "status": "ASKFOR",
-            "type": ""
+            "type": "",
+            "ignoreFlg":1,                      //2019-11-04 导出忽略 0 不忽略 1 忽略
+            "payRelationType":"CB"              //2019-11-04 付款人与付款单位关系 P 本人 C2C 公对公 CP 经营者
         }
     }
  
