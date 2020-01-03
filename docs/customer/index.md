@@ -385,6 +385,7 @@
         *"address":"3333", // 地址
         *"remarks":"xxxx" // 备注
         *"isDefault": 1
+        "defaultDepotId": 0 // 默认仓ID
     }
 #### 响应
     {
@@ -409,6 +410,7 @@
             *"address":"111", // 地址
             *"remarks":"1111", // 备注
             *"isDefault":1 // 是否默认
+            defaultDepotId: 1 // 默认仓ID
         },
         {
             "customerId":32202,
@@ -417,7 +419,8 @@
             "areapathid":"0202",
             "address":"222",
             "remarks":"222",
-            "isDefault":0
+            "isDefault":0,
+            defaultDepotId: 1 // 默认仓ID
         }
     ]
 #### 响应
@@ -502,6 +505,8 @@
                 "mobile": "18842889150", // 手机号
                 "name": "222", // 联系人
                 "remarks": "" // 备注
+                "defaultDepotId": 0 // 默认仓ID
+                "defaultDepotName": "xx" // 默认仓名
             }
         ]
     }

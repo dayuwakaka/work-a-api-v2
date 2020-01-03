@@ -1119,6 +1119,25 @@
          "data": null
     }
 
+### BH-48 仓库管理-查询仓专属客户
+#### 对接负责人
+    刘宏宇
+#### 请求
+    GET /v2/stockup/depots/customer/{depotId}
+#### 参数
+    *depotId 仓ID
+#### 响应
+    {
+         "code": 100000,
+         "msg": "",
+         "data": [
+           {
+             "customerId": 1 // 客户ID
+             "shortName": "xx" // 客户名
+             "businessunitName": "xx" // 事业部
+           }
+         ]
+    }
 
 ### BH-50 线路新增
 #### 模块负责人
