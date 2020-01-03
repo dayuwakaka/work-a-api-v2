@@ -218,6 +218,7 @@
 |createTime|创建时间|
 |areaType|区域限定|ALL 全部 PART 部分|
 |areas|区域列表|
+|addFlg|运费累加属性|0-不累加 1-累加|
 |businessunitType|事业部限定|ALL 全部 GROUP 事业组级别 PART 事业部级别|
 |businessunitGroupId|事业组ID|
 |businessunits|事业部列表|
@@ -735,6 +736,21 @@
     customerid 客户id
     pathid 区域id
     amount 金额订单金额（不含优惠券、返利券、活动（满减、满折））的金额
+#### 响应
+    {
+        "code":100000,
+        "msg":"",
+        "data": 123 // 运费
+    }
+    
+    
+### YF-16. 修改运费累加属性
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /v2/freight/{id}/add-flg
+#### 参数
+    id 运费主键
 #### 响应
     {
         "code":100000,
