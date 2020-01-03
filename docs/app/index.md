@@ -752,6 +752,7 @@
     *pathId : '0101' // 区域码
     businessTypeCode: '|01|' // 业态Code
     customerId: 1 // 客户ID
+    @@contactId: 1 // 收货地址ID
     *deviceNo: '1' // 设备号
     keyword: 'xx' // 模糊搜索 品号、品名
     filterFollow：'YES' // 是否常订购搜索   YES 是 默认NO 不是
@@ -878,6 +879,7 @@
     *pathId : '0101' // 区域码
     businessTypeCode: '|01|' // 业态Code
     customerId: 1 // 客户ID
+    @@contactId: 1 // 收货地址ID
     *deviceNo: '1' // 设备号
     keyword: 'xx' // 模糊搜索 品号、品名
     pageNo: 1 //页码 默认1
@@ -896,6 +898,7 @@
     *pathId : '0101' // 区域码
     businessTypeCode: '|01|' // 业态Code
     customerId: 1 // 客户ID
+    @@contactId: 1 // 收货地址ID
     *deviceNo: '1' // 设备号
     keyword: 'xx' // 模糊搜索 品号、品名
     pageNo: 1 //页码 默认1
@@ -947,6 +950,7 @@
     customerId: 0 // 客户ID 默认0
     *deviceNo:198437512379851  // 设备号
     businessTypeId: 16      // 业态ID
+    @@contactId: 1 // 收货地址ID
 #### 响应
     {
         "code": 100000,
@@ -1174,6 +1178,7 @@
     *pathId: "0101" // 地区PathId
     businessTypeCode: "|01|" // 餐饮业态Code
     *customerId: 1 // 客户ID
+    @@contactId: 1 // 收货地址ID
 #### 响应
     {
         "code": 100000,
@@ -1314,6 +1319,7 @@
     businessTypeCode:"|01|" // 餐饮业态Code
     *deviceNo: "1" // 设备码
     customerId: 1 // 客户ID
+    @@contactId: 1 // 收货地址ID
 #### 响应
     {
         "code": 100000,
@@ -1490,6 +1496,7 @@
     *pathId : '0101' // 区域码
     businessTypeCode: '-120-' // 业态Code
     customerId: 1 // 客户ID
+    @@contactId: 1 // 收货地址ID
     *deviceNo: '1' // 设备号
 #### 响应
     {
@@ -2707,6 +2714,7 @@
     *marketId: 1 //活动ID
     customerId: 32580 // 客户ID
     businessTypeId: 16 // 业态ID
+    @@contactId: 1 // 收货地址ID
 #### 响应
     {
         "code": 100000,

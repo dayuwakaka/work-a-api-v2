@@ -748,7 +748,7 @@
 #### 模块负责人
     梁铁骐
 #### 请求
-    GET /v2/freight/{id}/add-flg
+    PUT /v2/freight/{id}/add-flg
 #### 参数
     id 运费主键
 #### 响应
