@@ -599,6 +599,7 @@
     *customerId： 1 客户ID
     pageNo: 1 页码
     keyword： "" 关键词过滤
+    @@contactId: 1 // 收货地址ID
 #### 响应
     {
         "code": 100000,
