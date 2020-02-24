@@ -127,67 +127,47 @@
 |buttonPermissionFlg|按钮权限|Number|1-查询按钮权限 0-不查询|
 
 #### 返回值
-##### datas返回值
-|参数|名称|类型|描述|
-|---|---|---|---|
-|contractNum|合同号|String|
-|contractType|合同类别|String|
-|createUserName|创建人|String|
-|startDate|季度开始时间|String|
-|endDate|季度结束时间|String|
-|shouldExistAmt|应计入销售总额|Number|
-|salesPercentage|销售达成比（即达成比）|String||
-|subjectName|合同主体名称|String|
-|rebateNode|季度节点|String|FIRST:一季度; SECOND：二季度; THIRD：三季度; FOURTH：四季度; YEAR：年度|
-|performanceStatus|季度履约状态|String|NORMAL:待履约, INVALID:待审核, PASS:已履约, STOP:禁止申请履约|
-|salesPlan|季度目标|Number|
-|rebateRate|季度返点率|Number|前端显示可以直接在此字段后面加%|
-|preferentialAmt|优惠金额|Number|
-|fileUrl|履约附件url|String|为null 或者 为"" 代表没有附件|
-
-##### buttonPermissions返回值
-    返回的集合长度和数据集一样，取对应下标数据即可，true 显示；false 不显示
-    performanceButton: 申请履约,
-    passButton: 通过按钮,
-    refuseButton: 拒绝按钮,
-    detailButton: 详情（优惠明细）,
-    startButton: 启用履约按钮,
-    stopButton: 禁用履约按钮
-
-#### 请求示例
-    /v2/contract/performance?pageNo=1&pageSize=25&checkStatus=&rebateNode=&name=&reach=&name=
-
-#### 返回值示例
     {
         code: 0,
         msg: "",
         data: {
             datas: [
-                        {
-                            contractNum: "ASA-1000000010848751",
-                            startDate: "2017-03-01 00:00:00",
-                            endDate: "2017-05-31 23:59:59",
-                            subjectName: "汕头市金平区木屋食品行",
-                            rebateNode: "FIRST",
-                            performanceStatus: "NORMAL",
-                            salesPlan: 100000,
-                            rebateRate: 2,
-                            preferentialAmt: 0,
-                            fileUrl: "",
-                            canApply: 0
-                        },
-                        ...
+                {
+                     "contractNum": "ASA-C-3558798902117376", // 合同号
+                     "contractType": "ALONE", // 合同类别
+                     "createUserName": "", // 创建人
+                     "detailPros": [ // 阶梯规则
+                         {
+                             "id": 1,
+                             "ladderAmount": 20000, // 阶梯金额
+                             "rebateRate": 2.1 // 阶梯返点率
+                         },
+                         ...
+                     ],
+                     "endDate": "2019-05-31 23:59:59", // 季度结束时间
+                     "fileUrl": "", // 履约附件url 为null 或者 为"" 代表没有附件
+                     "ladderFlg": 1, // 是否包含阶梯返点规则 0-否 1-是
+                     "performanceStatus": "NORMAL", // 季度履约状态 NORMAL:待履约, INVALID:待审核, PASS:已履约, STOP:禁止申请履约
+                     "preferentialAmt": 0, // 优惠金额
+                     "rebateNode": "FIRST", // rebateNode FIRST:一季度; SECOND：二季度; THIRD：三季度; FOURTH：四季度; YEAR：年度
+                     "rebateRate": 0, // 季度返点率 前端显示可以直接在此字段后面加%
+                     "salesPercentage": "", // 销售达成比（即达成比）
+                     "salesPlan": 0, // 季度目标
+                     "shouldExistAmt": 0, // 应计入销售总额
+                     "startDate": "2019-03-01 00:00:00", // 季度开始时间
+                     "subjectName": "北京和合谷餐饮管理有限公司", // 合同主体名称
+                ...
             ],
             buttonPermissions: [
-                        {
-                            performanceButton: false,
-                            passButton: false,
-                            refuseButton: false,
-                            detailButton: false,
-                            startButton: false,
-                            stopButton: false
-                        },
-                        ...
+                {
+                    performanceButton: false, // 申请履约
+                    passButton: false, // 通过按钮
+                    refuseButton: false, // 拒绝按钮
+                    detailButton: false, // 详情（优惠明细）
+                    startButton: false, // 启用履约按钮
+                    stopButton: false // 禁用履约按钮
+                },
+                ...
             ],
             total: 618 (总条数) - Number,
             pageNo: 6 (对应页码) - Number
@@ -220,9 +200,21 @@
 |saleDetail|销售优惠金额确认|Object|
 |saleExists|订购并计入销售优惠客户明细|Array|
 |saleNotExists|订购但不计入销售优惠产品明细|Array|
+|saleDetailPros|销售优惠金额明细|Array|
 
 #### 强调
     销售优惠金额 为 saleDetail 信息里的 preferentialAmt
+
+##### saleDetailPros信息
+    {
+        contractNum: "ASA-C-3558798902117376"
+        id: 11714
+        ladderAmount: 400000 // 当前阶梯达标金额
+        preferentialAmt: 13824 // 优惠金额
+        rebateNode: "FOURTH" // 季度节点 FIRST:一季度; SECOND：二季度; THIRD：三季度; FOURTH：四季度; YEAR：年度
+        rebateRate: 2 // 优惠比例
+        targetAmount: 0 // 合同目标起始金额
+    }
 
 ##### contract信息
     {
@@ -744,18 +736,17 @@
                 "rebateNode":"FIRST" (季度节点 FIRST:第一季度,SECOND:第二季度,THIRD:第三季度,FOURTH:第四季度,YEAR:年度) - String,
                 "rebateRate":2 (返点率，前端展示的时候后面加上'%') - Number
                 "salesPlan":100000 (目标) - Number
+                "ladderFlg": 1, // 是否包含阶梯返点规则 0-否 1-是
                 "contractDetailPros": [
                     {
-                        "contractNum": "ASA-C-3616992076792832",
                         "id": 3,
                         "ladderAmount": 60000, // 阶梯金额
-                        "rebateNode": "FIRST",
                         "rebateRate": 2.6 // 返点率
                     },
                     ...
                 ],
             },
-            ......
+            ...
         ],
         "logs": [
             {
