@@ -744,6 +744,16 @@
                 "rebateNode":"FIRST" (季度节点 FIRST:第一季度,SECOND:第二季度,THIRD:第三季度,FOURTH:第四季度,YEAR:年度) - String,
                 "rebateRate":2 (返点率，前端展示的时候后面加上'%') - Number
                 "salesPlan":100000 (目标) - Number
+                "contractDetailPros": [
+                    {
+                        "contractNum": "ASA-C-3616992076792832",
+                        "id": 3,
+                        "ladderAmount": 60000, // 阶梯金额
+                        "rebateNode": "FIRST",
+                        "rebateRate": 2.6 // 返点率
+                    },
+                    ...
+                ],
             },
             ......
         ],
