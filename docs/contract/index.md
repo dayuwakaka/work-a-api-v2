@@ -213,7 +213,7 @@
             ladderAmount: 400000 // 当前阶梯达标金额
             preferentialAmt: 13824 // 优惠金额
             rebateNode: "FOURTH" // 季度节点 FIRST:一季度; SECOND：二季度; THIRD：三季度; FOURTH：四季度; YEAR：年度
-            rebateRate: 2 // 优惠比例
+            rebateRate: 2 // 优惠比例（直接加%号即可）
             targetAmount: 0 // 合同目标起始金额
         }
     ]
