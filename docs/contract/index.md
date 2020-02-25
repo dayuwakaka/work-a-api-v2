@@ -636,7 +636,7 @@
     		"contractDetailPros": [ // 阶梯返点规则
     			{
     				"ladderAmount": 40000, // 阶梯金额
-    				"rebateRate": 2.5 // 返点率
+    				"rebateRate": 2.5 // 返点率 1~100
     			},
     			...
     		]
@@ -665,7 +665,7 @@
     		"contractDetailPros": [ // 阶梯返点规则
             	{
             		"ladderAmount": 40000, // 阶梯金额
-            		"rebateRate": 2.5 // 返点率
+            		"rebateRate": 2.5 // 返点率 1~100
             	},
             	...
             ]
