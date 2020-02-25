@@ -233,7 +233,7 @@
 ##### saleDetail信息
     {
         preferentialAmt: 6047.38 (优惠金额) - Number,
-        rebateRate: 2 (优惠比例) - Number,
+        rebateRate: 2 (优惠比例) - Number, // 作废于2020-02-25
         saleAmt: 306144.64 (总额) - Number,
         saleNotExistAmt: 3775.8 (不计入优惠金额) - Number,
         salesPlan: 150000 (任务额) - Number,
