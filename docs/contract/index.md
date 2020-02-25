@@ -206,15 +206,17 @@
     销售优惠金额 为 saleDetail 信息里的 preferentialAmt
 
 ##### saleDetailPros信息
-    {
-        contractNum: "ASA-C-3558798902117376"
-        id: 11714
-        ladderAmount: 400000 // 当前阶梯达标金额
-        preferentialAmt: 13824 // 优惠金额
-        rebateNode: "FOURTH" // 季度节点 FIRST:一季度; SECOND：二季度; THIRD：三季度; FOURTH：四季度; YEAR：年度
-        rebateRate: 2 // 优惠比例
-        targetAmount: 0 // 合同目标起始金额
-    }
+    [
+        {
+            contractNum: "ASA-C-3558798902117376"
+            id: 11714
+            ladderAmount: 400000 // 当前阶梯达标金额
+            preferentialAmt: 13824 // 优惠金额
+            rebateNode: "FOURTH" // 季度节点 FIRST:一季度; SECOND：二季度; THIRD：三季度; FOURTH：四季度; YEAR：年度
+            rebateRate: 2 // 优惠比例
+            targetAmount: 0 // 合同目标起始金额
+        }
+    ]
 
 ##### contract信息
     {
