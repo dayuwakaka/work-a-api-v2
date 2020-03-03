@@ -3650,3 +3650,120 @@
         "type": "SELF" // 仓类型
     }
   }
+
+
+### APP-171.app产品推荐：根据产品获取权重最大的关联产品
+#### 模块负责人
+    王子悦
+#### 请求
+    GET  /router/v5/productrelation
+#### 参数 
+    productId //主品id
+    customerId //客户id
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "productVO": {
+                "businessTypeIds": null,
+                "businessTypes": [],
+                "businessunit": [],
+                "certType": "",
+                "cookBookLites": null,
+                "createTime": "2020-01-10 13:07:00",
+                "custom": null,
+                "customFlg": 1,
+                "customFlgMore": 1,
+                "customers": [],
+                "deleteFlg": 0,
+                "followFlg": 0,
+                "id": 5006,
+                "longName": "香酥鳕鱼（去头去脏）",
+                "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20200113091356073-2958.jpg@!app-s",
+                "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20200116100821445-4235.jpg@!app-s",
+                "marketActive": null,
+                "myFollowFlg": "NO",
+                "name": "香酥鳕鱼（去头去脏）",
+                "newHotFlg": "",
+                "nowFutureFlg": "",
+                "pno": "M117",
+                "process": 4,
+                "processContent": 1,
+                "processInvoice": 1,
+                "processPrice": 1,
+                "productAttrs": null,
+                "productExtra": null,
+                "productImgs": null,
+                "productLack": null,
+                "productSaleRange": null,
+                "productUnits": [
+                    {
+                        "createTime": "2020-01-10 13:07:00",
+                        "cubage": 1,
+                        "grossweight": 3.5,
+                        "guige": "3kg",
+                        "height": 11,
+                        "id": 8725,
+                        "length": 34,
+                        "marketActive": null,
+                        "minimum": 0,
+                        "minimumType": "NONE",
+                        "modifyTime": "",
+                        "netweight": 3,
+                        "perunit": 1,
+                        "price": {
+                            "aPrice": 70,
+                            "areaPrice": 0,
+                            "decideType": "P",
+                            "finallyPrice": 66,
+                            "pPrice": 66,
+                            "productUnitId": 8725,
+                            "rate": 0.3,
+                            "rawFlg": "YES",
+                            "signPrice": 0,
+                            "specialPrice": 0
+                        },
+                        "product": null,
+                        "productCart": null,
+                        "productId": 5006,
+                        "stock": null,
+                        "unit": "件",
+                        "unitId": 3,
+                        "width": 22
+                    }
+                ],
+                "pyAll": "",
+                "pyCode": "",
+                "rangeType": "ALL",
+                "relatePnos": null,
+                "saleRange": "",
+                "status": "NORMAL",
+                "stock": {
+                    "amount": 999999,
+                    "amountJian": 0,
+                    "amountSan": 0,
+                    "normalAmount": 0,
+                    "normalAmountJian": 0,
+                    "normalAmountSan": 0,
+                    "productId": 5006
+                },
+                "taxRate": 0
+            },
+            "recommendId": 1 //产品推荐关联关系id
+        }
+    }
+
+### APP-171.app产品推荐：根据产品获取权重最大的关联产品
+#### 模块负责人
+    王子悦
+#### 请求
+    POST  /router/v5/productrelation
+#### 参数 
+    {
+        "customerId":33660,//客户id
+        "fromPage":"homeList",//推荐来源 homeList 首页推荐 typeList 分类列表 findList 搜索列表
+        "recommendId":3//产品推荐关联id
+    }
+#### 响应
+    {"code":100000,"msg":"","data":null}

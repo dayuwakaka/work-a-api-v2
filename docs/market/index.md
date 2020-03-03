@@ -2069,3 +2069,415 @@
     	"msg": "",
     	"data": null
     }
+
+### YX-91.产品推荐：产品列表
+#### 模块负责人
+    王子悦
+#### 请求
+    GET  /v2/productrelation/product
+#### 参数
+    status //上架状态 NORMAL 上架 LOCK 下架
+    customFlgMore //产品类型 0 非定制 1 普通定制 2 专属定制
+    rawFlg //是否原料品 0 非 1 是
+    keyword //品名/品号
+    relateFlg //是否已关联 0 否 1 是
+    pageNo //页码
+    pageSize //页数
+
+#### 响应
+{
+    "code": 100000,
+    "msg": "",
+    "data": {
+        "buttonPermissionPage": null,
+        "buttonPermissions": null,
+        "dataSums": null,
+        "datas": [
+            {
+                "productId": 0,
+                "productVO": {
+                    "businessTypeIds": [
+                        90,
+                        122,
+                        105
+                    ],
+                    "businessTypes": [// 业态列表
+                        {
+                            "code": "-34-0514-",
+                            "deleteFlg": 0,
+                            "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/0514.png",
+                            "hasProductCnt": 17,
+                            "id": 90,
+                            "level": 2,
+                            "mIcon": "",
+                            "miniFlg": 0,
+                            "name": "即食冷菜",
+                            "parentId": 34,
+                            "parentName": "农贸市集",
+                            "pyCode": "",
+                            "sIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190402095846661-8080.png",
+                            "showFlg": 1,
+                            "styleUrl": "",
+                            "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/0514.png"
+                        }
+                    ],
+                    "businessunit": [],
+                    "certType": "",
+                    "cookBookLites": null,
+                    "createTime": "2020-02-06 16:09:27",//创建时间
+                    "custom": null,
+                    "customFlg": 0,
+                    "customFlgMore": 0,//定制品类型 0 普通品  1 普通定制品  2 专属定制品
+                    "customers": [],
+                    "deleteFlg": 0,
+                    "followFlg": 0,
+                    "id": 5013,
+                    "longName": "千丝万缕海带丝（鲜辣味）",
+                    "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20200207102242150-2452.jpg",
+                    "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20200207102647548-2440.jpg", //主图
+                    "marketActive": null,
+                    "myFollowFlg": "NO",
+                    "name": "千丝万缕海带丝（鲜辣味）",//品名
+                    "newHotFlg": "",
+                    "nowFutureFlg": "",
+                    "pno": "2282",//品号
+                    "process": 4,
+                    "processContent": 1,
+                    "processInvoice": 1,
+                    "processPrice": 1,
+                    "productAttrs": null,
+                    "productExtra": null,
+                    "productImgs": null,
+                    "productLack": null, // 断货   null 非断货 
+                    "productSaleRange": null,
+                    "productUnits": [
+                        {
+                            "createTime": "2020-02-06 16:09:27",
+                            "cubage": 1,
+                            "grossweight": 0.4,
+                            "guige": "400g",
+                            "height": 0,
+                            "id": 8732,
+                            "length": 24,
+                            "marketActive": null,
+                            "minimum": 0,
+                            "minimumType": "NONE",
+                            "modifyTime": "",
+                            "netweight": 0.4,
+                            "perunit": 1,
+                            "price": {
+                                "aPrice": 7,
+                                "areaPrice": 0,
+                                "decideType": "A",
+                                "finallyPrice": 8,
+                                "pPrice": 6,
+                                "productUnitId": 8732,
+                                "rate": 0,
+                                "rawFlg": "NO",// 是否原材料
+                                "signPrice": 0,
+                                "specialPrice": 0
+                            },
+                            "product": null,
+                            "productCart": null,
+                            "productId": 5013,
+                            "stock": null,
+                            "unit": "袋",
+                            "unitId": 1,
+                            "width": 17
+                        }
+                    ],
+                    "pyAll": "",
+                    "pyCode": "",
+                    "rangeType": "ALL",
+                    "relatePnos": null,
+                    "saleRange": "",
+                    "status": "NORMAL",//上架状态 NORMAL 上架 LOCK 下架
+                    "stock": null,
+                    "taxRate": 0
+                },
+                "relationCnt": 6,//产品关联个数 ：没有关联显示0，有关联显示关联个数
+                "relationProductIds": null
+            }
+        ],
+        "pageNo": 1,
+        "total": 0
+    }
+}
+
+### YX-92.产品推荐：产品关联列表
+#### 模块负责人
+    王子悦
+#### 请求
+    GET  /v2/productrelation/product/{id} //所查产品id
+#### 参数
+    无
+
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissionPage": {},
+            "buttonPermissions": [],
+            "dataSums": null,
+            "datas": [
+                {
+                    "businessTypeIds": [
+                        82,
+                        89,
+                        109
+                    ],
+                    "businessTypes": [
+                        {
+                            "code": "-16-0215-",
+                            "deleteFlg": 0,
+                            "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/0215.png",
+                            "hasProductCnt": 225,
+                            "id": 82,
+                            "level": 2,
+                            "mIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190304141547412-1937.png",
+                            "miniFlg": 1,
+                            "name": "水产原料",
+                            "parentId": 16,
+                            "parentName": "西餐西快",
+                            "pyCode": "",
+                            "sIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190402094459262-9124.png",
+                            "showFlg": 1,
+                            "styleUrl": "",
+                            "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/0215.png"
+                        }
+                    ],
+                    "businessunit": [],
+                    "certType": "",
+                    "cookBookLites": null,
+                    "createTime": "2019-07-05 14:36:17",
+                    "custom": null,
+                    "customFlg": 0,
+                    "customFlgMore": 0,//定制标志 0 非定制 1 普通定制 2 专属定制
+                    "customers": [],
+                    "deleteFlg": 0,
+                    "followFlg": 0,
+                    "id": 4852,
+                    "longName": "原壳豪鲍（带脏）8头/425g",
+                    "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190927145639486-3257.jpg",
+                    "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190927145635958-9957.jpg", //主图
+                    "marketActive": null,
+                    "myFollowFlg": "NO",
+                    "name": "原壳豪鲍（带脏）8头/425g",//品名
+                    "newHotFlg": "",
+                    "nowFutureFlg": "",
+                    "pno": "2096",//品号
+                    "process": 4,
+                    "processContent": 1,
+                    "processInvoice": 1,
+                    "processPrice": 1,
+                    "productAttrs": null,
+                    "productExtra": null,
+                    "productImgs": null,
+                    "productLack": null,// 断货   null 非断货 
+                    "productSaleRange": null,
+                    "productUnits": [
+                        {
+                            "createTime": "2019-07-05 14:36:17",
+                            "cubage": 1,
+                            "grossweight": 0.58,
+                            "guige": "425g（8头）/袋",
+                            "height": 0,
+                            "id": 8471,
+                            "length": 33,
+                            "marketActive": null,
+                            "minimum": 0,
+                            "minimumType": "NONE",
+                            "modifyTime": "",
+                            "netweight": 0.425,
+                            "perunit": 1,
+                            "price": {
+                                "aPrice": 73,
+                                "areaPrice": 0,
+                                "decideType": "A",
+                                "finallyPrice": 82,
+                                "pPrice": 69,
+                                "productUnitId": 8471,
+                                "rate": 0.3,
+                                "rawFlg": "YES",
+                                "signPrice": 0,
+                                "specialPrice": 0
+                            },
+                            "product": null,
+                            "productCart": null,
+                            "productId": 4852,
+                            "stock": null,
+                            "unit": "袋",
+                            "unitId": 1,
+                            "width": 25.5
+                        }
+                    ],
+                    "pyAll": "",
+                    "pyCode": "",
+                    "rangeType": "ALL",
+                    "relatePnos": null,
+                    "saleRange": "",
+                    "status": "NORMAL",//上架状态 NORMAL 上架 LOCK 下架
+                    "stock": null,
+                    "taxRate": 0
+                }
+            ],
+            "pageNo": 0,
+            "total": -1
+        }
+    }
+
+### YX-93.产品推荐：删除关联
+#### 模块负责人
+    王子悦
+#### 请求
+    DELETE  /v2/productrelation//{id}/{rId}/delete //{id}是主品id  {rid}是关联品id
+#### 参数
+    无
+
+#### 响应
+    {"code":100000,"msg":"","data":null}
+
+### YX-94.产品推荐：新增关联
+#### 模块负责人
+    王子悦
+#### 请求
+    POST  /v2/productrelation
+#### 参数
+    {
+        "productId":5000, //主品id
+        "relationProductIds":[4999,4998,4997] //关联品id
+    } 
+
+#### 响应   
+    {"code":100000,"msg":"","data":null}
+
+### YX-95.产品推荐：产品推荐历史列表
+#### 模块负责人
+    王子悦
+#### 请求
+    GET  /v2/productrecommendreport
+#### 参数   
+    keyword1 //主品的品名/品号
+    keyword2 //关联品的品名/品号
+    pageNo //页码
+    pageSize //页数
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissionPage": null,
+            "buttonPermissions": null,
+            "dataSums": null,
+            "datas": [
+                {
+                    "buyCnt": 1,//成功订购数
+                    "customerAimCnt": 0,//目标客数
+                    "customerCnt": 1,//主品订购客数
+                    "id": 2021,
+                    "name1": "千丝万缕海带丝（鲜辣味）",//主品品名
+                    "name2": "mini小鱿鱼",//关联品品名
+                    "pno1": "2282",//主品品号
+                    "pno2": "M121",//关联品品名
+                    "productId": 5013,
+                    "recommendCnt": 2,//推荐次数
+                    "recommendProductId": 5004,
+                    "updateTime": "2020-03-03" //更新日期
+                }
+            ],
+            "pageNo": 1,
+            "total": 0
+        }
+    }
+
+### YX-96.产品推荐：产品推荐历史明细列表
+#### 模块负责人
+    王子悦
+#### 请求
+    GET  /v2/productredissionrecommend
+#### 参数 
+    *productId //主品id
+    *recommendProductId //关联品id
+    customerName //客户名称
+    fromPage //推荐来源 homeList 首页推荐 typeList 分类列表 findList 搜索列表
+    sDate //开始日期
+    eDate //结束日期
+    pageNo //页码
+    pageSize //页数
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissionPage": null,
+            "buttonPermissions": null,
+            "dataSums": null,
+            "datas": [
+                {
+                    "cnt": 1,//推荐次数
+                    "createTime": "2020-03-03",//推荐时间
+                    "customerId": 33660,
+                    "customerName": "范守进 ",
+                    "fromPage": "homeList",//推荐来源 homeList 首页推荐 typeList 分类列表 findList 搜索列表
+                    "id": 0,
+                    "name1": "千丝万缕海带丝（鲜辣味）",//主品品名
+                    "name2": "mini小鱿鱼",//关联品品名
+                    "pno1": "2282",//主品品号
+                    "pno2": "M121",//关联品品名
+                    "productId": 5013,
+                    "recommendId": 0,
+                    "recommendProductId": 5006
+                }
+            ],
+            "pageNo": 1,
+            "total": 0
+        }
+    }
+
+### YX-97.产品推荐：产品推荐成功订购明细列表
+#### 模块负责人
+    王子悦
+#### 请求
+    GET  /v2/productrecommendbuy
+#### 参数 
+    *productId //主品id
+    *recommendProductId //关联品id
+    customerName //客户名称
+    sDate //开始日期
+    eDate //结束日期
+    pageNo //页码
+    pageSize //页数
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissionPage": {},
+            "buttonPermissions": [],
+            "dataSums": null,
+            "datas": [
+                {
+                    "buyAmount": 1,
+                    "buyPerunit": 1,
+                    "createTime": "2020-03-02",//日期
+                    "customerId": 33661,
+                    "customerName": "陕西七号云仓电子商务有限公司  ",//客户名称
+                    "deleteFlg": 0,
+                    "fromPage": "homeList",//推荐来源 homeList 首页推荐 typeList 分类列表 findList 搜索列表
+                    "id": 10,//散数
+                    "jian": 1,//件数
+                    "name1": "千丝万缕海带丝（鲜辣味）",//主品品名
+                    "name2": "mini小鱿鱼",//关联品品名
+                    "orderId": "SA20030200002",//订单号
+                    "pno1": "2282",//主品品号
+                    "pno2": "M121",//关联品品名
+                    "productId": 5006,
+                    "recommendId": 1,
+                    "san": 0
+                }
+            ],
+            "pageNo": 1,
+            "total": 1
+        }
+    }
