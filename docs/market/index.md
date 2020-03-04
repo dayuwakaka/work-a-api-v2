@@ -2380,9 +2380,9 @@
                     "name2": "mini小鱿鱼",//关联品品名
                     "pno1": "2282",//主品品号
                     "pno2": "M121",//关联品品名
-                    "productId": 5013,
+                    "productId": 5013,//主品id
                     "recommendCnt": 2,//推荐次数
-                    "recommendProductId": 5004,
+                    "recommendProductId": 5004,//关联品id
                     "updateTime": "2020-03-03" //更新日期
                 }
             ],
