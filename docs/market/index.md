@@ -2085,124 +2085,124 @@
     pageSize //页数
 
 #### 响应
-{
-    "code": 100000,
-    "msg": "",
-    "data": {
-        "buttonPermissionPage": null,
-        "buttonPermissions": null,
-        "dataSums": null,
-        "datas": [
-            {
-                "productId": 0,
-                "productVO": {
-                    "businessTypeIds": [
-                        90,
-                        122,
-                        105
-                    ],
-                    "businessTypes": [// 业态列表
-                        {
-                            "code": "-34-0514-",
-                            "deleteFlg": 0,
-                            "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/0514.png",
-                            "hasProductCnt": 17,
-                            "id": 90,
-                            "level": 2,
-                            "mIcon": "",
-                            "miniFlg": 0,
-                            "name": "即食冷菜",
-                            "parentId": 34,
-                            "parentName": "农贸市集",
-                            "pyCode": "",
-                            "sIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190402095846661-8080.png",
-                            "showFlg": 1,
-                            "styleUrl": "",
-                            "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/0514.png"
-                        }
-                    ],
-                    "businessunit": [],
-                    "certType": "",
-                    "cookBookLites": null,
-                    "createTime": "2020-02-06 16:09:27",//创建时间
-                    "custom": null,
-                    "customFlg": 0,
-                    "customFlgMore": 0,//定制品类型 0 普通品  1 普通定制品  2 专属定制品
-                    "customers": [],
-                    "deleteFlg": 0,
-                    "followFlg": 0,
-                    "id": 5013,
-                    "longName": "千丝万缕海带丝（鲜辣味）",
-                    "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20200207102242150-2452.jpg",
-                    "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20200207102647548-2440.jpg", //主图
-                    "marketActive": null,
-                    "myFollowFlg": "NO",
-                    "name": "千丝万缕海带丝（鲜辣味）",//品名
-                    "newHotFlg": "",
-                    "nowFutureFlg": "",
-                    "pno": "2282",//品号
-                    "process": 4,
-                    "processContent": 1,
-                    "processInvoice": 1,
-                    "processPrice": 1,
-                    "productAttrs": null,
-                    "productExtra": null,
-                    "productImgs": null,
-                    "productLack": null, // 断货   null 非断货 
-                    "productSaleRange": null,
-                    "productUnits": [
-                        {
-                            "createTime": "2020-02-06 16:09:27",
-                            "cubage": 1,
-                            "grossweight": 0.4,
-                            "guige": "400g",
-                            "height": 0,
-                            "id": 8732,
-                            "length": 24,
-                            "marketActive": null,
-                            "minimum": 0,
-                            "minimumType": "NONE",
-                            "modifyTime": "",
-                            "netweight": 0.4,
-                            "perunit": 1,
-                            "price": {
-                                "aPrice": 7,
-                                "areaPrice": 0,
-                                "decideType": "A",
-                                "finallyPrice": 8,
-                                "pPrice": 6,
-                                "productUnitId": 8732,
-                                "rate": 0,
-                                "rawFlg": "NO",// 是否原材料
-                                "signPrice": 0,
-                                "specialPrice": 0
-                            },
-                            "product": null,
-                            "productCart": null,
-                            "productId": 5013,
-                            "stock": null,
-                            "unit": "袋",
-                            "unitId": 1,
-                            "width": 17
-                        }
-                    ],
-                    "pyAll": "",
-                    "pyCode": "",
-                    "rangeType": "ALL",
-                    "relatePnos": null,
-                    "saleRange": "",
-                    "status": "NORMAL",//上架状态 NORMAL 上架 LOCK 下架
-                    "stock": null,
-                    "taxRate": 0
-                },
-                "relationCnt": 6,//产品关联个数 ：没有关联显示0，有关联显示关联个数
-                "relationProductIds": null
-            }
-        ],
-        "pageNo": 1,
-        "total": 0
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissionPage": null,
+            "buttonPermissions": null,
+            "dataSums": null,
+            "datas": [
+                {
+                    "productId": 0,
+                    "productVO": {
+                        "businessTypeIds": [
+                            90,
+                            122,
+                            105
+                        ],
+                        "businessTypes": [// 业态列表
+                            {
+                                "code": "-34-0514-",
+                                "deleteFlg": 0,
+                                "gIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/0514.png",
+                                "hasProductCnt": 17,
+                                "id": 90,
+                                "level": 2,
+                                "mIcon": "",
+                                "miniFlg": 0,
+                                "name": "即食冷菜",
+                                "parentId": 34,
+                                "parentName": "农贸市集",
+                                "pyCode": "",
+                                "sIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190402095846661-8080.png",
+                                "showFlg": 1,
+                                "styleUrl": "",
+                                "wIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/0514.png"
+                            }
+                        ],
+                        "businessunit": [],
+                        "certType": "",
+                        "cookBookLites": null,
+                        "createTime": "2020-02-06 16:09:27",//创建时间
+                        "custom": null,
+                        "customFlg": 0,
+                        "customFlgMore": 0,//定制品类型 0 普通品  1 普通定制品  2 专属定制品
+                        "customers": [],
+                        "deleteFlg": 0,
+                        "followFlg": 0,
+                        "id": 5013,
+                        "longName": "千丝万缕海带丝（鲜辣味）",
+                        "mainBgImg": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20200207102242150-2452.jpg",
+                        "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20200207102647548-2440.jpg", //主图
+                        "marketActive": null,
+                        "myFollowFlg": "NO",
+                        "name": "千丝万缕海带丝（鲜辣味）",//品名
+                        "newHotFlg": "",
+                        "nowFutureFlg": "",
+                        "pno": "2282",//品号
+                        "process": 4,
+                        "processContent": 1,
+                        "processInvoice": 1,
+                        "processPrice": 1,
+                        "productAttrs": null,
+                        "productExtra": null,
+                        "productImgs": null,
+                        "productLack": null, // 断货   null 非断货 
+                        "productSaleRange": null,
+                        "productUnits": [
+                            {
+                                "createTime": "2020-02-06 16:09:27",
+                                "cubage": 1,
+                                "grossweight": 0.4,
+                                "guige": "400g",
+                                "height": 0,
+                                "id": 8732,
+                                "length": 24,
+                                "marketActive": null,
+                                "minimum": 0,
+                                "minimumType": "NONE",
+                                "modifyTime": "",
+                                "netweight": 0.4,
+                                "perunit": 1,
+                                "price": {
+                                    "aPrice": 7,
+                                    "areaPrice": 0,
+                                    "decideType": "A",
+                                    "finallyPrice": 8,
+                                    "pPrice": 6,
+                                    "productUnitId": 8732,
+                                    "rate": 0,
+                                    "rawFlg": "NO",// 是否原材料
+                                    "signPrice": 0,
+                                    "specialPrice": 0
+                                },
+                                "product": null,
+                                "productCart": null,
+                                "productId": 5013,
+                                "stock": null,
+                                "unit": "袋",
+                                "unitId": 1,
+                                "width": 17
+                            }
+                        ],
+                        "pyAll": "",
+                        "pyCode": "",
+                        "rangeType": "ALL",
+                        "relatePnos": null,
+                        "saleRange": "",
+                        "status": "NORMAL",//上架状态 NORMAL 上架 LOCK 下架
+                        "stock": null,
+                        "taxRate": 0
+                    },
+                    "relationCnt": 6,//产品关联个数 ：没有关联显示0，有关联显示关联个数
+                    "relationProductIds": null
+                }
+            ],
+            "pageNo": 1,
+            "total": 0
+        }
     }
-}
 
 ### YX-92.产品推荐：产品关联列表
 #### 模块负责人
