@@ -111,6 +111,7 @@
     尹洪明
 #### 请求
     GET /router/v5/product/businessType
+    @@
 #### 参数
     parentId    // 上级分类ID，非必须，不传则获取全部分类
 #### 响应
