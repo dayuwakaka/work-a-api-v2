@@ -106,15 +106,13 @@
         }
     }
 
-### APP-2 餐饮业态信息
-#### 对接负责人
-    刘宏宇
+### APP-2 产品分类
 #### 模块负责人
     尹洪明
 #### 请求
     GET /router/v5/product/businessType
 #### 参数
-    *parentId: 0 // 分类父ID
+    parentId    // 上级分类ID，非必须，不传则获取全部分类
 #### 响应
     {
         "code": 100000,
