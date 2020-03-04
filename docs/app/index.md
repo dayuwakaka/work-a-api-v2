@@ -3655,6 +3655,208 @@
   }
 
 
+### APP-166. 销售订单-新增（APP端）
+#### 模块负责人
+    梁铁骐
+#### 请求
+    POST /router/v5/order
+#### 参数
+    {
+    	"saOrder": {
+    		*"customerId": 2434, // 客户id
+    		*"receiveId": 17508, // 联系人id
+    		*"tradefrom": "SYS", // 下单渠道 固定 APP
+    		*"deliveryType": "DELIVERY", // 配送方式 DELIVERY：配送 SELF：自提
+    		*"planSendTime": "2019-03-15", // 计划发货时间
+    		"rebateId": 1, // 返利券id
+    		"couponId": 1, // 优惠券id
+    		"activeId": 1, // 活动id
+    		"deviceNum" : "IUDSTYNERO-9065SD879EW4UIH78", // 设备号
+    		"remark": "我的测试测试备注", // 订单备注
+    	},
+    	"saOrderPros": [ // 订单产品明细
+    		{
+    			*"productUnitId": 1, // 产品规格id
+    			*"productId": 1, // 产品id
+    			*"pcount": 10 // 数量
+          "recommendId": 1 // 推荐ID
+          "fromPage": "xx" // 来源页面
+    		},
+    		...
+    	],
+    	"saOrderExtra": {
+            deviceInfo: 手机型号
+            osVersion: 系统版本
+            versionName: 软件版本
+            providers: 运营商
+            deviceNumber: 设备号
+            wifiName: WIFI名称
+            wifiMac: MAC地址
+            ip: ip
+    	}
+    	*"onlyCode": 1123.9663 // 唯一码
+    }
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "id": 123, // 订单主键id
+            "orderId": "SA19000100002", // 订单号
+            "totalprice": 10000 // 订单实际金额
+        }
+    }
+    
+### APP-167. 销售订单-获取“我的”订单列表（APP端）
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /router/v5/order/{customerId}
+#### 参数
+    customerId: 客户id
+    payFlg: 结款 0-未结款 1-结款
+    status: 订单状态 INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收 
+    pageNo: default 1
+    pageSize: default 10
+#### 响应  
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "activeId": 0,
+            "orderId": "SA1903140000034", // 订单号
+            "orderSaPros": [
+                {
+                    "productUnit": {
+                        "product": {
+                            "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg", // 产品图片
+                            "name": "香草凤尾虾",
+                            "pno": "0151",
+                        },
+                        "productId": 1,
+                        "stock": null,
+                        "unit": "盒",
+                    }
+                }
+            ],
+            "invoice": {
+                "id": 5132, // 发票id
+                "invoiceDoneTotal": 1, // 已完成的发票数量
+                "invoiceTotal": 1 // 发票总数量
+            },
+            "payFlg": 0, // 0-未结款 1-结款
+            "paymentType": "CASH", // CASH-先款后货 CREDIT-账余 DAOFU-货到付款
+            "remark": "我的测试测试备注", // 备注
+            "san": 20, // 散
+            "sendTime": "", // 发货时间
+            "status": "INVALID", // 订单状态 INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收 
+            "totalprice": 7033, // 订单总价
+        },
+    }
+
+### APP-168. 销售订单-“订单复购”订单列表（APP端）
+#### 模块负责人
+    梁铁骐
+#### 请求
+    GET /router/v5/order/{customerId}/search
+#### 参数
+    *customerId: 客户id
+    *pathId: 区域编号
+    productKeyword: 产品名称
+    pageNo: default 1
+    pageSize: default 10
+#### 相应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "createTime": "2019-03-14 16:31:58", // 创建时间
+            "orderId": "SA1903140000034-1", // 单号
+            "orderSaPros": [
+                {
+                    "activeId": 0,
+                    "afterAskPrice": 0,
+                    "beforeAskPrice": 0,
+                    "pcount": 5, // 数量
+                    "price": 32.5, // 单价（原价）
+                    "giftFlg": 0, // 0 - 正常品 1 - 赠品
+                    "productId": 618, // 产品id
+                    "productUnitId": 123, // 产品规格id
+                    "productUnit": {
+                        "guige": "500g(23-25枚）/盒", // 规格
+                        "minimum": 0, // 最小起订量
+                        "product": {
+                            "mainImg": "http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg", // 产品图片url
+                            "name": "香草凤尾虾", // 品名
+                            "pno": "0151", // 品号
+                        },
+                        "unit": "盒", // 单位
+                        "price": {
+                            "aPrice": 40.12, //
+                            "areaPrice": 0,
+                            "decideType": "A", // 价格决定类型 T 特价, S 签约价, Q 区域价, A A价, P P价
+                            "finallyPrice": 40.12, // 最终决定价格（现价）
+                            "pPrice": 32.5, // P价格
+                        },
+                    },
+                    "marketActives": [ // 活动信息
+                        {
+                            "accumulative": "EACH",
+                            "giveCondition": [
+                                {
+                                    "actionValue": 1,
+                                    "extra": "",
+                                    "guige": "",
+                                    "id": 198,
+                                    "marketId": 267,
+                                    "pno": "",
+                                    "productName": "",
+                                    "shiftFlg": 0,
+                                    "shiftType": "EACH",
+                                    "targetValue": 1
+                                }
+                            ],
+                            "marketId": 267,
+                            "marketName": "减",
+                            "marketType": "REDUCE",
+                            "remark": "",
+                            "unit": "PRICE"
+                        }                                            
+                    ],
+                }
+            ],
+            "totalprice": 152.5 // 总价
+        }
+    }
+
+### APP-160. 销售订单-删除（APP端）
+#### 模块负责人
+    梁铁骐
+#### 请求
+    DELETE /router/v5/order/{orderId}
+#### 参数
+    orderId: 单号
+#### 相应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+### APP-170. 销售订单-确认签收（APP端）
+#### 模块负责人
+    梁铁骐
+#### 请求
+    PUT /router/v5/order/{orderId}/complete
+#### 参数
+    orderId: 单号
+#### 相应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
 ### APP-171.app产品推荐：根据产品获取权重最大的关联产品
 #### 模块负责人
     王子悦
