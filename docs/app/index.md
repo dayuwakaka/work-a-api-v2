@@ -3861,10 +3861,11 @@
 #### 请求
     GET  /router/v5/productrelation
 #### 参数 
-    pathId  //区域ID
-    contactId //收货地址ID
-    productId //主品id
-    customerId //客户id
+    *fromPage //推荐来源 homeList 首页推荐 typeList 分类列表 findList 搜索列表
+    *pathId  //区域ID
+    *contactId //收货地址ID
+    *productId //主品id
+    *customerId //客户id
 #### 响应
     {
         "code": 100000,
@@ -3959,16 +3960,4 @@
         }
     }
 
-### APP-172.app产品推荐：记录产品推荐日志
-#### 模块负责人
-    王子悦
-#### 请求
-    POST  /router/v5/productrelation
-#### 参数 
-    {
-        "customerId":33660,//客户id
-        "fromPage":"homeList",//推荐来源 homeList 首页推荐 typeList 分类列表 findList 搜索列表
-        "recommendId":3//产品推荐关联id
-    }
-#### 响应
-    {"code":100000,"msg":"","data":null}
+
