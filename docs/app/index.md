@@ -1368,7 +1368,9 @@
                         "ownerId": "149", // 拥有者ID
                         "pcount": 9, // 数量
                         "productId": 1,
-                        "productUnitId": 1
+                        "productUnitId": 1，
+                        @@"fromPage": "首页推荐",     // 推荐产品来源
+                        @@"recommendId": 1            // 推荐ID
                     },
                     "productId": 1, // 产品ID
                     "stock": { // 库存
