@@ -11,7 +11,7 @@
     status："NORMAL" //上架状态 NORMAL 上架 LOCK 下架
     customFlg: 1 定制标志 0 非定制 1 定制
     customFlgMore: 1 定制标志 0 非定制 1 普通定制 2 专属定制
-    businessTypeId： 0 // 产品业态ID
+    @@businessTypeId： 0 // 二级分类ID
     businessTypeCode: -16- 业态编码
     taxCategoryId: 0 // 税收分类ID
     processContent: 1 // 内容是否完善 0 未完善  1 完善
@@ -20,8 +20,8 @@
     lackFlg: 1          // 断货标志 0 非断货 1 断货
     rawFlg: 0           // 是否原料品 0 非 1 是
     rangeType: PART     // 销售区域类型 ALL 全部区域 PART 指定区域 EXCLUDE 排除区域
-    @@attrId: 1           // 属性ID
-    @@hasBusinessType: 1  // 是否配置业态 0 否 1 是
+    attrId: 1           // 属性ID
+    hasBusinessType: 1  // 是否配置业态 0 否 1 是
     buttonPermissionFlg: 1 
     pageNo:1 // 页码 默认1
     pageSize: 25 // 页面条数 默认25
@@ -217,7 +217,7 @@
     POST /v2/product
 #### 参数
     {
-        @@"custom": [                   // 专属定制时，需要传递
+        "custom": [                   // 专属定制时，需要传递
             {
                 "type": "BUSINESSUNIT", // BUSINESSUNIT 事业部  CUSTOMER 客户
                 "rangeId": 1            // 事业部id 或 客户id
@@ -521,7 +521,7 @@
 #### 参数
     id:1 //产品ID
     {
-        @@"custom": [                   // 专属定制时，需要传递
+        "custom": [                   // 专属定制时，需要传递
             {
                 "type": "BUSINESSUNIT", // BUSINESSUNIT 事业部  CUSTOMER 客户
                 "rangeId": 1            // 事业部id 或 客户id
@@ -806,7 +806,7 @@
     productunitIds[]:1,2,7  // 产品规格
     excludeIds[]:1,27       // 排除的产品规格
     isAsign: 0              // 0 未签约 1 已签约
-    @@contactId: 1 // 收货地址ID
+    contactId: 1 // 收货地址ID
     ---------------------------以下三个has开头的参数决定是否查询价格和库存 ture查询 & false不查询-----------------------------------------
     hasPrice:           // 客户某个区域产品价格
 		customerId
@@ -980,11 +980,12 @@
                 "pyCode": "",           // 拼音编码
                 "sIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png",
                 "showFlg": 1,           // 是否显示 1 显示 0 隐藏
-                @"miniFlg": 1,         // 小程序开关 1 开启 0 关闭
+                "miniFlg": 1,         // 小程序开关 1 开启 0 关闭
                 // 小程序图标
-                @"mIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png",
+                "mIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png",
                 // 风格入口图片
-                @"styleUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190121132417926-4745.png"
+                "styleUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190121132417926-4745.png",
+                @@"sort": 2
             }
         ]
     }
@@ -1000,9 +1001,9 @@
         "showFlg": 1, // 是否显示 0 不显示 1 显示
         "parentId": 1, // 父餐饮业态ID
         "sicon":"http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png",
-        @"micon":"http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png",
-        @"miniFlg":1,  // 小程序开关 1 开启 0 关闭
-        @"styleUrl":"http://asae.oss-cn-beijing.aliyuncs.com/ANET20190121132417926-4745.png"
+        "micon":"http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png",
+        "miniFlg":1,  // 小程序开关 1 开启 0 关闭
+        "styleUrl":"http://asae.oss-cn-beijing.aliyuncs.com/ANET20190121132417926-4745.png"
     }
 #### 响应
     {
@@ -1073,9 +1074,9 @@
         "showFlg": 1, // 是否显示 0 不显示 1 显示
         "parentId": 1, // 父餐饮业态ID
         "sicon":"http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png",
-        @"micon":"http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png",
-        @"miniFlg":1,  // 小程序开关 1 开启 0 关闭
-        @"styleUrl":"http://asae.oss-cn-beijing.aliyuncs.com/ANET20190121132417926-4745.png"
+        "micon":"http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png",
+        "miniFlg":1,  // 小程序开关 1 开启 0 关闭
+        "styleUrl":"http://asae.oss-cn-beijing.aliyuncs.com/ANET20190121132417926-4745.png"
     }
 #### 响应
     {
@@ -1114,9 +1115,40 @@
             "mIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190121132417926-4745.png",
             // 风格入口图片
             "styleUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190121132417926-4745.png",
+            @@"sort": 2
         }
     }
   
+
+### CP-56. 产品分类直接删除
+#### 模块负责人
+    尹洪明
+#### 请求
+    DELETE /v2/product/businessType/{delId}
+#### 参数
+    *delId: 1   //分类ID
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+
+### CP-57. 产品分类修改排序
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT /v2/product/businessType/sort/{id}/{sort}
+#### 参数
+    *id: 1      //分类ID
+    *sort: 1    // 排序值，大于0
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
       
 ### CP-101. 新增断货
 #### 模块负责人
