@@ -112,7 +112,7 @@
 #### 请求
     GET /router/v5/product/businessType
 #### 参数
-    parentId    // 上级分类ID，非必须，不传则获取全部分类
+    parentId    // 上级分类ID，非必须，不传则获取全部分类，按照sort降序排列
 #### 响应
     {
         "code": 100000,
@@ -3972,3 +3972,41 @@
     }
 #### 响应
     {"code":100000,"msg":"","data":null}
+
+
+
+### APP-181. 新品热销品标志
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET  /router/v5/product/businessType/recommend/tag
+#### 参数 
+    *pathId         // 区域ID，与销区有关
+    *businessTypeId // 一级分类ID
+    customerId      // 客户ID，与定制品有关
+#### 响应
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "businessTypeId": 16,   // 一级分类ID
+            "hasHot": true,         // 是否由热销品 true 有，false 无
+            "hasNew": true          // 是否有新品   true 有，false 无
+        }
+    }
+
+
+### APP-182. 新品热销品列表
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET  /router/v5/product/businessType/recommend
+#### 参数 
+    *pathId         // 区域ID，与销区有关
+    *businessTypeId // 一级分类ID
+    *tag            // HOT 热销品，NEW 新品
+    *deviceNo=2jkl3-4h6-kj53-463455-36kl3   // 用于拼装购物车
+    customerId      // 客户ID，与定制品有关
+    contactId       // 客户联系人ID，与配仓有关
+#### 响应
+> 请参考APP-28
