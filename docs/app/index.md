@@ -3861,10 +3861,11 @@
 #### 请求
     GET  /router/v5/productrelation
 #### 参数 
-    pathId  //区域ID
-    contactId //收货地址ID
-    productId //主品id
-    customerId //客户id
+    *fromPage //推荐来源 homeList 首页推荐 typeList 分类列表 findList 搜索列表
+    *pathId  //区域ID
+    *contactId //收货地址ID
+    *productId //主品id
+    *customerId //客户id
 #### 响应
     {
         "code": 100000,

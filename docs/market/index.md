@@ -2465,7 +2465,7 @@
                     "customerName": "陕西七号云仓电子商务有限公司  ",//客户名称
                     "deleteFlg": 0,
                     "fromPage": "homeList",//推荐来源 homeList 首页推荐 typeList 分类列表 findList 搜索列表
-                    "id": 10,//散数
+                    "id": 10,
                     "jian": 1,//件数
                     "name1": "千丝万缕海带丝（鲜辣味）",//主品品名
                     "name2": "mini小鱿鱼",//关联品品名
@@ -2474,7 +2474,7 @@
                     "pno2": "M121",//关联品品名
                     "productId": 5006,
                     "recommendId": 1,
-                    "san": 0
+                    "san": 0//散数
                 }
             ],
             "pageNo": 1,
