@@ -3992,12 +3992,21 @@
         "code": 100000,
         "msg": "",
         "data": {
-            "businessTypeId": 16,   // 一级分类ID
-            "hasHot": true,         // 是否由热销品 true 有，false 无
-            "hasNew": true          // 是否有新品   true 有，false 无
+            "recommend": [
+                {
+                    "businessTypeId": 16,
+                    "tagName": "HOT",
+                    "tagUrl": "url待定"
+                },
+                {
+                    "businessTypeId": 16,
+                    "tagName": "NEW",
+                    "tagUrl": "url待定"
+                }
+            ]
         }
     }
-
+> 注：recommend列表中存在的tagName，即代表有相关产品，没有相关产品的不会返回
 
 ### APP-182. 新品热销品列表
 #### 模块负责人
