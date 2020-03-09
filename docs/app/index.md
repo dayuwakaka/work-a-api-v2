@@ -3995,12 +3995,14 @@
             "recommend": [
                 {
                     "businessTypeId": 16,
-                    "tagName": "HOT",
+                    "tag": "HOT",
+                    "tagName": "热销",
                     "tagUrl": "url待定"
                 },
                 {
                     "businessTypeId": 16,
-                    "tagName": "NEW",
+                    "tag": "NEW",
+                    "tagName": "新品",
                     "tagUrl": "url待定"
                 }
             ]
