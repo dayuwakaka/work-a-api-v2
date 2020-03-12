@@ -129,7 +129,8 @@
                     "pyCode": "HBD", // 餐饮业态拼音
                     "sImage": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s0201.png", // 餐饮业态选中图
                     "sort": 0, // 排序
-                    "wImage": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g0201.png" // 餐饮业态白图
+                    "wImage": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g0201.png", // 餐饮业态白图
+                    "styleUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190304143621318-3752.jpg" // 风格图标
                 }
             ]
     }
