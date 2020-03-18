@@ -463,7 +463,7 @@
 #### 请求
     GET /v2/stockup/need/getStockupNeedListALL
 #### 参数
-    type          //请求类型 product 产品维度   supplier  供应商维度 order 订单唯独
+    type          //请求类型 product 产品维度   supplier  供应商维度 order 订单维度
     pCount      //数量 默认1
     orderId    //订单id
     pno         //品号
