@@ -616,6 +616,26 @@
         }
     }
 
+
+### BH-59.备货需求列表（订单维度）导出
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /v2/stockup/need/export/saRequireDetail
+#### 参数
+    *checkCode  //下载授权码
+    pCount      //数量 默认1
+    status     //状态 INVALID 未生效 RUN 已生效 LOCK 已锁定 STOCKUP 已备货 SEND 已发出
+    sCreateTime       //发货时间 开始查询时间 默认为当月第一天 举例：2020-03-01 00:00:00
+    eCreateTime       //发货时间 结束查询时间 默认为今天     举例：2020-03-18 23:59:59
+    depotId        //仓id
+    pno         //品号
+    productName       //品名
+    orderId    //订单id
+
+#### 响应 
+    文件
+
 ### BH-23.备货采购转化需求查询
 #### 模块负责人
     王子悦
