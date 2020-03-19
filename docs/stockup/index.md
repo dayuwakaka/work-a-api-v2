@@ -316,7 +316,7 @@
     producttype   //期现货标识 NOW 现货 FUTURE 期货 CUSTOM 定制
     depotId       //仓id
     orderlack     //是否仅看订单缺货 如果仅看订单缺货：传值yes 否则传空
-    meituan       //美团品标识  1是美团品，0是非美团品  空是所有产品
+    meituan       //美团品标识  空是所有产品，0是非美团品 ，1是美团品， 2是C产品
 #### 响应
     1.查询条件：【全部】
     {
@@ -418,7 +418,7 @@
     producttype   //期现货标识 NOW 现货 FUTURE 期货 CUSTOM 定制
     depotId       //仓id
     orderlack     //是否仅看订单缺货 如果仅看订单缺货：传值yes 否则传空
-    meituan       //美团品标识  1是美团品，0是非美团品  空是所有产品
+    meituan       //美团品标识  空是所有产品，0是非美团品 ，1是美团品， 2是C产品
 #### 响应
     {
         "code": 100000,
@@ -457,7 +457,164 @@
         ]
     }
 
-   
+### BH-58.备货需求列表（订单维度）
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /v2/stockup/need/getStockupNeedListALL
+#### 参数
+    type          //请求类型 product 产品维度   supplier  供应商维度 order 订单维度
+    pCount      //数量 默认1
+    orderId    //订单id
+    pno         //品号
+    productName       //品名
+    status     //状态 INVALID 未生效 RUN 已生效 LOCK 已锁定 STOCKUP 已备货 SEND 已发出
+    sCreateTime       //发货时间 开始查询时间 默认为当月第一天 举例：2020-03-01 00:00:00
+    eCreateTime       //发货时间 结束查询时间 默认为今天     举例：2020-03-18 23:59:59
+    p          //页码 
+#### 响应   
+    {
+        "code": 100000,
+        "msg": "",
+        "data": {
+            "buttonPermissionPage": {},
+            "buttonPermissions": [],
+            "dataSums": null,
+            "datas": [
+                {
+                    "address": "测试地址",
+                    "area": "西岗区",//区域-区
+                    "cargoSupplies": {
+                        "enableJian": 0,//可用-件
+                        "enableSan": 0,//可用-散
+                        "guige": "",
+                        "normalJian": 0,//实际-件
+                        "normalSan": 0,//实际-散
+                        "outDay1": {
+                            "guige": "",
+                            "jian": 0,//出1-件
+                            "pno": "",
+                            "productId": 0,
+                            "productName": "",
+                            "san": 0 //出1-散
+                        },
+                        "outDay2": {
+                            "guige": "",
+                            "jian": 0,//出2-件
+                            "pno": "",
+                            "productId": 0,
+                            "productName": "",
+                            "san": 0 //出2-散
+                        },
+                        "outDay3": {
+                            "guige": "",
+                            "jian": 0,//出3-件
+                            "pno": "",
+                            "productId": 0,
+                            "productName": "",
+                            "san": 0 //出3-散
+                        },
+                        "outDay4": {
+                            "guige": "",
+                            "jian": 0,//出4-件
+                            "pno": "",
+                            "productId": 0,
+                            "productName": "",
+                            "san": 0 //出4-散
+                        },
+                        "paInDay1": {
+                            "guige": "",
+                            "jian": 0,//采1-件
+                            "pno": "",
+                            "productId": 0,
+                            "productName": "",
+                            "san": 0 //采1-散
+                        },
+                        "paInDay2": {
+                            "guige": "",
+                            "jian": 0,//采2-件
+                            "pno": "",
+                            "productId": 0,
+                            "productName": "",
+                            "san": 0//采2-散
+                        },
+                        "paInDay3": {
+                            "guige": "",
+                            "jian": 0,//采3-件
+                            "pno": "",
+                            "productId": 0,
+                            "productName": "",
+                            "san": 0 //采3-散
+                        },
+                        "paInDay4": {
+                            "guige": "",
+                            "jian": 0,//采4-件
+                            "pno": "",
+                            "productId": 0,
+                            "productName": "",
+                            "san": 0 //采4-散
+                        },
+                        "pno": "",
+                        "productId": 0,
+                        "productName": "",
+                        "trInDay1": {
+                            "guige": "",
+                            "jian": 0,//调1-件
+                            "pno": "",
+                            "productId": 0,
+                            "productName": "",
+                            "san": 0 //调1-散
+                        },
+                        "trInDay2": {
+                            "guige": "",
+                            "jian": 0,//调2-件
+                            "pno": "",
+                            "productId": 0,
+                            "productName": "",
+                            "san": 0//调2-散
+                        },
+                        "trInDay3": {
+                            "guige": "",
+                            "jian": 0,//调3-件
+                            "pno": "",
+                            "productId": 0,
+                            "productName": "",
+                            "san": 0//调3-散
+                        },
+                        "trInDay4": {
+                            "guige": "",
+                            "jian": 0,//调4-件
+                            "pno": "",
+                            "productId": 0,
+                            "productName": "",
+                            "san": 0//调4-散
+                        }
+                    },
+                    "city": "大连市",//区域-市
+                    "createRole": 0,
+                    "createTime": "2020-03-11",//日期
+                    "createUser": 0,
+                    "customerId": 33041,
+                    "guige": "2.83kg",
+                    "isGift": 0,
+                    "jian": 3,//数量-件
+                    "orderId": "SA20031100011",//订单号
+                    "pno": "2233",//品号
+                    "price": 128,//单价
+                    "productId": 4978,
+                    "productName": "蒸蒸日上（面点礼盒）",//品名
+                    "productunitId": 0,
+                    "province": "辽宁",//区域-省
+                    "roleName": "樊嘉辉",//SS角色
+                    "san": 0,//数量-散
+                    "sendTime": "2020-03-18",//发出日期
+                    "unit_id": 0
+                }
+            ],
+            "pageNo": 1,
+            "total": 2
+        }
+    }
 
 ### BH-23.备货采购转化需求查询
 #### 模块负责人
