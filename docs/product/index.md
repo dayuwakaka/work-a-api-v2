@@ -210,7 +210,7 @@
         }
     }
 
-### CP-2. 新增产品
+### CP-2. 产品新增
 #### 模块负责人
     尹洪明
 #### 请求
@@ -235,16 +235,29 @@
             "certType":"MSC/ASC"       // 认证类型 MSC ASC MSC/ASC
         },
         *"productExtra":{ // 产品扩展信息
-            "attributes": 1, // 标准类别
-            "standards": 1, // 产品标准号
             "material":"meterial", // 配料
             "cookWay":"cookWay", // 烹饪方式
             "barCode":"barCode", // 条码
             "place":"place", // 产地
             "store":"store", // 存储温度
             "saveType":"NORMAL", // 存储方式 NORMAL 常温 FROZEN 冷冻
-            "shelfLife":"shelfLife" // 质保期
-            
+            "shelfLife":"shelfLife", // 质保期
+            "attribute": [  // 标准分类ID
+                {
+                    "dicId": 11
+                },
+                {
+                    "dicId": 13
+                }
+            ],
+            "standard": [ // 标准号ID
+                {
+                    "dicId": 31
+                },
+                {
+                    "dicId": 35
+                }
+            ]
         },
         *"productUnits":[// 产品规格列表
             {
@@ -371,7 +384,39 @@
                     "shelfLife": " 阿斯蒂芬",//保质期
                     "standards": 0,
                     "standardsName": "无",//标准类别
-                    "store": "阿斯顿发"//存储温度
+                    "store": "阿斯顿发", //存储温度
+                    "attribute": [      // 标准分类
+                        {
+                            "dicId": 11,
+                            "dicName": "裹面制品 熟制冻结品",
+                            "id": 0,
+                            "productId": 5276,
+                            "type": "ATTRIBUTE"
+                        },
+                        {
+                            "dicId": 13,
+                            "dicName": "肉糜类制品 熟制冻结品",
+                            "id": 0,
+                            "productId": 5276,
+                            "type": "ATTRIBUTE"
+                        }
+                    ],
+                    "standard": [       // 标准号
+                        {
+                            "dicId": 31,
+                            "dicName": "GB 10136",
+                            "id": 0,
+                            "productId": 5276,
+                            "type": "STANDARD"
+                        },
+                        {
+                            "dicId": 35,
+                            "dicName": "产品标准号测试",
+                            "id": 0,
+                            "productId": 5276,
+                            "type": "STANDARD"
+                        }
+                    ],
                 },
             "productImgs": {       // 产品图片
                    "QUALITY": [     // 质检图
@@ -513,7 +558,7 @@
 #### 响应
     同 CP-18
 
-### CP-4. 修改产品生产信息
+### CP-4. 产品生产信息修改
 #### 模块负责人
     尹洪明
 #### 请求
@@ -539,15 +584,29 @@
             "certType":"MSC/ASC"       // 认证类型 MSC ASC MSC/ASC
         },
         *"productExtra":{ // 产品扩展信息
-            "attributes": 1, // 标准类别
-            "standards": 1, // 产品标准号
             "material":"meterial", // 配料
             "cookWay":"cookWay", // 烹饪方式
             "barCode":"barCode", // 条码
             "place":"place", // 产地
             "store":"store", // 存储温度
             "saveType":"NORMAL", // 存储方式 NORMAL 常温 FROZEN 冷冻
-            "shelfLife":"shelfLife" // 质保期
+            "shelfLife":"shelfLife", // 质保期
+            "attribute": [  // 标准分类ID
+                {
+                    "dicId": 11
+                },
+                {
+                    "dicId": 13
+                }
+            ],
+            "standard": [ // 标准号ID
+                {
+                    "dicId": 31
+                },
+                {
+                    "dicId": 35
+                }
+            ]
             
         }
     }
@@ -2256,3 +2315,38 @@
         ]
 #### 响应
     {"code":100000,"msg":"","data":null}
+
+
+
+### CP-221. 产品标准分类新增
+#### 模块负责人
+    尹洪明
+#### 请求
+    POST /v2/product/attribute
+#### 参数
+    {
+        "dicName": "产品分类标准测试"
+    }
+#### 响应 
+    {
+    	"code": 100000,
+    	"msg": "",
+    	"data": null
+    }
+
+
+### CP-222. 产品标准号新增
+#### 模块负责人
+    尹洪明
+#### 请求
+    POST /v2/product/standard
+#### 参数
+    {
+        "dicName": "产品标准号测试"
+    }
+#### 响应 
+    {
+    	"code": 100000,
+    	"msg": "",
+    	"data": null
+    }
