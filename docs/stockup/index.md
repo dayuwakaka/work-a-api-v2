@@ -329,6 +329,12 @@
             "name": "黑金鱿鱼圈",//产品名称
             "stockupNeeds": [//备货需求详情列表
                 {
+                    "b1Jian": 1,//前一个月-件
+                    "b1San": 2,//前一个月-散
+                    "b2Jian": 86,//前两个月-件
+                    "b2San": 3,//前两个月-散
+                    "b3Jian": 70,//前三个月-件
+                    "b3San": 2,//前三个月-散
                     "createTime": "2019-02-15",//操作时间
                     "createUserName": "李凤",//操作人
                     "depotId": 57,//仓id
@@ -361,6 +367,12 @@
         "msg": "",
         "data": [
             {
+                "b1Jian": 1,//前一个月-件
+                "b1San": 2,//前一个月-散
+                "b2Jian": 86,//前两个月-件
+                "b2San": 3,//前两个月-散
+                "b3Jian": 70,//前三个月-件
+                "b3San": 2,//前三个月-散
                 "createTime": "2019-02-15",//操作时间
                 "createUserName": "李凤",//操作人
                 "depotId": 40,//仓id
@@ -381,26 +393,6 @@
                 "supplierId": 0,
                 "supplierName": "",
                 "type": "CUSTOM" //产品属性 NOW 现货 FUTURE 期货 CUSTOM 定制
-            },
-            {
-                "createTime": "2019-02-15",//操作时间
-                "createUserName": "李凤",//操作人
-                "depotId": 40,
-                "depotName": "DC（大连铁越仓）",
-                "inRodeNum": 0,
-                "invalidNum": 144,
-                "lackNum": -164,
-                "needNum": 0,
-                "orderLackNum": 0,
-                "productId": 1919,
-                "productName": "萌面人企鹅奶黄包",
-                "realNum": 0,
-                "safeLackNum": 20,
-                "safeNum": 20,
-                "status": "",
-                "supplierId": 0,
-                "supplierName": "",
-                "type": "NOW"
             }
     ]
     }
@@ -430,6 +422,12 @@
             "name": "优合集团有限公司",//供应商名称
             "stockupNeeds": [//备货需求详情列表
                 {
+                    "b1Jian": 1,//前一个月-件
+                    "b1San": 2,//前一个月-散
+                    "b2Jian": 86,//前两个月-件
+                    "b2San": 3,//前两个月-散
+                    "b3Jian": 70,//前三个月-件
+                    "b3San": 2,//前三个月-散
                     "clickFlg": 0,//是否可选中标识  1是可选中   0是不可选中
                     "createTime": "2019-02-15",//操作时间
                     "createUserName": "李凤",//操作人
