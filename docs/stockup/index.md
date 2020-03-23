@@ -462,15 +462,15 @@
     GET /v2/stockup/need/getStockupNeedListALL
 #### 参数
     *depotId        //仓id
-    type          //请求类型 product 产品维度   supplier  供应商维度 order 订单维度
+    *type          //请求类型 product 产品维度   supplier  供应商维度 order 订单维度
     *pCount      //数量 默认1
     orderId    //订单id
     pno         //品号
     productName       //品名
-    status     //状态 INVALID 未生效 RUN 已生效 LOCK 已锁定 STOCKUP 已备货 SEND 已发出
+    *status     //状态 INVALID 未生效 RUN 已生效 LOCK 已锁定 STOCKUP 已备货 SEND 已发出
     *sCreateTime       //发货时间 开始查询时间 默认为当月第一天 举例：2020-03-01 00:00:00
     *eCreateTime       //发货时间 结束查询时间 默认为今天     举例：2020-03-18 23:59:59
-    p          //页码 
+    *p          //页码 
 #### 响应   
     {
         "code": 100000,
