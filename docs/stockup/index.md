@@ -329,6 +329,12 @@
             "name": "黑金鱿鱼圈",//产品名称
             "stockupNeeds": [//备货需求详情列表
                 {
+                    "b1Jian": 1,//前一个月-件
+                    "b1San": 2,//前一个月-散
+                    "b2Jian": 86,//前两个月-件
+                    "b2San": 3,//前两个月-散
+                    "b3Jian": 70,//前三个月-件
+                    "b3San": 2,//前三个月-散
                     "createTime": "2019-02-15",//操作时间
                     "createUserName": "李凤",//操作人
                     "depotId": 57,//仓id
@@ -361,6 +367,12 @@
         "msg": "",
         "data": [
             {
+                "b1Jian": 1,//前一个月-件
+                "b1San": 2,//前一个月-散
+                "b2Jian": 86,//前两个月-件
+                "b2San": 3,//前两个月-散
+                "b3Jian": 70,//前三个月-件
+                "b3San": 2,//前三个月-散
                 "createTime": "2019-02-15",//操作时间
                 "createUserName": "李凤",//操作人
                 "depotId": 40,//仓id
@@ -381,26 +393,6 @@
                 "supplierId": 0,
                 "supplierName": "",
                 "type": "CUSTOM" //产品属性 NOW 现货 FUTURE 期货 CUSTOM 定制
-            },
-            {
-                "createTime": "2019-02-15",//操作时间
-                "createUserName": "李凤",//操作人
-                "depotId": 40,
-                "depotName": "DC（大连铁越仓）",
-                "inRodeNum": 0,
-                "invalidNum": 144,
-                "lackNum": -164,
-                "needNum": 0,
-                "orderLackNum": 0,
-                "productId": 1919,
-                "productName": "萌面人企鹅奶黄包",
-                "realNum": 0,
-                "safeLackNum": 20,
-                "safeNum": 20,
-                "status": "",
-                "supplierId": 0,
-                "supplierName": "",
-                "type": "NOW"
             }
     ]
     }
@@ -430,6 +422,12 @@
             "name": "优合集团有限公司",//供应商名称
             "stockupNeeds": [//备货需求详情列表
                 {
+                    "b1Jian": 1,//前一个月-件
+                    "b1San": 2,//前一个月-散
+                    "b2Jian": 86,//前两个月-件
+                    "b2San": 3,//前两个月-散
+                    "b3Jian": 70,//前三个月-件
+                    "b3San": 2,//前三个月-散
                     "clickFlg": 0,//是否可选中标识  1是可选中   0是不可选中
                     "createTime": "2019-02-15",//操作时间
                     "createUserName": "李凤",//操作人
@@ -463,15 +461,16 @@
 #### 请求
     GET /v2/stockup/need/getStockupNeedListALL
 #### 参数
-    type          //请求类型 product 产品维度   supplier  供应商维度 order 订单维度
-    pCount      //数量 默认1
+    *depotId        //仓id
+    *type          //请求类型 product 产品维度   supplier  供应商维度 order 订单维度
+    *pCount      //数量 默认1
     orderId    //订单id
     pno         //品号
     productName       //品名
-    status     //状态 INVALID 未生效 RUN 已生效 LOCK 已锁定 STOCKUP 已备货 SEND 已发出
-    sCreateTime       //发货时间 开始查询时间 默认为当月第一天 举例：2020-03-01 00:00:00
-    eCreateTime       //发货时间 结束查询时间 默认为今天     举例：2020-03-18 23:59:59
-    p          //页码 
+    *status     //状态 INVALID 未生效 RUN 已生效 LOCK 已锁定 STOCKUP 已备货 SEND 已发出
+    *sCreateTime       //发货时间 开始查询时间 默认为当月第一天 举例：2020-03-01 00:00:00
+    *eCreateTime       //发货时间 结束查询时间 默认为今天     举例：2020-03-18 23:59:59
+    *p          //页码 
 #### 响应   
     {
         "code": 100000,
@@ -615,6 +614,38 @@
             "total": 2
         }
     }
+
+
+### BH-59.备货需求列表（订单维度）导出
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /v2/stockup/need/export/saRequireDetail
+#### 参数
+    *checkCode  //下载授权码
+    pCount      //数量 默认1
+    status     //状态 INVALID 未生效 RUN 已生效 LOCK 已锁定 STOCKUP 已备货 SEND 已发出
+    sCreateTime       //发货时间 开始查询时间 默认为当月第一天 举例：2020-03-01 00:00:00
+    eCreateTime       //发货时间 结束查询时间 默认为今天     举例：2020-03-18 23:59:59
+    depotId        //仓id
+    pno         //品号
+    productName       //品名
+    orderId    //订单id
+
+#### 响应 
+    文件
+
+### BH-60.备货需求列表（订单维度）导出历史
+#### 模块负责人
+    王子悦
+#### 请求
+    GET /v2/stockup/need/export/history
+#### 参数
+    *checkCode  //下载授权码
+    historyDate //月份 默认格式 2020-03
+
+#### 响应 
+    文件
 
 ### BH-23.备货采购转化需求查询
 #### 模块负责人
