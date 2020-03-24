@@ -1637,3 +1637,49 @@
             "total": 0
         }
     }
+
+       
+### KH-81. 客户设置客户组
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT /v2/customer/group/{groupId}
+#### 参数
+    *groupId    // 客户组ID（实际就是当前客户ID，主客户ID就是客户组ID）
+    {
+        *"customerId": [ // 客户组成员ID
+            797,
+            798,
+            799
+        ]
+    }
+#### 响应 
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
+
+     
+### KH-82. 客户组成员列表
+#### 模块负责人
+    尹洪明
+#### 请求
+    GET /v2/customer/group/{groupId}
+#### 参数
+    *groupId    // 客户组ID
+#### 响应 
+    {
+        "code": 100000,
+        "msg": "",
+        "data": [
+            {
+                "customerId": 797,                  // 客户ID
+                "customerName": "[超A配送]崔永武",      // 客户名
+                "groupId": 149,                 // 客户组ID
+                "groupName": "亚惠",            // 客户组名
+                "id": 16399,            
+                "mainFlg": 0        
+            }
+        ]
+    }
