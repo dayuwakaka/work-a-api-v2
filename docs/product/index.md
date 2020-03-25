@@ -11,7 +11,7 @@
     status："NORMAL" //上架状态 NORMAL 上架 LOCK 下架
     customFlg: 1 定制标志 0 非定制 1 定制
     customFlgMore: 1 定制标志 0 非定制 1 普通定制 2 专属定制
-    @@businessTypeId： 0 // 二级分类ID
+    businessTypeId： 0 // 二级分类ID
     businessTypeCode: -16- 业态编码
     taxCategoryId: 0 // 税收分类ID
     processContent: 1 // 内容是否完善 0 未完善  1 完善
@@ -31,6 +31,8 @@
         "msg": "",
         "data": {
             "buttonPermissionPage": {       // 页面级权限控制
+                @@"exportProductButton": false,   // 是否显示导出产品按钮
+                @@"exportProductUnitButton": false, // 是否显示按规格导出产品按钮
                 "priceColumn": false        // 是否显示价格列
             },
             "buttonPermissions": [
@@ -1044,7 +1046,7 @@
                 "mIcon": "http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png",
                 // 风格入口图片
                 "styleUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190121132417926-4745.png",
-                @@"sort": 2
+                "sort": 2
             }
         ]
     }
@@ -1174,7 +1176,7 @@
             "mIcon": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190121132417926-4745.png",
             // 风格入口图片
             "styleUrl": "http://asae.oss-cn-beijing.aliyuncs.com/ANET20190121132417926-4745.png",
-            @@"sort": 2
+            "sort": 2
         }
     }
   
@@ -2350,3 +2352,25 @@
     	"msg": "",
     	"data": null
     }
+
+
+### CP-231. 产品列表导出
+#### 模块负责人
+    尹洪明
+#### 请求url
+    GET /v2/product/product/export
+#### 请求参数
+    *checkCode      // 下载码
+#### 响应
+    流
+
+
+### CP-232. 产品规格列表导出
+#### 模块负责人
+    尹洪明
+#### 请求url
+    GET /v2/product/product/unit/export
+#### 请求参数
+    *checkCode      // 下载码
+#### 响应
+    流

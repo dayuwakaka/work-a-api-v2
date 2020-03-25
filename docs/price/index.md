@@ -1432,3 +1432,14 @@
     stream
 
 
+### JG-46. 产品PA价格规格列表导出
+#### 模块负责人
+    尹洪明
+#### 请求url
+    GET /v2/price/pa/product/export
+#### 请求参数
+    *checkCode      // 下载码
+#### 响应
+    流
+
+

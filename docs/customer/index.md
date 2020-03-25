@@ -36,6 +36,16 @@
             "dataSums": null,
             "datas": [
                 {
+                    "customerGroup": [      // 客户组
+                        {
+                            "customerId": 797,              // 客户组成员ID
+                            "customerName": "[超A配送]崔永武", // 客户组成员名
+                            "groupId": 149,                 // 客户组ID
+                            "groupName": "亚惠",            // 客户组名
+                            "id": 16399,
+                            "mainFlg": 0
+                        }
+                    ],
                     "accountId": "32856",  //登录帐号ID
                     "accountMobile": "15140067518", //登录帐号
                     "accountState": "",
@@ -1660,8 +1670,25 @@
         "data": null
     }
 
+       
+### KH-82. 客户组更名
+#### 模块负责人
+    尹洪明
+#### 请求
+    PUT /v2/customer/group/name/{groupId}
+#### 参数
+    *groupId    // 客户组ID（实际就是当前客户ID，主客户ID就是客户组ID）
+    {
+        *"groupName": "客户组名"
+    }
+#### 响应 
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
      
-### KH-82. 客户组成员列表
+### KH-83. 客户组成员列表
 #### 模块负责人
     尹洪明
 #### 请求
