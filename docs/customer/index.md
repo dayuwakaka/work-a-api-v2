@@ -24,6 +24,7 @@
     showInvoice：                       // 是否显示发票状态 true 显示 false 不显示
     source:                             // 客户来源 0 自主注册 1 后台添加 2 小程序
     saleArea:                           // 销区ID
+    @@cusGroupKeyword                 // 客户组模糊匹配
 #### 响应
     {
         "code": 100000,
@@ -36,14 +37,15 @@
             "dataSums": null,
             "datas": [
                 {
-                    "customerGroup": [      // 客户组
+                    @@"customerGroup": [                  // 客户所属客户组成员列表--排除当前客户
                         {
-                            "customerId": 797,              // 客户组成员ID
-                            "customerName": "[超A配送]崔永武", // 客户组成员名
+                            "customerId": 799,              // 成员客户ID
+                            "customerName": "福州华莱士",       // 成员客户名
                             "groupId": 149,                 // 客户组ID
-                            "groupName": "亚惠",            // 客户组名
-                            "id": 16399,
-                            "mainFlg": 0
+                            "groupName": "亚惠美食特仑苏",      // 客户组名
+                            "id": 0,
+                            "mainFlg": 0,               // 是否主客户 0 否， 1 是
+                            "memberId": 799
                         }
                     ],
                     "accountId": "32856",  //登录帐号ID
@@ -1653,9 +1655,10 @@
 #### 模块负责人
     尹洪明
 #### 请求
-    PUT /v2/customer/group/{groupId}
+    PUT /v2/customer/group/{groupId}/{customerId}
 #### 参数
-    *groupId    // 客户组ID（实际就是当前客户ID，主客户ID就是客户组ID）
+    *groupId    // 客户组ID
+    *customerId // 当前客户ID
     {
         *"customerId": [ // 客户组成员ID
             797,
@@ -1677,7 +1680,7 @@
 #### 请求
     PUT /v2/customer/group/name/{groupId}
 #### 参数
-    *groupId    // 客户组ID（实际就是当前客户ID，主客户ID就是客户组ID）
+    *groupId    // 客户组ID
     {
         *"groupName": "客户组名"
     }
@@ -1692,21 +1695,24 @@
 #### 模块负责人
     尹洪明
 #### 请求
-    GET /v2/customer/group/{groupId}
+    GET /v2/customer/group/{groupId}/{customerId}
 #### 参数
     *groupId    // 客户组ID
+    *customerId // 客户ID
 #### 响应 
     {
         "code": 100000,
         "msg": "",
         "data": [
             {
-                "customerId": 797,                  // 客户ID
-                "customerName": "[超A配送]崔永武",      // 客户名
-                "groupId": 149,                 // 客户组ID
-                "groupName": "亚惠",            // 客户组名
-                "id": 16399,            
-                "mainFlg": 0        
+                "customerId": 799,          // 客户ID
+                "customerName": "福州华莱士",   // 客户名
+                "groupId": 149,         // 客户组ID
+                "groupName": "亚惠",    // 客户组名
+                "id": 0,
+                "mainFlg": 0,       // 是否主客户 0 否，1 是
+                "memberId": 149
             }
         ]
     }
+> 注：排除当前客户本身
