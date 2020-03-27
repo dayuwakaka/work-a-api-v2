@@ -1717,3 +1717,19 @@
         ]
     }
 > 注：排除当前客户本身
+
+
+### KH-84. 客户组关联删除
+#### 模块负责人
+    尹洪明
+#### 请求
+    DELETE /v2/customer/group/{groupId}/{customerId}
+#### 参数
+    *groupId    // 客户组ID
+    *customerId // 客户ID
+#### 响应 
+    {
+        "code": 100000,
+        "msg": "",
+        "data": null
+    }
