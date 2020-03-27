@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>外部订单管理 | ADoc</title>
+    <meta name="description" content="A团队开发文档">
+    
+    
+    <link rel="preload" href="/work-a-api-v2/assets/css/0.styles.35f149a3.css" as="style"><link rel="preload" href="/work-a-api-v2/assets/js/app.a6722e02.js" as="script"><link rel="preload" href="/work-a-api-v2/assets/js/23.311dc752.js" as="script"><link rel="prefetch" href="/work-a-api-v2/assets/js/10.1a10445b.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/11.42f498c9.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/12.0c967175.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/13.3651904d.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/14.f08b1cf2.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/15.9349f875.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/16.12c6bae3.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/17.adca03bd.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/18.c998838e.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/19.3918a1ff.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/2.a0ea3f6c.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/20.90e7db96.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/21.107ae2fe.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/22.74755e26.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/24.f5a0db0c.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/25.930c2322.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/26.2d5db294.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/27.2fe9193a.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/28.c950b06d.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/29.c08b73a8.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/3.d1df23fe.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/30.03105b2a.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/31.e5254695.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/32.f61b2cc2.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/4.0f0014c9.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/5.95ee4e26.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/6.a8f01348.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/7.88947b66.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/8.0d5a3953.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/9.20882588.js">
+    <link rel="stylesheet" href="/work-a-api-v2/assets/css/0.styles.35f149a3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/work-a-api-v2/" class="home-link router-link-active"><!----> <span class="site-name">ADoc</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/work-a-api-v2/wms/" class="nav-link">WMS仓储</a></div><div class="nav-item"><a href="/work-a-api-v2/ufo/" class="nav-link">金蝶</a></div><div class="nav-item"><a href="/work-a-api-v2/addon/" class="nav-link">插件</a></div><div class="nav-item"><a href="/work-a-api-v2/outer/" class="nav-link router-link-exact-active router-link-active">合作商</a></div><div class="nav-item"><a href="/work-a-api-v2/stockup/" class="nav-link">备货</a></div><div class="nav-item"><a href="/work-a-api-v2/order/" class="nav-link">订单</a></div><div class="nav-item"><a href="/work-a-api-v2/finance/" class="nav-link">财务</a></div><div class="nav-item"><a href="/work-a-api-v2/supplier/" class="nav-link">供应商</a></div><div class="nav-item"><a href="/work-a-api-v2/invoice/" class="nav-link">发票</a></div><div class="nav-item"><a href="/work-a-api-v2/customer/" class="nav-link">客户</a></div><div class="nav-item"><a href="/work-a-api-v2/product/" class="nav-link">产品</a></div><div class="nav-item"><a href="/work-a-api-v2/auth/" class="nav-link">权限</a></div><div class="nav-item"><a href="/work-a-api-v2/contract/" class="nav-link">销售优惠</a></div><div class="nav-item"><a href="/work-a-api-v2/price/" class="nav-link">价格</a></div><div class="nav-item"><a href="/work-a-api-v2/freight/" class="nav-link">运费</a></div><div class="nav-item"><a href="/work-a-api-v2/market/" class="nav-link">营销</a></div><div class="nav-item"><a href="/work-a-api-v2/cookbook/" class="nav-link">菜谱</a></div><div class="nav-item"><a href="/work-a-api-v2/common/" class="nav-link">基础</a></div><div class="nav-item"><a href="/work-a-api-v2/app/" class="nav-link">APP</a></div><div class="nav-item"><a href="/work-a-api-v2/depot/" class="nav-link">库存</a></div><div class="nav-item"><a href="/work-a-api-v2/fee/" class="nav-link">费用</a></div><div class="nav-item"><a href="/work-a-api-v2/notice/" class="nav-link">消息通知（作废）</a></div><div class="nav-item"><a href="/work-a-api-v2/changelog/" class="nav-link">变更</a></div><div class="nav-item"><a href="/work-a-api-v2/feign/" class="nav-link">代理接口</a></div><div class="nav-item"><a href="/work-a-api-v2/other/" class="nav-link">其它</a></div><div class="nav-item"><a href="/work-a-api-v2/sta/" class="nav-link">统计</a></div><div class="nav-item"><a href="/work-a-api-v2/message/" class="nav-link">消息</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/work-a-api-v2/wms/" class="nav-link">WMS仓储</a></div><div class="nav-item"><a href="/work-a-api-v2/ufo/" class="nav-link">金蝶</a></div><div class="nav-item"><a href="/work-a-api-v2/addon/" class="nav-link">插件</a></div><div class="nav-item"><a href="/work-a-api-v2/outer/" class="nav-link router-link-exact-active router-link-active">合作商</a></div><div class="nav-item"><a href="/work-a-api-v2/stockup/" class="nav-link">备货</a></div><div class="nav-item"><a href="/work-a-api-v2/order/" class="nav-link">订单</a></div><div class="nav-item"><a href="/work-a-api-v2/finance/" class="nav-link">财务</a></div><div class="nav-item"><a href="/work-a-api-v2/supplier/" class="nav-link">供应商</a></div><div class="nav-item"><a href="/work-a-api-v2/invoice/" class="nav-link">发票</a></div><div class="nav-item"><a href="/work-a-api-v2/customer/" class="nav-link">客户</a></div><div class="nav-item"><a href="/work-a-api-v2/product/" class="nav-link">产品</a></div><div class="nav-item"><a href="/work-a-api-v2/auth/" class="nav-link">权限</a></div><div class="nav-item"><a href="/work-a-api-v2/contract/" class="nav-link">销售优惠</a></div><div class="nav-item"><a href="/work-a-api-v2/price/" class="nav-link">价格</a></div><div class="nav-item"><a href="/work-a-api-v2/freight/" class="nav-link">运费</a></div><div class="nav-item"><a href="/work-a-api-v2/market/" class="nav-link">营销</a></div><div class="nav-item"><a href="/work-a-api-v2/cookbook/" class="nav-link">菜谱</a></div><div class="nav-item"><a href="/work-a-api-v2/common/" class="nav-link">基础</a></div><div class="nav-item"><a href="/work-a-api-v2/app/" class="nav-link">APP</a></div><div class="nav-item"><a href="/work-a-api-v2/depot/" class="nav-link">库存</a></div><div class="nav-item"><a href="/work-a-api-v2/fee/" class="nav-link">费用</a></div><div class="nav-item"><a href="/work-a-api-v2/notice/" class="nav-link">消息通知（作废）</a></div><div class="nav-item"><a href="/work-a-api-v2/changelog/" class="nav-link">变更</a></div><div class="nav-item"><a href="/work-a-api-v2/feign/" class="nav-link">代理接口</a></div><div class="nav-item"><a href="/work-a-api-v2/other/" class="nav-link">其它</a></div><div class="nav-item"><a href="/work-a-api-v2/sta/" class="nav-link">统计</a></div><div class="nav-item"><a href="/work-a-api-v2/message/" class="nav-link">消息</a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>外部订单管理</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/work-a-api-v2/outer/#外部订单管理" class="sidebar-link">外部订单管理</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/work-a-api-v2/outer/#wbhzs-1-sku关联新增" class="sidebar-link">WBHZS-1. SKU关联新增</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/outer/#wbhzs-2-sku关联编辑" class="sidebar-link">WBHZS-2. SKU关联编辑</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/outer/#wbhzs-3-sku关联删除" class="sidebar-link">WBHZS-3. SKU关联删除</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/outer/#wbhzs-4-sku关联列表" class="sidebar-link">WBHZS-4. SKU关联列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/outer/#wbhzs-5-sku关联详情" class="sidebar-link">WBHZS-5. SKU关联详情</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/outer/#wbhzs-11-客户关联新增" class="sidebar-link">WBHZS-11. 客户关联新增</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/outer/#wbhzs-12-客户关联编辑" class="sidebar-link">WBHZS-12. 客户关联编辑</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/outer/#wbhzs-13-客户关联删除" class="sidebar-link">WBHZS-13. 客户关联删除</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/outer/#wbhzs-14-客户关联列表" class="sidebar-link">WBHZS-14. 客户关联列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/outer/#wbhzs-15-客户关联详情" class="sidebar-link">WBHZS-15. 客户关联详情</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/outer/#wbhzs-16-合作商列表" class="sidebar-link">WBHZS-16. 合作商列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/outer/#wbdd-30-excel定时任务通知a网创建订单" class="sidebar-link">WBDD-30 excel定时任务通知A网创建订单</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/outer/#wbdd-32-美团订单-列表" class="sidebar-link">WBDD-32 美团订单-列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/outer/#wbdd-33-美团订单-错误信息查看" class="sidebar-link">WBDD-33 美团订单-错误信息查看</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/outer/#wbdd-34-美团订单-删除" class="sidebar-link">WBDD-34 美团订单-删除</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/outer/#wbdd-35-美团订单-导出" class="sidebar-link">WBDD-35 美团订单-导出</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/outer/#wbdd-36-美团订单-重新解析" class="sidebar-link">WBDD-36 美团订单-重新解析</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/outer/#wbdd-37-上传阿里云excel信息录入系统" class="sidebar-link">WBDD-37 上传阿里云excel信息录入系统</a></li></ul></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h2 id="外部订单管理"><a href="#外部订单管理" aria-hidden="true" class="header-anchor">#</a> 外部订单管理</h2> <h3 id="wbhzs-1-sku关联新增"><a href="#wbhzs-1-sku关联新增" aria-hidden="true" class="header-anchor">#</a> WBHZS-1. SKU关联新增</h3> <h4 id="模块负责人"><a href="#模块负责人" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求"><a href="#请求" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST    /cooperation/sku
+</code></pre> <h4 id="参数"><a href="#参数" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    *&quot;cooperationId&quot;:&quot;1&quot;,            // 合作商ID
+    *&quot;cooperationSku&quot;:&quot;10034717&quot;,    // 第三方sku
+    *&quot;productSku&quot;:&quot;4806&quot;,            // 我方产品ID
+    *&quot;productunitSku&quot;:&quot;8403&quot;         // 我方产品规格ID
+}
+</code></pre> <h4 id="响应"><a href="#响应" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="wbhzs-2-sku关联编辑"><a href="#wbhzs-2-sku关联编辑" aria-hidden="true" class="header-anchor">#</a> WBHZS-2. SKU关联编辑</h3> <h4 id="模块负责人-2"><a href="#模块负责人-2" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-2"><a href="#请求-2" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT    /cooperation/sku/{id}
+</code></pre> <h4 id="参数-2"><a href="#参数-2" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id     // 关联ID
+{
+    *&quot;cooperationId&quot;:&quot;1&quot;,            // 合作商ID
+    *&quot;cooperationSku&quot;:&quot;10034717&quot;,    // 第三方sku
+    *&quot;productSku&quot;:&quot;4806&quot;,            // 我方产品ID
+    *&quot;productunitSku&quot;:&quot;8403&quot;         // 我方产品规格ID
+}
+</code></pre> <h4 id="响应-2"><a href="#响应-2" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="wbhzs-3-sku关联删除"><a href="#wbhzs-3-sku关联删除" aria-hidden="true" class="header-anchor">#</a> WBHZS-3. SKU关联删除</h3> <h4 id="模块负责人-3"><a href="#模块负责人-3" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-3"><a href="#请求-3" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>DELETE    /cooperation/sku/{id}
+</code></pre> <h4 id="参数-3"><a href="#参数-3" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id     // 关联ID
+</code></pre> <h4 id="响应-3"><a href="#响应-3" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="wbhzs-4-sku关联列表"><a href="#wbhzs-4-sku关联列表" aria-hidden="true" class="header-anchor">#</a> WBHZS-4. SKU关联列表</h3> <h4 id="模块负责人-4"><a href="#模块负责人-4" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-4"><a href="#请求-4" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET     /cooperation/sku
+</code></pre> <h4 id="参数-4"><a href="#参数-4" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>cooperationId           // 合作商ID
+cooperationSkuKeyword   // 第三方sku
+productSkuKeyword       // 我方产品品号、品名
+status                  // 产品状态
+customFlg               // 定制标志 0 普通品 1 普通定制品 2 专属定制品
+pageNo          // 页码
+pageSize        // 页大小
+</code></pre> <h4 id="响应-4"><a href="#响应-4" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissionPage&quot;: {},
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;id&quot;: 2,                // id
+                &quot;cooperationId&quot;: 1,     // 合作商ID
+                &quot;cooperationSku&quot;: &quot;10034718&quot;,   // 第三方sku
+                &quot;productSku&quot;: 4806,         // 我方产品id
+                &quot;productunitSku&quot;: 8403,     // 我方产品规格id
+                &quot;pno&quot;: &quot;M018C&quot;,             // 我方品号
+                &quot;productName&quot;: &quot;去皮巴沙鱼柳(300-400)&quot;,   // 我方品名
+                &quot;guige&quot;: &quot;2kg/袋*4袋&quot;,        // 我方产品规格
+                &quot;status&quot;: &quot;NORMAL&quot;,         // 产品状态
+                &quot;customFlg&quot;: 1,             // 定制状态 0 普通品 1 普通定制品 2 专属定制品
+                &quot;unitId&quot;: 3,                // 产品单位ID
+                &quot;unitName&quot;: &quot;件&quot;,            // 产品单位名
+                &quot;createRole&quot;: 1,
+                &quot;createTime&quot;: &quot;2019-10-12&quot;,  // 创建时间
+                &quot;createUser&quot;: 518,
+                &quot;createUserName&quot;: &quot;孙启萌&quot;,    // 创建人
+                &quot;deleteFlg&quot;: 0
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: 1
+    }
+}
+</code></pre> <h3 id="wbhzs-5-sku关联详情"><a href="#wbhzs-5-sku关联详情" aria-hidden="true" class="header-anchor">#</a> WBHZS-5. SKU关联详情</h3> <h4 id="模块负责人-5"><a href="#模块负责人-5" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-5"><a href="#请求-5" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET     /cooperation/sku/{id}
+</code></pre> <h4 id="参数-5"><a href="#参数-5" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id     // sku id
+</code></pre> <h4 id="响应-5"><a href="#响应-5" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;id&quot;: 2,                // id
+        &quot;cooperationId&quot;: 1,     // 合作商ID
+        &quot;cooperationSku&quot;: &quot;10034718&quot;,   // 第三方sku
+        &quot;productSku&quot;: 4806,         // 我方产品id
+        &quot;productunitSku&quot;: 8403,     // 我方产品规格id
+        &quot;pno&quot;: &quot;M018C&quot;,             // 我方品号
+        &quot;productName&quot;: &quot;去皮巴沙鱼柳(300-400)&quot;,   // 我方品名
+        &quot;guige&quot;: &quot;2kg/袋*4袋&quot;,        // 我方产品规格
+        &quot;status&quot;: &quot;NORMAL&quot;,         // 产品状态
+        &quot;customFlg&quot;: 1,             // 定制状态 0 普通品 1 普通定制品 2 专属定制品
+        &quot;unitId&quot;: 3,                // 产品单位ID
+        &quot;unitName&quot;: &quot;件&quot;,            // 产品单位名
+        &quot;createRole&quot;: 1,
+        &quot;createTime&quot;: &quot;2019-10-12&quot;,  // 创建时间
+        &quot;createUser&quot;: 518,
+        &quot;createUserName&quot;: &quot;孙启萌&quot;,    // 创建人
+        &quot;deleteFlg&quot;: 0
+    }
+}
+</code></pre> <h3 id="wbhzs-11-客户关联新增"><a href="#wbhzs-11-客户关联新增" aria-hidden="true" class="header-anchor">#</a> WBHZS-11. 客户关联新增</h3> <h4 id="模块负责人-6"><a href="#模块负责人-6" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-6"><a href="#请求-6" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST    /cooperation/customer
+</code></pre> <h4 id="参数-6"><a href="#参数-6" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    *&quot;cooperationId&quot;: &quot;1&quot;,              // 合作商ID
+    *&quot;cooperationCustomer&quot;: &quot;上海嘉悦仓1&quot;,   // 关键字
+    *&quot;customerId&quot;: &quot;33304&quot;,         // 我方客户id
+    *&quot;deliveryId&quot;: &quot;53131&quot;          // 我方客户地址ID
+}
+</code></pre> <h4 id="响应-6"><a href="#响应-6" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="wbhzs-12-客户关联编辑"><a href="#wbhzs-12-客户关联编辑" aria-hidden="true" class="header-anchor">#</a> WBHZS-12. 客户关联编辑</h3> <h4 id="模块负责人-7"><a href="#模块负责人-7" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-7"><a href="#请求-7" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT    /cooperation/customer/{id}
+</code></pre> <h4 id="参数-7"><a href="#参数-7" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id     // 关联ID
+{
+    *&quot;cooperationId&quot;: &quot;1&quot;,              // 合作商ID
+    *&quot;cooperationCustomer&quot;: &quot;上海嘉悦仓1&quot;,   // 关键字
+    *&quot;customerId&quot;: &quot;33304&quot;,         // 我方客户id
+    *&quot;deliveryId&quot;: &quot;53131&quot;          // 我方客户地址ID
+}
+</code></pre> <h4 id="响应-7"><a href="#响应-7" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="wbhzs-13-客户关联删除"><a href="#wbhzs-13-客户关联删除" aria-hidden="true" class="header-anchor">#</a> WBHZS-13. 客户关联删除</h3> <h4 id="模块负责人-8"><a href="#模块负责人-8" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-8"><a href="#请求-8" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>DELETE    /cooperation/customer/{id}
+</code></pre> <h4 id="参数-8"><a href="#参数-8" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id     // 关联ID
+</code></pre> <h4 id="响应-8"><a href="#响应-8" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="wbhzs-14-客户关联列表"><a href="#wbhzs-14-客户关联列表" aria-hidden="true" class="header-anchor">#</a> WBHZS-14. 客户关联列表</h3> <h4 id="模块负责人-9"><a href="#模块负责人-9" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-9"><a href="#请求-9" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET     /cooperation/customer
+</code></pre> <h4 id="参数-9"><a href="#参数-9" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>cooperationId           // 合作商ID
+cooperationKeyword   // 关键字
+customerKeyword       // 我方客户名
+pageNo          // 页码
+pageSize        // 页大小
+</code></pre> <h4 id="响应-9"><a href="#响应-9" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissionPage&quot;: {},
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;id&quot;: 1,                // 关联ID
+                &quot;cooperationId&quot;: 1,     // 合作商ID
+                &quot;cooperationCustomer&quot;: &quot;上海嘉悦仓&quot;,     // 关键字
+                &quot;customerId&quot;: 33266,                // 我方客户ID
+                &quot;customerName&quot;: &quot;甘肃海润冷链食品有限责任公司&quot;,       // 我方客户名
+                &quot;customerStatus&quot;: &quot;NORMAL&quot;,      // 客户状态 NORMAL 正常 LOCK 休眠
+                &quot;deliveryId&quot;: 53029,            // 我方客户地址ID
+                &quot;deliveryName&quot;: &quot;甘肃/兰州市/城关区 甘肃省兰州市城关区焦家湾路38号华陇饮料厂&quot;, // 地址名
+                &quot;deliveryDeleteFlg&quot;: 0,         // 收货地址是否删除标记 1 已删除 0 未删除
+                &quot;createRole&quot;: 1,
+                &quot;createTime&quot;: &quot;2019-10-12&quot;, // 创建时间
+                &quot;createUser&quot;: 518,
+                &quot;createUserName&quot;: &quot;孙启萌&quot;, // 创建人
+                &quot;deleteFlg&quot;: 0
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: 1
+    }
+}
+</code></pre> <h3 id="wbhzs-15-客户关联详情"><a href="#wbhzs-15-客户关联详情" aria-hidden="true" class="header-anchor">#</a> WBHZS-15. 客户关联详情</h3> <h4 id="模块负责人-10"><a href="#模块负责人-10" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-10"><a href="#请求-10" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET     /cooperation/customer/{id}
+</code></pre> <h4 id="参数-10"><a href="#参数-10" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id     // 关联 id
+</code></pre> <h4 id="响应-10"><a href="#响应-10" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;id&quot;: 1,                // 关联ID
+        &quot;cooperationId&quot;: 1,     // 合作商ID
+        &quot;cooperationCustomer&quot;: &quot;上海嘉悦仓&quot;,     // 关键字
+        &quot;customerId&quot;: 33266,                // 我方客户ID
+        &quot;customerName&quot;: &quot;甘肃海润冷链食品有限责任公司&quot;,       // 我方客户名
+        &quot;customerStatus&quot;: &quot;NORMAL&quot;,      // 客户状态 NORMAL 正常 LOCK 休眠
+        &quot;deliveryId&quot;: 53029,            // 我方客户地址ID
+        &quot;deliveryName&quot;: &quot;甘肃/兰州市/城关区 甘肃省兰州市城关区焦家湾路38号华陇饮料厂&quot;, // 地址名
+        &quot;deliveryDeleteFlg&quot;: 0,         // 收货地址是否删除标记 1 已删除 0 未删除
+        &quot;createRole&quot;: 1,
+        &quot;createTime&quot;: &quot;2019-10-12&quot;, // 创建时间
+        &quot;createUser&quot;: 518,
+        &quot;createUserName&quot;: &quot;孙启萌&quot;, // 创建人
+        &quot;deleteFlg&quot;: 0
+    }
+}
+</code></pre> <h3 id="wbhzs-16-合作商列表"><a href="#wbhzs-16-合作商列表" aria-hidden="true" class="header-anchor">#</a> WBHZS-16. 合作商列表</h3> <h4 id="模块负责人-11"><a href="#模块负责人-11" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-11"><a href="#请求-11" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET     /cooperation
+</code></pre> <h4 id="参数-11"><a href="#参数-11" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>keyword     // 合作商名过滤
+</code></pre> <h4 id="响应-11"><a href="#响应-11" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 1,            // 合作商ID
+            &quot;name&quot;: &quot;美团&quot;,       // 合作商名
+            &quot;createTime&quot;: &quot;&quot;
+        }
+    ]
+}
+</code></pre> <h3 id="wbdd-30-excel定时任务通知a网创建订单"><a href="#wbdd-30-excel定时任务通知a网创建订单" aria-hidden="true" class="header-anchor">#</a> WBDD-30 excel定时任务通知A网创建订单</h3> <h4 id="模块负责人-12"><a href="#模块负责人-12" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求方式"><a href="#请求方式" aria-hidden="true" class="header-anchor">#</a> 请求方式</h4> <pre><code>POST /v2/outer/saorders
+</code></pre> <h4 id="参数-12"><a href="#参数-12" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+	&quot;outerSaOrder&quot;: { // 订单主体信息
+		&quot;uploadId&quot;: 1, // 上传id
+		&quot;customer&quot;: &quot;上海嘉悦仓&quot;, // 仓库
+		&quot;orderId&quot;: &quot;CG20191014000001&quot;, // 美团单号
+		&quot;createUser&quot;: 1, // 创建人id
+		&quot;createUserName&quot;: &quot;123123123&quot;, // 创建人名称
+		&quot;createRole&quot;: 1, // 创建角色
+		&quot;cooperationId&quot;: 1 // 合作商id
+	},
+	&quot;outerSaOrderPros&quot;: [ // 订单产品信息
+		{
+			&quot;orderId&quot;: &quot;CG20191014000001&quot;, // 美团单号
+			&quot;sku&quot;: &quot;10034716&quot;, // sku
+			&quot;productName&quot;: &quot;香草凤尾虾&quot;, // 产品名称（excel里的产品名称）
+			&quot;skuName&quot;: &quot;10KG/箱&quot;, // 规格名称（excel里的规格名称）
+			&quot;cnt&quot;: 10, // 数量
+			&quot;price&quot;: 165, // 单价
+			&quot;totalprice&quot;: 120 // 产品小计
+		}
+	]
+}
+</code></pre> <h4 id="响应-12"><a href="#响应-12" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="wbdd-32-美团订单-列表"><a href="#wbdd-32-美团订单-列表" aria-hidden="true" class="header-anchor">#</a> WBDD-32 美团订单-列表</h3> <h4 id="模块负责人-13"><a href="#模块负责人-13" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求方式-2"><a href="#请求方式-2" aria-hidden="true" class="header-anchor">#</a> 请求方式</h4> <pre><code>GET /v2/outer/saorders
+</code></pre> <h4 id="参数-13"><a href="#参数-13" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>keyword1 // 第三方订单号、关键字
+keyword2 // 客户名称订单号
+effectStime // 开始日期
+effectEtime // 结束日期
+status // 状态 DONE-解析成功 ERROR-解析失败 INVALID-解析中 DATAERROR-数据匹配失败
+pageNo // 页码
+pageSize // 行数
+</code></pre> <h4 id="响应-13"><a href="#响应-13" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [
+            {
+                &quot;deleteButton&quot;: false, // 删除按钮
+                &quot;reasonButton&quot;: false, // 查看原因按钮
+                &quot;parseButton&quot;: false // 重新解析按钮
+            }
+        ],
+        &quot;datas&quot;: [
+            {
+                &quot;createTime&quot;: &quot;2019-10-14 08:32:11&quot;, // 导入时间
+                &quot;customer&quot;: {
+                    &quot;businessunitName&quot;: &quot;RM&quot;, // 事业部名称
+                    &quot;shortName&quot;: &quot;甘肃海润冷链食品有限责任公司&quot;, // 客户名称
+                },
+                &quot;customerId&quot;: 33266, // 客户id
+                &quot;excelName&quot;: &quot;ceshi20191014&quot;, // 导入文件名
+                &quot;keyword&quot;: &quot;上海嘉悦仓&quot;, // 关键字
+                &quot;orderId&quot;: &quot;CG20191014000001&quot;, // 第三方单号
+                &quot;outerId&quot;: 18, // outerId
+                &quot;refOrderId&quot;: &quot;&quot;, // 订单号
+                &quot;status&quot;: &quot;INVALID&quot;, // 状态 DONE-解析成功 ERROR-解析失败 INVALID-解析中 DATAERROR-数据匹配失败
+                &quot;uploadId&quot;: 1 // uploadId
+            }
+        ],
+        &quot;pageNo&quot;: 1
+    }
+}
+</code></pre> <h3 id="wbdd-33-美团订单-错误信息查看"><a href="#wbdd-33-美团订单-错误信息查看" aria-hidden="true" class="header-anchor">#</a> WBDD-33 美团订单-错误信息查看</h3> <h4 id="模块负责人-14"><a href="#模块负责人-14" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求方式-3"><a href="#请求方式-3" aria-hidden="true" class="header-anchor">#</a> 请求方式</h4> <pre><code>GET /v2/outer/saorders/{uploadId}/errors?outerId=16
+</code></pre> <h4 id="参数-14"><a href="#参数-14" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>uploadId（必传）
+outerId（必传）
+</code></pre> <h4 id="响应-14"><a href="#响应-14" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;baseError&quot;: { // 基础信息错误
+            &quot;errorInfo&quot;: &quot;未检测到有效收获地址&quot;, // 错误类型
+            &quot;keyword&quot;: &quot;上海嘉悦仓&quot;, // 第三方客户名
+            &quot;orderId&quot;: &quot;CG20191014000001&quot; // 第三方单号
+        },
+        &quot;skuErrors&quot;: [  // sku错误
+            {
+                &quot;cnt&quot;: 10, // 采购数量
+                &quot;errorInfo&quot;: &quot;产品小计不一致&quot;, // 错误类型
+                &quot;id&quot;: 15,
+                &quot;matchPrice&quot;: 165, // 订单价格
+                &quot;matchPriceType&quot;: &quot;A&quot;, // 订单价格类别 T-特价 S-签约价 Q -区域价 A-A价 P-P价
+                &quot;matchProductSku&quot;: 4807,
+                &quot;matchProductunitSku&quot;: 8405,
+                &quot;orderId&quot;: &quot;CG20191014000001&quot;,
+                &quot;outerOrderId&quot;: 18,
+                &quot;price&quot;: 165, // 第三方采购价
+                &quot;productName&quot;: &quot;香草凤尾虾&quot;, // 第三方货品名称
+                &quot;productUnit&quot;: { // A网产品信息
+                    &quot;guige&quot;: &quot;510g/盒*4盒&quot;, // 规格
+                    &quot;product&quot;: {
+                        &quot;mainImg&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/ANET20190423150821939-6818.jpg&quot;, // 图片
+                        &quot;name&quot;: &quot;黄金贝（粉丝扇贝） &quot;, // 品名
+                        &quot;pno&quot;: &quot;A687&quot;, // 品号
+                    },
+                    &quot;unit&quot;: &quot;件&quot;, // 单位
+                },
+                &quot;sku&quot;: &quot;10034716&quot;, // 第三方sku编号
+                &quot;skuName&quot;: &quot;10KG/箱&quot;, // 第三方货品规格
+                &quot;status&quot;: &quot;ERROR&quot;,
+                &quot;totalprice&quot;: 120 // 供货价价格小计
+            }
+        ]
+    }
+}
+</code></pre> <h3 id="wbdd-34-美团订单-删除"><a href="#wbdd-34-美团订单-删除" aria-hidden="true" class="header-anchor">#</a> WBDD-34 美团订单-删除</h3> <h4 id="模块负责人-15"><a href="#模块负责人-15" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐 
+</code></pre> <h4 id="请求方式-4"><a href="#请求方式-4" aria-hidden="true" class="header-anchor">#</a> 请求方式</h4> <pre><code>POST /v2/outer/saorders/batch/del
+</code></pre> <h4 id="参数-15"><a href="#参数-15" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>JSON body:
+{
+    uploadIds: [1, 2, 3, 4, 5] // uploadId集合
+}
+</code></pre> <h4 id="响应-15"><a href="#响应-15" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="wbdd-35-美团订单-导出"><a href="#wbdd-35-美团订单-导出" aria-hidden="true" class="header-anchor">#</a> WBDD-35 美团订单-导出</h3> <h4 id="模块负责人-16"><a href="#模块负责人-16" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求方式-5"><a href="#请求方式-5" aria-hidden="true" class="header-anchor">#</a> 请求方式</h4> <pre><code>GET /v2/outer/saorders/export?startDate=2019-10-01&amp;checkCode=2802
+</code></pre> <h4 id="参数-16"><a href="#参数-16" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>startDate // 开始时间 yyyy-MM-dd HH:mm:ss
+endDate // 结束时间 yyyy-MM-dd HH:mm:ss
+checkCode // 下载码
+</code></pre> <h4 id="响应-16"><a href="#响应-16" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>stream
+</code></pre> <h3 id="wbdd-36-美团订单-重新解析"><a href="#wbdd-36-美团订单-重新解析" aria-hidden="true" class="header-anchor">#</a> WBDD-36 美团订单-重新解析</h3> <h4 id="模块负责人-17"><a href="#模块负责人-17" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求方式-6"><a href="#请求方式-6" aria-hidden="true" class="header-anchor">#</a> 请求方式</h4> <pre><code>POST /v2/outer/saorders/{outerId}
+</code></pre> <h4 id="参数-17"><a href="#参数-17" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>outerId
+</code></pre> <h4 id="响应-17"><a href="#响应-17" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="wbdd-37-上传阿里云excel信息录入系统"><a href="#wbdd-37-上传阿里云excel信息录入系统" aria-hidden="true" class="header-anchor">#</a> WBDD-37 上传阿里云excel信息录入系统</h3> <h4 id="模块负责人-18"><a href="#模块负责人-18" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求方式-7"><a href="#请求方式-7" aria-hidden="true" class="header-anchor">#</a> 请求方式</h4> <pre><code>POST /v2/outer/cooperationUpload
+</code></pre> <h4 id="参数-18"><a href="#参数-18" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+&quot;aliyunUrlList&quot;:[&quot;http://asae-e.oss-cn-beijing.aliyuncs.com/上海1-亚洲渔港股份有限公司_20191008_CG201910080000002005599.xls&quot;],  //excel地址信息集合
+&quot;fileNameList&quot;:[&quot;1&quot;]                                                                                                          //excel文件名信息集合  
+}
+</code></pre> <h4 id="响应-18"><a href="#响应-18" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{&quot;code&quot;:100000,&quot;msg&quot;:&quot;&quot;,&quot;data&quot;:null}
+</code></pre></div> <div class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">11/14/2019, 9:27:12 AM</span></div></div> <!----> </div> <!----></div></div>
+    <script src="/work-a-api-v2/assets/js/app.a6722e02.js" defer></script><script src="/work-a-api-v2/assets/js/23.311dc752.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>权限接口 | ADoc</title>
+    <meta name="description" content="A团队开发文档">
+    
+    
+    <link rel="preload" href="/work-a-api-v2/assets/css/0.styles.35f149a3.css" as="style"><link rel="preload" href="/work-a-api-v2/assets/js/app.a6722e02.js" as="script"><link rel="preload" href="/work-a-api-v2/assets/js/6.a8f01348.js" as="script"><link rel="prefetch" href="/work-a-api-v2/assets/js/10.1a10445b.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/11.42f498c9.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/12.0c967175.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/13.3651904d.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/14.f08b1cf2.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/15.9349f875.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/16.12c6bae3.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/17.adca03bd.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/18.c998838e.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/19.3918a1ff.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/2.a0ea3f6c.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/20.90e7db96.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/21.107ae2fe.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/22.74755e26.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/23.311dc752.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/24.f5a0db0c.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/25.930c2322.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/26.2d5db294.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/27.2fe9193a.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/28.c950b06d.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/29.c08b73a8.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/3.d1df23fe.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/30.03105b2a.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/31.e5254695.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/32.f61b2cc2.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/4.0f0014c9.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/5.95ee4e26.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/7.88947b66.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/8.0d5a3953.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/9.20882588.js">
+    <link rel="stylesheet" href="/work-a-api-v2/assets/css/0.styles.35f149a3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/work-a-api-v2/" class="home-link router-link-active"><!----> <span class="site-name">ADoc</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/work-a-api-v2/wms/" class="nav-link">WMS仓储</a></div><div class="nav-item"><a href="/work-a-api-v2/ufo/" class="nav-link">金蝶</a></div><div class="nav-item"><a href="/work-a-api-v2/addon/" class="nav-link">插件</a></div><div class="nav-item"><a href="/work-a-api-v2/outer/" class="nav-link">合作商</a></div><div class="nav-item"><a href="/work-a-api-v2/stockup/" class="nav-link">备货</a></div><div class="nav-item"><a href="/work-a-api-v2/order/" class="nav-link">订单</a></div><div class="nav-item"><a href="/work-a-api-v2/finance/" class="nav-link">财务</a></div><div class="nav-item"><a href="/work-a-api-v2/supplier/" class="nav-link">供应商</a></div><div class="nav-item"><a href="/work-a-api-v2/invoice/" class="nav-link">发票</a></div><div class="nav-item"><a href="/work-a-api-v2/customer/" class="nav-link">客户</a></div><div class="nav-item"><a href="/work-a-api-v2/product/" class="nav-link">产品</a></div><div class="nav-item"><a href="/work-a-api-v2/auth/" class="nav-link router-link-exact-active router-link-active">权限</a></div><div class="nav-item"><a href="/work-a-api-v2/contract/" class="nav-link">销售优惠</a></div><div class="nav-item"><a href="/work-a-api-v2/price/" class="nav-link">价格</a></div><div class="nav-item"><a href="/work-a-api-v2/freight/" class="nav-link">运费</a></div><div class="nav-item"><a href="/work-a-api-v2/market/" class="nav-link">营销</a></div><div class="nav-item"><a href="/work-a-api-v2/cookbook/" class="nav-link">菜谱</a></div><div class="nav-item"><a href="/work-a-api-v2/common/" class="nav-link">基础</a></div><div class="nav-item"><a href="/work-a-api-v2/app/" class="nav-link">APP</a></div><div class="nav-item"><a href="/work-a-api-v2/depot/" class="nav-link">库存</a></div><div class="nav-item"><a href="/work-a-api-v2/fee/" class="nav-link">费用</a></div><div class="nav-item"><a href="/work-a-api-v2/notice/" class="nav-link">消息通知（作废）</a></div><div class="nav-item"><a href="/work-a-api-v2/changelog/" class="nav-link">变更</a></div><div class="nav-item"><a href="/work-a-api-v2/feign/" class="nav-link">代理接口</a></div><div class="nav-item"><a href="/work-a-api-v2/other/" class="nav-link">其它</a></div><div class="nav-item"><a href="/work-a-api-v2/sta/" class="nav-link">统计</a></div><div class="nav-item"><a href="/work-a-api-v2/message/" class="nav-link">消息</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/work-a-api-v2/wms/" class="nav-link">WMS仓储</a></div><div class="nav-item"><a href="/work-a-api-v2/ufo/" class="nav-link">金蝶</a></div><div class="nav-item"><a href="/work-a-api-v2/addon/" class="nav-link">插件</a></div><div class="nav-item"><a href="/work-a-api-v2/outer/" class="nav-link">合作商</a></div><div class="nav-item"><a href="/work-a-api-v2/stockup/" class="nav-link">备货</a></div><div class="nav-item"><a href="/work-a-api-v2/order/" class="nav-link">订单</a></div><div class="nav-item"><a href="/work-a-api-v2/finance/" class="nav-link">财务</a></div><div class="nav-item"><a href="/work-a-api-v2/supplier/" class="nav-link">供应商</a></div><div class="nav-item"><a href="/work-a-api-v2/invoice/" class="nav-link">发票</a></div><div class="nav-item"><a href="/work-a-api-v2/customer/" class="nav-link">客户</a></div><div class="nav-item"><a href="/work-a-api-v2/product/" class="nav-link">产品</a></div><div class="nav-item"><a href="/work-a-api-v2/auth/" class="nav-link router-link-exact-active router-link-active">权限</a></div><div class="nav-item"><a href="/work-a-api-v2/contract/" class="nav-link">销售优惠</a></div><div class="nav-item"><a href="/work-a-api-v2/price/" class="nav-link">价格</a></div><div class="nav-item"><a href="/work-a-api-v2/freight/" class="nav-link">运费</a></div><div class="nav-item"><a href="/work-a-api-v2/market/" class="nav-link">营销</a></div><div class="nav-item"><a href="/work-a-api-v2/cookbook/" class="nav-link">菜谱</a></div><div class="nav-item"><a href="/work-a-api-v2/common/" class="nav-link">基础</a></div><div class="nav-item"><a href="/work-a-api-v2/app/" class="nav-link">APP</a></div><div class="nav-item"><a href="/work-a-api-v2/depot/" class="nav-link">库存</a></div><div class="nav-item"><a href="/work-a-api-v2/fee/" class="nav-link">费用</a></div><div class="nav-item"><a href="/work-a-api-v2/notice/" class="nav-link">消息通知（作废）</a></div><div class="nav-item"><a href="/work-a-api-v2/changelog/" class="nav-link">变更</a></div><div class="nav-item"><a href="/work-a-api-v2/feign/" class="nav-link">代理接口</a></div><div class="nav-item"><a href="/work-a-api-v2/other/" class="nav-link">其它</a></div><div class="nav-item"><a href="/work-a-api-v2/sta/" class="nav-link">统计</a></div><div class="nav-item"><a href="/work-a-api-v2/message/" class="nav-link">消息</a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>权限接口</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/work-a-api-v2/auth/#权限接口" class="sidebar-link">权限接口</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-1-开户" class="sidebar-link">QX-1. 开户</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-2-锁定、解锁" class="sidebar-link">QX-2. 锁定、解锁</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-3-用户权限列表" class="sidebar-link">QX-3. 用户权限列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-4-重置密码" class="sidebar-link">QX-4. 重置密码</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-5-用户分配功能权限" class="sidebar-link">QX-5. 用户分配功能权限</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-6-用户绑定微信数量上限调整" class="sidebar-link">QX-6. 用户绑定微信数量上限调整</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-7-用户分配数据权限" class="sidebar-link">QX-7. 用户分配数据权限</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-8-用户已绑定微信列表" class="sidebar-link">QX-8. 用户已绑定微信列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-9-功能权限新增" class="sidebar-link">QX-9. 功能权限新增</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-10-功能权限修改" class="sidebar-link">QX-10. 功能权限修改</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-11-功能权限的锁定、解锁" class="sidebar-link">QX-11. 功能权限的锁定、解锁</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-12-功能权限列表" class="sidebar-link">QX-12. 功能权限列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-13-功能权限详情" class="sidebar-link">QX-13. 功能权限详情</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-14-数据权限新增" class="sidebar-link">QX-14. 数据权限新增</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-15-数据权限修改" class="sidebar-link">QX-15. 数据权限修改</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-16-数据权限删除" class="sidebar-link">QX-16. 数据权限删除</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-17-数据权限列表" class="sidebar-link">QX-17. 数据权限列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-18-数据权限详情" class="sidebar-link">QX-18. 数据权限详情</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-19-菜单新增" class="sidebar-link">QX-19. 菜单新增</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-20-菜单修改" class="sidebar-link">QX-20. 菜单修改</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-21-菜单显示、隐藏" class="sidebar-link">QX-21. 菜单显示、隐藏</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-22-菜单排序" class="sidebar-link">QX-22. 菜单排序</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-23-菜单删除" class="sidebar-link">QX-23. 菜单删除</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-24-菜单列表" class="sidebar-link">QX-24. 菜单列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-25-菜单详情" class="sidebar-link">QX-25. 菜单详情</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-26-操作日志列表" class="sidebar-link">QX-26. 操作日志列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-27-不分页的功能权限列表" class="sidebar-link">QX-27. 不分页的功能权限列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-31-不分页的数据权限列表" class="sidebar-link">QX-31. 不分页的数据权限列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-32-收款人、复核、开票人" class="sidebar-link">QX-32. 收款人、复核、开票人</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-41-关注列表" class="sidebar-link">QX-41. 关注列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-42-被关注列表" class="sidebar-link">QX-42. 被关注列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-43-添加关注" class="sidebar-link">QX-43. 添加关注</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-44-通过关注" class="sidebar-link">QX-44. 通过关注</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-45-拒绝关注" class="sidebar-link">QX-45. 拒绝关注</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-46-作废关注" class="sidebar-link">QX-46. 作废关注</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-47-角色列表" class="sidebar-link">QX-47. 角色列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-48-提供当前ss拥有的，关注ss所拥有的客户id集合" class="sidebar-link">QX-48. 提供当前SS拥有的，关注SS所拥有的客户ID集合</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-100-微信code解析" class="sidebar-link">QX-100. 微信code解析</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-101-微信refreshtoken" class="sidebar-link">QX-101. 微信refreshToken</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-102-微信扫码登录" class="sidebar-link">QX-102. 微信扫码登录</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-103-微信绑定登录" class="sidebar-link">QX-103. 微信绑定登录</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-104-微信解绑-作废" class="sidebar-link">QX-104. 微信解绑(作废)</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-105-微信解绑" class="sidebar-link">QX-105. 微信解绑</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-150-权限切换" class="sidebar-link">QX-150. 权限切换</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-151-用户菜单权限获取" class="sidebar-link">QX-151. 用户菜单权限获取</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-152-登录用户信息获取" class="sidebar-link">QX-152. 登录用户信息获取</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-153-角色权限列表获取-ss-sr" class="sidebar-link">QX-153. 角色权限列表获取(SS\SR)</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-154-登录走个小后门" class="sidebar-link">QX-154. 登录走个小后门</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-155-获取业务最新消息" class="sidebar-link">QX-155. 获取业务最新消息</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/auth/#qx-156-添加外部用户" class="sidebar-link">QX-156. 添加外部用户</a></li></ul></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h2 id="权限接口"><a href="#权限接口" aria-hidden="true" class="header-anchor">#</a> 权限接口</h2> <h3 id="qx-1-开户"><a href="#qx-1-开户" aria-hidden="true" class="header-anchor">#</a> QX-1. 开户</h3> <h4 id="模块负责人"><a href="#模块负责人" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求"><a href="#请求" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST    /v2/userpower
+</code></pre> <h4 id="参数"><a href="#参数" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+	&quot;id&quot;:517,               // * 用户id
+	&quot;workno&quot;:&quot;0517&quot;,        // * 工号
+	&quot;mobile&quot;:&quot;18666664848&quot; // * 手机号
+}
+</code></pre> <h4 id="响应"><a href="#响应" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="qx-2-锁定、解锁"><a href="#qx-2-锁定、解锁" aria-hidden="true" class="header-anchor">#</a> QX-2. 锁定、解锁</h3> <h4 id="模块负责人-2"><a href="#模块负责人-2" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-2"><a href="#请求-2" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT     /v2/userpower/{id}
+</code></pre> <h4 id="参数-2"><a href="#参数-2" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id // 用户id
+{
+    *&quot;status&quot;: &quot;lock&quot; // lock 锁定 normal 解锁
+}
+</code></pre> <h4 id="响应-2"><a href="#响应-2" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="qx-3-用户权限列表"><a href="#qx-3-用户权限列表" aria-hidden="true" class="header-anchor">#</a> QX-3. 用户权限列表</h3> <h4 id="模块负责人-3"><a href="#模块负责人-3" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-3"><a href="#请求-3" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET     /v2/userpower
+</code></pre> <h4 id="参数-3"><a href="#参数-3" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>keyword                 // 用户名/手机号
+status                  // 状态  NORMAL 正常 LOCK 锁定 NOACCOUNT 未开户
+gid                     // 功能权限编号
+buttonPermissionFlg     // 0 不查询按钮权限 1 查询
+pageNo              // 页码
+pageSize            // 页条数
+</code></pre> <h4 id="响应-3"><a href="#响应-3" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissionPage&quot;: {},
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;authDataPowers&quot;: [        // 数据权限列表
+                    {
+                        &quot;gid&quot;: 0,
+                        &quot;gname&quot;: &quot;&quot;,
+                        &quot;rid&quot;: 1,           // 数据权限ID
+                        &quot;rname&quot;: &quot;管理员&quot;,     // 数据权限名
+                        &quot;uid&quot;: 239
+                    }
+                ],
+                &quot;authMenuPowers&quot;: [         // 功能权限列表
+                    {
+                        &quot;createTime&quot;: &quot;&quot;,
+                        &quot;gid&quot;: 68,          // 功能权限ID
+                        &quot;id&quot;: 71,
+                        &quot;isAuto&quot;: 0,
+                        &quot;menuIds&quot;: null,
+                        &quot;name&quot;: &quot;测试&quot;,       // 功能权限名
+                        &quot;remark&quot;: &quot;&quot;,
+                        &quot;status&quot;: &quot;&quot;,
+                        &quot;sys&quot;: &quot;a&quot;,
+                        &quot;uid&quot;: 239
+                    }
+                ],
+                &quot;bindWxNumCurrent&quot;: 0,      // 当前绑定的微信数量
+                &quot;bindWxNumLimit&quot;: 1,        // 可以绑定微信的最大数量
+                &quot;fullname&quot;: &quot;刘健&quot;,           // 用户名
+                &quot;id&quot;: 239,                  // 用户id
+                &quot;isOpen&quot;: &quot;1&quot;,              // 是否已开户  1 已开户  0 未开户
+                &quot;mobile&quot;: &quot;18611318343&quot;,        // 用户手机号
+                &quot;status&quot;: &quot;NORMAL&quot;,   // 用户状态 NORMAL 正常  LOCK 锁定
+                &quot;workno&quot;: &quot;0248&quot;            // 用户工号
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: 1
+    }
+}
+</code></pre> <h3 id="qx-4-重置密码"><a href="#qx-4-重置密码" aria-hidden="true" class="header-anchor">#</a> QX-4. 重置密码</h3> <h4 id="模块负责人-4"><a href="#模块负责人-4" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-4"><a href="#请求-4" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT     /v2/userpower/reset/{id}
+</code></pre> <h4 id="参数-4"><a href="#参数-4" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>id // * 用户id
+</code></pre> <h4 id="响应-4"><a href="#响应-4" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="qx-5-用户分配功能权限"><a href="#qx-5-用户分配功能权限" aria-hidden="true" class="header-anchor">#</a> QX-5. 用户分配功能权限</h3> <h4 id="模块负责人-5"><a href="#模块负责人-5" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-5"><a href="#请求-5" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST    /v2/userpower/menupower
+</code></pre> <h4 id="参数-5"><a href="#参数-5" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    &quot;uid&quot;:101,  // * 用户id
+    &quot;gids&quot;:[82, 83]    // * 功能权限id列表
+}
+</code></pre> <h4 id="响应-5"><a href="#响应-5" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="qx-6-用户绑定微信数量上限调整"><a href="#qx-6-用户绑定微信数量上限调整" aria-hidden="true" class="header-anchor">#</a> QX-6. 用户绑定微信数量上限调整</h3> <h4 id="模块负责人-6"><a href="#模块负责人-6" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-6"><a href="#请求-6" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT    /bindwx/limit/{id}
+</code></pre> <h4 id="参数-6"><a href="#参数-6" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id     // 用户ID
+{
+    *&quot;limitNum&quot;:3,  // 上限数量 
+}
+</code></pre> <h4 id="响应-6"><a href="#响应-6" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="qx-7-用户分配数据权限"><a href="#qx-7-用户分配数据权限" aria-hidden="true" class="header-anchor">#</a> QX-7. 用户分配数据权限</h3> <h4 id="模块负责人-7"><a href="#模块负责人-7" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-7"><a href="#请求-7" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST    /v2/userpower/datapower
+</code></pre> <h4 id="参数-7"><a href="#参数-7" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    &quot;uid&quot;:101, // * 用户id
+    &quot;rids&quot;:[82, 83]    // * 数据权限id列表
+}
+</code></pre> <h4 id="响应-7"><a href="#响应-7" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="qx-8-用户已绑定微信列表"><a href="#qx-8-用户已绑定微信列表" aria-hidden="true" class="header-anchor">#</a> QX-8. 用户已绑定微信列表</h3> <h4 id="模块负责人-8"><a href="#模块负责人-8" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-8"><a href="#请求-8" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET    /v2/userpower/bindwx
+</code></pre> <h4 id="参数-8"><a href="#参数-8" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*workno     // 工号
+</code></pre> <h4 id="响应-8"><a href="#响应-8" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;createTime&quot;: &quot;2019-05-17 13:53:34.0&quot;,         // 绑定时间
+            &quot;deleteFlg&quot;: 0,
+            &quot;id&quot;: 7,
+            &quot;workno&quot;: &quot;0383&quot;,
+            &quot;wxHeadUrl&quot;: &quot;http://thirdwx.qlogo.cn/mmopen&quot;,  // 微信头像
+            &quot;wxName&quot;: &quot;莫凡&quot;,                             // 微信昵称
+            &quot;wxOpenId&quot;: &quot;ozGRk1ttO6v_zQOHljI_SUHS8s4k&quot;
+        }
+    ]
+}
+</code></pre> <h3 id="qx-9-功能权限新增"><a href="#qx-9-功能权限新增" aria-hidden="true" class="header-anchor">#</a> QX-9. 功能权限新增</h3> <h4 id="模块负责人-9"><a href="#模块负责人-9" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-9"><a href="#请求-9" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /v2/menupower
+</code></pre> <h4 id="参数-9"><a href="#参数-9" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+	&quot;name&quot;:&quot;测试权限&quot;,  // * 权限名称
+	&quot;isAuto&quot;:1,         // * 0 非自动生成编号 1 自动生成编号
+	&quot;gid&quot;: 250,         // 权限编号，isAuto=0时，必选
+	&quot;remark&quot;:&quot;备注&quot;,    // 备注
+	&quot;menuIds&quot;:[3,5,11]  // 菜单id列表
+}
+</code></pre> <h4 id="响应-9"><a href="#响应-9" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="qx-10-功能权限修改"><a href="#qx-10-功能权限修改" aria-hidden="true" class="header-anchor">#</a> QX-10. 功能权限修改</h3> <h4 id="模块负责人-10"><a href="#模块负责人-10" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-10"><a href="#请求-10" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/menupower/{id}
+</code></pre> <h4 id="参数-10"><a href="#参数-10" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>id // * 权限id
+{
+	&quot;name&quot;:&quot;测试权限&quot;,  //  权限名称
+	&quot;remark&quot;:&quot;备注&quot;,    // 备注
+	&quot;gid&quot;: 250,         // * 权限编号
+	&quot;menuIds&quot;:[3,5,11]  // 菜单id列表
+}
+</code></pre> <h4 id="响应-10"><a href="#响应-10" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="qx-11-功能权限的锁定、解锁"><a href="#qx-11-功能权限的锁定、解锁" aria-hidden="true" class="header-anchor">#</a> QX-11. 功能权限的锁定、解锁</h3> <h4 id="模块负责人-11"><a href="#模块负责人-11" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-11"><a href="#请求-11" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/menupower/status/{id}
+</code></pre> <h4 id="参数-11"><a href="#参数-11" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>id  // * 权限id
+{
+    &quot;status&quot;:&quot;lock&quot; // * lock 锁定 normal 解锁
+}
+</code></pre> <h4 id="响应-11"><a href="#响应-11" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="qx-12-功能权限列表"><a href="#qx-12-功能权限列表" aria-hidden="true" class="header-anchor">#</a> QX-12. 功能权限列表</h3> <h4 id="模块负责人-12"><a href="#模块负责人-12" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-12"><a href="#请求-12" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/menupower
+</code></pre> <h4 id="参数-12"><a href="#参数-12" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>keyword // 权限编号/权限名称
+status  // 状态 lock 锁定 normal 解锁
+buttonPermissionFlg // 0 不查询按钮权限 1 查询
+pageNo  // 页码
+pageSize    // 页条数
+</code></pre> <h4 id="响应-12"><a href="#响应-12" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [
+            {
+                &quot;lockButton&quot;: false,    // 锁定
+                &quot;unlockButton&quot;: true,   // 解锁
+                &quot;editButton&quot;: true,     // 编辑
+            }
+        ],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;createTime&quot;: &quot;&quot;,
+                &quot;gid&quot;: 1112,    // 权限编号
+                &quot;id&quot;: 37,   // 权限id
+                &quot;isAuto&quot;: 0,
+                &quot;menuIds&quot;: null,
+                &quot;name&quot;: &quot;测试权限新增0&quot;,    // 权限名称
+                &quot;remark&quot;: &quot;&quot;,
+                &quot;status&quot;: &quot;lock&quot;,   // lock 锁定 normal 正常
+                &quot;sys&quot;: &quot;a&quot;,
+                &quot;uid&quot;: 0
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: 1
+    }
+}
+</code></pre> <h3 id="qx-13-功能权限详情"><a href="#qx-13-功能权限详情" aria-hidden="true" class="header-anchor">#</a> QX-13. 功能权限详情</h3> <h4 id="模块负责人-13"><a href="#模块负责人-13" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-13"><a href="#请求-13" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/menupower/detail
+</code></pre> <h4 id="参数-13"><a href="#参数-13" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>id  // * 权限id
+</code></pre> <h4 id="响应-13"><a href="#响应-13" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;createTime&quot;: &quot;&quot;,
+        &quot;gid&quot;: 42,  // 功能权限编号
+        &quot;id&quot;: 18,
+        &quot;isAuto&quot;: 0,
+        &quot;menuIds&quot;: [    // 已绑定菜单列表
+            37,
+            55,
+            60
+        ],
+        &quot;name&quot;: &quot;客服&quot;, // 功能权限名称
+        &quot;remark&quot;: &quot;&quot;,   // 备注
+        &quot;status&quot;: &quot;normal&quot;,
+        &quot;sys&quot;: &quot;a&quot;,
+        &quot;uid&quot;: 0
+    }
+}
+</code></pre> <h3 id="qx-14-数据权限新增"><a href="#qx-14-数据权限新增" aria-hidden="true" class="header-anchor">#</a> QX-14. 数据权限新增</h3> <h4 id="对接负责人"><a href="#对接负责人" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-14"><a href="#模块负责人-14" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-14"><a href="#请求-14" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /v2/datapower
+</code></pre> <h4 id="参数-14"><a href="#参数-14" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    &quot;name&quot;:&quot;陆贞逸&quot;,  // * 数据权限名称
+    &quot;gid&quot;:42    // * 功能权限编号
+}
+</code></pre> <h4 id="响应-14"><a href="#响应-14" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="qx-15-数据权限修改"><a href="#qx-15-数据权限修改" aria-hidden="true" class="header-anchor">#</a> QX-15. 数据权限修改</h3> <h4 id="模块负责人-15"><a href="#模块负责人-15" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-15"><a href="#请求-15" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/datapower/{id}
+</code></pre> <h4 id="参数-15"><a href="#参数-15" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>id // * 数据权限id
+{
+    &quot;name&quot;:&quot;陆贞逸&quot;,    // 数据权限名称
+    &quot;gid&quot;:42    // 功能权限编号
+}
+</code></pre> <h4 id="响应-15"><a href="#响应-15" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="qx-16-数据权限删除"><a href="#qx-16-数据权限删除" aria-hidden="true" class="header-anchor">#</a> QX-16. 数据权限删除</h3> <h4 id="模块负责人-16"><a href="#模块负责人-16" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-16"><a href="#请求-16" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>DELETE  /v2/datapower/{id}
+</code></pre> <h4 id="参数-16"><a href="#参数-16" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>id // * 数据权限id
+</code></pre> <h4 id="响应-16"><a href="#响应-16" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="qx-17-数据权限列表"><a href="#qx-17-数据权限列表" aria-hidden="true" class="header-anchor">#</a> QX-17. 数据权限列表</h3> <h4 id="模块负责人-17"><a href="#模块负责人-17" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-17"><a href="#请求-17" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/datapower
+</code></pre> <h4 id="参数-17"><a href="#参数-17" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>keyword // 权限编号/权限名称
+pageNo  // 页码
+pageSize    // 页条
+</code></pre> <h4 id="响应-17"><a href="#响应-17" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: null,
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;gid&quot;: 32,              // 功能权限编号
+                &quot;gname&quot;: &quot;销售会计&quot;,    // 功能权限名称
+                &quot;rid&quot;: 29001,           // 数据权限编号
+                &quot;rname&quot;: &quot;张晓丹&quot;,      // 数据权限名称
+                &quot;uid&quot;: 0
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: 1
+    }
+}
+</code></pre> <h3 id="qx-18-数据权限详情"><a href="#qx-18-数据权限详情" aria-hidden="true" class="header-anchor">#</a> QX-18. 数据权限详情</h3> <h4 id="模块负责人-18"><a href="#模块负责人-18" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-18"><a href="#请求-18" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/datapower/detail
+</code></pre> <h4 id="参数-18"><a href="#参数-18" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>rid // * 数据权限编号
+</code></pre> <h4 id="响应-18"><a href="#响应-18" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;gid&quot;: 32,              // 功能权限编号
+        &quot;gname&quot;: &quot;销售会计&quot;,    // 功能权限名称
+        &quot;rid&quot;: 29001,           // 数据权限编号
+        &quot;rname&quot;: &quot;张晓丹&quot;,      // 数据权限名称
+        &quot;uid&quot;: 0
+    }
+}
+</code></pre> <h3 id="qx-19-菜单新增"><a href="#qx-19-菜单新增" aria-hidden="true" class="header-anchor">#</a> QX-19. 菜单新增</h3> <h4 id="模块负责人-19"><a href="#模块负责人-19" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-19"><a href="#请求-19" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST    /v2/menu
+</code></pre> <h4 id="参数-19"><a href="#参数-19" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    &quot;name&quot;:&quot;商品统计&quot;,  // * 菜单名称
+    &quot;level&quot;:1,          // * 菜单等级
+    &quot;ctrl&quot;:&quot;product&quot;,   // * 一级路由
+    &quot;action&quot;:&quot;store&quot;,   // 二级路由，level=2时，必选
+    &quot;parentId&quot;:0,       // 上级菜单id,level=2时，必选
+    &quot;icon&quot;:&quot;aware-syn&quot;  // 一级菜单图标，level=1时，必选
+}
+</code></pre> <h4 id="响应-19"><a href="#响应-19" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="qx-20-菜单修改"><a href="#qx-20-菜单修改" aria-hidden="true" class="header-anchor">#</a> QX-20. 菜单修改</h3> <h4 id="模块负责人-20"><a href="#模块负责人-20" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-20"><a href="#请求-20" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT     /v2/menu/{id}
+</code></pre> <h4 id="参数-20"><a href="#参数-20" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>id  // * 菜单id
+{
+    &quot;name&quot;:&quot;商品统计&quot;,  // * 菜单名称
+    &quot;level&quot;:1,          // * 菜单等级
+    &quot;ctrl&quot;:&quot;product&quot;,   // * 一级路由
+    &quot;action&quot;:&quot;store&quot;,   // 二级路由，level=2时，必选
+    &quot;parentId&quot;:0,       // 上级菜单id,level=2时，必选
+    &quot;icon&quot;:&quot;aware-syn&quot; // 一级菜单图标，level=1时，必选
+}
+</code></pre> <h4 id="响应-20"><a href="#响应-20" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;操作成功&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="qx-21-菜单显示、隐藏"><a href="#qx-21-菜单显示、隐藏" aria-hidden="true" class="header-anchor">#</a> QX-21. 菜单显示、隐藏</h3> <h4 id="模块负责人-21"><a href="#模块负责人-21" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-21"><a href="#请求-21" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT     /v2/menu/status
+</code></pre> <h4 id="参数-21"><a href="#参数-21" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    &quot;ids&quot;:[3,5,7],      // 菜单id列表
+    &quot;status&quot;:&quot;hidden&quot;,  // * show 显示 hidden 隐藏
+}
+</code></pre> <h4 id="响应-21"><a href="#响应-21" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;操作成功&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="qx-22-菜单排序"><a href="#qx-22-菜单排序" aria-hidden="true" class="header-anchor">#</a> QX-22. 菜单排序</h3> <h4 id="模块负责人-22"><a href="#模块负责人-22" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-22"><a href="#请求-22" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT     /v2/menu/sort/{id}
+</code></pre> <h4 id="参数-22"><a href="#参数-22" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>id  // * 菜单id
+{
+    &quot;sort&quot;:2,  // * 顺序
+}
+</code></pre> <h4 id="响应-22"><a href="#响应-22" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;操作成功&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="qx-23-菜单删除"><a href="#qx-23-菜单删除" aria-hidden="true" class="header-anchor">#</a> QX-23. 菜单删除</h3> <h4 id="模块负责人-23"><a href="#模块负责人-23" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-23"><a href="#请求-23" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>DELETE     /v2/menu/{id}
+</code></pre> <h4 id="参数-23"><a href="#参数-23" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>id  // * 菜单id
+</code></pre> <h4 id="响应-23"><a href="#响应-23" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;操作成功&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="qx-24-菜单列表"><a href="#qx-24-菜单列表" aria-hidden="true" class="header-anchor">#</a> QX-24. 菜单列表</h3> <h4 id="模块负责人-24"><a href="#模块负责人-24" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-24"><a href="#请求-24" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET     /v2/menu
+</code></pre> <h4 id="参数-24"><a href="#参数-24" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>level   // 1：只获取一级菜单 其它：全部获取
+buttonPermissionFlg //  1 查询按钮权限 0 不查询
+</code></pre> <h4 id="响应-24"><a href="#响应-24" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [
+            {
+                &quot;deleteButton&quot;: false,  // 删除
+                &quot;editButton&quot;: true,     // 编辑
+            }
+        ],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;action&quot;: &quot;&quot;,               // 二级路由
+                &quot;createTime&quot;: &quot;&quot;,   
+                &quot;ctrl&quot;: &quot;depotmatchareas&quot;,  // 一级路由
+                &quot;icon&quot;: &quot;&quot;,         // 图标
+                &quot;id&quot;: 140,          // 菜单id
+                &quot;level&quot;: 1,         // 菜单等级
+                &quot;name&quot;: &quot;仓库管理&quot;, // 菜单名称
+                &quot;params&quot;: &quot;&quot;,
+                &quot;parentId&quot;: 0,      // 上级菜单id
+                &quot;sort&quot;: 0,          // 排序
+                &quot;status&quot;: &quot;show&quot;,   // show 显示 hidden 隐藏
+                &quot;sys&quot;: &quot;&quot;
+            }
+            ......
+        ],
+        &quot;pageNo&quot;: 0,
+        &quot;total&quot;: 0
+    }
+}
+</code></pre> <h3 id="qx-25-菜单详情"><a href="#qx-25-菜单详情" aria-hidden="true" class="header-anchor">#</a> QX-25. 菜单详情</h3> <h4 id="模块负责人-25"><a href="#模块负责人-25" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-25"><a href="#请求-25" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET     /v2/menu/detail
+</code></pre> <h4 id="参数-25"><a href="#参数-25" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>id // * 菜单id
+</code></pre> <h4 id="响应-25"><a href="#响应-25" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;action&quot;: &quot;&quot;,           // 二级路由
+        &quot;createTime&quot;: &quot;&quot;,
+        &quot;ctrl&quot;: &quot;depotmatchareas&quot;,  // 一级路由
+        &quot;icon&quot;: &quot;&quot;,         // 菜单图标
+        &quot;id&quot;: 140,          // 菜单id
+        &quot;level&quot;: 1,         // 菜单等级
+        &quot;name&quot;: &quot;仓库管理&quot;, // 菜单名称
+        &quot;params&quot;: &quot;&quot;,
+        &quot;parentId&quot;: 0,  // 上级菜单id
+        &quot;sort&quot;: 0,
+        &quot;status&quot;: &quot;show&quot;,
+        &quot;sys&quot;: &quot;&quot;
+    }
+}
+</code></pre> <h3 id="qx-26-操作日志列表"><a href="#qx-26-操作日志列表" aria-hidden="true" class="header-anchor">#</a> QX-26. 操作日志列表</h3> <h4 id="模块负责人-26"><a href="#模块负责人-26" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-26"><a href="#请求-26" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET     /v2/systemlog
+</code></pre> <h4 id="参数-26"><a href="#参数-26" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>type    // 日志类型 请参考下面操作类型说明
+</code></pre> <h4 id="响应-26"><a href="#响应-26" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>操作类型说明：
+1 开户，2 用户锁定，3 用户解锁，4 重置密码，
+5 用户分配功能权限，6 用户取消分配功能权限，7 用户分配数据权限，
+8 用户取消分配数据权限，9 功能权限绑定菜单，
+10 功能权限取消绑定菜单
+
+type 	操作内容
+1		用户 uname 开户，
+2		用户 uname 锁定，
+3		用户 uname 解锁，
+4		用户 uname 重置密码，
+5		用户 uname 分配功能权限 gname,
+6		用户 uname 取消分配功能权限 gname,
+7		用户 uname 分配数据权限 rname,
+8		用户 uname 取消分配数据权限 rname,
+9		功能权限 gname 绑定菜单 mname,
+10		功能权限 gname 取消绑定菜单 mname,
+{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;id&quot;: 0,
+                &quot;type&quot;: &quot;9&quot;,             // 操作类型  
+                &quot;action&quot;: &quot;功能权限绑定菜单&quot;,  
+                &quot;uid&quot;: 0,                   
+                &quot;uname&quot;: &quot;&quot;,            // 被操作的用户
+                &quot;gid&quot;: 111,             
+                &quot;gname&quot;: &quot;测试修改&quot;,    // 被操作的功能权限
+                &quot;sys&quot;: &quot;&quot;,
+                &quot;menuId&quot;: 82,
+                &quot;mname&quot;: &quot;供应商用户列表&quot;,// 被操作菜单
+                &quot;roleId&quot;: 0,
+                &quot;rname&quot;: &quot;&quot;,            // 被操作数据权限
+                &quot;createRole&quot;: 1,
+                &quot;createTime&quot;: &quot;2018-08-22 14:28:55.0&quot;, // 操作时间
+                &quot;createUser&quot;: 101,
+                &quot;createUserName&quot;: &quot;樊嘉辉&quot;, // 操作人
+            }
+            ......
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: 28
+    }
+}
+</code></pre> <h3 id="qx-27-不分页的功能权限列表"><a href="#qx-27-不分页的功能权限列表" aria-hidden="true" class="header-anchor">#</a> QX-27. 不分页的功能权限列表</h3> <h4 id="模块负责人-27"><a href="#模块负责人-27" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-27"><a href="#请求-27" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET     /v2/menupower/nopage
+</code></pre> <h4 id="参数-27"><a href="#参数-27" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>asigned     // 是否分配 YES 分配 NO 未分配
+uid         // 用户id
+</code></pre> <h4 id="响应-27"><a href="#响应-27" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;createTime&quot;: &quot;&quot;,
+            &quot;gid&quot;: 22,
+            &quot;id&quot;: 9,
+            &quot;isAuto&quot;: 0,
+            &quot;menuIds&quot;: null,
+            &quot;name&quot;: &quot;事业部总经理&quot;,
+            &quot;remark&quot;: &quot;&quot;,
+            &quot;status&quot;: &quot;NORMAL&quot;,
+            &quot;sys&quot;: &quot;a&quot;,
+            &quot;uid&quot;: 0
+        }
+    ]
+}
+</code></pre> <h3 id="qx-31-不分页的数据权限列表"><a href="#qx-31-不分页的数据权限列表" aria-hidden="true" class="header-anchor">#</a> QX-31. 不分页的数据权限列表</h3> <h4 id="模块负责人-28"><a href="#模块负责人-28" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-28"><a href="#请求-28" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET     /v2/datapower/nopage
+</code></pre> <h4 id="参数-28"><a href="#参数-28" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>asigned     // 是否分配 YES 分配 NO 未分配
+uid         // 用户id
+</code></pre> <h4 id="响应-28"><a href="#响应-28" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;gid&quot;: 21,
+            &quot;gname&quot;: &quot;CEO&quot;,
+            &quot;rid&quot;: 5046,
+            &quot;rname&quot;: &quot;宁丽丽&quot;,
+            &quot;uid&quot;: 0
+        }
+    ]
+}
+</code></pre> <h3 id="qx-32-收款人、复核、开票人"><a href="#qx-32-收款人、复核、开票人" aria-hidden="true" class="header-anchor">#</a> QX-32. 收款人、复核、开票人</h3> <h4 id="模块负责人-29"><a href="#模块负责人-29" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-29"><a href="#请求-29" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET    /v2/userpower/employee
+</code></pre> <h4 id="参数-29"><a href="#参数-29" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>keyword     // 员工编号、姓名、手机号
+</code></pre> <h4 id="响应-29"><a href="#响应-29" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;authDataPowers&quot;: null,
+            &quot;authMenuPowers&quot;: null,
+            &quot;fullname&quot;: &quot;李文英&quot;,       //姓名
+            &quot;id&quot;: 221,                  //员工id
+            &quot;isOpen&quot;: &quot;1&quot;,
+            &quot;mobile&quot;: &quot;15142359472&quot;,    //手机
+            &quot;status&quot;: &quot;NORMAL&quot;,
+            &quot;workno&quot;: &quot;0229&quot;            //工号
+        }
+    ]
+}    
+</code></pre> <h3 id="qx-41-关注列表"><a href="#qx-41-关注列表" aria-hidden="true" class="header-anchor">#</a> QX-41. 关注列表</h3> <h4 id="模块负责人-30"><a href="#模块负责人-30" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-30"><a href="#请求-30" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET    /v2/authfollow/focus
+</code></pre> <h4 id="参数-30"><a href="#参数-30" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>name   //角色名称
+status //状态 INVALID 未通过 REFUSE 拒绝 PASS 通过
+pageNo //页码
+pageSize //页条数
+</code></pre> <h4 id="响应-30"><a href="#响应-30" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissionPage&quot;: {},
+        &quot;buttonPermissions&quot;: [
+            {
+            &quot;cancelButton&quot;: false  //作废按钮
+            }
+        ],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;befocusName&quot;: &quot;樊嘉辉&quot;,//被关注人角色
+                &quot;checkRole&quot;: 0,
+                &quot;checkTime&quot;: &quot;&quot;,
+                &quot;checkUser&quot;: 0,
+                &quot;createRole&quot;: 29319,
+                &quot;createTime&quot;: &quot;2019-04-24 15:46:58&quot;,//创建时间
+                &quot;createUser&quot;: 518,
+                &quot;createUsername&quot;: &quot;孙启萌&quot;,//创建人
+                &quot;deleteFlg&quot;: 0,
+                &quot;focusName&quot;: &quot;孙启萌&quot;,//关注人角色
+                &quot;followRid&quot;: 1,
+                &quot;id&quot;: 138,
+                &quot;rid&quot;: 29319,
+                &quot;status&quot;: &quot;PASS&quot;//状态 INVALID 未通过 REFUSE 拒绝 PASS 通过
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: 1
+    }
+}
+</code></pre> <h3 id="qx-42-被关注列表"><a href="#qx-42-被关注列表" aria-hidden="true" class="header-anchor">#</a> QX-42. 被关注列表</h3> <h4 id="模块负责人-31"><a href="#模块负责人-31" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-31"><a href="#请求-31" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET    /v2/authfollow/befocus
+</code></pre> <h4 id="参数-31"><a href="#参数-31" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>name   //角色名称
+status //状态 INVALID 未通过 REFUSE 拒绝 PASS 通过
+pageNo //页码
+pageSize //页条数
+</code></pre> <h4 id="响应-31"><a href="#响应-31" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissionPage&quot;: {},
+        &quot;buttonPermissions&quot;: [
+            {
+                &quot;refuseButton&quot;: false,  //拒绝按钮
+                &quot;agreeButton&quot;: false    //通过按钮
+            }
+        ],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;befocusName&quot;: &quot;樊嘉辉&quot;,//被关注人角色
+                &quot;checkRole&quot;: 1,
+                &quot;checkTime&quot;: &quot;2019-04-24 15:39:27&quot;,
+                &quot;checkUser&quot;: 518,
+                &quot;createRole&quot;: 29319,
+                &quot;createTime&quot;: &quot;2019-04-24 15:16:49&quot;,//创建时间
+                &quot;createUser&quot;: 518,
+                &quot;createUsername&quot;: &quot;孙启萌&quot;,//创建人
+                &quot;deleteFlg&quot;: 0,
+                &quot;focusName&quot;: &quot;孙启萌&quot;,//关注人角色
+                &quot;followRid&quot;: 1,
+                &quot;id&quot;: 137,
+                &quot;rid&quot;: 29319,
+                &quot;status&quot;: &quot;REFUSE&quot;//状态 INVALID 未通过 REFUSE 拒绝 PASS 通过
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: 1
+    }
+}
+</code></pre> <h3 id="qx-43-添加关注"><a href="#qx-43-添加关注" aria-hidden="true" class="header-anchor">#</a> QX-43. 添加关注</h3> <h4 id="模块负责人-32"><a href="#模块负责人-32" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-32"><a href="#请求-32" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST    /v2/authfollow/
+</code></pre> <h4 id="参数-32"><a href="#参数-32" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    &quot;followRoleIds&quot;:[29365,29364,29363]   //关注角色集合
+}
+</code></pre> <h4 id="响应-32"><a href="#响应-32" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{&quot;code&quot;:100000,&quot;msg&quot;:&quot;&quot;,&quot;data&quot;:null}
+</code></pre> <h3 id="qx-44-通过关注"><a href="#qx-44-通过关注" aria-hidden="true" class="header-anchor">#</a> QX-44. 通过关注</h3> <h4 id="模块负责人-33"><a href="#模块负责人-33" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-33"><a href="#请求-33" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT    /v2/authfollow/agree/{id}
+</code></pre> <h4 id="参数-33"><a href="#参数-33" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>无
+</code></pre> <h4 id="响应-33"><a href="#响应-33" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{&quot;code&quot;:100000,&quot;msg&quot;:&quot;&quot;,&quot;data&quot;:null}
+</code></pre> <h3 id="qx-45-拒绝关注"><a href="#qx-45-拒绝关注" aria-hidden="true" class="header-anchor">#</a> QX-45. 拒绝关注</h3> <h4 id="模块负责人-34"><a href="#模块负责人-34" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-34"><a href="#请求-34" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT    /v2/authfollow/refuse/{id}
+</code></pre> <h4 id="参数-34"><a href="#参数-34" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>无
+</code></pre> <h4 id="响应-34"><a href="#响应-34" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{&quot;code&quot;:100000,&quot;msg&quot;:&quot;&quot;,&quot;data&quot;:null}
+</code></pre> <h3 id="qx-46-作废关注"><a href="#qx-46-作废关注" aria-hidden="true" class="header-anchor">#</a> QX-46. 作废关注</h3> <h4 id="模块负责人-35"><a href="#模块负责人-35" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-35"><a href="#请求-35" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>DELETE    /v2/authfollow/cancel/{id}
+</code></pre> <h4 id="参数-35"><a href="#参数-35" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>无
+</code></pre> <h4 id="响应-35"><a href="#响应-35" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{&quot;code&quot;:100000,&quot;msg&quot;:&quot;&quot;,&quot;data&quot;:null}
+</code></pre> <h3 id="qx-47-角色列表"><a href="#qx-47-角色列表" aria-hidden="true" class="header-anchor">#</a> QX-47. 角色列表</h3> <h4 id="模块负责人-36"><a href="#模块负责人-36" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-36"><a href="#请求-36" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET    /v2/authfollow/roles
+</code></pre> <h4 id="参数-36"><a href="#参数-36" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>name      //角色名称
+pageNo    //页码
+pageSize  //页条数
+</code></pre> <h4 id="响应-36"><a href="#响应-36" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissionPage&quot;: {},
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;gid&quot;: 42,
+                &quot;rid&quot;: 2200,//角色编号
+                &quot;roleName&quot;: &quot;李欢欢1&quot;  //角色名称
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: 18
+    }
+}
+</code></pre> <h3 id="qx-48-提供当前ss拥有的，关注ss所拥有的客户id集合"><a href="#qx-48-提供当前ss拥有的，关注ss所拥有的客户id集合" aria-hidden="true" class="header-anchor">#</a> QX-48. 提供当前SS拥有的，关注SS所拥有的客户ID集合</h3> <h4 id="模块负责人-37"><a href="#模块负责人-37" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-37"><a href="#请求-37" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET    /v2/authfollow/customerIds
+</code></pre> <h4 id="参数-37"><a href="#参数-37" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>无
+</code></pre> <h4 id="响应-37"><a href="#响应-37" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [//依据角色id找出的客户id集合
+        30943,
+        31010,
+        31012
+    ]
+}
+</code></pre> <h3 id="qx-100-微信code解析"><a href="#qx-100-微信code解析" aria-hidden="true" class="header-anchor">#</a> QX-100. 微信code解析</h3> <h4 id="模块负责人-38"><a href="#模块负责人-38" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-38"><a href="#请求-38" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/wx/code2session
+</code></pre> <h4 id="参数-38"><a href="#参数-38" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*code   // 微信授权code
+</code></pre> <h4 id="响应-38"><a href="#响应-38" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;openId&quot;: &quot;***&quot;,            // 绑定employee使用
+        &quot;accessToken&quot;: &quot;***&quot;,   // 获取userinfo使用
+        &quot;refreshToken&quot;: &quot;***&quot;   // 刷新过期accessToken使用
+    }
+}
+</code></pre> <h3 id="qx-101-微信refreshtoken"><a href="#qx-101-微信refreshtoken" aria-hidden="true" class="header-anchor">#</a> QX-101. 微信refreshToken</h3> <h4 id="模块负责人-39"><a href="#模块负责人-39" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-39"><a href="#请求-39" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/wx/refreshToken
+</code></pre> <h4 id="参数-39"><a href="#参数-39" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*refreshToken   // code2session获得
+</code></pre> <h4 id="响应-39"><a href="#响应-39" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;openId&quot;: &quot;***&quot;,            // 绑定employee使用
+        &quot;accessToken&quot;: &quot;***&quot;,   // 获取userinfo使用
+        &quot;refreshToken&quot;: &quot;***&quot;   // 刷新过期accessToken使用
+    }
+}
+</code></pre> <h3 id="qx-102-微信扫码登录"><a href="#qx-102-微信扫码登录" aria-hidden="true" class="header-anchor">#</a> QX-102. 微信扫码登录</h3> <h4 id="模块负责人-40"><a href="#模块负责人-40" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-40"><a href="#请求-40" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/wx/login
+</code></pre> <h4 id="参数-40"><a href="#参数-40" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*code   // 微信授权码
+</code></pre> <h4 id="响应-40"><a href="#响应-40" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;hasBind&quot;: true,            // false 未绑定，跳转到输入工号&amp;密码页    true 已绑定 
+        &quot;openId&quot;: &quot;***&quot;,        // 微信 openId
+        &quot;accessToken&quot;: &quot;***&quot;,   // 微信 accessToken
+        &quot;loginInfo&quot;: {
+            &quot;token&quot;: &quot;***&quot;,         // token
+            &quot;rid&quot;: [                 // 数据权限
+                {
+                    &quot;rid&quot;: 1,
+                    &quot;rname&quot;: &quot;***&quot;
+                }
+            ],
+            &quot;gid&quot;: [                // 功能权限
+                {
+                    &quot;gid&quot;: 42,
+                    &quot;gname&quot;: &quot;***&quot;
+                }
+            ],
+            &quot;userinfo&quot;: {          // 登录用户信息
+                &quot;id&quot;: 1,               // employeeId
+                &quot;workno&quot;: &quot;***&quot;,    // 工号
+                &quot;fullname&quot;: &quot;***&quot;,  // 全名
+                &quot;mobile&quot;: &quot;***&quot;,    // 手机号
+                &quot;wxNickName&quot;: &quot;***&quot;,    // 微信昵称
+                &quot;wxHeadUrl&quot;: &quot;***&quot;          // 微信头像
+            }
+        }
+    }
+}
+</code></pre> <h3 id="qx-103-微信绑定登录"><a href="#qx-103-微信绑定登录" aria-hidden="true" class="header-anchor">#</a> QX-103. 微信绑定登录</h3> <h4 id="模块负责人-41"><a href="#模块负责人-41" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-41"><a href="#请求-41" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/wx/bindLogin
+</code></pre> <h4 id="参数-41"><a href="#参数-41" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*openId   // code2session获得
+*accessToken    // code2session获得
+*loginName      // 登录名（工号）
+*password       // 密码
+</code></pre> <h4 id="响应-41"><a href="#响应-41" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;token&quot;: &quot;***&quot;,        // token
+        &quot;rid&quot;: [                 // 数据权限
+            {
+                &quot;rid&quot;: 1,
+                &quot;rname&quot;: &quot;***&quot;
+            }
+        ],
+        &quot;gid&quot;: [                // 功能权限
+            {
+                &quot;gid&quot;: 42,
+                &quot;gname&quot;: &quot;***&quot;
+            }
+        ],
+        &quot;userinfo&quot;: {          // 登录用户信息
+            &quot;id&quot;: 1,                // employeeId
+            &quot;workno&quot;: &quot;***&quot;,   // 工号
+            &quot;fullname&quot;: &quot;***&quot;, // 全名
+            &quot;mobile&quot;: &quot;***&quot;,   // 手机号
+            &quot;wxNickName&quot;: &quot;***&quot;,   // 微信昵称
+            &quot;wxHeadUrl&quot;: &quot;***&quot;         // 微信头像
+        }
+    }
+}
+</code></pre> <h3 id="qx-104-微信解绑-作废"><a href="#qx-104-微信解绑-作废" aria-hidden="true" class="header-anchor">#</a> QX-104. 微信解绑(作废)</h3> <h4 id="模块负责人-42"><a href="#模块负责人-42" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-42"><a href="#请求-42" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>DELETE /v2/wx/unbinding/{workno}
+</code></pre> <h4 id="参数-42"><a href="#参数-42" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*workno // 工号
+</code></pre> <h4 id="响应-42"><a href="#响应-42" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="qx-105-微信解绑"><a href="#qx-105-微信解绑" aria-hidden="true" class="header-anchor">#</a> QX-105. 微信解绑</h3> <h4 id="模块负责人-43"><a href="#模块负责人-43" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-43"><a href="#请求-43" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>DELETE /v2/wx/unbind
+</code></pre> <h4 id="参数-43"><a href="#参数-43" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    *&quot;loginName&quot;: &quot;0299&quot;,              // 账号
+    *&quot;wxOpenId&quot;: &quot;ozGRk1ttO6v_zQOHljI_SUHS8s33&quot; // 微信授权唯一标识
+}
+</code></pre> <h4 id="响应-43"><a href="#响应-43" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="qx-150-权限切换"><a href="#qx-150-权限切换" aria-hidden="true" class="header-anchor">#</a> QX-150. 权限切换</h3> <h4 id="模块负责人-44"><a href="#模块负责人-44" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-44"><a href="#请求-44" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/auth/switchToken
+</code></pre> <h4 id="参数-44"><a href="#参数-44" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*token
+*rid    // 数据权限ID
+*gid    // 功能权限ID
+</code></pre> <h4 id="响应-44"><a href="#响应-44" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: &quot;***&quot;   // 切换权限后的token
+}
+</code></pre> <h3 id="qx-151-用户菜单权限获取"><a href="#qx-151-用户菜单权限获取" aria-hidden="true" class="header-anchor">#</a> QX-151. 用户菜单权限获取</h3> <h4 id="模块负责人-45"><a href="#模块负责人-45" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-45"><a href="#请求-45" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET     /v2/auth/getAllMenu
+</code></pre> <h4 id="参数-45"><a href="#参数-45" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*token  // token
+*source //  系统类型 a A网 sta 统计
+</code></pre> <h4 id="响应-45"><a href="#响应-45" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;action&quot;: &quot;&quot;,       // 二级路由
+            &quot;createTime&quot;: &quot;&quot;,
+            &quot;ctrl&quot;: &quot;user&quot;,     // 一级路由
+            &quot;id&quot;: 143,
+            &quot;level&quot;: 1,         // 菜单等级
+            &quot;name&quot;: &quot;账号管理&quot;, // 菜单名称
+            &quot;params&quot;: &quot;&quot;,
+            &quot;parentId&quot;: 0,      // 上级菜单
+            &quot;sort&quot;: 0,          
+            &quot;status&quot;: &quot;&quot;,
+            &quot;sys&quot;: &quot;a&quot;,
+            &quot;icon&quot;:&quot;abcde&quot;      // 图标
+        }
+    ]
+}
+</code></pre> <h3 id="qx-152-登录用户信息获取"><a href="#qx-152-登录用户信息获取" aria-hidden="true" class="header-anchor">#</a> QX-152. 登录用户信息获取</h3> <h4 id="模块负责人-46"><a href="#模块负责人-46" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-46"><a href="#请求-46" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET     /v2/auth/userInfo
+</code></pre> <h4 id="参数-46"><a href="#参数-46" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*token // token 
+*source // 系统类型 a A网 sta 统计
+</code></pre> <h4 id="响应-46"><a href="#响应-46" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;workno&quot;: &quot;0101&quot;,               // 工号
+        &quot;mobile&quot;: &quot;13478445016&quot;,    // 手机
+        &quot;id&quot;: 101,                          // 用户id
+        &quot;fullname&quot;: &quot;樊嘉辉&quot;           // 用户名
+    }
+}
+</code></pre> <h3 id="qx-153-角色权限列表获取-ss-sr"><a href="#qx-153-角色权限列表获取-ss-sr" aria-hidden="true" class="header-anchor">#</a> QX-153. 角色权限列表获取(SS\SR)</h3> <h4 id="模块负责人-47"><a href="#模块负责人-47" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-47"><a href="#请求-47" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET     /v2/datapower/roles
+</code></pre> <h4 id="参数-47"><a href="#参数-47" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*type    // 角色类型   可取值 ss  或  sr
+</code></pre> <h4 id="响应-47"><a href="#响应-47" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;:100000,
+    &quot;msg&quot;:&quot;&quot;,
+    &quot;data&quot;:[
+        {
+            &quot;gid&quot;:24,                   // gid
+            &quot;rid&quot;:40,                   // rid
+            &quot;roleName&quot;:&quot;高成举-SRM-T&quot;   // 角色名称
+        }
+    ]
+}   
+</code></pre> <h3 id="qx-154-登录走个小后门"><a href="#qx-154-登录走个小后门" aria-hidden="true" class="header-anchor">#</a> QX-154. 登录走个小后门</h3> <h4 id="模块负责人-48"><a href="#模块负责人-48" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-48"><a href="#请求-48" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET     /v2/auth/backdoor/login
+</code></pre> <h4 id="参数-48"><a href="#参数-48" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*loginName      // 登录名
+*password       // 密码
+*code           // 后门钥匙
+</code></pre> <h4 id="响应-48"><a href="#响应-48" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;gid&quot;: [                // 功能权限
+            {
+                &quot;gid&quot;: 11,
+                &quot;gname&quot;: &quot;系统管理员&quot;
+            }
+        ],
+        &quot;rid&quot;: [                // 数据权限
+            {
+                &quot;rid&quot;: 1,
+                &quot;rname&quot;: &quot;管理员&quot;
+            }
+        ],
+        &quot;token&quot;: &quot;95261ce28b7cf1f10e7a4ddfb2158e1a&quot;,        // 假token
+        &quot;userinfo&quot;: {
+            &quot;fullname&quot;: &quot;孙启萌&quot;,          // 用户名
+            &quot;id&quot;: 518,                  // 用户ID
+            &quot;mobile&quot;: &quot;13212216966&quot;,        // 用户手机号
+            &quot;workno&quot;: &quot;0299&quot;            // 工号
+        }
+    }
+}         
+</code></pre> <h3 id="qx-155-获取业务最新消息"><a href="#qx-155-获取业务最新消息" aria-hidden="true" class="header-anchor">#</a> QX-155. 获取业务最新消息</h3> <h4 id="模块负责人-49"><a href="#模块负责人-49" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-49"><a href="#请求-49" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/notice
+</code></pre> <h4 id="参数-49"><a href="#参数-49" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>ctrl: 'v5-order', // 控制器
+action: 'order-sa' // 行为
+</code></pre> <h4 id="响应-49"><a href="#响应-49" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;num&quot;: 0, // 新订单数量
+            &quot;type&quot;: &quot;orderSa&quot; // 销售订单
+        }
+    ]
+}
+</code></pre> <h3 id="qx-156-添加外部用户"><a href="#qx-156-添加外部用户" aria-hidden="true" class="header-anchor">#</a> QX-156. 添加外部用户</h3> <h4 id="模块负责人-50"><a href="#模块负责人-50" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-50"><a href="#请求-50" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /v2/userpower/user
+</code></pre> <h4 id="参数-50"><a href="#参数-50" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    *&quot;fullname&quot;: &quot;达利2&quot;,             // 用户名
+    *&quot;mobile&quot;: &quot;18640800203&quot;        // 手机号
+}
+</code></pre> <h4 id="响应-50"><a href="#响应-50" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+} </code></pre></div> <div class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">6/18/2019, 3:35:23 PM</span></div></div> <!----> </div> <!----></div></div>
+    <script src="/work-a-api-v2/assets/js/app.a6722e02.js" defer></script><script src="/work-a-api-v2/assets/js/6.a8f01348.js" defer></script>
+  </body>
+</html>

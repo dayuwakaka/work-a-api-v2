@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>统计系统接口 | ADoc</title>
+    <meta name="description" content="A团队开发文档">
+    
+    
+    <link rel="preload" href="/work-a-api-v2/assets/css/0.styles.35f149a3.css" as="style"><link rel="preload" href="/work-a-api-v2/assets/js/app.a6722e02.js" as="script"><link rel="preload" href="/work-a-api-v2/assets/js/27.2fe9193a.js" as="script"><link rel="prefetch" href="/work-a-api-v2/assets/js/10.1a10445b.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/11.42f498c9.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/12.0c967175.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/13.3651904d.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/14.f08b1cf2.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/15.9349f875.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/16.12c6bae3.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/17.adca03bd.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/18.c998838e.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/19.3918a1ff.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/2.a0ea3f6c.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/20.90e7db96.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/21.107ae2fe.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/22.74755e26.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/23.311dc752.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/24.f5a0db0c.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/25.930c2322.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/26.2d5db294.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/28.c950b06d.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/29.c08b73a8.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/3.d1df23fe.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/30.03105b2a.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/31.e5254695.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/32.f61b2cc2.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/4.0f0014c9.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/5.95ee4e26.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/6.a8f01348.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/7.88947b66.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/8.0d5a3953.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/9.20882588.js">
+    <link rel="stylesheet" href="/work-a-api-v2/assets/css/0.styles.35f149a3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/work-a-api-v2/" class="home-link router-link-active"><!----> <span class="site-name">ADoc</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/work-a-api-v2/wms/" class="nav-link">WMS仓储</a></div><div class="nav-item"><a href="/work-a-api-v2/ufo/" class="nav-link">金蝶</a></div><div class="nav-item"><a href="/work-a-api-v2/addon/" class="nav-link">插件</a></div><div class="nav-item"><a href="/work-a-api-v2/outer/" class="nav-link">合作商</a></div><div class="nav-item"><a href="/work-a-api-v2/stockup/" class="nav-link">备货</a></div><div class="nav-item"><a href="/work-a-api-v2/order/" class="nav-link">订单</a></div><div class="nav-item"><a href="/work-a-api-v2/finance/" class="nav-link">财务</a></div><div class="nav-item"><a href="/work-a-api-v2/supplier/" class="nav-link">供应商</a></div><div class="nav-item"><a href="/work-a-api-v2/invoice/" class="nav-link">发票</a></div><div class="nav-item"><a href="/work-a-api-v2/customer/" class="nav-link">客户</a></div><div class="nav-item"><a href="/work-a-api-v2/product/" class="nav-link">产品</a></div><div class="nav-item"><a href="/work-a-api-v2/auth/" class="nav-link">权限</a></div><div class="nav-item"><a href="/work-a-api-v2/contract/" class="nav-link">销售优惠</a></div><div class="nav-item"><a href="/work-a-api-v2/price/" class="nav-link">价格</a></div><div class="nav-item"><a href="/work-a-api-v2/freight/" class="nav-link">运费</a></div><div class="nav-item"><a href="/work-a-api-v2/market/" class="nav-link">营销</a></div><div class="nav-item"><a href="/work-a-api-v2/cookbook/" class="nav-link">菜谱</a></div><div class="nav-item"><a href="/work-a-api-v2/common/" class="nav-link">基础</a></div><div class="nav-item"><a href="/work-a-api-v2/app/" class="nav-link">APP</a></div><div class="nav-item"><a href="/work-a-api-v2/depot/" class="nav-link">库存</a></div><div class="nav-item"><a href="/work-a-api-v2/fee/" class="nav-link">费用</a></div><div class="nav-item"><a href="/work-a-api-v2/notice/" class="nav-link">消息通知（作废）</a></div><div class="nav-item"><a href="/work-a-api-v2/changelog/" class="nav-link">变更</a></div><div class="nav-item"><a href="/work-a-api-v2/feign/" class="nav-link">代理接口</a></div><div class="nav-item"><a href="/work-a-api-v2/other/" class="nav-link">其它</a></div><div class="nav-item"><a href="/work-a-api-v2/sta/" class="nav-link router-link-exact-active router-link-active">统计</a></div><div class="nav-item"><a href="/work-a-api-v2/message/" class="nav-link">消息</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/work-a-api-v2/wms/" class="nav-link">WMS仓储</a></div><div class="nav-item"><a href="/work-a-api-v2/ufo/" class="nav-link">金蝶</a></div><div class="nav-item"><a href="/work-a-api-v2/addon/" class="nav-link">插件</a></div><div class="nav-item"><a href="/work-a-api-v2/outer/" class="nav-link">合作商</a></div><div class="nav-item"><a href="/work-a-api-v2/stockup/" class="nav-link">备货</a></div><div class="nav-item"><a href="/work-a-api-v2/order/" class="nav-link">订单</a></div><div class="nav-item"><a href="/work-a-api-v2/finance/" class="nav-link">财务</a></div><div class="nav-item"><a href="/work-a-api-v2/supplier/" class="nav-link">供应商</a></div><div class="nav-item"><a href="/work-a-api-v2/invoice/" class="nav-link">发票</a></div><div class="nav-item"><a href="/work-a-api-v2/customer/" class="nav-link">客户</a></div><div class="nav-item"><a href="/work-a-api-v2/product/" class="nav-link">产品</a></div><div class="nav-item"><a href="/work-a-api-v2/auth/" class="nav-link">权限</a></div><div class="nav-item"><a href="/work-a-api-v2/contract/" class="nav-link">销售优惠</a></div><div class="nav-item"><a href="/work-a-api-v2/price/" class="nav-link">价格</a></div><div class="nav-item"><a href="/work-a-api-v2/freight/" class="nav-link">运费</a></div><div class="nav-item"><a href="/work-a-api-v2/market/" class="nav-link">营销</a></div><div class="nav-item"><a href="/work-a-api-v2/cookbook/" class="nav-link">菜谱</a></div><div class="nav-item"><a href="/work-a-api-v2/common/" class="nav-link">基础</a></div><div class="nav-item"><a href="/work-a-api-v2/app/" class="nav-link">APP</a></div><div class="nav-item"><a href="/work-a-api-v2/depot/" class="nav-link">库存</a></div><div class="nav-item"><a href="/work-a-api-v2/fee/" class="nav-link">费用</a></div><div class="nav-item"><a href="/work-a-api-v2/notice/" class="nav-link">消息通知（作废）</a></div><div class="nav-item"><a href="/work-a-api-v2/changelog/" class="nav-link">变更</a></div><div class="nav-item"><a href="/work-a-api-v2/feign/" class="nav-link">代理接口</a></div><div class="nav-item"><a href="/work-a-api-v2/other/" class="nav-link">其它</a></div><div class="nav-item"><a href="/work-a-api-v2/sta/" class="nav-link router-link-exact-active router-link-active">统计</a></div><div class="nav-item"><a href="/work-a-api-v2/message/" class="nav-link">消息</a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>统计系统接口</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/work-a-api-v2/sta/#统计系统接口" class="sidebar-link">统计系统接口</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/work-a-api-v2/sta/#sta-1-导出" class="sidebar-link">STA-1. 导出</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/sta/#sta-2-获取产品分析" class="sidebar-link">STA-2. 获取产品分析</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/sta/#sta-3-获取客户订购产品分析" class="sidebar-link">STA-3. 获取客户订购产品分析</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/sta/#sta-4-获取客户销售额分析" class="sidebar-link">STA-4. 获取客户销售额分析</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/sta/#sta-5-获取-sr级别日报-分析" class="sidebar-link">STA-5. 获取 Sr级别日报 分析</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/sta/#sta-6-获取-客户级别日报-分析" class="sidebar-link">STA-6. 获取 客户级别日报 分析</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/sta/#sta-7-获取-大区产品组级别日报-分析" class="sidebar-link">STA-7. 获取 大区产品组级别日报 分析</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/sta/#sta-8-获取-大区事业部级别日报-分析" class="sidebar-link">STA-8. 获取 大区事业部级别日报 分析</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/sta/#sta-9-客户登陆" class="sidebar-link">STA-9. 客户登陆</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/sta/#sta-10-获取客户-菜单" class="sidebar-link">STA-10. 获取客户 菜单</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/sta/#sta-11-营销模块" class="sidebar-link">STA-11. 营销模块</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/sta/#sta-12-营销模块" class="sidebar-link">STA-12. 营销模块</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/sta/#sta-13-产品期现货" class="sidebar-link">STA-13. 产品期现货</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/sta/#sta-14-获取客户维度商品销量前50" class="sidebar-link">STA-14. 获取客户维度商品销量前50</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/sta/#sta-15-履约合同明细查询" class="sidebar-link">STA-15. 履约合同明细查询</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/sta/#sta-16-履约合同重算" class="sidebar-link">STA-16. 履约合同重算</a></li></ul></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h2 id="统计系统接口"><a href="#统计系统接口" aria-hidden="true" class="header-anchor">#</a> 统计系统接口</h2> <h3 id="sta-1-导出"><a href="#sta-1-导出" aria-hidden="true" class="header-anchor">#</a> STA-1. 导出</h3> <h4 id="模块负责人"><a href="#模块负责人" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>石博孚
+</code></pre> <h4 id="请求"><a href="#请求" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /report/export/{type}
+订单价格区间 orderpriceao
+客户级别日报 salesCustomerDay
+SR级别日报 salesSrDayly
+销售日报导出客户产品分组 salesDayly
+销售日报导出产品分组	salesProductGroupDayly
+销售库存商品不足库存 depotProduct
+已支付订单 salesPayOrder
+订单客户产品 orderCustomerProduct
+AO单月度明细 aoDetail
+AO单数月度汇总 aoSSSummary
+新AO客户明细 aoCustomerSummary
+AO客户支付汇总导出 aoCustomerPay
+Mppr getMppr
+前三个月的发货量 shipmentsInTheFirstThreeMonths
+采购订单分析 pa
+采购订单明细分析 paDetail
+销售订单分析 sa
+销售订单明细分析 saDetail
+调价单分析 ap
+调拨单分析 tr
+出库单分析 no
+</code></pre> <h4 id="参数"><a href="#参数" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>startDay 开始日期
+endDay 结束日期
+</code></pre> <h4 id="响应"><a href="#响应" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>excel导出模板
+</code></pre> <h3 id="sta-2-获取产品分析"><a href="#sta-2-获取产品分析" aria-hidden="true" class="header-anchor">#</a> STA-2. 获取产品分析</h3> <h4 id="模块负责人-2"><a href="#模块负责人-2" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>郭枫
+</code></pre> <h4 id="请求-2"><a href="#请求-2" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/api/productAnalysis
+</code></pre> <h4 id="参数-2"><a href="#参数-2" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>monthtag : '2019-06'  //月份
+pageNo : '1'  //页码
+pageSize: '25' //页数
+</code></pre> <h4 id="响应-2"><a href="#响应-2" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+&quot;code&quot;: 100000,
+&quot;msg&quot;: &quot;&quot;,
+&quot;data&quot;: [
+    {
+        &quot;mainimg&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/ANET20190402183150719-1911.jpg&quot;, //主图
+        &quot;twomonth_price&quot;: 2785720.5,	//前2月金额
+        &quot;totalprice&quot;: 5617636.6,	//销售总金额
+        &quot;total_count&quot;: 53607,	//销售总数量
+        &quot;twomonth_count&quot;: 25732,	//前两月数量
+        &quot;send_count&quot;: 53607,	//已发数量
+        &quot;avg_price&quot;: 3355544.1,	//平均金额
+        &quot;trimonth_count&quot;: 31145,	//前三月数量
+        &quot;product_name&quot;: &quot;宝宝贝（蒜蓉粉丝扇贝）餐饮量贩装 &quot;,	//商品名
+        &quot;pno&quot;: &quot;0189&quot;,	//商品号
+        &quot;perunit&quot;: 12,	//转换率
+        &quot;unit&quot;: &quot;件&quot;,	//单位
+        &quot;lastyear_price&quot;: 6666971.6,	//去年金额
+        &quot;lastmonth_count&quot;: 35701,	//上月数量
+        &quot;lastyear_count&quot;: 57965,	//去年数量
+        &quot;lastmonth_price&quot;: 3917244,	//上月金额
+        &quot;avg_ratio&quot;: 0.07490398088081,	// 环比
+        &quot;send_totalprice&quot;: 5617636.6,	//已发金额
+        &quot;guige&quot;: &quot;200g(6枚）/袋*12袋&quot;,	//规格
+        &quot;avg_count&quot;: 30859.333333,	//平均数量
+        &quot;trimonth_price&quot;: 3363667.8	//前三月金额
+    },...
+  ]
+}
+</code></pre> <h3 id="sta-3-获取客户订购产品分析"><a href="#sta-3-获取客户订购产品分析" aria-hidden="true" class="header-anchor">#</a> STA-3. 获取客户订购产品分析</h3> <h4 id="模块负责人-3"><a href="#模块负责人-3" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>郭枫
+</code></pre> <h4 id="请求-3"><a href="#请求-3" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/api/customerProduct
+</code></pre> <h4 id="参数-3"><a href="#参数-3" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>monthtag : '2019-06'  //月份
+pageNo : '1'  //页码
+pageSize: '25' //页数
+</code></pre> <h4 id="响应-3"><a href="#响应-3" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+&quot;code&quot;: 100000,
+&quot;msg&quot;: &quot;&quot;,
+&quot;data&quot;: [
+    {
+        &quot;srName&quot;: &quot;陈明&quot;, //客户名
+        &quot;twomonth_price&quot;: 2373560, //前两月金额
+        &quot;totalprice&quot;: 2338915.05,	//总金额
+        &quot;total_count&quot;: 4000,	//总数量
+        &quot;twomonth_count&quot;: 4000,	//前两月数量
+        &quot;send_count&quot;: 4000,	//已发数量
+        &quot;avg_price&quot;: 1977966.666667, //平均金额
+        &quot;trimonth_count&quot;: 2000,	//前三月数量
+        &quot;shortname&quot;: &quot;东恩国际物流（上海）有限公司&quot;,	//客户名
+        &quot;pno&quot;: &quot;1436&quot;,	//品号
+        &quot;perunit&quot;: 6,	//转换率
+        &quot;unit&quot;: &quot;件&quot;,	//单位
+        &quot;lastyear_price&quot;: 2373560,	//去年金额
+        &quot;lastmonth_count&quot;: 4000,	//上月数量
+        &quot;lastyear_count&quot;: 4000,		//去年数量
+        &quot;lastmonth_price&quot;: 2373560,	//上月金额
+        &quot;avg_ratio&quot;: 0.02027606258578,	//环比
+        &quot;name&quot;: &quot;玉米片虾排&quot;,		//商品名
+        &quot;send_totalprice&quot;: 2338915.05,	//已发金额
+        &quot;guige&quot;: &quot;1.68kg（24枚）/盒*6盒&quot;,		//规格
+        &quot;customer_id&quot;: 29221,	//客户id
+        &quot;avg_count&quot;: 3333.333333,	//平均数量
+        &quot;ssName&quot;: &quot;张莹&quot;,	//ss姓名
+        &quot;trimonth_price&quot;: 1186780	//前三月金额
+    },...
+  ]
+}
+</code></pre> <h3 id="sta-4-获取客户销售额分析"><a href="#sta-4-获取客户销售额分析" aria-hidden="true" class="header-anchor">#</a> STA-4. 获取客户销售额分析</h3> <h4 id="模块负责人-4"><a href="#模块负责人-4" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>郭枫
+</code></pre> <h4 id="请求-4"><a href="#请求-4" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/api/customerSalesAnalysis
+</code></pre> <h4 id="参数-4"><a href="#参数-4" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>monthtag : '2019-06'  //月份
+pageNo : '1'  //页码
+pageSize: '25' //页数
+</code></pre> <h4 id="响应-4"><a href="#响应-4" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+&quot;code&quot;: 100000,
+&quot;msg&quot;: &quot;&quot;,
+&quot;data&quot;: [
+    {
+        &quot;todyAdd&quot;: 0,	//今日新增
+        &quot;yearRatioMonthSend&quot;: 498753.69,	//同期已发额
+        &quot;theMonth&quot;: 0,	//本月订单额
+        &quot;areaName&quot;: &quot;D&quot;,	//大区
+        &quot;LastmonthAmount&quot;: 214430,	//上月已发额
+        &quot;yearGrowth&quot;: -1,	//同比增长
+        &quot;totalRevenue&quot;: 492203.8674,	//年度净收入
+        &quot;monthTotalRevenue&quot;: 0,	//月度净收入
+        &quot;YGrossProfitMargin&quot;: 0.10781601,	//年度毛利率
+        &quot;monthTotalCost&quot;: 0,	//月度总成本
+        &quot;YOrderMoney&quot;: 549626.52,	//年度订单额
+        &quot;MonthGrossProfitMargin&quot;: 0,	//年度毛利率
+        &quot;srName&quot;: &quot;关怡&quot;,	//sr姓名
+        &quot;busName&quot;: &quot;DH&quot;,	//事业部
+        &quot;ThisMonthFinsh&quot;: 0,	//本月已发额	
+        &quot;customerName&quot;: &quot;北京米斯特商贸有限公司&quot;,	//客户名
+        &quot;sa_rebate&quot;: 0,	//销售优惠
+        &quot;Ysend&quot;: 549626.52,	//年度已发
+        &quot;customer_id&quot;: 1191,	//客户id
+        &quot;ssName&quot;: &quot;许翠竹SS&quot;,	//ss姓名
+        &quot;AnnualIncome&quot;: 549626.52,	//年度收入
+        &quot;totalCost&quot;: 439136.4086	//年度总成本
+    },...
+  ]
+}
+</code></pre> <h3 id="sta-5-获取-sr级别日报-分析"><a href="#sta-5-获取-sr级别日报-分析" aria-hidden="true" class="header-anchor">#</a> STA-5. 获取 Sr级别日报 分析</h3> <h4 id="模块负责人-5"><a href="#模块负责人-5" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>郭枫
+</code></pre> <h4 id="请求-5"><a href="#请求-5" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/api/srOrCustomerSalesAnalysis/sr
+</code></pre> <h4 id="参数-5"><a href="#参数-5" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>monthtag : '2019-06'  //月份
+pageNo : '1'  //页码
+pageSize: '25' //页数
+</code></pre> <h4 id="响应-5"><a href="#响应-5" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+&quot;code&quot;: 100000,
+&quot;msg&quot;: &quot;&quot;,
+&quot;data&quot;: [
+    {
+        &quot;todyAdd&quot;: 0,	//今日新增
+        &quot;yearRatioMonthSend&quot;: 498753.69,	//同期已发额
+        &quot;theMonth&quot;: 0,	//本月订单额
+        &quot;areaName&quot;: &quot;D&quot;,	//大区
+        &quot;LastmonthAmount&quot;: 214430,	//上月已发额
+        &quot;yearGrowth&quot;: -1, //同比增长
+        &quot;totalRevenue&quot;: 492203.8674,	//年度净收入
+        &quot;monthTotalRevenue&quot;: 0,	//月度净收入
+        &quot;YGrossProfitMargin&quot;: 0.10781601,	//年度毛利率
+        &quot;monthTotalCost&quot;: 0,	//月度总成本
+        &quot;YOrderMoney&quot;: 549626.52,	//年度订单额
+        &quot;MonthGrossProfitMargin&quot;: 0,	//年度毛利率
+        &quot;srName&quot;: &quot;关怡&quot;,	//sr姓名
+        &quot;busName&quot;: &quot;DH&quot;,	//事业部
+        &quot;ThisMonthFinsh&quot;: 0,	//本月已发额	
+        &quot;customerName&quot;: &quot;北京米斯特商贸有限公司&quot;,	//客户名
+        &quot;sa_rebate&quot;: 0,	//销售优惠
+        &quot;Ysend&quot;: 549626.52,	//年度已发
+        &quot;customer_id&quot;: 1191,	//客户id
+        &quot;ssName&quot;: &quot;许翠竹SS&quot;,	//ss姓名
+        &quot;AnnualIncome&quot;: 549626.52,	//年度收入
+        &quot;totalCost&quot;: 439136.4086	//年度总成本
+    },...
+  ]
+}
+</code></pre> <h3 id="sta-6-获取-客户级别日报-分析"><a href="#sta-6-获取-客户级别日报-分析" aria-hidden="true" class="header-anchor">#</a> STA-6. 获取 客户级别日报 分析</h3> <h4 id="模块负责人-6"><a href="#模块负责人-6" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>郭枫
+</code></pre> <h4 id="请求-6"><a href="#请求-6" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/api/srOrCustomerSalesAnalysis/customer
+</code></pre> <h4 id="参数-6"><a href="#参数-6" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>monthtag : '2019-06'  //月份
+pageNo : '1'  //页码
+pageSize: '25' //页数
+</code></pre> <h4 id="响应-6"><a href="#响应-6" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+&quot;code&quot;: 100000,
+&quot;msg&quot;: &quot;&quot;,
+&quot;data&quot;: [
+    {
+        &quot;todyAdd&quot;: 0,	//今日新增
+        &quot;yearRatioMonthSend&quot;: 498753.69,	//同期已发额
+        &quot;theMonth&quot;: 0,	//本月订单额
+        &quot;areaName&quot;: &quot;D&quot;,	//大区
+        &quot;LastmonthAmount&quot;: 214430,	//上月已发额
+        &quot;yearGrowth&quot;: -1, //同比增长
+        &quot;totalRevenue&quot;: 492203.8674,	//年度净收入
+        &quot;monthTotalRevenue&quot;: 0,	//月度净收入
+        &quot;YGrossProfitMargin&quot;: 0.10781601,	//年度毛利率
+        &quot;monthTotalCost&quot;: 0,	//月度总成本
+        &quot;YOrderMoney&quot;: 549626.52,	//年度订单额
+        &quot;MonthGrossProfitMargin&quot;: 0,	//年度毛利率
+        &quot;srName&quot;: &quot;关怡&quot;,	//sr姓名
+        &quot;busName&quot;: &quot;DH&quot;,	//事业部
+        &quot;ThisMonthFinsh&quot;: 0,	//本月已发额	
+        &quot;customerName&quot;: &quot;北京米斯特商贸有限公司&quot;,	//客户名
+        &quot;sa_rebate&quot;: 0,	//销售优惠
+        &quot;Ysend&quot;: 549626.52,	//年度已发
+        &quot;customer_id&quot;: 1191,	//客户id
+        &quot;ssName&quot;: &quot;许翠竹SS&quot;,	//ss姓名
+        &quot;AnnualIncome&quot;: 549626.52,	//年度收入
+        &quot;totalCost&quot;: 439136.4086	//年度总成本
+    },...
+  ]
+}
+</code></pre> <h3 id="sta-7-获取-大区产品组级别日报-分析"><a href="#sta-7-获取-大区产品组级别日报-分析" aria-hidden="true" class="header-anchor">#</a> STA-7. 获取 大区产品组级别日报 分析</h3> <h4 id="模块负责人-7"><a href="#模块负责人-7" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>郭枫
+</code></pre> <h4 id="请求-7"><a href="#请求-7" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/api/salesDayly/product
+</code></pre> <h4 id="参数-7"><a href="#参数-7" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>monthtag : '2019-06'  //月份
+pageNo : '1'  //页码
+pageSize: '25' //页数
+</code></pre> <h4 id="响应-7"><a href="#响应-7" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+&quot;code&quot;: 100000,
+&quot;msg&quot;: &quot;&quot;,
+&quot;data&quot;: {
+    &quot;mapVCount&quot;: {
+        &quot;todyAdd&quot;: 0,
+        &quot;yearRatioMonthSend&quot;: 18337219.94,
+        &quot;sa_ap_count&quot;: -52002.72,
+        &quot;theMonth&quot;: 142503.9,
+        &quot;areaName&quot;: &quot;V&quot;,
+        &quot;LastmonthAmount&quot;: 20013084.91,
+        &quot;yearGrowth&quot;: -0.99222871,
+        &quot;targerIntegral&quot;: 134.09912362,
+        &quot;totalRevenue&quot;: 52384470.7582,
+        &quot;monthTotalRevenue&quot;: 126115.4624,
+        &quot;YGrossProfitMargin&quot;: 0.18930563,
+        &quot;monthTotalCost&quot;: 99554.6076,
+        &quot;group_bid&quot;: 159,
+        &quot;YOrderMoney&quot;: 60344605.63,
+        &quot;MonthGrossProfitMargin&quot;: 0.21060744,
+        &quot;sa_sr_count&quot;: 2437998.71,
+        &quot;busName&quot;: &quot;VH&quot;,
+        &quot;sa_pa_count&quot;: 42467795.6607,
+        &quot;ThisMonthFinsh&quot;: 142503.9,
+        &quot;achievingRate&quot;: 0.13409912,
+        &quot;target&quot;: 450000000,
+        &quot;sa_rebate&quot;: 1313366.1,
+        &quot;Ysend&quot;: 60344605.63,
+        &quot;paCount&quot;: 42467795.6607,
+        &quot;AnnualIncome&quot;: 59031239.53,
+        &quot;totalCost&quot;: 42467795.6607
+    },
+    &quot;mapPVList&quot;: [
+        {
+            &quot;YOrderMoney&quot;: 7959647.45,
+            &quot;MonthGrossProfitMargin&quot;: 0.16679847,
+            &quot;todyAdd&quot;: 0,
+            &quot;yearRatioMonthSend&quot;: 2190203.77,
+            &quot;sa_sr_count&quot;: 657518.7,
+            &quot;busName&quot;: &quot;VH&quot;,
+            &quot;ThisMonthFinsh&quot;: 53676.4,
+            &quot;achievingRate&quot;: 0.099495593125,
+            &quot;target&quot;: 80000000,
+            &quot;sa_rebate&quot;: 44555.42,
+            &quot;sa_ap_count&quot;: -4528,
+            &quot;theMonth&quot;: 53676.4,
+            &quot;areaName&quot;: &quot;V&quot;,
+            &quot;LastmonthAmount&quot;: 2890935.17,
+            &quot;yearGrowth&quot;: -0.97549251,
+            &quot;targerIntegral&quot;: 99.495593125,
+            &quot;Ysend&quot;: 7959647.45,
+            &quot;totalRevenue&quot;: 7073837.1092,
+            &quot;monthTotalRevenue&quot;: 47507.0553,
+            &quot;YGrossProfitMargin&quot;: 0.15487408,
+            &quot;monthTotalCost&quot;: 39582.951,
+            &quot;group_bid&quot;: 159,
+            &quot;AnnualIncome&quot;: 7915092.03,
+            &quot;totalCost&quot;: 5978283.1249
+        },
+        
+    ],
+    &quot;mapPList&quot;: [
+        {
+            &quot;todyAdd&quot;: 0,
+            &quot;yearRatioMonthSend&quot;: 18605404.27,
+            &quot;sa_ap_count&quot;: -165931.25,
+            &quot;theMonth&quot;: 37056.2,
+            &quot;areaName&quot;: &quot;P&quot;,
+            &quot;LastmonthAmount&quot;: 22936766.85,
+            &quot;yearGrowth&quot;: -0.99800831,
+            &quot;targerIntegral&quot;: 141.82491347500002,
+            &quot;totalRevenue&quot;: 47499887.9553,
+            &quot;monthTotalRevenue&quot;: 31965.6992,
+            &quot;YGrossProfitMargin&quot;: 0.16944369,
+            &quot;monthTotalCost&quot;: 25250.1823,
+            &quot;group_bid&quot;: 160,
+            &quot;YOrderMoney&quot;: 56729965.39,
+            &quot;MonthGrossProfitMargin&quot;: 0.21008509,
+            &quot;sa_sr_count&quot;: 62722.45,
+            &quot;busName&quot;: &quot;两广&quot;,
+            &quot;ThisMonthFinsh&quot;: 37056.2,
+            &quot;achievingRate&quot;: 0.141824913475,
+            &quot;target&quot;: 400000000,
+            &quot;sa_rebate&quot;: 3140359.41,
+            &quot;groupName&quot;: &quot;PT&quot;,
+            &quot;Ysend&quot;: 56729965.39,
+            &quot;AnnualIncome&quot;: 53589605.98,
+            &quot;totalCost&quot;: 39451331.6872
+        },
+        
+    ],
+    &quot;mapPSList&quot;: [
+        {
+            &quot;YOrderMoney&quot;: 4288201.68,
+            &quot;MonthGrossProfitMargin&quot;: 0,
+            &quot;todyAdd&quot;: 0,
+            &quot;yearRatioMonthSend&quot;: 549909.3,
+            &quot;sa_sr_count&quot;: 1440,
+            &quot;busName&quot;: &quot;PS-C&quot;,
+            &quot;ThisMonthFinsh&quot;: 0,
+            &quot;sa_rebate&quot;: 95396.48,
+            &quot;sa_ap_count&quot;: -71.4,
+            &quot;theMonth&quot;: 0,
+            &quot;areaName&quot;: &quot;PS&quot;,
+            &quot;LastmonthAmount&quot;: 1565709.8,
+            &quot;yearGrowth&quot;: -1,
+            &quot;Ysend&quot;: 4288201.68,
+            &quot;totalRevenue&quot;: 3721092.6026,
+            &quot;monthTotalRevenue&quot;: 0,
+            &quot;YGrossProfitMargin&quot;: 0.18166769,
+            &quot;monthTotalCost&quot;: 0,
+            &quot;group_bid&quot;: 573,
+            &quot;AnnualIncome&quot;: 4192805.2,
+            &quot;totalCost&quot;: 3045090.3142
+        }
+    ],
+    &quot;mapRList&quot;: [
+        {
+            &quot;YOrderMoney&quot;: 13534653.62,
+            &quot;MonthGrossProfitMargin&quot;: 0.0876705,
+            &quot;todyAdd&quot;: 0,
+            &quot;yearRatioMonthSend&quot;: 42237.02,
+            &quot;sa_sr_count&quot;: 345027,
+            &quot;busName&quot;: &quot;R&quot;,
+            &quot;ThisMonthFinsh&quot;: 173305.71,
+            &quot;sa_rebate&quot;: 354291.27,
+            &quot;sa_ap_count&quot;: -932.19,
+            &quot;theMonth&quot;: 173305.71,
+            &quot;areaName&quot;: &quot;R&quot;,
+            &quot;LastmonthAmount&quot;: 4724973.3,
+            &quot;yearGrowth&quot;: 3.10317087,
+            &quot;Ysend&quot;: 13534653.62,
+            &quot;totalRevenue&quot;: 12044800.2633,
+            &quot;monthTotalRevenue&quot;: 154997.049,
+            &quot;YGrossProfitMargin&quot;: 0.06034428,
+            &quot;monthTotalCost&quot;: 141408.3802,
+            &quot;group_bid&quot;: 245,
+            &quot;AnnualIncome&quot;: 13180362.35,
+            &quot;totalCost&quot;: 11317965.4359
+        }
+    ],
+    &quot;mapRCount&quot;: {
+        &quot;todyAdd&quot;: 0,
+        &quot;yearRatioMonthSend&quot;: 42237.02,
+        &quot;sa_ap_count&quot;: -932.19,
+        &quot;theMonth&quot;: 173305.71,
+        &quot;areaName&quot;: &quot;R&quot;,
+        &quot;LastmonthAmount&quot;: 4724973.3,
+        &quot;yearGrowth&quot;: 3.10317087,
+        &quot;targerIntegral&quot;: 38.67043891,
+        &quot;totalRevenue&quot;: 12044800.2633,
+        &quot;monthTotalRevenue&quot;: 154997.049,
+        &quot;YGrossProfitMargin&quot;: 0.06034428,
+        &quot;monthTotalCost&quot;: 141408.3802,
+        &quot;group_bid&quot;: 245,
+        &quot;YOrderMoney&quot;: 13534653.62,
+        &quot;MonthGrossProfitMargin&quot;: 0.0876705,
+        &quot;sa_sr_count&quot;: 345027,
+        &quot;busName&quot;: &quot;R&quot;,
+        &quot;sa_pa_count&quot;: 11317965.4359,
+        &quot;ThisMonthFinsh&quot;: 173305.71,
+        &quot;achievingRate&quot;: 0.03867044,
+        &quot;target&quot;: 350000000,
+        &quot;sa_rebate&quot;: 354291.27,
+        &quot;Ysend&quot;: 13534653.62,
+        &quot;paCount&quot;: 11317965.4359,
+        &quot;AnnualIncome&quot;: 13180362.35,
+        &quot;totalCost&quot;: 11317965.4359
+    },
+    &quot;mapDCount&quot;: {
+        &quot;todyAdd&quot;: 0,
+        &quot;yearRatioMonthSend&quot;: 11771866,
+        &quot;sa_ap_count&quot;: -25059.07,
+        &quot;theMonth&quot;: 0,
+        &quot;areaName&quot;: &quot;D&quot;,
+        &quot;LastmonthAmount&quot;: 12413470.28,
+        &quot;yearGrowth&quot;: -1,
+        &quot;targerIntegral&quot;: 117.705597,
+        &quot;totalRevenue&quot;: 25266880.8876,
+        &quot;monthTotalRevenue&quot;: 0,
+        &quot;YGrossProfitMargin&quot;: 0.16797679,
+        &quot;monthTotalCost&quot;: 0,
+        &quot;group_bid&quot;: 158,
+        &quot;YOrderMoney&quot;: 29426399.25,
+        &quot;MonthGrossProfitMargin&quot;: 0,
+        &quot;sa_sr_count&quot;: 122477.48,
+        &quot;busName&quot;: &quot;DH&quot;,
+        &quot;sa_pa_count&quot;: 21022631.296,
+        &quot;ThisMonthFinsh&quot;: 0,
+        &quot;achievingRate&quot;: 0.1177056,
+        &quot;target&quot;: 250000000,
+        &quot;sa_rebate&quot;: 925957.87,
+        &quot;Ysend&quot;: 29426399.25,
+        &quot;paCount&quot;: 21022631.296,
+        &quot;AnnualIncome&quot;: 28500441.38,
+        &quot;totalCost&quot;: 21022631.296
+    },
+    &quot;mapDList&quot;: [
+        {
+            &quot;YOrderMoney&quot;: 8407828.4,
+            &quot;MonthGrossProfitMargin&quot;: 0,
+            &quot;todyAdd&quot;: 0,
+            &quot;yearRatioMonthSend&quot;: 3269528.7,
+            &quot;sa_sr_count&quot;: 117437.48,
+            &quot;busName&quot;: &quot;DH&quot;,
+            &quot;ThisMonthFinsh&quot;: 0,
+            &quot;achievingRate&quot;: 0.07006523666666667,
+            &quot;target&quot;: 120000000,
+            &quot;sa_rebate&quot;: 201097.56,
+            &quot;sa_ap_count&quot;: -22800,
+            &quot;theMonth&quot;: 0,
+            &quot;areaName&quot;: &quot;D&quot;,
+            &quot;LastmonthAmount&quot;: 3370936.9,
+            &quot;yearGrowth&quot;: -1,
+            &quot;targerIntegral&quot;: 70.06523666666666,
+            &quot;Ysend&quot;: 8407828.4,
+            &quot;totalRevenue&quot;: 7289735.632,
+            &quot;monthTotalRevenue&quot;: 0,
+            &quot;YGrossProfitMargin&quot;: 0.17258529,
+            &quot;monthTotalCost&quot;: 0,
+            &quot;group_bid&quot;: 158,
+            &quot;AnnualIncome&quot;: 8206730.84,
+            &quot;totalCost&quot;: 6031634.4633
+        },
+        
+    ],
+    &quot;mapPCount&quot;: {
+        &quot;todyAdd&quot;: 0,
+        &quot;yearRatioMonthSend&quot;: 34519616.47,
+        &quot;sa_ap_count&quot;: -174220.25,
+        &quot;theMonth&quot;: 78637.2,
+        &quot;areaName&quot;: &quot;P&quot;,
+        &quot;LastmonthAmount&quot;: 50880142.31,
+        &quot;yearGrowth&quot;: -0.99772196,
+        &quot;targerIntegral&quot;: 128.97949379,
+        &quot;totalRevenue&quot;: 107214782.3444,
+        &quot;monthTotalRevenue&quot;: 68669.1239,
+        &quot;YGrossProfitMargin&quot;: 0.13486094,
+        &quot;monthTotalCost&quot;: 55557.0394,
+        &quot;group_bid&quot;: 160,
+        &quot;YOrderMoney&quot;: 128979493.79,
+        &quot;MonthGrossProfitMargin&quot;: 0.19094585,
+        &quot;sa_sr_count&quot;: 128689.45,
+        &quot;busName&quot;: &quot;两广&quot;,
+        &quot;sa_pa_count&quot;: 92755696.04,
+        &quot;ThisMonthFinsh&quot;: 78637.2,
+        &quot;achievingRate&quot;: 0.12897949,
+        &quot;target&quot;: 1000000000,
+        &quot;sa_rebate&quot;: 8012730.31,
+        &quot;groupName&quot;: &quot;PT&quot;,
+        &quot;Ysend&quot;: 128979493.79,
+        &quot;paCount&quot;: 92755696.04,
+        &quot;AnnualIncome&quot;: 120966763.48,
+        &quot;totalCost&quot;: 92755696.04
+    },
+    &quot;mapCount&quot;: {
+        &quot;YOrderMoney&quot;: 236573353.97,
+        &quot;MonthGrossProfitMargin&quot;: 0.15227102490477723,
+        &quot;todyAdd&quot;: 0,
+        &quot;yearRatioMonthSend&quot;: 65220848.730000004,
+        &quot;sa_sr_count&quot;: 3035632.64,
+        &quot;ThisMonthFinsh&quot;: 394446.80999999994,
+        &quot;achievingRate&quot;: 0.11540163608292683,
+        &quot;target&quot;: 2050000000,
+        &quot;sa_rebate&quot;: 10701742.030000001,
+        &quot;theMonth&quot;: 394446.80999999994,
+        &quot;sa_ap_count&quot;: -252285.63,
+        &quot;LastmonthAmount&quot;: 89597380.6,
+        &quot;yearGrowth&quot;: -0.9939521362006047,
+        &quot;targerIntegral&quot;: 115.40163608292683,
+        &quot;Ysend&quot;: 236573353.97,
+        &quot;paCount&quot;: 170609178.74680004,
+        &quot;totalRevenue&quot;: 200632026.8561,
+        &quot;monthTotalRevenue&quot;: 349781.6353,
+        &quot;monthTotalCost&quot;: 296520.0272,
+        &quot;YGrossProfitMargin&quot;: 0.14964135377465607,
+        &quot;totalCost&quot;: 170609178.74680004,
+        &quot;AnnualIncome&quot;: 225871611.94
+    },
+    &quot;mapPSCount&quot;: {
+        &quot;todyAdd&quot;: 0,
+        &quot;yearRatioMonthSend&quot;: 549909.3,
+        &quot;sa_ap_count&quot;: -71.4,
+        &quot;theMonth&quot;: 0,
+        &quot;areaName&quot;: &quot;PS&quot;,
+        &quot;LastmonthAmount&quot;: 1565709.8,
+        &quot;yearGrowth&quot;: -1,
+        &quot;targerIntegral&quot;: 0,
+        &quot;totalRevenue&quot;: 3721092.6026,
+        &quot;monthTotalRevenue&quot;: 0,
+        &quot;YGrossProfitMargin&quot;: 0.18166769,
+        &quot;monthTotalCost&quot;: 0,
+        &quot;group_bid&quot;: 573,
+        &quot;YOrderMoney&quot;: 4288201.68,
+        &quot;MonthGrossProfitMargin&quot;: 0,
+        &quot;sa_sr_count&quot;: 1440,
+        &quot;busName&quot;: &quot;PS-C&quot;,
+        &quot;sa_pa_count&quot;: 3045090.3142,
+        &quot;ThisMonthFinsh&quot;: 0,
+        &quot;achievingRate&quot;: 0,
+        &quot;target&quot;: 0,
+        &quot;sa_rebate&quot;: 95396.48,
+        &quot;Ysend&quot;: 4288201.68,
+        &quot;paCount&quot;: 3045090.3142,
+        &quot;AnnualIncome&quot;: 4192805.2,
+        &quot;totalCost&quot;: 3045090.3142
+    }
+  }
+}
+</code></pre> <h3 id="sta-8-获取-大区事业部级别日报-分析"><a href="#sta-8-获取-大区事业部级别日报-分析" aria-hidden="true" class="header-anchor">#</a> STA-8. 获取 大区事业部级别日报 分析</h3> <h4 id="模块负责人-8"><a href="#模块负责人-8" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>郭枫
+</code></pre> <h4 id="请求-8"><a href="#请求-8" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/api/salesDayly/business
+</code></pre> <h4 id="参数-8"><a href="#参数-8" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>monthtag : '2019-06'  //月份
+pageNo : '1'  //页码
+pageSize: '25' //页数
+</code></pre> <h4 id="响应-8"><a href="#响应-8" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>见STA-7
+</code></pre> <h3 id="sta-9-客户登陆"><a href="#sta-9-客户登陆" aria-hidden="true" class="header-anchor">#</a> STA-9. 客户登陆</h3> <h4 id="模块负责人-9"><a href="#模块负责人-9" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>郭枫
+</code></pre> <h4 id="请求-9"><a href="#请求-9" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /v2/api/login
+</code></pre> <h4 id="参数-9"><a href="#参数-9" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>userName : 'admin'  //用户名
+passWord : 'admin'  //密码
+</code></pre> <h3 id="sta-10-获取客户-菜单"><a href="#sta-10-获取客户-菜单" aria-hidden="true" class="header-anchor">#</a> STA-10. 获取客户 菜单</h3> <h4 id="模块负责人-10"><a href="#模块负责人-10" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>郭枫
+</code></pre> <h4 id="请求-10"><a href="#请求-10" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/api/menu
+</code></pre> <h4 id="响应-9"><a href="#响应-9" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+&quot;code&quot;: 100000,
+&quot;msg&quot;: &quot;&quot;,
+&quot;data&quot;: [
+    {
+        &quot;child&quot;: [
+            {
+                &quot;child&quot;: null,
+                &quot;icon_url&quot;: &quot;&quot;,
+                &quot;id&quot;: 9,
+                &quot;parent_id&quot;: 8,
+                &quot;sort&quot;: 0,
+                &quot;title&quot;: &quot;产品分析&quot;,
+                &quot;url&quot;: &quot;/salesanalysis/mppr&quot;
+            },
+            {
+                &quot;child&quot;: null,
+                &quot;icon_url&quot;: &quot;&quot;,
+                &quot;id&quot;: 10,
+                &quot;parent_id&quot;: 8,
+                &quot;sort&quot;: 0,
+                &quot;title&quot;: &quot;客户销售额&quot;,
+                &quot;url&quot;: &quot;/salesanalysis/customersales&quot;
+            },
+            {
+                &quot;child&quot;: null,
+                &quot;icon_url&quot;: &quot;&quot;,
+                &quot;id&quot;: 11,
+                &quot;parent_id&quot;: 8,
+                &quot;sort&quot;: 0,
+                &quot;title&quot;: &quot;客户订购产品&quot;,
+                &quot;url&quot;: &quot;/salesanalysis/customermppr&quot;
+            },
+            {
+                &quot;child&quot;: null,
+                &quot;icon_url&quot;: &quot;&quot;,
+                &quot;id&quot;: 24,
+                &quot;parent_id&quot;: 8,
+                &quot;sort&quot;: 0,
+                &quot;title&quot;: &quot;客户预警&quot;,
+                &quot;url&quot;: &quot;/salesanalysis/customerwarning&quot;
+            },
+            {
+                &quot;child&quot;: null,
+                &quot;icon_url&quot;: &quot;&quot;,
+                &quot;id&quot;: 25,
+                &quot;parent_id&quot;: 8,
+                &quot;sort&quot;: 0,
+                &quot;title&quot;: &quot;产品预警&quot;,
+                &quot;url&quot;: &quot;/salesanalysis/productwarning&quot;
+            },
+            {
+                &quot;child&quot;: null,
+                &quot;icon_url&quot;: &quot;&quot;,
+                &quot;id&quot;: 27,
+                &quot;parent_id&quot;: 8,
+                &quot;sort&quot;: 0,
+                &quot;title&quot;: &quot;数据导出&quot;,
+                &quot;url&quot;: &quot;/salesanalysis/dataexport&quot;
+            },
+            {
+                &quot;child&quot;: null,
+                &quot;icon_url&quot;: &quot;&quot;,
+                &quot;id&quot;: 28,
+                &quot;parent_id&quot;: 8,
+                &quot;sort&quot;: 0,
+                &quot;title&quot;: &quot;产品明细分析&quot;,
+                &quot;url&quot;: &quot;/salesanalysis/mpprDetail&quot;
+            }
+        ],
+        &quot;icon_url&quot;: &quot;stats-bars&quot;,
+        &quot;id&quot;: 8,
+        &quot;parent_id&quot;: 0,
+        &quot;sort&quot;: 0,
+        &quot;title&quot;: &quot;销售分析&quot;,
+        &quot;url&quot;: &quot;/salesanalysis&quot;
+    },
+    {
+        &quot;child&quot;: [
+            {
+                &quot;child&quot;: null,
+                &quot;icon_url&quot;: &quot;&quot;,
+                &quot;id&quot;: 2,
+                &quot;parent_id&quot;: 1,
+                &quot;sort&quot;: 0,
+                &quot;title&quot;: &quot;客户毛利率&quot;,
+                &quot;url&quot;: &quot;/profit/grosscustomer&quot;
+            },
+            {
+                &quot;child&quot;: null,
+                &quot;icon_url&quot;: &quot;&quot;,
+                &quot;id&quot;: 3,
+                &quot;parent_id&quot;: 1,
+                &quot;sort&quot;: 0,
+                &quot;title&quot;: &quot;产品毛利率&quot;,
+                &quot;url&quot;: &quot;/profit/grossproduct&quot;
+            },
+            {
+                &quot;child&quot;: null,
+                &quot;icon_url&quot;: &quot;&quot;,
+                &quot;id&quot;: 4,
+                &quot;parent_id&quot;: 1,
+                &quot;sort&quot;: 0,
+                &quot;title&quot;: &quot;事业部毛利率&quot;,
+                &quot;url&quot;: &quot;/profit/grossbusiness&quot;
+            },
+            {
+                &quot;child&quot;: null,
+                &quot;icon_url&quot;: &quot;&quot;,
+                &quot;id&quot;: 17,
+                &quot;parent_id&quot;: 1,
+                &quot;sort&quot;: 0,
+                &quot;title&quot;: &quot;销售优惠占比&quot;,
+                &quot;url&quot;: &quot;/profit/coupon&quot;
+            },
+            {
+                &quot;child&quot;: null,
+                &quot;icon_url&quot;: &quot;&quot;,
+                &quot;id&quot;: 22,
+                &quot;parent_id&quot;: 1,
+                &quot;sort&quot;: 0,
+                &quot;title&quot;: &quot;季度销售优惠&quot;,
+                &quot;url&quot;: &quot;/profit/customercontract&quot;
+            },
+            {
+                &quot;child&quot;: null,
+                &quot;icon_url&quot;: &quot;&quot;,
+                &quot;id&quot;: 23,
+                &quot;parent_id&quot;: 1,
+                &quot;sort&quot;: 0,
+                &quot;title&quot;: &quot;销售优惠明细&quot;,
+                &quot;url&quot;: &quot;/profit/salesrebate&quot;
+            }
+        ],
+        &quot;icon_url&quot;: &quot;social-buffer&quot;,
+        &quot;id&quot;: 1,
+        &quot;parent_id&quot;: 0,
+        &quot;sort&quot;: 0,
+        &quot;title&quot;: &quot;成本分析&quot;,
+        &quot;url&quot;: &quot;/profit&quot;
+    },
+    {
+        &quot;child&quot;: [
+            {
+                &quot;child&quot;: null,
+                &quot;icon_url&quot;: &quot;&quot;,
+                &quot;id&quot;: 6,
+                &quot;parent_id&quot;: 5,
+                &quot;sort&quot;: 0,
+                &quot;title&quot;: &quot;AO指标&quot;,
+                &quot;url&quot;: &quot;/assessment/aoIndicators&quot;
+            },
+            {
+                &quot;child&quot;: null,
+                &quot;icon_url&quot;: &quot;&quot;,
+                &quot;id&quot;: 12,
+                &quot;parent_id&quot;: 5,
+                &quot;sort&quot;: 0,
+                &quot;title&quot;: &quot;事业部目标&quot;,
+                &quot;url&quot;: &quot;/assessment/businessTarget&quot;
+            },
+            {
+                &quot;child&quot;: null,
+                &quot;icon_url&quot;: &quot;&quot;,
+                &quot;id&quot;: 15,
+                &quot;parent_id&quot;: 5,
+                &quot;sort&quot;: 0,
+                &quot;title&quot;: &quot;客户目标&quot;,
+                &quot;url&quot;: &quot;/assessment/customerTarget&quot;
+            },
+            {
+                &quot;child&quot;: null,
+                &quot;icon_url&quot;: &quot;&quot;,
+                &quot;id&quot;: 16,
+                &quot;parent_id&quot;: 5,
+                &quot;sort&quot;: 0,
+                &quot;title&quot;: &quot;SR目标&quot;,
+                &quot;url&quot;: &quot;/assessment/srTarget&quot;
+            },
+            {
+                &quot;child&quot;: null,
+                &quot;icon_url&quot;: &quot;&quot;,
+                &quot;id&quot;: 21,
+                &quot;parent_id&quot;: 5,
+                &quot;sort&quot;: 0,
+                &quot;title&quot;: &quot;物流发货额&quot;,
+                &quot;url&quot;: &quot;/assessment/depotOrder&quot;
+            },
+            {
+                &quot;child&quot;: null,
+                &quot;icon_url&quot;: &quot;&quot;,
+                &quot;id&quot;: 26,
+                &quot;parent_id&quot;: 5,
+                &quot;sort&quot;: 0,
+                &quot;title&quot;: &quot;渠道目标&quot;,
+                &quot;url&quot;: &quot;/assessment/channelTarget&quot;
+            }
+        ],
+        &quot;icon_url&quot;: &quot;arrow-graph-up-right&quot;,
+        &quot;id&quot;: 5,
+        &quot;parent_id&quot;: 0,
+        &quot;sort&quot;: 0,
+        &quot;title&quot;: &quot;考核体系&quot;,
+        &quot;url&quot;: &quot;/assessment&quot;
+    },
+    {
+        &quot;child&quot;: [
+            {
+                &quot;child&quot;: null,
+                &quot;icon_url&quot;: &quot;&quot;,
+                &quot;id&quot;: 14,
+                &quot;parent_id&quot;: 13,
+                &quot;sort&quot;: 0,
+                &quot;title&quot;: &quot;业务组配置&quot;,
+                &quot;url&quot;: &quot;/systemconfig/group&quot;
+            },
+            {
+                &quot;child&quot;: null,
+                &quot;icon_url&quot;: &quot;&quot;,
+                &quot;id&quot;: 18,
+                &quot;parent_id&quot;: 13,
+                &quot;sort&quot;: 0,
+                &quot;title&quot;: &quot;菜单配置&quot;,
+                &quot;url&quot;: &quot;/systemconfig/menu&quot;
+            },
+            {
+                &quot;child&quot;: null,
+                &quot;icon_url&quot;: &quot;&quot;,
+                &quot;id&quot;: 19,
+                &quot;parent_id&quot;: 13,
+                &quot;sort&quot;: 0,
+                &quot;title&quot;: &quot;系统用户&quot;,
+                &quot;url&quot;: &quot;/systemconfig/user&quot;
+            },
+            {
+                &quot;child&quot;: null,
+                &quot;icon_url&quot;: &quot;&quot;,
+                &quot;id&quot;: 20,
+                &quot;parent_id&quot;: 13,
+                &quot;sort&quot;: 0,
+                &quot;title&quot;: &quot;系统角色&quot;,
+                &quot;url&quot;: &quot;/systemconfig/auth&quot;
+            }
+        ],
+        &quot;icon_url&quot;: &quot;ios-gear&quot;,
+        &quot;id&quot;: 13,
+        &quot;parent_id&quot;: 0,
+        &quot;sort&quot;: 0,
+        &quot;title&quot;: &quot;系统配置&quot;,
+        &quot;url&quot;: &quot;/systemconfig&quot;
+    }
+  ]
+}
+</code></pre> <h3 id="sta-11-营销模块"><a href="#sta-11-营销模块" aria-hidden="true" class="header-anchor">#</a> STA-11. 营销模块</h3> <h4 id="模块负责人-11"><a href="#模块负责人-11" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>石博孚
+</code></pre> <h4 id="请求-11"><a href="#请求-11" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /reportMarket/market/product
+</code></pre> <h4 id="参数-10"><a href="#参数-10" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*customerId : 12341    //客户编号
+*productIds: 1,2,3,4,5 //商品编号
+</code></pre> <h4 id="响应-10"><a href="#响应-10" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>  {
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;:[
+      {
+         &quot;productId&quot;: 1,     // 按商品客户查询
+         &quot;markets&quot;:[
+             {
+                 &quot;marketId&quot;:1,
+                 &quot;marketType&quot;: 'COUPON', // COUPON 优惠券 'GIFT' 满增 'REDUCE' 满减 'DISCOUNT' 满折
+                 &quot;marketName&quot;: &quot;xxxx&quot;, // 营销名
+                 &quot;effectStime&quot;: &quot;xxx&quot;, // 开始时间
+                 &quot;effectEtime&quot;: &quot;xxx&quot;, // 结束时间
+                 &quot;remark&quot;:XXX// 描述
+             },
+             ...
+         ]
+      },
+      ...
+    ]
+}
+</code></pre> <h3 id="sta-12-营销模块"><a href="#sta-12-营销模块" aria-hidden="true" class="header-anchor">#</a> STA-12. 营销模块</h3> <h4 id="模块负责人-12"><a href="#模块负责人-12" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>石博孚
+</code></pre> <h4 id="请求-12"><a href="#请求-12" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /reportMarket/market/productUnit
+</code></pre> <h4 id="参数-11"><a href="#参数-11" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*customerId : 12341    //客户编号
+*productUnitIds: 1,2,3,4,5 //商品规格编号
+</code></pre> <h4 id="响应-11"><a href="#响应-11" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>  {
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;:[
+      {
+         &quot;productUnitId&quot;: 1,     // 规格
+         &quot;markets&quot;:[
+             {
+                 &quot;marketId&quot;:1,
+                 &quot;marketType&quot;: 'COUPON', // COUPON 优惠券 'GIFT' 满增 'REDUCE' 满减 'DISCOUNT' 满折
+                 &quot;marketName&quot;: &quot;xxxx&quot;, // 营销名
+                 &quot;effectStime&quot;: &quot;xxx&quot;, // 开始时间
+                 &quot;effectEtime&quot;: &quot;xxx&quot;, // 结束时间
+                 &quot;remark&quot;:XXX// 描述
+             },
+             ...
+         ]
+      },
+      ...
+    ]
+}
+</code></pre> <h3 id="sta-13-产品期现货"><a href="#sta-13-产品期现货" aria-hidden="true" class="header-anchor">#</a> STA-13. 产品期现货</h3> <h4 id="模块负责人-13"><a href="#模块负责人-13" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>郭枫
+</code></pre> <h4 id="请求-13"><a href="#请求-13" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /reportProduct/productNowFuture
+</code></pre> <h4 id="参数-12"><a href="#参数-12" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>depotId : 40        //仓库id
+depotName: '大连仓'  //仓库名称
+pageSize // 每页显示的条数
+pageNo   // 当前页数
+</code></pre> <h4 id="响应-12"><a href="#响应-12" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>  {
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+     &quot;data&quot;: {
+            &quot;buttonPermissions&quot;: [],
+            &quot;dataSums&quot;: null,
+            &quot;datas&quot;: [
+                {
+                    &quot;nowAmount&quot;: 175, // 现货产品
+                    &quot;lastProductAmount&quot;: 297, //上月出库品类
+                    &quot;depot_id&quot;: 40, // 仓库id
+                    &quot;customerAmount&quot;: 5412, // 近三个月服务客户数
+                    &quot;deporName&quot;: &quot;DC（大连仓）ASA&quot;, // 仓库名称
+                    &quot;lastSalesJian&quot;: 1100608,  // 上月出库初恋
+                    &quot;allProductAmount&quot;: 369,  // 全部产品
+                    &quot;futureAmount&quot;: 194 // 期货产品
+                },
+                ...
+            ],
+            &quot;pageNo&quot;: 1, // 当前页
+            &quot;total&quot;: 11  // 总记录数
+        }
+}
+</code></pre> <h3 id="sta-14-获取客户维度商品销量前50"><a href="#sta-14-获取客户维度商品销量前50" aria-hidden="true" class="header-anchor">#</a> STA-14. 获取客户维度商品销量前50</h3> <h4 id="模块负责人-14"><a href="#模块负责人-14" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>石博孚
+</code></pre> <h4 id="请求-14"><a href="#请求-14" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /reportProduct/getCustomerProductSales
+</code></pre> <h4 id="参数-13"><a href="#参数-13" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>customerId : 1        //客户id
+</code></pre> <h4 id="响应-13"><a href="#响应-13" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+            &quot;buttonPermissions&quot;: [],
+            &quot;dataSums&quot;: null,
+            &quot;datas&quot;: [
+                {
+	                &quot;totalprice&quot;: 711836.65,	//销量
+	                &quot;product_id&quot;: 231			//产品id
+	            },
+                ...
+            ],
+            &quot;pageNo&quot;: 0, // 当前页
+            &quot;total&quot;: 0  // 总记录数
+        }
+}
+</code></pre> <h3 id="sta-15-履约合同明细查询"><a href="#sta-15-履约合同明细查询" aria-hidden="true" class="header-anchor">#</a> STA-15. 履约合同明细查询</h3> <h4 id="模块负责人-15"><a href="#模块负责人-15" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>石博孚
+</code></pre> <h4 id="请求-15"><a href="#请求-15" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /report/contract
+</code></pre> <h4 id="参数-14"><a href="#参数-14" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>contractNum : 'ASA-1000001818319574'  //合同号
+rebateNode : 'YEAR'  //季度节点
+</code></pre> <h4 id="响应-14"><a href="#响应-14" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+&quot;code&quot;: 100000,
+&quot;msg&quot;: &quot;&quot;,
+&quot;data&quot;: {
+    &quot;effective&quot;: [	//订购并计入销售优惠客户明细
+        {
+            &quot;orderAmount&quot;: 194993.5,  //订单金额
+            &quot;salesAmount&quot;: 194993.5,  //总额
+            &quot;contractNum&quot;: &quot;ASA-1000001818319574&quot;,  //合同号
+            &quot;apAmount&quot;: 0,  //调价单金额
+            &quot;customerName&quot;: &quot;赣州市惠旺三达食品商行-南昌&quot;,  //客户名称
+			&quot;customerId&quot;: 1,  //客户id
+            &quot;refundAmount&quot;: 0  //退单金额
+        },
+        ...
+    ],
+    &quot;ineffective&quot;: [  //订购但不计入优惠产品明细
+        {
+            &quot;pno&quot;: &quot;908C(908)&quot;,  //品号
+            &quot;specs&quot;: &quot;1000g*10袋&quot;,  //规格
+            &quot;amount&quot;: 1170,  //金额
+            &quot;ineffectiveSalesAmount&quot;: 819,  //不计入金额
+            &quot;pname&quot;: &quot;海鲜三合一料包&quot;,  //品名
+            &quot;count&quot;: 2,  //数量
+            &quot;ineffectiveSalesRatio&quot;: 0.7  //不计入比例
+        },
+		...
+    ],
+    &quot;sales&quot;: {  //销售优惠金额确认
+        &quot;salesPlan&quot;: 3500000,  //任务额
+        &quot;preferentialAmount&quot;: 112690.06,  //优惠金额
+        &quot;salesAmount&quot;: 3757154.39,  //总额
+        &quot;ineffectiveSalesAmount&quot;: 819,  //不计入优惠金额
+        &quot;rebateRate&quot;: 3,  //优惠比例
+        &quot;effectiveSalesAmount&quot;: 3756335.39  //应记优惠金额
+    }
+}
+</code></pre> <h3 id="sta-16-履约合同重算"><a href="#sta-16-履约合同重算" aria-hidden="true" class="header-anchor">#</a> STA-16. 履约合同重算</h3> <h4 id="模块负责人-16"><a href="#模块负责人-16" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>石博孚
+</code></pre> <h4 id="请求-16"><a href="#请求-16" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /report/task/syncReportContract
+</code></pre> <h4 id="参数-15"><a href="#参数-15" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>contractNum : 'ASA-1000001818319574'  //合同号
+rebateNode : 'YEAR'  //季度节点
+token: 'ME0154uoR5rnnzEQ62c4Npz1hbqCS71T' //令牌
+</code></pre> <h4 id="响应-15"><a href="#响应-15" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;同步合同明细成功&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h4 id="注意"><a href="#注意" aria-hidden="true" class="header-anchor">#</a> *注意</h4> <pre><code>在重算履约合同前先确保订单数据与客户数据已同步到统计系统。</code></pre></div> <div class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">6/10/2019, 11:16:49 AM</span></div></div> <!----> </div> <!----></div></div>
+    <script src="/work-a-api-v2/assets/js/app.a6722e02.js" defer></script><script src="/work-a-api-v2/assets/js/27.2fe9193a.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,2387 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>供应商接口 | ADoc</title>
+    <meta name="description" content="A团队开发文档">
+    
+    
+    <link rel="preload" href="/work-a-api-v2/assets/css/0.styles.35f149a3.css" as="style"><link rel="preload" href="/work-a-api-v2/assets/js/app.a6722e02.js" as="script"><link rel="preload" href="/work-a-api-v2/assets/js/29.c08b73a8.js" as="script"><link rel="prefetch" href="/work-a-api-v2/assets/js/10.1a10445b.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/11.42f498c9.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/12.0c967175.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/13.3651904d.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/14.f08b1cf2.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/15.9349f875.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/16.12c6bae3.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/17.adca03bd.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/18.c998838e.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/19.3918a1ff.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/2.a0ea3f6c.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/20.90e7db96.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/21.107ae2fe.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/22.74755e26.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/23.311dc752.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/24.f5a0db0c.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/25.930c2322.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/26.2d5db294.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/27.2fe9193a.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/28.c950b06d.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/3.d1df23fe.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/30.03105b2a.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/31.e5254695.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/32.f61b2cc2.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/4.0f0014c9.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/5.95ee4e26.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/6.a8f01348.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/7.88947b66.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/8.0d5a3953.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/9.20882588.js">
+    <link rel="stylesheet" href="/work-a-api-v2/assets/css/0.styles.35f149a3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/work-a-api-v2/" class="home-link router-link-active"><!----> <span class="site-name">ADoc</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/work-a-api-v2/wms/" class="nav-link">WMS仓储</a></div><div class="nav-item"><a href="/work-a-api-v2/ufo/" class="nav-link">金蝶</a></div><div class="nav-item"><a href="/work-a-api-v2/addon/" class="nav-link">插件</a></div><div class="nav-item"><a href="/work-a-api-v2/outer/" class="nav-link">合作商</a></div><div class="nav-item"><a href="/work-a-api-v2/stockup/" class="nav-link">备货</a></div><div class="nav-item"><a href="/work-a-api-v2/order/" class="nav-link">订单</a></div><div class="nav-item"><a href="/work-a-api-v2/finance/" class="nav-link">财务</a></div><div class="nav-item"><a href="/work-a-api-v2/supplier/" class="nav-link router-link-exact-active router-link-active">供应商</a></div><div class="nav-item"><a href="/work-a-api-v2/invoice/" class="nav-link">发票</a></div><div class="nav-item"><a href="/work-a-api-v2/customer/" class="nav-link">客户</a></div><div class="nav-item"><a href="/work-a-api-v2/product/" class="nav-link">产品</a></div><div class="nav-item"><a href="/work-a-api-v2/auth/" class="nav-link">权限</a></div><div class="nav-item"><a href="/work-a-api-v2/contract/" class="nav-link">销售优惠</a></div><div class="nav-item"><a href="/work-a-api-v2/price/" class="nav-link">价格</a></div><div class="nav-item"><a href="/work-a-api-v2/freight/" class="nav-link">运费</a></div><div class="nav-item"><a href="/work-a-api-v2/market/" class="nav-link">营销</a></div><div class="nav-item"><a href="/work-a-api-v2/cookbook/" class="nav-link">菜谱</a></div><div class="nav-item"><a href="/work-a-api-v2/common/" class="nav-link">基础</a></div><div class="nav-item"><a href="/work-a-api-v2/app/" class="nav-link">APP</a></div><div class="nav-item"><a href="/work-a-api-v2/depot/" class="nav-link">库存</a></div><div class="nav-item"><a href="/work-a-api-v2/fee/" class="nav-link">费用</a></div><div class="nav-item"><a href="/work-a-api-v2/notice/" class="nav-link">消息通知（作废）</a></div><div class="nav-item"><a href="/work-a-api-v2/changelog/" class="nav-link">变更</a></div><div class="nav-item"><a href="/work-a-api-v2/feign/" class="nav-link">代理接口</a></div><div class="nav-item"><a href="/work-a-api-v2/other/" class="nav-link">其它</a></div><div class="nav-item"><a href="/work-a-api-v2/sta/" class="nav-link">统计</a></div><div class="nav-item"><a href="/work-a-api-v2/message/" class="nav-link">消息</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/work-a-api-v2/wms/" class="nav-link">WMS仓储</a></div><div class="nav-item"><a href="/work-a-api-v2/ufo/" class="nav-link">金蝶</a></div><div class="nav-item"><a href="/work-a-api-v2/addon/" class="nav-link">插件</a></div><div class="nav-item"><a href="/work-a-api-v2/outer/" class="nav-link">合作商</a></div><div class="nav-item"><a href="/work-a-api-v2/stockup/" class="nav-link">备货</a></div><div class="nav-item"><a href="/work-a-api-v2/order/" class="nav-link">订单</a></div><div class="nav-item"><a href="/work-a-api-v2/finance/" class="nav-link">财务</a></div><div class="nav-item"><a href="/work-a-api-v2/supplier/" class="nav-link router-link-exact-active router-link-active">供应商</a></div><div class="nav-item"><a href="/work-a-api-v2/invoice/" class="nav-link">发票</a></div><div class="nav-item"><a href="/work-a-api-v2/customer/" class="nav-link">客户</a></div><div class="nav-item"><a href="/work-a-api-v2/product/" class="nav-link">产品</a></div><div class="nav-item"><a href="/work-a-api-v2/auth/" class="nav-link">权限</a></div><div class="nav-item"><a href="/work-a-api-v2/contract/" class="nav-link">销售优惠</a></div><div class="nav-item"><a href="/work-a-api-v2/price/" class="nav-link">价格</a></div><div class="nav-item"><a href="/work-a-api-v2/freight/" class="nav-link">运费</a></div><div class="nav-item"><a href="/work-a-api-v2/market/" class="nav-link">营销</a></div><div class="nav-item"><a href="/work-a-api-v2/cookbook/" class="nav-link">菜谱</a></div><div class="nav-item"><a href="/work-a-api-v2/common/" class="nav-link">基础</a></div><div class="nav-item"><a href="/work-a-api-v2/app/" class="nav-link">APP</a></div><div class="nav-item"><a href="/work-a-api-v2/depot/" class="nav-link">库存</a></div><div class="nav-item"><a href="/work-a-api-v2/fee/" class="nav-link">费用</a></div><div class="nav-item"><a href="/work-a-api-v2/notice/" class="nav-link">消息通知（作废）</a></div><div class="nav-item"><a href="/work-a-api-v2/changelog/" class="nav-link">变更</a></div><div class="nav-item"><a href="/work-a-api-v2/feign/" class="nav-link">代理接口</a></div><div class="nav-item"><a href="/work-a-api-v2/other/" class="nav-link">其它</a></div><div class="nav-item"><a href="/work-a-api-v2/sta/" class="nav-link">统计</a></div><div class="nav-item"><a href="/work-a-api-v2/message/" class="nav-link">消息</a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>供应商接口</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/work-a-api-v2/supplier/#供应商接口" class="sidebar-link">供应商接口</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#gys-1-查询供应商" class="sidebar-link">GYS-1. 查询供应商</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#gys-2-获取供应商明细" class="sidebar-link">GYS-2. 获取供应商明细</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#gys-3-供应商新增" class="sidebar-link">GYS-3. 供应商新增</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#gys-4-供应商修改" class="sidebar-link">GYS-4. 供应商修改</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#gys-5-修改供应商登录信息" class="sidebar-link">GYS-5. 修改供应商登录信息</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#gys-6-重置供应商密码" class="sidebar-link">GYS-6. 重置供应商密码</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#gys-7-锁定解锁供应商帐号" class="sidebar-link">GYS-7. 锁定解锁供应商帐号</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#gys-8-供应商删除" class="sidebar-link">GYS-8. 供应商删除</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#gys-9-供应商日志查询" class="sidebar-link">GYS-9. 供应商日志查询</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#gys-10-供应商库费系数查询" class="sidebar-link">GYS-10. 供应商库费系数查询</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#gys-11-供应商库费系数新增" class="sidebar-link">GYS-11. 供应商库费系数新增</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#gys-12-供应商库费系数修改" class="sidebar-link">GYS-12. 供应商库费系数修改</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#gys-13-供应商库费系数删除" class="sidebar-link">GYS-13. 供应商库费系数删除</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#gys-14-供应商库费系数-详情" class="sidebar-link">GYS-14. 供应商库费系数-详情</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-20-普通入库单-列表" class="sidebar-link">CG-20. 普通入库单-列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-51-采购供货价审核-列表" class="sidebar-link">CG-51. 采购供货价审核-列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-52-采购供货价审核-获取定量价格" class="sidebar-link">CG-52. 采购供货价审核-获取定量价格</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-53-采购供货价审核-审批通过" class="sidebar-link">CG-53. 采购供货价审核-审批通过</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-53-采购供货价审核-审批拒绝" class="sidebar-link">CG-53. 采购供货价审核-审批拒绝</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-54-采购供货价审核-新增采购阶梯价格申请" class="sidebar-link">CG-54. 采购供货价审核-新增采购阶梯价格申请</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-55-采购供货价管理-列表" class="sidebar-link">CG-55. 采购供货价管理-列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-56-采购供货价管理-取消签约" class="sidebar-link">CG-56. 采购供货价管理-取消签约</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-57-采购供货价管理-获取定量价格" class="sidebar-link">CG-57. 采购供货价管理-获取定量价格</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-58-采购订单价格审核-列表" class="sidebar-link">CG-58. 采购订单价格审核-列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-59-采购订单价格审核-通过" class="sidebar-link">CG-59. 采购订单价格审核-通过</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-60-采购订单价格审核-拒绝" class="sidebar-link">CG-60. 采购订单价格审核-拒绝</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-61-采购订单-列表" class="sidebar-link">CG-61. 采购订单-列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-62-采购订单-详情" class="sidebar-link">CG-62. 采购订单-详情</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-63-采购订单-确认执行" class="sidebar-link">CG-63. 采购订单-确认执行</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-64-采购订单-新增" class="sidebar-link">CG-64. 采购订单-新增</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-65-采购订单-修改采购订单" class="sidebar-link">CG-65. 采购订单-修改采购订单</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-66-采购订单-删除采购订单" class="sidebar-link">CG-66. 采购订单-删除采购订单</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-67-采购订单-获取采购订单日志" class="sidebar-link">CG-67. 采购订单-获取采购订单日志</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-68-采购订单-修改采购价格" class="sidebar-link">CG-68. 采购订单-修改采购价格</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-69-采购订单-通过批量采购单号获取产品明细" class="sidebar-link">CG-69. 采购订单-通过批量采购单号获取产品明细</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-69-采购退单-列表" class="sidebar-link">CG-69.采购退单-列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-70-采购退单-确认执行" class="sidebar-link">CG-70. 采购退单-确认执行</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-71-采购退单-删除" class="sidebar-link">CG-71. 采购退单-删除</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-72-采购退单-新增采购退单" class="sidebar-link">CG-72. 采购退单-新增采购退单</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-73-采购退单-修改采购退单" class="sidebar-link">CG-73. 采购退单-修改采购退单</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-74-采购退单-获取详情" class="sidebar-link">CG-74. 采购退单-获取详情</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-75-采购订单价格申请-列表-作废" class="sidebar-link">CG-75.</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-76-采购订单价格申请-通过-作废" class="sidebar-link">CG-76.</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-77-采购订单价格申请-通过-作废" class="sidebar-link">CG-77.</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-78-采购供货价审核-新增" class="sidebar-link">CG-78. 采购供货价审核-新增</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-79-采购供货价审核-列表导出" class="sidebar-link">CG-79. 采购供货价审核-列表导出</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-80-采购退单-日志列表" class="sidebar-link">CG-80.采购退单-日志列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-81-采购订单-产品明细拆分" class="sidebar-link">CG-81. 采购订单-产品明细拆分</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-82-采购订单-校验采购订单能否确认执行" class="sidebar-link">CG-82. 采购订单-校验采购订单能否确认执行</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-83-供应商产品列表" class="sidebar-link">CG-83. 供应商产品列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-84-采购订单撤回" class="sidebar-link">CG-84. 采购订单撤回</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-85-普通入库单-列表" class="sidebar-link">CG-85. 普通入库单-列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-86-普通入库单-新增" class="sidebar-link">CG-86. 普通入库单-新增</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-87-普通入库单-修改" class="sidebar-link">CG-87. 普通入库单-修改</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-88-普通入库单-详情" class="sidebar-link">CG-88. 普通入库单-详情</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-89-普通入库单-日志列表" class="sidebar-link">CG-89. 普通入库单-日志列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-90-普通入库单-确认执行" class="sidebar-link">CG-90. 普通入库单-确认执行</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-91-普通入库单-删除" class="sidebar-link">CG-91. 普通入库单-删除</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-92-普通入库单-入库类型" class="sidebar-link">CG-92. 普通入库单-入库类型</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-93-普通出库单-列表" class="sidebar-link">CG-93. 普通出库单-列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-94-普通出库单-新增" class="sidebar-link">CG-94. 普通出库单-新增</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-95-普通出库单-修改" class="sidebar-link">CG-95. 普通出库单-修改</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-96-普通出库单-详情" class="sidebar-link">CG-96. 普通出库单-详情</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-97-普通出库单-日志列表" class="sidebar-link">CG-97. 普通出库单-日志列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-98-普通出库单-确认执行" class="sidebar-link">CG-98. 普通出库单-确认执行</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-99-普通出库单-删除" class="sidebar-link">CG-99. 普通出库单-删除</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-100-普通出库单-出库类型" class="sidebar-link">CG-100 普通出库单-出库类型</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-101-调拨单-列表" class="sidebar-link">CG-101. 调拨单-列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-102-调拨单-新增" class="sidebar-link">CG-102. 调拨单-新增</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-103-调拨单-修改" class="sidebar-link">CG-103. 调拨单-修改</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-104-调拨单-详情" class="sidebar-link">CG-104. 调拨单-详情</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-105-调拨单-日志列表" class="sidebar-link">CG-105. 调拨单-日志列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-106-调拨单-确认执行" class="sidebar-link">CG-106. 调拨单-确认执行</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-107-调拨单-删除" class="sidebar-link">CG-107. 调拨单-删除</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-108-采购供货价导出" class="sidebar-link">CG-108. 采购供货价导出</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-109-采购订单-校验采购订单能否发车" class="sidebar-link">CG-109. 采购订单-校验采购订单能否发车</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-110-采购订单-批量新增" class="sidebar-link">CG-110. 采购订单-批量新增</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-111-调拨单-批量新增-作废！！" class="sidebar-link">CG-111. 调拨单-批量新增(作废！！)</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-112-供应商价格-查询" class="sidebar-link">CG-112. 供应商价格-查询</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-120-供应商供货-正常供货产品列表" class="sidebar-link">CG-120 供应商供货-正常供货产品列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-121-供应商供货-暂停供货产品列表" class="sidebar-link">CG-121 供应商供货-暂停供货产品列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-122-供应商供货-日志列表" class="sidebar-link">CG-122 供应商供货-日志列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-123-供应商供货-暂停供货" class="sidebar-link">CG-123 供应商供货-暂停供货</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-124-供应商供货-开始供货" class="sidebar-link">CG-124 供应商供货-开始供货</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-125-通过承运单号获取物流配送信息" class="sidebar-link">CG-125 通过承运单号获取物流配送信息</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-126-企业管理-列表" class="sidebar-link">CG-126 企业管理-列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-127-企业管理-详情" class="sidebar-link">CG-127 企业管理-详情</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-128-企业管理-修改" class="sidebar-link">CG-128 企业管理-修改</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-129-企业管理-删除" class="sidebar-link">CG-129 企业管理-删除</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-130-企业管理-列表-无分页" class="sidebar-link">CG-130 企业管理-列表(无分页)</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-131-供应商管理-获取默认收获地址" class="sidebar-link">CG-131 供应商管理-获取默认收获地址</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-132-供应商管理-获取供应商收获地址列表" class="sidebar-link">CG-132 供应商管理-获取供应商收获地址列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-133-供应商管理-修改取货信息" class="sidebar-link">CG-133 供应商管理-修改取货信息</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-134-供应商管理-删除取货信息" class="sidebar-link">CG-134 供应商管理-删除取货信息</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-135-供应商管理-新增取货信息" class="sidebar-link">CG-135 供应商管理-新增取货信息</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-136-企业管理-新增" class="sidebar-link">CG-136 企业管理-新增</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/supplier/#cg-137-供应商管理-获取取货信息详情" class="sidebar-link">CG-137 供应商管理-获取取货信息详情</a></li></ul></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h2 id="供应商接口"><a href="#供应商接口" aria-hidden="true" class="header-anchor">#</a> 供应商接口</h2> <h3 id="gys-1-查询供应商"><a href="#gys-1-查询供应商" aria-hidden="true" class="header-anchor">#</a> GYS-1. 查询供应商</h3> <h4 id="模块负责人"><a href="#模块负责人" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求"><a href="#请求" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/supplier
+</code></pre> <h4 id="参数"><a href="#参数" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>keyword: &quot;xxx&quot; // 供应商名称、联系人名
+status: &quot;NORMAL&quot; // 供应商帐号状态 NORMAL 正常 LOCK 锁定
+payMode: &quot;INBUY&quot; // 供应商结算方式 INBUY 入结 OUTBUY 出结
+pageNo:&quot;1&quot; // 页码 默认1
+pageSize: &quot;25&quot; // 页面条数 默认25
+</code></pre> <h4 id="响应"><a href="#响应" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;account&quot;: &quot;&quot;, // 帐号
+                &quot;city&quot;: &quot;湛江市&quot;, // 市
+                &quot;contactAddress&quot;: &quot;&quot;, // 联系地址
+                &quot;contactMobile&quot;: &quot;13922092109&quot;, // 联系手机号
+                &quot;contactName&quot;: &quot;陈经理&quot;, // 联系人
+                &quot;contactPathId&quot;: &quot;1908&quot;, // 联系地址PathId
+                &quot;county&quot;: &quot;湛江市&quot;, // 县
+                &quot;companies&quot;: [
+                    {
+                        &quot;code&quot;: &quot;alibaba&quot;, // 金蝶编号
+                        &quot;createRole&quot;: 1,
+                        &quot;createTime&quot;: &quot;2019-07-16 10:50:13&quot;,
+                        &quot;createUser&quot;: 1,
+                        &quot;createUserName&quot;: &quot;1&quot;,
+                        &quot;deleteFlg&quot;: 0,
+                        &quot;id&quot;: 1,
+                        &quot;name&quot;: &quot;阿里巴巴&quot;, // 企业名称
+                        &quot;supplierId&quot;: 5588
+                    },
+                    ...
+                ]
+                &quot;createRole&quot;: 29157, // 创建角色ID
+                &quot;createTime&quot;: &quot;2018-01-31 13:31:40&quot;, // 创建就时间
+                &quot;createUser&quot;: 89, // 创建人ID
+                &quot;createUserName&quot;: &quot;郭倩&quot;, // 创建人名
+                &quot;deleteFlg&quot;: 0,
+                &quot;id&quot;: 5530, // 供应商ID
+                &quot;name&quot;: &quot;&quot;, // 供应商名
+                &quot;password&quot;: &quot;&quot;, // 登录密码
+                &quot;payMode&quot;: &quot;INBUY&quot;, // 支付方式 INBUY 入结、OUTBUY 出结
+                &quot;platformId&quot;: 1, // 所属平台 1 亚洲渔港 ，目前只有一家 亚洲渔港
+                &quot;province&quot;: &quot;广东&quot;, // 省
+                &quot;shortName&quot;: &quot;shortName&quot;, // 供应商编号
+                &quot;taxCode&quot;: &quot;23123123123&quot;, // 纳税人识别号
+                &quot;status&quot;: &quot;NORMAL&quot; // 登录帐号状态 NORMAL 正常 LOCK 锁定
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: 0
+    }
+}
+</code></pre> <h3 id="gys-2-获取供应商明细"><a href="#gys-2-获取供应商明细" aria-hidden="true" class="header-anchor">#</a> GYS-2. 获取供应商明细</h3> <h4 id="模块负责人-2"><a href="#模块负责人-2" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-2"><a href="#请求-2" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/supplier/{id}
+</code></pre> <h4 id="参数-2"><a href="#参数-2" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id: 1 // 供应商ID
+</code></pre> <h4 id="响应-2"><a href="#响应-2" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;account&quot;: &quot;account&quot;, // 供应商登录帐号
+        &quot;city&quot;: &quot;北京市&quot;, // 供应商联系人城市
+        &quot;contactAddress&quot;: &quot;contactAddress&quot;, // 供应商联系人详细地址
+        &quot;contactMobile&quot;: &quot;contactMobile&quot;, // 供应商联系人手机号
+        &quot;contactName&quot;: &quot;contactName&quot;, // 供应商联系人名
+        &quot;contactPathId&quot;: &quot;0101&quot;, // 供应商联系地址PathId
+        &quot;county&quot;: &quot;北京市&quot;, // 供应商城市
+        &quot;createRole&quot;: 1, // 创建角色ID
+        &quot;createTime&quot;: &quot;2018-12-11 10:57:29&quot;, // 创建时间
+        &quot;createUser&quot;: 101, // 创建人ID
+        &quot;createUserName&quot;: &quot;系统操作&quot;, // 创建人名
+        &quot;deleteFlg&quot;: 0,
+        &quot;companies&quot;: [
+            {
+                &quot;code&quot;: &quot;alibaba&quot;,
+                &quot;createRole&quot;: 1,
+                &quot;createTime&quot;: &quot;2019-07-16 10:50:13&quot;,
+                &quot;createUser&quot;: 1,
+                &quot;createUserName&quot;: &quot;1&quot;,
+                &quot;deleteFlg&quot;: 0,
+                &quot;id&quot;: 1, // 主键id
+                &quot;name&quot;: &quot;阿里巴巴&quot;, // 企业名称
+                &quot;supplierId&quot;: 5588
+            },
+            ...
+        ],
+        &quot;supplierContacts&quot;: [
+            {
+                &quot;contactAddress&quot;: &quot;大安街320号&quot;, // 详细地址
+                &quot;contactMobile&quot;: &quot;13368686868&quot;, // 联系电话
+                &quot;contactName&quot;: &quot;哔哩哔哩&quot;, // 取货人
+                &quot;contactPathId&quot;: &quot;0101&quot;, // 区域pathid
+                &quot;pathName&quot;: &quot;内蒙古呼和浩特市回民区&quot;, // 详细地址
+                &quot;createRole&quot;: 1,
+                &quot;createTime&quot;: &quot;2019-07-16 11:37:23&quot;,
+                &quot;createUser&quot;: 518,
+                &quot;defaultFlg&quot;: 0, // 是否默认取货信息 0-否 1-是
+                &quot;deleteFlg&quot;: 0,
+                &quot;id&quot;: 522, // 主键id
+                &quot;lastModified&quot;: &quot;2019-07-16 08:08:23&quot;,
+                &quot;remark&quot;: &quot;我是备注&quot;, // 备注
+                &quot;supplierId&quot;: 5588
+            },
+            ...
+        ],
+        &quot;id&quot;: 5557, // 供应商ID
+        &quot;name&quot;: &quot;&quot;, // 供应商名
+        &quot;password&quot;: &quot;14e1b600b1fd579f47433b88e8d85291&quot;, // 供应商密码 MD5MD5 加密
+        &quot;payMode&quot;: &quot;INBUY&quot;, // 供应商结算方式
+        &quot;platformId&quot;: 1, // 供应商所属平台
+        &quot;province&quot;: &quot;北京&quot;, // 供应商联系方式省份
+        &quot;shortName&quot;: &quot;shortName&quot;, // 供应商编号
+        &quot;taxCode&quot;: &quot;123123123&quot;, // 纳税人识别号
+        &quot;status&quot;: &quot;NORMAL&quot; // 供应商帐号状态 NORMAL 正常 LOCK 锁定
+    }
+}
+</code></pre> <h3 id="gys-3-供应商新增"><a href="#gys-3-供应商新增" aria-hidden="true" class="header-anchor">#</a> GYS-3. 供应商新增</h3> <h4 id="模块负责人-3"><a href="#模块负责人-3" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-3"><a href="#请求-3" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /v2/supplier
+</code></pre> <h4 id="参数-3"><a href="#参数-3" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    supplier: {
+        *&quot;name&quot;:&quot;供应商1&quot;, // 供应商名
+        *&quot;payMode&quot;:&quot;INBUY&quot;, // 供应商结算方式
+        *&quot;taxCode&quot;:&quot;123123123&quot;, // 纳税人识别号
+        *&quot;shortName&quot;:&quot;shortName&quot;, // 供应商编号
+        *&quot;account&quot;:&quot;account&quot; // 供应商帐号
+        *&quot;companyIds&quot;: [1,2,3,4,5,6,7,8,9] // 所属企业id
+    },
+    supplierContacts: [ // 取货信息
+        {
+            *contactName: &quot;&quot;, // 联系人
+            *contactMobile: &quot;&quot;, // 联系电话
+            *contactPathId: &quot;&quot;, // 供应商联系地址PathId
+            *contactAddress: &quot;&quot;, // 供应商联系详细地址
+            *defaultFlg: 1 // 默认地址 1 默认 0 非默认
+        },
+        ...
+    ]
+}
+</code></pre> <h4 id="响应-3"><a href="#响应-3" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: 5557 // 新增的供应商ID
+}
+</code></pre> <h3 id="gys-4-供应商修改"><a href="#gys-4-供应商修改" aria-hidden="true" class="header-anchor">#</a> GYS-4. 供应商修改</h3> <h4 id="模块负责人-4"><a href="#模块负责人-4" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-4"><a href="#请求-4" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/supplier/{id}
+</code></pre> <h4 id="参数-4"><a href="#参数-4" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id: 1 // 供应商ID
+{
+    *&quot;name&quot;:&quot;供应商1&quot;, // 供应商名
+    *&quot;payMode&quot;:&quot;INBUY&quot;, // 供应商结算方式
+    *&quot;taxCode&quot;:&quot;123123123&quot;, // 纳税人识别号
+    *&quot;shortName&quot;:&quot;shortName&quot;, // 供应商编号
+    *&quot;account&quot;:&quot;account&quot; // 供应商帐号
+    *&quot;companyIds&quot;: [1,2,3,4,5,6,7,8,9] // 所属企业id
+}
+</code></pre> <h4 id="响应-4"><a href="#响应-4" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="gys-5-修改供应商登录信息"><a href="#gys-5-修改供应商登录信息" aria-hidden="true" class="header-anchor">#</a> GYS-5. 修改供应商登录信息</h3> <h4 id="模块负责人-5"><a href="#模块负责人-5" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-5"><a href="#请求-5" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/supplier/account/{id}
+</code></pre> <h4 id="参数-5"><a href="#参数-5" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id: 1 // 供应商ID
+{
+    *&quot;account&quot;:&quot;xxxx&quot;, // 供应商帐号
+}
+</code></pre> <h4 id="响应-5"><a href="#响应-5" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="gys-6-重置供应商密码"><a href="#gys-6-重置供应商密码" aria-hidden="true" class="header-anchor">#</a> GYS-6. 重置供应商密码</h3> <h4 id="模块负责人-6"><a href="#模块负责人-6" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-6"><a href="#请求-6" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/supplier/account/reset/{id}
+</code></pre> <h4 id="参数-6"><a href="#参数-6" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id: 1 // 供应商ID
+</code></pre> <h4 id="响应-6"><a href="#响应-6" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="gys-7-锁定解锁供应商帐号"><a href="#gys-7-锁定解锁供应商帐号" aria-hidden="true" class="header-anchor">#</a> GYS-7. 锁定解锁供应商帐号</h3> <h4 id="模块负责人-7"><a href="#模块负责人-7" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-7"><a href="#请求-7" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/supplier/account/status/{id}
+</code></pre> <h4 id="参数-7"><a href="#参数-7" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id: 1 // 供应商ID
+{
+    &quot;status&quot;: &quot;NORMAL&quot; // 状态 NORMAL 正常， LOCK 锁定
+}
+</code></pre> <h4 id="响应-7"><a href="#响应-7" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="gys-8-供应商删除"><a href="#gys-8-供应商删除" aria-hidden="true" class="header-anchor">#</a> GYS-8. 供应商删除</h3> <h4 id="模块负责人-8"><a href="#模块负责人-8" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-8"><a href="#请求-8" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>DELETE /v2/supplier/{id}
+</code></pre> <h4 id="参数-8"><a href="#参数-8" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id: 1 // 供应商ID
+</code></pre> <h4 id="响应-8"><a href="#响应-8" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="gys-9-供应商日志查询"><a href="#gys-9-供应商日志查询" aria-hidden="true" class="header-anchor">#</a> GYS-9. 供应商日志查询</h3> <h4 id="模块负责人-9"><a href="#模块负责人-9" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-9"><a href="#请求-9" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/supplier/{id}/log
+</code></pre> <h4 id="参数-9"><a href="#参数-9" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id: 1 // 供应商ID
+</code></pre> <h4 id="响应-9"><a href="#响应-9" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;id&quot;: 1,
+                &quot;opInfo&quot;: &quot;新增供应商&quot;, // 操作信息
+                &quot;opRole&quot;: 1,
+                &quot;opTime&quot;: &quot;2018-12-11 10:57:29.0&quot;,
+                &quot;opUser&quot;: 101,
+                &quot;opUserName&quot;: &quot;系统操作&quot;,
+                &quot;platformId&quot;: 1,
+                &quot;supplierId&quot;: 5557
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: 0
+    }
+}
+</code></pre> <h3 id="gys-10-供应商库费系数查询"><a href="#gys-10-供应商库费系数查询" aria-hidden="true" class="header-anchor">#</a> GYS-10. 供应商库费系数查询</h3> <h4 id="模块负责人-10"><a href="#模块负责人-10" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>刘宏宇
+</code></pre> <h4 id="请求-10"><a href="#请求-10" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/supplier/fee
+</code></pre> <h4 id="参数-10"><a href="#参数-10" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*supplierId:1 // 供应商ID
+depotId： 1 // 仓ID 非必传
+</code></pre> <h4 id="响应-10"><a href="#响应-10" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+&quot;code&quot;: 100000,
+&quot;msg&quot;: &quot;&quot;,
+&quot;data&quot;: {
+    &quot;buttonPermissions&quot;: [],
+    &quot;dataSums&quot;: null,
+    &quot;datas&quot;: [
+        {
+            &quot;calCross&quot;: 0, // 是否越库 0 否 1 是
+            &quot;calOut&quot;: 0, // 忽略
+            &quot;calWeight&quot;: &quot;NET&quot;, // 计重方式 NET 净重 GROSS 毛重
+            &quot;createRole&quot;: 0, 
+            &quot;createTime&quot;: &quot;2018-12-24 10:02:49.0&quot;,
+            &quot;createUser&quot;: 0,
+            &quot;createUserName&quot;: &quot;&quot;,
+            &quot;deleteFlg&quot;: 0,
+            &quot;depotFee&quot;: 12.1, // 库费系数
+            &quot;depotId&quot;: 85, // 仓ID
+            &quot;depotName&quot;: &quot;xxx&quot;, // 仓名
+            &quot;effectDate&quot;: &quot;2018-06-13&quot;, // 生效日期
+            &quot;id&quot;: 2587, //  ID
+            &quot;platformId&quot;: 1, 
+            &quot;serviceFee&quot;: 135, // 服务费
+            &quot;supplierId&quot;: 2637, // 供应商ID
+            &quot;updateRole&quot;: 0,
+            &quot;updateTime&quot;: &quot;2018-12-24 10:02:49.0&quot;,
+            &quot;updateUser&quot;: 0,
+            &quot;updateUserName&quot;: &quot;&quot;
+        }
+    ],
+    &quot;pageNo&quot;: 1, //  页码
+    &quot;total&quot;: 0 // 总数
+}
+</code></pre> <p>}</p> <h3 id="gys-11-供应商库费系数新增"><a href="#gys-11-供应商库费系数新增" aria-hidden="true" class="header-anchor">#</a> GYS-11. 供应商库费系数新增</h3> <h4 id="模块负责人-11"><a href="#模块负责人-11" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>刘宏宇
+</code></pre> <h4 id="请求-11"><a href="#请求-11" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /v2/supplier/fee
+</code></pre> <h4 id="参数-11"><a href="#参数-11" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    &quot;depotId&quot;:1, // 仓库ID
+    &quot;supplierId&quot;:5557, // 供应商ID
+    &quot;depotFee&quot;:10.0, // 库费系数
+    &quot;serviceFee&quot;:20.0, // 服务费系数
+    &quot;calCross&quot;:1, // 是否越库 0 不越库 1 越库
+    &quot;calWeight&quot;:&quot;NET&quot;, // 计重方式 NET 净重 GROSS 毛重
+    &quot;effectDate&quot;:&quot;2018-12-11&quot; // 生效日期 
+}
+</code></pre> <h4 id="响应-11"><a href="#响应-11" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: 4096 // 新增后库费系数ID
+}
+</code></pre> <h3 id="gys-12-供应商库费系数修改"><a href="#gys-12-供应商库费系数修改" aria-hidden="true" class="header-anchor">#</a> GYS-12. 供应商库费系数修改</h3> <h4 id="模块负责人-12"><a href="#模块负责人-12" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>刘宏宇
+</code></pre> <h4 id="请求-12"><a href="#请求-12" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/supplier/fee/{id}
+</code></pre> <h4 id="参数-12"><a href="#参数-12" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id: 1 // 库费系数ID
+{
+    &quot;depotId&quot;:1, // 仓库ID
+    &quot;supplierId&quot;:5557, // 供应商ID
+    &quot;depotFee&quot;:10.0, // 库费系数
+    &quot;serviceFee&quot;:20.0, // 服务费系数
+    &quot;calCross&quot;:1, // 是否越库 0 不越库 1 越库
+    &quot;calWeight&quot;:&quot;NET&quot;, // 计重方式 NET 净重 GROSS 毛重
+    &quot;effectDate&quot;:&quot;2018-12-11&quot; // 生效日期 
+}
+</code></pre> <h4 id="响应-12"><a href="#响应-12" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="gys-13-供应商库费系数删除"><a href="#gys-13-供应商库费系数删除" aria-hidden="true" class="header-anchor">#</a> GYS-13. 供应商库费系数删除</h3> <h4 id="模块负责人-13"><a href="#模块负责人-13" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>刘宏宇
+</code></pre> <h4 id="请求-13"><a href="#请求-13" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>DELETE /v2/supplier/fee/{id}
+</code></pre> <h4 id="参数-13"><a href="#参数-13" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id: 1 // 库费系数ID
+</code></pre> <h4 id="响应-13"><a href="#响应-13" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="gys-14-供应商库费系数-详情"><a href="#gys-14-供应商库费系数-详情" aria-hidden="true" class="header-anchor">#</a> GYS-14. 供应商库费系数-详情</h3> <h4 id="模块负责人-14"><a href="#模块负责人-14" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>刘宏宇
+</code></pre> <h4 id="请求-14"><a href="#请求-14" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/supplier/fee/{id}
+</code></pre> <h4 id="参数-14"><a href="#参数-14" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id: 2608 // 库费系数ID
+</code></pre> <h4 id="响应-14"><a href="#响应-14" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;calCross&quot;: 0, // 是否越库 0 否 1 是
+        &quot;calOut&quot;: 0, // 忽略
+        &quot;calWeight&quot;: &quot;NET&quot;, // 计重方式 NET 净重 GROSS 毛重
+        &quot;createRole&quot;: 0,
+        &quot;createTime&quot;: &quot;2018-12-24 10:02:49.0&quot;,
+        &quot;createUser&quot;: 0,
+        &quot;createUserName&quot;: &quot;&quot;,
+        &quot;deleteFlg&quot;: 0,
+        &quot;depotFee&quot;: 12.1, // 库费系数
+        &quot;depotId&quot;: 85, // 仓ID
+        &quot;depotName&quot;: &quot;DC（成都太古仓）&quot;, // 仓名
+        &quot;effectDate&quot;: &quot;2018-10-22&quot;, // 生效日期
+        &quot;id&quot;: 2608, //  ID
+        &quot;platformId&quot;: 1,
+        &quot;serviceFee&quot;: 135, // 服务费
+        &quot;supplierId&quot;: 5555, // 供应商ID
+        &quot;updateRole&quot;: 0,
+        &quot;updateTime&quot;: &quot;2018-12-24 10:02:49.0&quot;,
+        &quot;updateUser&quot;: 0,
+        &quot;updateUserName&quot;: &quot;&quot;
+    }
+}
+</code></pre> <h3 id="cg-20-普通入库单-列表"><a href="#cg-20-普通入库单-列表" aria-hidden="true" class="header-anchor">#</a> CG-20. 普通入库单-列表</h3> <h4 id="模块负责人-15"><a href="#模块负责人-15" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-15"><a href="#请求-15" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/niorder
+</code></pre> <h4 id="参数-15"><a href="#参数-15" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>keyword // 采购订单好、供应删名称
+depotId // 入库仓id
+status // 订单状态
+</code></pre> <h4 id="响应-15"><a href="#响应-15" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [
+            {
+                &quot;refuseButton&quot;: true, // 拒绝按钮
+                &quot;passButton&quot;: true // 通过按钮
+            }
+        ],
+        &quot;datas&quot;: [
+            {
+                
+            }
+        ]
+    }
+}
+</code></pre> <h3 id="cg-51-采购供货价审核-列表"><a href="#cg-51-采购供货价审核-列表" aria-hidden="true" class="header-anchor">#</a> CG-51. 采购供货价审核-列表</h3> <h4 id="模块负责人-16"><a href="#模块负责人-16" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-16"><a href="#请求-16" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/supplier/price/askfor?buttonPermissionFlg=1
+</code></pre> <h4 id="参数-16"><a href="#参数-16" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>keyword // 品名/品号
+supplierName // 经销商名称
+status // 审核状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
+type // 定时类型 NOW-立即执行 HISTORY-追溯历史 FUTURE-定时执行
+ladderFlg // 定量价格 0-未设置 1-已设置
+buttonPermissionFlg // 获取权限按钮 0-否 1-是
+pageNo // 页码
+pageSize // 行数
+</code></pre> <h4 id="响应-16"><a href="#响应-16" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [
+            {
+                &quot;refuseButton&quot;: true, // 拒绝按钮
+                &quot;passButton&quot;: true // 通过按钮
+            }
+        ],
+        &quot;datas&quot;: [
+            {
+                &quot;checkRemark&quot;: &quot;&quot;, // 审批信息-备注
+                &quot;checkTime&quot;: &quot;&quot;, // 审批信息-时间
+                &quot;checkUserName&quot;: &quot;&quot;, // 审批信息-操作人
+                &quot;createTime&quot;: &quot;2018-12-08 03:57:20&quot;, // 申请信息-时间
+                &quot;createUserName&quot;: &quot;系统操作&quot;, // 申请信息-申请人
+                &quot;remark&quot;: &quot;申请&quot;, // 申请信息-备注
+                &quot;effectDate&quot;: &quot;2018-12-08&quot;, // 追溯时间、启动时间、生效日期
+                &quot;id&quot;: 1,
+                &quot;ladderFlg&quot;: 0, // 定量价格 0-未设置 1-已设置
+                &quot;price&quot;: 100, // 签约价
+                &quot;product&quot;: {
+                    &quot;name&quot;: &quot;香草凤尾虾&quot;, // 品名
+                    &quot;pno&quot;: &quot;0151&quot;, // 品号
+                },
+                &quot;productUnit&quot;: {
+                    &quot;guige&quot;: &quot;500g(23-25枚）/盒&quot;, // 规格
+                    &quot;unit&quot;: &quot;盒&quot; // 单位
+                },
+                &quot;status&quot;: &quot;ASKFOR&quot;, // 审核状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
+                &quot;supplierId&quot;: 1, // 经销商id
+                &quot;supplierName&quot;: &quot;山西代县文庙水产品经销商&quot;, // 经销商名称
+                &quot;type&quot;: &quot;NOW&quot; // 定时类型 NOW-立即执行 HISTORY-追溯历史 FUTURE-定时执行
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+    }
+}
+</code></pre> <h3 id="cg-52-采购供货价审核-获取定量价格"><a href="#cg-52-采购供货价审核-获取定量价格" aria-hidden="true" class="header-anchor">#</a> CG-52. 采购供货价审核-获取定量价格</h3> <h4 id="模块负责人-17"><a href="#模块负责人-17" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-17"><a href="#请求-17" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/supplier/price/askfor/{id}/ladder
+</code></pre> <h4 id="参数-17"><a href="#参数-17" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>id // 主键id
+</code></pre> <h4 id="响应-17"><a href="#响应-17" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            
+            &quot;effectDate&quot;: &quot;2018-12-11&quot;, // 生效日期
+            &quot;amount&quot;: 20, // 起订量
+            &quot;price&quot;: 11, 签约价
+        }
+    ]
+}
+</code></pre> <h3 id="cg-53-采购供货价审核-审批通过"><a href="#cg-53-采购供货价审核-审批通过" aria-hidden="true" class="header-anchor">#</a> CG-53. 采购供货价审核-审批通过</h3> <h4 id="模块负责人-18"><a href="#模块负责人-18" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-18"><a href="#请求-18" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/supplier/price/askfor/pass
+</code></pre> <h4 id="参数-18"><a href="#参数-18" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>[1,2,3,4,5,6] // id 集合
+</code></pre> <h4 id="响应-18"><a href="#响应-18" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-53-采购供货价审核-审批拒绝"><a href="#cg-53-采购供货价审核-审批拒绝" aria-hidden="true" class="header-anchor">#</a> CG-53. 采购供货价审核-审批拒绝</h3> <h4 id="模块负责人-19"><a href="#模块负责人-19" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-19"><a href="#请求-19" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/supplier/price/askfor/refuse
+</code></pre> <h4 id="参数-19"><a href="#参数-19" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    ids: [1,2,3,4,5,6] // id 集合
+    remark: &quot;不符合规定&quot; // 备注
+}
+</code></pre> <h4 id="响应-19"><a href="#响应-19" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-54-采购供货价审核-新增采购阶梯价格申请"><a href="#cg-54-采购供货价审核-新增采购阶梯价格申请" aria-hidden="true" class="header-anchor">#</a> CG-54. 采购供货价审核-新增采购阶梯价格申请</h3> <h4 id="模块负责人-20"><a href="#模块负责人-20" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-20"><a href="#请求-20" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /v2/supplier/price/askfor/{id}/ladder
+</code></pre> <h4 id="参数-20"><a href="#参数-20" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>id: 主键id（采购供货价格id） 仅仅拼接在uri 即可
+{
+    &quot;ladderList&quot;: [
+        {
+            supplierId: 1, // 经销商id
+            productId: 1, // 产品id
+            productUnitId: 1, // 产品规格id
+            amount: 1, // 起订量
+            price: 2, // 签约价
+            effectDate: &quot;2018-12-12 12:12:12&quot; // 生效日期
+        },
+        ...
+    ],
+    &quot;remark&quot;: &quot;asdfasdfasd&quot; // 备注
+}
+</code></pre> <h4 id="响应-20"><a href="#响应-20" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-55-采购供货价管理-列表"><a href="#cg-55-采购供货价管理-列表" aria-hidden="true" class="header-anchor">#</a> CG-55. 采购供货价管理-列表</h3> <h4 id="模块负责人-21"><a href="#模块负责人-21" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-21"><a href="#请求-21" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/supplier/price?buttonPermissionFlg=1
+</code></pre> <h4 id="参数-21"><a href="#参数-21" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>keyword // 品号/品名
+supplierName // 经销商名称
+status // 签约状态 0-正常 1-失效
+type // NOW-立即生效 HISTORY-追溯历史 FUTURE-定时执行
+ladderFlg // 定量价格 0-未设置 1-已设置
+buttonPermissionFlg // 获取权限按钮 0-否 1-是
+pageNo // 页码
+pageSize // 行数
+</code></pre> <h4 id="响应-21"><a href="#响应-21" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [
+            {
+                &quot;cancelButton&quot;: true,
+                &quot;ladderButton&quot;: true
+            }
+        ],
+        &quot;datas&quot;: [
+            {
+                &quot;status&quot;: 0, // 签约状态 0-正常 1-失效
+                &quot;effectDate&quot;: &quot;2018-12-10&quot;, // 追溯时间、启动时间、生效日期
+                &quot;id&quot;: 1,
+                &quot;ladderFlg&quot;: 0, // 定量价格 0-未设置 1-已设置
+                &quot;price&quot;: 1, // 签约价
+                &quot;product&quot;: {
+                    &quot;name&quot;: &quot;香草凤尾虾&quot;, // 品名
+                    &quot;pno&quot;: &quot;0151&quot; // 品号
+                },
+                &quot;productUnit&quot;: {
+                    &quot;guige&quot;: &quot;500g(23-25枚）/盒&quot;, // 规格
+                    &quot;unit&quot;: &quot;盒&quot; // 单位
+                },
+                &quot;remark&quot;: &quot;&quot;,
+                &quot;supplierId&quot;: 1,
+                &quot;supplierName&quot;: &quot;&quot;, // 供应商名称
+                &quot;type&quot;: &quot;NOW&quot;, // 定时类型 NOW-立即生效 HISTORY-追溯历史 FUTURE-定时执行
+                &quot;updateTime&quot;: &quot;2018-12-10 09:39:01&quot;, // 操作信息-操作时间
+                &quot;updateUserName&quot;: &quot;xxx&quot; // 操作信息-操作人
+            },
+            ...
+        ],
+        &quot;pageNo&quot;: 1,
+    }
+}
+</code></pre> <h3 id="cg-56-采购供货价管理-取消签约"><a href="#cg-56-采购供货价管理-取消签约" aria-hidden="true" class="header-anchor">#</a> CG-56. 采购供货价管理-取消签约</h3> <h4 id="模块负责人-22"><a href="#模块负责人-22" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-22"><a href="#请求-22" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /v2/supplier/price
+</code></pre> <h4 id="参数-22"><a href="#参数-22" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>[1,2,3,4,5,6] // id集合
+</code></pre> <h4 id="响应-22"><a href="#响应-22" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-57-采购供货价管理-获取定量价格"><a href="#cg-57-采购供货价管理-获取定量价格" aria-hidden="true" class="header-anchor">#</a> CG-57. 采购供货价管理-获取定量价格</h3> <h4 id="模块负责人-23"><a href="#模块负责人-23" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-23"><a href="#请求-23" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/supplier/price/{id}/ladder
+</code></pre> <h4 id="参数-23"><a href="#参数-23" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>id // 主键id
+</code></pre> <h4 id="响应-23"><a href="#响应-23" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            
+            &quot;effectDate&quot;: &quot;2018-12-11&quot;, // 生效日期
+            &quot;amount&quot;: 20, // 起订量
+            &quot;price&quot;: 11, 签约价
+        }
+    ]
+}
+</code></pre> <h3 id="cg-58-采购订单价格审核-列表"><a href="#cg-58-采购订单价格审核-列表" aria-hidden="true" class="header-anchor">#</a> CG-58. 采购订单价格审核-列表</h3> <h4 id="模块负责人-24"><a href="#模块负责人-24" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-24"><a href="#请求-24" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/paorder/price/askfor?buttonPermissionFlg=1
+</code></pre> <h4 id="参数-24"><a href="#参数-24" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>keyword // 采购订单号/供应商名称
+status // 审核状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
+paymode // 支付方式 INBUY OUTBUY
+buttonPermissionFlg // 获取权限按钮 0-否 1-是
+pageNo // 页码
+pageSize // 行数
+</code></pre> <h4 id="响应-24"><a href="#响应-24" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [
+            {
+                &quot;refuseButton&quot;: false,
+                &quot;passButton&quot;: false
+            },
+            ...
+        ],
+        &quot;datas&quot;: [
+            {
+                &quot;checkRemark&quot;: &quot;@@@@&quot;, // 审核信息-备注
+                &quot;checkTime&quot;: &quot;2018-12-12 09:50:00&quot;, // 审核信息-时间
+                &quot;checkUserName&quot;: &quot;yyy&quot;, // 审核信息-操作人
+                &quot;createTime&quot;: &quot;2018-12-12 01:49:23&quot;, // 创建信息-时间
+                &quot;createUserName&quot;: &quot;xxx&quot;, // 创建信息-操作人
+                &quot;sendTime&quot;: &quot;2018-12-12 12:12:12&quot;, // 发送时间
+                &quot;remark&quot;: &quot;&quot;, // 创建信息-备注
+                &quot;id&quot;: 1,
+                &quot;paymode&quot;: &quot;INBUY&quot;, // 支付方式
+                &quot;orderId&quot;: &quot;PA1812000001&quot;, // 订单号
+                &quot;productUnit&quot;: {
+                    &quot;guige&quot;: &quot;500g(23-25枚）/盒&quot;, // 规格
+                    &quot;name&quot;: &quot;香草凤尾虾&quot;, // 品名
+                    &quot;pno&quot;: &quot;0151&quot;, // 品号
+                    &quot;unit&quot;: &quot;盒&quot; // 单位
+                },
+                &quot;sourcePrice&quot;: 200,, // 原价
+                &quot;status&quot;: &quot;ASKFOR&quot;, // 审核状态  ASKFOR-待审核 PASS-通过 REFUSE-拒绝
+                &quot;supplierId&quot;: 1, // 经销商id
+                &quot;supplierName&quot;: &quot;湖北武汉&quot;,
+                &quot;targetPrice&quot;: 202,, // 目标价
+            },
+            ...
+        ],
+        &quot;pageNo&quot;: 1,
+    }
+}
+</code></pre> <h3 id="cg-59-采购订单价格审核-通过"><a href="#cg-59-采购订单价格审核-通过" aria-hidden="true" class="header-anchor">#</a> CG-59. 采购订单价格审核-通过</h3> <h4 id="模块负责人-25"><a href="#模块负责人-25" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-25"><a href="#请求-25" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/paorder/price/askfor/pass
+</code></pre> <h4 id="参数-25"><a href="#参数-25" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>[1,2,3,4,5,6] id 集合
+</code></pre> <h4 id="响应-25"><a href="#响应-25" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-60-采购订单价格审核-拒绝"><a href="#cg-60-采购订单价格审核-拒绝" aria-hidden="true" class="header-anchor">#</a> CG-60. 采购订单价格审核-拒绝</h3> <h4 id="模块负责人-26"><a href="#模块负责人-26" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-26"><a href="#请求-26" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/paorder/price/askfor/refuse
+</code></pre> <h4 id="参数-26"><a href="#参数-26" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    ids: [1,2,3,4,5,6] // id集合
+    remark: &quot;不符合规定&quot; // 备注
+}
+</code></pre> <h4 id="响应-26"><a href="#响应-26" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-61-采购订单-列表"><a href="#cg-61-采购订单-列表" aria-hidden="true" class="header-anchor">#</a> CG-61. 采购订单-列表</h3> <h4 id="模块负责人-27"><a href="#模块负责人-27" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-27"><a href="#请求-27" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/paorder?buttonPermissionFlg=1
+</code></pre> <h4 id="参数-27"><a href="#参数-27" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>keyword // 采购订单号
+supplierId // 供应商id
+deliverType // 配送方式 SELF 自送 THIRD 物流配送
+depotId // 仓id
+status // 订单状态 INVALID 未生效 SET 提交物流中 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
+paymode // 支付方式 INBUY 入结 OUTBUY 出结
+priceFlg // 采购价格调整 0 未修改价格 1 修改价格待审核 2 已修改价格
+supplierShortName // 供应商编号
+buttonPermissionFlg // 获取权限按钮 0-否 1-是
+createUserName // 创建人名称
+type // NORMAL 正常单 CONTROL_PRODUCT 品控单
+pageNo // 页码
+pageSize // 行数
+</code></pre> <h4 id="响应-27"><a href="#响应-27" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [
+            {
+                &quot;setRunButton&quot;: true, // 确认执行按钮
+                &quot;editButton&quot;: true, // 修改按钮 
+                &quot;delButton&quot;: true, // 删除按钮
+                &quot;modifyPriceButton&quot;: false, // 修改价格按钮
+                &quot;logButton&quot;: true， // 日志查看按钮
+                &quot;backButton&quot; : true // 撤回按钮
+            }
+        ],
+        &quot;datas&quot;: [
+            {
+                &quot;completeTime&quot;: &quot;&quot;, // 完成时间
+                &quot;createTime&quot;: &quot;2018-12-10 09:46:43&quot;, // 创建时间
+                &quot;createUserName&quot;: &quot;test&quot;, // 创建人
+                &quot;deleteFlg&quot;: 0,
+                &quot;deliverType&quot;: &quot;THIRD&quot;, // 配送方式 SELF 自送 THIRD 物流配送
+                &quot;depotId&quot;: 1,
+                &quot;depotName&quot;: &quot;大连铁越仓&quot;, // 出库仓
+                &quot;id&quot;: 3,
+                &quot;onlyCode&quot;: &quot;&quot;,
+                &quot;orderId&quot;: &quot;PA1812100000008&quot;, // 采购订单号
+                &quot;paymode&quot;: &quot;OUTBUY&quot;, // 支付方式 INBUY OUTBUY
+                &quot;planCompleteTime&quot;: &quot;2018-12-22 12:12:12&quot;, // 计划入库时间
+                &quot;planSendTime&quot;: &quot;2018-12-12 00:00:00&quot;, // 计划发出时间
+                &quot;priceFlg&quot;: 0, // 采购价格调整 0 未修改价格 1 修改价格待审核 2 已修改价格
+                &quot;jian&quot;: 12, // 件
+                &quot;san&quot;: 2, // 散
+                &quot;waybillInfo&quot;: &quot;&quot;, // 承运单信息
+                &quot;type&quot;: &quot;NORMAL&quot;, // 采购单类型 NORMAL: 正常单 CONTROL_PRODUCT:品控单
+                &quot;remark&quot;: &quot;test&quot;, // 备注
+                &quot;runTime&quot;: &quot;&quot;, // 执行时间(生效时间)
+                &quot;sendTime&quot;: &quot;&quot;, // 发车时间
+                &quot;status&quot;: &quot;INVALID&quot;, // 订单状态 INVALID 未生效 RUN SET 提交物流中 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
+                &quot;supplierAddress&quot;: &quot;山西代县文庙附近&quot;, // 经销商名称
+                &quot;supplierId&quot;: 1, // 供应商id
+                &quot;supplierName&quot;: &quot;山西代县文庙超市&quot;, // 供应商名称
+                &quot;totalprice&quot;: 1, // 金额
+                &quot;supplierShortName&quot;: &quot;12&quot;, // 供应商编号
+                &quot;companyId&quot;: 0, // 所属企业id
+                &quot;companyName&quot;: &quot;&quot;, // 所属企业名称
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+    }
+}
+</code></pre> <h3 id="cg-62-采购订单-详情"><a href="#cg-62-采购订单-详情" aria-hidden="true" class="header-anchor">#</a> CG-62. 采购订单-详情</h3> <h4 id="模块负责人-28"><a href="#模块负责人-28" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-28"><a href="#请求-28" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/paorder/{orderId}
+</code></pre> <h4 id="参数-28"><a href="#参数-28" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>orderId 订单号
+</code></pre> <h4 id="响应-28"><a href="#响应-28" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;completeTime&quot;: &quot;&quot;,
+        &quot;createTime&quot;: &quot;2018-12-10 09:46:43&quot;,
+        &quot;contactAddress&quot;: &quot;&quot;, // 联系详细地址
+        &quot;contactMobile&quot;: &quot;&quot;, // 联系电话
+        &quot;contactName&quot;: &quot;&quot;, // 联系人
+        &quot;contactPathId&quot;: &quot;&quot;, // 区域code
+        &quot;companyId&quot;: 1, // 所属公司id
+        &quot;companyName&quot;: &quot;阿里巴巴&quot;, // 所属公司名称
+        &quot;deliverType&quot;: &quot;THIRD&quot;, // 配送方式 SELF 自送 THIRD 物流配送
+        &quot;depotId&quot;: 1,
+        &quot;depotName&quot;: &quot;大连铁越仓&quot;, // 入库仓
+        &quot;id&quot;: 3,
+        &quot;waybillInfo&quot;: &quot;&quot;, // 承运单信息
+        &quot;type&quot;: &quot;NORMAL&quot;, // 采购单类型 NORMAL: 正常单 CONTROL_PRODUCT:品控单
+        &quot;jian&quot;: 0, // 总件数
+        &quot;remark&quot;: &quot;&quot;, // 备注
+        &quot;orderId&quot;: &quot;PA1812100000008&quot;, // 订单号
+        &quot;orderPaPros&quot;: [
+            {
+                &quot;giftFlg&quot;: 0, // 赠品标识 0-否 1-是
+                &quot;batchNo&quot;: &quot;20876656765767567&quot;, // 批次号
+                &quot;pcount&quot;: 1, // 数量
+                &quot;price&quot;: 1, // 价格
+                &quot;priceFlg&quot;: 0, // 是否调整价格 0 - 未调整；1 - 待审核；2 - 通过
+                &quot;productUnit&quot;: {
+                    &quot;guige&quot;: &quot;500g(23-25枚）/盒&quot;, // 规格
+                    &quot;unit&quot;: &quot;盒&quot; // 单位
+                    &quot;product&quot;: {
+                        &quot;mainImg&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/2442f15cbb285be1ad38c26dc8e0ec29.jpg&quot;, // 图片url
+                        &quot;name&quot;: &quot;至Q虾球&quot;, // 品名
+                        &quot;pno&quot;: &quot;0036&quot;, // 品号
+                    }
+                },
+                &quot;id&quot;: 1, // 主键id
+                &quot;productId&quot;: 27, // 产品id
+                &quot;productUnitId&quot;: 52, // 产品规格id
+                &quot;totalprice&quot;: 1 // 小计
+            },
+            ...
+        ],
+        &quot;paymode&quot;: &quot;OUTBUY&quot;, // 支付方式
+        &quot;planCompleteTime&quot;: &quot;2018-12-10 16:23:23&quot;, // 计划入库时间
+        &quot;planSendTime&quot;: &quot;2018-12-12 00:00:00&quot;, // 计划发出时间
+        &quot;runTime&quot;: &quot;&quot;, // 生效时间
+        &quot;san&quot;: 1, // 散货
+        &quot;sendTime&quot;: &quot;2018-12-18 12:12:12&quot;, // 发出时间
+        &quot;status&quot;: &quot;INVALID&quot;, // INVALID 未生效 RUN 已生效 SET 提交物流中 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
+        &quot;supplierId&quot;: 2637, // 供应商id
+        &quot;supplierName&quot;: &quot;山西代县文庙超市&quot;, // 供应商名称
+        &quot;totalprice&quot;: 1 // 总计
+    }
+}
+</code></pre> <h3 id="cg-63-采购订单-确认执行"><a href="#cg-63-采购订单-确认执行" aria-hidden="true" class="header-anchor">#</a> CG-63. 采购订单-确认执行</h3> <h4 id="模块负责人-29"><a href="#模块负责人-29" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-29"><a href="#请求-29" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/paorder/{orderId}/run
+</code></pre> <h4 id="参数-29"><a href="#参数-29" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>orderId 订单号
+</code></pre> <h4 id="响应-29"><a href="#响应-29" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-64-采购订单-新增"><a href="#cg-64-采购订单-新增" aria-hidden="true" class="header-anchor">#</a> CG-64. 采购订单-新增</h3> <h4 id="模块负责人-30"><a href="#模块负责人-30" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-30"><a href="#请求-30" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /v2/paorder
+</code></pre> <h4 id="参数-30"><a href="#参数-30" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    *supplierId: 1, // 经销商id
+    contactName: '阎锡山', // 联系人
+    contactMobile： 13333333333, // 联系电话
+    contactPathId: 060202, // 区域id
+    contactAddress: &quot;山西忻州代县&quot;, // 经销商地址
+    *type: &quot;NORMAL&quot;, // 采购单类型 正常单 CONTROL_PRODUCT:品控单
+    *companyId: 1, // 所属公司id
+    *depotId: 6, // 入库仓id
+    *depotName: &quot;大连铁越仓&quot;, // 入库仓名称
+    *deliverType: &quot;THIRD&quot;, // 配送方式 SELF 自送 THIRD 物流配送
+    *planCompleteTime: &quot;2018-12-12 12:12:12&quot;, // 计划入库时间
+    *planSendTime: &quot;2018-12-12 12:12:12&quot;, // 计划发出时间
+    *remark: &quot;采购入货&quot;, // 备注
+    *orderPaProList: [
+        {
+            *productId: 1, // 产品id
+            *productUnitId: 1, // 产品规格id
+            *pcount: 2, // 采购数量
+            *giftCount: 3 // 赠品数量
+        }
+    ]
+}
+</code></pre> <h4 id="响应-30"><a href="#响应-30" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-65-采购订单-修改采购订单"><a href="#cg-65-采购订单-修改采购订单" aria-hidden="true" class="header-anchor">#</a> CG-65. 采购订单-修改采购订单</h3> <h4 id="模块负责人-31"><a href="#模块负责人-31" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-31"><a href="#请求-31" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/paorder/{orderId}
+</code></pre> <h4 id="参数-31"><a href="#参数-31" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    *id: 1, // 主键
+    *supplierId: 1, // 经销商id
+    contactName: '阎锡山', // 联系人
+    contactMobile： 13333333333, // 联系电话
+    contactPathId: 060202, // 区域id
+    contactAddress: &quot;山西忻州代县&quot;, // 经销商地址
+    *type: &quot;NORMAL&quot;, // 采购单类型 正常单 CONTROL_PRODUCT:品控单
+    *depotId: 6, // 入库仓id
+    *depotName: &quot;大连铁越仓&quot;, // 入库仓名称
+    *paymode: INBUY, // 支付方式
+    *deliverType: &quot;THIRD&quot;, // 配送方式 SELF 自送 THIRD 物流配送
+    *planCompleteTime: &quot;2018-12-12 12:12:12&quot;, // 计划入库时间
+    *planSendTime: &quot;2018-12-12 12:12:12&quot;, // 计划发出时间
+    *remark: &quot;采购入货&quot;, // 备注
+    *orderPaProList: [
+        {
+            *productId: 1, // 产品id
+            *productUnitId: 1, // 产品规格id
+            *pcount: 2, // 采购数量
+            *giftCount: 3 // 赠品数量
+        }
+    ]
+}
+</code></pre> <h4 id="响应-31"><a href="#响应-31" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-66-采购订单-删除采购订单"><a href="#cg-66-采购订单-删除采购订单" aria-hidden="true" class="header-anchor">#</a> CG-66. 采购订单-删除采购订单</h3> <h4 id="模块负责人-32"><a href="#模块负责人-32" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-32"><a href="#请求-32" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>DELETE /v2/paorder/{orderId}
+</code></pre> <h4 id="参数-32"><a href="#参数-32" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>orderId 订单号
+</code></pre> <h4 id="响应-32"><a href="#响应-32" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-67-采购订单-获取采购订单日志"><a href="#cg-67-采购订单-获取采购订单日志" aria-hidden="true" class="header-anchor">#</a> CG-67. 采购订单-获取采购订单日志</h3> <h4 id="模块负责人-33"><a href="#模块负责人-33" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-33"><a href="#请求-33" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/paorder/{orderId}/log
+</code></pre> <h4 id="参数-33"><a href="#参数-33" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>orderId // 订单号
+pageNo // 页码
+pageSize // 行数
+</code></pre> <h4 id="响应-33"><a href="#响应-33" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;datas&quot;: [
+            {
+                &quot;id&quot;: 1,
+                &quot;opInfo&quot;: &quot;创建采购订单&quot;, // 操作内容
+                &quot;opTime&quot;: &quot;2018-12-10 17:47:14&quot;, // 操作时间
+                &quot;opUserName&quot;: &quot;孙启萌&quot;, // 操作人
+                &quot;orderId&quot;: &quot;PA1812100000008&quot;
+            }
+        ],
+        &quot;pageNo&quot;: 1
+    }
+}
+</code></pre> <h3 id="cg-68-采购订单-修改采购价格"><a href="#cg-68-采购订单-修改采购价格" aria-hidden="true" class="header-anchor">#</a> CG-68. 采购订单-修改采购价格</h3> <h4 id="模块负责人-34"><a href="#模块负责人-34" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-34"><a href="#请求-34" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /v2/paorder/price/askfor
+</code></pre> <h4 id="参数-34"><a href="#参数-34" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    &quot;paProId&quot;: 363807, // 采购单产品明细id
+    &quot;orderId&quot;: &quot;PA181031015389&quot;, // 订单号
+    &quot;targetPrice&quot;: 70,// 目标单价
+    &quot;remark&quot;: &quot;促销活动失效&quot;// 备注
+}
+</code></pre> <h4 id="响应-34"><a href="#响应-34" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-69-采购订单-通过批量采购单号获取产品明细"><a href="#cg-69-采购订单-通过批量采购单号获取产品明细" aria-hidden="true" class="header-anchor">#</a> CG-69. 采购订单-通过批量采购单号获取产品明细</h3> <h4 id="模块负责人-35"><a href="#模块负责人-35" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-35"><a href="#请求-35" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/paorder/pros
+</code></pre> <h4 id="参数-35"><a href="#参数-35" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>orderIds: [PA181221000001, PA181221000001]
+</code></pre> <h4 id="响应-35"><a href="#响应-35" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;batchNo&quot;: &quot;&quot;, // 批次号
+            &quot;giftFlg&quot;: 0, // 是否赠品 0 - 否 1 - 是
+            &quot;id&quot;: 1, // 主键id
+            &quot;orderId&quot;: &quot;PA140821046931&quot;, // 采购订单号
+            &quot;pcount&quot;: 136, // 数量
+            &quot;price&quot;: 360, // 价格
+            &quot;productId&quot;: 27, // 产品id
+            &quot;productUnitId&quot;: 52, // 产品规格id
+            &quot;totalprice&quot;: 48960 // 产品总价
+        },
+        ...
+    ]
+}
+</code></pre> <h3 id="cg-69-采购退单-列表"><a href="#cg-69-采购退单-列表" aria-hidden="true" class="header-anchor">#</a> CG-69.采购退单-列表</h3> <h4 id="模块负责人-36"><a href="#模块负责人-36" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-36"><a href="#请求-36" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/prorder?buttonPermissionFlg=1
+</code></pre> <h4 id="参数-36"><a href="#参数-36" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>keyword // 单号
+supplierId // 供应商id
+deliverType // 配送方式 SELF 自送 THIRD 物流配送
+depotId // 仓id
+status // 订单状态 INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
+buttonPermissionFlg // 获取权限按钮 0-否 1-是
+supplierShortName // 供应商编号
+createUserName // 创建人
+pageNo // 页码
+pageSize // 行数
+</code></pre> <h4 id="响应-36"><a href="#响应-36" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [
+            {
+                &quot;setRunButton&quot;: true, // 确认执行按钮
+                &quot;editButton&quot;: true, // 修改按钮
+                &quot;delButton&quot;: true, // 删除按钮
+                &quot;logButton&quot;: true // 日志按钮
+            }
+        ],
+        &quot;datas&quot;: [
+            {
+                &quot;createTime&quot;: &quot;2018-12-12 05:52:03&quot;, // 创建时间
+                &quot;createUserName&quot;: &quot;陈阵&quot;, // 创建人
+                &quot;remark&quot;: &quot;test&quot;, // 备注
+                &quot;deleteFlg&quot;: 0,
+                &quot;deliverType&quot;: &quot;SELF&quot;, // 配送方式 SELF 自送 THIRD 物流配送
+                &quot;depotId&quot;: 0,
+                &quot;depotName&quot;: &quot;大连铁越仓&quot;, // 出库仓
+                &quot;companyId&quot;: 1, // 企业id
+                &quot;companyName&quot;: &quot;&quot;, // 企业名称
+                &quot;supplierShortName&quot;: &quot;asdfa&quot;, // 供应商编号
+                &quot;id&quot;: 1,
+                &quot;jian&quot;: 0,
+                &quot;orderId&quot;: &quot;PA1812100000001&quot;, // 采购退单号
+                &quot;planTime&quot;: &quot;2018-12-12 01:10:01&quot;, // 计划出库时间
+                &quot;completeTime&quot;: &quot;2018-12-12 01:10:01&quot;, // 完成时间
+                &quot;sendTime&quot;: &quot;2018-12-12 01:10:01&quot;, // 发货时间
+                &quot;runTime&quot;: &quot;2018-12-12 01:10:01&quot;, // 生效时间
+                &quot;remark&quot;: &quot;&quot;, // 备注
+                &quot;san&quot;: 0,
+                &quot;status&quot;: &quot;INVALID&quot;, // 订单状态 INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
+                &quot;supplierAddress&quot;: &quot;湖北省武汉市汉口&quot;,
+                &quot;supplierId&quot;: 1, // 供应商id
+                &quot;supplierName&quot;: &quot;山西忻州经销商&quot;, // 供应商名称
+                &quot;totalprice&quot;: 0 // 订单总金额
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+    }
+}
+</code></pre> <h3 id="cg-70-采购退单-确认执行"><a href="#cg-70-采购退单-确认执行" aria-hidden="true" class="header-anchor">#</a> CG-70. 采购退单-确认执行</h3> <h4 id="模块负责人-37"><a href="#模块负责人-37" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-37"><a href="#请求-37" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/prorder/{orderId}/run
+</code></pre> <h4 id="参数-37"><a href="#参数-37" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>orderId // 订单号
+</code></pre> <h4 id="响应-37"><a href="#响应-37" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-71-采购退单-删除"><a href="#cg-71-采购退单-删除" aria-hidden="true" class="header-anchor">#</a> CG-71. 采购退单-删除</h3> <h4 id="模块负责人-38"><a href="#模块负责人-38" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-38"><a href="#请求-38" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>DELETE /v2/prorder/{orderId}
+</code></pre> <h4 id="参数-38"><a href="#参数-38" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>orderId // 订单号
+</code></pre> <h4 id="响应-38"><a href="#响应-38" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-72-采购退单-新增采购退单"><a href="#cg-72-采购退单-新增采购退单" aria-hidden="true" class="header-anchor">#</a> CG-72. 采购退单-新增采购退单</h3> <h4 id="模块负责人-39"><a href="#模块负责人-39" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-39"><a href="#请求-39" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /v2/prorder
+</code></pre> <h4 id="参数-39"><a href="#参数-39" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    *supplierId: 1, // 经销商id
+    contactName: '阎锡山', // 联系人
+    contactMobile： 13333333333, // 联系电话
+    contactPathId: 060202, // 区域id
+    contactAddress: &quot;山西忻州代县&quot;, // 经销商地址
+    *depotId: 1, // 仓库id
+    *companyId: 1, // 所属公司id
+    *depotName: &quot;rrr&quot; // 仓库名称
+    *deliverType: &quot;SELF&quot; // 配送方式 SELF 自送 THIRD 物流配送
+    *remark: &quot;kkk&quot;, // 备注
+    *planTime: &quot;2018-12-12 12:12:12&quot;, // 计划出库时间
+    *orderPrProList: [
+        {
+            *productId: 1, // 产品id
+            *productUnitId: 1, // 产品规格id
+            *pcount: 1, // 退货数量
+            *giftCount: 2 // 赠品数量
+            *price: 100 // 退货价格
+        },
+        ...
+    ]
+}
+</code></pre> <h4 id="响应-39"><a href="#响应-39" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-73-采购退单-修改采购退单"><a href="#cg-73-采购退单-修改采购退单" aria-hidden="true" class="header-anchor">#</a> CG-73. 采购退单-修改采购退单</h3> <h4 id="模块负责人-40"><a href="#模块负责人-40" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-40"><a href="#请求-40" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/prorder/{orderId}
+</code></pre> <h4 id="参数-40"><a href="#参数-40" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>orderId // 订单号
+{
+    *id: 1, // 主键id
+    *supplierId: 1, // 经销商id
+    contactName: '阎锡山', // 联系人
+    contactMobile： 13333333333, // 联系电话
+    contactPathId: 060202, // 区域id
+    contactAddress: &quot;山西忻州代县&quot;, // 经销商地址
+    *depotId: 1, // 仓库id
+    *depotName: &quot;rrr&quot; // 仓库名称
+    *deliverType: &quot;SELF&quot; // 配送方式 SELF 自送 THIRD 物流配送
+    *remark: &quot;kkk&quot;, // 备注
+    *planTime: &quot;2018-12-12 12:12:12&quot;, // 计划出库时间
+    *orderPrProList: [
+        {
+            *productId: 1, // 产品id
+            *productUnitId: 1, // 产品规格id
+            *pcount: 1, // 退货数量
+            *price: 2, // 退货价格
+            *giftCount: 2 // 赠品数量
+        },
+        ...
+    ]
+}
+</code></pre> <h4 id="响应-40"><a href="#响应-40" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-74-采购退单-获取详情"><a href="#cg-74-采购退单-获取详情" aria-hidden="true" class="header-anchor">#</a> CG-74. 采购退单-获取详情</h3> <h4 id="模块负责人-41"><a href="#模块负责人-41" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-41"><a href="#请求-41" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/prorder/{orderId}
+</code></pre> <h4 id="参数-41"><a href="#参数-41" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>orderId // 订单号
+</code></pre> <h4 id="响应-41"><a href="#响应-41" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;completeTime&quot;: &quot;&quot;,
+        &quot;createTime&quot;: &quot;2018-12-12 08:13:32&quot;,
+        &quot;contactAddress&quot;: &quot;西岗区物流商贸大厦&quot;, // 联系详细地址
+        &quot;contactMobile&quot;: &quot;13333333336&quot;, // 联系电话
+        &quot;contactName&quot;: &quot;李斯&quot;, // 联系人
+        &quot;contactPathId&quot;: &quot;060202&quot;, // 联系地址code
+        &quot;companyId&quot;: 1, // 所属公司id
+        &quot;companyName&quot;: &quot;阿里巴巴&quot;, // 所属公司名称
+        &quot;deliverType&quot;: &quot;THIRD&quot;, // 配送方式 SELF 自送 THIRD 物流配送
+        &quot;depotName&quot;: &quot;大连铁越仓&quot;, // 入库仓
+        &quot;jian&quot;: 0, // 总件数
+        &quot;onlyCode&quot;: &quot;&quot;,
+        &quot;orderId&quot;: &quot;PR1812120000001&quot;, // 订单号
+        &quot;orderPrPros&quot;: [
+            {
+                &quot;giftFlg&quot;: 0, // 赠品标识 0-否 1-是
+                &quot;pcount&quot;: 1, // 数量
+                &quot;price&quot;: 1, // 价格
+                &quot;productUnit&quot;: {
+                    &quot;guige&quot;: &quot;500g(23-25枚）/盒&quot;, // 规格
+                    &quot;unit&quot;: &quot;盒&quot; // 单位
+                    &quot;product&quot;: {
+                        &quot;id&quot;: 1,
+                        &quot;longName&quot;: &quot;香草凤尾虾-专业开背，秘制加工，中西餐厅新食尚~&quot;,
+                        &quot;name&quot;: &quot;香草凤尾虾&quot;, // 品名
+                        &quot;pno&quot;: &quot;0151&quot;, // 品号
+                        &quot;productLack&quot;: null,
+                        &quot;status&quot;: &quot;NORMAL&quot;
+                        &quot;mainImg&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg&quot;, // 退单url
+                    },
+                    &quot;stock&quot;: {
+                         &quot;amount&quot;: 150, // 库存数量
+                     },
+                },
+                &quot;productUnitId&quot;: 52, // 产品规格id
+                &quot;productId&quot;: 12, // 产品id
+                &quot;totalprice&quot;: 5.94 // 小计
+            }
+        ],
+        &quot;planTime&quot;: &quot;2018-12-12 12:12:12&quot;, // 计划出库时间
+        &quot;platformId&quot;: 1,
+        &quot;remark&quot;: &quot;我就是测试一下&quot;, // 备注
+        &quot;runTime&quot;: &quot;&quot;, // 生效时间
+        &quot;san&quot;: 4, // 散货
+        &quot;sendTime&quot;: &quot;&quot;, // 发出时间
+        &quot;status&quot;: &quot;INVALID&quot;, // INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已签收
+        &quot;supplierId&quot;: 2674, // 经销商id
+        &quot;supplierName&quot;: &quot;湖北武汉经销商&quot;, // 供应商名称
+        &quot;totalprice&quot;: 5.94 // 总计
+    }
+}
+</code></pre> <h3 id="cg-75-采购订单价格申请-列表-作废"><a href="#cg-75-采购订单价格申请-列表-作废" aria-hidden="true" class="header-anchor">#</a> CG-75. <font color="red">采购订单价格申请-列表(作废)</font></h3> <h4 id="模块负责人-42"><a href="#模块负责人-42" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-42"><a href="#请求-42" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/paorder/price/askfor?buttonPermissionFlg=1
+</code></pre> <h4 id="参数-42"><a href="#参数-42" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>keyword // 订单号/供应商名称
+status // 申请状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
+buttonPermissionFlg // 获取权限按钮 0-否 1-是
+pageNo // 页码
+pageSize // 行数
+</code></pre> <h4 id="响应-42"><a href="#响应-42" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [
+            {
+                &quot;refuseButton&quot;: false, // 拒绝按钮
+                &quot;passButton&quot;: false // 通过按钮
+            }
+        ],
+        &quot;datas&quot;: [
+            {
+                &quot;checkRemark&quot;: &quot;&quot;, // 审核信息-备注
+                &quot;checkTime&quot;: &quot;&quot;, // 审核信息-时间
+                &quot;checkUserName&quot;: &quot;&quot;, // 审核信息-操作人
+                &quot;createTime&quot;: &quot;2018-12-12 06:43:40&quot;, // 操作信息-时间
+                &quot;createUserName&quot;: &quot;&quot;, // 操作信息-操作人
+                &quot;remark&quot;: &quot;&quot;, // 操作信息-备注
+                &quot;id&quot;: 1, // 主键id
+                &quot;orderId&quot;: &quot;PA18121200001&quot;, // 采购单号
+                &quot;paymode&quot;: &quot;OUTBUY&quot;, // 支付方式
+                &quot;pcount&quot;: 1,
+                &quot;sendTime&quot;: &quot;2018-12-12 12:12:12&quot;, // 发出时间
+                &quot;platformId&quot;: 1,
+                &quot;productUnit&quot;: {
+                    &quot;guige&quot;: &quot;500g(23-25枚）/盒&quot;, // 规格
+                    &quot;name&quot;: &quot;香草凤尾虾&quot;, // 品名
+                    &quot;pno&quot;: &quot;0151&quot;, // 品号
+                    &quot;unit&quot;: &quot;盒&quot; // 单位
+                },
+                &quot;sPrice&quot;: 1, // 原单价
+                &quot;tPrice&quot;: 1, // 目标单价
+                &quot;status&quot;: &quot;ASKFOR&quot;, // 申请状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
+                &quot;supplierId&quot;: 1, // 供应商id
+                &quot;supplierName&quot;: &quot;供应商名称&quot;, // 供应商名称
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+    }
+}
+</code></pre> <h3 id="cg-76-采购订单价格申请-通过-作废"><a href="#cg-76-采购订单价格申请-通过-作废" aria-hidden="true" class="header-anchor">#</a> CG-76. <font color="red">采购订单价格申请-通过(作废)</font></h3> <h4 id="模块负责人-43"><a href="#模块负责人-43" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-43"><a href="#请求-43" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/paorder/price/askfor/pass
+</code></pre> <h4 id="参数-43"><a href="#参数-43" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>[1,2,3,4,5,6] // id 集合
+</code></pre> <h4 id="响应-43"><a href="#响应-43" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-77-采购订单价格申请-通过-作废"><a href="#cg-77-采购订单价格申请-通过-作废" aria-hidden="true" class="header-anchor">#</a> CG-77. <font color="red">采购订单价格申请-通过(作废)</font></h3> <h4 id="模块负责人-44"><a href="#模块负责人-44" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-44"><a href="#请求-44" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/paorder/price/askfor/refuse
+</code></pre> <h4 id="参数-44"><a href="#参数-44" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    ids: [1,2,3,4,5,6], // id集合
+    remark: &quot;不符规定&quot; // 备注
+}
+</code></pre> <h4 id="响应-44"><a href="#响应-44" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-78-采购供货价审核-新增"><a href="#cg-78-采购供货价审核-新增" aria-hidden="true" class="header-anchor">#</a> CG-78. 采购供货价审核-新增</h3> <h4 id="模块负责人-45"><a href="#模块负责人-45" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-45"><a href="#请求-45" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /v2/supplier/price/askfor
+</code></pre> <h4 id="参数-45"><a href="#参数-45" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    supplierId: 1, // 经销商id
+    productId: 1, // 产品id
+    productUnitId: 1, // 产品规格id
+    type： &quot;NOW&quot; // NOW 立即生效 HISTORY 追溯历史 FUTURE 定时执行
+    price: 2, // 签约价
+    effectDate: &quot;2018-12-12 12:12:12&quot; // 生效日期
+    onlyCode: &quot;as-dhj-fdfs-as-asdf&quot; // 申请唯一码
+    remark: &quot;&quot; // 备注
+}
+</code></pre> <h4 id="响应-45"><a href="#响应-45" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-79-采购供货价审核-列表导出"><a href="#cg-79-采购供货价审核-列表导出" aria-hidden="true" class="header-anchor">#</a> CG-79. 采购供货价审核-列表导出</h3> <h4 id="模块负责人-46"><a href="#模块负责人-46" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-46"><a href="#请求-46" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/supplier/price/askfor/export
+</code></pre> <h4 id="参数-46"><a href="#参数-46" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>keyword // 品名/品号
+supplierName // 经销商名称
+status // 审核状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
+type // 定时类型 NOW-立即执行 HISTORY-追溯历史 FUTURE-定时执行
+ladderFlg // 定量价格 0-未设置 1-已设置
+*date： '2018-12' // 导出日期 yyyy-MM
+*checkCode: 下载码
+</code></pre> <h4 id="响应-46"><a href="#响应-46" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>stream
+</code></pre> <h3 id="cg-80-采购退单-日志列表"><a href="#cg-80-采购退单-日志列表" aria-hidden="true" class="header-anchor">#</a> CG-80.采购退单-日志列表</h3> <h4 id="模块负责人-47"><a href="#模块负责人-47" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-47"><a href="#请求-47" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/prorder/{orderId}/log
+</code></pre> <h4 id="参数-47"><a href="#参数-47" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>orderId 采购退单号
+</code></pre> <h4 id="响应-47"><a href="#响应-47" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;datas&quot;: [
+            {
+                &quot;opInfo&quot;: &quot;订单状态锁定&quot;, // 操作内容
+                &quot;opTime&quot;: &quot;2018-10-22 13:11:07&quot;, // 操作时间
+                &quot;opUserName&quot;: &quot;李凤&quot;, // 操作人
+                &quot;orderId&quot;: &quot;PR181019000192&quot;
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+    }
+}
+</code></pre> <h3 id="cg-81-采购订单-产品明细拆分"><a href="#cg-81-采购订单-产品明细拆分" aria-hidden="true" class="header-anchor">#</a> CG-81. 采购订单-产品明细拆分</h3> <h4 id="模块负责人-48"><a href="#模块负责人-48" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-48"><a href="#请求-48" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/paorder/{orderId}/pro
+</code></pre> <h4 id="参数-48"><a href="#参数-48" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    &quot;onlyCode&quot;: &quot;iijkiokjijklj&quot;, // 唯一码
+    &quot;orderPaPros&quot;: [
+        {
+            &quot;id&quot;: 363848, // 明细id
+            &quot;pcount&quot;: 200, // 
+            &quot;batchNo&quot;: &quot;NO.324781293&quot;
+        },
+        ...
+    ]
+}
+</code></pre> <h4 id="响应-48"><a href="#响应-48" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-82-采购订单-校验采购订单能否确认执行"><a href="#cg-82-采购订单-校验采购订单能否确认执行" aria-hidden="true" class="header-anchor">#</a> CG-82. 采购订单-校验采购订单能否确认执行</h3> <h4 id="模块负责人-49"><a href="#模块负责人-49" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-49"><a href="#请求-49" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /v2/paorder/complete/status
+Headrs: {
+    &quot;token&quot;: &quot;923o4yu8tr3q94theriuot&quot;
+}
+</code></pre> <h4 id="参数-49"><a href="#参数-49" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>json body
+[&quot;PA1812290001&quot;,&quot;pa1812290002&quot;] // 采购订单号集合
+</code></pre> <h4 id="响应-49"><a href="#响应-49" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;PA1812290001&quot;: true,
+        &quot;pa1812290002&quot;: false
+    }
+}
+</code></pre> <h3 id="cg-83-供应商产品列表"><a href="#cg-83-供应商产品列表" aria-hidden="true" class="header-anchor">#</a> CG-83. 供应商产品列表</h3> <h4 id="模块负责人-50"><a href="#模块负责人-50" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-50"><a href="#请求-50" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/supplier/product
+</code></pre> <h4 id="参数-50"><a href="#参数-50" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>depotId 仓库id // 采购退单调用要传出库仓id
+*supplierId 供应商id
+keyword // 品名品号
+pageNo 1 // 页码
+pageSize 25 // 行数
+</code></pre> <h4 id="响应-50"><a href="#响应-50" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        datas: [
+            {
+                &quot;price&quot;: 1280, // 采购价格
+                &quot;productId&quot;: 4523, // 产品id
+                &quot;productUnit&quot;: {
+                    &quot;guige&quot;: &quot;170g/盒*40盒&quot;, // 规格
+                    &quot;product&quot;: {                            
+                        &quot;name&quot;: &quot;冰鲜三文鱼扒 &quot;, // 品名
+                        &quot;pno&quot;: &quot;F001&quot;, // 品号
+                        &quot;customFlg&quot;: 0, // 定制标识  0 常规品 1 定制品
+                        &quot;productLack&quot;: null, // 产品断货标识，若未null 则不缺货 反之亦然
+                        &quot;status&quot;: &quot;NORMAL&quot;, // 产品状态 NORMAL - 正常 LOCK - 下架
+                        &quot;mainImg&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/0&quot;, // 图片url
+                    },
+                    &quot;stock&quot;: {
+                        &quot;amount&quot;: 0, // 库存数量
+                    },
+                    &quot;unit&quot;: &quot;件&quot; // 单位
+                },
+                &quot;productUnitId&quot;: 7951, // 产品规格id
+                &quot;supplierId&quot;: 5553,
+                &quot;supplierName&quot;: &quot;北京利旺通达商贸有限公司&quot;
+            }
+        ]
+    }
+}
+</code></pre> <h3 id="cg-84-采购订单撤回"><a href="#cg-84-采购订单撤回" aria-hidden="true" class="header-anchor">#</a> CG-84. 采购订单撤回</h3> <h4 id="模块负责人-51"><a href="#模块负责人-51" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-51"><a href="#请求-51" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/paorder/{orderId}/status/back
+</code></pre> <h4 id="参数-51"><a href="#参数-51" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*orderId PA单号
+</code></pre> <h4 id="响应-51"><a href="#响应-51" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-85-普通入库单-列表"><a href="#cg-85-普通入库单-列表" aria-hidden="true" class="header-anchor">#</a> CG-85. 普通入库单-列表</h3> <h4 id="模块负责人-52"><a href="#模块负责人-52" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-52"><a href="#请求-52" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/niorder
+</code></pre> <h4 id="参数-52"><a href="#参数-52" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>buttonPermissionFlg 是否获取权限按钮
+keyword 单号
+depotId 仓库id
+status 订单状态 INVALID - 未生效 RUN - 已生效  COMPLETE - 已签收
+orderTypeId 入库类型id
+</code></pre> <h4 id="响应-52"><a href="#响应-52" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [
+            {
+                &quot;setRunButton&quot;: true, // 确认执行按钮
+                &quot;editButton&quot;: true, // 修改按钮
+                &quot;delButton&quot;: true, // 删除按钮
+                &quot;logButton&quot;: true // 日志查看按钮
+            }
+        ],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;completeTime&quot;: &quot;&quot;, // 完成时间
+                &quot;createRole&quot;: 1,
+                &quot;createTime&quot;: &quot;2019-01-19 09:03:31&quot;,
+                &quot;createUser&quot;: 518,
+                &quot;createUserName&quot;: &quot;孙启萌&quot;, // 创建人
+                &quot;deleteFlg&quot;: 0,
+                &quot;depotId&quot;: 40, // 入库仓id
+                &quot;depotName&quot;: &quot;大连铁1越&quot;, // 入库仓名称
+                &quot;id&quot;: 1, // 主键id
+                &quot;jian&quot;: 0, // 件
+                &quot;modifyTime&quot;: &quot;2019-01-19 10:06:52&quot;,
+                &quot;orderId&quot;: &quot;NI1901190000001&quot;, // 单号
+                &quot;orderTypeId&quot;: 1,
+                &quot;orderTypeName&quot;: &quot;样品出库&quot;, // 入库类型名称
+                &quot;planCompleteTime&quot;: &quot;2019-01-20 00:00:00&quot;, // 计划入库时间
+                &quot;platformId&quot;: 1,
+                &quot;remark&quot;: &quot;首单测试&quot;, // 备注
+                &quot;runTime&quot;: &quot;2019-01-19 09:49:45&quot;, // 生效时间
+                &quot;san&quot;: 1, // 散
+                &quot;status&quot;: &quot;INVALID&quot;, // 订单状态 INVALID - 未生效 RUN - 已生效  COMPLETE - 已签收
+                &quot;totalprice&quot;: 40.12 // 订单金额
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: 0
+    }
+}
+</code></pre> <h3 id="cg-86-普通入库单-新增"><a href="#cg-86-普通入库单-新增" aria-hidden="true" class="header-anchor">#</a> CG-86. 普通入库单-新增</h3> <h4 id="模块负责人-53"><a href="#模块负责人-53" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-53"><a href="#请求-53" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /v2/niorder
+</code></pre> <h4 id="参数-53"><a href="#参数-53" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+	&quot;orderNi&quot;: {
+		*&quot;depotId&quot;: 40, // 入库仓id
+		*&quot;depotName&quot;: &quot;大连铁越&quot;, // 入库仓名称
+		*&quot;orderTypeId&quot;: 1, // 入库类型id
+		*&quot;orderTypeName&quot;: &quot;样品出库&quot;, // 入库类型名称
+		&quot;remark&quot;: &quot;首单测试&quot;, // 备注 0 ~ 250长度，前端同事请做校验
+		*&quot;planCompleteTime&quot;: &quot;2019-01-20&quot; // 计划入库时间
+	},
+	&quot;orderNiProList&quot;: [
+		{
+			*&quot;productId&quot;: 1, // 产品id
+			*&quot;productUnitId&quot;: 1, // 产品规格id
+			*&quot;pcount&quot;: 1 // 入库数量
+		}
+	],
+	&quot;onlyCode&quot;: 1222231231 // 唯一码
+}
+</code></pre> <h4 id="响应-53"><a href="#响应-53" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-87-普通入库单-修改"><a href="#cg-87-普通入库单-修改" aria-hidden="true" class="header-anchor">#</a> CG-87. 普通入库单-修改</h3> <h4 id="模块负责人-54"><a href="#模块负责人-54" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-54"><a href="#请求-54" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/niorder/{orderId}
+</code></pre> <h4 id="参数-54"><a href="#参数-54" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*orderId 订单号
+jsonbody:
+{
+	&quot;orderNi&quot;: {
+		*&quot;id&quot;: 4096, // 主键id
+		*&quot;orderId&quot;: &quot;NI1901290000003&quot;, // 订单号
+		*&quot;depotId&quot;: 40, // 入库仓id
+		*&quot;depotName&quot;: &quot;大连铁越&quot;, // 入库仓名称
+		*&quot;orderTypeId&quot;: 1, // 入库类型id
+		*&quot;orderTypeName&quot;:&quot;样品出库&quot;, // 入库类型名称
+		&quot;remark&quot;: &quot;首单测试&quot;, // 备注 0 ~ 255 前端同事请做校验
+		*&quot;planCompleteTime&quot;: &quot;2019-01-20&quot; // 计划入库时间
+	},
+	&quot;orderNiProList&quot;: [
+		{
+			*&quot;productId&quot;: 1, // 产品id
+			*&quot;productUnitId&quot;: 1, // 产品规格id
+			*&quot;pcount&quot;: 1 // 入库数量
+		}
+	]
+}
+</code></pre> <h4 id="响应-54"><a href="#响应-54" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-88-普通入库单-详情"><a href="#cg-88-普通入库单-详情" aria-hidden="true" class="header-anchor">#</a> CG-88. 普通入库单-详情</h3> <h4 id="模块负责人-55"><a href="#模块负责人-55" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-55"><a href="#请求-55" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/niorder/{orderId}
+</code></pre> <h4 id="参数-55"><a href="#参数-55" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*orderId 订单号
+</code></pre> <h4 id="响应-55"><a href="#响应-55" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;orderNi&quot;: {
+            &quot;completeTime&quot;: &quot;&quot;, // 签收时间
+            &quot;createRole&quot;: 1,
+            &quot;createTime&quot;: &quot;2019-01-29 11:04:03&quot;, // 创建时间
+            &quot;createUser&quot;: 518,
+            &quot;createUserName&quot;: &quot;孙启萌&quot;, // 创建人
+            &quot;deleteFlg&quot;: 0,
+            &quot;depotId&quot;: 40, // 入库仓id
+            &quot;depotName&quot;: &quot;大连铁1越&quot;, // 入库仓名称
+            &quot;id&quot;: 4096, //
+            &quot;jian&quot;: 0, // 件
+            &quot;modifyTime&quot;: &quot;2019-01-29 11:06:40&quot;,
+            &quot;orderId&quot;: &quot;NI1901290000003&quot;, // 单号
+            &quot;orderTypeId&quot;: 1,
+            &quot;orderTypeName&quot;: &quot;样品出库&quot;, // 入库类型名称
+            &quot;planCompleteTime&quot;: &quot;2019-01-20 00:00:00&quot;, // 计划入库时间
+            &quot;platformId&quot;: 1,
+            &quot;remark&quot;: &quot;首单测试&quot;, // 备注
+            &quot;runTime&quot;: &quot;&quot;, // 生效时间
+            &quot;san&quot;: 1, // 散
+            &quot;status&quot;: &quot;INVALID&quot;, // 订单状态 INVALID - 未生效 RUN - 已生效  COMPLETE - 已签收
+            &quot;totalprice&quot;: 40.12 // 订单总金额
+        },
+        &quot;orderNiProList&quot;: [
+            {
+                &quot;deleteFlg&quot;: 0,
+                &quot;id&quot;: 32770,
+                &quot;orderId&quot;: &quot;NI1901290000003&quot;,
+                &quot;pcount&quot;: 1, // 数量
+                &quot;price&quot;: 40.12, // 单价
+                &quot;productId&quot;: 1,
+                &quot;productUnit&quot;: {
+                    &quot;guige&quot;: &quot;800g&quot;, // 规格
+                    &quot;product&quot;: {
+                        &quot;mainImg&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/36c00a2019dde2abbd23e609eff56d44.jpg&quot;, // 产品主图
+                        &quot;name&quot;: &quot;海苔多春鱼&quot;, // 品名
+                        &quot;pno&quot;: &quot;0079&quot;, // 品号
+                        &quot;productLack&quot;: null,
+                        &quot;status&quot;: &quot;NORMAL&quot;
+                    },
+                    &quot;stock&quot;: null,
+                    &quot;unit&quot;: &quot;盒&quot;, // 单位
+                },
+                &quot;productUnitId&quot;: 1,
+                &quot;totalprice&quot;: 40.12 // 小计
+            }
+        ]
+    }
+}
+</code></pre> <h3 id="cg-89-普通入库单-日志列表"><a href="#cg-89-普通入库单-日志列表" aria-hidden="true" class="header-anchor">#</a> CG-89. 普通入库单-日志列表</h3> <h4 id="模块负责人-56"><a href="#模块负责人-56" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-56"><a href="#请求-56" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/niorder/{orderId}/logs
+</code></pre> <h4 id="参数-56"><a href="#参数-56" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*orderId 订单号
+</code></pre> <h4 id="响应-56"><a href="#响应-56" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;id&quot;: 1026,
+                &quot;opInfo&quot;: &quot;修改普通入库单&quot;, // 操作内容
+                &quot;opRole&quot;: 1,
+                &quot;opTime&quot;: &quot;2019-01-29 11:08:27&quot;, // 操作时间
+                &quot;opUser&quot;: 518,
+                &quot;opUserName&quot;: &quot;孙启萌&quot;, // 操作者
+                &quot;orderId&quot;: &quot;NI1901290000003&quot;
+            },
+            ...
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: 0
+    }
+}
+</code></pre> <h3 id="cg-90-普通入库单-确认执行"><a href="#cg-90-普通入库单-确认执行" aria-hidden="true" class="header-anchor">#</a> CG-90. 普通入库单-确认执行</h3> <h4 id="模块负责人-57"><a href="#模块负责人-57" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-57"><a href="#请求-57" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/niorder/{orderId}/run
+</code></pre> <h4 id="参数-57"><a href="#参数-57" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*orderId 订单号
+</code></pre> <h4 id="响应-57"><a href="#响应-57" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-91-普通入库单-删除"><a href="#cg-91-普通入库单-删除" aria-hidden="true" class="header-anchor">#</a> CG-91. 普通入库单-删除</h3> <h4 id="模块负责人-58"><a href="#模块负责人-58" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-58"><a href="#请求-58" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>DELETE /v2/niorder/{orderId}
+</code></pre> <h4 id="参数-58"><a href="#参数-58" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*orderId 订单号
+</code></pre> <h4 id="响应-58"><a href="#响应-58" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-92-普通入库单-入库类型"><a href="#cg-92-普通入库单-入库类型" aria-hidden="true" class="header-anchor">#</a> CG-92. 普通入库单-入库类型</h3> <h4 id="模块负责人-59"><a href="#模块负责人-59" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-59"><a href="#请求-59" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/niorder/types
+</code></pre> <h4 id="参数-59"><a href="#参数-59" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>无
+</code></pre> <h4 id="响应-59"><a href="#响应-59" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;deleteFlg&quot;: 0,
+            &quot;id&quot;: 16, // id
+            &quot;name&quot;: &quot;亚渔货品入库单&quot;, // 名称
+            &quot;sort&quot;: 0,
+            &quot;type&quot;: &quot;NI&quot;
+        },
+    ]
+}
+</code></pre> <h3 id="cg-93-普通出库单-列表"><a href="#cg-93-普通出库单-列表" aria-hidden="true" class="header-anchor">#</a> CG-93. 普通出库单-列表</h3> <h4 id="模块负责人-60"><a href="#模块负责人-60" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-60"><a href="#请求-60" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/noorder
+</code></pre> <h4 id="参数-60"><a href="#参数-60" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>buttonPermissionFlg 是否获取权限按钮
+keyword 单号
+depotId 仓库id
+status 订单状态 INVALID - 未生效 RUN - 已生效  SEND - 已签收
+orderTypeId 出库类型id
+</code></pre> <h4 id="响应-60"><a href="#响应-60" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [
+            {
+                &quot;setRunButton&quot;: true, // 确认执行按钮
+                &quot;editButton&quot;: true, // 修改按钮
+                &quot;delButton&quot;: true, // 删除按钮
+                &quot;logButton&quot;: true // 日志查看按钮
+            }
+        ],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;sendTime&quot;: &quot;&quot;, // 发车时间
+                &quot;createRole&quot;: 1,
+                &quot;createTime&quot;: &quot;2019-01-19 09:03:31&quot;,
+                &quot;createUser&quot;: 518,
+                &quot;createUserName&quot;: &quot;孙启萌&quot;, // 创建人
+                &quot;deleteFlg&quot;: 0,
+                &quot;depotId&quot;: 40, // 出库仓id
+                &quot;depotName&quot;: &quot;大连铁1越&quot;, // 出库仓名称
+                &quot;id&quot;: 1, // 主键id
+                &quot;jian&quot;: 0, // 件
+                &quot;modifyTime&quot;: &quot;2019-01-19 10:06:52&quot;,
+                &quot;orderId&quot;: &quot;NO1901190000001&quot;, // 单号
+                &quot;orderTypeId&quot;: 1,
+                &quot;orderTypeName&quot;: &quot;样品出库&quot;, // 入库类型名称
+                &quot;planSendTime&quot;: &quot;2019-01-20 00:00:00&quot;, // 计划出库时间
+                &quot;platformId&quot;: 1,
+                &quot;remark&quot;: &quot;首单测试&quot;, // 备注
+                &quot;runTime&quot;: &quot;2019-01-19 09:49:45&quot;, // 生效时间
+                &quot;san&quot;: 1, // 散
+                &quot;status&quot;: &quot;INVALID&quot;, // 订单状态 INVALID - 未生效 RUN - 已生效  SEND - 已发车
+                &quot;totalprice&quot;: 40.12 // 订单金额
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: 0
+    }
+}
+</code></pre> <h3 id="cg-94-普通出库单-新增"><a href="#cg-94-普通出库单-新增" aria-hidden="true" class="header-anchor">#</a> CG-94. 普通出库单-新增</h3> <h4 id="模块负责人-61"><a href="#模块负责人-61" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-61"><a href="#请求-61" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /v2/noorder
+</code></pre> <h4 id="参数-61"><a href="#参数-61" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+	&quot;orderNo&quot;: {
+		*&quot;depotId&quot;: 40, // 出库仓id
+		*&quot;depotName&quot;: &quot;大连铁越&quot;, // 出库仓名称
+		*&quot;orderTypeId&quot;: 1, // 出库类型id
+		*&quot;orderTypeName&quot;: &quot;样品出库&quot;, // 出库类型名称
+		&quot;remark&quot;: &quot;首单测试&quot;, // 备注 0 ~ 255 前端同事请做校验
+		*&quot;planSendTime&quot;: &quot;2019-01-20&quot; // 计划发出时间
+	},
+	&quot;orderNoProList&quot;: [
+		{
+			*&quot;productId&quot;: 1, // 产品id
+			*&quot;productUnitId&quot;: 1, // 产品规格id
+			*&quot;pcount&quot;: 1 // 数量
+		}
+	],
+	*&quot;onlyCode&quot;: 1231231123 // 唯一码
+}
+</code></pre> <h4 id="响应-61"><a href="#响应-61" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-95-普通出库单-修改"><a href="#cg-95-普通出库单-修改" aria-hidden="true" class="header-anchor">#</a> CG-95. 普通出库单-修改</h3> <h4 id="模块负责人-62"><a href="#模块负责人-62" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-62"><a href="#请求-62" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/noorder/{orderId}
+</code></pre> <h4 id="参数-62"><a href="#参数-62" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*orderId 订单号
+jsonbody:
+{
+	&quot;orderNo&quot;: {
+		*&quot;id&quot;: 16384, // 主键id
+		*&quot;orderId&quot;: &quot;NO1901290000002&quot;, // 订单号
+		*&quot;depotId&quot;: 40, // 出库仓id
+		*&quot;depotName&quot;: &quot;大连铁越&quot;, // 出库仓名称
+		*&quot;orderTypeId&quot;: 1, // 出库类型id
+		*&quot;orderTypeName&quot;:&quot;出库类型名称&quot;, // 出库类型名称
+		&quot;remark&quot;: &quot;首单测试&quot;, // 备注 0 ~ 255 前端同事请做校验
+		*&quot;planSendTime&quot;: &quot;2019-01-20&quot; // 计划出库时间
+	},
+	&quot;orderNoProList&quot;: [
+		{
+			*&quot;productId&quot;: 1, // 产品id
+			*&quot;productUnitId&quot;: 1, // 产品规格id
+			*&quot;pcount&quot;: 1 // 数量
+		}
+	]
+}
+</code></pre> <h4 id="响应-62"><a href="#响应-62" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-96-普通出库单-详情"><a href="#cg-96-普通出库单-详情" aria-hidden="true" class="header-anchor">#</a> CG-96. 普通出库单-详情</h3> <h4 id="模块负责人-63"><a href="#模块负责人-63" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-63"><a href="#请求-63" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/noorder/{orderId}
+</code></pre> <h4 id="参数-63"><a href="#参数-63" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*orderId 订单号
+</code></pre> <h4 id="响应-63"><a href="#响应-63" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;orderNo&quot;: {
+            &quot;createRole&quot;: 1,
+            &quot;createTime&quot;: &quot;2019-01-29 11:31:07&quot;, // 创建时间
+            &quot;createUser&quot;: 518,
+            &quot;createUserName&quot;: &quot;孙启萌&quot;, // 创建人
+            &quot;deleteFlg&quot;: 0,
+            &quot;depotId&quot;: 40, // 出库仓id
+            &quot;depotName&quot;: &quot;大连铁越&quot;, // 出库仓名称
+            &quot;id&quot;: 16384, // 主键id
+            &quot;jian&quot;: 0, // 件
+            &quot;modifyTime&quot;: &quot;2019-01-29 11:35:27&quot;,
+            &quot;orderId&quot;: &quot;NO1901290000002&quot;, // 订单号
+            &quot;orderTypeId&quot;: 1, // 出库类型id
+            &quot;orderTypeName&quot;: &quot;样品出库&quot;, // 出库类型名称
+            &quot;planSendTime&quot;: &quot;2019-01-20 00:00:00&quot;, // 计划出库时间
+            &quot;platformId&quot;: 1,
+            &quot;remark&quot;: &quot;首单测试&quot;, // 备注
+            &quot;runTime&quot;: &quot;&quot;, // 生效时间
+            &quot;san&quot;: 1, // 散
+            &quot;sendTime&quot;: &quot;&quot;, // 发出时间
+            &quot;status&quot;: &quot;INVALID&quot;, // 订单状态 INVALID - 未生效 RUN - 已生效  SEND - 已签收
+            &quot;totalprice&quot;: 40.12 // 订单总计
+        },
+        &quot;orderNoProList&quot;: [
+            {
+                &quot;deleteFlg&quot;: 1,
+                &quot;id&quot;: 131071,
+                &quot;orderId&quot;: &quot;NO1901290000002&quot;,
+                &quot;pcount&quot;: 1,
+                &quot;price&quot;: 40.12,
+                &quot;productId&quot;: 1,
+                &quot;productUnit&quot;: {
+                    &quot;createTime&quot;: &quot;&quot;,
+                    &quot;cubage&quot;: 1512,
+                    &quot;grossweight&quot;: 0.55,
+                    &quot;guige&quot;: &quot;500g(23-25枚）/盒&quot;, // 规格
+                    &quot;height&quot;: 5,
+                    &quot;id&quot;: 1,
+                    &quot;length&quot;: 19.5,
+                    &quot;minimum&quot;: 0,
+                    &quot;minimumType&quot;: &quot;NONE&quot;,
+                    &quot;modifyTime&quot;: &quot;&quot;,
+                    &quot;netweight&quot;: 0.5,
+                    &quot;perunit&quot;: 1,
+                    &quot;price&quot;: null,
+                    &quot;product&quot;: {
+                        &quot;customFlg&quot;: 0,
+                        &quot;id&quot;: 1,
+                        &quot;longName&quot;: &quot;香草凤尾虾-专业开背，秘制加工，中西餐厅新食尚~&quot;,
+                        &quot;mainBgImg&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/f9ce32e007fc796722466531c86d5cd9.jpg&quot;,
+                        &quot;mainImg&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg&quot;, // 产品主图
+                        &quot;name&quot;: &quot;香草凤尾虾&quot;, // 品名
+                        &quot;pno&quot;: &quot;0151&quot;, // 品号
+                        &quot;productLack&quot;: null,
+                        &quot;status&quot;: &quot;LOCK&quot;
+                    },
+                    &quot;productCart&quot;: null,
+                    &quot;productId&quot;: 1,
+                    &quot;stock&quot;: {
+                        &quot;amount&quot;: 216, // 库存数量
+                        &quot;productId&quot;: 1
+                    },
+                    &quot;unit&quot;: &quot;盒&quot;, // 单位
+                    &quot;unitId&quot;: 2,
+                    &quot;width&quot;: 15.5
+                },
+                &quot;productUnitId&quot;: 1, //
+                &quot;totalprice&quot;: 40.12 // 产品小计
+            }
+        ]
+    }
+}
+</code></pre> <h3 id="cg-97-普通出库单-日志列表"><a href="#cg-97-普通出库单-日志列表" aria-hidden="true" class="header-anchor">#</a> CG-97. 普通出库单-日志列表</h3> <h4 id="模块负责人-64"><a href="#模块负责人-64" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-64"><a href="#请求-64" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/noorder/{orderId}/logs
+</code></pre> <h4 id="参数-64"><a href="#参数-64" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*orderId 订单号
+</code></pre> <h4 id="响应-64"><a href="#响应-64" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;id&quot;: 1026,
+                &quot;opInfo&quot;: &quot;修改普通出库单&quot;, // 操作内容
+                &quot;opRole&quot;: 1,
+                &quot;opTime&quot;: &quot;2019-01-29 11:08:27&quot;, // 操作时间
+                &quot;opUser&quot;: 518,
+                &quot;opUserName&quot;: &quot;孙启萌&quot;, // 操作者
+                &quot;orderId&quot;: &quot;NO1901290000003&quot;
+            },
+            ...
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: 0
+    }
+}
+</code></pre> <h3 id="cg-98-普通出库单-确认执行"><a href="#cg-98-普通出库单-确认执行" aria-hidden="true" class="header-anchor">#</a> CG-98. 普通出库单-确认执行</h3> <h4 id="模块负责人-65"><a href="#模块负责人-65" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-65"><a href="#请求-65" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/noorder/{orderId}/run
+</code></pre> <h4 id="参数-65"><a href="#参数-65" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*orderId 订单号
+</code></pre> <h4 id="响应-65"><a href="#响应-65" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-99-普通出库单-删除"><a href="#cg-99-普通出库单-删除" aria-hidden="true" class="header-anchor">#</a> CG-99. 普通出库单-删除</h3> <h4 id="模块负责人-66"><a href="#模块负责人-66" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-66"><a href="#请求-66" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>DELETE /v2/noorder/{orderId}
+</code></pre> <h4 id="参数-66"><a href="#参数-66" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*orderId 订单号
+</code></pre> <h4 id="响应-66"><a href="#响应-66" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-100-普通出库单-出库类型"><a href="#cg-100-普通出库单-出库类型" aria-hidden="true" class="header-anchor">#</a> CG-100 普通出库单-出库类型</h3> <h4 id="模块负责人-67"><a href="#模块负责人-67" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-67"><a href="#请求-67" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/noorder/types
+</code></pre> <h4 id="参数-67"><a href="#参数-67" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>无
+</code></pre> <h4 id="响应-67"><a href="#响应-67" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;deleteFlg&quot;: 0,
+            &quot;id&quot;: 16, // id
+            &quot;name&quot;: &quot;亚渔货品出库单&quot;, // 名称
+            &quot;sort&quot;: 0,
+            &quot;type&quot;: &quot;NO&quot;
+        },
+    ]
+}
+</code></pre> <h3 id="cg-101-调拨单-列表"><a href="#cg-101-调拨单-列表" aria-hidden="true" class="header-anchor">#</a> CG-101. 调拨单-列表</h3> <h4 id="模块负责人-68"><a href="#模块负责人-68" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-68"><a href="#请求-68" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/trorder
+</code></pre> <h4 id="参数-68"><a href="#参数-68" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>buttonPermissionFlg 是否获取权限按钮
+keyword 单号
+fromDepotId 出库仓id
+toDepotId 入库仓id
+status 订单状态 INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收
+createUserName 创建人名称
+</code></pre> <h4 id="响应-68"><a href="#响应-68" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [
+            {
+                &quot;setRunButton&quot;: true, // 确认执行按钮
+                &quot;editButton&quot;: true, // 修改按钮
+                &quot;delButton&quot;: true, // 删除按钮
+                &quot;logButton&quot;: true // 日志查看按钮
+            }
+        ],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;advanceFlg&quot;: 0,
+                &quot;completeTime&quot;: &quot;&quot;, // 完成时间
+                &quot;createRole&quot;: 1,
+                &quot;createTime&quot;: &quot;2019-01-16 11:38:18&quot;, // 创建时间
+                &quot;createUser&quot;: 518,
+                &quot;createUserName&quot;: &quot;孙启萌&quot;, // 创建人
+                &quot;deleteFlg&quot;: 0,
+                &quot;fromDepotId&quot;: 50, // 出库仓id
+                &quot;fromDepotName&quot;: &quot;VC（工厂直发）&quot;, // 出库仓名称
+                &quot;id&quot;: 6333, // 主键id
+                &quot;jian&quot;: 1, // 件
+                &quot;modifyTime&quot;: &quot;2019-01-28 14:40:27&quot;,
+                &quot;orderId&quot;: &quot;TR190116003691&quot;, // 单号
+                &quot;planCompleteTime&quot;: &quot;2019-01-16 00:00:00&quot;, // 计划入库时间
+                &quot;planSendTime&quot;: &quot;2019-01-16 00:00:00&quot;, // 计划出库时间
+                &quot;platformId&quot;: 1,
+                &quot;remark&quot;: &quot;1&quot;, // 备注
+                &quot;runTime&quot;: &quot;2019-01-16 00:00:00&quot;, // 生效时间
+                &quot;san&quot;: 1, // 散
+                &quot;sendTime&quot;: &quot;2019-01-16 00:00:00&quot;, // 发出时间
+                &quot;status&quot;: &quot;RUN&quot;, // 订单状态 INVALID:订单未生效,SET:提交物流中，RUN:订单生效,SEND:已发出,COMPLETE:已签收
+                &quot;toDepotId&quot;: 22, // 入库仓id
+                &quot;toDepotName&quot;: &quot;DC（郑州信基仓）&quot; // 入库仓名称
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: 0
+    }
+}
+</code></pre> <h3 id="cg-102-调拨单-新增"><a href="#cg-102-调拨单-新增" aria-hidden="true" class="header-anchor">#</a> CG-102. 调拨单-新增</h3> <h4 id="模块负责人-69"><a href="#模块负责人-69" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-69"><a href="#请求-69" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /v2/trorder
+</code></pre> <h4 id="参数-69"><a href="#参数-69" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+	&quot;orderTr&quot;: {
+		*&quot;fromDepotId&quot;: 40, // 出库仓id
+		*&quot;fromDepotName&quot;: &quot;大连铁越&quot;, // 出库仓名称
+		*&quot;toDepotId&quot;: 2, // 入库仓id
+		*&quot;toDepotName&quot;: &quot;沈阳铁越&quot;, // 入库仓名称
+		&quot;remark&quot;: &quot;首单测试&quot;, // 备注 0 ~ 255 前端同事请做校验
+		*&quot;planSendTime&quot;: &quot;2019-01-20&quot;, // 计划出库时间
+		*&quot;planCompleteTime&quot;: &quot;2019-01-22&quot; // 计划入库时间
+	},
+	&quot;orderTrProList&quot;: [
+		{
+			*&quot;productId&quot;: 1, // 产品id
+			*&quot;productUnitId&quot;: 1, // 产品规格id
+			*&quot;pcount&quot;: 1 // 数量
+		}
+	],
+	&quot;onlyCode&quot;: 123123 // 唯一码
+}
+</code></pre> <h4 id="响应-69"><a href="#响应-69" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-103-调拨单-修改"><a href="#cg-103-调拨单-修改" aria-hidden="true" class="header-anchor">#</a> CG-103. 调拨单-修改</h3> <h4 id="模块负责人-70"><a href="#模块负责人-70" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-70"><a href="#请求-70" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/trorder/{orderId}
+</code></pre> <h4 id="参数-70"><a href="#参数-70" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*orderId
+
+{
+	&quot;orderTr&quot;: {
+		*&quot;id&quot;: 8192, // 主键id
+		*&quot;orderId&quot;: &quot;TR1901290000001&quot;, // 单号
+		*&quot;fromDepotId&quot;: 40, // 出库仓id
+		*&quot;fromDepotName&quot;: &quot;大连铁越&quot;, // 出库仓名称
+		*&quot;toDepotId&quot;: 21, // 入库仓id
+		*&quot;toDepotName&quot;: &quot;沈阳铁越&quot;, // 入库仓名称
+		&quot;remark&quot;: &quot;首单测试1&quot;, // 备注 0 ~ 255 前端同事请做校验
+		*&quot;planSendTime&quot;: &quot;2019-01-01&quot;, // 计划出库时间
+		*&quot;planCompleteTime&quot;: &quot;2019-01-01&quot; // 计划入库时间
+	},
+	&quot;orderTrProList&quot;: [
+		{
+			*&quot;productId&quot;: 1, // 产品id
+			*&quot;productUnitId&quot;: 1, //产品规格id
+			*&quot;pcount&quot;: 1 // 数量
+		}
+	]
+}
+</code></pre> <h4 id="响应-70"><a href="#响应-70" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-104-调拨单-详情"><a href="#cg-104-调拨单-详情" aria-hidden="true" class="header-anchor">#</a> CG-104. 调拨单-详情</h3> <h4 id="模块负责人-71"><a href="#模块负责人-71" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-71"><a href="#请求-71" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/trorder/{orderId}
+</code></pre> <h4 id="参数-71"><a href="#参数-71" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*orderId 订单号
+</code></pre> <h4 id="响应-71"><a href="#响应-71" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;orderTr&quot;: {
+            &quot;advanceFlg&quot;: 0,
+            &quot;completeTime&quot;: &quot;&quot;, // 完成时间
+            &quot;createRole&quot;: 1,
+            &quot;createTime&quot;: &quot;2019-01-29 13:18:07&quot;, // 创建时间
+            &quot;createUser&quot;: 518,
+            &quot;createUserName&quot;: &quot;孙启萌&quot;, // 创建人
+            &quot;deleteFlg&quot;: 0,
+            &quot;fromDepotId&quot;: 40, // 出库仓id
+            &quot;fromDepotName&quot;: &quot;大连铁越&quot;, // 出库仓名称
+            &quot;id&quot;: 8192, // 主键id
+            &quot;jian&quot;: 0, // 件
+            &quot;modifyTime&quot;: &quot;2019-01-29 13:35:33&quot;,
+            &quot;orderId&quot;: &quot;TR1901290000001&quot;, // 订单号
+            &quot;planCompleteTime&quot;: &quot;2019-01-01 00:00:00&quot;, // 计划入库时间
+            &quot;planSendTime&quot;: &quot;2019-01-01 00:00:00&quot;, // 计划出库时间
+            &quot;platformId&quot;: 1,
+            &quot;remark&quot;: &quot;首单测试1&quot;, // 备注
+            &quot;runTime&quot;: &quot;&quot;, // 生效时间
+            &quot;san&quot;: 1, // 散
+            &quot;sendTime&quot;: &quot;&quot;, // 发出时间
+            &quot;status&quot;: &quot;INVALID&quot;, // 订单状态 INVALID:订单未生效,SET:提交物流中,RUN:订单生效,SEND:已发出,COMPLETE:已签收
+            &quot;toDepotId&quot;: 21, // 入库仓id
+            &quot;toDepotName&quot;: &quot;沈阳铁越&quot; // 入库仓名称
+        },
+        &quot;orderTrProList&quot;: [
+            {
+                &quot;deleteFlg&quot;: 0,
+                &quot;id&quot;: 131073,
+                &quot;orderId&quot;: &quot;TR1901290000001&quot;,
+                &quot;pcount&quot;: 1,
+                &quot;productId&quot;: 1,
+                &quot;productUnit&quot;: {
+                    &quot;createTime&quot;: &quot;&quot;,
+                    &quot;cubage&quot;: 1512,
+                    &quot;grossweight&quot;: 0.55,
+                    &quot;guige&quot;: &quot;500g(23-25枚）/盒&quot;, // 规格
+                    &quot;height&quot;: 5,
+                    &quot;id&quot;: 1,
+                    &quot;length&quot;: 19.5,
+                    &quot;minimum&quot;: 0,
+                    &quot;minimumType&quot;: &quot;NONE&quot;,
+                    &quot;modifyTime&quot;: &quot;&quot;,
+                    &quot;netweight&quot;: 0.5,
+                    &quot;perunit&quot;: 1,
+                    &quot;price&quot;: null,
+                    &quot;product&quot;: {
+                        &quot;customFlg&quot;: 0,
+                        &quot;id&quot;: 1,
+                        &quot;longName&quot;: &quot;香草凤尾虾-专业开背，秘制加工，中西餐厅新食尚~&quot;,
+                        &quot;mainBgImg&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/f9ce32e007fc796722466531c86d5cd9.jpg&quot;,
+                        &quot;mainImg&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg&quot;, // 产品主图
+                        &quot;name&quot;: &quot;香草凤尾虾&quot;, // 品名
+                        &quot;pno&quot;: &quot;0151&quot;, // 品号
+                        &quot;productLack&quot;: null,
+                        &quot;status&quot;: &quot;LOCK&quot;
+                    },
+                    &quot;productCart&quot;: null,
+                    &quot;productId&quot;: 1,
+                    &quot;stock&quot;: {
+                        &quot;amount&quot;: 216, // 库存
+                        &quot;productId&quot;: 1
+                    },
+                    &quot;unit&quot;: &quot;盒&quot;, // 单位
+                    &quot;unitId&quot;: 2,
+                    &quot;width&quot;: 15.5
+                },
+                &quot;productUnitId&quot;: 1
+            }
+        ]
+    }
+}
+</code></pre> <h3 id="cg-105-调拨单-日志列表"><a href="#cg-105-调拨单-日志列表" aria-hidden="true" class="header-anchor">#</a> CG-105. 调拨单-日志列表</h3> <h4 id="模块负责人-72"><a href="#模块负责人-72" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-72"><a href="#请求-72" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/trorder/{orderId}/logs
+</code></pre> <h4 id="参数-72"><a href="#参数-72" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*orderId 订单号
+</code></pre> <h4 id="响应-72"><a href="#响应-72" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;id&quot;: 65538,
+                &quot;opInfo&quot;: &quot;修改调拨单&quot;, // 操作内容
+                &quot;opRole&quot;: 1,
+                &quot;opTime&quot;: &quot;2019-01-29 13:44:24&quot;, // 操作时间
+                &quot;opUser&quot;: 518,
+                &quot;opUserName&quot;: &quot;孙启萌&quot;, // 操作人
+                &quot;orderId&quot;: &quot;TR1901290000001&quot;
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: 0
+    }
+}
+</code></pre> <h3 id="cg-106-调拨单-确认执行"><a href="#cg-106-调拨单-确认执行" aria-hidden="true" class="header-anchor">#</a> CG-106. 调拨单-确认执行</h3> <h4 id="模块负责人-73"><a href="#模块负责人-73" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-73"><a href="#请求-73" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/trorder/{orderId}/run
+</code></pre> <h4 id="参数-73"><a href="#参数-73" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*orderId 订单号
+</code></pre> <h4 id="响应-73"><a href="#响应-73" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-107-调拨单-删除"><a href="#cg-107-调拨单-删除" aria-hidden="true" class="header-anchor">#</a> CG-107. 调拨单-删除</h3> <h4 id="模块负责人-74"><a href="#模块负责人-74" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-74"><a href="#请求-74" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>DELETE /v2/trorder/{orderId}
+</code></pre> <h4 id="参数-74"><a href="#参数-74" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*orderId 订单号
+</code></pre> <h4 id="响应-74"><a href="#响应-74" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-108-采购供货价导出"><a href="#cg-108-采购供货价导出" aria-hidden="true" class="header-anchor">#</a> CG-108. 采购供货价导出</h3> <h4 id="模块负责人-75"><a href="#模块负责人-75" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-75"><a href="#请求-75" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/supplier/price/export
+</code></pre> <h4 id="参数-75"><a href="#参数-75" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*checkCode: 下载吗
+</code></pre> <h4 id="响应-75"><a href="#响应-75" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>stream
+</code></pre> <h3 id="cg-109-采购订单-校验采购订单能否发车"><a href="#cg-109-采购订单-校验采购订单能否发车" aria-hidden="true" class="header-anchor">#</a> CG-109. 采购订单-校验采购订单能否发车</h3> <h4 id="模块负责人-76"><a href="#模块负责人-76" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-76"><a href="#请求-76" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /v2/paorder/send/status
+Headrs: {
+    &quot;token&quot;: &quot;923o4yu8tr3q94theriuot&quot;
+}
+</code></pre> <h4 id="参数-76"><a href="#参数-76" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>json body
+[&quot;PA1812290001&quot;,&quot;pa1812290002&quot;] // 采购订单号集合
+</code></pre> <h4 id="响应-76"><a href="#响应-76" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;PA1812290001&quot;: true,
+        &quot;pa1812290002&quot;: false
+    }
+}
+</code></pre> <h3 id="cg-110-采购订单-批量新增"><a href="#cg-110-采购订单-批量新增" aria-hidden="true" class="header-anchor">#</a> CG-110. 采购订单-批量新增</h3> <h4 id="模块负责人-77"><a href="#模块负责人-77" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-77"><a href="#请求-77" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /v2/paorder/batch
+</code></pre> <h4 id="参数-77"><a href="#参数-77" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    onlyCode: 123123, // 唯一校验码
+    orderPas: [
+        {
+            *supplierId: 1, // 经销商id
+            *companyId: 1, // 企业id
+            contactName: '阎锡山', // 联系人
+            contactMobile： 13333333333, // 联系电话
+            contactPathId: 060202, // 区域id
+            contactAddress: &quot;山西忻州代县&quot;, // 经销商地址
+            *depotId: 6, // 入库仓id
+            *depotName: &quot;大连铁越仓&quot;, // 入库仓名称
+            *deliverType: &quot;THIRD&quot;, // 配送方式 SELF 自送 THIRD 物流配送
+            *planCompleteTime: &quot;2018-12-12 12:12:12&quot;, // 计划入库时间
+            *planSendTime: &quot;2018-12-12 12:12:12&quot;, // 计划发出时间
+            *remark: &quot;采购入货&quot;, // 备注
+            *orderPaProList: [
+                {
+                    *productId: 1, // 产品id
+                    *productUnitId: 1, // 产品规格id
+                    *pcount: 2, // 采购数量
+                    *giftCount: 3 // 赠品数量
+                }
+            ]
+        },
+        ...
+    ]
+}
+</code></pre> <h4 id="响应-77"><a href="#响应-77" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-111-调拨单-批量新增-作废！！"><a href="#cg-111-调拨单-批量新增-作废！！" aria-hidden="true" class="header-anchor">#</a> CG-111. 调拨单-批量新增(作废！！)</h3> <h4 id="模块负责人-78"><a href="#模块负责人-78" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-78"><a href="#请求-78" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /v2/trorder/batch
+</code></pre> <h4 id="参数-78"><a href="#参数-78" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    onlyCode: 123123, // 唯一校验码
+    trOrders: [
+        {
+            &quot;orderTr&quot;: {
+                *&quot;fromDepotId&quot;: 40, // 出库仓id
+                *&quot;fromDepotName&quot;: &quot;大连铁越&quot;, // 出库仓名称
+                *&quot;toDepotId&quot;: 2, // 入库仓id
+                *&quot;toDepotName&quot;: &quot;沈阳铁越&quot;, // 入库仓名称
+                &quot;remark&quot;: &quot;首单测试&quot;, // 备注 0 ~ 255 前端同事请做校验
+                *&quot;planSendTime&quot;: &quot;2019-01-20&quot;, // 计划出库时间
+                *&quot;planCompleteTime&quot;: &quot;2019-01-22&quot; // 计划入库时间
+            },
+            &quot;orderTrProList&quot;: [
+                {
+                    *&quot;productId&quot;: 1, // 产品id
+                    *&quot;productUnitId&quot;: 1, // 产品规格id
+                    *&quot;pcount&quot;: 1 // 数量
+                }
+            ],
+        }
+    ]
+}
+</code></pre> <h4 id="响应-78"><a href="#响应-78" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-112-供应商价格-查询"><a href="#cg-112-供应商价格-查询" aria-hidden="true" class="header-anchor">#</a> CG-112. 供应商价格-查询</h3> <h4 id="模块负责人-79"><a href="#模块负责人-79" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-79"><a href="#请求-79" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/supplier/price/product/{productUnitId}
+</code></pre> <h4 id="参数-79"><a href="#参数-79" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>productUnitId 产品规格id
+</code></pre> <h4 id="响应-79"><a href="#响应-79" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;city&quot;: &quot;大连市&quot;, // 市
+            &quot;contactAddress&quot;: &quot;谭家&quot;, // 详细地址
+            &quot;contactMobile&quot;: &quot;13942003822&quot;, // 联系电话
+            &quot;contactName&quot;: &quot;谭&quot;, // 联系人
+            &quot;county&quot;: &quot;瓦房店市&quot;, // 区
+            &quot;price&quot;: 220.85, // 价格
+            &quot;productId&quot;: 0,
+            &quot;productUnitId&quot;: 3909,
+            &quot;province&quot;: &quot;辽宁&quot;, // 省
+            &quot;supplierId&quot;: 2674,
+            &quot;supplierName&quot;: &quot;10&quot; // 供应商名称
+        }
+    ]
+}
+</code></pre> <h3 id="cg-120-供应商供货-正常供货产品列表"><a href="#cg-120-供应商供货-正常供货产品列表" aria-hidden="true" class="header-anchor">#</a> CG-120 供应商供货-正常供货产品列表</h3> <h4 id="模块负责人-80"><a href="#模块负责人-80" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-80"><a href="#请求-80" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/supplier/cooperation/{supplierId}
+</code></pre> <h4 id="参数-80"><a href="#参数-80" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*supplierId 供应商id（必传参数！）
+*status: 状态 NORMAL-正常（必传参数！）
+pageNo: 页码
+pageSize: 行数
+buttonPermissionFlg：权限按钮
+keyword: 品号/品名
+</code></pre> <h4 id="响应-80"><a href="#响应-80" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissionPage&quot;: {},
+        &quot;buttonPermissions&quot;: [
+            {
+                &quot;startButton&quot;: true, // 开启供货按钮
+                &quot;stopButton&quot;: false // 暂停供货按钮
+            }
+        ],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;id&quot;: 5454,
+                &quot;modifyTime&quot;: &quot;2019-06-20 03:18:03&quot;,
+                &quot;pno&quot;: &quot;M018&quot;, // 品号
+                &quot;productId&quot;: 4446,
+                &quot;productName&quot;: &quot;去皮巴沙鱼柳(300-400)&quot;, // 品名
+                &quot;status&quot;: &quot;NORMAL&quot;, // 状态 NORMAL-正常 LOCK-暂停
+                &quot;supplierId&quot;: 5566
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: -1
+    }
+}
+</code></pre> <h3 id="cg-121-供应商供货-暂停供货产品列表"><a href="#cg-121-供应商供货-暂停供货产品列表" aria-hidden="true" class="header-anchor">#</a> CG-121 供应商供货-暂停供货产品列表</h3> <h4 id="模块负责人-81"><a href="#模块负责人-81" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-81"><a href="#请求-81" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/supplier/cooperation/{supplierId}
+</code></pre> <h4 id="参数-81"><a href="#参数-81" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*supplierId 供应商id（必传参数！）
+*status: 状态 LOCK-暂停（必传参数！）
+pageNo: 页码
+pageSize: 行数
+buttonPermissionFlg：权限按钮
+keyword: 品号/品名
+</code></pre> <h4 id="响应-81"><a href="#响应-81" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissionPage&quot;: {},
+        &quot;buttonPermissions&quot;: [
+            {
+                &quot;startButton&quot;: true, // 开启供货按钮
+                &quot;stopButton&quot;: false // 暂停供货按钮
+            }
+        ],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;id&quot;: 5454,
+                &quot;modifyTime&quot;: &quot;2019-06-20 03:18:03&quot;,
+                &quot;pno&quot;: &quot;M018&quot;, // 品号
+                &quot;productId&quot;: 4446,
+                &quot;productName&quot;: &quot;去皮巴沙鱼柳(300-400)&quot;, // 品名
+                &quot;status&quot;: &quot;LOCK&quot;, // 状态 NORMAL-正常 LOCK-暂停
+                &quot;supplierId&quot;: 5566
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: -1
+    }
+}
+</code></pre> <h3 id="cg-122-供应商供货-日志列表"><a href="#cg-122-供应商供货-日志列表" aria-hidden="true" class="header-anchor">#</a> CG-122 供应商供货-日志列表</h3> <h4 id="模块负责人-82"><a href="#模块负责人-82" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-82"><a href="#请求-82" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/supplier/cooperation/{supplierId}/logs
+</code></pre> <h4 id="参数-82"><a href="#参数-82" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>supplierId 供应商id
+pageNo: 页码
+pageSize: 行数
+keyword: 品号/品名
+</code></pre> <h4 id="响应-82"><a href="#响应-82" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissionPage&quot;: {},
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;id&quot;: 1,
+                &quot;opInfo&quot;: &quot;test&quot;, // 操作内容
+                &quot;opRole&quot;: 1,
+                &quot;opTime&quot;: &quot;2019-06-20 11:32:45&quot;, // 操作时间
+                &quot;opUser&quot;: 1,
+                &quot;opUserName&quot;: &quot;孙启萌&quot;, // 操作人
+                &quot;pno&quot;: &quot;M018&quot;, // 品号
+                &quot;productId&quot;: 4446,
+                &quot;productName&quot;: &quot;去皮巴沙鱼柳(300-400)&quot;, // 品名
+                &quot;supplierId&quot;: 5566
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: -1
+    }
+}
+</code></pre> <h3 id="cg-123-供应商供货-暂停供货"><a href="#cg-123-供应商供货-暂停供货" aria-hidden="true" class="header-anchor">#</a> CG-123 供应商供货-暂停供货</h3> <h4 id="模块负责人-83"><a href="#模块负责人-83" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-83"><a href="#请求-83" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/supplier/cooperation/{supplierId}/lock
+</code></pre> <h4 id="参数-83"><a href="#参数-83" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>supplierId 供应商id
+body: [1,2,3,4,5] // 产品id集合
+</code></pre> <h4 id="响应-83"><a href="#响应-83" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-124-供应商供货-开始供货"><a href="#cg-124-供应商供货-开始供货" aria-hidden="true" class="header-anchor">#</a> CG-124 供应商供货-开始供货</h3> <h4 id="模块负责人-84"><a href="#模块负责人-84" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-84"><a href="#请求-84" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/supplier/cooperation/{supplierId}/normal
+</code></pre> <h4 id="参数-84"><a href="#参数-84" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>supplierId 供应商id
+body: [1,2,3,4,5] // 产品id集合
+</code></pre> <h4 id="响应-84"><a href="#响应-84" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-125-通过承运单号获取物流配送信息"><a href="#cg-125-通过承运单号获取物流配送信息" aria-hidden="true" class="header-anchor">#</a> CG-125 通过承运单号获取物流配送信息</h3> <h4 id="模块负责人-85"><a href="#模块负责人-85" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="对接负责人"><a href="#对接负责人" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-85"><a href="#请求-85" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/paorder/{wbNo}/wbinfo
+</code></pre> <h4 id="参数-85"><a href="#参数-85" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>wbNo: 承运单号
+</code></pre> <h4 id="响应-85"><a href="#响应-85" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;carInfo&quot;: &quot;18.8米&quot;, // 车型
+        &quot;carNo&quot;: &quot;演C 80001&quot;, // 车牌
+        &quot;driverMobile&quot;: &quot;13333333333&quot;, // 司机联系电话
+        &quot;driverName&quot;: &quot;xxx&quot;, // 司机名称
+        &quot;jian&quot;: 100, // 件
+        &quot;logisticsName&quot;: &quot;东风快递，使命必达&quot;, // 物流商名称
+        &quot;san&quot;: 50 // 散
+    }
+}
+</code></pre> <h3 id="cg-126-企业管理-列表"><a href="#cg-126-企业管理-列表" aria-hidden="true" class="header-anchor">#</a> CG-126 企业管理-列表</h3> <h4 id="模块负责人-86"><a href="#模块负责人-86" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="对接负责人-2"><a href="#对接负责人-2" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-86"><a href="#请求-86" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/companies
+</code></pre> <h4 id="参数-86"><a href="#参数-86" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>keyword: 企业名称
+pageNo: 页码
+pageSize: 页面行数
+</code></pre> <h4 id="响应-86"><a href="#响应-86" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissionPage&quot;: {},
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;code&quot;: &quot;alibab&quot;, 金蝶编号
+                &quot;createTime&quot;: &quot;2019-07-16 10:50:13&quot;, // 创建时间
+                &quot;createUserName&quot;: &quot;1&quot;,// 创建人
+                &quot;id&quot;: 1, // 主键id
+                &quot;name&quot;: &quot;阿里巴巴&quot; // 企业名称
+            },
+            ...
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: 0
+    }
+}
+</code></pre> <h3 id="cg-127-企业管理-详情"><a href="#cg-127-企业管理-详情" aria-hidden="true" class="header-anchor">#</a> CG-127 企业管理-详情</h3> <h4 id="模块负责人-87"><a href="#模块负责人-87" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="对接负责人-3"><a href="#对接负责人-3" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-87"><a href="#请求-87" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/companies/{id}
+</code></pre> <h4 id="参数-87"><a href="#参数-87" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>id: 企业主键id
+</code></pre> <h4 id="响应-87"><a href="#响应-87" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;code&quot;: &quot;alibab&quot;, // 金蝶编号
+        &quot;createRole&quot;: 1,
+        &quot;createTime&quot;: &quot;2019-07-16 10:50:13&quot;,
+        &quot;createUser&quot;: 1,
+        &quot;createUserName&quot;: &quot;1&quot;,
+        &quot;deleteFlg&quot;: 0,
+        &quot;id&quot;: 1,
+        &quot;name&quot;: &quot;阿里巴巴&quot; // 企业名称
+    }
+}
+</code></pre> <h3 id="cg-128-企业管理-修改"><a href="#cg-128-企业管理-修改" aria-hidden="true" class="header-anchor">#</a> CG-128 企业管理-修改</h3> <h4 id="模块负责人-88"><a href="#模块负责人-88" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="对接负责人-4"><a href="#对接负责人-4" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-88"><a href="#请求-88" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/companies/{id}
+</code></pre> <h4 id="参数-88"><a href="#参数-88" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>id: 企业主键id
+json body
+{
+    &quot;code&quot;: &quot;alibab&quot;, // 金蝶编号
+    &quot;name&quot;: &quot;阿里巴巴&quot; // 企业名称
+}
+</code></pre> <h4 id="响应-88"><a href="#响应-88" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-129-企业管理-删除"><a href="#cg-129-企业管理-删除" aria-hidden="true" class="header-anchor">#</a> CG-129 企业管理-删除</h3> <h4 id="模块负责人-89"><a href="#模块负责人-89" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="对接负责人-5"><a href="#对接负责人-5" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-89"><a href="#请求-89" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>DELETE /v2/companies/{id}
+</code></pre> <h4 id="参数-89"><a href="#参数-89" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>id: 企业主键id
+</code></pre> <h4 id="响应-89"><a href="#响应-89" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-130-企业管理-列表-无分页"><a href="#cg-130-企业管理-列表-无分页" aria-hidden="true" class="header-anchor">#</a> CG-130 企业管理-列表(无分页)</h3> <h4 id="模块负责人-90"><a href="#模块负责人-90" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="对接负责人-6"><a href="#对接负责人-6" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-90"><a href="#请求-90" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/companies/all
+</code></pre> <h4 id="参数-90"><a href="#参数-90" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>keyword: // 搜索关键字
+supplierId: 1 // 供应商id 传递则代表获取供应商下所属的公司列表 不传则代表获取所有公司列表
+</code></pre> <h4 id="响应-90"><a href="#响应-90" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;code&quot;: &quot;alibab&quot;, // 金蝶编号
+            &quot;createTime&quot;: &quot;2019-07-16 10:50:13&quot;, // 创建时间
+            &quot;createUserName&quot;: &quot;1&quot;,// 创建人
+            &quot;id&quot;: 1, // 主键id
+            &quot;name&quot;: &quot;阿里巴巴&quot; // 企业名称
+        },
+        ...
+    ],
+    }
+}
+</code></pre> <h3 id="cg-131-供应商管理-获取默认收获地址"><a href="#cg-131-供应商管理-获取默认收获地址" aria-hidden="true" class="header-anchor">#</a> CG-131 供应商管理-获取默认收获地址</h3> <h4 id="模块负责人-91"><a href="#模块负责人-91" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="对接负责人-7"><a href="#对接负责人-7" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-91"><a href="#请求-91" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/supplier/{supplierId}/default/contact
+</code></pre> <h4 id="参数-91"><a href="#参数-91" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>supplierId: 1 // 供应商id
+</code></pre> <h4 id="响应-91"><a href="#响应-91" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;contactAddress&quot;: &quot;北京长安街&quot;, // 详细地址
+        &quot;contactMobile&quot;: &quot;13368686868&quot;, // 联系电话
+        &quot;contactName&quot;: &quot;哔哩哔哩&quot;, // 联系人名称
+        &quot;contactPathId&quot;: &quot;0101&quot;, // 区域pathid
+        &quot;createRole&quot;: 1,
+        &quot;createTime&quot;: &quot;2019-07-16 11:37:23&quot;,
+        &quot;createUser&quot;: 518,
+        &quot;defaultFlg&quot;: 1,
+        &quot;deleteFlg&quot;: 0,
+        &quot;id&quot;: 522,
+        &quot;lastModified&quot;: &quot;2019-07-16 11:37:23&quot;,
+        &quot;remark&quot;: &quot;我是备注&quot;, // 备注
+        &quot;supplierId&quot;: 5588
+    }
+}
+</code></pre> <h3 id="cg-132-供应商管理-获取供应商收获地址列表"><a href="#cg-132-供应商管理-获取供应商收获地址列表" aria-hidden="true" class="header-anchor">#</a> CG-132 供应商管理-获取供应商收获地址列表</h3> <h4 id="模块负责人-92"><a href="#模块负责人-92" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="对接负责人-8"><a href="#对接负责人-8" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-92"><a href="#请求-92" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/supplier/{supplierId}/contacts
+</code></pre> <h4 id="参数-92"><a href="#参数-92" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>supplierId: 1 // 供应商id
+</code></pre> <h4 id="响应-92"><a href="#响应-92" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;contactAddress&quot;: &quot;北京长安街&quot;, // 详细地址
+            &quot;contactMobile&quot;: &quot;13368686868&quot;, // 联系电话
+            &quot;contactName&quot;: &quot;哔哩哔哩&quot;, // 联系人名称
+            &quot;contactPathId&quot;: &quot;0101&quot;, // 区域pathid
+            &quot;createRole&quot;: 1,
+            &quot;createTime&quot;: &quot;2019-07-16 11:37:23&quot;,
+            &quot;createUser&quot;: 518,
+            &quot;defaultFlg&quot;: 1, // 是否默认收获地址 0-否 1-是
+            &quot;deleteFlg&quot;: 0,
+            &quot;id&quot;: 522,
+            &quot;lastModified&quot;: &quot;2019-07-16 11:37:23&quot;,
+            &quot;remark&quot;: &quot;我是备注&quot;, // 备注
+            &quot;supplierId&quot;: 5588
+        },
+        ...
+    ]
+}
+</code></pre> <h3 id="cg-133-供应商管理-修改取货信息"><a href="#cg-133-供应商管理-修改取货信息" aria-hidden="true" class="header-anchor">#</a> CG-133 供应商管理-修改取货信息</h3> <h4 id="模块负责人-93"><a href="#模块负责人-93" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="对接负责人-9"><a href="#对接负责人-9" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-93"><a href="#请求-93" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/supplier/contact/{id}
+</code></pre> <h4 id="参数-93"><a href="#参数-93" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>id: 1 // 主键id
+json body
+{
+    &quot;supplierId&quot;: 1 // 供应商ID
+	&quot;contactName&quot;: &quot;李靖777&quot;, // 联系人
+	&quot;contactMobile&quot;: &quot;13336688991&quot;, // 联系电话
+	&quot;contactPathId&quot;: &quot;0101&quot;, // 区域id
+	&quot;contactAddress&quot;: &quot;naannan&quot;, // 详细地址
+	&quot;defaultFlg&quot;: 0, // 是否默认收获地址 0-否 1-是
+	&quot;remark&quot;: &quot;asdfasd&quot; // 备注
+}
+</code></pre> <h4 id="响应-93"><a href="#响应-93" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-134-供应商管理-删除取货信息"><a href="#cg-134-供应商管理-删除取货信息" aria-hidden="true" class="header-anchor">#</a> CG-134 供应商管理-删除取货信息</h3> <h4 id="模块负责人-94"><a href="#模块负责人-94" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="对接负责人-10"><a href="#对接负责人-10" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-94"><a href="#请求-94" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>DELETE /v2/supplier/contact/{id}
+</code></pre> <h4 id="参数-94"><a href="#参数-94" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>id: 1 // 主键id
+</code></pre> <h4 id="响应-94"><a href="#响应-94" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-135-供应商管理-新增取货信息"><a href="#cg-135-供应商管理-新增取货信息" aria-hidden="true" class="header-anchor">#</a> CG-135 供应商管理-新增取货信息</h3> <h4 id="模块负责人-95"><a href="#模块负责人-95" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="对接负责人-11"><a href="#对接负责人-11" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-95"><a href="#请求-95" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /v2/supplier/{supplierId}/contact
+</code></pre> <h4 id="参数-95"><a href="#参数-95" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>id: 1 // 主键id
+json body 
+{
+	&quot;contactName&quot;: &quot;李靖321&quot;, // 联系人
+	&quot;contactMobile&quot;: &quot;13336688991&quot;, // 联系电话
+	&quot;contactPathId&quot;: &quot;0101&quot;, // 区域id
+	&quot;contactAddress&quot;: &quot;nananana&quot;, // 详细地址
+	&quot;defaultFlg&quot;: 0, // 是否默认收获地址 0-否 1-是
+	&quot;remark&quot;: &quot;asdfasd&quot; // 备注
+}
+</code></pre> <h4 id="响应-95"><a href="#响应-95" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-136-企业管理-新增"><a href="#cg-136-企业管理-新增" aria-hidden="true" class="header-anchor">#</a> CG-136 企业管理-新增</h3> <h4 id="模块负责人-96"><a href="#模块负责人-96" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="对接负责人-12"><a href="#对接负责人-12" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-96"><a href="#请求-96" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /v2/companies
+</code></pre> <h4 id="参数-96"><a href="#参数-96" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+	&quot;name&quot;: &quot;ALIBABA&quot;, // 企业名称
+	&quot;code&quot;: &quot;123123&quot; // 金蝶编号
+}
+</code></pre> <h4 id="响应-96"><a href="#响应-96" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cg-137-供应商管理-获取取货信息详情"><a href="#cg-137-供应商管理-获取取货信息详情" aria-hidden="true" class="header-anchor">#</a> CG-137 供应商管理-获取取货信息详情</h3> <h4 id="模块负责人-97"><a href="#模块负责人-97" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="对接负责人-13"><a href="#对接负责人-13" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-97"><a href="#请求-97" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/supplier/contact/{id}
+</code></pre> <h4 id="参数-97"><a href="#参数-97" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>id: 1 // 取货信息主键id
+</code></pre> <h4 id="响应-97"><a href="#响应-97" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;contactAddress&quot;: &quot;济南市&quot;, // 详细地址
+        &quot;contactMobile&quot;: &quot;13256678221&quot;, // 联系电话
+        &quot;contactName&quot;: &quot;王佳佳&quot;, // 取货人
+        &quot;contactPathId&quot;: &quot;150101&quot;, // 详细地址pathid
+        &quot;createRole&quot;: 29118,
+        &quot;createTime&quot;: &quot;2019-02-15 15:52:40&quot;,
+        &quot;createUser&quot;: 89,
+        &quot;defaultFlg&quot;: 1, // 是否默认收获地址 0-否 1-是
+        &quot;deleteFlg&quot;: 0,
+        &quot;id&quot;: 282, // 取货信息主键id
+        &quot;lastModified&quot;: &quot;2019-02-15 15:52:40&quot;,
+        &quot;pathName&quot;: &quot;山东济南市历下区&quot;,
+        &quot;remark&quot;: &quot;&quot;, // 备注
+        &quot;supplierId&quot;: 5567
+    }
+}</code></pre></div> <div class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">7/26/2019, 5:16:06 PM</span></div></div> <!----> </div> <!----></div></div>
+    <script src="/work-a-api-v2/assets/js/app.a6722e02.js" defer></script><script src="/work-a-api-v2/assets/js/29.c08b73a8.js" defer></script>
+  </body>
+</html>

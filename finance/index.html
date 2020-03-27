@@ -1,0 +1,2016 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>财务接口 | ADoc</title>
+    <meta name="description" content="A团队开发文档">
+    
+    
+    <link rel="preload" href="/work-a-api-v2/assets/css/0.styles.35f149a3.css" as="style"><link rel="preload" href="/work-a-api-v2/assets/js/app.a6722e02.js" as="script"><link rel="preload" href="/work-a-api-v2/assets/js/15.9349f875.js" as="script"><link rel="prefetch" href="/work-a-api-v2/assets/js/10.1a10445b.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/11.42f498c9.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/12.0c967175.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/13.3651904d.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/14.f08b1cf2.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/16.12c6bae3.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/17.adca03bd.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/18.c998838e.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/19.3918a1ff.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/2.a0ea3f6c.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/20.90e7db96.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/21.107ae2fe.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/22.74755e26.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/23.311dc752.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/24.f5a0db0c.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/25.930c2322.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/26.2d5db294.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/27.2fe9193a.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/28.c950b06d.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/29.c08b73a8.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/3.d1df23fe.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/30.03105b2a.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/31.e5254695.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/32.f61b2cc2.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/4.0f0014c9.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/5.95ee4e26.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/6.a8f01348.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/7.88947b66.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/8.0d5a3953.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/9.20882588.js">
+    <link rel="stylesheet" href="/work-a-api-v2/assets/css/0.styles.35f149a3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/work-a-api-v2/" class="home-link router-link-active"><!----> <span class="site-name">ADoc</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/work-a-api-v2/wms/" class="nav-link">WMS仓储</a></div><div class="nav-item"><a href="/work-a-api-v2/ufo/" class="nav-link">金蝶</a></div><div class="nav-item"><a href="/work-a-api-v2/addon/" class="nav-link">插件</a></div><div class="nav-item"><a href="/work-a-api-v2/outer/" class="nav-link">合作商</a></div><div class="nav-item"><a href="/work-a-api-v2/stockup/" class="nav-link">备货</a></div><div class="nav-item"><a href="/work-a-api-v2/order/" class="nav-link">订单</a></div><div class="nav-item"><a href="/work-a-api-v2/finance/" class="nav-link router-link-exact-active router-link-active">财务</a></div><div class="nav-item"><a href="/work-a-api-v2/supplier/" class="nav-link">供应商</a></div><div class="nav-item"><a href="/work-a-api-v2/invoice/" class="nav-link">发票</a></div><div class="nav-item"><a href="/work-a-api-v2/customer/" class="nav-link">客户</a></div><div class="nav-item"><a href="/work-a-api-v2/product/" class="nav-link">产品</a></div><div class="nav-item"><a href="/work-a-api-v2/auth/" class="nav-link">权限</a></div><div class="nav-item"><a href="/work-a-api-v2/contract/" class="nav-link">销售优惠</a></div><div class="nav-item"><a href="/work-a-api-v2/price/" class="nav-link">价格</a></div><div class="nav-item"><a href="/work-a-api-v2/freight/" class="nav-link">运费</a></div><div class="nav-item"><a href="/work-a-api-v2/market/" class="nav-link">营销</a></div><div class="nav-item"><a href="/work-a-api-v2/cookbook/" class="nav-link">菜谱</a></div><div class="nav-item"><a href="/work-a-api-v2/common/" class="nav-link">基础</a></div><div class="nav-item"><a href="/work-a-api-v2/app/" class="nav-link">APP</a></div><div class="nav-item"><a href="/work-a-api-v2/depot/" class="nav-link">库存</a></div><div class="nav-item"><a href="/work-a-api-v2/fee/" class="nav-link">费用</a></div><div class="nav-item"><a href="/work-a-api-v2/notice/" class="nav-link">消息通知（作废）</a></div><div class="nav-item"><a href="/work-a-api-v2/changelog/" class="nav-link">变更</a></div><div class="nav-item"><a href="/work-a-api-v2/feign/" class="nav-link">代理接口</a></div><div class="nav-item"><a href="/work-a-api-v2/other/" class="nav-link">其它</a></div><div class="nav-item"><a href="/work-a-api-v2/sta/" class="nav-link">统计</a></div><div class="nav-item"><a href="/work-a-api-v2/message/" class="nav-link">消息</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/work-a-api-v2/wms/" class="nav-link">WMS仓储</a></div><div class="nav-item"><a href="/work-a-api-v2/ufo/" class="nav-link">金蝶</a></div><div class="nav-item"><a href="/work-a-api-v2/addon/" class="nav-link">插件</a></div><div class="nav-item"><a href="/work-a-api-v2/outer/" class="nav-link">合作商</a></div><div class="nav-item"><a href="/work-a-api-v2/stockup/" class="nav-link">备货</a></div><div class="nav-item"><a href="/work-a-api-v2/order/" class="nav-link">订单</a></div><div class="nav-item"><a href="/work-a-api-v2/finance/" class="nav-link router-link-exact-active router-link-active">财务</a></div><div class="nav-item"><a href="/work-a-api-v2/supplier/" class="nav-link">供应商</a></div><div class="nav-item"><a href="/work-a-api-v2/invoice/" class="nav-link">发票</a></div><div class="nav-item"><a href="/work-a-api-v2/customer/" class="nav-link">客户</a></div><div class="nav-item"><a href="/work-a-api-v2/product/" class="nav-link">产品</a></div><div class="nav-item"><a href="/work-a-api-v2/auth/" class="nav-link">权限</a></div><div class="nav-item"><a href="/work-a-api-v2/contract/" class="nav-link">销售优惠</a></div><div class="nav-item"><a href="/work-a-api-v2/price/" class="nav-link">价格</a></div><div class="nav-item"><a href="/work-a-api-v2/freight/" class="nav-link">运费</a></div><div class="nav-item"><a href="/work-a-api-v2/market/" class="nav-link">营销</a></div><div class="nav-item"><a href="/work-a-api-v2/cookbook/" class="nav-link">菜谱</a></div><div class="nav-item"><a href="/work-a-api-v2/common/" class="nav-link">基础</a></div><div class="nav-item"><a href="/work-a-api-v2/app/" class="nav-link">APP</a></div><div class="nav-item"><a href="/work-a-api-v2/depot/" class="nav-link">库存</a></div><div class="nav-item"><a href="/work-a-api-v2/fee/" class="nav-link">费用</a></div><div class="nav-item"><a href="/work-a-api-v2/notice/" class="nav-link">消息通知（作废）</a></div><div class="nav-item"><a href="/work-a-api-v2/changelog/" class="nav-link">变更</a></div><div class="nav-item"><a href="/work-a-api-v2/feign/" class="nav-link">代理接口</a></div><div class="nav-item"><a href="/work-a-api-v2/other/" class="nav-link">其它</a></div><div class="nav-item"><a href="/work-a-api-v2/sta/" class="nav-link">统计</a></div><div class="nav-item"><a href="/work-a-api-v2/message/" class="nav-link">消息</a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>财务接口</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/work-a-api-v2/finance/#财务接口" class="sidebar-link">财务接口</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-1-银行账号新增" class="sidebar-link">CW-1 银行账号新增</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-2-银行账号列表" class="sidebar-link">CW-2 银行账号列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-3-银行账号列表-不分页" class="sidebar-link">CW-3 银行账号列表(不分页)</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-4-银行账号明细" class="sidebar-link">CW-4 银行账号明细</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-5-银行账号修改" class="sidebar-link">CW-5 银行账号修改</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-6-银行账号锁定" class="sidebar-link">CW-6 银行账号锁定</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-7-银行账号解锁" class="sidebar-link">CW-7 银行账号解锁</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-8-银行账号操作日志" class="sidebar-link">CW-8 银行账号操作日志</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-9-银行类型" class="sidebar-link">CW-9 银行类型</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-10-亚洲渔港银行账号列表" class="sidebar-link">CW-10 亚洲渔港银行账号列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-11-账期变动申请" class="sidebar-link">CW-11 账期变动申请</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-12-账期变动申请列表" class="sidebar-link">CW-12 账期变动申请列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-13-账期变动申请拒绝" class="sidebar-link">CW-13 账期变动申请拒绝</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-14-账期变动申请通过" class="sidebar-link">CW-14 账期变动申请通过</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-15-总分关系变动申请" class="sidebar-link">CW-15 总分关系变动申请</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-16-总分关系变动申请列表" class="sidebar-link">CW-16 总分关系变动申请列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-17-总分关系变动申请拒绝" class="sidebar-link">CW-17 总分关系变动申请拒绝</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-18-总分关系变动申请通过" class="sidebar-link">CW-18 总分关系变动申请通过</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-19-预付款变动申请" class="sidebar-link">CW-19 预付款变动申请</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-20-预付款变动申请列表" class="sidebar-link">CW-20 预付款变动申请列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-21-预付款变动申请拒绝" class="sidebar-link">CW-21 预付款变动申请拒绝</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-22-预付款变动申请通过" class="sidebar-link">CW-22 预付款变动申请通过</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-23-银行汇款信息" class="sidebar-link">CW-23 银行汇款信息</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-26-财务账户列表" class="sidebar-link">CW-26 财务账户列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-27-财务账户列表-不分页" class="sidebar-link">CW-27 财务账户列表(不分页)</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-28-财务账户明细" class="sidebar-link">CW-28 财务账户明细</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-29-财务账户操作日志" class="sidebar-link">CW-29 财务账户操作日志</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-30-财务账户锁定" class="sidebar-link">CW-30 财务账户锁定</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-31-财务账户解锁" class="sidebar-link">CW-31 财务账户解锁</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-32-资金账户锁定" class="sidebar-link">CW-32 资金账户锁定</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-33-资金账户解锁" class="sidebar-link">CW-33 资金账户解锁</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-34-资金账户导出" class="sidebar-link">CW-34 资金账户导出</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-36-银企互联账户对比结果" class="sidebar-link">CW-36 银企互联账户对比结果</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-37-银企互联列表" class="sidebar-link">CW-37 银企互联列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-38-银企互联手动对比" class="sidebar-link">CW-38 银企互联手动对比</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-39-银企互联入款（其它）" class="sidebar-link">CW-39 银企互联入款（其它）</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-40-银企互联明细" class="sidebar-link">CW-40 银企互联明细</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-41-主流水" class="sidebar-link">CW-41 主流水</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-42-微信子流水（opbusiness-wx）" class="sidebar-link">CW-42 微信子流水（opBusiness=WX）</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-43-支付宝子流水（opbusiness-ali）" class="sidebar-link">CW-43 支付宝子流水（opBusiness=ALI）</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-44-手工、银行、定金子流水（opbusiness-in-bank-transfer-hand-）" class="sidebar-link">CW-44 手工、银行、定金子流水（opBusiness in ('BANK','TRANSFER','HAND')）</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-45-订单子流水（opbusiness-order-and-ordertype-sa" class="sidebar-link">CW-45 订单子流水（opBusiness = 'ORDER' and orderType = 'SA')</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-46-退单子流水（opbusiness-order-and-ordertype-sr" class="sidebar-link">CW-46 退单子流水（opBusiness = 'ORDER' and orderType = 'SR')</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-47-调价子流水（opbusiness-order-and-ordertype-ap" class="sidebar-link">CW-47 调价子流水（opBusiness = 'ORDER' and orderType = 'AP')</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-51-定金管理-列表" class="sidebar-link">CW-51. 定金管理-列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-52-定金管理-详情" class="sidebar-link">CW-52. 定金管理-详情</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-53-定金管理-日志列表" class="sidebar-link">CW-53. 定金管理-日志列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-54-定金审核管理-列表" class="sidebar-link">CW-54. 定金审核管理-列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-55-定金审核管理-拒绝" class="sidebar-link">CW-55. 定金审核管理-拒绝</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-56-定金审核管理-通过" class="sidebar-link">CW-56. 定金审核管理-通过</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-57-定金审核管理-新增" class="sidebar-link">CW-57. 定金审核管理-新增</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-58-订金审核管理-获取规则详情" class="sidebar-link">CW-58. 订金审核管理-获取规则详情</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-59-订金管理-获取定金对应的产品列表" class="sidebar-link">CW-59. 订金管理-获取定金对应的产品列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-71-支付管理-pc端支付，不允许补款" class="sidebar-link">CW-71. 支付管理-PC端支付，不允许补款</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-72-支付管理-sa单取消结款" class="sidebar-link">CW-72. 支付管理-SA单取消结款</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-73-支付管理-销售退单-sr单" class="sidebar-link">CW-73. 支付管理-销售退单(SR单)</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-74-支付管理-调价单-ap单" class="sidebar-link">CW-74. 支付管理-调价单(AP单)</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-75-资金账户流水导出" class="sidebar-link">CW-75.资金账户流水导出</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-76-app端根据customerid获取用户流水信息" class="sidebar-link">CW-76.app端根据customerId获取用户流水信息</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/finance/#cw-77-根据银行账户号查询关联的客户信息" class="sidebar-link">CW-77.根据银行账户号查询关联的客户信息</a></li></ul></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h2 id="财务接口"><a href="#财务接口" aria-hidden="true" class="header-anchor">#</a> 财务接口</h2> <h3 id="cw-1-银行账号新增"><a href="#cw-1-银行账号新增" aria-hidden="true" class="header-anchor">#</a> CW-1 银行账号新增</h3> <h4 id="对接负责人"><a href="#对接负责人" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人"><a href="#模块负责人" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求"><a href="#请求" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /finance/account/bank
+</code></pre> <h4 id="参数"><a href="#参数" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    *&quot;opAccount&quot;: 33315,         // 账户ID
+    *&quot;bankType&quot;:&quot;CCB&quot;,    // ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+    *&quot;bankName&quot;: &quot;建设银行&quot;,      // 开户行名称
+    *&quot;bankAccount&quot;: &quot;62281226881299875646&quot;,  // 开户行卡号
+    *&quot;bankAccountName&quot;: &quot;苏小妹&quot;    // 开户行户名
+}
+</code></pre> <h4 id="响应"><a href="#响应" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cw-2-银行账号列表"><a href="#cw-2-银行账号列表" aria-hidden="true" class="header-anchor">#</a> CW-2 银行账号列表</h3> <h4 id="对接负责人-2"><a href="#对接负责人-2" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-2"><a href="#模块负责人-2" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-2"><a href="#请求-2" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /finance/account/bank
+</code></pre> <h4 id="参数-2"><a href="#参数-2" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*opAccount  // 账户ID
+status      // 状态   NORMAL 正常 LOCK 锁定
+buttonPermissionFlg     // 是否查询按钮权限 1 查询 0 不查询
+pageNo          // 页码 默认1
+pageSize        // 页大小 默认25
+</code></pre> <h4 id="响应-2"><a href="#响应-2" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissionPage&quot;: {},
+        &quot;buttonPermissions&quot;: [
+            {
+                &quot;lockButton&quot;: true,     // 锁定
+                &quot;unlockButton&quot;: false,  // 解锁
+                &quot;editButton&quot;: true,     // 编辑
+                &quot;logButton&quot;: true       // 日志
+            }
+        ],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;id&quot;: 16384,            // 银行账号ID
+                &quot;platformId&quot;: 1,
+                &quot;opAccount&quot;: 33314,     // 账户ID
+                &quot;bankType&quot;: &quot;CHAOS&quot;,    // ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+                &quot;bankTypeName&quot;:&quot;其它&quot;,      // 银行类型名
+                &quot;bankName&quot;: &quot;建设银行&quot;,  // 开户行名称
+                &quot;bankAccount&quot;: &quot;62281226881299875646&quot;,  // 开户行卡号
+                &quot;bankAccountName&quot;: &quot;苏小妹&quot;,    // 开户行户名
+                &quot;status&quot;: &quot;NORMAL&quot;,     // 状态   NORMAL 正常 LOCK 锁定
+                &quot;createRole&quot;: 0,
+                &quot;createTime&quot;: &quot;2019-07-12&quot;, // 创建日期
+                &quot;createUser&quot;: 0,
+                &quot;createUserName&quot;: &quot;孙启萌&quot;,    // 创建人
+                &quot;deleteFlg&quot;: 0
+            }
+        ],
+        &quot;pageNo&quot;: 0,
+        &quot;total&quot;: 0
+    }
+}
+</code></pre> <h3 id="cw-3-银行账号列表-不分页"><a href="#cw-3-银行账号列表-不分页" aria-hidden="true" class="header-anchor">#</a> CW-3 银行账号列表(不分页)</h3> <h4 id="对接负责人-3"><a href="#对接负责人-3" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-3"><a href="#模块负责人-3" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-3"><a href="#请求-3" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /finance/account/bank/list
+</code></pre> <h4 id="参数-3"><a href="#参数-3" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>opAccount  // 账户ID
+bankName        // 开户行名
+bankAccount     // 开户行账号
+bankAccountName     // 开户行户名
+status      // 状态   NORMAL 正常 LOCK 锁定
+</code></pre> <h4 id="响应-3"><a href="#响应-3" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 16384,            
+            &quot;platformId&quot;: 1,    
+            &quot;opAccount&quot;: 33314,         // 账号ID
+            &quot;status&quot;: &quot;NORMAL&quot;,         // 状态
+            &quot;bankType&quot;: &quot;CHAOS&quot;,    // ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+            &quot;bankTypeName&quot;:&quot;其它&quot;,      // 银行类型名
+            &quot;bankName&quot;: &quot;工商银行&quot;,             // 开户行
+            &quot;bankAccount&quot;: &quot;622812268819998777374&quot;, // 银行账号
+            &quot;bankAccountName&quot;: &quot;苏小妹儿&quot;,          // 户名
+            &quot;createRole&quot;: 0,
+            &quot;createTime&quot;: &quot;2019-07-12&quot;,
+            &quot;createUser&quot;: 0,
+            &quot;createUserName&quot;: &quot;孙启萌&quot;,
+            &quot;deleteFlg&quot;: 0
+        }
+    ]
+}    
+</code></pre> <h3 id="cw-4-银行账号明细"><a href="#cw-4-银行账号明细" aria-hidden="true" class="header-anchor">#</a> CW-4 银行账号明细</h3> <h4 id="对接负责人-4"><a href="#对接负责人-4" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-4"><a href="#模块负责人-4" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-4"><a href="#请求-4" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /finance/account/bank/{id}
+</code></pre> <h4 id="参数-4"><a href="#参数-4" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id 银行账号id
+</code></pre> <h4 id="响应-4"><a href="#响应-4" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;id&quot;: 16384,
+        &quot;platformId&quot;: 1,
+        &quot;opAccount&quot;: 33314,    // 账户ID
+        &quot;bankType&quot;: &quot;CHAOS&quot;,    // ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+        &quot;bankTypeName&quot;:&quot;其它&quot;,      // 银行类型名
+        &quot;bankName&quot;: &quot;建设银行&quot;,  // 开户行名称
+        &quot;bankAccount&quot;: &quot;62281226881299875646&quot;,  // 开户行卡号
+        &quot;bankAccountName&quot;: &quot;苏小妹&quot;,    // 开户行户名
+        &quot;status&quot;: &quot;NORMAL&quot;,     // 状态   NORMAL 正常 LOCK 锁定
+        &quot;createRole&quot;: 1,
+        &quot;createTime&quot;: &quot;2019-07-12 10:52:07.0&quot;,
+        &quot;createUser&quot;: 518,
+        &quot;createUserName&quot;: &quot;孙启萌&quot;,
+        &quot;deleteFlg&quot;: 0
+    }
+}
+</code></pre> <h3 id="cw-5-银行账号修改"><a href="#cw-5-银行账号修改" aria-hidden="true" class="header-anchor">#</a> CW-5 银行账号修改</h3> <h4 id="对接负责人-5"><a href="#对接负责人-5" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-5"><a href="#模块负责人-5" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-5"><a href="#请求-5" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /finance/account/bank/{id}
+</code></pre> <h4 id="参数-5"><a href="#参数-5" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id     // 银行账号ID
+{
+    *&quot;opAccount&quot;: 33315,         // 账户ID
+    *&quot;bankType&quot;:&quot;CCB&quot;,     // ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它         
+    *&quot;bankName&quot;: &quot;建设银行&quot;,      // 开户行名称
+    *&quot;bankAccount&quot;: &quot;62281226881299875646&quot;,  // 开户行卡号
+    *&quot;bankAccountName&quot;: &quot;苏小妹&quot;    // 开户行户名
+}
+</code></pre> <h4 id="响应-5"><a href="#响应-5" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cw-6-银行账号锁定"><a href="#cw-6-银行账号锁定" aria-hidden="true" class="header-anchor">#</a> CW-6 银行账号锁定</h3> <h4 id="对接负责人-6"><a href="#对接负责人-6" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-6"><a href="#模块负责人-6" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-6"><a href="#请求-6" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /finance/account/bank/lock/{id}
+</code></pre> <h4 id="参数-6"><a href="#参数-6" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id     // 银行账号ID
+</code></pre> <h4 id="响应-6"><a href="#响应-6" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}    
+</code></pre> <h3 id="cw-7-银行账号解锁"><a href="#cw-7-银行账号解锁" aria-hidden="true" class="header-anchor">#</a> CW-7 银行账号解锁</h3> <h4 id="对接负责人-7"><a href="#对接负责人-7" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-7"><a href="#模块负责人-7" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-7"><a href="#请求-7" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /finance/account/bank/unlock/{id}
+</code></pre> <h4 id="参数-7"><a href="#参数-7" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id     // 银行账号ID
+</code></pre> <h4 id="响应-7"><a href="#响应-7" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}   
+</code></pre> <h3 id="cw-8-银行账号操作日志"><a href="#cw-8-银行账号操作日志" aria-hidden="true" class="header-anchor">#</a> CW-8 银行账号操作日志</h3> <h4 id="对接负责人-8"><a href="#对接负责人-8" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-8"><a href="#模块负责人-8" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-8"><a href="#请求-8" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /finance/account/bank/log/{bankId}
+</code></pre> <h4 id="参数-8"><a href="#参数-8" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*bankId 银行账号id
+</code></pre> <h4 id="响应-8"><a href="#响应-8" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissionPage&quot;: {},
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;id&quot;: 3,
+                &quot;bankId&quot;: 0,
+                &quot;opInfo&quot;: &quot;修改银行账号&quot;,     // 操作信息
+                &quot;opRole&quot;: 0,
+                &quot;opTime&quot;: &quot;2019-07-12 11:28:35&quot;,     // 操作时间
+                &quot;opUser&quot;: 0,
+                &quot;opUserName&quot;: &quot;孙启萌&quot;         // 操作人
+            }
+        ],
+        &quot;pageNo&quot;: 0,
+        &quot;total&quot;: 0
+    }
+} 
+</code></pre> <h3 id="cw-9-银行类型"><a href="#cw-9-银行类型" aria-hidden="true" class="header-anchor">#</a> CW-9 银行类型</h3> <h4 id="对接负责人-9"><a href="#对接负责人-9" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-9"><a href="#模块负责人-9" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-9"><a href="#请求-9" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /finance/account/bank/type
+</code></pre> <h4 id="参数-9"><a href="#参数-9" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>无
+</code></pre> <h4 id="响应-9"><a href="#响应-9" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;:&quot;1&quot;,                      // id 
+            &quot;bankType&quot;: &quot;ABC&quot;,              // 类型编码
+            &quot;bankTypeName&quot;: &quot;农业银行&quot;      // 类型名
+        },
+        {
+            &quot;id&quot;:&quot;2&quot;,                      // id
+            &quot;bankType&quot;: &quot;ICBC&quot;,
+            &quot;bankTypeName&quot;: &quot;工商银行&quot;
+        },
+        {
+            &quot;id&quot;:&quot;3&quot;,                      // id
+            &quot;bankType&quot;: &quot;CCB&quot;,
+            &quot;bankTypeName&quot;: &quot;建设银行&quot;
+        }
+    ]
+}
+</code></pre> <h3 id="cw-10-亚洲渔港银行账号列表"><a href="#cw-10-亚洲渔港银行账号列表" aria-hidden="true" class="header-anchor">#</a> CW-10 亚洲渔港银行账号列表</h3> <h4 id="对接负责人-10"><a href="#对接负责人-10" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-10"><a href="#模块负责人-10" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-10"><a href="#请求-10" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /finance/account/bank/asiasea/list
+</code></pre> <h4 id="参数-10"><a href="#参数-10" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>无
+</code></pre> <h4 id="响应-10"><a href="#响应-10" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;bankAccount&quot;: &quot;2120 1500 4000 5300 8645&quot;,  // 账号
+            &quot;bankAccountName&quot;: &quot;亚洲渔港股份有限公司&quot;,    // 账户名
+            &quot;bankName&quot;: &quot;中国建设银行大连沙河口支行&quot;,    // 银行名
+            &quot;bankType&quot;: &quot;CCB&quot;,      // 银行类型
+            &quot;bankTypeName&quot;:&quot;中国建设银行&quot;, // 银行类型名
+            &quot;createRole&quot;: 0,
+            &quot;createTime&quot;: &quot;&quot;,
+            &quot;createUser&quot;: 0,
+            &quot;createUserName&quot;: &quot;&quot;,
+            &quot;deleteFlg&quot;: 0,
+            &quot;id&quot;: 1,
+            &quot;opAccount&quot;: 0,
+            &quot;platformId&quot;: 0,
+            &quot;status&quot;: null
+        }
+    ]
+}
+</code></pre> <h3 id="cw-11-账期变动申请"><a href="#cw-11-账期变动申请" aria-hidden="true" class="header-anchor">#</a> CW-11 账期变动申请</h3> <h4 id="对接负责人-11"><a href="#对接负责人-11" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-11"><a href="#模块负责人-11" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-11"><a href="#请求-11" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /finance/payment/askfor
+</code></pre> <h4 id="参数-11"><a href="#参数-11" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    *&quot;opAccount&quot;: &quot;33314&quot;,              // 账户ID
+    *&quot;askforDebtBalance&quot;: &quot;9000&quot;,       // 申请的账期额度
+    *&quot;effectEtime&quot;: &quot;2019-07-31 23:59:59&quot;,  // 账期有效期
+    &quot;createRemark&quot;: &quot;到本月末账期&quot;            // 申请备注
+}
+</code></pre> <h4 id="响应-11"><a href="#响应-11" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cw-12-账期变动申请列表"><a href="#cw-12-账期变动申请列表" aria-hidden="true" class="header-anchor">#</a> CW-12 账期变动申请列表</h3> <h4 id="对接负责人-12"><a href="#对接负责人-12" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-12"><a href="#模块负责人-12" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-12"><a href="#请求-12" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /finance/payment/askfor
+</code></pre> <h4 id="参数-12"><a href="#参数-12" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>shortName   // 客户名
+status      // 状态   ASKFOR 待审核 PASS 通过 REFUSE 拒绝
+buttonPermissionFlg // 是否查询按钮权限 0 不查询 1 查询
+</code></pre> <h4 id="响应-12"><a href="#响应-12" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissionPage&quot;: {},
+        &quot;buttonPermissions&quot;: [
+            {
+                &quot;refuseButton&quot;: true,       // 拒绝
+                &quot;passButton&quot;: true          // 通过
+            }
+        ],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;id&quot;: 2049,             // 申请ID
+                &quot;opAccount&quot;: 33314,     // 账户ID
+                &quot;shortname&quot;: &quot;苏家屯走司&quot;,   // 客户名
+                &quot;status&quot;: &quot;ASKFOR&quot;,     // 状态 ASKFOR 待审核 PASS 通过 REFUSE 拒绝
+                &quot;orignalPayment&quot;: &quot;CASH&quot;,   // 原支付方式
+                &quot;orignalDebtBalance&quot;: 0,    // 原账期额度
+                &quot;askforPayment&quot;: &quot;DEBT&quot;,    // 申请支付方式
+                &quot;askforDebtBalance&quot;: 9000,  // 申请账期额度
+                &quot;effectEtime&quot;: &quot;2019-07-31 23:59:59&quot;,   // 申请账期有效期
+                &quot;createRemark&quot;: &quot;到本月末账期&quot;,   // 申请备注
+                &quot;createRole&quot;: 0,
+                &quot;createTime&quot;: &quot;2019-07-12 15:24:50&quot;,    // 申请时间
+                &quot;createUser&quot;: 0,
+                &quot;createUserName&quot;: &quot;孙启萌&quot;,        // 申请人
+                &quot;checkRemark&quot;: &quot;&quot;,              // 拒绝理由
+                &quot;checkRole&quot;: 0,
+                &quot;checkTime&quot;: &quot;&quot;,                // 审核时间
+                &quot;checkUser&quot;: 0,
+                &quot;checkUserName&quot;: &quot;&quot;,            // 审核人
+                &quot;deleteFlg&quot;: 0
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: 0
+    }
+}
+</code></pre> <h3 id="cw-13-账期变动申请拒绝"><a href="#cw-13-账期变动申请拒绝" aria-hidden="true" class="header-anchor">#</a> CW-13 账期变动申请拒绝</h3> <h4 id="对接负责人-13"><a href="#对接负责人-13" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-13"><a href="#模块负责人-13" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-13"><a href="#请求-13" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /finance/payment/askfor/refuse/{id}
+</code></pre> <h4 id="参数-13"><a href="#参数-13" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id     // 申请ID
+{
+    *&quot;reason&quot;: &quot;未填写账期有效期&quot;    // 拒绝理由
+}
+</code></pre> <h4 id="响应-13"><a href="#响应-13" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cw-14-账期变动申请通过"><a href="#cw-14-账期变动申请通过" aria-hidden="true" class="header-anchor">#</a> CW-14 账期变动申请通过</h3> <h4 id="对接负责人-14"><a href="#对接负责人-14" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-14"><a href="#模块负责人-14" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-14"><a href="#请求-14" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /finance/payment/askfor/pass/{id}
+</code></pre> <h4 id="参数-14"><a href="#参数-14" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id     // 申请ID
+</code></pre> <h4 id="响应-14"><a href="#响应-14" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cw-15-总分关系变动申请"><a href="#cw-15-总分关系变动申请" aria-hidden="true" class="header-anchor">#</a> CW-15 总分关系变动申请</h3> <h4 id="对接负责人-15"><a href="#对接负责人-15" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-15"><a href="#模块负责人-15" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-15"><a href="#请求-15" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /finance/account/askfor
+</code></pre> <h4 id="参数-15"><a href="#参数-15" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    *&quot;opAccount&quot;: &quot;33314&quot;,           // 账户ID
+    *&quot;askforParentType&quot;: &quot;0&quot;,        // 总分类型 0 普通 1 总公司  2 分公司
+    &quot;askforParentId&quot;: &quot;0&quot;,           // 总公司ID   askforParentType=2时必传
+    &quot;askforSharePay&quot;: &quot;0&quot;,          // 是否为分公司代付 askforParentType=1时必传
+    &quot;createRemark&quot;: &quot;变成普通公司&quot;    // 申请备注
+}
+</code></pre> <h4 id="响应-15"><a href="#响应-15" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cw-16-总分关系变动申请列表"><a href="#cw-16-总分关系变动申请列表" aria-hidden="true" class="header-anchor">#</a> CW-16 总分关系变动申请列表</h3> <h4 id="对接负责人-16"><a href="#对接负责人-16" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-16"><a href="#模块负责人-16" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-16"><a href="#请求-16" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /finance/account/askfor
+</code></pre> <h4 id="参数-16"><a href="#参数-16" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>shortName           // 客户名   
+status              // 状态 ASKFOR 待审核 PASS 通过 REFUSE 拒绝
+buttonPermissionFlg     // 是否查询按钮权限 0 不查询 1 查询 默认0
+pageNo          // 页码 默认1
+pageSize        // 页大小 默认25
+</code></pre> <h4 id="响应-16"><a href="#响应-16" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissionPage&quot;: {},
+        &quot;buttonPermissions&quot;: [
+            {
+                &quot;refuseButton&quot;: true,
+                &quot;passUpButton&quot;: false
+            }
+        ],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;id&quot;: 258,                  // 申请ID
+                &quot;opAccount&quot;: 33314,         // 账户ID
+                &quot;shortname&quot;: &quot;苏家屯走司&quot;,       // 客户名
+                &quot;status&quot;: &quot;ASKFOR&quot;          // 申请状态     ASKFOR 待审核 PASS 通过 REFUSE 拒绝
+                &quot;orignalParentId&quot;: 0,
+                &quot;orignalParentType&quot;: 1,
+                &quot;orignalSharePay&quot;: 0,
+                &quot;askforParentId&quot;: 0,        // 总公司ID
+                &quot;parentName&quot;: &quot;&quot;,           // 总公司名
+                &quot;askforParentType&quot;: 0,      // 总分类型 0 普通 1 总公司 2 分公司
+                &quot;askforSharePay&quot;: 0,        // 是否为分公司代付 0 否 1 是
+                &quot;createRemark&quot;: &quot;变成普通公司&quot;,   // 申请备注
+                &quot;createRole&quot;: 0,
+                &quot;createTime&quot;: &quot;2019-07-12 17:36:24&quot;,    // 申请时间
+                &quot;createUser&quot;: 0,
+                &quot;createUserName&quot;: &quot;孙启萌&quot;,    // 申请人
+                &quot;checkRemark&quot;: &quot;&quot;,              // 审核备注
+                &quot;checkRole&quot;: 0,
+                &quot;checkTime&quot;: &quot;&quot;,                // 审核时间
+                &quot;checkUser&quot;: 0,
+                &quot;checkUserName&quot;: &quot;&quot;,            // 审核人
+                &quot;deleteFlg&quot;: 0,
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: 0
+    }
+}
+</code></pre> <h3 id="cw-17-总分关系变动申请拒绝"><a href="#cw-17-总分关系变动申请拒绝" aria-hidden="true" class="header-anchor">#</a> CW-17 总分关系变动申请拒绝</h3> <h4 id="对接负责人-17"><a href="#对接负责人-17" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-17"><a href="#模块负责人-17" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-17"><a href="#请求-17" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /finance/account/askfor/refuse/{id}
+</code></pre> <h4 id="参数-17"><a href="#参数-17" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id     // 申请ID
+{
+    *&quot;reason&quot;: &quot;未填写账期有效期&quot;    // 拒绝理由
+}
+</code></pre> <h4 id="响应-17"><a href="#响应-17" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cw-18-总分关系变动申请通过"><a href="#cw-18-总分关系变动申请通过" aria-hidden="true" class="header-anchor">#</a> CW-18 总分关系变动申请通过</h3> <h4 id="对接负责人-18"><a href="#对接负责人-18" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-18"><a href="#模块负责人-18" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-18"><a href="#请求-18" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /finance/account/askfor/pass/{id}
+</code></pre> <h4 id="参数-18"><a href="#参数-18" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id     // 申请ID
+</code></pre> <h4 id="响应-18"><a href="#响应-18" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cw-19-预付款变动申请"><a href="#cw-19-预付款变动申请" aria-hidden="true" class="header-anchor">#</a> CW-19 预付款变动申请</h3> <h4 id="对接负责人-19"><a href="#对接负责人-19" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-19"><a href="#模块负责人-19" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-19"><a href="#请求-19" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /finance/handwork/askfor
+</code></pre> <h4 id="参数-19"><a href="#参数-19" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <h5 id="手动出入款参数说明"><a href="#手动出入款参数说明" aria-hidden="true" class="header-anchor">#</a> 手动出入款参数说明</h5> <pre><code>{
+    *&quot;opAccount&quot;: &quot;33314&quot;,
+    *&quot;money&quot;: &quot;100&quot;,
+    *&quot;payTime&quot;: &quot;2019-07-15 14:00:00&quot;,
+    &quot;createRemark&quot;: &quot;手动充值100元&quot;
+}
+</code></pre> <h5 id="银行汇款出入款参数说明"><a href="#银行汇款出入款参数说明" aria-hidden="true" class="header-anchor">#</a> 银行汇款出入款参数说明</h5> <pre><code>{
+    *&quot;opAccount&quot;: &quot;33314&quot;,      // 入款账户
+    *&quot;money&quot;: &quot;100&quot;,            // 入款金额
+    *&quot;bankType&quot;: &quot;ICBC&quot;,        // 银行类型
+    *&quot;bankAccount&quot;: &quot;622812268819998777374&quot;,
+    *&quot;bankAccountName&quot;: &quot;苏小妹儿&quot;,
+    *&quot;receiveBankType&quot;: &quot;ICBC&quot; // 收款银行类型
+    *&quot;receiveBankAccount&quot;: &quot;262001040030059&quot;,
+    *&quot;receiveBankAccountName&quot;: &quot;亚洲渔港供应链管理（大连）有限公司&quot;,
+    *&quot;payTime&quot;: &quot;2019-07-15 14:00:00&quot;,  // 充值时间
+    &quot;createRemark&quot;: &quot;手动充值100元&quot;      // 备注
+    *&quot;ignoreFlg&quot;: &quot;0&quot;,            // 2019-10-25修改 导出忽略 0 不忽略 1 忽略
+    *&quot;payRelationType&quot;: &quot;P&quot;      // 2019-10-25修改 付款人与付款单位关系 P 本人 C2C 公对公 CP 经营者
+}
+</code></pre> <h5 id="银企互联入款参数说明"><a href="#银企互联入款参数说明" aria-hidden="true" class="header-anchor">#</a> 银企互联入款参数说明</h5> <pre><code>{
+    *&quot;opAccount&quot;: &quot;33314&quot;,      // 入款账户
+    *&quot;relationSid&quot;: &quot;0&quot;,        // matchId
+    *&quot;money&quot;: &quot;100&quot;,            // 交易金额
+    *&quot;bankType&quot;: &quot;ICBC&quot;,        // 汇款银行类型
+    *&quot;bankAccount&quot;: &quot;622812268819998777374&quot;, // 汇款银行账号
+    *&quot;bankAccountName&quot;: &quot;苏小妹儿&quot;,             // 汇款银行账户名
+    *&quot;receiveBankType&quot;: &quot;ICBC&quot;, // 收款银行类型
+    *&quot;receiveBankAccount&quot;: &quot;262001040030059&quot;,   // 收款银行账号
+    *&quot;receiveBankAccountName&quot;: &quot;亚洲渔港供应链管理（大连）有限公司&quot;, // 收款银行账户名
+    &quot;bankSerialsid&quot;: &quot;ABC-20161017090253125485155673739&quot;,  // 银行流水号
+    *&quot;payTime&quot;: &quot;2019-07-15 14:00:00&quot;,              // 交易时间
+    &quot;createRemark&quot;: &quot;手动充值100元&quot;          // 备注
+}
+</code></pre> <h4 id="响应-19"><a href="#响应-19" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cw-20-预付款变动申请列表"><a href="#cw-20-预付款变动申请列表" aria-hidden="true" class="header-anchor">#</a> CW-20 预付款变动申请列表</h3> <h4 id="对接负责人-20"><a href="#对接负责人-20" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-20"><a href="#模块负责人-20" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-20"><a href="#请求-20" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /finance/handwork/askfor
+</code></pre> <h4 id="参数-20"><a href="#参数-20" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>shortName           // 客户名   
+status              // 状态 ASKFOR 待审核 PASS 通过 REFUSE 拒绝
+type                // HAND 手动 BANK 银行汇款
+buttonPermissionFlg     // 是否查询按钮权限 0 不查询 1 查询 默认0
+pageNo          // 页码 默认1
+pageSize        // 页大小 默认25
+</code></pre> <h4 id="响应-20"><a href="#响应-20" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissionPage&quot;: {},
+        &quot;buttonPermissions&quot;: [
+            {
+                &quot;refuseButton&quot;: true,       // 拒绝按钮
+                &quot;passButton&quot;: true          // 通过按钮
+            }
+        ],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;id&quot;: 131071,              // 申请ID
+                &quot;opAccount&quot;: 33314,         // 账户ID
+                &quot;shortname&quot;: &quot;苏家屯走司&quot;,       // 公司名
+                &quot;status&quot;: &quot;ASKFOR&quot;,         // 申请状态 ASKFOR 待审核 PASS 通过 REFUSE 拒绝
+                &quot;type&quot;: &quot;HAND&quot;,          // 类型 HAND 手工 BANK 银行汇款
+                &quot;leftMoney&quot;: 0,         // 当前余额
+                &quot;money&quot;: 300,           // 出入款额
+                &quot;payTime&quot;: &quot;2019-07-15 15:30:00&quot;,   // 支付时间
+                &quot;relationSid&quot;: 37761,               // 银企互联 matchId
+                &quot;bankSerialsid&quot;: &quot;ABC-20190701150246028955413061379&quot;, // 银行流水
+                &quot;bankType&quot;: &quot;ABC&quot;, // 银行类型 ABC 农业银行 ICBC 供应商银行 CCB 建设银行 CHAOS 无法区分
+                &quot;bankAccount&quot;: &quot;122005517010010678&quot;,        // 打款银行账号
+                &quot;bankAccountName&quot;: &quot;广州市珑琥商贸发展有限公司&quot;, // 打款银行户名
+                &quot;receiveBankAccount&quot;: &quot;262001040030059&quot;,        // 收款银行账号
+                &quot;receiveBankAccountName&quot;: &quot;亚洲渔港供应链管理（大连）有限公司&quot;, // 收款银行户名
+                &quot;createRemark&quot;: &quot;银企互联充值300元&quot;,       // 申请备注
+                &quot;createRole&quot;: 1,
+                &quot;createTime&quot;: &quot;2019-07-15 15:41:31&quot;,        // 申请时间
+                &quot;createUser&quot;: 518,
+                &quot;createUserName&quot;: &quot;孙启萌&quot;,                // 申请人
+                &quot;checkRemark&quot;: &quot;&quot;,                  // 审核备注
+                &quot;checkRole&quot;: 0,
+                &quot;checkTime&quot;: &quot;&quot;,                    // 审核时间
+                &quot;checkUser&quot;: 0,
+                &quot;checkUserName&quot;: &quot;&quot;,                // 审核人
+                &quot;deleteFlg&quot;: 0,
+                &quot;ignoreFlg&quot;:1,                      //2019-11-04 导出忽略 0 不忽略 1 忽略
+                &quot;payRelationType&quot;:&quot;CB&quot;              //2019-11-04 付款人与付款单位关系 P 本人 C2C 公对公 CP 经营者
+            }
+        ],
+        &quot;pageNo&quot;: 0,
+        &quot;total&quot;: 1
+    }
+}
+</code></pre> <h3 id="cw-21-预付款变动申请拒绝"><a href="#cw-21-预付款变动申请拒绝" aria-hidden="true" class="header-anchor">#</a> CW-21 预付款变动申请拒绝</h3> <h4 id="对接负责人-21"><a href="#对接负责人-21" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-21"><a href="#模块负责人-21" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-21"><a href="#请求-21" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /finance/handwork/askfor/refuse/{id}
+</code></pre> <h4 id="参数-21"><a href="#参数-21" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id     // 申请ID
+{
+    *&quot;reason&quot;: &quot;未填写账期有效期&quot;    // 拒绝理由
+}
+</code></pre> <h4 id="响应-21"><a href="#响应-21" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cw-22-预付款变动申请通过"><a href="#cw-22-预付款变动申请通过" aria-hidden="true" class="header-anchor">#</a> CW-22 预付款变动申请通过</h3> <h4 id="对接负责人-22"><a href="#对接负责人-22" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-22"><a href="#模块负责人-22" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-22"><a href="#请求-22" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /finance/handwork/askfor/pass/{id}
+</code></pre> <h4 id="参数-22"><a href="#参数-22" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id     // 申请ID
+</code></pre> <h4 id="响应-22"><a href="#响应-22" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cw-23-银行汇款信息"><a href="#cw-23-银行汇款信息" aria-hidden="true" class="header-anchor">#</a> CW-23 银行汇款信息</h3> <h4 id="对接负责人-23"><a href="#对接负责人-23" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-23"><a href="#模块负责人-23" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-23"><a href="#请求-23" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /finance/handwork/askfor/{id}
+</code></pre> <h4 id="参数-23"><a href="#参数-23" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id     // 申请ID
+</code></pre> <h4 id="响应-23"><a href="#响应-23" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;id&quot;: 84473,        // 申请ID
+        &quot;bankType&quot;: &quot;ABC&quot;,                  // 汇款银行类型 ABC 农业银行 ICBC 供应商银行 CCB 建设银行 CHAOS 无法区分
+        &quot;bankAccount&quot;: &quot;6226191300216738&quot;,  // 汇款银行账号
+        &quot;bankAccountName&quot;: &quot;爱新觉罗绪良&quot;,    // 汇款银行账户名
+        &quot;receiveBankName&quot;: &quot;中国建设银行&quot;,        // 收款银行名
+        &quot;receiveBankAccount&quot;: &quot;&quot;,               // 收款银行账号  
+        &quot;receiveBankAccountName&quot;: &quot;&quot;,           // 收款银行账户名
+        &quot;money&quot;: 11033,             // 汇款金额
+        &quot;payTime&quot;: &quot;&quot;,              // 汇款时间
+        &quot;bankSerialsid&quot;: &quot;&quot;,
+        &quot;checkRemark&quot;: &quot;&quot;,
+        &quot;checkRole&quot;: 0,
+        &quot;checkTime&quot;: &quot;&quot;,
+        &quot;checkUser&quot;: 0,
+        &quot;checkUserName&quot;: &quot;&quot;,
+        &quot;createRemark&quot;: &quot;7.1工行&quot;,
+        &quot;createRole&quot;: 0,
+        &quot;createTime&quot;: &quot;2019-07-01 15:29:55.0&quot;,
+        &quot;createUser&quot;: 685,
+        &quot;createUserName&quot;: &quot;姜静&quot;,
+        &quot;deleteFlg&quot;: 0,
+        &quot;leftMoney&quot;: 0,
+        &quot;opAccount&quot;: 32122,
+        &quot;relationSid&quot;: 0,
+        &quot;shortname&quot;: &quot;&quot;,
+        &quot;status&quot;: &quot;ASKFOR&quot;,
+        &quot;type&quot;: &quot;&quot;,
+        &quot;ignoreFlg&quot;:1,                      //2019-11-04 导出忽略 0 不忽略 1 忽略
+        &quot;payRelationType&quot;:&quot;CB&quot;              //2019-11-04 付款人与付款单位关系 P 本人 C2C 公对公 CP 经营者
+    }
+}
+</code></pre> <h3 id="cw-26-财务账户列表"><a href="#cw-26-财务账户列表" aria-hidden="true" class="header-anchor">#</a> CW-26 财务账户列表</h3> <h4 id="对接负责人-24"><a href="#对接负责人-24" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-24"><a href="#模块负责人-24" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-24"><a href="#请求-24" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /finance/account
+</code></pre> <h4 id="参数-24"><a href="#参数-24" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>keyword // 客户名、客户号
+state   // 客户状态 NORMAL 正常 DELETE 休眠
+parentType // 客户类型 0:普通客户，1:总店， 2:分店， 不传：全部
+balanceStatus   // 预付款账户状态  NORMAL 正常 LOCK 锁定
+buttonPermissionFlg // 是否查询按钮权限  1 查询 0 不查询  默认0
+pageNo  // 页码 默认1
+pageSize    // 页大小 默认25
+</code></pre> <h4 id="响应-24"><a href="#响应-24" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissionPage&quot;: {},
+        &quot;buttonPermissions&quot;: [
+            {
+                &quot;payUpButton&quot;: true,        // 入款
+                &quot;payDownButton&quot;: true,      // 出款
+                &quot;lockButton&quot;: true,         // 锁定
+                &quot;unlockButton&quot;: false,      // 解锁
+                &quot;debtButton&quot;: true,         // 账期设置
+                &quot;mainButton&quot;: true,         // 总分设置
+                &quot;detailButton&quot;: true,       // 查看
+                &quot;logButton&quot;: true           // 日志
+            }
+        ],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;id&quot;: 32772,
+                &quot;platformId&quot;: 1,
+                &quot;opAccount&quot;: 33315,                 // 账户ID
+                &quot;shortName&quot;: &quot;苏家屯走司沈阳分公司&quot;,  // 客户名
+                &quot;state&quot;: &quot;NORMAL&quot;,                  // 客户状态 NORMAL 正常 DELETE 休眠
+                &quot;businessunit&quot;: 27,                 // 事业部ID
+                &quot;businessunitName&quot;: &quot;AH沈阳&quot;,         // 事业部名
+                &quot;srRoleId&quot;: 4217,                   // sr role Id
+                &quot;srRoleName&quot;: &quot;许晓慧&quot;,            // sr role name
+                &quot;ssRoleId&quot;: 29376,                  // ss role id
+                &quot;ssRoleName&quot;: &quot;测试数据权限（用完删除）&quot;,  // ss role name
+                &quot;type&quot;: &quot;P&quot;                     // 客户类型 'A','P','P2P','C'
+                &quot;parentId&quot;: 33314,              // 总公司ID
+                &quot;parentName&quot;: &quot;苏家屯走司&quot;,      // 总公司名
+                &quot;parentType&quot;: 0,                // 公司类型 0 普通 1 总公司 2 分公司
+                &quot;paymentType&quot;: &quot;CASH&quot;,          // CASH 现款 LATER 到付 DEBT 账期
+                &quot;sharePay&quot;: 0,                  // 是否为分公司代付 0 否  1 是
+                &quot;status&quot;: &quot;NORMAL&quot;,
+                &quot;debtEffectEtime&quot;: &quot;&quot;,          // 账期有效期
+                &quot;debtMoney&quot;: 0,                 // 账期额度
+                &quot;financeBalance&quot;: [
+                    {
+                        &quot;id&quot;: 32785,
+                        &quot;opAccount&quot;: 33315,
+                        &quot;type&quot;: &quot;BALANCE&quot;       // BALANCE 预付款账户
+                        &quot;money&quot;: 0,             // 余额
+                        &quot;status&quot;: &quot;NORMAL&quot;,     // 状态 NORMAL 正常 LOCK 锁定
+                        &quot;createTime&quot;: &quot;2019-07-12 10:31:31&quot;,
+                        &quot;deleteFlg&quot;: 0,
+                        &quot;financeBalanceRule&quot;: null,
+                        &quot;platformId&quot;: 1,
+                        &quot;ruleId&quot;: 0
+                    },
+                    {
+                        &quot;id&quot;: 32785,
+                        &quot;opAccount&quot;: 33315,
+                        &quot;type&quot;: &quot;DEPOSIT&quot;       // DEPOSIT 定金账户
+                        &quot;money&quot;: 0,             // 余额
+                        &quot;status&quot;: &quot;NORMAL&quot;,     // 状态 NORMAL 正常 LOCK 锁定
+                        &quot;createTime&quot;: &quot;2019-07-12 10:31:31&quot;,
+                        &quot;deleteFlg&quot;: 0,
+                        &quot;financeBalanceRule&quot;: null,
+                        &quot;platformId&quot;: 1,
+                        &quot;ruleId&quot;: 0
+                    },
+                    {
+                        &quot;id&quot;: 32785,
+                        &quot;opAccount&quot;: 33315,
+                        &quot;type&quot;: &quot;FREEZE&quot;       // FREEZE 冻结账户
+                        &quot;money&quot;: 0,             // 余额
+                        &quot;status&quot;: &quot;NORMAL&quot;,     // 状态 NORMAL 正常 LOCK 锁定
+                        &quot;createTime&quot;: &quot;2019-07-12 10:31:31&quot;,
+                        &quot;deleteFlg&quot;: 0,
+                        &quot;financeBalanceRule&quot;: null,
+                        &quot;platformId&quot;: 1,
+                        &quot;ruleId&quot;: 0
+                    }
+                ],
+                &quot;bank&quot;: [
+                    {
+                        &quot;bankAccount&quot;: &quot;62281226881299875646&quot;,  // 开户行账号
+                        &quot;bankAccountName&quot;: &quot;苏小妹&quot;,           // 开户行户名
+                        &quot;bankName&quot;: &quot;建设银行&quot;,             // 开户行
+                        &quot;createRole&quot;: 0,
+                        &quot;createTime&quot;: &quot;2019-07-12&quot;,         // 创建时间
+                        &quot;createUser&quot;: 0,
+                        &quot;createUserName&quot;: &quot;孙启萌&quot;,        // 创建人
+                        &quot;deleteFlg&quot;: 0,
+                        &quot;id&quot;: 16385,
+                        &quot;opAccount&quot;: 33315,         
+                        &quot;platformId&quot;: 1,
+                        &quot;status&quot;: &quot;NORMAL&quot;          // 状态 NORMAL  LOCK
+                    }
+                ],
+                &quot;modifyTime&quot;: &quot;&quot;,
+                &quot;createTime&quot;: &quot;&quot;,
+                &quot;deleteFlg&quot;: 0
+            }
+        ],
+        &quot;pageNo&quot;: 0,
+        &quot;total&quot;: 0
+    }
+} 
+</code></pre> <h3 id="cw-27-财务账户列表-不分页"><a href="#cw-27-财务账户列表-不分页" aria-hidden="true" class="header-anchor">#</a> CW-27 财务账户列表(不分页)</h3> <h4 id="对接负责人-25"><a href="#对接负责人-25" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-25"><a href="#模块负责人-25" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-25"><a href="#请求-25" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /finance/account/list
+</code></pre> <h4 id="参数-25"><a href="#参数-25" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>keyword // 客户名、客户号
+state   // 客户状态 NORMAL 正常 DELETE 休眠
+parentType // 客户类型 0:普通客户，1:总店， 2:分店， 不传：全部
+balanceStatus   // 预付款账户状态  NORMAL 正常 LOCK 锁定
+</code></pre> <h4 id="响应-25"><a href="#响应-25" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 32772,
+            &quot;platformId&quot;: 1,
+            &quot;opAccount&quot;: 33315,                 // 账户ID
+            &quot;shortName&quot;: &quot;苏家屯走司沈阳分公司&quot;,  // 客户名
+            &quot;state&quot;: &quot;NORMAL&quot;,                  // 客户状态 NORMAL 正常 DELETE 休眠
+            &quot;businessunit&quot;: 27,                 // 事业部ID
+            &quot;businessunitName&quot;: &quot;AH沈阳&quot;,         // 事业部名
+            &quot;srRoleId&quot;: 4217,                   // sr role Id
+            &quot;srRoleName&quot;: &quot;许晓慧&quot;,            // sr role name
+            &quot;ssRoleId&quot;: 29376,                  // ss role id
+            &quot;ssRoleName&quot;: &quot;测试数据权限（用完删除）&quot;,  // ss role name
+            &quot;type&quot;: &quot;P&quot;                     // 客户类型 'A','P','P2P','C'
+            &quot;parentId&quot;: 33314,              // 总公司ID
+            &quot;parentName&quot;: &quot;苏家屯走司&quot;,      // 总公司名
+            &quot;parentType&quot;: 0,                // 公司类型 0 普通 1 总公司 2 分公司
+            &quot;paymentType&quot;: &quot;CASH&quot;,          // CASH 现款 LATER 到付 DEBT 账期
+            &quot;sharePay&quot;: 0,                  // 是否为分公司代付 0 否  1 是
+            &quot;status&quot;: &quot;NORMAL&quot;,
+            &quot;debtEffectEtime&quot;: &quot;&quot;,          // 账期有效期
+            &quot;debtMoney&quot;: 0,                 // 账期额度
+            &quot;financeBalance&quot;: [
+                {
+                    &quot;id&quot;: 32785,
+                    &quot;opAccount&quot;: 33315,
+                    &quot;type&quot;: &quot;BALANCE&quot;       // BALANCE 预付款账户
+                    &quot;money&quot;: 0,             // 余额
+                    &quot;status&quot;: &quot;NORMAL&quot;,     // 状态 NORMAL 正常 LOCK 锁定
+                    &quot;createTime&quot;: &quot;2019-07-12 10:31:31&quot;,
+                    &quot;deleteFlg&quot;: 0,
+                    &quot;financeBalanceRule&quot;: null,
+                    &quot;platformId&quot;: 1,
+                    &quot;ruleId&quot;: 0
+                },
+                {
+                    &quot;id&quot;: 32785,
+                    &quot;opAccount&quot;: 33315,
+                    &quot;type&quot;: &quot;DEPOSIT&quot;       // DEPOSIT 定金账户
+                    &quot;money&quot;: 0,             // 余额
+                    &quot;status&quot;: &quot;NORMAL&quot;,     // 状态 NORMAL 正常 LOCK 锁定
+                    &quot;createTime&quot;: &quot;2019-07-12 10:31:31&quot;,
+                    &quot;deleteFlg&quot;: 0,
+                    &quot;financeBalanceRule&quot;: null,
+                    &quot;platformId&quot;: 1,
+                    &quot;ruleId&quot;: 0
+                },
+                {
+                    &quot;id&quot;: 32785,
+                    &quot;opAccount&quot;: 33315,
+                    &quot;type&quot;: &quot;FREEZE&quot;       // FREEZE 冻结账户
+                    &quot;money&quot;: 0,             // 余额
+                    &quot;status&quot;: &quot;NORMAL&quot;,     // 状态 NORMAL 正常 LOCK 锁定
+                    &quot;createTime&quot;: &quot;2019-07-12 10:31:31&quot;,
+                    &quot;deleteFlg&quot;: 0,
+                    &quot;financeBalanceRule&quot;: null,
+                    &quot;platformId&quot;: 1,
+                    &quot;ruleId&quot;: 0
+                }
+            ],
+            &quot;bank&quot;: null,
+            &quot;modifyTime&quot;: &quot;&quot;,
+            &quot;createTime&quot;: &quot;&quot;,
+            &quot;deleteFlg&quot;: 0
+        }
+    ]
+}
+</code></pre> <h3 id="cw-28-财务账户明细"><a href="#cw-28-财务账户明细" aria-hidden="true" class="header-anchor">#</a> CW-28 财务账户明细</h3> <h4 id="对接负责人-26"><a href="#对接负责人-26" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-26"><a href="#模块负责人-26" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-26"><a href="#请求-26" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /finance/account/{opAccount}
+</code></pre> <h4 id="参数-26"><a href="#参数-26" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*opAccount  // 账户ID
+</code></pre> <h4 id="响应-26"><a href="#响应-26" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;id&quot;: 32772,
+        &quot;platformId&quot;: 1,
+        &quot;opAccount&quot;: 33315,                 // 账户ID
+        &quot;shortName&quot;: &quot;苏家屯走司沈阳分公司&quot;,  // 客户名
+        &quot;state&quot;: &quot;NORMAL&quot;,                  // 客户状态 NORMAL 正常 DELETE 休眠
+        &quot;businessunit&quot;: 27,                 // 事业部ID
+        &quot;businessunitName&quot;: &quot;AH沈阳&quot;,         // 事业部名
+        &quot;srRoleId&quot;: 4217,                   // sr role Id
+        &quot;srRoleName&quot;: &quot;许晓慧&quot;,            // sr role name
+        &quot;ssRoleId&quot;: 29376,                  // ss role id
+        &quot;ssRoleName&quot;: &quot;测试数据权限（用完删除）&quot;,  // ss role name
+        &quot;type&quot;: &quot;P&quot;                     // 客户类型 'A','P','P2P','C'
+        &quot;parentId&quot;: 33314,              // 总公司ID
+        &quot;parentName&quot;: &quot;苏家屯走司&quot;,      // 总公司名
+        &quot;parentType&quot;: 0,                // 公司类型 0 普通 1 总公司 2 分公司
+        &quot;paymentType&quot;: &quot;CASH&quot;,          // CASH 现款 LATER 到付 DEBT 账期
+        &quot;sharePay&quot;: 0,                  // 是否为分公司代付 0 否  1 是
+        &quot;status&quot;: &quot;NORMAL&quot;,
+        &quot;debtEffectEtime&quot;: &quot;&quot;,          // 账期有效期
+        &quot;debtMoney&quot;: 0,                 // 账期额度
+        &quot;financeBalance&quot;: {  &amp;#10084;***BALANCE只能有一条，DEPOSIT可以有多条***   
+            &quot;rowPermissions&quot;: {
+                0: {
+                    &quot;buttonPermission&quot;: {
+                        &quot;reduce&quot;: true,
+                        &quot;unlock&quot;: false,
+                        &quot;lock&quot;: true,
+                        &quot;pay&quot;: true,
+                        &quot;rule&quot;: true
+                    }
+                },
+                1: {
+                    &quot;buttonPermission&quot;: {
+                        &quot;reduce&quot;: true,
+                        &quot;unlock&quot;: false,
+                        &quot;lock&quot;: true,
+                        &quot;pay&quot;: true,
+                        &quot;rule&quot;: true
+                    }
+                },
+                2: {
+                    &quot;buttonPermission&quot;: {
+                        &quot;reduce&quot;: true,
+                        &quot;unlock&quot;: false,
+                        &quot;lock&quot;: true,
+                        &quot;pay&quot;: true,
+                        &quot;rule&quot;: false
+                    }
+                }
+            },    
+            rows:[
+                {
+                    &quot;createTime&quot;: &quot;2019-07-12 10:31:31&quot;,
+                    &quot;deleteFlg&quot;: 0,
+                    &quot;financeBalanceRule&quot;: null,
+                    &quot;id&quot;: 32785,
+                    &quot;money&quot;: 0,             // 余额
+                    &quot;opAccount&quot;: 33315,
+                    &quot;platformId&quot;: 1,
+                    &quot;ruleId&quot;: 0,
+                    &quot;status&quot;: &quot;NORMAL&quot;,     // 状态 NORMAL 正常 LOCK 锁定
+                    &quot;type&quot;: &quot;BALANCE&quot;       // BALANCE 预付款
+                },
+                {
+                    &quot;createTime&quot;: &quot;2019-07-12 10:31:31&quot;,
+                    &quot;deleteFlg&quot;: 0,
+                    &quot;financeBalanceRule&quot;: null,
+                    &quot;id&quot;: 32785,
+                    &quot;money&quot;: 0,             // 余额
+                    &quot;opAccount&quot;: 33315,
+                    &quot;platformId&quot;: 1,
+                    &quot;ruleId&quot;: 0,            // 定金规则ID
+                    &quot;status&quot;: &quot;NORMAL&quot;,     // 状态 NORMAL 正常 LOCK 锁定
+                    &quot;type&quot;: &quot;DEPOSIT&quot;       // 定金
+                },
+                {
+                    &quot;createTime&quot;: &quot;2019-07-12 10:31:31&quot;,
+                    &quot;deleteFlg&quot;: 0,
+                    &quot;financeBalanceRule&quot;: null,
+                    &quot;id&quot;: 32785,
+                    &quot;money&quot;: 0,             // 余额
+                    &quot;opAccount&quot;: 33315,
+                    &quot;platformId&quot;: 1,
+                    &quot;ruleId&quot;: 0,            // 定金规则ID
+                    &quot;status&quot;: &quot;NORMAL&quot;,     // 状态 NORMAL 正常 LOCK 锁定
+                    &quot;type&quot;: &quot;DEPOSIT&quot;       // 定金
+                }
+            ]
+        },
+        &quot;bank&quot;: [
+            {
+                &quot;bankAccount&quot;: &quot;62281226881299875646&quot;,  // 开户行账号
+                &quot;bankAccountName&quot;: &quot;苏小妹&quot;,           // 开户行户名
+                &quot;bankName&quot;: &quot;建设银行&quot;,             // 开户行
+                &quot;createRole&quot;: 0,
+                &quot;createTime&quot;: &quot;2019-07-12&quot;,         // 创建时间
+                &quot;createUser&quot;: 0,
+                &quot;createUserName&quot;: &quot;孙启萌&quot;,        // 创建人
+                &quot;deleteFlg&quot;: 0,
+                &quot;id&quot;: 16385,
+                &quot;opAccount&quot;: 33315,         
+                &quot;platformId&quot;: 1,
+                &quot;status&quot;: &quot;NORMAL&quot;          // 状态 NORMAL  LOCK
+            }
+        ],
+        &quot;modifyTime&quot;: &quot;&quot;,
+        &quot;createTime&quot;: &quot;&quot;,
+        &quot;deleteFlg&quot;: 0
+    }
+}     
+</code></pre> <h3 id="cw-29-财务账户操作日志"><a href="#cw-29-财务账户操作日志" aria-hidden="true" class="header-anchor">#</a> CW-29 财务账户操作日志</h3> <h4 id="对接负责人-27"><a href="#对接负责人-27" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-27"><a href="#模块负责人-27" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-27"><a href="#请求-27" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /finance/account/log/{opAccount}
+</code></pre> <h4 id="参数-27"><a href="#参数-27" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*opAccount  // 账户ID
+</code></pre> <h4 id="响应-27"><a href="#响应-27" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissionPage&quot;: {},
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;id&quot;: 5,
+                &quot;opAccount&quot;: 33314,
+                &quot;opInfo&quot;: &quot;账期变更申请审批通过&quot;,     // 操作内容
+                &quot;opRole&quot;: 0,
+                &quot;opTime&quot;: &quot;2019-07-12 16:04:06&quot;,    // 操作时间
+                &quot;opUser&quot;: 0,
+                &quot;opUserName&quot;: &quot;孙启萌&quot;         // 操作人
+            },
+            {
+                &quot;id&quot;: 1,
+                &quot;opAccount&quot;: 33314,
+                &quot;opInfo&quot;: &quot;账期变更申请&quot;,
+                &quot;opRole&quot;: 0,
+                &quot;opTime&quot;: &quot;2019-07-12 15:22:51&quot;,
+                &quot;opUser&quot;: 0,
+                &quot;opUserName&quot;: &quot;孙启萌&quot;
+            }
+        ],
+        &quot;pageNo&quot;: 0,
+        &quot;total&quot;: 0
+    }
+}
+</code></pre> <h3 id="cw-30-财务账户锁定"><a href="#cw-30-财务账户锁定" aria-hidden="true" class="header-anchor">#</a> CW-30 财务账户锁定</h3> <h4 id="对接负责人-28"><a href="#对接负责人-28" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-28"><a href="#模块负责人-28" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-28"><a href="#请求-28" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /finance/account/lock/{opAccount}
+</code></pre> <h4 id="参数-28"><a href="#参数-28" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*opAccount  // 账户ID
+</code></pre> <h4 id="响应-28"><a href="#响应-28" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cw-31-财务账户解锁"><a href="#cw-31-财务账户解锁" aria-hidden="true" class="header-anchor">#</a> CW-31 财务账户解锁</h3> <h4 id="对接负责人-29"><a href="#对接负责人-29" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-29"><a href="#模块负责人-29" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-29"><a href="#请求-29" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /finance/account/unlock/{opAccount}
+</code></pre> <h4 id="参数-29"><a href="#参数-29" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*opAccount  // 账户ID
+</code></pre> <h4 id="响应-29"><a href="#响应-29" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cw-32-资金账户锁定"><a href="#cw-32-资金账户锁定" aria-hidden="true" class="header-anchor">#</a> CW-32 资金账户锁定</h3> <h4 id="对接负责人-30"><a href="#对接负责人-30" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-30"><a href="#模块负责人-30" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-30"><a href="#请求-30" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /finance/account/balance/lock/{id}
+</code></pre> <h4 id="参数-30"><a href="#参数-30" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id // 资金账户ID
+</code></pre> <h4 id="响应-30"><a href="#响应-30" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cw-33-资金账户解锁"><a href="#cw-33-资金账户解锁" aria-hidden="true" class="header-anchor">#</a> CW-33 资金账户解锁</h3> <h4 id="对接负责人-31"><a href="#对接负责人-31" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-31"><a href="#模块负责人-31" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-31"><a href="#请求-31" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /finance/account/balance/unlock/{id}
+</code></pre> <h4 id="参数-31"><a href="#参数-31" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id // 资金账户ID
+</code></pre> <h4 id="响应-31"><a href="#响应-31" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cw-34-资金账户导出"><a href="#cw-34-资金账户导出" aria-hidden="true" class="header-anchor">#</a> CW-34 资金账户导出</h3> <h4 id="对接负责人-32"><a href="#对接负责人-32" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-32"><a href="#模块负责人-32" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-32"><a href="#请求-32" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /finance/account/export
+</code></pre> <h4 id="参数-32"><a href="#参数-32" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>keyword     // 客户编号、客户名称
+state           // 客户状态     NORMAL 正常 DELETE 休眠
+parentType // 账户类型 0:普通客户，1:总店， 2:分店， 不传：全部
+createTime  // 什么时间之后的资金账户
+*checkCode   // 校验码
+</code></pre> <h4 id="响应-32"><a href="#响应-32" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>流
+</code></pre> <h3 id="cw-36-银企互联账户对比结果"><a href="#cw-36-银企互联账户对比结果" aria-hidden="true" class="header-anchor">#</a> CW-36 银企互联账户对比结果</h3> <h4 id="对接负责人-33"><a href="#对接负责人-33" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-33"><a href="#模块负责人-33" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-33"><a href="#请求-33" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /finance/bes/bankaccount/match
+</code></pre> <h4 id="参数-33"><a href="#参数-33" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>bankAccount // 银行账户号
+</code></pre> <h4 id="响应-33"><a href="#响应-33" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000, // 成功，返回对比账户信息、失败返回错误信息
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+      &quot;opAccount&quot;: xxx , // 客户资金账户号
+      &quot;customerLite&quot; : {
+        &quot;shortName&quot; : &quot;xxx&quot; // 客户名
+      },
+      &quot;financeAccountBank&quot;: {
+        &quot;bankType&quot;:&quot;ICBC&quot; // 银行类型
+        &quot;bankTypeName&quot;: &quot;工商银行&quot; // 银行类型名
+        &quot;bankName&quot;:&quot;工商银行大连支行&quot; // 银行名称
+        &quot;bankAccountName&quot;: &quot;李雪梅&quot; // 开户名
+      }
+    }
+}
+</code></pre> <h3 id="cw-37-银企互联列表"><a href="#cw-37-银企互联列表" aria-hidden="true" class="header-anchor">#</a> CW-37 银企互联列表</h3> <h4 id="对接负责人-34"><a href="#对接负责人-34" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-34"><a href="#模块负责人-34" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-34"><a href="#请求-34" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /finance/bes
+</code></pre> <h4 id="参数-34"><a href="#参数-34" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>keyword     // 客户名、客户编号
+status          // 状态   WAIT 待处理 ASKFOR 申请中 COMPLETE 已自动入款 IGNORE 忽略
+oppKeyword      // 对方户名、账户号
+buttonPermissionFlg // 是否查询按钮权限 0 不查询 1 查询  默认0
+pageNo              // 页码  默认1
+pageSize            // 页大小 默认25
+</code></pre> <h4 id="响应-34"><a href="#响应-34" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissionPage&quot;: {},
+        &quot;buttonPermissions&quot;: [
+            {
+                &quot;payInUpButton&quot;: false,
+                &quot;matchButton&quot;: false
+            }
+        ],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;id&quot;: 37760,                // matchId
+                &quot;relationSid&quot;: 37760,       // abcId
+                &quot;accno&quot;: &quot;262001040030059&quot;, // 入款账号
+                &quot;accname&quot;: &quot;亚洲渔港股份有限公司&quot;,    // 入款账户名
+                &quot;oppaccno&quot;: &quot;536701040018166&quot;,      // 打款账号
+                &quot;oppname&quot;: &quot;绍兴市咭味哆餐饮管理有限公司&quot;,    // 打款账户名
+                &quot;bankSerialsid&quot;: &quot;ABC-20190701144741265204401460571&quot;,   // 银行流水号
+                &quot;amt&quot;: 45400,                   // 交易金额
+                &quot;preamt&quot;: 11800464.34,          // 上笔余额
+                &quot;bal&quot;: 11845864.34,             // 账户余额
+                &quot;totchg&quot;: 0,                    // 手续费用
+                &quot;bankType&quot;: &quot;ABC&quot;,              // 银行类型
+                &quot;bankTypeName&quot;: &quot;中国农业银行&quot;   // 银行类型中文名
+                &quot;matchAccount&quot;: 33239,          // 系统比对账户
+                &quot;matchAccountName&quot;: &quot;绍兴市咭味哆餐饮管理有限公司&quot;, // 系统比对账户名
+                &quot;opAccount&quot;: 33239,                     // 实际入款账户
+                &quot;opAccountName&quot;: &quot;绍兴市咭味哆餐饮管理有限公司&quot;,  // 时间入款账户名
+                &quot;status&quot;: &quot;COMPLETE&quot;, // 状态 WAIT 待处理 ASKFOR 申请中 COMPLETE 已自动入款 IGNORE 忽略
+                &quot;abs&quot;: &quot;0199&quot;,          // 摘要
+                &quot;trdate&quot;: &quot;20190701&quot;    // 交易日期
+                &quot;timestab&quot;: &quot;2019-07-01 14:47:41&quot;,  // 交易时间
+                &quot;postscript&quot;:&quot;附言&quot;
+            }
+        ],
+        &quot;pageNo&quot;: 0,
+        &quot;total&quot;: 0
+    }
+}
+</code></pre> <h3 id="cw-38-银企互联手动对比"><a href="#cw-38-银企互联手动对比" aria-hidden="true" class="header-anchor">#</a> CW-38 银企互联手动对比</h3> <h4 id="对接负责人-35"><a href="#对接负责人-35" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-35"><a href="#模块负责人-35" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-35"><a href="#请求-35" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /finance/bes/match/{abcId}
+</code></pre> <h4 id="参数-35"><a href="#参数-35" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*abcId      // CW-46已返回
+</code></pre> <h4 id="响应-35"><a href="#响应-35" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}   
+</code></pre> <h3 id="cw-39-银企互联入款（其它）"><a href="#cw-39-银企互联入款（其它）" aria-hidden="true" class="header-anchor">#</a> CW-39 银企互联入款（其它）</h3> <h4 id="对接负责人-36"><a href="#对接负责人-36" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-36"><a href="#模块负责人-36" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-36"><a href="#请求-36" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /finance/bes/ignore/{matchId}
+</code></pre> <h4 id="参数-36"><a href="#参数-36" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*matchId      // CW-46已返回
+</code></pre> <h4 id="响应-36"><a href="#响应-36" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}  
+</code></pre> <h3 id="cw-40-银企互联明细"><a href="#cw-40-银企互联明细" aria-hidden="true" class="header-anchor">#</a> CW-40 银企互联明细</h3> <h4 id="对接负责人-37"><a href="#对接负责人-37" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-37"><a href="#模块负责人-37" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-37"><a href="#请求-37" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /finance/bes/{abcId}
+</code></pre> <h4 id="参数-37"><a href="#参数-37" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*abcId      // CW-46已返回
+</code></pre> <h4 id="响应-37"><a href="#响应-37" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;id&quot;: 1,                        // matchId
+        &quot;relationSid&quot;: 1,               // abcId
+        &quot;abs&quot;: &quot;0199&quot;,
+        &quot;accno&quot;: &quot;262001040030059&quot;,                     // 收款银行账号
+        &quot;accname&quot;: &quot;亚洲渔港供应链管理（大连）有限公司&quot;,     // 收款银行账户名
+        &quot;bankType&quot;: &quot;ABC&quot;,                          // 汇款银行类型
+        &quot;oppaccno&quot;: &quot;6228480298991950973&quot;,          // 汇款银行账号
+        &quot;oppname&quot;: &quot;刘会军&quot;,                         // 汇款银行账户名
+        &quot;bankSerialsid&quot;: &quot;ABC-20161017090253125485155673739&quot;,   // 银行流水号
+        &quot;matchAccount&quot;: 0,                          // 对比账户opAccount
+        &quot;matchAccountName&quot;: &quot;比对有多个客户&quot;,         // 对比账户名
+        &quot;opAccount&quot;: 0,                         // 实际入款账户
+        &quot;opAccountName&quot;: &quot;&quot;,                    // 时间入款账户名
+        &quot;amt&quot;: 42723,                               // 交易金额
+        &quot;bal&quot;: 4850507.1,
+        &quot;preamt&quot;: 4807784.1,
+        &quot;status&quot;: &quot;WAIT&quot;,
+        &quot;timestab&quot;: &quot;2016-10-17 09:02:53&quot;,              // 交易时间
+        &quot;totchg&quot;: 0,
+        &quot;trdate&quot;: &quot;20161017&quot;
+    }
+}
+</code></pre> <h3 id="cw-41-主流水"><a href="#cw-41-主流水" aria-hidden="true" class="header-anchor">#</a> CW-41 主流水</h3> <h4 id="对接负责人-38"><a href="#对接负责人-38" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-38"><a href="#模块负责人-38" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-38"><a href="#请求-38" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /finance/flow
+</code></pre> <h4 id="参数-38"><a href="#参数-38" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*opAccount  // 账户ID
+opBalance   // 账户类型 BALANCE 预付款 DEPOSIT 定金
+payStime    // 开始时间
+payEtime    // 结束时间
+orderId     // 订单号 2019-09-18 添加查询条件
+serialsId   // 支付流水/第三方流水
+pageNo      // 页码 默认 1
+pageSize    // 页大小 默认25
+</code></pre> <h4 id="响应-38"><a href="#响应-38" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissionPage&quot;: {},
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;id&quot;: 0,
+                &quot;platformId&quot;: 1,
+                &quot;opAccount&quot;: 27787,             // 账户ID
+                &quot;opBalance&quot;: &quot;BALANCE&quot;, // 账户类型 BALANCE 预付款 DEPOSIT 定金
+                &quot;opBusiness&quot;: &quot;ORDER&quot;, // 业务类型 WX ALI BANK ORDER TRANSFER HAND
+                &quot;opBusinessName&quot;: &quot;销售订单支付&quot;, // 摘要
+                &quot;serialsid&quot;: &quot;15619478510088497184247500831880-1&quot;, // 流水号
+                &quot;thirdSerialsid&quot;: &quot;4200000026201709203183289573&quot;,   // 第三方流水号
+                &quot;payTime&quot;: &quot;2019-07-01 10:25:05&quot;, // 支付时间
+                &quot;money&quot;: -5596.4,       // 充值、扣款金额
+                &quot;aftBalance&quot;: 0,        // 变动前余额
+                &quot;preBalance&quot;: 5596.4,   // 变动后余额
+                &quot;status&quot;: &quot;NORMAL&quot;,
+                &quot;orderType&quot;: &quot;SA&quot;,      // SA 销售订单 SR 销售退 AP 调价
+                &quot;orderId&quot;:&quot;SA20190505050505&quot;, // 订单号、腿单号、调价单号
+                &quot;trAccount&quot;: 27787
+                &quot;createTime&quot;: &quot;&quot;,
+                &quot;deleteFlg&quot;: 0,
+                &quot;oid&quot;: 831880,
+            }
+        ],
+        &quot;pageNo&quot;: 0,
+        &quot;total&quot;: 2
+    }
+}
+</code></pre> <h3 id="cw-42-微信子流水（opbusiness-wx）"><a href="#cw-42-微信子流水（opbusiness-wx）" aria-hidden="true" class="header-anchor">#</a> CW-42 微信子流水（opBusiness=WX）</h3> <h4 id="对接负责人-39"><a href="#对接负责人-39" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-39"><a href="#模块负责人-39" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-39"><a href="#请求-39" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /finance/flow/wx/{serialSid}
+</code></pre> <h4 id="参数-39"><a href="#参数-39" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*serialSid  // 流水号
+</code></pre> <h4 id="响应-39"><a href="#响应-39" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;id&quot;: 16321,
+        &quot;opAccount&quot;: 27787,        // 账户ID
+        &quot;serialsid&quot;: &quot;15619478510088497184247500831880&quot;, // 订单号
+        &quot;transactionId&quot;: &quot;4200000313201907014386388531&quot; // 微信支付订单号
+        &quot;tradeType&quot;: &quot;APP&quot;,             //  微信交易类型
+        &quot;bankType&quot;: &quot;CMB_CREDIT&quot;,       // 微信付款银行
+        &quot;appId&quot;: &quot;wxd15f69fcf1f3a388&quot;,  // 公众号ID
+        &quot;cashFee&quot;: 5596.4,          // 交易金额
+        &quot;resultCode&quot;: &quot;SUCCESS&quot;,        // 微信业务结果
+        &quot;mchId&quot;: &quot;1484184462&quot;,      // 微信商户号
+        &quot;openId&quot;: &quot;o2F0GxMapYIKhxrmZY_Ak18xD0G0&quot;,   // 唯一标识
+        &quot;payTime&quot;: &quot;2019-07-01 10:25:05&quot;,     // 创建时间
+    }
+}
+</code></pre> <h3 id="cw-43-支付宝子流水（opbusiness-ali）"><a href="#cw-43-支付宝子流水（opbusiness-ali）" aria-hidden="true" class="header-anchor">#</a> CW-43 支付宝子流水（opBusiness=ALI）</h3> <h4 id="对接负责人-40"><a href="#对接负责人-40" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-40"><a href="#模块负责人-40" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-40"><a href="#请求-40" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /finance/flow/ali/{serialSid}
+</code></pre> <h4 id="参数-40"><a href="#参数-40" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*serialSid  // 流水号
+</code></pre> <h4 id="响应-40"><a href="#响应-40" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;id&quot;: 1,
+        &quot;opAccount&quot;: 2730,          // 账户ID
+        &quot;serialsid&quot;: &quot;15057145010021063126888700605203&quot;, // 订单号
+        &quot;buyerId&quot;: &quot;2088802666172422&quot;,  // 买家支付宝用户号
+        &quot;buyerLogonId&quot;: &quot;&quot;,             // 买家支付宝号
+        &quot;sellerId&quot;: &quot;2088211612270167&quot;,     // 卖家支付宝用户号
+        &quot;sellerEmail&quot;: &quot;asagroup@aliyun.com&quot;,   // 卖家支付宝号
+        &quot;totalFee&quot;: 0.01,                       // 交易金额
+        &quot;payTime&quot;: &quot;2017-09-18 14:01:54&quot;,       // 交易时间
+        &quot;tradeNo&quot;: &quot;2017091821001004420248542003&quot;,  // 支付宝交易号
+        &quot;tradeStatus&quot;: &quot;TRADE_SUCCESS&quot;              // 交易状态
+    }
+}
+</code></pre> <h3 id="cw-44-手工、银行、定金子流水（opbusiness-in-bank-transfer-hand-）"><a href="#cw-44-手工、银行、定金子流水（opbusiness-in-bank-transfer-hand-）" aria-hidden="true" class="header-anchor">#</a> CW-44 手工、银行、定金子流水（opBusiness in ('BANK','TRANSFER','HAND')）</h3> <h4 id="对接负责人-41"><a href="#对接负责人-41" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="模块负责人-41"><a href="#模块负责人-41" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-41"><a href="#请求-41" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /finance/flow/full/{serialSid}
+</code></pre> <h4 id="参数-41"><a href="#参数-41" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*serialSid  // 流水号
+</code></pre> <h4 id="响应-41"><a href="#响应-41" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;opBalance&quot;: &quot;BALANCE&quot;,    // 流程名称 BALANCE 预付款 DEPOSIT 定金
+        &quot;relationSid&quot;: 0,   // 流程id
+        &quot;money&quot;: 97100,     // 操作金额
+        &quot;opBusinessName&quot;: &quot;预付款手工转入&quot;,   // 流程类型
+        &quot;opTime&quot;: &quot;2015-08-28 08:24:40&quot;, // 操作时间
+        &quot;remark&quot;: &quot; 8.27&quot;           // 备注
+        &quot;checkTime&quot;: &quot;&quot;,        // 审核时间
+        &quot;checkUserName&quot;: &quot;&quot;,        // 审核人
+        &quot;createTime&quot;: &quot;&quot;,       // 创建时间
+        &quot;createUserName&quot;: &quot;&quot;,   // 创建人
+        &quot;bankType&quot;: &quot;ABC&quot;,  //银行类型 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+        &quot;outBankAccount&quot;: &quot;91210155300001256&quot;, //汇出账户
+        &quot;outBankAccountName&quot;: &quot;湊湊餐饮管理有限公司&quot;, //汇出账户名
+        &quot;inBankAccount&quot;: &quot;262001040030059&quot;, //汇入账户
+        &quot;inBankAccountName&quot;: &quot;亚洲渔港供应链管理（大连）有限公司&quot;, //汇入账户名
+    }
+}
+</code></pre> <h3 id="cw-45-订单子流水（opbusiness-order-and-ordertype-sa"><a href="#cw-45-订单子流水（opbusiness-order-and-ordertype-sa" aria-hidden="true" class="header-anchor">#</a> CW-45 订单子流水（opBusiness = 'ORDER' and orderType = 'SA')</h3> <h4 id="对接负责人-42"><a href="#对接负责人-42" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明、梁铁骑
+</code></pre> <h4 id="模块负责人-42"><a href="#模块负责人-42" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-42"><a href="#请求-42" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /finance/flow/order/sa/{serialSid}
+</code></pre> <h4 id="参数-42"><a href="#参数-42" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*serialSid  // 流水号  
+</code></pre> <h4 id="响应-42"><a href="#响应-42" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>参考 DD-106
+</code></pre> <h3 id="cw-46-退单子流水（opbusiness-order-and-ordertype-sr"><a href="#cw-46-退单子流水（opbusiness-order-and-ordertype-sr" aria-hidden="true" class="header-anchor">#</a> CW-46 退单子流水（opBusiness = 'ORDER' and orderType = 'SR')</h3> <h4 id="对接负责人-43"><a href="#对接负责人-43" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明、梁铁骑
+</code></pre> <h4 id="模块负责人-43"><a href="#模块负责人-43" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-43"><a href="#请求-43" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /finance/flow/order/sr/{serialSid}
+</code></pre> <h4 id="参数-43"><a href="#参数-43" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*serialSid  // 流水号   
+</code></pre> <h4 id="响应-43"><a href="#响应-43" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>参考 DD-54
+</code></pre> <h3 id="cw-47-调价子流水（opbusiness-order-and-ordertype-ap"><a href="#cw-47-调价子流水（opbusiness-order-and-ordertype-ap" aria-hidden="true" class="header-anchor">#</a> CW-47 调价子流水（opBusiness = 'ORDER' and orderType = 'AP')</h3> <h4 id="对接负责人-44"><a href="#对接负责人-44" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明、梁铁骑
+</code></pre> <h4 id="模块负责人-44"><a href="#模块负责人-44" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-44"><a href="#请求-44" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /finance/flow/order/ap/{serialSid}
+</code></pre> <h4 id="参数-44"><a href="#参数-44" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*serialSid  // 流水号  
+</code></pre> <h4 id="响应-44"><a href="#响应-44" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>参考 DD-6
+</code></pre> <h3 id="cw-51-定金管理-列表"><a href="#cw-51-定金管理-列表" aria-hidden="true" class="header-anchor">#</a> CW-51. 定金管理-列表</h3> <h4 id="模块负责人-45"><a href="#模块负责人-45" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-45"><a href="#对接负责人-45" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-45"><a href="#请求-45" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/finance/deposits
+</code></pre> <h4 id="参数-45"><a href="#参数-45" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>keyword: &quot;xxx&quot; // 客户名称
+status: &quot;NORMAL&quot; // 状态 NORMAL 正常 LOCK 锁定
+opAccount: 1 // 客户账户ID
+buttonPermissionFlg: 1, // 是否获取权限按钮
+timeoutFlg: 1 // 定金是否过期 0-否 1-是
+pageNo:&quot;1&quot; // 页码 默认1
+pageSize: &quot;25&quot; // 页面条数 默认25
+</code></pre> <h4 id="响应-45"><a href="#响应-45" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [
+            {
+                &quot;reduceButton&quot;: true, // 扣款按钮
+                &quot;addButton&quot;: true, // 充值按钮
+                &quot;logButton&quot;: true, // 查看日志按钮
+                &quot;modifyRuleButton&quot;: true // 修改规则按钮
+                &quot;lockButton&quot;: true, // 锁定按钮
+                &quot;unlockButton&quot;: true, // 解锁按钮
+                &quot;chooseButton&quot;: true // 选择按钮（只有在选择定金规则弹出层才做展示）
+            },
+            ...
+        ],
+        &quot;datas&quot;: [
+            {
+                &quot;createTime&quot;: &quot;2012-03-14 11:08:27&quot;, // 创建时间
+                &quot;customer&quot;: {
+                    &quot;shortName&quot;: &quot;西安迈德思餐饮管理有限公司&quot;, // 客户名称
+                },
+                &quot;deleteFlg&quot;: 0,
+                &quot;effectEtime&quot;: &quot;2019-06-17 23:59:59&quot;, // 定金有效期结束时间
+                &quot;effectRange&quot;: &quot;4417,122&quot;, // 定金产品范围（产品id，以','相隔）
+                &quot;effectStime&quot;: &quot;2019-06-04 00:00:00&quot;, // 定金有效期开始时间
+                &quot;id&quot;: 32768, // 定金id
+                &quot;money&quot;: 7.68, // 定金余额
+                &quot;opAccount&quot;: 925, // 客户id（客户账户id）
+                &quot;orignalAmount&quot;: 241920, // 定金原始金额
+                &quot;timeout&quot;: 1, // 定金是否过期 0-否 1-是
+                &quot;platformId&quot;: 0,
+                &quot;ratio&quot;: 100, // 定金比例
+                &quot;status&quot;: &quot;NORMAL&quot;, // 定金状态 NORMAL 正常 LOCK 锁定
+                &quot;productSize&quot;: 3 // 产品数量
+            },
+            ...
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: 0
+    }
+}
+</code></pre> <h3 id="cw-52-定金管理-详情"><a href="#cw-52-定金管理-详情" aria-hidden="true" class="header-anchor">#</a> CW-52. 定金管理-详情</h3> <h4 id="模块负责人-46"><a href="#模块负责人-46" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-46"><a href="#对接负责人-46" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-46"><a href="#请求-46" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/finance/deposits/{id}
+</code></pre> <h4 id="参数-46"><a href="#参数-46" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>id: 32769 // 定金id
+</code></pre> <h4 id="响应-46"><a href="#响应-46" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;createTime&quot;: &quot;2012-03-14 11:08:27&quot;, // 创建时间
+        &quot;customer&quot;: {
+            &quot;shortName&quot;: &quot;西安迈德思餐饮管理有限公司&quot;, // 客户名称
+        },
+        &quot;deleteFlg&quot;: 0,
+        &quot;effectEtime&quot;: &quot;2019-06-17 23:59:59&quot;, // 定金有效期结束时间
+        &quot;effectRange&quot;: &quot;4417,122&quot;, // 定金产品范围（产品id，以','相隔）
+        &quot;effectStime&quot;: &quot;2019-06-04 00:00:00&quot;, // 定金有效期开始时间
+        &quot;id&quot;: 32768, // 定金id
+        &quot;products&quot;: [ // 产品范围列表
+            {
+                &quot;id&quot;: 274, // 产品id
+                &quot;mainImg&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/ANET20190516153141129-7292.jpg&quot;, // 主图url
+                &quot;name&quot;: &quot;黄金蝴蝶虾（特制）&quot;, // 品名
+                &quot;pno&quot;: &quot;0181&quot;, // 品号
+            }
+        ],
+        &quot;money&quot;: 7.68, // 定金余额
+        &quot;balanceMoney&quot;: 1000, // 预付款余额
+        &quot;opAccount&quot;: 925, // 客户id（客户账户id）
+        &quot;orignalAmount&quot;: 241920, // 定金原始金额
+        &quot;platformId&quot;: 0,
+        &quot;ratio&quot;: 100, // 定金比例
+        &quot;status&quot;: &quot;NORMAL&quot;, // 定金状态 NORMAL 正常 LOCK 锁定
+    }
+}
+</code></pre> <h3 id="cw-53-定金管理-日志列表"><a href="#cw-53-定金管理-日志列表" aria-hidden="true" class="header-anchor">#</a> CW-53. 定金管理-日志列表</h3> <h4 id="模块负责人-47"><a href="#模块负责人-47" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-47"><a href="#对接负责人-47" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-47"><a href="#请求-47" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/finance/deposits/{id}/logs
+</code></pre> <h4 id="参数-47"><a href="#参数-47" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>id: 32769 // 定金id
+</code></pre> <h4 id="着重说明"><a href="#着重说明" aria-hidden="true" class="header-anchor">#</a> 着重说明</h4> <pre><code>effectStime、effectEtime、money、ratio 这四个个属性为【涉及数据列】，有哪个就显示哪个
+</code></pre> <h4 id="响应-47"><a href="#响应-47" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;datas&quot;: [
+            {
+                &quot;effectStime&quot;: &quot;2018-03-08 00:00:00&quot;, // 定金有效期开始时间
+                &quot;effectEtime&quot;: &quot;2018-03-30 23:59:59&quot;, // 定金有效期结束时间
+                &quot;money&quot;: 24600, // 涉及金额
+                &quot;opInfo&quot;: &quot;预付款转新增定金&quot;, // 操作内容
+                &quot;opTime&quot;: &quot;2018-03-08 15:00:00&quot;, // 操作时间
+                &quot;opUserName&quot;: &quot;崔洋洋&quot;, // 操作人
+                &quot;ratio&quot;: 100 // 定金比例
+            }
+        ],
+        &quot;pageNo&quot;: 1, // 页码
+        &quot;total&quot;: 0
+    }
+}
+</code></pre> <h3 id="cw-54-定金审核管理-列表"><a href="#cw-54-定金审核管理-列表" aria-hidden="true" class="header-anchor">#</a> CW-54. 定金审核管理-列表</h3> <h4 id="模块负责人-48"><a href="#模块负责人-48" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-48"><a href="#对接负责人-48" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-48"><a href="#请求-48" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/finance/deposit/askfors
+</code></pre> <h4 id="参数-48"><a href="#参数-48" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>keyword: 客户名称
+actionType
+status,
+buttonPermissionFlg,
+pageNo,
+pageSize
+</code></pre> <h4 id="调整类型枚举"><a href="#调整类型枚举" aria-hidden="true" class="header-anchor">#</a> 调整类型枚举</h4> <pre><code>DEPOSIT_ADD 定金新增
+DEPOSIT_HAND_ADD 定金手动充值
+DEPOSIT_HAND_REDUCE 定金手动扣款
+DEPOSIT_TRANSFER_BALANCE 定金转预付款
+BALANCE_TRANSFER_DEPOSIT 预付款转已有定金
+BALANCE_TRANSFER_NEW_DEPOSIT 预付款转新增定金
+DEPOSIT_TRANSFER_BANK 定金转出银行
+BANK_TRANSFER_NEW_DEPOSIT 银行转入新增定金
+BANK_TRANSFER_DEPOSIT 银行转入定金
+MODIFY_DEPOSIT_RULE 修改定金规则
+</code></pre> <h4 id="说明"><a href="#说明" aria-hidden="true" class="header-anchor">#</a> 说明</h4> <pre><code>只有当action_type == MODIFY_DEPOSIT_RULE、DEPOSIT_ADD、BALANCE_TRANSFER_NEW_DEPOSIT、BANK_TRANSFER_NEW_DEPOSIT时， &quot;规则调整&quot; 列才做显示
+</code></pre> <h4 id="响应-48"><a href="#响应-48" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [
+            {
+                &quot;refuseButton&quot;: false, // 拒绝按钮
+                &quot;passButton&quot;: false // 通过按钮
+            }
+        ],
+        &quot;datas&quot;: [
+            {
+                &quot;actionType&quot;: &quot;DEPOSIT_TRANSFER_BALANCE&quot;, // 调整类型
+                &quot;checkRemark&quot;: &quot;&quot;, // 审批备注
+                &quot;bankType&quot;: &quot;CCB&quot;, // 汇款银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+                &quot;receiveBankType&quot;: &quot;CCB&quot;, // 收款银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+                &quot;bankAccount&quot;: &quot;&quot;, // 打款人账号
+                &quot;bankAccountName&quot;: &quot;&quot;, // 打款人名称
+                &quot;receiveBankAccount&quot;: &quot;&quot;, // 收款人账号
+                &quot;receiveBankAccountName&quot;: &quot;&quot;, // 收款人名称
+                &quot;checkTime&quot;: &quot;2019-07-10 12:00:00&quot;, // 审批时间
+                &quot;checkUserName&quot;: &quot;&quot;, // 审批人名称
+                &quot;createRemark&quot;: &quot;&quot;, // 创建备注
+                &quot;createTime&quot;: &quot;2019-06-18 13:54:12&quot;, // 创建时间
+                &quot;createUserName&quot;: &quot;张亚婕&quot;, // 创建人名称
+                &quot;customer&quot;: {
+                    &quot;shortName&quot;: &quot;常州协瑞国际贸易有限公司&quot;, // 客户名称
+                },
+                &quot;depositId&quot;: 0,
+                &quot;effectEtime&quot;: &quot;2019-07-10 00:00:00&quot;, // 定金有效期结束时间
+                &quot;effectRange&quot;: &quot;111,333&quot;,
+                &quot;effectStime&quot;: &quot;2019-08-10 23:59:59&quot;, // 定金有效期开始时间
+                &quot;id&quot;: 1, // 申请主键id
+                &quot;money&quot;: -19292, // 金额
+                &quot;payTime&quot;: &quot;2019-07-15 12:30:00&quot;, // 充值/扣款时间
+                &quot;opAccount&quot;: 3885, // 客户id（客户账户id）
+                &quot;ratio&quot;: 20, // 比例
+                &quot;relationSid&quot;: 0, // 大于0则为&quot;银企&quot;
+                &quot;status&quot;: &quot;PASS&quot; // 审核状态 ASKFOR-待审核 PASS-通过 REFUSE-拒绝
+            },
+            ...
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: 0
+    }
+}
+</code></pre> <h3 id="cw-55-定金审核管理-拒绝"><a href="#cw-55-定金审核管理-拒绝" aria-hidden="true" class="header-anchor">#</a> CW-55. 定金审核管理-拒绝</h3> <h4 id="模块负责人-49"><a href="#模块负责人-49" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-49"><a href="#对接负责人-49" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-49"><a href="#请求-49" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/finance/deposit/askfors/{id}/refuse
+</code></pre> <h4 id="参数-49"><a href="#参数-49" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>id: 定金申请id
+body: 
+{
+    remark: &quot;123&quot;
+}
+</code></pre> <h4 id="响应-49"><a href="#响应-49" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cw-56-定金审核管理-通过"><a href="#cw-56-定金审核管理-通过" aria-hidden="true" class="header-anchor">#</a> CW-56. 定金审核管理-通过</h3> <h4 id="模块负责人-50"><a href="#模块负责人-50" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-50"><a href="#对接负责人-50" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-50"><a href="#请求-50" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/finance/deposit/askfors/{id}/pass
+</code></pre> <h4 id="参数-50"><a href="#参数-50" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>id: 定金申请id
+json body:
+    {
+        remark: 备注
+    }
+</code></pre> <h4 id="响应-50"><a href="#响应-50" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cw-57-定金审核管理-新增"><a href="#cw-57-定金审核管理-新增" aria-hidden="true" class="header-anchor">#</a> CW-57. 定金审核管理-新增</h3> <h4 id="模块负责人-51"><a href="#模块负责人-51" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-51"><a href="#对接负责人-51" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-51"><a href="#请求-51" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /v2/finance/deposit/askfors
+</code></pre> <h4 id="参数-51"><a href="#参数-51" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>页面各节点对应的请求数据结构
+1、定金管理 - 新增
+	（充值方式）手动充值: 
+		{
+			*opAccount: 1, // 客户账户id
+			*actionType: &quot;DEPOSIT_ADD&quot; // 固定传
+			*money: 10000, // 金额
+			*ratio: 90, // 比例 90%
+			*effectRange: &quot;111,222&quot; // 产品id范围 以&quot;,&quot;相隔
+			*effectStime: &quot;2019-07-11 10:10:00&quot; // 定金有效期开始时间
+			*effectEtime: &quot;2019-09-11 10:10:00&quot; // 定金有效期结束时间
+			*payTime: &quot;2019-07-10 00:00:00&quot; // 充值时间
+			createRemark: &quot;&quot; // 备注
+		}
+	（充值方式）银行转入
+		{
+			*opAccount: 1, // 客户账户id
+			*actionType: &quot;BANK_TRANSFER_NEW_DEPOSIT&quot; //固定传
+			*money: 10000, // 金额
+			*ratio: 90, // 比例 90%
+			*bankType: &quot;CCB&quot;, // 汇款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+            *receiveBankType: &quot;CCB&quot;, // 收款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+			*bankAccount: &quot;&quot;, // 汇款人账号
+			*bankAccountName: &quot;&quot;, // 汇款人名
+			*receiveBankAccount: &quot;&quot;, // 收款账号
+			*receiveBankAccountName: &quot;&quot;, // 收款人名
+			*effectRange: &quot;111,222&quot; // 产品id范围 以&quot;,&quot;相隔
+			*effectStime: &quot;2019-07-11 10:10:00&quot; // 定金有效期开始时间
+			*effectEtime: &quot;2019-09-11 10:10:00&quot; // 定金有效期结束时间
+			*payTime: &quot;2019-07-10 00:00:00&quot; // 充值时间
+			createRemark: &quot;&quot; // 备注
+		}
+	（充值方式）预付款转入
+		{
+			*opAccount: 1, // 客户账户id
+			*actionType: &quot;BALANCE_TRANSFER_NEW_DEPOSIT&quot; // 固定传
+			*money: 10000, // 金额
+			*ratio: 90, // 比例 90%
+			*effectRange: &quot;111,222&quot; // 产品id范围 以&quot;,&quot;相隔
+			*effectStime: &quot;2019-07-11 10:10:00&quot; // 定金有效期开始时间
+			*effectEtime: &quot;2019-09-11 10:10:00&quot; // 定金有效期开始时间
+			*payTime: &quot;2019-07-10 00:00:00&quot; // 充值时间
+			createRemark: &quot;&quot; // 备注
+		}
+2、定金管理 - 充值
+	（充值方式）手动充值
+		{
+			*depositId: 1 // 定金账户id
+			*opAccount: 1, // 客户账户id
+			*actionType: &quot;DEPOSIT_HAND_ADD&quot; // 固定传
+			*money: 10000, // 金额
+			*payTime: &quot;2019-07-10 00:00:00&quot; // 充值时间
+			createRemark: &quot;&quot; // 备注
+		}
+	（充值方式）银行转入
+		{
+			*depositId: 1, // 定金账户id
+			*opAccount: 1, // 客户账户id
+			*actionType: &quot;BANK_TRANSFER_DEPOSIT&quot; // 固定传
+			*money: 10000, // 金额
+			*bankType: &quot;CCB&quot;, // 汇款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+            *receiveBankType: &quot;CCB&quot;, // 收款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+			*bankAccount: &quot;&quot;, // 汇款账号
+			*bankAccountName: &quot;&quot;, // 汇款人名称
+			*receiveBankAccount: &quot;&quot;, // 收款账号
+			*receiveBankAccountName: &quot;&quot;, // 收款人名称
+			*payTime: &quot;2019-07-10 00:00:00&quot; // 充值时间
+			createRemark: &quot;&quot; // 备注
+		}
+	（充值方式）预付款转入
+		{
+			*depositId: 1, // 定金id
+			*opAccount: 1, // 客户账户id
+			*actionType: &quot;BALANCE_TRANSFER_DEPOSIT&quot; // 固定传
+			*money: 10000, // 金额
+			*payTime: &quot;2019-07-10 00:00:00&quot; // 充值时间
+			createRemark: &quot;&quot; // 备注
+		}
+3、定金管理 - 扣款
+	（扣款方式）手动扣款
+		{
+			*depositId: 1, // 定金id
+			*opAccount: 1, // 客户账户id
+			*actionType: &quot;DEPOSIT_HAND_REDUCE&quot; // 固定传
+			*money: 10000, // 金额
+			*payTime: &quot;2019-07-10 00:00:00&quot; // 扣款时间
+			createRemark: &quot;&quot; // 备注
+		}
+	（扣款方式）转出至银行
+		{
+			*depositId: 1, // 定金id
+			*opAccount: 1, // 客户账户id
+			*actionType: &quot;DEPOSIT_TRANSFER_BANK&quot; // 固定传
+			*money: 10000, // 金额
+			*bankType: &quot;CCB&quot;, // 收款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+            *receiveBankType: &quot;CCB&quot;, // 转出银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+			*bankAccount: &quot;&quot;, // 收款账号
+			*bankAccountName: &quot;&quot;, // 收款人名称
+			*receiveBankAccount: &quot;&quot;, // 转出账号
+			*receiveBankAccountName: &quot;&quot;, // 转出人名称
+			createRemark: &quot;&quot; // 备注
+		}
+	（扣款方式）转出至预付款
+		{
+			*depositId: 1, // 定金id
+			*opAccount: 1, // 客户账户id
+			*actionType: &quot;DEPOSIT_TRANSFER_BALANCE&quot; // 固定传
+			*money: 10000, // 金额
+			*payTime: &quot;2019-07-10 00:00:00&quot; // 扣款时间
+			createRemark: &quot;&quot; // 备注
+		}
+4、定金管理 - 修改规则信息
+	{
+		*depositId: 1, // 定金id
+		*opAccount: 2, // 客户账号id
+		*actionType: &quot;MODIFY_DEPOSIT_RULE&quot; // 固定传
+		*ratio: 90, // 比例 90%
+		*effectRange: &quot;111,222&quot; // 产品id范围 以&quot;,&quot;相隔
+		*effectStime: &quot;2019-07-11 10:10:00&quot; // 定金有效期开始时间
+		*effectEtime: &quot;2019-09-11 10:10:00&quot; // 定金有效期结束时间
+		createRemark: &quot;&quot; // 备注
+	}
+5、资金账户 - 账户信息 - 定金充值
+	（充值方式）手动充值
+			{
+				*depositId: 1, // 定金id
+				*opAccount: 1, // 客户账户id
+				*actionType: &quot;DEPOSIT_HAND_ADD&quot; // 固定传
+				*money: 10000, // 金额
+				*payTime: &quot;2019-07-10 00:00:00&quot; // 充值时间
+				createRemark: &quot;&quot; // 备注
+			}
+	（充值方式）银行转入
+			{
+				*depositId: 1, // 定金id
+				*opAccount: 1, // 客户账户id
+				*actionType: &quot;BANK_TRANSFER_DEPOSIT&quot; // 固定传
+				*money: 10000, // 金额
+				*bankType: &quot;CCB&quot;, // 汇款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+                *receiveBankType: &quot;CCB&quot;, // 收款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+				*bankAccount: &quot;&quot;, // 汇款账号
+				*bankAccountName: &quot;&quot;, // 汇款人名称
+				*receiveBankAccount: &quot;&quot;, // 收款账户
+				*receiveBankAccountName: &quot;&quot;, // 收款人名称
+				*payTime: &quot;2019-07-10 00:00:00&quot; // 充值时间
+				createRemark: &quot;&quot; // 备注
+			}
+	（充值方式）预付款转入
+			{
+				*depositId: 1, // 定金id
+				*opAccount: 1, // 客户账户id
+				*actionType: &quot;BALANCE_TRANSFER_DEPOSIT&quot; // 固定传
+				*money: 10000, // 金额
+				*payTime: &quot;2019-07-10 00:00:00&quot; // 充值时间
+				createRemark: &quot;&quot; // 备注
+			}
+6、资金账户 - 账户信息 - 定金扣款
+	（扣款方式）手动扣款
+		{
+			*depositId: 1, // 定金id
+			*opAccount: 1, // 客户账户id
+			*actionType: &quot;DEPOSIT_HAND_REDUCE&quot; // 固定传
+			*money: 10000, // 金额
+			*payTime: &quot;2019-07-10 00:00:00&quot; // 扣款时间
+			createRemark: &quot;&quot; // 备注
+		}
+	（扣款方式）转出至银行
+		{
+			*depositId: 1, // 定金id
+			*opAccount: 1, // 客户账户id
+			*actionType: &quot;DEPOSIT_TRANSFER_BANK&quot; // 固定传
+			*money: 10000, // 金额
+			*bankType: &quot;CCB&quot;, // 收款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+            *receiveBankType: &quot;CCB&quot;, // 转出银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+			*bankAccount: &quot;&quot;, // 收款账号
+			*bankAccountName: &quot;&quot;, // 收款人名称
+			*payTime: &quot;2019-07-10 00:00:00&quot; // 扣款时间
+			*receiveBankAccount: &quot;&quot;, // 转出帐号
+			*receiveBankAccountName: &quot;&quot;, // 转出人名称
+			createRemark: &quot;&quot; // 备注
+		}
+	（扣款方式）转出至预付款
+		{
+			*depositId: 1, // 定金id
+			*opAccount: 1, // 客户账户id
+			*actionType: &quot;DEPOSIT_TRANSFER_BALANCE&quot; // 固定传
+			*money: 10000, // 金额
+			*payTime: &quot;2019-07-10 00:00:00&quot; // 扣款时间
+			createRemark: &quot;&quot; // 备注
+		}
+7、银企互联 - 入款
+	（充值账户）定金 - （定金类型）充值至已有定金
+		{
+			*depositId: 1, // 定金id
+			*opAccount: 1, // 客户账户id
+			*actionType: &quot;BANK_TRANSFER_DEPOSIT&quot; // 固定传
+			*money: 10000, // 金额
+			*bankType: &quot;ABC&quot;, // 固定传
+            *receiveBankType: &quot;ABC&quot;, // 固定传
+			*bankAccount: &quot;&quot;, // 汇款账号
+			*bankAccountName: &quot;&quot;, // 汇款人名称 
+			*receiveBankAccount: &quot;&quot;, // 收款账号
+			*receiveBankAccountName: &quot;&quot;, // 收款人名称
+			*payTime: &quot;2019-07-10 00:00:00&quot; // 充值时间
+			*************
+		    *****relationSid: 1 // 银企互联数据id
+			*************
+			createRemark: &quot;&quot; // 备注
+		}
+	（充值账户）定金 - （定金类型）充值至新增定金
+		{
+			*opAccount: 1, // 客户账户id
+			*actionType: &quot;BANK_TRANSFER_NEW_DEPOSIT&quot; // 固定传
+			*money: 10000, // 金额
+			*ratio: 90, // 比例90%
+			*money: 10000, // 金额
+            *bankType: &quot;ABC&quot;, // 固定传
+            *receiveBankType: &quot;ABC&quot;, // 固定传
+			*bankAccount: &quot;&quot;, // 汇款账号
+			*bankAccountName: &quot;&quot;, // 汇款人名称
+			*receiveBankAccount: &quot;&quot;, // 收款账号
+			*receiveBankAccountName: &quot;&quot;, // 收款人名称
+			*effectRange: &quot;111,222&quot; // 产品id范围 以&quot;,&quot;相隔
+			*effectStime: &quot;2019-07-11 10:10:00&quot; // 定金有效期开始时间
+			*effectEtime: &quot;2019-09-11 10:10:00&quot; // 定金有效期结束时间
+			*payTime: &quot;2019-07-10 00:00:00&quot; // 充值时间
+			*************
+		    *****relationSid: 1 // 银企互联数据id
+			*************
+			createRemark: &quot;&quot; // 备注
+		}
+8、资金账户 - 账户信息 - 预付款扣款
+    （扣款方式）转出至定金 -（定金类型）转出至已有定金
+    	{
+    		*depositId: 1, // 定金id
+    		*opAccount: 1, // 客户账户id
+    		*actionType: &quot;BALANCE_TRANSFER_DEPOSIT&quot; // 固定传
+    		*money: 10000, // 金额
+    		*payTime: &quot;2019-07-10 00:00:00&quot; // 充值时间
+    		createRemark: &quot;&quot; // 备注
+    	}
+    （扣款方式）转出至定金 - （定金类型）转出至新增定金
+    	{
+    		*opAccount: 1, // 客户账户id
+    		*actionType: &quot;BALANCE_TRANSFER_NEW_DEPOSIT&quot; // 固定传
+    		*money: 10000, // 金额
+    		*ratio: 90, // 比例90%
+    		*effectRange: &quot;111,222&quot; // 产品id范围 以&quot;,&quot;相隔
+    		*effectStime: &quot;2019-07-11 10:10:00&quot; // 定金有效期开始时间
+    		*effectEtime: &quot;2019-09-11 10:10:00&quot; // 定金有效期结束时间
+    		*payTime: &quot;2019-07-10 00:00:00&quot; // 充值时间
+    		createRemark: &quot;&quot; // 备注
+    	}
+9、资金账户 - 账户信息 - 预付款充值
+    （充值方式）定金转入
+        {
+        	*depositId: 1, // 定金id
+        	*opAccount: 1, // 客户账户id
+        	*actionType: &quot;DEPOSIT_TRANSFER_BALANCE&quot; // 固定传
+        	*money: 10000, // 金额
+        	*payTime: &quot;2019-07-10 00:00:00&quot; // 扣款时间
+        	createRemark: &quot;&quot; // 备注
+        }
+10、资金账户 - 充值
+    （充值账户）预付款 - （充值方式）定金转入
+            {
+            	*depositId: 1, // 定金id
+            	*opAccount: 1, // 客户账户id
+            	*actionType: &quot;DEPOSIT_TRANSFER_BALANCE&quot; // 固定传
+            	*money: 10000, // 金额
+            	*payTime: &quot;2019-07-10 00:00:00&quot; // 扣款时间
+            	createRemark: &quot;&quot; // 备注
+            }
+    （充值账户）定金 - （充值方式）手动充值 - （定金类型）充值至已有定金
+            {
+            	*depositId: 1 // 定金账户id
+            	*opAccount: 1, // 客户账户id
+            	*actionType: &quot;DEPOSIT_HAND_ADD&quot; // 固定传
+            	*money: 10000, // 金额
+            	*payTime: &quot;2019-07-10 00:00:00&quot; // 充值时间
+            	createRemark: &quot;&quot; // 备注
+            }
+    （充值账户）定金 - （充值方式）手动充值 - （定金类型）充值至新增定金
+            {
+            	*opAccount: 1, // 客户账户id
+            	*actionType: &quot;DEPOSIT_ADD&quot; // 固定传
+            	*money: 10000, // 金额
+            	*ratio: 90, // 比例 90%
+            	*effectRange: &quot;111,222&quot; // 产品id范围 以&quot;,&quot;相隔
+            	*effectStime: &quot;2019-07-11 10:10:00&quot; // 定金有效期开始时间
+            	*effectEtime: &quot;2019-09-11 10:10:00&quot; // 定金有效期结束时间
+            	*payTime: &quot;2019-07-10 00:00:00&quot; // 充值时间
+            	createRemark: &quot;&quot; // 备注
+            }
+    （充值账户）定金 - （充值方式）银行转入 - （定金类型）充值至已有定金
+            {
+            	*depositId: 1, // 定金id
+            	*opAccount: 1, // 客户账户id
+            	*actionType: &quot;BANK_TRANSFER_DEPOSIT&quot; // 固定传
+            	*money: 10000, // 金额
+            	*bankType: &quot;CCB&quot;, // 汇款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+                *receiveBankType: &quot;CCB&quot;, // 收款银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+            	*bankAccount: &quot;&quot;, // 汇款账号
+            	*bankAccountName: &quot;&quot;, // 汇款人名称
+            	*receiveBankAccount: &quot;&quot;, // 收款账户
+            	*receiveBankAccountName: &quot;&quot;, // 收款人名称
+            	*payTime: &quot;2019-07-10 00:00:00&quot; // 充值时间
+            	createRemark: &quot;&quot; // 备注
+            }
+    （充值账户）定金 - （充值方式）银行转入 - （定金类型）充值至新增定金
+            {
+            	*opAccount: 1, // 客户账户id
+            	*actionType: &quot;BANK_TRANSFER_NEW_DEPOSIT&quot; // 固定传
+            	*money: 10000, // 金额
+            	*ratio: 90, // 比例90%
+            	*effectRange: &quot;111,222&quot; // 产品id范围 以&quot;,&quot;相隔
+            	*effectStime: &quot;2019-07-11 10:10:00&quot; // 定金有效期开始时间
+            	*effectEtime: &quot;2019-09-11 10:10:00&quot; // 定金有效期结束时间
+            	*payTime: &quot;2019-07-10 00:00:00&quot; // 充值时间
+            	*bankType: &quot;CCB&quot;, // 汇款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+                *receiveBankType: &quot;CCB&quot;, // 收款银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+            	*bankAccount: &quot;&quot;, // 汇款账号
+            	*bankAccountName: &quot;&quot;, // 汇款人名称
+            	*receiveBankAccount: &quot;&quot;, // 收款账号
+            	*receiveBankAccountName: &quot;&quot;, // 收款人名称
+            	createRemark: &quot;&quot; // 备注
+            }
+    （充值账户）订金 - （充值方式）预付款转入 - （定金类型）充值至已有订金
+            {
+            	*depositId: 1, // 订金id
+            	*opAccount: 1, // 客户账户id
+            	*actionType: &quot;BALANCE_TRANSFER_DEPOSIT&quot; // 固定传
+            	*money: 10000, // 金额
+            	*payTime: &quot;2019-07-10 00:00:00&quot; // 充值时间
+            	createRemark: &quot;&quot; // 备注
+            }
+    （充值账户）订金 - （充值方式）预付款转入 - （定金类型）充值至新增订金
+            {
+            	*opAccount: 1, // 客户账户id
+            	*actionType: &quot;BALANCE_TRANSFER_NEW_DEPOSIT&quot; // 固定传
+            	*money: 10000, // 金额
+            	*ratio: 90, // 比例90%
+            	*effectRange: &quot;111,222&quot; // 产品id范围 以&quot;,&quot;相隔
+            	*effectStime: &quot;2019-07-11 10:10:00&quot; // 订金有效期开始时间
+            	*effectEtime: &quot;2019-09-11 10:10:00&quot; // 订金有效期结束时间
+            	*payTime: &quot;2019-07-10 00:00:00&quot; // 充值时间
+            	createRemark: &quot;&quot; // 备注
+            }
+11、资金账户 - 扣款
+    （扣款账户）预付款 - （扣款方式）转出至订金 - （定金类型）转出至已有订金
+        {
+        	*depositId: 1 // 订金账户id
+        	*opAccount: 1, // 客户账户id
+        	*actionType: &quot;BALANCE_TRANSFER_DEPOSIT&quot; // 固定传
+        	*money: 10000, // 金额
+        	*payTime: &quot;2019-07-10 00:00:00&quot; // 充值时间
+        	createRemark: &quot;&quot; // 备注
+        }
+    （扣款账户）预付款 - （扣款方式）转出至订金 - （定金类型）转出至新增订金
+        {
+        	*opAccount: 1, // 客户账户id
+        	*actionType: &quot;BALANCE_TRANSFER_NEW_DEPOSIT&quot; // 固定传
+        	*money: 10000, // 金额
+        	*ratio: 90, // 比例 90%
+        	*effectRange: &quot;111,222&quot; // 产品id范围 以&quot;,&quot;相隔
+        	*effectStime: &quot;2019-07-11 10:10:00&quot; // 订金有效期开始时间
+        	*effectEtime: &quot;2019-09-11 10:10:00&quot; // 订金有效期结束时间
+        	*payTime: &quot;2019-07-10 00:00:00&quot; // 充值时间
+        	createRemark: &quot;&quot; // 备注
+        }
+    （扣款账户）订金 - （扣款方式）手动扣款
+        {
+        	*depositId: 1, // 订金id
+        	*opAccount: 1, // 客户账户id
+        	*actionType: &quot;DEPOSIT_HAND_REDUCE&quot; // 固定传
+        	*money: 10000, // 金额
+        	*payTime: &quot;2019-07-10 00:00:00&quot; // 扣款时间
+        	createRemark: &quot;&quot; // 备注
+        }
+    （扣款账户）订金 - （扣款方式）转出至银行
+        {
+        	*depositId: 1, // 订金id
+        	*opAccount: 1, // 客户账户id
+        	*actionType: &quot;DEPOSIT_TRANSFER_BANK&quot; // 固定传
+        	*money: 10000, // 金额
+        	*bankType: &quot;CCB&quot;, // 收款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+            *receiveBankType: &quot;CCB&quot;, // 转出银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+        	*bankAccount: &quot;&quot;, // 收款账号
+        	*bankAccountName: &quot;&quot;, // 收款人名称
+        	*receiveBankAccount: &quot;&quot;, // 转出账号
+        	*receiveBankAccountName: &quot;&quot;, // 转出人名称
+        	createRemark: &quot;&quot; // 备注
+        }
+    （扣款账户）订金 - （扣款方式）转出至预付款
+        {
+        	*depositId: 1, // 订金id
+        	*opAccount: 1, // 客户账户id
+        	*actionType: &quot;DEPOSIT_TRANSFER_BALANCE&quot; // 固定传
+        	*money: 10000, // 金额
+        	*payTime: &quot;2019-07-10 00:00:00&quot; // 扣款时间
+        	createRemark: &quot;&quot; // 备注
+        }
+12、银企互联 - 银行汇款
+    	（充值账户）定金 - （定金类型）充值至已有定金
+    		{
+    			*depositId: 1, // 定金id
+    			*opAccount: 1, // 客户账户id
+    			*actionType: &quot;BANK_TRANSFER_DEPOSIT&quot; // 固定传
+    			*money: 10000, // 金额
+    			*bankType: &quot;ABC&quot;, // 汇款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+                *receiveBankType: &quot;ABC&quot;, // 收款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+    			*bankAccount: &quot;&quot;, // 汇款账号
+    			*bankAccountName: &quot;&quot;, // 汇款人名称 
+    			*receiveBankAccount: &quot;&quot;, // 收款账号
+    			*receiveBankAccountName: &quot;&quot;, // 收款人名称
+    			*payTime: &quot;2019-07-10 00:00:00&quot; // 充值时间
+    			createRemark: &quot;&quot; // 备注
+    		}
+    	（充值账户）定金 - （定金类型）充值至新增定金
+    		{
+    			*opAccount: 1, // 客户账户id
+    			*actionType: &quot;BANK_TRANSFER_NEW_DEPOSIT&quot; // 固定传
+    			*money: 10000, // 金额
+    			*ratio: 90, // 比例90%
+    			*money: 10000, // 金额
+                *bankType: &quot;ABC&quot;, // 汇款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+                *receiveBankType: &quot;ABC&quot;, // 收款人银行类别 ABC 农业银行 ICBC 工商银行 CCB 建设银行 CHAOS 其它
+    			*bankAccount: &quot;&quot;, // 汇款账号
+    			*bankAccountName: &quot;&quot;, // 汇款人名称
+    			*receiveBankAccount: &quot;&quot;, // 收款账号
+    			*receiveBankAccountName: &quot;&quot;, // 收款人名称
+    			*effectRange: &quot;111,222&quot; // 产品id范围 以&quot;,&quot;相隔
+    			*effectStime: &quot;2019-07-11 10:10:00&quot; // 定金有效期开始时间
+    			*effectEtime: &quot;2019-09-11 10:10:00&quot; // 定金有效期结束时间
+    			*payTime: &quot;2019-07-10 00:00:00&quot; // 充值时间
+    			createRemark: &quot;&quot; // 备注
+    		}
+</code></pre> <h4 id="响应-51"><a href="#响应-51" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cw-58-订金审核管理-获取规则详情"><a href="#cw-58-订金审核管理-获取规则详情" aria-hidden="true" class="header-anchor">#</a> CW-58. 订金审核管理-获取规则详情</h3> <h4 id="模块负责人-52"><a href="#模块负责人-52" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-52"><a href="#对接负责人-52" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-52"><a href="#请求-52" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/finance/deposit/askfors/{id}/rules
+</code></pre> <h4 id="参数-52"><a href="#参数-52" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>id: 111 // 申请id
+</code></pre> <h4 id="响应-52"><a href="#响应-52" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;checkUser&quot;: 518,
+        &quot;checkUserName&quot;: &quot;系统操作&quot;,
+        &quot;createRemark&quot;: &quot;我就是测试撒&quot;, // 备注
+        &quot;createRole&quot;: 1,
+        &quot;createTime&quot;: &quot;2019-07-12 14:15:54&quot;,
+        &quot;createUser&quot;: 518,
+        &quot;createUserName&quot;: &quot;孙启萌&quot;,
+        &quot;customer&quot;: {
+            &quot;shortName&quot;: &quot;珠海恒海食品有限公司&quot;, // 客户名称
+        },
+        &quot;deleteFlg&quot;: 0,
+        &quot;depositId&quot;: 0,
+        &quot;effectEtime&quot;: &quot;2019-09-11 10:10:00&quot;, // 订金有效期结束时间
+        &quot;effectRange&quot;: &quot;4691,4687&quot;,
+        &quot;effectStime&quot;: &quot;2019-07-11 10:10:00&quot;, // 订金有效期开始时间
+        &quot;id&quot;: 544,
+        &quot;money&quot;: 10000,
+        &quot;opAccount&quot;: 1,
+        &quot;payTime&quot;: &quot;2019-07-10 00:00:00.0&quot;,
+        &quot;products&quot;: [ // 产品列表
+            {
+                &quot;customFlgMore&quot;: 1, // 0 普通品  1 普通定制品  2 专属定制品
+                &quot;mainImg&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/ANET20190314104529003-3509.jpg&quot;, // 主图
+                &quot;name&quot;: &quot;洋风椰蓉榴莲大福 &quot;, // 品名
+                &quot;pno&quot;: &quot;1935&quot;, // 品号
+                &quot;status&quot;: &quot;LOCK&quot;, // NORMAL 上架 LOCK 下架
+            },
+            ...
+        ],
+        &quot;ratio&quot;: 90, // 订金比例
+    }
+}
+</code></pre> <h3 id="cw-59-订金管理-获取定金对应的产品列表"><a href="#cw-59-订金管理-获取定金对应的产品列表" aria-hidden="true" class="header-anchor">#</a> CW-59. 订金管理-获取定金对应的产品列表</h3> <h4 id="模块负责人-53"><a href="#模块负责人-53" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-53"><a href="#对接负责人-53" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-53"><a href="#请求-53" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/finance/deposits/{id}/products
+</code></pre> <h4 id="参数-53"><a href="#参数-53" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>id: 111 // 定金主键id
+</code></pre> <h4 id="响应-53"><a href="#响应-53" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;datas&quot;: [
+            {
+                &quot;customFlgMore&quot;: 1, // 0 普通品  1 普通定制品  2 专属定制品
+                &quot;mainImg&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/146fb8cee80515f7178d086966cae4d7.jpg&quot;, // 主图
+                &quot;name&quot;: &quot;原味羊肉串&quot;, // 品名
+                &quot;pno&quot;: &quot;A471&quot;, // 品号
+                &quot;status&quot;: &quot;LOCK&quot; // NORMAL 上架 LOCK 下架
+            }
+        ],
+    }
+}
+</code></pre> <h3 id="cw-71-支付管理-pc端支付，不允许补款"><a href="#cw-71-支付管理-pc端支付，不允许补款" aria-hidden="true" class="header-anchor">#</a> CW-71. 支付管理-PC端支付，不允许补款</h3> <h4 id="模块负责人-54"><a href="#模块负责人-54" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-54"><a href="#请求-54" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/finance/paystrategy/pay
+</code></pre> <h4 id="参数-54"><a href="#参数-54" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+&quot;orderId&quot;:&quot;SA19081500001&quot;,
+&quot;opAccount&quot;:&quot;33303&quot;
+}
+</code></pre> <h4 id="响应-54"><a href="#响应-54" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{&quot;code&quot;:100000,&quot;msg&quot;:&quot;&quot;,&quot;data&quot;:null}
+</code></pre> <h3 id="cw-72-支付管理-sa单取消结款"><a href="#cw-72-支付管理-sa单取消结款" aria-hidden="true" class="header-anchor">#</a> CW-72. 支付管理-SA单取消结款</h3> <h4 id="模块负责人-55"><a href="#模块负责人-55" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-55"><a href="#请求-55" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/finance/paystrategy/cancelPay
+</code></pre> <h4 id="参数-55"><a href="#参数-55" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+&quot;orderId&quot;:&quot;SA19081500001&quot;,
+&quot;opAccount&quot;:&quot;33303&quot;
+}
+</code></pre> <h4 id="响应-55"><a href="#响应-55" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{&quot;code&quot;:100000,&quot;msg&quot;:&quot;&quot;,&quot;data&quot;:null}
+</code></pre> <h3 id="cw-73-支付管理-销售退单-sr单"><a href="#cw-73-支付管理-销售退单-sr单" aria-hidden="true" class="header-anchor">#</a> CW-73. 支付管理-销售退单(SR单)</h3> <h4 id="模块负责人-56"><a href="#模块负责人-56" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-56"><a href="#请求-56" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/finance/paystrategy/srReturnPay
+</code></pre> <h4 id="参数-56"><a href="#参数-56" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+&quot;orderId&quot;:&quot;SA19081500001&quot;,
+&quot;opAccount&quot;:&quot;33303&quot;
+}
+</code></pre> <h4 id="响应-56"><a href="#响应-56" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{&quot;code&quot;:100000,&quot;msg&quot;:&quot;&quot;,&quot;data&quot;:null}
+</code></pre> <h3 id="cw-74-支付管理-调价单-ap单"><a href="#cw-74-支付管理-调价单-ap单" aria-hidden="true" class="header-anchor">#</a> CW-74. 支付管理-调价单(AP单)</h3> <h4 id="模块负责人-57"><a href="#模块负责人-57" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-57"><a href="#请求-57" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/finance/paystrategy/apReturnPay
+</code></pre> <h4 id="参数-57"><a href="#参数-57" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+&quot;orderId&quot;:&quot;SA19081500001&quot;,
+&quot;opAccount&quot;:&quot;33303&quot;
+}
+</code></pre> <h4 id="响应-57"><a href="#响应-57" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{&quot;code&quot;:100000,&quot;msg&quot;:&quot;&quot;,&quot;data&quot;:null}
+</code></pre> <h3 id="cw-75-资金账户流水导出"><a href="#cw-75-资金账户流水导出" aria-hidden="true" class="header-anchor">#</a> CW-75.资金账户流水导出</h3> <h4 id="模块负责人-58"><a href="#模块负责人-58" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-58"><a href="#请求-58" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /finance/flow/export
+</code></pre> <h4 id="参数-58"><a href="#参数-58" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>keyword  //客户名称/客户手机号
+status   //客户状态 NORMAL 正常 DELETE 删除
+sDate    //查询开始日期 2019-08-15
+eDate    //查询结束日期
+opAccount   //客户id
+*checkCode //下载授权码
+</code></pre> <h4 id="响应-58"><a href="#响应-58" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>导出文件
+</code></pre> <h3 id="cw-76-app端根据customerid获取用户流水信息"><a href="#cw-76-app端根据customerid获取用户流水信息" aria-hidden="true" class="header-anchor">#</a> CW-76.app端根据customerId获取用户流水信息</h3> <h4 id="模块负责人-59"><a href="#模块负责人-59" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-59"><a href="#请求-59" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /user/transaction
+</code></pre> <h4 id="参数-59"><a href="#参数-59" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>customerId  //客户id
+page //页码  默认1  如果page不等于1，  响应内容为空集合
+</code></pre> <h4 id="响应-59"><a href="#响应-59" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>[
+    {
+        &quot;list&quot;: [ //流水集合
+            {
+                &quot;in_amount&quot;: 91580, //入账金额
+                &quot;out_amount&quot;: 0, //出账金额
+                &quot;paytime&quot;: &quot;2018-04-27 17:11:06&quot;, //支付时间
+                &quot;reason&quot;: &quot;人工操作 4.27建行&quot;, //备注
+                &quot;remark&quot;: &quot;&quot;
+            }
+            ],
+        &quot;month&quot;: &quot;04&quot;, //月份
+        &quot;year&quot;: &quot;2018&quot; //年份
+    } 
+]
+</code></pre> <h3 id="cw-77-根据银行账户号查询关联的客户信息"><a href="#cw-77-根据银行账户号查询关联的客户信息" aria-hidden="true" class="header-anchor">#</a> CW-77.根据银行账户号查询关联的客户信息</h3> <h4 id="模块负责人-60"><a href="#模块负责人-60" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-60"><a href="#请求-60" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /finance/bes/bankaccount/list
+</code></pre> <h4 id="参数-60"><a href="#参数-60" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>account //银行账户号
+pageNo  //页码
+pageSize //页数据数
+</code></pre> <h4 id="响应-60"><a href="#响应-60" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissionPage&quot;: {},
+        &quot;buttonPermissions&quot;: null,
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;customerLite&quot;: {
+                    &quot;businessunit&quot;: 89,
+                    &quot;businessunitName&quot;: &quot;东北&quot;,
+                    &quot;companyName&quot;: &quot;沈阳市大东区碧明水果批发商行\t \t&quot;,
+                    &quot;customerId&quot;: 32922,  //客户编号
+                    &quot;isParent&quot;: 0,
+                    &quot;isStockLimit&quot;: 0,
+                    &quot;platformId&quot;: 1,
+                    &quot;shortName&quot;: &quot;沈阳市大东区碧明水果批发商行\t \t&quot;, // 客户名称
+                    &quot;srRoleId&quot;: 40,
+                    &quot;srRoleName&quot;: &quot;高成举&quot;,
+                    &quot;ssRoleId&quot;: 29296,
+                    &quot;ssRoleName&quot;: &quot;赵馨妍&quot;,
+                    &quot;state&quot;: &quot;NORMAL&quot;,  //客户状态 NORMAL 正常 DELETE 删除
+                    &quot;type&quot;: &quot;P&quot;
+                },
+                &quot;financeAccountBank&quot;: {
+                    &quot;bankAccount&quot;: &quot;622908426071716410&quot;,
+                    &quot;bankAccountName&quot;: &quot;魏娜&quot;, // 开户名
+                    &quot;bankName&quot;: &quot;建行&quot;, // 银行名称
+                    &quot;bankType&quot;: &quot;CHAOS&quot;, // 银行类型 ABC 农行 ICBC 工商银行 CCB 建设银行 CHAOS 未区分
+                    &quot;bankTypeName&quot;: &quot;其它&quot;, // 银行类型名
+                    &quot;createRole&quot;: 0,
+                    &quot;createTime&quot;: &quot;2019-03-16&quot;,
+                    &quot;createUser&quot;: 0,
+                    &quot;createUserName&quot;: &quot;刘路敏&quot;,
+                    &quot;deleteFlg&quot;: 0,
+                    &quot;id&quot;: 8933,
+                    &quot;opAccount&quot;: 32922,
+                    &quot;platformId&quot;: 1,
+                    &quot;status&quot;: &quot;NORMAL&quot;
+                },
+                &quot;opAccount&quot;: 32922 //客户资金账户号
+            }
+            ],
+        &quot;pageNo&quot;: 0,
+        &quot;total&quot;: 0
+    }
+}</code></pre></div> <div class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">11/4/2019, 5:24:55 PM</span></div></div> <!----> </div> <!----></div></div>
+    <script src="/work-a-api-v2/assets/js/app.a6722e02.js" defer></script><script src="/work-a-api-v2/assets/js/15.9349f875.js" defer></script>
+  </body>
+</html>

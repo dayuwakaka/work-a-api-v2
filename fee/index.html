@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>费用管理 | ADoc</title>
+    <meta name="description" content="A团队开发文档">
+    
+    
+    <link rel="preload" href="/work-a-api-v2/assets/css/0.styles.35f149a3.css" as="style"><link rel="preload" href="/work-a-api-v2/assets/js/app.a6722e02.js" as="script"><link rel="preload" href="/work-a-api-v2/assets/js/13.3651904d.js" as="script"><link rel="prefetch" href="/work-a-api-v2/assets/js/10.1a10445b.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/11.42f498c9.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/12.0c967175.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/14.f08b1cf2.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/15.9349f875.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/16.12c6bae3.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/17.adca03bd.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/18.c998838e.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/19.3918a1ff.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/2.a0ea3f6c.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/20.90e7db96.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/21.107ae2fe.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/22.74755e26.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/23.311dc752.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/24.f5a0db0c.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/25.930c2322.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/26.2d5db294.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/27.2fe9193a.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/28.c950b06d.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/29.c08b73a8.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/3.d1df23fe.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/30.03105b2a.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/31.e5254695.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/32.f61b2cc2.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/4.0f0014c9.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/5.95ee4e26.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/6.a8f01348.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/7.88947b66.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/8.0d5a3953.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/9.20882588.js">
+    <link rel="stylesheet" href="/work-a-api-v2/assets/css/0.styles.35f149a3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/work-a-api-v2/" class="home-link router-link-active"><!----> <span class="site-name">ADoc</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/work-a-api-v2/wms/" class="nav-link">WMS仓储</a></div><div class="nav-item"><a href="/work-a-api-v2/ufo/" class="nav-link">金蝶</a></div><div class="nav-item"><a href="/work-a-api-v2/addon/" class="nav-link">插件</a></div><div class="nav-item"><a href="/work-a-api-v2/outer/" class="nav-link">合作商</a></div><div class="nav-item"><a href="/work-a-api-v2/stockup/" class="nav-link">备货</a></div><div class="nav-item"><a href="/work-a-api-v2/order/" class="nav-link">订单</a></div><div class="nav-item"><a href="/work-a-api-v2/finance/" class="nav-link">财务</a></div><div class="nav-item"><a href="/work-a-api-v2/supplier/" class="nav-link">供应商</a></div><div class="nav-item"><a href="/work-a-api-v2/invoice/" class="nav-link">发票</a></div><div class="nav-item"><a href="/work-a-api-v2/customer/" class="nav-link">客户</a></div><div class="nav-item"><a href="/work-a-api-v2/product/" class="nav-link">产品</a></div><div class="nav-item"><a href="/work-a-api-v2/auth/" class="nav-link">权限</a></div><div class="nav-item"><a href="/work-a-api-v2/contract/" class="nav-link">销售优惠</a></div><div class="nav-item"><a href="/work-a-api-v2/price/" class="nav-link">价格</a></div><div class="nav-item"><a href="/work-a-api-v2/freight/" class="nav-link">运费</a></div><div class="nav-item"><a href="/work-a-api-v2/market/" class="nav-link">营销</a></div><div class="nav-item"><a href="/work-a-api-v2/cookbook/" class="nav-link">菜谱</a></div><div class="nav-item"><a href="/work-a-api-v2/common/" class="nav-link">基础</a></div><div class="nav-item"><a href="/work-a-api-v2/app/" class="nav-link">APP</a></div><div class="nav-item"><a href="/work-a-api-v2/depot/" class="nav-link">库存</a></div><div class="nav-item"><a href="/work-a-api-v2/fee/" class="nav-link router-link-exact-active router-link-active">费用</a></div><div class="nav-item"><a href="/work-a-api-v2/notice/" class="nav-link">消息通知（作废）</a></div><div class="nav-item"><a href="/work-a-api-v2/changelog/" class="nav-link">变更</a></div><div class="nav-item"><a href="/work-a-api-v2/feign/" class="nav-link">代理接口</a></div><div class="nav-item"><a href="/work-a-api-v2/other/" class="nav-link">其它</a></div><div class="nav-item"><a href="/work-a-api-v2/sta/" class="nav-link">统计</a></div><div class="nav-item"><a href="/work-a-api-v2/message/" class="nav-link">消息</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/work-a-api-v2/wms/" class="nav-link">WMS仓储</a></div><div class="nav-item"><a href="/work-a-api-v2/ufo/" class="nav-link">金蝶</a></div><div class="nav-item"><a href="/work-a-api-v2/addon/" class="nav-link">插件</a></div><div class="nav-item"><a href="/work-a-api-v2/outer/" class="nav-link">合作商</a></div><div class="nav-item"><a href="/work-a-api-v2/stockup/" class="nav-link">备货</a></div><div class="nav-item"><a href="/work-a-api-v2/order/" class="nav-link">订单</a></div><div class="nav-item"><a href="/work-a-api-v2/finance/" class="nav-link">财务</a></div><div class="nav-item"><a href="/work-a-api-v2/supplier/" class="nav-link">供应商</a></div><div class="nav-item"><a href="/work-a-api-v2/invoice/" class="nav-link">发票</a></div><div class="nav-item"><a href="/work-a-api-v2/customer/" class="nav-link">客户</a></div><div class="nav-item"><a href="/work-a-api-v2/product/" class="nav-link">产品</a></div><div class="nav-item"><a href="/work-a-api-v2/auth/" class="nav-link">权限</a></div><div class="nav-item"><a href="/work-a-api-v2/contract/" class="nav-link">销售优惠</a></div><div class="nav-item"><a href="/work-a-api-v2/price/" class="nav-link">价格</a></div><div class="nav-item"><a href="/work-a-api-v2/freight/" class="nav-link">运费</a></div><div class="nav-item"><a href="/work-a-api-v2/market/" class="nav-link">营销</a></div><div class="nav-item"><a href="/work-a-api-v2/cookbook/" class="nav-link">菜谱</a></div><div class="nav-item"><a href="/work-a-api-v2/common/" class="nav-link">基础</a></div><div class="nav-item"><a href="/work-a-api-v2/app/" class="nav-link">APP</a></div><div class="nav-item"><a href="/work-a-api-v2/depot/" class="nav-link">库存</a></div><div class="nav-item"><a href="/work-a-api-v2/fee/" class="nav-link router-link-exact-active router-link-active">费用</a></div><div class="nav-item"><a href="/work-a-api-v2/notice/" class="nav-link">消息通知（作废）</a></div><div class="nav-item"><a href="/work-a-api-v2/changelog/" class="nav-link">变更</a></div><div class="nav-item"><a href="/work-a-api-v2/feign/" class="nav-link">代理接口</a></div><div class="nav-item"><a href="/work-a-api-v2/other/" class="nav-link">其它</a></div><div class="nav-item"><a href="/work-a-api-v2/sta/" class="nav-link">统计</a></div><div class="nav-item"><a href="/work-a-api-v2/message/" class="nav-link">消息</a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>费用管理</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/work-a-api-v2/fee/#费用管理" class="sidebar-link">费用管理</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/work-a-api-v2/fee/#fygl-1-库费系数查询" class="sidebar-link">FYGL-1. 库费系数查询</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/fee/#fygl-1-1-库费系数明细" class="sidebar-link">FYGL-1.1 库费系数明细</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/fee/#fygl-2-库费系数修改" class="sidebar-link">FYGL-2. 库费系数修改</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/fee/#fygl-3-库费系数修改日志" class="sidebar-link">FYGL-3.库费系数修改日志</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/fee/#fygl-4-库费系数历史" class="sidebar-link">FYGL-4. 库费系数历史</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/fee/#fygl-5-应付仓库库费" class="sidebar-link">FYGL-5. 应付仓库库费</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/fee/#fygl-6-应付仓库库费汇总" class="sidebar-link">FYGL-6. 应付仓库库费汇总</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/fee/#fygl-7-应付仓库库费导出" class="sidebar-link">FYGL-7. 应付仓库库费导出</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/fee/#fygl-8-应付仓库日库费" class="sidebar-link">FYGL-8. 应付仓库日库费</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/fee/#fygl-9-应付仓库日库费导出" class="sidebar-link">FYGL-9. 应付仓库日库费导出</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/fee/#fygl-10-应收供应商库费" class="sidebar-link">FYGL-10. 应收供应商库费</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/fee/#fygl-11-应收供应商库费汇总" class="sidebar-link">FYGL-11. 应收供应商库费汇总</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/fee/#fygl-12-应收供应商库费导出" class="sidebar-link">FYGL-12. 应收供应商库费导出</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/fee/#fygl-13-应收供应商日库费" class="sidebar-link">FYGL-13. 应收供应商日库费</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/fee/#fygl-14-应收供应商日库费导出" class="sidebar-link">FYGL-14. 应收供应商日库费导出</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/fee/#fygl-15-应收供应商库费明细" class="sidebar-link">FYGL-15. 应收供应商库费明细</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/fee/#fygl-16-应收供应商库费明细导出" class="sidebar-link">FYGL-16. 应收供应商库费明细导出</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/fee/#fygl-17-应付供应商货款接口" class="sidebar-link">FYGL-17. 应付供应商货款接口</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/fee/#fygl-18-应付供应商货款导出接口" class="sidebar-link">FYGL-18. 应付供应商货款导出接口</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/fee/#fygl-19-应付货款供应商清单接口" class="sidebar-link">FYGL-19. 应付货款供应商清单接口</a></li></ul></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h2 id="费用管理"><a href="#费用管理" aria-hidden="true" class="header-anchor">#</a> 费用管理</h2> <h3 id="fygl-1-库费系数查询"><a href="#fygl-1-库费系数查询" aria-hidden="true" class="header-anchor">#</a> FYGL-1. 库费系数查询</h3> <h4 id="模块负责人"><a href="#模块负责人" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>刘宏宇
+</code></pre> <h4 id="请求"><a href="#请求" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/fee/coefficient
+</code></pre> <h4 id="参数"><a href="#参数" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>name:&quot;xxx&quot; // 仓名 模糊匹配
+calWeight:&quot;NET&quot; // 计重方式 NET 净重 GROSS 毛重
+calOut：1 // 计算越库 0 不计算 1 计算
+type:&quot;TASK&quot; // NOW 即时生效 TASK 定时生效
+pageNo: 1 // 分页
+pageSize: 25 // 页条数
+</code></pre> <h4 id="响应"><a href="#响应" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;calOut&quot;: 0, // 计算越库 0 不计算 1 计算
+                &quot;calWeight&quot;: null, // 计重方式 NET 净重 GROSS 毛重
+                &quot;depotCoefficient&quot;: 0, // 库费系数
+                &quot;depotId&quot;: 110, // 仓ID
+                &quot;depotLevel&quot;: &quot;FDC&quot;, // 仓类型 
+                &quot;depotName&quot;: &quot;FDC（哈尔滨天顺仓）&quot;, // 仓名
+                &quot;effectDate&quot;: &quot;&quot;, // 生效日期
+                &quot;id&quot;: 0, // 费率ID， 0 未配置过
+                &quot;modifyRemark&quot;: &quot;&quot;, // 修改备注
+                &quot;modifyRole&quot;: 0, // 修改角色ID
+                &quot;modifyTime&quot;: &quot;&quot;, // 修改时间
+                &quot;modifyUser&quot;: 0, // 修改人ID
+                &quot;modifyUserName&quot;: &quot;&quot;, // 修改人名
+                &quot;serviceCoefficient&quot;: 0, // 服务费系数
+                &quot;type&quot;: null // 类型 NOW 立即执行 TASK 定时执行
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: -1
+    }
+}
+</code></pre> <h3 id="fygl-1-1-库费系数明细"><a href="#fygl-1-1-库费系数明细" aria-hidden="true" class="header-anchor">#</a> FYGL-1.1 库费系数明细</h3> <h4 id="模块负责人-2"><a href="#模块负责人-2" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>刘宏宇
+</code></pre> <h4 id="请求-2"><a href="#请求-2" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/fee/coefficient/{id}
+</code></pre> <h4 id="参数-2"><a href="#参数-2" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id: 1 //库费ID
+</code></pre> <h4 id="响应-2"><a href="#响应-2" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;calOut&quot;: 0, // 计算越库 0 不计算 1 计算
+        &quot;calWeight&quot;: null, // 计重方式 NET 净重 GROSS 毛重
+        &quot;depotCoefficient&quot;: 0, // 库费系数
+        &quot;depotId&quot;: 110, // 仓ID
+        &quot;depotLevel&quot;: &quot;FDC&quot;, // 仓类型 
+        &quot;depotName&quot;: &quot;FDC（哈尔滨天顺仓）&quot;, // 仓名
+        &quot;effectDate&quot;: &quot;&quot;, // 生效日期
+        &quot;id&quot;: 0, // 费率ID， 0 未配置过
+        &quot;modifyRemark&quot;: &quot;&quot;, // 修改备注
+        &quot;modifyRole&quot;: 0, // 修改角色ID
+        &quot;modifyTime&quot;: &quot;&quot;, // 修改时间
+        &quot;modifyUser&quot;: 0, // 修改人ID
+        &quot;modifyUserName&quot;: &quot;&quot;, // 修改人名
+        &quot;serviceCoefficient&quot;: 0, // 服务费系数
+        &quot;type&quot;: null // 类型 NOW 立即执行 TASK 定时执行
+    }
+}
+</code></pre> <h3 id="fygl-2-库费系数修改"><a href="#fygl-2-库费系数修改" aria-hidden="true" class="header-anchor">#</a> FYGL-2. 库费系数修改</h3> <h4 id="模块负责人-3"><a href="#模块负责人-3" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>刘宏宇
+</code></pre> <h4 id="请求-3"><a href="#请求-3" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/fee/coefficient
+</code></pre> <h4 id="参数-3"><a href="#参数-3" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    *id: 0 // 库费系数ID， 0 未配置
+    *depotId: 1 // 仓ID，
+    *depotCoefficient: 0.0 // 库费系数
+    *serviceCoefficient: 0.0 // 服务费系数
+    *calWeight:&quot;NET&quot; // 计重方式 NET 净重 GROSS 毛重
+    *calOut:1 // 计算越库 0 不计算 1 计算
+    *type:&quot;NOW&quot; // 生效方式 NOW 立即生效 TASK 定时执行
+    *effectDate:&quot;2018-01-01&quot; // 生效日期
+    *modifyRemark: &quot;xxx&quot; // 修改备注
+}
+</code></pre> <h4 id="响应-3"><a href="#响应-3" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: 1 // 新增后ID，修改后ID
+}
+</code></pre> <h3 id="fygl-3-库费系数修改日志"><a href="#fygl-3-库费系数修改日志" aria-hidden="true" class="header-anchor">#</a> FYGL-3.库费系数修改日志</h3> <h4 id="模块负责人-4"><a href="#模块负责人-4" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>刘宏宇
+</code></pre> <h4 id="请求-4"><a href="#请求-4" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/fee/coefficient/log/{depotId}
+</code></pre> <h4 id="参数-4"><a href="#参数-4" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*depotId: 1 // 仓ID
+pageNo: 1 // 分页
+pageSize: 25 // 页条数
+</code></pre> <h4 id="响应-4"><a href="#响应-4" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;depotId&quot;: 110, // 仓ID
+                &quot;id&quot;: 2, 
+                &quot;opInfo&quot;: &quot;修改, 备注：123&quot;, // 操作信息
+                &quot;opRole&quot;: 1, // 操作角色
+                &quot;opTime&quot;: &quot;2019-02-11 18:02:40&quot;, // 操作时间
+                &quot;opUser&quot;: 101, // 操作人ID
+                &quot;opUserName&quot;: &quot;樊嘉辉&quot; // 操作人名
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: -1
+    }
+}
+</code></pre> <h3 id="fygl-4-库费系数历史"><a href="#fygl-4-库费系数历史" aria-hidden="true" class="header-anchor">#</a> FYGL-4. 库费系数历史</h3> <h4 id="模块负责人-5"><a href="#模块负责人-5" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>刘宏宇
+</code></pre> <h4 id="请求-5"><a href="#请求-5" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/fee/coefficient/history/{depotId}
+</code></pre> <h4 id="参数-5"><a href="#参数-5" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*depotId: 1 // 仓ID
+pageNo: 1 // 分页
+pageSize: 25 // 页条数
+</code></pre> <h4 id="响应-5"><a href="#响应-5" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;calOut&quot;: 1, // 计算越库 0 不计算 1 计算
+                &quot;calWeight&quot;: &quot;NET&quot;, // 计重方式 NET 净重 GROSS 毛重
+                &quot;depotCoefficient&quot;: 1, // 库费系数
+                &quot;depotId&quot;: 110, // 仓ID
+                &quot;depotLevel&quot;: &quot;FDC&quot;,// 仓类型
+                &quot;depotName&quot;: &quot;FDC（哈尔滨天顺仓）&quot;, // 仓名
+                &quot;effectDate&quot;: &quot;2019-02-11&quot;, // 生效实际
+                &quot;id&quot;: 1, // 库费系数ID
+                &quot;modifyRemark&quot;: &quot;123&quot;, // 修改备注
+                &quot;modifyRole&quot;: 1, // 修改角色ID
+                &quot;modifyTime&quot;: &quot;2019-02-11 17:49:44&quot;, // 修改时间
+                &quot;modifyUser&quot;: 101,  // 修改人ID
+                &quot;modifyUserName&quot;: &quot;樊嘉辉&quot;, // 修改人名
+                &quot;serviceCoefficient&quot;: 1, // 服务费系数
+                &quot;type&quot;: &quot;NOW&quot; // 类型 NOW 立即生效 TASK 定时任务
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: -1
+    }
+}
+</code></pre> <h3 id="fygl-5-应付仓库库费"><a href="#fygl-5-应付仓库库费" aria-hidden="true" class="header-anchor">#</a> FYGL-5. 应付仓库库费</h3> <h4 id="模块负责人-6"><a href="#模块负责人-6" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>刘宏宇
+</code></pre> <h4 id="请求-6"><a href="#请求-6" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/fee/pay/depot
+</code></pre> <h4 id="参数-6"><a href="#参数-6" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>depotId: 1 // 仓ID
+calWeight: &quot;NET&quot; // 计重方式 NET 净重 GROSS 毛重
+calOut: 1 // 计算越库 0 不计算 1 计算
+sDate: &quot;2019-01-01&quot; // 开始日期
+eDate: &quot;2019-01-31&quot; // 结束日期
+pageNo: 1 // 分页
+pageSize: 25 // 页条数
+</code></pre> <h4 id="响应-6"><a href="#响应-6" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;calOut&quot;: 0, // 计算越库 0 不计算 1 计算
+                &quot;calWeight&quot;: &quot;GROSS&quot;, // 计重方式 NET 净重 GROSS 毛重
+                &quot;depotCoefficient&quot;: 3.6, // 库费系数
+                &quot;depotFee&quot;: 79418.23, // 库费
+                &quot;depotId&quot;: 40, // 仓ID
+                &quot;depotName&quot;: &quot;&quot;, // 仓名
+                &quot;depotWeight&quot;: 22060.62009, // 库费吨位
+                &quot;serviceCoefficient&quot;: 66, // 服务费系数
+                &quot;serviceFee&quot;: 45534.56, // 服务费
+                &quot;serviceWeight&quot;: 689.91753 // 服务费吨位
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: -1
+    }
+}
+</code></pre> <h3 id="fygl-6-应付仓库库费汇总"><a href="#fygl-6-应付仓库库费汇总" aria-hidden="true" class="header-anchor">#</a> FYGL-6. 应付仓库库费汇总</h3> <h4 id="模块负责人-7"><a href="#模块负责人-7" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>刘宏宇
+</code></pre> <h4 id="请求-7"><a href="#请求-7" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/fee/pay/depot/summary
+</code></pre> <h4 id="参数-7"><a href="#参数-7" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>depotId: 1 // 仓ID
+calWeight: &quot;NET&quot; // 计重方式 NET 净重 GROSS 毛重
+calOut: 1 // 计算越库 0 不计算 1 计算
+sDate: &quot;2019-01-01&quot; // 开始日期
+eDate: &quot;2019-01-31&quot; // 结束日期
+</code></pre> <h4 id="响应-7"><a href="#响应-7" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;totalDepotFee&quot;: 285246.59, // 总库费
+        &quot;totalFee&quot;: 290235.87, // 总费用
+        &quot;totalServiceFee&quot;: 4989.28 // 总服务费
+    }
+}
+</code></pre> <h3 id="fygl-7-应付仓库库费导出"><a href="#fygl-7-应付仓库库费导出" aria-hidden="true" class="header-anchor">#</a> FYGL-7. 应付仓库库费导出</h3> <h4 id="模块负责人-8"><a href="#模块负责人-8" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>刘宏宇
+</code></pre> <h4 id="请求-8"><a href="#请求-8" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/fee/pay/depot/export
+</code></pre> <h4 id="参数-8"><a href="#参数-8" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>sDate: &quot;2019-01-01&quot; // 开始日期
+eDate: &quot;2019-01-31&quot; // 结束日期
+checkToken: &quot;xxx&quot; // 下载授权码
+</code></pre> <h4 id="响应-8"><a href="#响应-8" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>流
+</code></pre> <h3 id="fygl-8-应付仓库日库费"><a href="#fygl-8-应付仓库日库费" aria-hidden="true" class="header-anchor">#</a> FYGL-8. 应付仓库日库费</h3> <h4 id="模块负责人-9"><a href="#模块负责人-9" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>刘宏宇
+</code></pre> <h4 id="请求-9"><a href="#请求-9" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/fee/pay/depot/dayly
+</code></pre> <h4 id="参数-9"><a href="#参数-9" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>depotId: 1 // 仓ID
+sDate: &quot;2019-01-01&quot; // 开始日期
+eDate: &quot;2019-01-31&quot; // 结束日期
+calWeight: &quot;NET&quot; // 计重方式 NET 净重 GROSS 毛重
+calOut: 1 // 计算越库 0 不计算 1 计算
+</code></pre> <h4 id="响应-9"><a href="#响应-9" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;calOut&quot;: 0, // 计算越库 0 不计算 1 计算
+                &quot;calWeight&quot;: &quot;GROSS&quot;, // 计重方式 NET 净重 GROSS 毛重
+                &quot;depotCoefficient&quot;: 3.6, // 库费系数
+                &quot;depotFee&quot;: 1922.58, // 库费
+                &quot;depotId&quot;: 40, // 仓ID
+                &quot;depotName&quot;: &quot;DC（大连铁越仓）&quot;, // 仓名
+                &quot;inWeight&quot;: 0, // 今日入吨位
+                &quot;lastRemainWeight&quot;: 400.65337, // 昨日存留吨位
+                &quot;outWeight&quot;: 0, // 进入出吨位
+                &quot;remainWeight&quot;: 400.65368,// 今日存留吨位
+                &quot;depotWeight&quot;: 534.04928, // 库费吨位
+                &quot;serviceCoefficient&quot;: 66, // 服务费系数
+                &quot;serviceFee&quot;: 0, // 服务费
+                &quot;serviceWeight&quot;: 0, // 服务费吨位
+                &quot;tag&quot;: &quot;2019-01-01&quot; // 日期
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: -1
+    }
+}
+</code></pre> <h3 id="fygl-9-应付仓库日库费导出"><a href="#fygl-9-应付仓库日库费导出" aria-hidden="true" class="header-anchor">#</a> FYGL-9. 应付仓库日库费导出</h3> <h4 id="模块负责人-10"><a href="#模块负责人-10" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>刘宏宇
+</code></pre> <h4 id="请求-10"><a href="#请求-10" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/fee/pay/depot/dayly/export
+</code></pre> <h4 id="参数-10"><a href="#参数-10" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>depotId: 1 // 仓ID
+sDate: &quot;2019-01-01&quot; // 开始日期
+eDate: &quot;2019-01-31&quot; // 结束日期
+checkToken: &quot;xxx&quot; // 下载授权码
+</code></pre> <h4 id="响应-10"><a href="#响应-10" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>流
+</code></pre> <h3 id="fygl-10-应收供应商库费"><a href="#fygl-10-应收供应商库费" aria-hidden="true" class="header-anchor">#</a> FYGL-10. 应收供应商库费</h3> <h4 id="模块负责人-11"><a href="#模块负责人-11" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>刘宏宇
+</code></pre> <h4 id="请求-11"><a href="#请求-11" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/fee/income/depot
+</code></pre> <h4 id="参数-11"><a href="#参数-11" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>supplierId: 1 // 供应商ID
+sDate: &quot;2019-01-01&quot; // 开始日期
+eDate: &quot;2019-01-31&quot; // 结束日期
+pageNo: 1 // 页
+pageSize: 25 // 页条数
+</code></pre> <h4 id="响应-11"><a href="#响应-11" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;depotFee&quot;: 0, // 库费
+                &quot;depotWeight&quot;: 284.04358, // 库费吨位
+                &quot;serviceFee&quot;: 0, // 服务费
+                &quot;serviceWeight&quot;: 11.27009, // 服务费吨位
+                &quot;supplierId&quot;: 2629, // 供应商ID
+                &quot;supplierName&quot;: &quot;26&quot; // 供应商名
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: -1
+    }
+}
+</code></pre> <h3 id="fygl-11-应收供应商库费汇总"><a href="#fygl-11-应收供应商库费汇总" aria-hidden="true" class="header-anchor">#</a> FYGL-11. 应收供应商库费汇总</h3> <h4 id="模块负责人-12"><a href="#模块负责人-12" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>刘宏宇
+</code></pre> <h4 id="请求-12"><a href="#请求-12" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/fee/income/depot/summary
+</code></pre> <h4 id="参数-12"><a href="#参数-12" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>supplierId: 1 // 供应商ID
+sDate: &quot;2019-01-01&quot; // 开始日期
+eDate: &quot;2019-01-31&quot; // 结束日期
+</code></pre> <h4 id="响应-12"><a href="#响应-12" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;totalDepotFee&quot;: 14706.808988, // 总库费
+        &quot;totalFee&quot;: 15759.412303, // 总费用
+        &quot;totalServiceFee&quot;: 1052.603315 // 总服务费
+    }
+}
+</code></pre> <h3 id="fygl-12-应收供应商库费导出"><a href="#fygl-12-应收供应商库费导出" aria-hidden="true" class="header-anchor">#</a> FYGL-12. 应收供应商库费导出</h3> <h4 id="模块负责人-13"><a href="#模块负责人-13" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>刘宏宇
+</code></pre> <h4 id="请求-13"><a href="#请求-13" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/fee/income/depot/export
+</code></pre> <h4 id="参数-13"><a href="#参数-13" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>sDate: &quot;2019-01-01&quot; // 开始日期
+eDate: &quot;2019-01-01&quot; // 结束日期
+checkToken: &quot;xxx&quot; // 下载授权码
+</code></pre> <h4 id="响应-13"><a href="#响应-13" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>流
+</code></pre> <h3 id="fygl-13-应收供应商日库费"><a href="#fygl-13-应收供应商日库费" aria-hidden="true" class="header-anchor">#</a> FYGL-13. 应收供应商日库费</h3> <h4 id="模块负责人-14"><a href="#模块负责人-14" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>刘宏宇
+</code></pre> <h4 id="请求-14"><a href="#请求-14" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/fee/income/depot/dayly
+</code></pre> <h4 id="参数-14"><a href="#参数-14" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>sDate: &quot;2019-01-01&quot; // 开始日期
+eDate: &quot;2019-01-31&quot; // 结束日期
+supplierId: 1 // 供应商ID
+</code></pre> <h4 id="响应-14"><a href="#响应-14" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;depotFee&quot;: 21.501432, // 库费
+                &quot;depotWeight&quot;: 5.97262, // 库费吨位
+                &quot;inWeight&quot;: 0, // 今日入吨位
+                &quot;lastRemainWeight&quot;: 4587.67, // 昨日仓存留吨位
+                &quot;outWeight&quot;: 16, // 今日出吨位
+                &quot;remainWeight&quot;: 5972.62, // 今日存留吨位
+                &quot;serviceFee&quot;: 1.056, // 服务费
+                &quot;serviceWeight&quot;: 0.016, // 服务费吨位
+                &quot;supplierId&quot;: 2629, // 供应商ID
+                &quot;supplierName&quot;: &quot;26&quot;, // 供应商名
+                &quot;tag&quot;: &quot;2019-01-01&quot; // 日
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: -1
+    }
+}
+</code></pre> <h3 id="fygl-14-应收供应商日库费导出"><a href="#fygl-14-应收供应商日库费导出" aria-hidden="true" class="header-anchor">#</a> FYGL-14. 应收供应商日库费导出</h3> <h4 id="模块负责人-15"><a href="#模块负责人-15" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>刘宏宇
+</code></pre> <h4 id="请求-15"><a href="#请求-15" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/fee/income/depot/dayly/export
+</code></pre> <h4 id="参数-15"><a href="#参数-15" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*checkToken: &quot;xx&quot; // 下载授权码
+sDate:&quot;2019-01-01&quot; // 开始日期
+eDate:&quot;2019-01-31&quot; // 结束日期
+</code></pre> <h4 id="响应-15"><a href="#响应-15" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>流
+</code></pre> <h3 id="fygl-15-应收供应商库费明细"><a href="#fygl-15-应收供应商库费明细" aria-hidden="true" class="header-anchor">#</a> FYGL-15. 应收供应商库费明细</h3> <h4 id="模块负责人-16"><a href="#模块负责人-16" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>刘宏宇
+</code></pre> <h4 id="请求-16"><a href="#请求-16" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/fee/income/depot/detail
+</code></pre> <h4 id="参数-16"><a href="#参数-16" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>sDate:&quot;2019-01-01&quot; // 开始日期
+eDate:&quot;2019-01-31&quot; // 结束日期
+supplierId: 1 // 供应商ID
+depotId: 1 // 仓ID
+calWeight: &quot;NET&quot; // 计重方式 NET 净重 GROSS 毛重
+calOut: 1 // 计算越库 0 不计算 1 计算
+pageNo: 1 // 页
+pageSize: 25 // 页行数
+</code></pre> <h4 id="响应-16"><a href="#响应-16" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;calOut&quot;: 0, // 计算越库 0 不计算 1 计算
+                &quot;calWeight&quot;: &quot;NET&quot;, // 计重方式 NET 净重 GROSS 毛重
+                &quot;depotCoefficient&quot;: 0, // 库费系数
+                &quot;depotFee&quot;: 0, // 库费
+                &quot;depotWeight&quot;: 5.97262, // 库费吨位
+                &quot;inWeight&quot;: 0, // 今日入吨位
+                &quot;lastRemainWeight&quot;: 4.58767, // 昨日存留吨位
+                &quot;outWeight&quot;: 0.016, // 今日出吨位
+                &quot;remainWeight&quot;: 5.97262, // 今日存留吨位
+                &quot;serviceCoefficient&quot;: 0, // 服务费系数
+                &quot;serviceFee&quot;: 0, // 服务费系数
+                &quot;serviceWeight&quot;: 0.016, // 服务费吨位
+                &quot;supplierId&quot;: 2629, // 供应商ID
+                &quot;supplierName&quot;: &quot;26&quot;, // 供应商名
+                &quot;depotId&quot;: 40, // 仓ID
+                &quot;depotName&quot;: &quot;DC（大连铁越仓）&quot;, // 仓名
+                &quot;tag&quot;: &quot;2019-01-01&quot; // 日
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: -1
+    }
+}
+</code></pre> <h3 id="fygl-16-应收供应商库费明细导出"><a href="#fygl-16-应收供应商库费明细导出" aria-hidden="true" class="header-anchor">#</a> FYGL-16. 应收供应商库费明细导出</h3> <h4 id="模块负责人-17"><a href="#模块负责人-17" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>刘宏宇
+</code></pre> <h4 id="请求-17"><a href="#请求-17" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/fee/income/depot/detail/export
+</code></pre> <h4 id="参数-17"><a href="#参数-17" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*checkToken: &quot;xxx&quot; // 下载授权码
+depotId: 1 // 仓ID
+supplierId: 1 // 供应商ID
+sDate: &quot;2019-01-01&quot; // 开始时间
+eDate: &quot;2019-01-31&quot; // 结束时间
+</code></pre> <h4 id="响应-17"><a href="#响应-17" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>流
+</code></pre> <h3 id="fygl-17-应付供应商货款接口"><a href="#fygl-17-应付供应商货款接口" aria-hidden="true" class="header-anchor">#</a> FYGL-17. 应付供应商货款接口</h3> <h4 id="模块负责人-18"><a href="#模块负责人-18" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>刘宏宇
+</code></pre> <h4 id="请求-18"><a href="#请求-18" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/fee/pay/goods
+</code></pre> <h4 id="参数-18"><a href="#参数-18" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>supplierId: 1 // 供应商ID
+productKeyword: &quot;xxx&quot; // 品名 品号
+depotId: 1 // 仓ID
+sDate: &quot;2018-10-01&quot; // 开始时间
+eDate: &quot;2018-10-31&quot; // 结束时间
+payMode: &quot;INBUY&quot; // 支付方式 INBUY 入结 OUTBUY 出结
+inOrderId: &quot;xxx&quot; // 入单ID
+outOrderId: &quot;xxx&quot; // 出单ID
+outOrderType: &quot;TR&quot; // TR 调拨 SA 销售 NO 普通出 PR 采购退
+errorFlg: 0 // 价格异常标识 0 正常 1 异常
+</code></pre> <h4 id="响应-18"><a href="#响应-18" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;amount&quot;: 630, // 最小单位数量
+                &quot;amountJian&quot;: 0, // 件数量
+                &quot;amountSan&quot;: 0, // 散数量
+                &quot;createTime&quot;: &quot;2018-10-01 13:57:47&quot;, // 创建时间
+                &quot;depotId&quot;: 51, // 仓ID
+                &quot;depotName&quot;: &quot;&quot;, // 仓名
+                &quot;errorFlg&quot;: 0, // 价格异常标记 0 正常 1 异常
+                &quot;guige&quot;: &quot;&quot;, // 规格
+                &quot;inOrderId&quot;: &quot;PA180929014365&quot;, // 入单ID
+                &quot;inOrderType&quot;: &quot;TR&quot; // 入单类型 TR 调拨单 PA 采购单 IN 普通入 SR 销售退
+                &quot;outOrderId&quot;: &quot;&quot;, // 出单ID
+                &quot;outOrderType&quot;: &quot;TR&quot; // 出库单类型 TR 调拨单 PR 采购退 NO 普通出 SA 销售单
+                &quot;payMode&quot;: &quot;INBUY&quot;, // 结算方式 INBUY 入结 OUTBUY 出结
+                &quot;pno&quot;: &quot;&quot;, // 品号
+                &quot;price&quot;: 523.04, // 基价
+                &quot;priceJian&quot;: 0, // 件价
+                &quot;priceSan&quot;: 0, // 散价
+                &quot;productId&quot;: 322, // 产品ID
+                &quot;productName&quot;: &quot;&quot;, // 产品名
+                &quot;productUnitId&quot;: 600, // 规格ID
+                &quot;supplierId&quot;: 2694, // 供应商ID
+                &quot;supplierName&quot;: &quot;18&quot;, // 供应商名
+                &quot;totalPrice&quot;: 0 // 总计
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: -1
+    }
+}
+</code></pre> <h3 id="fygl-18-应付供应商货款导出接口"><a href="#fygl-18-应付供应商货款导出接口" aria-hidden="true" class="header-anchor">#</a> FYGL-18. 应付供应商货款导出接口</h3> <h4 id="模块负责人-19"><a href="#模块负责人-19" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>刘宏宇
+</code></pre> <h4 id="请求-19"><a href="#请求-19" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/fee/pay/goods/export
+</code></pre> <h4 id="参数-19"><a href="#参数-19" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>supplierId: 1 // 供应商ID
+depotId: 1 // 仓ID
+sDate: &quot;2018-10-01&quot; // 开始时间
+eDate: &quot;2018-10-01&quot; // 结束时间
+</code></pre> <h4 id="响应-19"><a href="#响应-19" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>流
+</code></pre> <h3 id="fygl-19-应付货款供应商清单接口"><a href="#fygl-19-应付货款供应商清单接口" aria-hidden="true" class="header-anchor">#</a> FYGL-19. 应付货款供应商清单接口</h3> <h4 id="模块负责人-20"><a href="#模块负责人-20" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>刘宏宇
+</code></pre> <h4 id="请求-20"><a href="#请求-20" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/fee/pay/goods/has
+</code></pre> <h4 id="参数-20"><a href="#参数-20" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*sDate:&quot;2019-01-01&quot; // 开始日期
+*eDate:&quot;2019-01-31&quot; // 结束日期
+</code></pre> <h4 id="响应-20"><a href="#响应-20" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;account&quot;: &quot;shipin&quot;,
+            &quot;city&quot;: &quot;大连市&quot;,
+            &quot;companies&quot;: null,
+            &quot;companyIds&quot;: null,
+            &quot;contactAddress&quot;: &quot;大连&quot;,
+            &quot;contactMobile&quot;: &quot;13624264901&quot;,
+            &quot;contactName&quot;: &quot;鲁&quot;,
+            &quot;contactPathId&quot;: &quot;060210&quot;,
+            &quot;county&quot;: &quot;庄河市&quot;,
+            &quot;createRole&quot;: 29118,
+            &quot;createTime&quot;: &quot;2019-01-25 16:03:19&quot;,
+            &quot;createUser&quot;: 89,
+            &quot;createUserName&quot;: &quot;郭倩&quot;,
+            &quot;deleteFlg&quot;: 0,
+            &quot;id&quot;: 5566,
+            &quot;name&quot;: &quot;亚洲渔港（大连）食品有限公司（IN）&quot;, // 名称
+            &quot;password&quot;: &quot;14e1b600b1fd579f47433b88e8d85291&quot;,
+            &quot;payMode&quot;: &quot;INBUY&quot;,
+            &quot;platformId&quot;: 1,
+            &quot;province&quot;: &quot;辽宁&quot;,
+            &quot;shortName&quot;: &quot;亚洲渔港（大连）食品有限公司（IN）&quot;, // 简称
+            &quot;status&quot;: &quot;NORMAL&quot;,
+            &quot;supplierContacts&quot;: null,
+            &quot;taxCode&quot;: &quot;&quot;
+        }
+    ]
+}</code></pre></div> <div class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">7/19/2019, 9:39:46 AM</span></div></div> <!----> </div> <!----></div></div>
+    <script src="/work-a-api-v2/assets/js/app.a6722e02.js" defer></script><script src="/work-a-api-v2/assets/js/13.3651904d.js" defer></script>
+  </body>
+</html>

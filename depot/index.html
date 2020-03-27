@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>库存管理 | ADoc</title>
+    <meta name="description" content="A团队开发文档">
+    
+    
+    <link rel="preload" href="/work-a-api-v2/assets/css/0.styles.35f149a3.css" as="style"><link rel="preload" href="/work-a-api-v2/assets/js/app.a6722e02.js" as="script"><link rel="preload" href="/work-a-api-v2/assets/js/12.0c967175.js" as="script"><link rel="prefetch" href="/work-a-api-v2/assets/js/10.1a10445b.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/11.42f498c9.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/13.3651904d.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/14.f08b1cf2.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/15.9349f875.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/16.12c6bae3.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/17.adca03bd.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/18.c998838e.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/19.3918a1ff.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/2.a0ea3f6c.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/20.90e7db96.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/21.107ae2fe.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/22.74755e26.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/23.311dc752.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/24.f5a0db0c.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/25.930c2322.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/26.2d5db294.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/27.2fe9193a.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/28.c950b06d.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/29.c08b73a8.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/3.d1df23fe.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/30.03105b2a.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/31.e5254695.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/32.f61b2cc2.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/4.0f0014c9.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/5.95ee4e26.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/6.a8f01348.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/7.88947b66.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/8.0d5a3953.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/9.20882588.js">
+    <link rel="stylesheet" href="/work-a-api-v2/assets/css/0.styles.35f149a3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/work-a-api-v2/" class="home-link router-link-active"><!----> <span class="site-name">ADoc</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/work-a-api-v2/wms/" class="nav-link">WMS仓储</a></div><div class="nav-item"><a href="/work-a-api-v2/ufo/" class="nav-link">金蝶</a></div><div class="nav-item"><a href="/work-a-api-v2/addon/" class="nav-link">插件</a></div><div class="nav-item"><a href="/work-a-api-v2/outer/" class="nav-link">合作商</a></div><div class="nav-item"><a href="/work-a-api-v2/stockup/" class="nav-link">备货</a></div><div class="nav-item"><a href="/work-a-api-v2/order/" class="nav-link">订单</a></div><div class="nav-item"><a href="/work-a-api-v2/finance/" class="nav-link">财务</a></div><div class="nav-item"><a href="/work-a-api-v2/supplier/" class="nav-link">供应商</a></div><div class="nav-item"><a href="/work-a-api-v2/invoice/" class="nav-link">发票</a></div><div class="nav-item"><a href="/work-a-api-v2/customer/" class="nav-link">客户</a></div><div class="nav-item"><a href="/work-a-api-v2/product/" class="nav-link">产品</a></div><div class="nav-item"><a href="/work-a-api-v2/auth/" class="nav-link">权限</a></div><div class="nav-item"><a href="/work-a-api-v2/contract/" class="nav-link">销售优惠</a></div><div class="nav-item"><a href="/work-a-api-v2/price/" class="nav-link">价格</a></div><div class="nav-item"><a href="/work-a-api-v2/freight/" class="nav-link">运费</a></div><div class="nav-item"><a href="/work-a-api-v2/market/" class="nav-link">营销</a></div><div class="nav-item"><a href="/work-a-api-v2/cookbook/" class="nav-link">菜谱</a></div><div class="nav-item"><a href="/work-a-api-v2/common/" class="nav-link">基础</a></div><div class="nav-item"><a href="/work-a-api-v2/app/" class="nav-link">APP</a></div><div class="nav-item"><a href="/work-a-api-v2/depot/" class="nav-link router-link-exact-active router-link-active">库存</a></div><div class="nav-item"><a href="/work-a-api-v2/fee/" class="nav-link">费用</a></div><div class="nav-item"><a href="/work-a-api-v2/notice/" class="nav-link">消息通知（作废）</a></div><div class="nav-item"><a href="/work-a-api-v2/changelog/" class="nav-link">变更</a></div><div class="nav-item"><a href="/work-a-api-v2/feign/" class="nav-link">代理接口</a></div><div class="nav-item"><a href="/work-a-api-v2/other/" class="nav-link">其它</a></div><div class="nav-item"><a href="/work-a-api-v2/sta/" class="nav-link">统计</a></div><div class="nav-item"><a href="/work-a-api-v2/message/" class="nav-link">消息</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/work-a-api-v2/wms/" class="nav-link">WMS仓储</a></div><div class="nav-item"><a href="/work-a-api-v2/ufo/" class="nav-link">金蝶</a></div><div class="nav-item"><a href="/work-a-api-v2/addon/" class="nav-link">插件</a></div><div class="nav-item"><a href="/work-a-api-v2/outer/" class="nav-link">合作商</a></div><div class="nav-item"><a href="/work-a-api-v2/stockup/" class="nav-link">备货</a></div><div class="nav-item"><a href="/work-a-api-v2/order/" class="nav-link">订单</a></div><div class="nav-item"><a href="/work-a-api-v2/finance/" class="nav-link">财务</a></div><div class="nav-item"><a href="/work-a-api-v2/supplier/" class="nav-link">供应商</a></div><div class="nav-item"><a href="/work-a-api-v2/invoice/" class="nav-link">发票</a></div><div class="nav-item"><a href="/work-a-api-v2/customer/" class="nav-link">客户</a></div><div class="nav-item"><a href="/work-a-api-v2/product/" class="nav-link">产品</a></div><div class="nav-item"><a href="/work-a-api-v2/auth/" class="nav-link">权限</a></div><div class="nav-item"><a href="/work-a-api-v2/contract/" class="nav-link">销售优惠</a></div><div class="nav-item"><a href="/work-a-api-v2/price/" class="nav-link">价格</a></div><div class="nav-item"><a href="/work-a-api-v2/freight/" class="nav-link">运费</a></div><div class="nav-item"><a href="/work-a-api-v2/market/" class="nav-link">营销</a></div><div class="nav-item"><a href="/work-a-api-v2/cookbook/" class="nav-link">菜谱</a></div><div class="nav-item"><a href="/work-a-api-v2/common/" class="nav-link">基础</a></div><div class="nav-item"><a href="/work-a-api-v2/app/" class="nav-link">APP</a></div><div class="nav-item"><a href="/work-a-api-v2/depot/" class="nav-link router-link-exact-active router-link-active">库存</a></div><div class="nav-item"><a href="/work-a-api-v2/fee/" class="nav-link">费用</a></div><div class="nav-item"><a href="/work-a-api-v2/notice/" class="nav-link">消息通知（作废）</a></div><div class="nav-item"><a href="/work-a-api-v2/changelog/" class="nav-link">变更</a></div><div class="nav-item"><a href="/work-a-api-v2/feign/" class="nav-link">代理接口</a></div><div class="nav-item"><a href="/work-a-api-v2/other/" class="nav-link">其它</a></div><div class="nav-item"><a href="/work-a-api-v2/sta/" class="nav-link">统计</a></div><div class="nav-item"><a href="/work-a-api-v2/message/" class="nav-link">消息</a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>库存管理</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/work-a-api-v2/depot/#库存管理" class="sidebar-link">库存管理</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/work-a-api-v2/depot/#ccgl-1-获取仓信息" class="sidebar-link">CCGL-1. 获取仓信息</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/depot/#ccgl-2-获取仓库库存" class="sidebar-link">CCGL-2. 获取仓库库存</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/depot/#ccgl-3-供应商库存" class="sidebar-link">CCGL-3. 供应商库存</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/depot/#ccgl-4-供应商库存导出" class="sidebar-link">CCGL-4. 供应商库存导出</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/depot/#ccgl-5-库存流水" class="sidebar-link">CCGL-5. 库存流水</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/depot/#ccgl-6-库存流水导出" class="sidebar-link">CCGL-6. 库存流水导出</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/depot/#ccgl-7-安全库存规则修改" class="sidebar-link">CCGL-7. 安全库存规则修改</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/depot/#ccgl-8-安全库存规则查询" class="sidebar-link">CCGL-8. 安全库存规则查询</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/depot/#ccgl-9-安全库存规则日志" class="sidebar-link">CCGL-9. 安全库存规则日志</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/depot/#ccgl-10-安全库存列表" class="sidebar-link">CCGL-10. 安全库存列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/depot/#ccgl-11-安全库存修改" class="sidebar-link">CCGL-11. 安全库存修改</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/depot/#ccgl-12-安全库存导出" class="sidebar-link">CCGL-12. 安全库存导出</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/depot/#ccgl-13-2级库存导出" class="sidebar-link">CCGL-13. 2级库存导出</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/depot/#模版" class="sidebar-link">模版</a></li></ul></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h2 id="库存管理"><a href="#库存管理" aria-hidden="true" class="header-anchor">#</a> 库存管理</h2> <h3 id="ccgl-1-获取仓信息"><a href="#ccgl-1-获取仓信息" aria-hidden="true" class="header-anchor">#</a> CCGL-1. 获取仓信息</h3> <h4 id="模块负责人"><a href="#模块负责人" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>刘宏宇
+</code></pre> <h4 id="请求"><a href="#请求" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/depot
+</code></pre> <h4 id="参数"><a href="#参数" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>无
+</code></pre> <h4 id="响应"><a href="#响应" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 111, // 仓库ID
+            &quot;level&quot;: &quot;DC&quot;,  // 仓级别 DC FDC VR
+            &quot;name&quot;: &quot;测试仓库名33&quot; // 仓名字
+        }
+    ]
+}
+</code></pre> <h3 id="ccgl-2-获取仓库库存"><a href="#ccgl-2-获取仓库库存" aria-hidden="true" class="header-anchor">#</a> CCGL-2. 获取仓库库存</h3> <h4 id="模块负责人-2"><a href="#模块负责人-2" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>刘宏宇
+</code></pre> <h4 id="请求-2"><a href="#请求-2" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/depot/stock2
+</code></pre> <h4 id="参数-2"><a href="#参数-2" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>productKeyword: &quot;xxx&quot; // 品号，品名
+depotId: 1 // 仓ID， 全部则不传
+status: &quot;NORMAL&quot; // 状态 NORMAL 正常 LOCK 锁定
+enableAmountOp: &quot;&gt;&quot; // &gt; &lt;  &gt;= &lt;= = 可用库存数量比较符
+enableAmount: 10 // 可用库存数量
+normalAmountOp: &quot;&gt;&quot; // &gt; &lt;  &gt;= &lt;= = 实际库存数量比较符
+normalAmount: 10 // 实际库存数量
+pageNo: 1 // 分页
+pageSize: 25 // 页条数
+</code></pre> <h4 id="响应-2"><a href="#响应-2" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;depotId&quot;: 40, // 仓ID
+                &quot;depotName&quot;: &quot;DC（大连铁越仓）&quot;, // 仓名
+                &quot;depotStockFuture&quot;: { // 在途库存，若没有在途信息 则为 null
+                    &quot;amountJian&quot;: 1, // 总在途(件)
+                    &quot;amountJian1&quot;: 0, // 在途1（件）
+                    &quot;amountJian2&quot;: 0, // 在途2（件）
+                    &quot;amountJian3&quot;: 0, // 在途3（件）
+                    &quot;amountJian4&quot;: 0, // 在途4（件）
+                    &quot;amountSan&quot;: 0, // 总在途（散）
+                    &quot;amountSan1&quot;: 0, // 在途1（散）
+                    &quot;amountSan2&quot;: 0, // 在途2（散）
+                    &quot;amountSan3&quot;: 0, // 在途3（散）
+                    &quot;amountSan4&quot;: 0, // 在途4（散）
+                    &quot;depotId&quot;: 40, // 总在途（散）
+                    &quot;productId&quot;: 4661 // 产品ID
+                },
+                &quot;enableAmount&quot;: 17, // 可用库存（最小单位数量）
+                &quot;enableAmountJian&quot;: 17, // 可用库存（件）
+                &quot;enableAmountSan&quot;: 0, // 可用库存（散）
+                &quot;guige&quot;: &quot;4.54kg&quot;, // 规格
+                &quot;normalAmount&quot;: 17, // 实际库存（最小单位数量）
+                &quot;normalAmountJian&quot;: 17, // 实际库存（件）
+                &quot;normalAmountSan&quot;: 0, // 实际库存（散）
+                &quot;perunit&quot;: 0, // 转化率
+                &quot;pno&quot;: &quot;A629&quot;, // 品号
+                &quot;productId&quot;: 4661, // 产品ID
+                &quot;productName&quot;: &quot;冻煮整只龙虾（500-700g）&quot;, // 产品名
+                &quot;status&quot;: &quot;NORMAL&quot; // 库存状态 NORMAL 正常 LOCK 锁定
+            }
+        ],
+        &quot;pageNo&quot;: 1, 
+        &quot;total&quot;: 0
+    }
+}
+</code></pre> <h3 id="ccgl-3-供应商库存"><a href="#ccgl-3-供应商库存" aria-hidden="true" class="header-anchor">#</a> CCGL-3. 供应商库存</h3> <h4 id="模块负责人-3"><a href="#模块负责人-3" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>刘宏宇
+</code></pre> <h4 id="请求-3"><a href="#请求-3" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/depot/stock3
+</code></pre> <h4 id="参数-3"><a href="#参数-3" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>supplierId: 1 // 供应商ID
+productKeyword:&quot;xxx&quot; // 品号，品名
+depotId: 1 // 仓ID，全部为不传
+status:&quot;NORMAL&quot; // 状态 NORMAL 正常 LOCK 锁定
+normalAmountOp: &quot;&gt;&quot; // &gt; &lt; &gt;= = 实际库存比较符
+normalAmount: 10.0 // 实际库存数量
+pageNo: 1 // 分页
+pageSize: 25 // 页条数
+</code></pre> <h4 id="响应-3"><a href="#响应-3" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>    {
+        &quot;code&quot;: 100000,
+        &quot;msg&quot;: &quot;&quot;,
+        &quot;data&quot;: {
+            &quot;buttonPermissions&quot;: [],
+            &quot;dataSums&quot;: null,
+            &quot;datas&quot;: [
+                {
+                &quot;depotId&quot;: 40, // 仓ID
+                &quot;depotName&quot;: &quot;DC（大连铁越仓）&quot;, // 仓名
+                &quot;depotStockFuture&quot;: { // 在途库存，若未匹配 则为 null
+                    &quot;amountJian&quot;: 50, // 总在途（件）
+                    &quot;amountJian1&quot;: 0, // 在途1（件）
+                    &quot;amountJian2&quot;: 0, // 在途2（件）
+                    &quot;amountJian3&quot;: 0, // 在途3（件）
+                    &quot;amountJian4&quot;: 0, // 在途4（件）
+                    &quot;amountSan&quot;: 0, // 总在途（散）
+                    &quot;amountSan1&quot;: 0, // 在途1（散）
+                    &quot;amountSan2&quot;: 0, // 在途2（散）
+                    &quot;amountSan3&quot;: 0, // 在途3（散）
+                    &quot;amountSan4&quot;: 0, // 在途4（散）
+                    &quot;depotId&quot;: 40, // 仓ID
+                    &quot;productId&quot;: 21, // 产品ID
+                    &quot;supplierId&quot;: 2629 // 供应商ID
+                },
+                &quot;guige&quot;: &quot;540g（15串）/盒*12盒&quot;, // 规格
+                &quot;unit&quot;: &quot;件&quot;, // 单位
+                &quot;normalAmount&quot;: 2265, // 实际库存（最小单位数量）
+                &quot;normalAmountJian&quot;: 188, // 实际库存（件）
+                &quot;normalAmountSan&quot;: 9, // 实际库存（散）
+                &quot;perunit&quot;: 12, // 转化率
+                &quot;pno&quot;: &quot;0081&quot;, // 品号
+                &quot;productId&quot;: 21, // 产品ID
+                &quot;productName&quot;: &quot;桑巴虾串&quot;, // 产品名
+                &quot;status&quot;: &quot;NORMAL&quot;, // 状态 NORMAL 正常 LOCK 锁定
+                &quot;supplierId&quot;: 2629, // 供应商ID
+                &quot;supplierName&quot;: &quot;26&quot; // 供应商名
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: 25
+    }
+}
+</code></pre> <h3 id="ccgl-4-供应商库存导出"><a href="#ccgl-4-供应商库存导出" aria-hidden="true" class="header-anchor">#</a> CCGL-4. 供应商库存导出</h3> <h4 id="模块负责人-4"><a href="#模块负责人-4" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>刘宏宇
+</code></pre> <h4 id="请求-4"><a href="#请求-4" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/depot/stock3/export
+</code></pre> <h4 id="参数-4"><a href="#参数-4" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*checkToken: &quot;xxx&quot; // 临时下载授权码, 从JC-4 接口获取
+*mirrorTime: &quot;2018-01-01&quot; // 镜像日期
+</code></pre> <h4 id="响应-4"><a href="#响应-4" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>流
+</code></pre> <h3 id="ccgl-5-库存流水"><a href="#ccgl-5-库存流水" aria-hidden="true" class="header-anchor">#</a> CCGL-5. 库存流水</h3> <h4 id="模块负责人-5"><a href="#模块负责人-5" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>刘宏宇
+</code></pre> <h4 id="请求-5"><a href="#请求-5" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/depot/flow
+</code></pre> <h4 id="参数-5"><a href="#参数-5" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*sDate:&quot;2018-12-01 00:00:00&quot; // 开始时间 限制为 3个月最大范围
+*eDate:&quot;2018-12-01 23:59:59&quot; // 结束时间 限制为 3个月最大范围
+type:&quot;IN&quot; // 流水类型 IN 入流水 OUT 出流水
+inOrderId: &quot;xxx&quot; // 入单号
+productKeyword: &quot;xxx&quot; // 品号，品名
+inOrderType: &quot;TR&quot; // 入单类型 PA 采购单 IN 普通入 TR 调拨单
+outOrderType: &quot;TR&quot; // 出单类型 SA 销售单 OUT 普通出 TR 调拨单
+payMode: &quot;INBUY&quot; // 支付方式 INBUY 入结 OUT 出结
+giftFlg: 0 // 0 非赠品 1 赠品 ，不限制不传
+depotId: 1 // 仓ID
+pageNo: 1 // 分页
+pageSize: 25 // 页条数
+</code></pre> <h4 id="响应-5"><a href="#响应-5" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;amount&quot;: -135, // 最小单位数量
+                &quot;createTime&quot;: &quot;2018-12-01 16:05:54&quot;, // 创建时间
+                &quot;depotId&quot;: 40, // 仓ID
+                &quot;depotName&quot;: &quot;DC（大连铁越仓）&quot;, // 仓名
+                &quot;giftFlg&quot;: 0, // 是否赠品 0 非赠品 1 赠品
+                &quot;guige&quot;: &quot;800g*9盒&quot;, // 规格
+                &quot;inOrderId&quot;: &quot;PA181126016136&quot;, // 入单ID
+                &quot;inOrderType&quot;: &quot;TR&quot;, // TR 调拨单 IN 普通入 PA 采购单 SR 销售退
+                &quot;outOrderId&quot;: &quot;TR181129003172&quot;, // 出单ID
+                &quot;outOrderType&quot;: &quot;TR&quot;, // TR 调拨单 OUT 普通出 SA 销售单 PR 采购退 
+                &quot;payMode&quot;: &quot;OUTBUY&quot;, // 结算方式 OUTBUY 出结 INBUY 入结 
+                &quot;perunit&quot;: 9, // 转化率
+                &quot;pno&quot;: &quot;0079&quot;, // 品号
+                &quot;productId&quot;: 2, // 产品ID
+                &quot;productName&quot;: &quot;海苔多春鱼&quot;, // 产品名
+                &quot;productUnitId&quot;: 0, // 规格ID
+                &quot;type&quot;: &quot;OUT&quot;, // 流水类型 OUT 出流水 IN 入流水
+                &quot;unit&quot;: &quot;件&quot; // 单位
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: 25
+    }
+}
+</code></pre> <h3 id="ccgl-6-库存流水导出"><a href="#ccgl-6-库存流水导出" aria-hidden="true" class="header-anchor">#</a> CCGL-6. 库存流水导出</h3> <h4 id="模块负责人-6"><a href="#模块负责人-6" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>刘宏宇
+</code></pre> <h4 id="请求-6"><a href="#请求-6" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/depot/flow/export
+</code></pre> <h4 id="参数-6"><a href="#参数-6" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*sDate:&quot;2018-12-01 00:00:00&quot; // 开始时间 限制为 3个月最大范围
+*eDate:&quot;2018-12-01 23:59:59&quot; // 结束时间 限制为 3个月最大范围
+*depotId: 1 // 仓ID
+type:&quot;IN&quot; // 流水类型 IN 入流水 OUT 出流水
+inOrderId: &quot;xxx&quot; // 入单号
+productKeyword: &quot;xxx&quot; // 品号，品名
+inOrderType: &quot;TR&quot; // 入单类型 PA 采购单 IN 普通入 TR 调拨单 SR 销售退
+outOrderType: &quot;TR&quot; // 出单类型 SA 销售单 OUT 普通出 TR 调拨单 PR 采购退
+payMode: &quot;INBUY&quot; // 支付方式 INBUY 入结 OUT 出结
+giftFlg: 0 // 0 非赠品 1 赠品 ，不限制不传
+</code></pre> <h4 id="响应-6"><a href="#响应-6" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>流
+</code></pre> <h3 id="ccgl-7-安全库存规则修改"><a href="#ccgl-7-安全库存规则修改" aria-hidden="true" class="header-anchor">#</a> CCGL-7. 安全库存规则修改</h3> <h4 id="模块负责人-7"><a href="#模块负责人-7" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-7"><a href="#请求-7" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/depot/safe/rule
+</code></pre> <h4 id="参数-7"><a href="#参数-7" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>// 此接口包含新增、修改、删除的逻辑
+// 删除的规则不需要传给后台
+{
+    &quot;onlyCode&quot;:&quot;19823478127&quot;,        // 唯一编码
+    [
+        {
+            *&quot;id&quot;:13,                // 规则id
+            *&quot;parameter&quot;: &quot;AVERAGE&quot;, // 基础参数，目前只有AVERAGE一种参数类型
+            *&quot;minRange&quot;: 1,          // 最小值
+            *&quot;maxRange&quot;: 200,        // 最大值
+            *&quot;actionType&quot;: &quot;FULL&quot;,   // 安全库存值 FULL 基础参数； HALF 基础参数/2； SPECIFY 其它
+            *&quot;actionValue&quot;: 0        // 当actionType=SPECIFY时，actionValue&gt;0,FULL&amp;HALF时，actionValue=0
+        },
+        {
+            &quot;id&quot;:0,
+            &quot;parameter&quot;: &quot;AVERAGE&quot;,
+            &quot;minRange&quot;: 200,
+            &quot;maxRange&quot;: 400,
+            &quot;actionType&quot;: &quot;HALF&quot;,
+            &quot;actionValue&quot;: 0
+        },
+        {
+            &quot;parameter&quot;: &quot;AVERAGE&quot;,
+            &quot;minRange&quot;: 400,
+            &quot;maxRange&quot;: 600,
+            &quot;actionType&quot;: &quot;SPECIFY&quot;,
+            &quot;actionValue&quot;: 100
+        }
+    ]
+}
+</code></pre> <h3 id="ccgl-8-安全库存规则查询"><a href="#ccgl-8-安全库存规则查询" aria-hidden="true" class="header-anchor">#</a> CCGL-8. 安全库存规则查询</h3> <h4 id="模块负责人-8"><a href="#模块负责人-8" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-8"><a href="#请求-8" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/depot/safe/rule
+</code></pre> <h4 id="参数-8"><a href="#参数-8" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>无
+</code></pre> <h4 id="响应-7"><a href="#响应-7" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;actionType&quot;: &quot;FULL&quot;,   // 安全库存规则值
+            &quot;actionValue&quot;: 0,       // 当actionType=SPECIFY时的安全库存规则值
+            &quot;deleteFlg&quot;: 0,         
+            &quot;id&quot;: 13,               // 规则id
+            &quot;maxRange&quot;: 200,        // 最大值
+            &quot;minRange&quot;: 1,          // 最小值
+            &quot;parameter&quot;: &quot;AVERAGE&quot;  // 基础参数
+        },
+        {
+            &quot;actionType&quot;: &quot;HALF&quot;,
+            &quot;actionValue&quot;: 0,
+            &quot;deleteFlg&quot;: 0,
+            &quot;id&quot;: 14,
+            &quot;maxRange&quot;: 400,
+            &quot;minRange&quot;: 200,
+            &quot;parameter&quot;: &quot;AVERAGE&quot;
+        },
+        {
+            &quot;actionType&quot;: &quot;SPECIFY&quot;,
+            &quot;actionValue&quot;: 100,
+            &quot;deleteFlg&quot;: 0,
+            &quot;id&quot;: 16,
+            &quot;maxRange&quot;: 600,
+            &quot;minRange&quot;: 400,
+            &quot;parameter&quot;: &quot;AVERAGE&quot;
+        }
+    ]
+}     
+</code></pre> <h3 id="ccgl-9-安全库存规则日志"><a href="#ccgl-9-安全库存规则日志" aria-hidden="true" class="header-anchor">#</a> CCGL-9. 安全库存规则日志</h3> <h4 id="模块负责人-9"><a href="#模块负责人-9" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-9"><a href="#请求-9" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/depot/safe/rule/log
+</code></pre> <h4 id="参数-9"><a href="#参数-9" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>pageNo  // 页码
+pageSize // 页大小
+</code></pre> <h4 id="响应-8"><a href="#响应-8" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;id&quot;: 0,
+                &quot;opInfo&quot;: &quot;修改安全库存&quot;,         // 操作内容
+                &quot;opRole&quot;: 0,
+                &quot;opTime&quot;: &quot;2019-01-31 08:27:57&quot;,    // 操作时间
+                &quot;opUser&quot;: 0,
+                &quot;opUserName&quot;: &quot;孙启萌&quot;,            // 操作人
+                &quot;ruleId&quot;: 0
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: 1
+    }
+}    
+</code></pre> <h3 id="ccgl-10-安全库存列表"><a href="#ccgl-10-安全库存列表" aria-hidden="true" class="header-anchor">#</a> CCGL-10. 安全库存列表</h3> <h4 id="模块负责人-10"><a href="#模块负责人-10" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-10"><a href="#请求-10" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/depot/safe/stock
+</code></pre> <h4 id="参数-10"><a href="#参数-10" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>keyword             // 品名、品号
+depotId             // 仓库id
+status              // 库存状态 'NORMAL' 正常,'LOCK' 锁定
+enableAmountOp      // 可用库存 操作符
+enableAmount                    值
+normalAmountOp      // 实际库存 操作符
+normalAmount                    值
+pageNo              // 页码
+pageSize            // 页大小
+</code></pre> <h4 id="响应-9"><a href="#响应-9" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;averageJian&quot;: 33.33,           // 平均出货量 整件
+                &quot;averageSan&quot;: 0,                // 散货
+                &quot;createTime&quot;: &quot;&quot;,
+                &quot;deleteFlg&quot;: 0,
+                &quot;depotId&quot;: 84,                  // 仓库id
+                &quot;depotName&quot;: &quot;DC（深圳中柱仓）&quot;,   // 仓库名称
+                &quot;depotStatus&quot;: &quot;&quot;,              // 库存状态 NORMAL 正常 LOCK 锁定
+                &quot;enableAmountJian&quot;: 0,          // 可用库存 整件
+                &quot;enableAmountSan&quot;: 0,           // 散货
+                &quot;guige&quot;: &quot;500g(20枚）/袋*10袋&quot;,     // 产品规格
+                &quot;id&quot;: 0,
+                &quot;lastMonth1Jian&quot;: 100,          // 前一个月 整件
+                &quot;lastMonth1San&quot;: 0,             // 散货
+                &quot;lastMonth2Jian&quot;: 100,          // 前两个月 整件
+                &quot;lastMonth2San&quot;: 0,             // 散货
+                &quot;lastMonth3Jian&quot;: 100,          // 前三个月 整件
+                &quot;lastMonth3San&quot;: 0,             // 散货
+                &quot;modifyTime&quot;: &quot;&quot;,
+                &quot;normalAmountJian&quot;: 0,          // 实际库存 整件
+                &quot;normalAmountSan&quot;: 0,           // 散货
+                &quot;perunit&quot;: 10,                  // 转化率
+                &quot;pno&quot;: &quot;&quot;,                      // 品号
+                &quot;productId&quot;: 4626,              // 产品id
+                &quot;productName&quot;: &quot;酸奶大福&quot;,      // 产品名称
+                &quot;safeAmount&quot;: 34,               // 安全库存
+                &quot;tag&quot;: &quot;&quot;,
+                &quot;type&quot;: null,   
+                &quot;unit&quot;: &quot;件&quot;                     // 产品单位
+            }
+        ],
+        &quot;pageNo&quot;: 2,
+        &quot;total&quot;: 25
+    }
+}
+</code></pre> <h3 id="ccgl-11-安全库存修改"><a href="#ccgl-11-安全库存修改" aria-hidden="true" class="header-anchor">#</a> CCGL-11. 安全库存修改</h3> <h4 id="模块负责人-11"><a href="#模块负责人-11" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-11"><a href="#请求-11" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/depot/safe/stock/{id}
+</code></pre> <h4 id="参数-11"><a href="#参数-11" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id // 安全库存id，【大于等于0】的数字，在列表中获取不到id时，传 0 给后台
+{
+    &quot;depotId&quot;:40,       // 仓库id
+    &quot;productId&quot;:1986,   // 产品id
+    &quot;perunit&quot;:12,       // 转化率
+    &quot;safeAmount&quot;:100    // 安全库存
+}    
+</code></pre> <h4 id="响应-10"><a href="#响应-10" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}    
+</code></pre> <h3 id="ccgl-12-安全库存导出"><a href="#ccgl-12-安全库存导出" aria-hidden="true" class="header-anchor">#</a> CCGL-12. 安全库存导出</h3> <h4 id="模块负责人-12"><a href="#模块负责人-12" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-12"><a href="#请求-12" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET    /v2/depot/safe/stock/export
+</code></pre> <h4 id="参数-12"><a href="#参数-12" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>// ****************参考税收分类导出*****************
+keyword             // 品名、品号
+depotId             // 仓库id
+status              // 库存状态
+checkCode           // 通过 JC-3 获取
+</code></pre> <h4 id="响应-11"><a href="#响应-11" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>流
+</code></pre> <h3 id="ccgl-13-2级库存导出"><a href="#ccgl-13-2级库存导出" aria-hidden="true" class="header-anchor">#</a> CCGL-13. 2级库存导出</h3> <h4 id="模块负责人-13"><a href="#模块负责人-13" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>刘宏宇
+</code></pre> <h4 id="请求-13"><a href="#请求-13" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/depot/stock2/export
+</code></pre> <h4 id="参数-13"><a href="#参数-13" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*depotId: 1 // 仓ID
+productIds:[
+    1,2,3
+] // 产品ID集合
+</code></pre> <h4 id="响应-12"><a href="#响应-12" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>流
+</code></pre> <h3 id="模版"><a href="#模版" aria-hidden="true" class="header-anchor">#</a> 模版</h3> <h4 id="模块负责人-14"><a href="#模块负责人-14" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <h4 id="请求-14"><a href="#请求-14" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <h4 id="参数-14"><a href="#参数-14" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <h4 id="响应-13"><a href="#响应-13" aria-hidden="true" class="header-anchor">#</a> 响应</h4></div> <div class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">4/24/2019, 11:35:11 AM</span></div></div> <!----> </div> <!----></div></div>
+    <script src="/work-a-api-v2/assets/js/app.a6722e02.js" defer></script><script src="/work-a-api-v2/assets/js/12.0c967175.js" defer></script>
+  </body>
+</html>

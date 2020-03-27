@@ -1,0 +1,1882 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>备货管理 | ADoc</title>
+    <meta name="description" content="A团队开发文档">
+    
+    
+    <link rel="preload" href="/work-a-api-v2/assets/css/0.styles.35f149a3.css" as="style"><link rel="preload" href="/work-a-api-v2/assets/js/app.a6722e02.js" as="script"><link rel="preload" href="/work-a-api-v2/assets/js/28.c950b06d.js" as="script"><link rel="prefetch" href="/work-a-api-v2/assets/js/10.1a10445b.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/11.42f498c9.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/12.0c967175.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/13.3651904d.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/14.f08b1cf2.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/15.9349f875.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/16.12c6bae3.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/17.adca03bd.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/18.c998838e.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/19.3918a1ff.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/2.a0ea3f6c.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/20.90e7db96.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/21.107ae2fe.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/22.74755e26.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/23.311dc752.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/24.f5a0db0c.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/25.930c2322.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/26.2d5db294.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/27.2fe9193a.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/29.c08b73a8.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/3.d1df23fe.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/30.03105b2a.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/31.e5254695.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/32.f61b2cc2.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/4.0f0014c9.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/5.95ee4e26.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/6.a8f01348.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/7.88947b66.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/8.0d5a3953.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/9.20882588.js">
+    <link rel="stylesheet" href="/work-a-api-v2/assets/css/0.styles.35f149a3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/work-a-api-v2/" class="home-link router-link-active"><!----> <span class="site-name">ADoc</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/work-a-api-v2/wms/" class="nav-link">WMS仓储</a></div><div class="nav-item"><a href="/work-a-api-v2/ufo/" class="nav-link">金蝶</a></div><div class="nav-item"><a href="/work-a-api-v2/addon/" class="nav-link">插件</a></div><div class="nav-item"><a href="/work-a-api-v2/outer/" class="nav-link">合作商</a></div><div class="nav-item"><a href="/work-a-api-v2/stockup/" class="nav-link router-link-exact-active router-link-active">备货</a></div><div class="nav-item"><a href="/work-a-api-v2/order/" class="nav-link">订单</a></div><div class="nav-item"><a href="/work-a-api-v2/finance/" class="nav-link">财务</a></div><div class="nav-item"><a href="/work-a-api-v2/supplier/" class="nav-link">供应商</a></div><div class="nav-item"><a href="/work-a-api-v2/invoice/" class="nav-link">发票</a></div><div class="nav-item"><a href="/work-a-api-v2/customer/" class="nav-link">客户</a></div><div class="nav-item"><a href="/work-a-api-v2/product/" class="nav-link">产品</a></div><div class="nav-item"><a href="/work-a-api-v2/auth/" class="nav-link">权限</a></div><div class="nav-item"><a href="/work-a-api-v2/contract/" class="nav-link">销售优惠</a></div><div class="nav-item"><a href="/work-a-api-v2/price/" class="nav-link">价格</a></div><div class="nav-item"><a href="/work-a-api-v2/freight/" class="nav-link">运费</a></div><div class="nav-item"><a href="/work-a-api-v2/market/" class="nav-link">营销</a></div><div class="nav-item"><a href="/work-a-api-v2/cookbook/" class="nav-link">菜谱</a></div><div class="nav-item"><a href="/work-a-api-v2/common/" class="nav-link">基础</a></div><div class="nav-item"><a href="/work-a-api-v2/app/" class="nav-link">APP</a></div><div class="nav-item"><a href="/work-a-api-v2/depot/" class="nav-link">库存</a></div><div class="nav-item"><a href="/work-a-api-v2/fee/" class="nav-link">费用</a></div><div class="nav-item"><a href="/work-a-api-v2/notice/" class="nav-link">消息通知（作废）</a></div><div class="nav-item"><a href="/work-a-api-v2/changelog/" class="nav-link">变更</a></div><div class="nav-item"><a href="/work-a-api-v2/feign/" class="nav-link">代理接口</a></div><div class="nav-item"><a href="/work-a-api-v2/other/" class="nav-link">其它</a></div><div class="nav-item"><a href="/work-a-api-v2/sta/" class="nav-link">统计</a></div><div class="nav-item"><a href="/work-a-api-v2/message/" class="nav-link">消息</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/work-a-api-v2/wms/" class="nav-link">WMS仓储</a></div><div class="nav-item"><a href="/work-a-api-v2/ufo/" class="nav-link">金蝶</a></div><div class="nav-item"><a href="/work-a-api-v2/addon/" class="nav-link">插件</a></div><div class="nav-item"><a href="/work-a-api-v2/outer/" class="nav-link">合作商</a></div><div class="nav-item"><a href="/work-a-api-v2/stockup/" class="nav-link router-link-exact-active router-link-active">备货</a></div><div class="nav-item"><a href="/work-a-api-v2/order/" class="nav-link">订单</a></div><div class="nav-item"><a href="/work-a-api-v2/finance/" class="nav-link">财务</a></div><div class="nav-item"><a href="/work-a-api-v2/supplier/" class="nav-link">供应商</a></div><div class="nav-item"><a href="/work-a-api-v2/invoice/" class="nav-link">发票</a></div><div class="nav-item"><a href="/work-a-api-v2/customer/" class="nav-link">客户</a></div><div class="nav-item"><a href="/work-a-api-v2/product/" class="nav-link">产品</a></div><div class="nav-item"><a href="/work-a-api-v2/auth/" class="nav-link">权限</a></div><div class="nav-item"><a href="/work-a-api-v2/contract/" class="nav-link">销售优惠</a></div><div class="nav-item"><a href="/work-a-api-v2/price/" class="nav-link">价格</a></div><div class="nav-item"><a href="/work-a-api-v2/freight/" class="nav-link">运费</a></div><div class="nav-item"><a href="/work-a-api-v2/market/" class="nav-link">营销</a></div><div class="nav-item"><a href="/work-a-api-v2/cookbook/" class="nav-link">菜谱</a></div><div class="nav-item"><a href="/work-a-api-v2/common/" class="nav-link">基础</a></div><div class="nav-item"><a href="/work-a-api-v2/app/" class="nav-link">APP</a></div><div class="nav-item"><a href="/work-a-api-v2/depot/" class="nav-link">库存</a></div><div class="nav-item"><a href="/work-a-api-v2/fee/" class="nav-link">费用</a></div><div class="nav-item"><a href="/work-a-api-v2/notice/" class="nav-link">消息通知（作废）</a></div><div class="nav-item"><a href="/work-a-api-v2/changelog/" class="nav-link">变更</a></div><div class="nav-item"><a href="/work-a-api-v2/feign/" class="nav-link">代理接口</a></div><div class="nav-item"><a href="/work-a-api-v2/other/" class="nav-link">其它</a></div><div class="nav-item"><a href="/work-a-api-v2/sta/" class="nav-link">统计</a></div><div class="nav-item"><a href="/work-a-api-v2/message/" class="nav-link">消息</a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>备货管理</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/work-a-api-v2/stockup/#备货管理" class="sidebar-link">备货管理</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-1-仓导航接口" class="sidebar-link">BH-1.仓导航接口</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-2-调货列表查询" class="sidebar-link">BH-2.调货列表查询</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-3-调货计划-分配调货线路（作废）" class="sidebar-link">BH-3.调货计划-分配调货线路（作废）</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-4-调货计划-转移至其他线路（作废）" class="sidebar-link">BH-4.调货计划-转移至其他线路（作废）</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-5-调货计划-分配调货计划" class="sidebar-link">BH-5.调货计划-分配调货计划</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-6-调货计划-将订单设置为未分配计划" class="sidebar-link">BH-6.调货计划-将订单设置为未分配计划</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-7-调货计划-执行计划" class="sidebar-link">BH-7.调货计划-执行计划</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-8-调货计划-取消计划" class="sidebar-link">BH-8.调货计划-取消计划</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-9-调货计划-执行（对个别订单进行执行操作）" class="sidebar-link">BH-9.调货计划-执行（对个别订单进行执行操作）</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-10-调货计划-完成计划" class="sidebar-link">BH-10.调货计划-完成计划</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-11-调货计划-根据订单号，返回仓和线路" class="sidebar-link">BH-11.调货计划-根据订单号，返回仓和线路</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-21-备货需求列表（产品维度）" class="sidebar-link">BH-21.备货需求列表（产品维度）</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-22-备货需求列表（供应商维度）" class="sidebar-link">BH-22.备货需求列表（供应商维度）</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-58-备货需求列表（订单维度）" class="sidebar-link">BH-58.备货需求列表（订单维度）</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-59-备货需求列表（订单维度）导出" class="sidebar-link">BH-59.备货需求列表（订单维度）导出</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-60-备货需求列表（订单维度）导出历史" class="sidebar-link">BH-60.备货需求列表（订单维度）导出历史</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-23-备货采购转化需求查询" class="sidebar-link">BH-23.备货采购转化需求查询</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-24-备货调拨转化需求查询" class="sidebar-link">BH-24.备货调拨转化需求查询</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-25-查询需求数量订单明细" class="sidebar-link">BH-25.查询需求数量订单明细</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-26-查询在途-未生效数量订单明细" class="sidebar-link">BH-26.查询在途/未生效数量订单明细</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-27-库存周转报告导出" class="sidebar-link">BH-27.库存周转报告导出</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-28-调货和mppr总表需求-分仓导出" class="sidebar-link">BH-28.调货和MPPR总表需求-分仓导出</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-29-调货和mppr总表需求-全仓导出" class="sidebar-link">BH-29.调货和MPPR总表需求-全仓导出</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-30-计划-新增" class="sidebar-link">BH-30 计划-新增</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-31-计划-修改" class="sidebar-link">BH-31 计划-修改</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-32-计划-获取发车车型列表" class="sidebar-link">BH-32 计划-获取发车车型列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-33-计划-删除" class="sidebar-link">BH-33 计划-删除</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-34-计划-获取计划列表" class="sidebar-link">BH-34 计划-获取计划列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-35-计划-通过承运单号获取物流配送信息（作废）" class="sidebar-link">BH-35 计划-通过承运单号获取物流配送信息（作废）</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-36-计划-获取详情" class="sidebar-link">BH-36 计划-获取详情</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-37-计划-同步物流信息" class="sidebar-link">BH-37 计划-同步物流信息</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-38-仓库管理-列表" class="sidebar-link">BH-38 仓库管理-列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-39-仓库管理-级别枚举" class="sidebar-link">BH-39 仓库管理-级别枚举</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-40-仓库管理-类型枚举" class="sidebar-link">BH-40 仓库管理-类型枚举</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-41-仓库管理-校验是否有重复区域仓设置" class="sidebar-link">BH-41 仓库管理-校验是否有重复区域仓设置</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-42-仓库管理-获取仓对应的区域列表" class="sidebar-link">BH-42 仓库管理-获取仓对应的区域列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-43-仓库管理-设置关联区域" class="sidebar-link">BH-43 仓库管理-设置关联区域</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-44-仓库管理-获取日志列表" class="sidebar-link">BH-44 仓库管理-获取日志列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-45-仓库管理-仓地图展示" class="sidebar-link">BH-45 仓库管理-仓地图展示</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-46-仓库管理-查询关联事业部" class="sidebar-link">BH-46 仓库管理-查询关联事业部</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-47-仓库管理-更新关联事业部" class="sidebar-link">BH-47 仓库管理-更新关联事业部</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-48-仓库管理-查询仓专属客户" class="sidebar-link">BH-48 仓库管理-查询仓专属客户</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-50-线路新增" class="sidebar-link">BH-50 线路新增</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-51-线路修改" class="sidebar-link">BH-51 线路修改</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-52-线路作废" class="sidebar-link">BH-52 线路作废</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-53-线路列表" class="sidebar-link">BH-53 线路列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-54-线路明细" class="sidebar-link">BH-54 线路明细</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-55-线路日志" class="sidebar-link">BH-55 线路日志</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-56-线路修改名称" class="sidebar-link">BH-56 线路修改名称</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-57-线路列表（不分页）" class="sidebar-link">BH-57 线路列表（不分页）</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-100-安全库存规则列表" class="sidebar-link">BH-100 安全库存规则列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-101-安全库存规则修改" class="sidebar-link">BH-101 安全库存规则修改</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-102-安全库存规则日志" class="sidebar-link">BH-102 安全库存规则日志</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-110-期货现货定制品列表" class="sidebar-link">BH-110 期货现货定制品列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-111-期货现货定制品统计列表" class="sidebar-link">BH-111 期货现货定制品统计列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-112-期货转现货" class="sidebar-link">BH-112 期货转现货</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-113-现货转期货" class="sidebar-link">BH-113 现货转期货</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-114-取消手动" class="sidebar-link">BH-114 取消手动</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-115-期货现货操作日志" class="sidebar-link">BH-115 期货现货操作日志</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-120-安全库存修改" class="sidebar-link">BH-120 安全库存修改</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-121-安全库存审核通过" class="sidebar-link">BH-121 安全库存审核通过</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-122-安全库存审核拒绝" class="sidebar-link">BH-122 安全库存审核拒绝</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-123-安全库存列表" class="sidebar-link">BH-123 安全库存列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-124-安全库存列表导出" class="sidebar-link">BH-124 安全库存列表导出</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-125-安全库存审核列表" class="sidebar-link">BH-125 安全库存审核列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-126-安全库存取消手动" class="sidebar-link">BH-126 安全库存取消手动</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-127-安全库存详情" class="sidebar-link">BH-127 安全库存详情</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-130-产品规格列表" class="sidebar-link">BH-130 产品规格列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/stockup/#bh-131-断货信息导出" class="sidebar-link">BH-131.断货信息导出</a></li></ul></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h2 id="备货管理"><a href="#备货管理" aria-hidden="true" class="header-anchor">#</a> 备货管理</h2> <h3 id="bh-1-仓导航接口"><a href="#bh-1-仓导航接口" aria-hidden="true" class="header-anchor">#</a> BH-1.仓导航接口</h3> <h4 id="模块负责人"><a href="#模块负责人" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求"><a href="#请求" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/stockup/plan/detail/depot
+</code></pre> <h4 id="参数"><a href="#参数" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>splitNum: 6 // 返回[[],[]],第一个数组是下拉，第二个数组是平铺
+</code></pre> <h4 id="响应"><a href="#响应" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        [
+            {
+                &quot;cnt&quot;: 0, // 订单数量
+                &quot;depot&quot;: {
+                    &quot;id&quot;: 51,
+                    &quot;level&quot;: &quot;DC&quot;,
+                    &quot;name&quot;: &quot;DC（天津优和仓 ）&quot;
+                }
+            }
+        ],
+        []
+    ]
+}
+</code></pre> <h3 id="bh-2-调货列表查询"><a href="#bh-2-调货列表查询" aria-hidden="true" class="header-anchor">#</a> BH-2.调货列表查询</h3> <h4 id="模块负责人-2"><a href="#模块负责人-2" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-2"><a href="#请求-2" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code> GET  /v2/stockup/plan/detail
+</code></pre> <h4 id="参数-2"><a href="#参数-2" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>orderId  //采购单号/调拨单号
+*depotId  //入库仓id
+lineId   //线路id
+</code></pre> <h4 id="响应-2"><a href="#响应-2" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>1.未分配线路数据
+    {
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;unAllocationLines&quot;: {//未分配线路的订单基本信息
+            &quot;san&quot;: 12,//散数量
+            &quot;data&quot;: [
+                {
+                    &quot;clickFlg&quot;: 1,//可点击标识 1是可点击   0是不可点击
+                    &quot;fromDepot&quot;: &quot;大连宏兴食品有限公司&quot;,//供应商名称/出库仓名称
+                    &quot;jian&quot;: 0,//件数量
+                    &quot;orderId&quot;: &quot;PA19053000007&quot;,//订单号
+                    &quot;planCompleteTime&quot;: &quot;2019-05-31 00:00:00&quot;,//计划完成时间
+                    &quot;planSendTime&quot;: &quot;2019-05-31 00:00:00&quot;,//计划发出时间
+                    &quot;remark&quot;: &quot;12345qwert&quot;,//备注
+                    &quot;san&quot;: 1,//散数量
+                    &quot;status&quot;: &quot;INVALID&quot;,//订单状态 PA单的状态： INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 
+                    &quot;toDepot&quot;: &quot;DC（天津优和仓 ）&quot;,//入库仓名称
+                    &quot;totalprice&quot;: 26.4,//金额
+                    &quot;type&quot;: &quot;PA&quot;,//单据类型 PA 采购 TR 调拨
+                    &quot;waybillInfo&quot;: &quot;&quot;//承运单号
+                }
+            ],
+            &quot;jian&quot;: 0
+        }
+    }
+}
+2.已分配线路数据
+{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;linesInfo&quot;: [
+            {
+                &quot;createRole&quot;: 0,
+                &quot;createTime&quot;: &quot;2019-06-03 11:56:42&quot;,//创建时间
+                &quot;createUser&quot;: 0,
+                &quot;createUserName&quot;: &quot;孙启萌&quot;,//创建人
+                &quot;deleteFlg&quot;: 0,
+                &quot;depot&quot;: [//关联出库仓
+                    {
+                        &quot;deleteFlg&quot;: 0,
+                        &quot;dutyId&quot;: 51,//职能ID： 供应商ID/仓ID
+                        &quot;dutyName&quot;: &quot;DC（天津优和仓 ）&quot;,//供应商名/仓库名
+                        &quot;id&quot;: 22,
+                        &quot;lineId&quot;: 7,//线路id
+                        &quot;type&quot;: &quot;TR&quot;//配送职能： PA 采购配送 TR 调拨配送
+                    }
+                ],
+                &quot;fromPathName&quot;: &quot;&quot;,//线路起点省
+                &quot;fromPathid&quot;: &quot;0203&quot;,//起点区域id
+                &quot;id&quot;: 7,
+                &quot;name&quot;: &quot;天津燕山区&quot;,//线路名称
+                &quot;paFlg&quot;: 1,//是否配送PA单 0 不配送 1 配送
+                &quot;stockupPlanVOS&quot;: [//调货计划基本信息
+                    {
+                        &quot;buttonPermission&quot;: {//按钮权限，由后台提供
+                            &quot;cancel&quot;: false,//取消计划
+                            &quot;modify&quot;: true, //修改计划 
+                            &quot;synchronization&quot;: true,//同步物流数据
+                            &quot;complete&quot;: false,//完成计划
+                            &quot;delete&quot;: true, //删除计划
+                            &quot;push&quot;: true//执行计划
+                            &quot;otherline&quot;: false,//转移至其他线路计划
+                            &quot;unplan&quot;: false,//移至未分配计划
+                            &quot;excute&quot;: false//执行
+                        },
+                        &quot;carInfo&quot;: &quot;12米超级超限&quot;,//车类型 4.2米 等等
+                        &quot;createRole&quot;: 29319,
+                        &quot;createTime&quot;: &quot;2019-06-03 04:03:41&quot;,//创建时间
+                        &quot;createUser&quot;: 518,
+                        &quot;createUserName&quot;: &quot;孙启萌&quot;,//创建人
+                        &quot;deleteFlg&quot;: 0,
+                        &quot;id&quot;: 3,
+                        &quot;jian&quot;: 0,//件数
+                        &quot;lineId&quot;: 7,//关联线路id
+                        &quot;name&quot;: &quot;test线路3&quot;,//关联线路名称
+                        &quot;orderVOS&quot;: {//已分配调货线路，并且分配调货计划的订单基本信息
+                            &quot;san&quot;: 3,//散数量
+                            &quot;data&quot;: [//订单基本信息
+                                {
+                                    &quot;clickFlg&quot;: 1,//可点击标识 1是可点击   0是不可点击
+                                    &quot;fromDepot&quot;: &quot;大连宏兴食品有限公司&quot;,//  供应商名称/出库仓名称
+                                    &quot;jian&quot;: 0,//件数量
+                                    &quot;orderId&quot;: &quot;PA19060300003&quot;,//订单号
+                                    &quot;planCompleteTime&quot;: &quot;2019-05-31 00:00:00&quot;,//计划完成时间
+                                    &quot;planSendTime&quot;: &quot;2019-06-05 00:00:00&quot;,,//计划发出时间
+                                    &quot;remark&quot;: &quot;12345qwert&quot;,//备注
+                                    &quot;san&quot;: 1,,//散数量
+                                    &quot;status&quot;: &quot;RUN&quot;,//订单状态 PA单的状态： INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已完成
+                                     //     TR单的状态：INVALID 未生效 RUN 已生效 SEND 已发出 COMPLETE 已签收
+                                    &quot;toDepot&quot;: &quot;DC（天津优和仓 ）&quot;,//入库仓名称
+                                    &quot;totalprice&quot;: 26.4,//金额
+                                    &quot;type&quot;: &quot;PA&quot;,//单据类型 PA 采购 TR 调拨
+                                    &quot;waybillInfo&quot;: &quot;&quot;//承运单号
+                                }
+                            ],
+                            &quot;jian&quot;: 0//件数量
+                        },
+                        &quot;planCompleteTime&quot;: &quot;2019-06-07 00:00:00&quot;,//计划入库时间
+                        &quot;planSendTime&quot;: &quot;2019-06-05 00:00:00&quot;,//计划发出时间
+                        &quot;san&quot;: 3,//散数
+                        &quot;splitFlg&quot;: 0,//是否拆分 0 未拆分 1 拆分
+                        &quot;status&quot;: &quot;COMPLETE&quot;,//调货计划状态 INVALID 待执行 RUN 已执行 COMPLETE 完成
+                        &quot;type&quot;: &quot;正常&quot;//调货计划的物流类型：【正常，物流拆分】
+                    }
+                ],
+                &quot;supplier&quot;: [//线路绑定的供应商信息
+                    {
+                        &quot;deleteFlg&quot;: 0,
+                        &quot;dutyId&quot;: 5560,//职能ID 供应商ID\仓ID
+                        &quot;dutyName&quot;: &quot;大连宏兴食品有限公司&quot;,//供应商名\仓库名
+                        &quot;id&quot;: 21,
+                        &quot;lineId&quot;: 7,//线路id
+                        &quot;type&quot;: &quot;PA&quot;//配送职能 PA 采购配送 TR 调拨配送
+                    }
+                ],
+                &quot;toDepotId&quot;: 51,//入库仓id
+                &quot;toDepotName&quot;: &quot;DC（天津优和仓 ）&quot;,//入库仓名称
+                &quot;trFlg&quot;: 1,//是否配送TR单 0 不配送 1 配送
+                &quot;unAllocationPlans&quot;: {//已分配线路，但是未分配计划的订单基本信息
+                    &quot;san&quot;: 7,//散数量
+                    &quot;data&quot;: [
+                        {
+                            &quot;clickFlg&quot;: 1,//可点击标识 1是可点击   0是不可点击
+                            &quot;fromDepot&quot;: &quot;大连宏兴食品有限公司&quot;,//  供应商名称/出库仓名称
+                            &quot;jian&quot;: 0,//件数量
+                            &quot;orderId&quot;: &quot;PA19061000003&quot;,//订单号
+                            &quot;planCompleteTime&quot;: &quot;2019-06-19 00:00:00&quot;,//计划完成时间
+                            &quot;planSendTime&quot;: &quot;2019-06-19 00:00:00&quot;,//计划发出时间
+                            &quot;remark&quot;: &quot;&quot;,//备注
+                            &quot;san&quot;: 7,//散数量
+                            &quot;status&quot;: &quot;RUN&quot;,//订单状态 PA单的状态： INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已完成
+                                                //     TR单的状态：INVALID 未生效 RUN 已生效 SEND 已发出 COMPLETE 已签收
+                            &quot;toDepot&quot;: &quot;DC（天津优和仓 ）&quot;,//入库仓名称
+                            &quot;totalprice&quot;: 127.3,//金额
+                            &quot;type&quot;: &quot;PA&quot;,//单据类型 PA 采购 TR 调拨
+                            &quot;waybillInfo&quot;: &quot;&quot;//承运单号
+                        }
+                    ],
+                    &quot;jian&quot;: 0//件数量
+                }
+            }
+        ]
+    }
+}    
+</code></pre> <h3 id="bh-3-调货计划-分配调货线路（作废）"><a href="#bh-3-调货计划-分配调货线路（作废）" aria-hidden="true" class="header-anchor">#</a> BH-3.调货计划-分配调货线路（作废）</h3> <h4 id="模块负责人-3"><a href="#模块负责人-3" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-3"><a href="#请求-3" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/stockup/plan/detail/updateStockupLine
+</code></pre> <h4 id="参数-3"><a href="#参数-3" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+&quot;orderIds&quot;:[&quot;PA19053000007&quot;,&quot;PA19053000008&quot;],//订单id集合
+&quot;lineId&quot;:6  //调货线路id
+}
+</code></pre> <h4 id="响应-3"><a href="#响应-3" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{&quot;code&quot;:100000,&quot;msg&quot;:&quot;&quot;,&quot;data&quot;:null}
+</code></pre> <h3 id="bh-4-调货计划-转移至其他线路（作废）"><a href="#bh-4-调货计划-转移至其他线路（作废）" aria-hidden="true" class="header-anchor">#</a> BH-4.调货计划-转移至其他线路（作废）</h3> <h4 id="模块负责人-4"><a href="#模块负责人-4" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-4"><a href="#请求-4" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/stockup/plan/detail/transferStockupPlan
+</code></pre> <h4 id="参数-4"><a href="#参数-4" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+&quot;orderIds&quot;:[&quot;PA19053000007&quot;,&quot;PA19053000008&quot;],//订单id集合
+&quot;planId&quot;:2  //调货计划id
+}
+</code></pre> <h4 id="响应-4"><a href="#响应-4" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{&quot;code&quot;:100000,&quot;msg&quot;:&quot;&quot;,&quot;data&quot;:null}
+</code></pre> <h3 id="bh-5-调货计划-分配调货计划"><a href="#bh-5-调货计划-分配调货计划" aria-hidden="true" class="header-anchor">#</a> BH-5.调货计划-分配调货计划</h3> <h4 id="模块负责人-5"><a href="#模块负责人-5" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-5"><a href="#请求-5" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/stockup/plan/detail/updateStockupPlan
+</code></pre> <h4 id="参数-5"><a href="#参数-5" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+&quot;orderIds&quot;:[&quot;PA19053000007&quot;,&quot;PA19053000008&quot;],//订单id集合
+&quot;planId&quot;:3  //调货计划id
+}
+</code></pre> <h4 id="响应-5"><a href="#响应-5" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code> {&quot;code&quot;:100000,&quot;msg&quot;:&quot;&quot;,&quot;data&quot;:null}
+</code></pre> <h3 id="bh-6-调货计划-将订单设置为未分配计划"><a href="#bh-6-调货计划-将订单设置为未分配计划" aria-hidden="true" class="header-anchor">#</a> BH-6.调货计划-将订单设置为未分配计划</h3> <h4 id="模块负责人-6"><a href="#模块负责人-6" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-6"><a href="#请求-6" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/stockup/plan/detail/updateStockupUnPlan
+</code></pre> <h4 id="参数-6"><a href="#参数-6" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+&quot;orderIds&quot;:[&quot;PA19053000007&quot;,&quot;PA19053000008&quot;]//订单id集合
+}
+</code></pre> <h4 id="响应-6"><a href="#响应-6" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{&quot;code&quot;:100000,&quot;msg&quot;:&quot;&quot;,&quot;data&quot;:null}
+</code></pre> <h3 id="bh-7-调货计划-执行计划"><a href="#bh-7-调货计划-执行计划" aria-hidden="true" class="header-anchor">#</a> BH-7.调货计划-执行计划</h3> <h4 id="模块负责人-7"><a href="#模块负责人-7" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-7"><a href="#请求-7" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/stockup/plan/detail/executePlan/{id}  //调货计划id
+</code></pre> <h4 id="参数-7"><a href="#参数-7" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>无
+</code></pre> <h4 id="响应-7"><a href="#响应-7" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{&quot;code&quot;:100000,&quot;msg&quot;:&quot;&quot;,&quot;data&quot;:null}
+</code></pre> <h3 id="bh-8-调货计划-取消计划"><a href="#bh-8-调货计划-取消计划" aria-hidden="true" class="header-anchor">#</a> BH-8.调货计划-取消计划</h3> <h4 id="模块负责人-8"><a href="#模块负责人-8" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-8"><a href="#请求-8" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/stockup/plan/detail/cancelPlan/{id}  //调货计划id
+</code></pre> <h4 id="参数-8"><a href="#参数-8" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>无
+</code></pre> <h4 id="响应-8"><a href="#响应-8" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{&quot;code&quot;:100000,&quot;msg&quot;:&quot;&quot;,&quot;data&quot;:null}
+</code></pre> <h3 id="bh-9-调货计划-执行（对个别订单进行执行操作）"><a href="#bh-9-调货计划-执行（对个别订单进行执行操作）" aria-hidden="true" class="header-anchor">#</a> BH-9.调货计划-执行（对个别订单进行执行操作）</h3> <h4 id="模块负责人-9"><a href="#模块负责人-9" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-9"><a href="#请求-9" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/stockup/plan/detail/executeOrder
+</code></pre> <h4 id="参数-9"><a href="#参数-9" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+&quot;orderIds&quot;:[&quot;PA19053000007&quot;,&quot;PA19053000008&quot;]//订单id集合
+}
+</code></pre> <h4 id="响应-9"><a href="#响应-9" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{&quot;code&quot;:100000,&quot;msg&quot;:&quot;&quot;,&quot;data&quot;:null}
+</code></pre> <h3 id="bh-10-调货计划-完成计划"><a href="#bh-10-调货计划-完成计划" aria-hidden="true" class="header-anchor">#</a> BH-10.调货计划-完成计划</h3> <h4 id="模块负责人-10"><a href="#模块负责人-10" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-10"><a href="#请求-10" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/stockup/plan/detail/complatePlan
+</code></pre> <h4 id="参数-10"><a href="#参数-10" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+&quot;planId&quot;:2  //调货计划id
+}
+</code></pre> <h4 id="响应-10"><a href="#响应-10" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{&quot;code&quot;:100000,&quot;msg&quot;:&quot;&quot;,&quot;data&quot;:null}
+</code></pre> <h3 id="bh-11-调货计划-根据订单号，返回仓和线路"><a href="#bh-11-调货计划-根据订单号，返回仓和线路" aria-hidden="true" class="header-anchor">#</a> BH-11.调货计划-根据订单号，返回仓和线路</h3> <h4 id="模块负责人-11"><a href="#模块负责人-11" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-11"><a href="#请求-11" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/stockup/need/getDepotAndLineByOrderId
+</code></pre> <h4 id="参数-11"><a href="#参数-11" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>orderId  //订单id
+</code></pre> <h4 id="响应-11"><a href="#响应-11" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;depotId&quot;: 85,//仓id
+        &quot;lindId&quot;: 11 //线路id
+    }
+}
+</code></pre> <h3 id="bh-21-备货需求列表（产品维度）"><a href="#bh-21-备货需求列表（产品维度）" aria-hidden="true" class="header-anchor">#</a> BH-21.备货需求列表（产品维度）</h3> <h4 id="模块负责人-12"><a href="#模块负责人-12" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-12"><a href="#请求-12" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/stockup/need/getStockupNeedListALL
+</code></pre> <h4 id="参数-12"><a href="#参数-12" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>type          //请求类型 product 产品维度   supplier  供应商维度
+pnamepno      //品名/品号
+supplierId    //供应商id
+producttype   //期现货标识 NOW 现货 FUTURE 期货 CUSTOM 定制
+depotId       //仓id
+orderlack     //是否仅看订单缺货 如果仅看订单缺货：传值yes 否则传空
+meituan       //美团品标识  空是所有产品，0是非美团品 ，1是美团品， 2是C产品
+</code></pre> <h4 id="响应-12"><a href="#响应-12" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>1.查询条件：【全部】
+{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+    {
+        &quot;id&quot;: 4708,//产品id
+        &quot;lackNum&quot;: -6,//缺货【件】数
+        &quot;name&quot;: &quot;黑金鱿鱼圈&quot;,//产品名称
+        &quot;stockupNeeds&quot;: [//备货需求详情列表
+            {
+                &quot;b1Jian&quot;: 1,//前一个月-件
+                &quot;b1San&quot;: 2,//前一个月-散
+                &quot;b2Jian&quot;: 86,//前两个月-件
+                &quot;b2San&quot;: 3,//前两个月-散
+                &quot;b3Jian&quot;: 70,//前三个月-件
+                &quot;b3San&quot;: 2,//前三个月-散
+                &quot;createTime&quot;: &quot;2019-02-15&quot;,//操作时间
+                &quot;createUserName&quot;: &quot;李凤&quot;,//操作人
+                &quot;depotId&quot;: 57,//仓id
+                &quot;depotName&quot;: &quot;DC（昆山众品仓）&quot;,//仓名称
+                &quot;inRodeNum&quot;: 0,//在途库存
+                &quot;invalidNum&quot;: 6,//未生效数量
+                &quot;lackNum&quot;: -6,//缺口数量
+                &quot;needNum&quot;: 0,//需求数量
+                &quot;orderLackNum&quot;: 0,//订单缺口数量
+                &quot;productId&quot;: 4708,//产品id
+                &quot;productName&quot;: &quot;黑金鱿鱼圈&quot;,//产品名称
+                &quot;productunitId&quot;: 76,//产品规格id
+                &quot;pno&quot;: &quot;0021&quot;,//品号
+                &quot;realNum&quot;: 0,//实际库存
+                &quot;safeLackNum&quot;: 0,//安全库存缺口数量
+                &quot;safeNum&quot;: 0,//安全库存
+                &quot;status&quot;: &quot;&quot;,//如果是【ji】，显示【急】标识
+                &quot;supplierId&quot;: 2634,
+                &quot;supplierName&quot;: &quot;&quot;,
+                &quot;type&quot;: &quot;CUSTOM&quot; //产品属性 NOW 现货 FUTURE 期货 CUSTOM 定制
+            }
+        ]
+    }    
+    ]
+}
+2.查询条件：某个仓
+
+{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;b1Jian&quot;: 1,//前一个月-件
+            &quot;b1San&quot;: 2,//前一个月-散
+            &quot;b2Jian&quot;: 86,//前两个月-件
+            &quot;b2San&quot;: 3,//前两个月-散
+            &quot;b3Jian&quot;: 70,//前三个月-件
+            &quot;b3San&quot;: 2,//前三个月-散
+            &quot;createTime&quot;: &quot;2019-02-15&quot;,//操作时间
+            &quot;createUserName&quot;: &quot;李凤&quot;,//操作人
+            &quot;depotId&quot;: 40,//仓id
+            &quot;depotName&quot;: &quot;DC（大连铁越仓）&quot;,//仓名称
+            &quot;inRodeNum&quot;: 0,//在途库存
+            &quot;invalidNum&quot;: 2,//未生效数量
+            &quot;lackNum&quot;: -2,//缺口数量
+            &quot;needNum&quot;: 0,//需求数量
+            &quot;orderLackNum&quot;: 0,//订单缺口数量
+            &quot;productId&quot;: 4570,//产品id
+            &quot;productName&quot;: &quot;青占鱼(150/200)&quot;,//产品名称
+            &quot;productunitId&quot;: 76,//产品规格id
+             &quot;pno&quot;: &quot;0021&quot;,//品号
+            &quot;realNum&quot;: 0,//实际库存
+            &quot;safeLackNum&quot;: 0,//安全库存缺口数量
+            &quot;safeNum&quot;: 0,
+            &quot;status&quot;: &quot;&quot;,//如果是【ji】，显示【急】标识
+            &quot;supplierId&quot;: 0,
+            &quot;supplierName&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;CUSTOM&quot; //产品属性 NOW 现货 FUTURE 期货 CUSTOM 定制
+        }
+]
+}
+</code></pre> <h3 id="bh-22-备货需求列表（供应商维度）"><a href="#bh-22-备货需求列表（供应商维度）" aria-hidden="true" class="header-anchor">#</a> BH-22.备货需求列表（供应商维度）</h3> <h4 id="模块负责人-13"><a href="#模块负责人-13" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-13"><a href="#请求-13" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/stockup/need/getStockupNeedListALL
+</code></pre> <h4 id="参数-13"><a href="#参数-13" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>type          //请求类型 product 产品维度   supplier  供应商维度
+pnamepno      //品名/品号
+supplierId    //供应商id
+producttype   //期现货标识 NOW 现货 FUTURE 期货 CUSTOM 定制
+depotId       //仓id
+orderlack     //是否仅看订单缺货 如果仅看订单缺货：传值yes 否则传空
+meituan       //美团品标识  空是所有产品，0是非美团品 ，1是美团品， 2是C产品
+</code></pre> <h4 id="响应-13"><a href="#响应-13" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+    {
+        &quot;id&quot;: 5563,//供应商id
+        &quot;lackNum&quot;: -10,//缺货【件】数
+        &quot;name&quot;: &quot;优合集团有限公司&quot;,//供应商名称
+        &quot;stockupNeeds&quot;: [//备货需求详情列表
+            {
+                &quot;b1Jian&quot;: 1,//前一个月-件
+                &quot;b1San&quot;: 2,//前一个月-散
+                &quot;b2Jian&quot;: 86,//前两个月-件
+                &quot;b2San&quot;: 3,//前两个月-散
+                &quot;b3Jian&quot;: 70,//前三个月-件
+                &quot;b3San&quot;: 2,//前三个月-散
+                &quot;clickFlg&quot;: 0,//是否可选中标识  1是可选中   0是不可选中
+                &quot;createTime&quot;: &quot;2019-02-15&quot;,//操作时间
+                &quot;createUserName&quot;: &quot;李凤&quot;,//操作人
+                &quot;depotId&quot;: 40,//仓id
+                &quot;depotName&quot;: &quot;DC（大连仓）ASA&quot;,//仓名称
+                &quot;inRodeNum&quot;: 0,//在途库存
+                &quot;invalidNum&quot;: 10,//未生效数量
+                &quot;lackNum&quot;: -10,//缺口数量
+                &quot;needNum&quot;: 0,//需求数量
+                &quot;orderLackNum&quot;: 0,//订单缺口数量
+                &quot;productId&quot;: 4679,//产品id
+                &quot;productName&quot;: &quot;冻南美白虾(50/60)&quot;,//产品名称
+                &quot;productunitId&quot;: 76,//产品规格id
+                &quot;pno&quot;: &quot;0021&quot;,//品号
+                &quot;realNum&quot;: 0,//实际库存
+                &quot;safeLackNum&quot;: 0,//安全库存缺口数量
+                &quot;safeNum&quot;: 0,//安全库存
+                &quot;status&quot;: &quot;&quot;,//如果是【ji】，显示【急】标识
+                &quot;supplierId&quot;: 5563,//供应商id
+                &quot;supplierName&quot;: &quot;优合集团有限公司&quot;,//供应商名称
+                &quot;type&quot;: &quot;NOW&quot;//产品属性 NOW 现货 FUTURE 期货 CUSTOM 定制
+            }
+        ]
+    }
+    ]
+}
+</code></pre> <h3 id="bh-58-备货需求列表（订单维度）"><a href="#bh-58-备货需求列表（订单维度）" aria-hidden="true" class="header-anchor">#</a> BH-58.备货需求列表（订单维度）</h3> <h4 id="模块负责人-14"><a href="#模块负责人-14" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-14"><a href="#请求-14" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/stockup/need/getStockupNeedListALL
+</code></pre> <h4 id="参数-14"><a href="#参数-14" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*depotId        //仓id
+*type          //请求类型 product 产品维度   supplier  供应商维度 order 订单维度
+*pCount      //数量 默认1
+orderId    //订单id
+pno         //品号
+productName       //品名
+*status     //状态 INVALID 未生效 RUN 已生效 LOCK 已锁定 STOCKUP 已备货 SEND 已发出
+*sCreateTime       //发货时间 开始查询时间 默认为当月第一天 举例：2020-03-01 00:00:00
+*eCreateTime       //发货时间 结束查询时间 默认为今天     举例：2020-03-18 23:59:59
+*p          //页码 
+</code></pre> <h4 id="响应-14"><a href="#响应-14" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissionPage&quot;: {},
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;address&quot;: &quot;测试地址&quot;,
+                &quot;area&quot;: &quot;西岗区&quot;,//区域-区
+                &quot;cargoSupplies&quot;: {
+                    &quot;enableJian&quot;: 0,//可用-件
+                    &quot;enableSan&quot;: 0,//可用-散
+                    &quot;guige&quot;: &quot;&quot;,
+                    &quot;normalJian&quot;: 0,//实际-件
+                    &quot;normalSan&quot;: 0,//实际-散
+                    &quot;outDay1&quot;: {
+                        &quot;guige&quot;: &quot;&quot;,
+                        &quot;jian&quot;: 0,//出1-件
+                        &quot;pno&quot;: &quot;&quot;,
+                        &quot;productId&quot;: 0,
+                        &quot;productName&quot;: &quot;&quot;,
+                        &quot;san&quot;: 0 //出1-散
+                    },
+                    &quot;outDay2&quot;: {
+                        &quot;guige&quot;: &quot;&quot;,
+                        &quot;jian&quot;: 0,//出2-件
+                        &quot;pno&quot;: &quot;&quot;,
+                        &quot;productId&quot;: 0,
+                        &quot;productName&quot;: &quot;&quot;,
+                        &quot;san&quot;: 0 //出2-散
+                    },
+                    &quot;outDay3&quot;: {
+                        &quot;guige&quot;: &quot;&quot;,
+                        &quot;jian&quot;: 0,//出3-件
+                        &quot;pno&quot;: &quot;&quot;,
+                        &quot;productId&quot;: 0,
+                        &quot;productName&quot;: &quot;&quot;,
+                        &quot;san&quot;: 0 //出3-散
+                    },
+                    &quot;outDay4&quot;: {
+                        &quot;guige&quot;: &quot;&quot;,
+                        &quot;jian&quot;: 0,//出4-件
+                        &quot;pno&quot;: &quot;&quot;,
+                        &quot;productId&quot;: 0,
+                        &quot;productName&quot;: &quot;&quot;,
+                        &quot;san&quot;: 0 //出4-散
+                    },
+                    &quot;paInDay1&quot;: {
+                        &quot;guige&quot;: &quot;&quot;,
+                        &quot;jian&quot;: 0,//采1-件
+                        &quot;pno&quot;: &quot;&quot;,
+                        &quot;productId&quot;: 0,
+                        &quot;productName&quot;: &quot;&quot;,
+                        &quot;san&quot;: 0 //采1-散
+                    },
+                    &quot;paInDay2&quot;: {
+                        &quot;guige&quot;: &quot;&quot;,
+                        &quot;jian&quot;: 0,//采2-件
+                        &quot;pno&quot;: &quot;&quot;,
+                        &quot;productId&quot;: 0,
+                        &quot;productName&quot;: &quot;&quot;,
+                        &quot;san&quot;: 0//采2-散
+                    },
+                    &quot;paInDay3&quot;: {
+                        &quot;guige&quot;: &quot;&quot;,
+                        &quot;jian&quot;: 0,//采3-件
+                        &quot;pno&quot;: &quot;&quot;,
+                        &quot;productId&quot;: 0,
+                        &quot;productName&quot;: &quot;&quot;,
+                        &quot;san&quot;: 0 //采3-散
+                    },
+                    &quot;paInDay4&quot;: {
+                        &quot;guige&quot;: &quot;&quot;,
+                        &quot;jian&quot;: 0,//采4-件
+                        &quot;pno&quot;: &quot;&quot;,
+                        &quot;productId&quot;: 0,
+                        &quot;productName&quot;: &quot;&quot;,
+                        &quot;san&quot;: 0 //采4-散
+                    },
+                    &quot;pno&quot;: &quot;&quot;,
+                    &quot;productId&quot;: 0,
+                    &quot;productName&quot;: &quot;&quot;,
+                    &quot;trInDay1&quot;: {
+                        &quot;guige&quot;: &quot;&quot;,
+                        &quot;jian&quot;: 0,//调1-件
+                        &quot;pno&quot;: &quot;&quot;,
+                        &quot;productId&quot;: 0,
+                        &quot;productName&quot;: &quot;&quot;,
+                        &quot;san&quot;: 0 //调1-散
+                    },
+                    &quot;trInDay2&quot;: {
+                        &quot;guige&quot;: &quot;&quot;,
+                        &quot;jian&quot;: 0,//调2-件
+                        &quot;pno&quot;: &quot;&quot;,
+                        &quot;productId&quot;: 0,
+                        &quot;productName&quot;: &quot;&quot;,
+                        &quot;san&quot;: 0//调2-散
+                    },
+                    &quot;trInDay3&quot;: {
+                        &quot;guige&quot;: &quot;&quot;,
+                        &quot;jian&quot;: 0,//调3-件
+                        &quot;pno&quot;: &quot;&quot;,
+                        &quot;productId&quot;: 0,
+                        &quot;productName&quot;: &quot;&quot;,
+                        &quot;san&quot;: 0//调3-散
+                    },
+                    &quot;trInDay4&quot;: {
+                        &quot;guige&quot;: &quot;&quot;,
+                        &quot;jian&quot;: 0,//调4-件
+                        &quot;pno&quot;: &quot;&quot;,
+                        &quot;productId&quot;: 0,
+                        &quot;productName&quot;: &quot;&quot;,
+                        &quot;san&quot;: 0//调4-散
+                    }
+                },
+                &quot;city&quot;: &quot;大连市&quot;,//区域-市
+                &quot;createRole&quot;: 0,
+                &quot;createTime&quot;: &quot;2020-03-11&quot;,//日期
+                &quot;createUser&quot;: 0,
+                &quot;customerId&quot;: 33041,
+                &quot;guige&quot;: &quot;2.83kg&quot;,
+                &quot;isGift&quot;: 0,
+                &quot;jian&quot;: 3,//数量-件
+                &quot;orderId&quot;: &quot;SA20031100011&quot;,//订单号
+                &quot;pno&quot;: &quot;2233&quot;,//品号
+                &quot;price&quot;: 128,//单价
+                &quot;productId&quot;: 4978,
+                &quot;productName&quot;: &quot;蒸蒸日上（面点礼盒）&quot;,//品名
+                &quot;productunitId&quot;: 0,
+                &quot;province&quot;: &quot;辽宁&quot;,//区域-省
+                &quot;roleName&quot;: &quot;樊嘉辉&quot;,//SS角色
+                &quot;san&quot;: 0,//数量-散
+                &quot;sendTime&quot;: &quot;2020-03-18&quot;,//发出日期
+                &quot;unit_id&quot;: 0
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: 2
+    }
+}
+</code></pre> <h3 id="bh-59-备货需求列表（订单维度）导出"><a href="#bh-59-备货需求列表（订单维度）导出" aria-hidden="true" class="header-anchor">#</a> BH-59.备货需求列表（订单维度）导出</h3> <h4 id="模块负责人-15"><a href="#模块负责人-15" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-15"><a href="#请求-15" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/stockup/need/export/saRequireDetail
+</code></pre> <h4 id="参数-15"><a href="#参数-15" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*checkCode  //下载授权码
+pCount      //数量 默认1
+status     //状态 INVALID 未生效 RUN 已生效 LOCK 已锁定 STOCKUP 已备货 SEND 已发出
+sCreateTime       //发货时间 开始查询时间 默认为当月第一天 举例：2020-03-01 00:00:00
+eCreateTime       //发货时间 结束查询时间 默认为今天     举例：2020-03-18 23:59:59
+depotId        //仓id
+pno         //品号
+productName       //品名
+orderId    //订单id
+</code></pre> <h4 id="响应-15"><a href="#响应-15" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>文件
+</code></pre> <h3 id="bh-60-备货需求列表（订单维度）导出历史"><a href="#bh-60-备货需求列表（订单维度）导出历史" aria-hidden="true" class="header-anchor">#</a> BH-60.备货需求列表（订单维度）导出历史</h3> <h4 id="模块负责人-16"><a href="#模块负责人-16" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-16"><a href="#请求-16" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/stockup/need/export/history
+</code></pre> <h4 id="参数-16"><a href="#参数-16" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*checkCode  //下载授权码
+historyDate //月份 默认格式 2020-03
+</code></pre> <h4 id="响应-16"><a href="#响应-16" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>文件
+</code></pre> <h3 id="bh-23-备货采购转化需求查询"><a href="#bh-23-备货采购转化需求查询" aria-hidden="true" class="header-anchor">#</a> BH-23.备货采购转化需求查询</h3> <h4 id="模块负责人-17"><a href="#模块负责人-17" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-17"><a href="#请求-17" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /v2/stockup/need/getTransformOrderPAList
+</code></pre> <h4 id="参数-17"><a href="#参数-17" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+*&quot;depotId&quot;:40,//仓id
+&quot;supplierIds&quot;:[4605,2889],//20190703修改 如果是供应商维度，需要传给后台供应商id。如果是产品维度，传空即可。
+*&quot;productIds&quot;:[1359]//产品集合
+    }
+</code></pre> <h4 id="响应-17"><a href="#响应-17" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+    {
+        &quot;id&quot;: 5566,//供应商id
+        &quot;lackNum&quot;: 0,
+        &quot;name&quot;: &quot;亚洲渔港（大连）食品有限公司（IN）&quot;,//供应商名称
+        &quot;stockupCreatePAList&quot;: [
+            {
+                &quot;depotId&quot;: 0,
+                &quot;fromDepotroductStatus&quot;: &quot;&quot;,
+                &quot;lackNum&quot;: 606,//缺口数量
+                &quot;moreCount&quot;: 1,//变红是1，不变是0  逻辑：如果一个产品关联多个供应商，此产品显示红色
+                &quot;orderLackNum&quot;: 0,//订单缺口数量
+                &quot;paNum&quot;: 606,//采购数量
+                &quot;productId&quot;: 4708,//产品id
+                &quot;productName&quot;: &quot;黑金鱿鱼圈&quot;,//品名
+                &quot;productNo&quot;: &quot;Y1945&quot;,//品号
+                &quot;productStatus&quot;: &quot;&quot;,//产品属性 NOW 现货 FUTURE 期货 CUSTOM 定制
+                &quot;productUnit&quot;: &quot;袋&quot;,/产品单位
+                &quot;productUnitId&quot;: 8247,//产品规格id
+                &quot;productUnitName&quot;: &quot;75g/袋&quot;,//产品规格
+                &quot;realNum&quot;: 0,//实际库存
+                &quot;safeLackNum&quot;: 0,//安全库存缺口数量
+                &quot;safeNum&quot;: 0,//安全库存
+                &quot;supplierId&quot;: 5566,
+                &quot;supplierName&quot;: &quot;亚洲渔港（大连）食品有限公司（IN）&quot;,
+                &quot;supplierPrice&quot;: 10,//签约价
+                &quot;toDepotId&quot;: 0,
+                &quot;toDepotroductStatus&quot;: &quot;&quot;
+            }
+        ]
+    }
+    ]
+}
+</code></pre> <h3 id="bh-24-备货调拨转化需求查询"><a href="#bh-24-备货调拨转化需求查询" aria-hidden="true" class="header-anchor">#</a> BH-24.备货调拨转化需求查询</h3> <h4 id="模块负责人-18"><a href="#模块负责人-18" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-18"><a href="#请求-18" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /v2/stockup/need/getTransformOrderTRList
+</code></pre> <h4 id="参数-18"><a href="#参数-18" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    &quot;depotId&quot;:51,//仓id
+    &quot;fromDepotId&quot;:40,//出库仓id
+    &quot;productIds&quot;:
+    [4696,4708,4647,837]//产品集合
+    
+    
+    
+}
+</code></pre> <h4 id="响应-18"><a href="#响应-18" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;depotId&quot;: 0,//入库仓id
+            &quot;fromDepotroductStatus&quot;: &quot;NOW&quot;,//// 出库仓产品属性 NOW 现货 FUTURE 期货 CUSTOM 定制
+            &quot;lackNum&quot;: 2,//缺口数量
+            &quot;orderLackNum&quot;: 0,//订单缺口数量
+            &quot;paNum&quot;: 0,//采购数量
+            &quot;productId&quot;: 4647,//产品id
+            &quot;productName&quot;: &quot;原浆鲜贝&quot;,//品名
+            &quot;productNo&quot;: &quot;1861&quot;,//品号
+            &quot;productStatus&quot;: &quot;&quot;,//
+            &quot;productUnit&quot;: &quot;盘&quot;,//产品单位
+            &quot;productUnitId&quot;: 8142,//产品规格id
+            &quot;productUnitName&quot;: &quot;200g&quot;,//产品规格
+            &quot;realNum&quot;: 80,//实际库存
+            &quot;safeLackNum&quot;: 0,//安全库存缺口数量
+            &quot;safeNum&quot;: 60,//安全库存
+            &quot;supplierId&quot;: 0,
+            &quot;supplierName&quot;: &quot;&quot;,
+            &quot;supplierPrice&quot;: 135.84,
+            &quot;toDepotId&quot;: 0,//调拨仓id
+            &quot;toDepotroductStatus&quot;: &quot;FUTURE&quot;// 入库仓产品属性 NOW 现货 FUTURE 期货 CUSTOM 定制
+        },
+        {
+            &quot;depotId&quot;: 0,
+            &quot;fromDepotroductStatus&quot;: &quot;NOW&quot;,//// 入库仓产品属性 NOW 现货 FUTURE 期货 CUSTOM 定制
+            &quot;lackNum&quot;: 600,
+            &quot;orderLackNum&quot;: 0,
+            &quot;paNum&quot;: 0,
+            &quot;productId&quot;: 4696,
+            &quot;productName&quot;: &quot;王牌-冻南美白虾（40/50）&quot;,
+            &quot;productNo&quot;: &quot;HYH01014&quot;,
+            &quot;productStatus&quot;: &quot;&quot;,
+            &quot;productUnit&quot;: &quot;件&quot;,
+            &quot;productUnitId&quot;: 8226,
+            &quot;productUnitName&quot;: &quot;1.5kg/盒*6盒/件&quot;,
+            &quot;realNum&quot;: 100,
+            &quot;safeLackNum&quot;: 0,
+            &quot;safeNum&quot;: 80,
+            &quot;supplierId&quot;: 0,
+            &quot;supplierName&quot;: &quot;&quot;,
+            &quot;supplierPrice&quot;: 460,
+            &quot;toDepotId&quot;: 0,
+            &quot;toDepotroductStatus&quot;: &quot;CUSTOM&quot;
+        }
+    ]
+}
+</code></pre> <h3 id="bh-25-查询需求数量订单明细"><a href="#bh-25-查询需求数量订单明细" aria-hidden="true" class="header-anchor">#</a> BH-25.查询需求数量订单明细</h3> <h4 id="模块负责人-19"><a href="#模块负责人-19" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-19"><a href="#请求-19" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/stockup/need/getStockupNeedInfo
+</code></pre> <h4 id="参数-19"><a href="#参数-19" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*depotId   //仓id
+*productId  //产品id
+</code></pre> <h4 id="响应-19"><a href="#响应-19" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;depotName&quot;: &quot;DC（大连铁越仓）&quot;,//仓名称
+        &quot;stockupNeedDetails&quot;: [//需求订单详情
+            {
+                &quot;address&quot;: &quot;香炉礁五金几点大厦&quot;,//收货地址【用于SA单】
+                &quot;createTime&quot;: &quot;2019-06-19&quot;,//创建时间
+                &quot;createUserName&quot;: &quot;孙启萌&quot;,//创建人
+                &quot;depotId&quot;: 40,
+                &quot;depotName&quot;: &quot;DC（大连铁越仓）&quot;,
+                &quot;jian&quot;: 0,//需求【件】数量
+                &quot;orderId&quot;: &quot;SA19061900001&quot;,//订单号
+                &quot;planCompleteTime&quot;: &quot;&quot;,
+                &quot;planSendTime&quot;: &quot;2019-06-21&quot;,//指定发货时间
+                &quot;productId&quot;: 4748,
+                &quot;productName&quot;: &quot;唐扬鱿鱼圈&quot;,
+                &quot;receive&quot;: &quot;王颖&quot;,//收货人【用于SA单】 附：这里收货信息与入库仓用两个不同字段传值，考虑到前台可能用收货人，收货地址进行排版。如果需要收货信息与入库仓合并到一个数据项中，后台可以修改。
+                &quot;remark&quot;: &quot;&quot;,//备注
+                &quot;san&quot;: 1,//需求【散】数量
+                &quot;send&quot;: &quot;摩加迪沙有限公司6&quot;,//客户/出库仓
+                &quot;status&quot;: &quot;INVALID&quot;,//订单状态
+                    //PA单的状态： INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已完成
+                    //TR单的状态：INVALID 未生效 RUN 已生效 SEND 已发出 COMPLETE 已签收
+                    //SA单状态：INVALID:未生效,SET:已提交,RUN:已生效,SEND:已发出,COMPLETE:已签收
+                &quot;toDepotName&quot;: &quot;&quot;,//入库仓 【用于TR单】
+                &quot;type&quot;: &quot;PA&quot;,//订单类型 PA 采购单  TR   调拨单  SA 销售单
+                &quot;unit&quot;: &quot;件&quot;
+            }
+        ],
+        &quot;productName&quot;: &quot;唐扬鱿鱼圈&quot;//产品名称
+    }
+}
+</code></pre> <h3 id="bh-26-查询在途-未生效数量订单明细"><a href="#bh-26-查询在途-未生效数量订单明细" aria-hidden="true" class="header-anchor">#</a> BH-26.查询在途/未生效数量订单明细</h3> <h4 id="模块负责人-20"><a href="#模块负责人-20" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-20"><a href="#请求-20" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/stockup/need/getStockupInRodeInvalid
+</code></pre> <h4 id="参数-20"><a href="#参数-20" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*type       //查询类型    inroad  在途  invalid 未生效
+*depotId   //仓id
+*productId  //产品id
+</code></pre> <h4 id="响应-20"><a href="#响应-20" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;depotName&quot;: &quot;DC（大连仓）ASA&quot;,//仓名称
+        &quot;stockupNeedDetails&quot;: [
+            {
+                &quot;address&quot;: &quot;&quot;,
+                &quot;createTime&quot;: &quot;2019-03-19&quot;,//创建时间
+                &quot;createUserName&quot;: &quot;姜蕾&quot;,//创建人
+                &quot;depotId&quot;: 40,
+                &quot;depotName&quot;: &quot;DC（大连仓）ASA&quot;,
+                &quot;jian&quot;: 28,//入库数量
+                &quot;orderId&quot;: &quot;PA1903190000009&quot;,//采购单号/调拨单号
+                &quot;planCompleteTime&quot;: &quot;2019-03-20&quot;,//计划入库时间
+                &quot;planSendTime&quot;: &quot;2019-03-19&quot;,//计划发货时间
+                &quot;productId&quot;: 4,
+                &quot;productName&quot;: &quot;COCO虾(冻裹面包屑虾）&quot;,
+                &quot;receive&quot;: &quot;&quot;,
+                &quot;remark&quot;: &quot;&quot;,
+                &quot;san&quot;: 0,
+                &quot;send&quot;: &quot;20&quot;,//供应商/出库仓
+                &quot;status&quot;: &quot;SEND&quot;,//当前状态
+                //PA单的状态： INVALID 未生效 RUN 已生效 STOCKUP 已备货 SEND 已发出 COMPLETE 已完成
+                //TR单的状态：INVALID 未生效 RUN 已生效 SEND 已发出 COMPLETE 已签收
+                //SA单状态：INVALID:未生效,SET:已提交,RUN:已生效,SEND:已发出,COMPLETE:已签收
+                
+                &quot;toDepotName&quot;: &quot;&quot;,
+                &quot;type&quot;: &quot;PA&quot;,//订单类型 PA 采购单  TR   调拨单  SA 销售单
+                &quot;unit&quot;: &quot;件&quot;
+            }
+        ],
+        &quot;productName&quot;: &quot;COCO虾(冻裹面包屑虾）&quot;//产品名称
+    }
+}
+</code></pre> <h3 id="bh-27-库存周转报告导出"><a href="#bh-27-库存周转报告导出" aria-hidden="true" class="header-anchor">#</a> BH-27.库存周转报告导出</h3> <h4 id="模块负责人-21"><a href="#模块负责人-21" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-21"><a href="#请求-21" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/stockup/need/export
+</code></pre> <h4 id="参数-21"><a href="#参数-21" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*depotId   //仓id
+*date      //日期 必须是年月日完整日期 日可以默认每月1日
+*checkCode //下载授权码
+</code></pre> <h4 id="响应-21"><a href="#响应-21" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>导出文件
+</code></pre> <h3 id="bh-28-调货和mppr总表需求-分仓导出"><a href="#bh-28-调货和mppr总表需求-分仓导出" aria-hidden="true" class="header-anchor">#</a> BH-28.调货和MPPR总表需求-分仓导出</h3> <h4 id="模块负责人-22"><a href="#模块负责人-22" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-22"><a href="#请求-22" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/stockup/need/export/need/depot
+</code></pre> <h4 id="参数-22"><a href="#参数-22" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*depotId   //仓id
+*checkCode //下载授权码
+</code></pre> <h4 id="响应-22"><a href="#响应-22" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>导出文件
+</code></pre> <h3 id="bh-29-调货和mppr总表需求-全仓导出"><a href="#bh-29-调货和mppr总表需求-全仓导出" aria-hidden="true" class="header-anchor">#</a> BH-29.调货和MPPR总表需求-全仓导出</h3> <h4 id="模块负责人-23"><a href="#模块负责人-23" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-23"><a href="#请求-23" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/stockup/need/export/need/depot/all
+</code></pre> <h4 id="参数-23"><a href="#参数-23" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*checkCode //下载授权码
+</code></pre> <h4 id="响应-23"><a href="#响应-23" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>导出文件
+</code></pre> <h3 id="bh-30-计划-新增"><a href="#bh-30-计划-新增" aria-hidden="true" class="header-anchor">#</a> BH-30 计划-新增</h3> <h4 id="模块负责人-24"><a href="#模块负责人-24" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人"><a href="#对接负责人" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-24"><a href="#请求-24" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /v2/stockup/plan
+</code></pre> <h4 id="参数-24"><a href="#参数-24" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+	&quot;name&quot;: &quot;test线路&quot;, // 线路名称
+	&quot;lineId&quot;: 1, // 线路id
+	&quot;carInfo&quot;: &quot;12米超级超限&quot;, // 发车车型
+	&quot;planSendTime&quot;: &quot;2019-05-29 00:00:00&quot;, // 计划发出时间
+	&quot;planCompleteTime&quot;: &quot;2019-06-01 00:00:00&quot; // 计划入库时间
+}
+</code></pre> <h4 id="响应-24"><a href="#响应-24" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="bh-31-计划-修改"><a href="#bh-31-计划-修改" aria-hidden="true" class="header-anchor">#</a> BH-31 计划-修改</h3> <h4 id="模块负责人-25"><a href="#模块负责人-25" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-2"><a href="#对接负责人-2" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-25"><a href="#请求-25" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/stockup/plan/{id}
+</code></pre> <h4 id="参数-25"><a href="#参数-25" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>id: 主键id，
+body:
+{
+    &quot;id&quot;: 1, // 主键id
+	&quot;name&quot;: &quot;test线路&quot;, // 线路名称
+	&quot;carInfo&quot;: &quot;12米超级超限&quot;, // 发车车型
+	&quot;planSendTime&quot;: &quot;2019-05-29 00:00:00&quot;, // 计划发出时间
+	&quot;planCompleteTime&quot;: &quot;2019-06-01 00:00:00&quot; // 计划入库时间
+}
+</code></pre> <h4 id="响应-25"><a href="#响应-25" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="bh-32-计划-获取发车车型列表"><a href="#bh-32-计划-获取发车车型列表" aria-hidden="true" class="header-anchor">#</a> BH-32 计划-获取发车车型列表</h3> <h4 id="模块负责人-26"><a href="#模块负责人-26" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-3"><a href="#对接负责人-3" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-26"><a href="#请求-26" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/stockup/plan/cars
+</code></pre> <h4 id="参数-26"><a href="#参数-26" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>无
+</code></pre> <h4 id="响应-26"><a href="#响应-26" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        &quot;15米&quot;,
+        &quot;13.7米&quot;,
+        &quot;12.5米&quot;,
+        &quot;9.6米&quot;,
+        &quot;8.6米&quot;
+    ]
+}
+</code></pre> <h3 id="bh-33-计划-删除"><a href="#bh-33-计划-删除" aria-hidden="true" class="header-anchor">#</a> BH-33 计划-删除</h3> <h4 id="模块负责人-27"><a href="#模块负责人-27" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-4"><a href="#对接负责人-4" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-27"><a href="#请求-27" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>DELETE /v2/stockup/plan/{id}
+</code></pre> <h4 id="参数-27"><a href="#参数-27" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>id: 1 // 主键id
+</code></pre> <h4 id="响应-27"><a href="#响应-27" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="bh-34-计划-获取计划列表"><a href="#bh-34-计划-获取计划列表" aria-hidden="true" class="header-anchor">#</a> BH-34 计划-获取计划列表</h3> <h4 id="模块负责人-28"><a href="#模块负责人-28" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-5"><a href="#对接负责人-5" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-28"><a href="#请求-28" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/stockup/plan
+</code></pre> <h4 id="参数-28"><a href="#参数-28" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>lineId: 1 // 线路id
+toDepotId: 1 // 入库仓id
+buttonPermissionFlg: 1 // 是否获取权限按钮 0-否 1-是
+pageNo: 1 // 页码
+pageSize: 25 // 页面数据行数
+</code></pre> <h4 id="响应-28"><a href="#响应-28" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [
+            {
+                &quot;chooseButton&quot;: true // 选择按钮
+            }
+        ],
+        &quot;datas&quot;: [
+            {
+                &quot;carInfo&quot;: &quot;12米超级超限&quot;, // 发车车型
+                &quot;createRole&quot;: -1,
+                &quot;createTime&quot;: &quot;2019-05-29 09:22:20&quot;, // 创建时间
+                &quot;createUser&quot;: 35744,
+                &quot;createUserName&quot;: &quot;系统操作&quot;, // 创建人
+                &quot;deleteFlg&quot;: 0,
+                &quot;id&quot;: 2,
+                &quot;lineId&quot;: 1,
+                &quot;name&quot;: &quot;test线路&quot;, // 计划名称
+                &quot;planCompleteTime&quot;: &quot;2019-06-01 00:00:00&quot;, // 计划入库时间
+                &quot;planSendTime&quot;: &quot;2019-05-29 00:00:00&quot;, // 计划发出时间
+                &quot;lineName&quot;: &quot;test&quot;, // 线路名称
+                &quot;splitFlg&quot;: 0,
+                &quot;status&quot;: &quot;INVALID&quot;, // 状态 INVALID 待执行 RUN 已执行
+                &quot;stockupPlanDetailVOS&quot;: null
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: 0
+    }
+}
+</code></pre> <h3 id="bh-35-计划-通过承运单号获取物流配送信息（作废）"><a href="#bh-35-计划-通过承运单号获取物流配送信息（作废）" aria-hidden="true" class="header-anchor">#</a> BH-35 计划-通过承运单号获取物流配送信息（作废）</h3> <h4 id="模块负责人-29"><a href="#模块负责人-29" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-6"><a href="#对接负责人-6" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-29"><a href="#请求-29" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/stockup/plan/{wbNo}/info
+</code></pre> <h4 id="参数-29"><a href="#参数-29" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>wbNo: 承运单号
+</code></pre> <h4 id="响应-29"><a href="#响应-29" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;carInfo&quot;: &quot;18.8米&quot;, // 车型
+        &quot;carNo&quot;: &quot;演C 80001&quot;, // 车牌
+        &quot;driverMobile&quot;: &quot;13333333333&quot;, // 司机联系电话
+        &quot;driverName&quot;: &quot;xxx&quot;, // 司机名称
+        &quot;jian&quot;: 100, // 件
+        &quot;logisticsName&quot;: &quot;东风快递，使命必达&quot;, // 物流商名称
+        &quot;san&quot;: 50 // 散
+    }
+}
+</code></pre> <h3 id="bh-36-计划-获取详情"><a href="#bh-36-计划-获取详情" aria-hidden="true" class="header-anchor">#</a> BH-36 计划-获取详情</h3> <h4 id="对接负责人-7"><a href="#对接负责人-7" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-30"><a href="#请求-30" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/stockup/plan/{id}
+</code></pre> <h4 id="参数-30"><a href="#参数-30" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>id：计划主键
+</code></pre> <h4 id="响应-30"><a href="#响应-30" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;carInfo&quot;: &quot;121米超级超限&quot;, // 车型
+        &quot;createTime&quot;: &quot;2019-05-29 08:49:52&quot;,
+        &quot;createUser&quot;: 35744,
+        &quot;createUserName&quot;: &quot;系统操作&quot;,
+        &quot;deleteFlg&quot;: 0,
+        &quot;id&quot;: 1,
+        &quot;lineId&quot;: 1,
+        &quot;name&quot;: &quot;test1线路&quot;, // 计划名称
+        &quot;planCompleteTime&quot;: &quot;2019-06-11 00:00:00&quot;, // 计划发出时间 
+        &quot;planSendTime&quot;: &quot;2019-05-30 00:00:00.0&quot;, // 计划入库时间
+        &quot;splitFlg&quot;: 0,
+        &quot;status&quot;: &quot;RUN&quot;
+    }
+}
+</code></pre> <h3 id="bh-37-计划-同步物流信息"><a href="#bh-37-计划-同步物流信息" aria-hidden="true" class="header-anchor">#</a> BH-37 计划-同步物流信息</h3> <h4 id="模块负责人-30"><a href="#模块负责人-30" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-8"><a href="#对接负责人-8" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-31"><a href="#请求-31" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/stockup/plan/{id}/syn
+</code></pre> <h4 id="参数-31"><a href="#参数-31" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>id: 1 // 主键id
+</code></pre> <h4 id="响应-31"><a href="#响应-31" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="bh-38-仓库管理-列表"><a href="#bh-38-仓库管理-列表" aria-hidden="true" class="header-anchor">#</a> BH-38 仓库管理-列表</h3> <h4 id="对接负责人-9"><a href="#对接负责人-9" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-32"><a href="#请求-32" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/stockup/depots
+</code></pre> <h4 id="参数-32"><a href="#参数-32" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>depotId: 仓库id
+type: 仓库类型 SELF-自有仓 PLATFORM-平台仓
+level: 仓库级别 DC FDC VR(虚拟)
+name: 仓库名称
+pageNo: 页码
+pageSize: 行数
+</code></pre> <h4 id="响应-32"><a href="#响应-32" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+        &quot;msg&quot;: &quot;&quot;,
+        &quot;data&quot;: {
+            &quot;datas&quot;: [
+                {
+                    &quot;areaFlg&quot;: 1, // 是否关联区域 0-否 1-是
+                    &quot;businessUnitFlg&quot;: 1 // 是否关联事业部 0 否 1 是
+                    &quot;customerCnt&quot;: 1 // 专属仓客户数
+                    &quot;deleteFlg&quot;: 0,
+                    &quot;depot&quot;: {
+                        &quot;address&quot;: &quot;天津市武清区大良镇新良道01号&quot;, // 详细地址
+                        &quot;contactMobile&quot;: &quot;13101727028&quot;, // 联系电话
+                        &quot;contactName&quot;: &quot;秦超杰&quot;, // 联系人 
+                        &quot;id&quot;: 51,
+                        &quot;lat&quot;: &quot;0&quot;,
+                        &quot;level&quot;: &quot;DC&quot;, // 仓级别 DC FDC VR(虚拟)
+                        &quot;lng&quot;: &quot;0&quot;,
+                        &quot;name&quot;: &quot;DC（天津优和仓 ）&quot;, // 仓名称
+                        &quot;pathId&quot;: &quot;020114&quot;,
+                        &quot;pathName&quot;: &quot;武清区天津市天津&quot;, // 仓所在区域
+                        &quot;type&quot;: &quot;SELF&quot; // 仓库类型 SELF-自有仓 PLATFORM-平台仓
+                    },
+                    &quot;depotId&quot;: 51,
+                    &quot;id&quot;: 67,
+                    &quot;sort&quot;: 0
+                },
+                ...
+            ],
+            &quot;pageNo&quot;: 1,
+            &quot;total&quot;: 0
+        }
+}
+</code></pre> <h3 id="bh-39-仓库管理-级别枚举"><a href="#bh-39-仓库管理-级别枚举" aria-hidden="true" class="header-anchor">#</a> BH-39 仓库管理-级别枚举</h3> <h4 id="枚举值"><a href="#枚举值" aria-hidden="true" class="header-anchor">#</a> 枚举值</h4> <pre><code>DC,
+FDC,
+VR - 虚拟
+</code></pre> <h3 id="bh-40-仓库管理-类型枚举"><a href="#bh-40-仓库管理-类型枚举" aria-hidden="true" class="header-anchor">#</a> BH-40 仓库管理-类型枚举</h3> <h4 id="枚举值-2"><a href="#枚举值-2" aria-hidden="true" class="header-anchor">#</a> 枚举值</h4> <pre><code>SELF:自有仓 PLATFORM: 平台仓
+</code></pre> <h3 id="bh-41-仓库管理-校验是否有重复区域仓设置"><a href="#bh-41-仓库管理-校验是否有重复区域仓设置" aria-hidden="true" class="header-anchor">#</a> BH-41 仓库管理-校验是否有重复区域仓设置</h3> <h4 id="说明"><a href="#说明" aria-hidden="true" class="header-anchor">#</a> 说明</h4> <pre><code>保存前调用，如果data为null 说明不存在重叠区域仓，如果有值，说明存在重叠区域仓
+</code></pre> <h4 id="对接负责人-10"><a href="#对接负责人-10" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-33"><a href="#请求-33" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/stockup/depots
+</code></pre> <h4 id="参数-33"><a href="#参数-33" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>[
+    {
+        depotId: 1,
+        pathId: 0204 // 必须精确到地级市
+    },
+    ...
+]
+</code></pre> <h4 id="响应-33"><a href="#响应-33" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;depot&quot;: {
+                &quot;id&quot;: 111,
+                &quot;level&quot;: &quot;DC&quot;,
+                &quot;name&quot;: &quot;DC（沈阳铁越仓）&quot; // 仓名称
+            },
+            &quot;depotId&quot;: 111,
+            &quot;id&quot;: 277,
+            &quot;pathName&quot;: &quot;内蒙古-赤峰市&quot;, // 区域名称
+            &quot;sort&quot;: 0
+        }
+    ]
+}
+</code></pre> <h3 id="bh-42-仓库管理-获取仓对应的区域列表"><a href="#bh-42-仓库管理-获取仓对应的区域列表" aria-hidden="true" class="header-anchor">#</a> BH-42 仓库管理-获取仓对应的区域列表</h3> <h4 id="对接负责人-11"><a href="#对接负责人-11" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-34"><a href="#请求-34" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/stockup/depots/{depotId}
+</code></pre> <h4 id="参数-34"><a href="#参数-34" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>depotId: 仓id
+</code></pre> <h4 id="响应-34"><a href="#响应-34" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        &quot;0601&quot;, // 区域编号
+        &quot;0602&quot;,
+        &quot;0603&quot;
+    ]
+}
+</code></pre> <h3 id="bh-43-仓库管理-设置关联区域"><a href="#bh-43-仓库管理-设置关联区域" aria-hidden="true" class="header-anchor">#</a> BH-43 仓库管理-设置关联区域</h3> <h4 id="对接负责人-12"><a href="#对接负责人-12" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-35"><a href="#请求-35" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/stockup/depots/{depotId}
+</code></pre> <h4 id="参数-35"><a href="#参数-35" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>depotId: 仓id
+body: {
+    stockupDepotAreaDTOList: [
+        {
+            &quot;depotId&quot;: 1,
+            &quot;pathId&quot;: &quot;0202&quot;
+        },
+        ...
+    ]
+}
+</code></pre> <h4 id="响应-35"><a href="#响应-35" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="bh-44-仓库管理-获取日志列表"><a href="#bh-44-仓库管理-获取日志列表" aria-hidden="true" class="header-anchor">#</a> BH-44 仓库管理-获取日志列表</h3> <h4 id="对接负责人-13"><a href="#对接负责人-13" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-36"><a href="#请求-36" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/stockup/depots/{depotId}/logs
+</code></pre> <h4 id="参数-36"><a href="#参数-36" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>depotId: 仓id
+pageNo: 页码
+pageSize: 行数
+</code></pre> <h4 id="响应-36"><a href="#响应-36" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>     {
+         &quot;code&quot;: 100000,
+         &quot;msg&quot;: &quot;&quot;,
+         &quot;data&quot;: {
+             &quot;datas&quot;: [
+                 {
+                     &quot;depotId&quot;: 40,
+                     &quot;id&quot;: 1,
+                     &quot;opInfo&quot;: &quot;修改&quot;, // 操作内容
+                     &quot;opRole&quot;: 1,
+                     &quot;opTime&quot;: &quot;2019-06-13 11:12:20&quot;, // 操作时间
+                     &quot;opUser&quot;: 1,
+                     &quot;opUserName&quot;: &quot;test&quot; // 操作者
+                 }
+             ],
+             &quot;pageNo&quot;: 1,
+             &quot;total&quot;: 0
+         }
+     }
+</code></pre> <h3 id="bh-45-仓库管理-仓地图展示"><a href="#bh-45-仓库管理-仓地图展示" aria-hidden="true" class="header-anchor">#</a> BH-45 仓库管理-仓地图展示</h3> <h4 id="对接负责人-14"><a href="#对接负责人-14" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>梁铁骐
+</code></pre> <h4 id="请求-37"><a href="#请求-37" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/stockup/depots/areas
+</code></pre> <h4 id="参数-37"><a href="#参数-37" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <h4 id="响应-37"><a href="#响应-37" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+     &quot;code&quot;: 100000,
+     &quot;msg&quot;: &quot;&quot;,
+     &quot;data&quot;: [
+        {
+            &quot;name&quot;: &quot;DC（天津优和仓 ）&quot;
+            &quot;point&quot;: ['xxxxx', 'yyyy'] // 经纬
+            &quot;areas&quot;: [
+                {
+                    &quot;name&quot;: &quot;石家庄市&quot; // 城市名称
+                    &quot;point&quot;: ['xxxxx', 'yyyy'] // 经纬
+                }
+            ]
+        },
+     ]
+}
+</code></pre> <h3 id="bh-46-仓库管理-查询关联事业部"><a href="#bh-46-仓库管理-查询关联事业部" aria-hidden="true" class="header-anchor">#</a> BH-46 仓库管理-查询关联事业部</h3> <h4 id="对接负责人-15"><a href="#对接负责人-15" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>刘宏宇
+</code></pre> <h4 id="请求-38"><a href="#请求-38" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/stockup/depots/businessUnit/{depotId}
+</code></pre> <h4 id="参数-38"><a href="#参数-38" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*depotId 仓ID
+</code></pre> <h4 id="响应-38"><a href="#响应-38" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+     &quot;code&quot;: 100000,
+     &quot;msg&quot;: &quot;&quot;,
+     &quot;data&quot;: [
+        {
+            &quot;id&quot;: 1 // 事业部ID
+            &quot;name&quot;: &quot;xx&quot; // 事业部名
+        }
+     ]
+}
+</code></pre> <h3 id="bh-47-仓库管理-更新关联事业部"><a href="#bh-47-仓库管理-更新关联事业部" aria-hidden="true" class="header-anchor">#</a> BH-47 仓库管理-更新关联事业部</h3> <h4 id="对接负责人-16"><a href="#对接负责人-16" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>刘宏宇
+</code></pre> <h4 id="请求-39"><a href="#请求-39" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/stockup/depots/businessUnit
+</code></pre> <h4 id="参数-39"><a href="#参数-39" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>[
+  {
+    *depotId: 1, // 仓ID
+    *businessUnitId: 1, // 事业部ID
+  }
+]
+</code></pre> <h4 id="响应-39"><a href="#响应-39" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+     &quot;code&quot;: 100000,
+     &quot;msg&quot;: &quot;&quot;,
+     &quot;data&quot;: null
+}
+</code></pre> <h3 id="bh-48-仓库管理-查询仓专属客户"><a href="#bh-48-仓库管理-查询仓专属客户" aria-hidden="true" class="header-anchor">#</a> BH-48 仓库管理-查询仓专属客户</h3> <h4 id="对接负责人-17"><a href="#对接负责人-17" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>刘宏宇
+</code></pre> <h4 id="请求-40"><a href="#请求-40" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/stockup/depots/customer/{depotId}
+</code></pre> <h4 id="参数-40"><a href="#参数-40" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*depotId 仓ID
+</code></pre> <h4 id="响应-40"><a href="#响应-40" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+     &quot;code&quot;: 100000,
+     &quot;msg&quot;: &quot;&quot;,
+     &quot;data&quot;: [
+       {
+         &quot;customerId&quot;: 1 // 客户ID
+         &quot;shortName&quot;: &quot;xx&quot; // 客户名
+         &quot;businessunitName&quot;: &quot;xx&quot; // 事业部
+       }
+     ]
+}
+</code></pre> <h3 id="bh-50-线路新增"><a href="#bh-50-线路新增" aria-hidden="true" class="header-anchor">#</a> BH-50 线路新增</h3> <h4 id="模块负责人-31"><a href="#模块负责人-31" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-18"><a href="#对接负责人-18" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-41"><a href="#请求-41" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /v2/stockup/line
+</code></pre> <h4 id="参数-41"><a href="#参数-41" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    &quot;stockupLine&quot;: {
+        &quot;name&quot;: &quot;天津燕山区&quot;,        // 线路名
+        &quot;fromPathid&quot;: &quot;0203&quot;,       // 起点
+        &quot;toDepotId&quot;: 50,            // 终点
+        &quot;paFlg&quot;: 1,             // 采购单类型
+        &quot;trFlg&quot;: 1              // 调拨单类型
+    },
+    &quot;supplier&quot;: [               // 供应商
+        5563
+    ],
+    &quot;depot&quot;: [              // 出库仓ID
+        25
+    ]
+}
+</code></pre> <h4 id="响应-41"><a href="#响应-41" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="bh-51-线路修改"><a href="#bh-51-线路修改" aria-hidden="true" class="header-anchor">#</a> BH-51 线路修改</h3> <h4 id="模块负责人-32"><a href="#模块负责人-32" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-19"><a href="#对接负责人-19" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-42"><a href="#请求-42" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/stockup/line/{id}
+</code></pre> <h4 id="参数-42"><a href="#参数-42" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id // 线路ID
+{
+    &quot;stockupLine&quot;: {
+        &quot;fromPathid&quot;: &quot;0203&quot;,   // 起点
+        &quot;toDepotId&quot;: 50,        // 终点
+        &quot;paFlg&quot;: 1,         // 采购单
+        &quot;trFlg&quot;: 1          // 调拨单
+    },
+    &quot;supplier&quot;: [           // 供应商
+        5563
+    ],
+    &quot;depot&quot;: [              // 出库仓
+        25
+    ]
+}
+</code></pre> <h4 id="响应-42"><a href="#响应-42" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="bh-52-线路作废"><a href="#bh-52-线路作废" aria-hidden="true" class="header-anchor">#</a> BH-52 线路作废</h3> <h4 id="模块负责人-33"><a href="#模块负责人-33" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-20"><a href="#对接负责人-20" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-43"><a href="#请求-43" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/stockup/line/cancel/{id}
+</code></pre> <h4 id="参数-43"><a href="#参数-43" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id // 线路ID
+</code></pre> <h4 id="响应-43"><a href="#响应-43" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="bh-53-线路列表"><a href="#bh-53-线路列表" aria-hidden="true" class="header-anchor">#</a> BH-53 线路列表</h3> <h4 id="模块负责人-34"><a href="#模块负责人-34" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-21"><a href="#对接负责人-21" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-44"><a href="#请求-44" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/stockup/line
+</code></pre> <h4 id="参数-44"><a href="#参数-44" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>name            // 线路名
+toDepotId       // 入库仓
+deleteFlg       // 状态 0 正常 1 作废
+buttonPermissionFlg // 0 不查询按钮权限  1 查询按钮权限
+pageNo              // 页码 默认1
+pageSize            // 页条数 默认25
+</code></pre> <h4 id="响应-44"><a href="#响应-44" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissionPage&quot;: {},
+        &quot;buttonPermissions&quot;: [
+            {
+                &quot;cancelButton&quot;: true,           // 作废
+                &quot;editButton&quot;: true,         // 编辑
+                &quot;logButton&quot;: true           // 日志
+            }
+        ],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;createRole&quot;: 0,
+                &quot;createTime&quot;: &quot;2019-05-29 10:00:30&quot;,
+                &quot;createUser&quot;: 0,
+                &quot;createUserName&quot;: &quot;孙启萌&quot;,
+                &quot;deleteFlg&quot;: 0,
+                &quot;depot&quot;: [                      // 出库仓
+                    {
+                        &quot;deleteFlg&quot;: 0,
+                        &quot;dutyId&quot;: 25,                   // 出库仓ID
+                        &quot;dutyName&quot;: &quot;VC（退货不入仓）&quot;,        // 出库仓名
+                        &quot;id&quot;: 20,
+                        &quot;lineId&quot;: 6,
+                        &quot;type&quot;: &quot;TR&quot;
+                    }
+                ],
+                &quot;fromPathName&quot;: &quot;黑龙江鸡西市&quot;,       // 起点名
+                &quot;fromPathid&quot;: &quot;0803&quot;,               // 起点
+                &quot;id&quot;: 6,                        // 线路ID
+                &quot;name&quot;: &quot;天津燕山区-DC(大连仓)&quot;,    // 线路名
+                &quot;paFlg&quot;: 1,                     // 采购单类型
+                &quot;stockupPlanVOS&quot;: null,
+                &quot;supplier&quot;: [                   // 供应商
+                    {
+                        &quot;deleteFlg&quot;: 0,
+                        &quot;dutyId&quot;: 5563,                 // 供应商ID
+                        &quot;dutyName&quot;: &quot;优合集团有限公司&quot;,     // 供应商名
+                        &quot;id&quot;: 19,
+                        &quot;lineId&quot;: 6,
+                        &quot;type&quot;: &quot;PA&quot;
+                    }
+                ],
+                &quot;toDepotId&quot;: 40,                    // 入库仓ID
+                &quot;toDepotName&quot;: &quot;DC（大连铁越仓）&quot;,     // 入库仓名
+                &quot;trFlg&quot;: 1,                     // 调拨单类型
+                &quot;unAllocationPlans&quot;: null
+            }
+        ],
+        &quot;pageNo&quot;: 0,
+        &quot;total&quot;: 0
+    }
+}
+</code></pre> <h3 id="bh-54-线路明细"><a href="#bh-54-线路明细" aria-hidden="true" class="header-anchor">#</a> BH-54 线路明细</h3> <h4 id="模块负责人-35"><a href="#模块负责人-35" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-22"><a href="#对接负责人-22" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-45"><a href="#请求-45" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/stockup/line/{id}
+</code></pre> <h4 id="参数-45"><a href="#参数-45" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id     // 线路ID
+</code></pre> <h4 id="响应-45"><a href="#响应-45" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;createRole&quot;: 0,
+        &quot;createTime&quot;: &quot;2019-05-29 10:00:30&quot;,
+        &quot;createUser&quot;: 0,
+        &quot;createUserName&quot;: &quot;孙启萌&quot;,
+        &quot;deleteFlg&quot;: 0,
+        &quot;depot&quot;: [                      // 出库仓
+            {
+                &quot;deleteFlg&quot;: 0,
+                &quot;dutyId&quot;: 25,               // 出库仓ID
+                &quot;dutyName&quot;: &quot;VC（退货不入仓）&quot;,    // 出库仓名
+                &quot;id&quot;: 20,
+                &quot;lineId&quot;: 6,
+                &quot;type&quot;: &quot;TR&quot;
+            }
+        ],
+        &quot;fromPathName&quot;: &quot;黑龙江鸡西市&quot;,       // 起点名
+        &quot;fromPathid&quot;: &quot;0803&quot;,               // 起点
+        &quot;id&quot;: 6,                        // 线路ID
+        &quot;name&quot;: &quot;天津燕山区-DC(大连仓)&quot;,        // 线路名
+        &quot;paFlg&quot;: 1,                         // 采购单类型
+        &quot;stockupPlanVOS&quot;: null,
+        &quot;supplier&quot;: [                   // 供应商
+            {
+                &quot;deleteFlg&quot;: 0,
+                &quot;dutyId&quot;: 5563,                 // 供应商ID
+                &quot;dutyName&quot;: &quot;优合集团有限公司&quot;,     // 供应商名
+                &quot;id&quot;: 19,
+                &quot;lineId&quot;: 6,
+                &quot;type&quot;: &quot;PA&quot;
+            }
+        ],
+        &quot;toDepotId&quot;: 40,                    // 入库仓ID
+        &quot;toDepotName&quot;: &quot;DC（大连铁越仓）&quot;,     // 入库仓名
+        &quot;trFlg&quot;: 1,                         // 调拨单类型
+        &quot;unAllocationPlans&quot;: null
+    }
+}
+</code></pre> <h3 id="bh-55-线路日志"><a href="#bh-55-线路日志" aria-hidden="true" class="header-anchor">#</a> BH-55 线路日志</h3> <h4 id="模块负责人-36"><a href="#模块负责人-36" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-23"><a href="#对接负责人-23" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-46"><a href="#请求-46" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/stockup/line/log/{id}
+</code></pre> <h4 id="参数-46"><a href="#参数-46" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id     // 线路ID
+</code></pre> <h4 id="响应-46"><a href="#响应-46" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissionPage&quot;: {},
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;id&quot;: 6,
+                &quot;lineId&quot;: 6,
+                &quot;opInfo&quot;: &quot;线路作废&quot;,
+                &quot;opRole&quot;: 1,
+                &quot;opTime&quot;: &quot;2019-05-29 10:43:25&quot;,
+                &quot;opUser&quot;: 518,
+                &quot;opUserName&quot;: &quot;孙启萌&quot;
+            }
+        ],
+        &quot;pageNo&quot;: 0,
+        &quot;total&quot;: 0
+    }
+}
+</code></pre> <h3 id="bh-56-线路修改名称"><a href="#bh-56-线路修改名称" aria-hidden="true" class="header-anchor">#</a> BH-56 线路修改名称</h3> <h4 id="模块负责人-37"><a href="#模块负责人-37" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-24"><a href="#对接负责人-24" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-47"><a href="#请求-47" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/stockup/line/name/{id}
+</code></pre> <h4 id="参数-47"><a href="#参数-47" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id // 线路ID
+{
+    &quot;name&quot;: &quot;昆山-DC大连仓&quot;
+}
+</code></pre> <h4 id="响应-47"><a href="#响应-47" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="bh-57-线路列表（不分页）"><a href="#bh-57-线路列表（不分页）" aria-hidden="true" class="header-anchor">#</a> BH-57 线路列表（不分页）</h3> <h4 id="模块负责人-38"><a href="#模块负责人-38" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-25"><a href="#对接负责人-25" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-48"><a href="#请求-48" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/stockup/line/list
+</code></pre> <h4 id="参数-48"><a href="#参数-48" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>toDepotId       // 入库仓
+splitNum        // 平铺展示个数
+</code></pre> <h4 id="响应-48"><a href="#响应-48" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        [
+            &quot;createRole&quot;: 0,
+            &quot;createTime&quot;: &quot;2019-05-29 10:00:30&quot;,
+            &quot;createUser&quot;: 0,
+            &quot;createUserName&quot;: &quot;孙启萌&quot;,
+            &quot;deleteFlg&quot;: 0,
+            &quot;depot&quot;: [                      // 出库仓
+                {
+                    &quot;deleteFlg&quot;: 0,
+                    &quot;dutyId&quot;: 25,                   // 出库仓ID
+                    &quot;dutyName&quot;: &quot;VC（退货不入仓）&quot;,        // 出库仓名
+                    &quot;id&quot;: 20,
+                    &quot;lineId&quot;: 6,
+                    &quot;type&quot;: &quot;TR&quot;
+                }
+            ],
+            &quot;fromPathName&quot;: &quot;黑龙江鸡西市&quot;,       // 起点名
+            &quot;fromPathid&quot;: &quot;0803&quot;,               // 起点
+            &quot;id&quot;: 6,                        // 线路ID
+            &quot;name&quot;: &quot;天津燕山区-DC(大连仓)&quot;,    // 线路名
+            &quot;paFlg&quot;: 1,                     // 采购单类型
+            &quot;stockupPlanVOS&quot;: null,
+            &quot;supplier&quot;: [                   // 供应商
+                {
+                    &quot;deleteFlg&quot;: 0,
+                    &quot;dutyId&quot;: 5563,                 // 供应商ID
+                    &quot;dutyName&quot;: &quot;优合集团有限公司&quot;,     // 供应商名
+                    &quot;id&quot;: 19,
+                    &quot;lineId&quot;: 6,
+                    &quot;type&quot;: &quot;PA&quot;
+                }
+            ],
+            &quot;toDepotId&quot;: 40,                    // 入库仓ID
+            &quot;toDepotName&quot;: &quot;DC（大连铁越仓）&quot;,     // 入库仓名
+            &quot;trFlg&quot;: 1,                     // 调拨单类型
+            &quot;unAllocationPlans&quot;: null
+        ],
+        []
+    ]
+}
+</code></pre> <h3 id="bh-100-安全库存规则列表"><a href="#bh-100-安全库存规则列表" aria-hidden="true" class="header-anchor">#</a> BH-100 安全库存规则列表</h3> <h4 id="模块负责人-39"><a href="#模块负责人-39" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-26"><a href="#对接负责人-26" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-49"><a href="#请求-49" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/stockup/safe/rule
+</code></pre> <h4 id="参数-49"><a href="#参数-49" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>无
+</code></pre> <h4 id="响应-49"><a href="#响应-49" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;deleteFlg&quot;: 0,
+            &quot;endNum&quot;: 100,          // 最大值
+            &quot;id&quot;: 1,
+            &quot;paramType&quot;: &quot;B3AVG&quot;,   // B3AVG 前三月平均出货量 目前只有一种类型
+            &quot;safeNum&quot;: 0,           // 手动设置的安全库存值
+            &quot;safeType&quot;: &quot;FULL&quot;,     // 安全库存值
+            &quot;startNum&quot;: 1           // 最小值
+        },
+        {
+            &quot;deleteFlg&quot;: 0,
+            &quot;endNum&quot;: 300,
+            &quot;id&quot;: 2,
+            &quot;paramType&quot;: &quot;B3AVG&quot;,
+            &quot;safeNum&quot;: 0,
+            &quot;safeType&quot;: &quot;HALF&quot;,
+            &quot;startNum&quot;: 100
+        },
+        {
+            &quot;deleteFlg&quot;: 0,
+            &quot;endNum&quot;: 1000000,
+            &quot;id&quot;: 3,
+            &quot;paramType&quot;: &quot;B3AVG&quot;,
+            &quot;safeNum&quot;: 300,
+            &quot;safeType&quot;: &quot;HAND&quot;,
+            &quot;startNum&quot;: 300
+        }
+    ]
+}  
+</code></pre> <h3 id="bh-101-安全库存规则修改"><a href="#bh-101-安全库存规则修改" aria-hidden="true" class="header-anchor">#</a> BH-101 安全库存规则修改</h3> <h4 id="模块负责人-40"><a href="#模块负责人-40" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-27"><a href="#对接负责人-27" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-50"><a href="#请求-50" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/stockup/safe/rule
+</code></pre> <h4 id="参数-50"><a href="#参数-50" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>[
+    {
+        *&quot;paramType&quot;: &quot;B3AVG&quot;,   // B3AVG 前三个月平均出货量 目前只有这一种类型
+        *&quot;startNum&quot;: &quot;1&quot;,        // 最小值
+        *&quot;endNum&quot;: &quot;200&quot;,        // 最大值
+        *&quot;safeType&quot;: &quot;FULL&quot;,     // 安全库存值   FULL 基础参数 HALF 基础参数一半 HAND 其它
+        *&quot;safeNum&quot;: 0            // 手动设置的安全库存值，非手动设置时，需赋值0
+    },
+    {
+        &quot;paramType&quot;: &quot;B3AVG&quot;,
+        &quot;startNum&quot;: &quot;200&quot;,
+        &quot;endNum&quot;: &quot;500&quot;,
+        &quot;safeType&quot;: &quot;HALF&quot;,
+        &quot;safeNum&quot;: 0
+    },
+    {
+        &quot;paramType&quot;: &quot;B3AVG&quot;,
+        &quot;startNum&quot;: &quot;500&quot;,
+        &quot;endNum&quot;: &quot;10000000&quot;,
+        &quot;safeType&quot;: &quot;HAND&quot;,
+        &quot;safeNum&quot;: 1000
+    }
+]
+</code></pre> <h4 id="响应-50"><a href="#响应-50" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}    
+</code></pre> <h3 id="bh-102-安全库存规则日志"><a href="#bh-102-安全库存规则日志" aria-hidden="true" class="header-anchor">#</a> BH-102 安全库存规则日志</h3> <h4 id="模块负责人-41"><a href="#模块负责人-41" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-28"><a href="#对接负责人-28" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-51"><a href="#请求-51" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/stockup/safe/rule/log
+</code></pre> <h4 id="参数-51"><a href="#参数-51" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>pageNo      页码
+pageSize    页大小
+</code></pre> <h4 id="响应-51"><a href="#响应-51" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissionPage&quot;: {},
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;id&quot;: 2,
+                &quot;opInfo&quot;: &quot;修改安全库存规则&quot;,           // 操作内容
+                &quot;opRole&quot;: 1,
+                &quot;opTime&quot;: &quot;2019-06-10 11:25:47&quot;,      // 操作时间
+                &quot;opUser&quot;: 518,
+                &quot;opUserName&quot;: &quot;孙启萌&quot;                 // 操作人
+            },
+            {
+                &quot;id&quot;: 1,
+                &quot;opInfo&quot;: &quot;新增安全库存规则&quot;,
+                &quot;opRole&quot;: 29319,
+                &quot;opTime&quot;: &quot;2019-06-10 09:52:20&quot;,
+                &quot;opUser&quot;: 518,
+                &quot;opUserName&quot;: &quot;孙启萌&quot;
+            }
+        ],
+        &quot;pageNo&quot;: 0,
+        &quot;total&quot;: 0
+    }
+}
+</code></pre> <h3 id="bh-110-期货现货定制品列表"><a href="#bh-110-期货现货定制品列表" aria-hidden="true" class="header-anchor">#</a> BH-110 期货现货定制品列表</h3> <h4 id="模块负责人-42"><a href="#模块负责人-42" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-29"><a href="#对接负责人-29" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-52"><a href="#请求-52" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/stockup/nowfuture
+</code></pre> <h4 id="参数-52"><a href="#参数-52" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*depotId    仓库ID
+*type       查询类型 NOW 查询现货列表 FUTURE 查询期货列表 CUSTOM 查询定制品列表
+keyword     品号、品名
+lockFlg     自动手动类型   1 手动  0 自动
+buttonPermissionFlg 是否查询按钮权限
+pageNo      页码
+pageSize    页大小
+</code></pre> <h4 id="响应-52"><a href="#响应-52" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissionPage&quot;: {},
+        &quot;buttonPermissions&quot;: [
+            {
+                &quot;cancelButton&quot;: false,      // 取消手动
+                &quot;toFutureButton&quot;: true,     // 转期货
+                &quot;toNowButton&quot;: false        // 转现货
+            }
+        ],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;customerCnt&quot;: 59,          // 服务客户数
+                &quot;customerFlg&quot;: 0,           // 定制表示 0 非定制 1 普通定制 2 专属定制
+                &quot;depotId&quot;: 40,              // 仓库ID
+                &quot;id&quot;: 0,
+                &quot;jian&quot;: 18578,              // 平均出货量
+                &quot;lockFlg&quot;: 0,               // 类型来源 0 自动 1 手动
+                &quot;num&quot;: 18578,
+                &quot;pno&quot;: &quot;0151&quot;,              // 品号
+                &quot;productId&quot;: 1,             // 品ID
+                &quot;productName&quot;: &quot;香草凤尾虾&quot;, // 品名
+                &quot;san&quot;: 18,
+                &quot;type&quot;: &quot;NOW&quot;
+            }
+        ],
+        &quot;pageNo&quot;: 0,
+        &quot;total&quot;: 0
+    }
+}
+</code></pre> <h3 id="bh-111-期货现货定制品统计列表"><a href="#bh-111-期货现货定制品统计列表" aria-hidden="true" class="header-anchor">#</a> BH-111 期货现货定制品统计列表</h3> <h4 id="模块负责人-43"><a href="#模块负责人-43" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-30"><a href="#对接负责人-30" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-53"><a href="#请求-53" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/stockup/nowfuture/profile
+</code></pre> <h4 id="参数-53"><a href="#参数-53" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>depotId    仓库ID
+</code></pre> <h4 id="响应-53"><a href="#响应-53" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;customCnt&quot;: 236,                   // 定制品数
+            &quot;customerCnt&quot;: 190,                  // 服务客户数
+            &quot;depotId&quot;: 40,                      // 仓库ID
+            &quot;depotName&quot;: &quot;DC（大连铁越仓）&quot;,       // 仓库名
+            &quot;futureCnt&quot;: 93,                    // 期货数
+            &quot;nowCnt&quot;: 211,                      // 现货数
+            &quot;saleCnt&quot;: 550149,                  // 出货量
+            &quot;saleProductCnt&quot;: 395               // 出货品类
+        }
+    ]
+}
+</code></pre> <h3 id="bh-112-期货转现货"><a href="#bh-112-期货转现货" aria-hidden="true" class="header-anchor">#</a> BH-112 期货转现货</h3> <h4 id="模块负责人-44"><a href="#模块负责人-44" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-31"><a href="#对接负责人-31" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-54"><a href="#请求-54" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/stockup/nowfuture/now
+</code></pre> <h4 id="参数-54"><a href="#参数-54" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    *&quot;depotId&quot;: &quot;40&quot;,
+    *&quot;productId&quot;: [
+        4748,
+        4747
+    ]
+}
+</code></pre> <h4 id="响应-54"><a href="#响应-54" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}    
+</code></pre> <h3 id="bh-113-现货转期货"><a href="#bh-113-现货转期货" aria-hidden="true" class="header-anchor">#</a> BH-113 现货转期货</h3> <h4 id="模块负责人-45"><a href="#模块负责人-45" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-32"><a href="#对接负责人-32" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-55"><a href="#请求-55" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/stockup/nowfuture/future
+</code></pre> <h4 id="参数-55"><a href="#参数-55" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    *&quot;depotId&quot;: &quot;40&quot;,
+    *&quot;productId&quot;: [
+        4748,
+        4747
+    ]
+}
+</code></pre> <h4 id="响应-55"><a href="#响应-55" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}       
+</code></pre> <h3 id="bh-114-取消手动"><a href="#bh-114-取消手动" aria-hidden="true" class="header-anchor">#</a> BH-114 取消手动</h3> <h4 id="模块负责人-46"><a href="#模块负责人-46" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-33"><a href="#对接负责人-33" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-56"><a href="#请求-56" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/stockup/nowfuture/cancel
+</code></pre> <h4 id="参数-56"><a href="#参数-56" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    *&quot;depotId&quot;: &quot;40&quot;,
+    *&quot;productId&quot;: [
+        4748
+    ]
+}
+</code></pre> <h4 id="响应-56"><a href="#响应-56" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}      
+</code></pre> <h3 id="bh-115-期货现货操作日志"><a href="#bh-115-期货现货操作日志" aria-hidden="true" class="header-anchor">#</a> BH-115 期货现货操作日志</h3> <h4 id="模块负责人-47"><a href="#模块负责人-47" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-34"><a href="#对接负责人-34" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-57"><a href="#请求-57" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/stockup/nowfuture/log
+</code></pre> <h4 id="参数-57"><a href="#参数-57" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*depotId    // 仓库ID
+</code></pre> <h4 id="响应-57"><a href="#响应-57" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissionPage&quot;: {},
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;depotId&quot;: 40,
+                &quot;id&quot;: 0,
+                &quot;opInfo&quot;: &quot;期货-&gt;现货&quot;,             // 操作内容
+                &quot;opRole&quot;: 0,
+                &quot;opTime&quot;: &quot;2019-06-10 15:50:56&quot;,    // 操作时间
+                &quot;opUser&quot;: 0,
+                &quot;opUserName&quot;: &quot;孙启萌&quot;,                // 操作人
+                &quot;productId&quot;: 2281,
+                &quot;pno&quot;: 1889,                            // 品号
+                &quot;productName&quot;: &quot;好虾仁 (51/60）挑肠&quot;      // 操作产品
+            }
+        ],
+        &quot;pageNo&quot;: 0,
+        &quot;total&quot;: 0
+    }
+}        
+</code></pre> <h3 id="bh-120-安全库存修改"><a href="#bh-120-安全库存修改" aria-hidden="true" class="header-anchor">#</a> BH-120 安全库存修改</h3> <h4 id="模块负责人-48"><a href="#模块负责人-48" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-35"><a href="#对接负责人-35" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-58"><a href="#请求-58" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /v2/stockup/safe/askfor
+</code></pre> <h4 id="参数-58"><a href="#参数-58" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    *&quot;depotId&quot;: 40,         // 仓库ID
+    *&quot;productId&quot;: 2506,     // 产品ID
+    *&quot;turnover&quot;: 5,         // 周转率
+    *&quot;safeNum&quot;: 201         // 安全库存
+}
+</code></pre> <h4 id="响应-58"><a href="#响应-58" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}       
+</code></pre> <h3 id="bh-121-安全库存审核通过"><a href="#bh-121-安全库存审核通过" aria-hidden="true" class="header-anchor">#</a> BH-121 安全库存审核通过</h3> <h4 id="模块负责人-49"><a href="#模块负责人-49" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-36"><a href="#对接负责人-36" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-59"><a href="#请求-59" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/stockup/safe/askfor/pass
+</code></pre> <h4 id="参数-59"><a href="#参数-59" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    &quot;askIds&quot;: [ // 申请ID
+        1,
+        2,
+        3
+    ]
+}
+</code></pre> <h4 id="响应-59"><a href="#响应-59" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}   
+</code></pre> <h3 id="bh-122-安全库存审核拒绝"><a href="#bh-122-安全库存审核拒绝" aria-hidden="true" class="header-anchor">#</a> BH-122 安全库存审核拒绝</h3> <h4 id="模块负责人-50"><a href="#模块负责人-50" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-37"><a href="#对接负责人-37" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-60"><a href="#请求-60" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/stockup/safe/askfor/refuse
+</code></pre> <h4 id="参数-60"><a href="#参数-60" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    &quot;askIds&quot;: [ // 申请ID
+        1,
+        2,
+        3
+    ],
+    &quot;reason&quot;:&quot;拒绝理由&quot;
+}
+</code></pre> <h4 id="响应-60"><a href="#响应-60" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}       
+</code></pre> <h3 id="bh-123-安全库存列表"><a href="#bh-123-安全库存列表" aria-hidden="true" class="header-anchor">#</a> BH-123 安全库存列表</h3> <h4 id="模块负责人-51"><a href="#模块负责人-51" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-38"><a href="#对接负责人-38" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-61"><a href="#请求-61" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/stockup/safe
+</code></pre> <h4 id="参数-61"><a href="#参数-61" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>keyword     // 品号、品名
+depotId     // 仓库ID
+status          // 库存状态 'NORMAL' 正常,'LOCK' 锁定
+type            //产品类型 NOW 现货,FUTURE 期货,CUSTOM 定制品
+meituan         //美团品标识  1是美团品，0是非美团品  空是所有产品
+enableAmountOp  // 过滤可用库存操作符
+enableAmount    // 可用库存值
+normalAmountOp  // 过滤实际库存操作符
+normalAmount    // 实际库存值
+buttonPermissionFlg  // 1 查权限  0 不查权限
+pageNo      // 页码
+pageSize    // 页大小
+</code></pre> <h4 id="响应-61"><a href="#响应-61" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissionPage&quot;: {},
+        &quot;buttonPermissions&quot;: [
+            {
+                &quot;editButton&quot;:true,         // 编辑按钮
+                &quot;cancelButton&quot;:false        // 取消手动按钮
+            }
+        ],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;avgCustomer&quot;: 2,   // 月平均购买客户数
+                &quot;avgJian&quot;: 75,      // 平均出货量件
+                &quot;avgNum&quot;: 1250, 
+                &quot;avgSan&quot;: 0,        // 平均出货量散
+                &quot;b1Customer&quot;: 0, 
+                &quot;b1Jian&quot;: 0,        // 前一个月件
+                &quot;b1Num&quot;: 0,
+                &quot;b1San&quot;: 0,         // 前一个月散
+                &quot;b2Customer&quot;: 0,
+                &quot;b2Jian&quot;: 0,        // 前两个月件
+                &quot;b2Num&quot;: 0,
+                &quot;b2San&quot;: 0,         // 前两个月散
+                &quot;b3Customer&quot;: 7,
+                &quot;b3Jian&quot;: 225,      // 前三个月件
+                &quot;b3Num&quot;: 3750,
+                &quot;b3San&quot;: 0,         // 前三个月散
+                &quot;createTime&quot;: &quot;&quot;,
+                &quot;depotId&quot;: 57,                      // 仓库ID
+                &quot;depotName&quot;: &quot;DC（昆山仓A）ASA&quot;,     // 仓库名
+                &quot;enableAmountJian&quot;: 100,        // 可用库存件
+                &quot;enableAmountSan&quot;: 39,          // 可用库存散
+                &quot;guige&quot;: &quot;150g/袋*50袋&quot;,      // 品规格
+                &quot;id&quot;: 0, // 安全库存ID   存在id=0的情况，需要传递id时， id 是多久就传多少，是0就传0
+                &quot;lockFlg&quot;: 0,               // 是否锁定 0 未锁定  1 已锁定
+                &quot;modifyRole&quot;: 0,
+                &quot;modifyTime&quot;: &quot;&quot;,
+                &quot;modifyUser&quot;: 0,
+                &quot;modifyUserName&quot;: &quot;&quot;,
+                &quot;normalAmountJian&quot;: 100,        // 实际库存件
+                &quot;normalAmountSan&quot;: 39,          // 实际库存散
+                &quot;perunit&quot;: 50,              // 品转化率
+                &quot;pno&quot;: &quot;0162&quot;,                  // 品号
+                &quot;productId&quot;: 811,           // 品ID
+                &quot;productName&quot;: &quot;香辣鱼皮&quot;,      // 品名
+                &quot;safeNum&quot;: 75,
+                &quot;safeNumJian&quot;: 1.5,         // 安全库存计算值
+                &quot;safeNumManual&quot;: -1,        // 手动设置的安全库存 -1 未设置过，显示空
+                &quot;safeNumSan&quot;: 0,
+                &quot;b0NumJian&quot;: 10237,        // 本月已发件
+                &quot;b0NumSan&quot;: 21,            // 本月已发散
+                &quot;status&quot;: &quot;NORMAL&quot;,         // 库存状态  NORMAL 正常 LOCK 锁定
+                &quot;turnover&quot;: 2,      // 周转率
+                &quot;type&quot;: &quot;NOW&quot;,              // 产品类型 NOW 现货 FUTURE 期货 CUSTOM 定制品
+                &quot;unit&quot;: &quot;件&quot;             // 品单位
+            }
+        ],
+        &quot;pageNo&quot;: 0,
+        &quot;total&quot;: 1
+    }
+}   
+</code></pre> <h3 id="bh-124-安全库存列表导出"><a href="#bh-124-安全库存列表导出" aria-hidden="true" class="header-anchor">#</a> BH-124 安全库存列表导出</h3> <h4 id="模块负责人-52"><a href="#模块负责人-52" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-39"><a href="#对接负责人-39" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-62"><a href="#请求-62" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/stockup/safe/export
+</code></pre> <h4 id="参数-62"><a href="#参数-62" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>keyword     // 品号、品名
+*depotId     // 仓库ID
+status          // 库存状态 'NORMAL' 正常,'LOCK' 锁定
+</code></pre> <h4 id="响应-62"><a href="#响应-62" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>流    
+</code></pre> <h3 id="bh-125-安全库存审核列表"><a href="#bh-125-安全库存审核列表" aria-hidden="true" class="header-anchor">#</a> BH-125 安全库存审核列表</h3> <h4 id="模块负责人-53"><a href="#模块负责人-53" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-40"><a href="#对接负责人-40" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-63"><a href="#请求-63" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/stockup/safe/askfor
+</code></pre> <h4 id="参数-63"><a href="#参数-63" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>keyword     // 品号、品名
+depotId     // 仓库ID
+status          // 库存状态 'NORMAL' 正常,'LOCK' 锁定
+buttonPermissionFlg 是否返回按钮权限  1 返回 0 不返回
+pageNo      // 页码
+pageSize    // 页大小
+</code></pre> <h4 id="响应-63"><a href="#响应-63" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissionPage&quot;: {},
+        &quot;buttonPermissions&quot;: [
+            {
+                &quot;checkButton&quot;: false // 是否显示审核拒绝按钮
+            }
+        ],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;checkRole&quot;: 1,
+                &quot;checkTime&quot;: &quot;2019-06-11 16:15:16&quot;,     // 审核时间
+                &quot;checkUser&quot;: 518,
+                &quot;checkUserName&quot;: &quot;孙启萌&quot;,             // 审核人
+                &quot;createRole&quot;: 1,
+                &quot;createTime&quot;: &quot;2019-06-11 15:31:35&quot;,        // 申请人
+                &quot;createUser&quot;: 518,
+                &quot;createUserName&quot;: &quot;孙启萌&quot;,                // 申请时间
+                &quot;depotId&quot;: 40,                  // 仓库ID
+                &quot;depotName&quot;: &quot;DC（大连铁越仓）&quot;,   // 仓库名
+                &quot;id&quot;: 1,                    申请ID
+                &quot;normalAmountJian&quot;: 0,          // 实际库存件
+                &quot;normalAmountSan&quot;: 0,           // 实际库存散
+                &quot;originalSafeNum&quot;: 0,           // 安全库存旧值
+                &quot;originalTurnover&quot;: 2,      // 周转率旧值
+                &quot;pno&quot;: &quot;lb703&quot;,             // 品号
+                &quot;productId&quot;: 2506,              // 产品ID
+                &quot;productName&quot;: &quot;中粮烤全腿&quot;,         // 产品名
+                &quot;reason&quot;: &quot;拒绝你&quot;,        // 拒绝理由
+                &quot;remark&quot;: &quot;&quot;,           // 申请备注
+                &quot;safeNum&quot;: 201,             // 安全库存新值
+                &quot;b0NumJian&quot;: 0,            // 本月已发件
+                &quot;b0NumSan&quot;: 0,             // 本月已发散
+                &quot;status&quot;: &quot;PASS&quot;,           // 审核状态  ASKFOR 申请 PASS 通过 REFUSE 拒绝
+                &quot;turnover&quot;: 5,              // 周转率新值
+                &quot;type&quot;: &quot;NOW&quot;              // 产品类型 NOW 现货 FUTURE 期货 CUSTOM 定制品
+            }
+        ],
+        &quot;pageNo&quot;: 0,
+        &quot;total&quot;: 0
+    }
+}
+</code></pre> <h3 id="bh-126-安全库存取消手动"><a href="#bh-126-安全库存取消手动" aria-hidden="true" class="header-anchor">#</a> BH-126 安全库存取消手动</h3> <h4 id="模块负责人-54"><a href="#模块负责人-54" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-41"><a href="#对接负责人-41" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-64"><a href="#请求-64" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/stockup/safe/cancel/{id}
+</code></pre> <h4 id="参数-64"><a href="#参数-64" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id // 安全库存ID
+</code></pre> <h4 id="响应-64"><a href="#响应-64" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}  
+</code></pre> <h3 id="bh-127-安全库存详情"><a href="#bh-127-安全库存详情" aria-hidden="true" class="header-anchor">#</a> BH-127 安全库存详情</h3> <h4 id="模块负责人-55"><a href="#模块负责人-55" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-42"><a href="#对接负责人-42" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-65"><a href="#请求-65" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/stockup/safe/{id}
+</code></pre> <h4 id="参数-65"><a href="#参数-65" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id // 安全库存ID  注：有些安全库存ID=0，没关系 ，放心传递即可
+</code></pre> <h4 id="响应-65"><a href="#响应-65" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;avgCustomer&quot;: 0,
+        &quot;avgJian&quot;: 0,
+        &quot;avgNum&quot;: 0,
+        &quot;avgSan&quot;: 0,
+        &quot;b1Customer&quot;: 0,
+        &quot;b1Jian&quot;: 0,
+        &quot;b1Num&quot;: 0,
+        &quot;b1San&quot;: 0,
+        &quot;b2Customer&quot;: 0,
+        &quot;b2Jian&quot;: 0,
+        &quot;b2Num&quot;: 0,
+        &quot;b2San&quot;: 0,
+        &quot;b3Customer&quot;: 0,
+        &quot;b3Jian&quot;: 0,
+        &quot;b3Num&quot;: 0,
+        &quot;b3San&quot;: 0,
+        &quot;createTime&quot;: &quot;&quot;,
+        &quot;depotId&quot;: 0,
+        &quot;id&quot;: 0,
+        &quot;lockFlg&quot;: 0,
+        &quot;modifyRole&quot;: 0,
+        &quot;modifyTime&quot;: &quot;&quot;,
+        &quot;modifyUser&quot;: 0,
+        &quot;modifyUserName&quot;: &quot;&quot;,
+        &quot;productId&quot;: 0,
+        &quot;safeNum&quot;: 0,
+        &quot;safeNumJian&quot;: 0,       // 安全库存（件）
+        &quot;safeNumManual&quot;: 0,
+        &quot;safeNumSan&quot;: 0,
+        &quot;turnover&quot;: 2           // 周转率
+    }
+}
+</code></pre> <h3 id="bh-130-产品规格列表"><a href="#bh-130-产品规格列表" aria-hidden="true" class="header-anchor">#</a> BH-130 产品规格列表</h3> <h4 id="模块负责人-56"><a href="#模块负责人-56" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="对接负责人-43"><a href="#对接负责人-43" aria-hidden="true" class="header-anchor">#</a> 对接负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-66"><a href="#请求-66" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/stockup/plan/guige
+</code></pre> <h4 id="参数-66"><a href="#参数-66" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>keyword         // 品号、品名
+toDepotId       // 入库仓
+fromDepotId     // 出库仓
+supplierId      // 供应商ID
+excludeIds      // 排除规格ID
+pageNo
+pageSize
+</code></pre> <h4 id="响应-66"><a href="#响应-66" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissionPage&quot;: {},
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;id&quot;: 1227,                         // 规格ID
+                &quot;productId&quot;: 705,                   // 产品ID
+                &quot;guige&quot;: &quot;200g（6枚）/袋*12袋/件&quot;,    // 规格
+                &quot;perunit&quot;: 12,                      // 转化率
+                &quot;unitId&quot;: 3,                        // 单位ID
+                &quot;unit&quot;: &quot;件&quot;,                        // 单位名
+                &quot;subNum&quot;: 10,                       // 出货库存差
+                &quot;avgNum&quot;: 10,                       // 平均出货量
+                &quot;safeNumJian&quot;: 0,                   // 安全库存
+                &quot;toDepotNowFutureType&quot;: &quot;FUTURE&quot;,   // 入库仓产品类型  NOW 现货 FUTURE 期货 CUSTOM 定制品
+                &quot;fromDepotNowFutureType&quot;: &quot;FUTURE&quot;, // 出库仓产品类型  同上
+                &quot;supplierPrice&quot;: 100.39,            // 供应商采购价（签约价）
+                &quot;product&quot;: {
+                    &quot;id&quot;: 705,
+                    &quot;pno&quot;: &quot;0004&quot;,                  // 品号
+                    &quot;name&quot;: &quot;宝宝贝（蒜蓉粉丝扇贝）&quot;,      // 品名
+                    &quot;status&quot;: &quot;NORMAL&quot;,             // 上下架      NORMAL 上架 LOCK 下架
+                    &quot;customFlg&quot;: 0,
+                    &quot;customFlgMore&quot;: 0,             // 定制标志     0 非定制  1 普通定制 2 专属定制
+                    &quot;longName&quot;: &quot;宝宝贝（蒜蓉粉丝蒸扇贝），平价海鲜大餐， 8分钟明星！&quot;,
+                    &quot;mainBgImg&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/6da0bffb9f05f4ad08464553c2b2da21.jpg&quot;,
+                    &quot;mainImg&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201501/13/1421138625-qVDJ.jpg&quot;,
+                    &quot;myFollowFlg&quot;: &quot;NO&quot;,
+                    &quot;newHotFlg&quot;: &quot;&quot;,
+                    &quot;nowFutureFlg&quot;: &quot;&quot;,
+                    &quot;productLack&quot;: null,            // 是否断货 null 非断货
+                },
+                &quot;stock&quot;: {
+                    &quot;productId&quot;: 705,
+                    &quot;amount&quot;: 1704,
+                    &quot;amountJian&quot;: 142,          // 可用库存（件）
+                    &quot;amountSan&quot;: 0              // 可用库存（散）
+                    &quot;normalAmount&quot;:777,    
+                    &quot;normalAmountJian&quot;:110,         // 实际库存（件）
+                    &quot;normalAmountSan&quot;:7             // 实际库存（散）
+                },
+                &quot;price&quot;: null,
+                &quot;productCart&quot;: null,
+                &quot;width&quot;: 31.2,
+                &quot;grossweight&quot;: 5.55,
+                &quot;height&quot;: 20,
+                &quot;length&quot;: 48.2,
+                &quot;marketActive&quot;: null,
+                &quot;minimum&quot;: 0,
+                &quot;minimumType&quot;: &quot;NONE&quot;,
+                &quot;modifyTime&quot;: &quot;&quot;,
+                &quot;netweight&quot;: 2.4,
+                &quot;cubage&quot;: 0,
+                &quot;createTime&quot;: &quot;&quot;
+            }
+        ],
+        &quot;pageNo&quot;: 0,
+        &quot;total&quot;: 0
+    }
+}
+</code></pre> <h3 id="bh-131-断货信息导出"><a href="#bh-131-断货信息导出" aria-hidden="true" class="header-anchor">#</a> BH-131.断货信息导出</h3> <h4 id="模块负责人-57"><a href="#模块负责人-57" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-67"><a href="#请求-67" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/stockup/lack/export/depot
+</code></pre> <h4 id="参数-67"><a href="#参数-67" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*depotId   //仓id
+date       //导出日期（非必填项）
+*checkCode //下载授权码
+</code></pre> <h4 id="响应-67"><a href="#响应-67" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>导出文件</code></pre></div> <div class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">3/23/2020, 9:00:04 AM</span></div></div> <!----> </div> <!----></div></div>
+    <script src="/work-a-api-v2/assets/js/app.a6722e02.js" defer></script><script src="/work-a-api-v2/assets/js/28.c950b06d.js" defer></script>
+  </body>
+</html>

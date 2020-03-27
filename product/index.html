@@ -1,0 +1,1941 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>产品接口 | ADoc</title>
+    <meta name="description" content="A团队开发文档">
+    
+    
+    <link rel="preload" href="/work-a-api-v2/assets/css/0.styles.35f149a3.css" as="style"><link rel="preload" href="/work-a-api-v2/assets/js/app.a6722e02.js" as="script"><link rel="preload" href="/work-a-api-v2/assets/js/26.2d5db294.js" as="script"><link rel="prefetch" href="/work-a-api-v2/assets/js/10.1a10445b.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/11.42f498c9.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/12.0c967175.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/13.3651904d.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/14.f08b1cf2.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/15.9349f875.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/16.12c6bae3.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/17.adca03bd.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/18.c998838e.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/19.3918a1ff.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/2.a0ea3f6c.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/20.90e7db96.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/21.107ae2fe.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/22.74755e26.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/23.311dc752.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/24.f5a0db0c.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/25.930c2322.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/27.2fe9193a.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/28.c950b06d.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/29.c08b73a8.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/3.d1df23fe.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/30.03105b2a.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/31.e5254695.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/32.f61b2cc2.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/4.0f0014c9.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/5.95ee4e26.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/6.a8f01348.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/7.88947b66.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/8.0d5a3953.js"><link rel="prefetch" href="/work-a-api-v2/assets/js/9.20882588.js">
+    <link rel="stylesheet" href="/work-a-api-v2/assets/css/0.styles.35f149a3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/work-a-api-v2/" class="home-link router-link-active"><!----> <span class="site-name">ADoc</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/work-a-api-v2/wms/" class="nav-link">WMS仓储</a></div><div class="nav-item"><a href="/work-a-api-v2/ufo/" class="nav-link">金蝶</a></div><div class="nav-item"><a href="/work-a-api-v2/addon/" class="nav-link">插件</a></div><div class="nav-item"><a href="/work-a-api-v2/outer/" class="nav-link">合作商</a></div><div class="nav-item"><a href="/work-a-api-v2/stockup/" class="nav-link">备货</a></div><div class="nav-item"><a href="/work-a-api-v2/order/" class="nav-link">订单</a></div><div class="nav-item"><a href="/work-a-api-v2/finance/" class="nav-link">财务</a></div><div class="nav-item"><a href="/work-a-api-v2/supplier/" class="nav-link">供应商</a></div><div class="nav-item"><a href="/work-a-api-v2/invoice/" class="nav-link">发票</a></div><div class="nav-item"><a href="/work-a-api-v2/customer/" class="nav-link">客户</a></div><div class="nav-item"><a href="/work-a-api-v2/product/" class="nav-link router-link-exact-active router-link-active">产品</a></div><div class="nav-item"><a href="/work-a-api-v2/auth/" class="nav-link">权限</a></div><div class="nav-item"><a href="/work-a-api-v2/contract/" class="nav-link">销售优惠</a></div><div class="nav-item"><a href="/work-a-api-v2/price/" class="nav-link">价格</a></div><div class="nav-item"><a href="/work-a-api-v2/freight/" class="nav-link">运费</a></div><div class="nav-item"><a href="/work-a-api-v2/market/" class="nav-link">营销</a></div><div class="nav-item"><a href="/work-a-api-v2/cookbook/" class="nav-link">菜谱</a></div><div class="nav-item"><a href="/work-a-api-v2/common/" class="nav-link">基础</a></div><div class="nav-item"><a href="/work-a-api-v2/app/" class="nav-link">APP</a></div><div class="nav-item"><a href="/work-a-api-v2/depot/" class="nav-link">库存</a></div><div class="nav-item"><a href="/work-a-api-v2/fee/" class="nav-link">费用</a></div><div class="nav-item"><a href="/work-a-api-v2/notice/" class="nav-link">消息通知（作废）</a></div><div class="nav-item"><a href="/work-a-api-v2/changelog/" class="nav-link">变更</a></div><div class="nav-item"><a href="/work-a-api-v2/feign/" class="nav-link">代理接口</a></div><div class="nav-item"><a href="/work-a-api-v2/other/" class="nav-link">其它</a></div><div class="nav-item"><a href="/work-a-api-v2/sta/" class="nav-link">统计</a></div><div class="nav-item"><a href="/work-a-api-v2/message/" class="nav-link">消息</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/work-a-api-v2/wms/" class="nav-link">WMS仓储</a></div><div class="nav-item"><a href="/work-a-api-v2/ufo/" class="nav-link">金蝶</a></div><div class="nav-item"><a href="/work-a-api-v2/addon/" class="nav-link">插件</a></div><div class="nav-item"><a href="/work-a-api-v2/outer/" class="nav-link">合作商</a></div><div class="nav-item"><a href="/work-a-api-v2/stockup/" class="nav-link">备货</a></div><div class="nav-item"><a href="/work-a-api-v2/order/" class="nav-link">订单</a></div><div class="nav-item"><a href="/work-a-api-v2/finance/" class="nav-link">财务</a></div><div class="nav-item"><a href="/work-a-api-v2/supplier/" class="nav-link">供应商</a></div><div class="nav-item"><a href="/work-a-api-v2/invoice/" class="nav-link">发票</a></div><div class="nav-item"><a href="/work-a-api-v2/customer/" class="nav-link">客户</a></div><div class="nav-item"><a href="/work-a-api-v2/product/" class="nav-link router-link-exact-active router-link-active">产品</a></div><div class="nav-item"><a href="/work-a-api-v2/auth/" class="nav-link">权限</a></div><div class="nav-item"><a href="/work-a-api-v2/contract/" class="nav-link">销售优惠</a></div><div class="nav-item"><a href="/work-a-api-v2/price/" class="nav-link">价格</a></div><div class="nav-item"><a href="/work-a-api-v2/freight/" class="nav-link">运费</a></div><div class="nav-item"><a href="/work-a-api-v2/market/" class="nav-link">营销</a></div><div class="nav-item"><a href="/work-a-api-v2/cookbook/" class="nav-link">菜谱</a></div><div class="nav-item"><a href="/work-a-api-v2/common/" class="nav-link">基础</a></div><div class="nav-item"><a href="/work-a-api-v2/app/" class="nav-link">APP</a></div><div class="nav-item"><a href="/work-a-api-v2/depot/" class="nav-link">库存</a></div><div class="nav-item"><a href="/work-a-api-v2/fee/" class="nav-link">费用</a></div><div class="nav-item"><a href="/work-a-api-v2/notice/" class="nav-link">消息通知（作废）</a></div><div class="nav-item"><a href="/work-a-api-v2/changelog/" class="nav-link">变更</a></div><div class="nav-item"><a href="/work-a-api-v2/feign/" class="nav-link">代理接口</a></div><div class="nav-item"><a href="/work-a-api-v2/other/" class="nav-link">其它</a></div><div class="nav-item"><a href="/work-a-api-v2/sta/" class="nav-link">统计</a></div><div class="nav-item"><a href="/work-a-api-v2/message/" class="nav-link">消息</a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>产品接口</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/work-a-api-v2/product/#产品接口" class="sidebar-link">产品接口</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-1-查询产品" class="sidebar-link">CP-1. 查询产品</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-2-产品新增" class="sidebar-link">CP-2. 产品新增</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-18-产品明细" class="sidebar-link">CP-18. 产品明细</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-3-查询产品生产信息" class="sidebar-link">CP-3. 查询产品生产信息</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-4-产品生产信息修改" class="sidebar-link">CP-4. 产品生产信息修改</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-5-新增规格" class="sidebar-link">CP-5. 新增规格</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-6-修改规格" class="sidebar-link">CP-6. 修改规格</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-7-修改产品内容信息" class="sidebar-link">CP-7. 修改产品内容信息</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-8-查询产品内容信息" class="sidebar-link">CP-8. 查询产品内容信息</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-9-产品上架" class="sidebar-link">CP-9.  产品上架</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-10-产品删除" class="sidebar-link">CP-10. 产品删除</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-11-查询产品日志" class="sidebar-link">CP-11. 查询产品日志</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-12-查询产品标准类别" class="sidebar-link">CP-12. 查询产品标准类别</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-13-查询产品标准号" class="sidebar-link">CP-13. 查询产品标准号</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-14-查询产品单位" class="sidebar-link">CP-14. 查询产品单位</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-15-查询产品规格" class="sidebar-link">CP-15. 查询产品规格</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-17-产品下架" class="sidebar-link">CP-17.  产品下架</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-106-操作日志列表" class="sidebar-link">CP-106. 操作日志列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-16-批量修改产品业态" class="sidebar-link">CP-16.批量修改产品业态</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-50-产品业态查询" class="sidebar-link">CP-50.产品业态查询</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-51-产品业态新增" class="sidebar-link">CP-51.产品业态新增</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-52-产品业态名称修改" class="sidebar-link">CP-52.产品业态名称修改</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-52-产品业态显示隐藏" class="sidebar-link">CP-52.产品业态显示隐藏</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-53-产品业态删除" class="sidebar-link">CP-53.产品业态删除</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-54-产品业态修改" class="sidebar-link">CP-54.产品业态修改</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-55-产品业态详情" class="sidebar-link">CP-55.产品业态详情</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-56-产品分类直接删除" class="sidebar-link">CP-56. 产品分类直接删除</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-57-产品分类修改排序" class="sidebar-link">CP-57. 产品分类修改排序</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-101-新增断货" class="sidebar-link">CP-101. 新增断货</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-102-断货列表" class="sidebar-link">CP-102. 断货列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-103-断货详细信息" class="sidebar-link">CP-103. 断货详细信息</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-104-断货产品锁定、解锁、作废" class="sidebar-link">CP-104.断货产品锁定、解锁、作废</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-105-断货修改" class="sidebar-link">CP-105. 断货修改</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-56-产品属性分类新增" class="sidebar-link">CP-56.产品属性分类新增</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-57-产品属性分类列表" class="sidebar-link">CP-57.产品属性分类列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-58-产品属性新增" class="sidebar-link">CP-58.产品属性新增</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-59-产品属性修改" class="sidebar-link">CP-59.产品属性修改</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-60-产品属性删除" class="sidebar-link">CP-60.产品属性删除</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-61-产品属性列表" class="sidebar-link">CP-61.产品属性列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-62-产品属性详情" class="sidebar-link">CP-62.产品属性详情</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-108-产品属性查询" class="sidebar-link">CP-108. 产品属性查询</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-109-产品关联属性" class="sidebar-link">CP-109. 产品关联属性</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-120-销售区域修改" class="sidebar-link">CP-120. 销售区域修改</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-151-期货现货新增" class="sidebar-link">CP-151. 期货现货新增</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-152-期货转现货" class="sidebar-link">CP-152. 期货转现货</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-153-现货转期货" class="sidebar-link">CP-153. 现货转期货</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-154-期货现货取消手动" class="sidebar-link">CP-154. 期货现货取消手动</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-155-期货现货列表" class="sidebar-link">CP-155. 期货现货列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-156-期货现货统计列表" class="sidebar-link">CP-156. 期货现货统计列表</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-157-期货现货日志" class="sidebar-link">CP-157. 期货现货日志</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-201-查询热搜信息" class="sidebar-link">CP-201. 查询热搜信息</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-202-新增热搜信息" class="sidebar-link">CP-202. 新增热搜信息</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-203-更新热搜信息" class="sidebar-link">CP-203. 更新热搜信息</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-204-删除热搜信息" class="sidebar-link">CP-204. 删除热搜信息</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-205-查询热搜信息操作日志" class="sidebar-link">CP-205. 查询热搜信息操作日志</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-206-热搜信息详情" class="sidebar-link">CP-206. 热搜信息详情</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-211-推荐信息列表查询" class="sidebar-link">CP-211. 推荐信息列表查询</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-212-推荐新增信息" class="sidebar-link">CP-212. 推荐新增信息</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-213-推荐更新信息" class="sidebar-link">CP-213. 推荐更新信息</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-214-推荐删除信息" class="sidebar-link">CP-214. 推荐删除信息</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-215-推荐信息批量删除" class="sidebar-link">CP-215. 推荐信息批量删除</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-216-推荐操作日志信息" class="sidebar-link">CP-216. 推荐操作日志信息</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-217-推荐详情信息" class="sidebar-link">CP-217. 推荐详情信息</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-218-为数据中心提供反向推送销量排序更新排序接口" class="sidebar-link">CP-218. 为数据中心提供反向推送销量排序更新排序接口</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-221-产品标准分类新增" class="sidebar-link">CP-221. 产品标准分类新增</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-222-产品标准号新增" class="sidebar-link">CP-222. 产品标准号新增</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-231-产品列表导出" class="sidebar-link">CP-231. 产品列表导出</a></li><li class="sidebar-sub-header"><a href="/work-a-api-v2/product/#cp-232-产品规格列表导出" class="sidebar-link">CP-232. 产品规格列表导出</a></li></ul></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h2 id="产品接口"><a href="#产品接口" aria-hidden="true" class="header-anchor">#</a> 产品接口</h2> <h3 id="cp-1-查询产品"><a href="#cp-1-查询产品" aria-hidden="true" class="header-anchor">#</a> CP-1. 查询产品</h3> <h4 id="模块负责人"><a href="#模块负责人" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求"><a href="#请求" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/product
+</code></pre> <h4 id="参数"><a href="#参数" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>keyword : &quot;&quot; // 关键字
+pno : &quot;&quot; // 品号
+name: &quot;&quot; // 品名
+status：&quot;NORMAL&quot; //上架状态 NORMAL 上架 LOCK 下架
+customFlg: 1 定制标志 0 非定制 1 定制
+customFlgMore: 1 定制标志 0 非定制 1 普通定制 2 专属定制
+businessTypeId： 0 // 二级分类ID
+businessTypeCode: -16- 业态编码
+taxCategoryId: 0 // 税收分类ID
+processContent: 1 // 内容是否完善 0 未完善  1 完善
+processPrice: 1  // 价格是否完善 0 未完善  1 完善
+processInvoice: 1 // 发票是否完善  0 未完善  1 完善
+lackFlg: 1          // 断货标志 0 非断货 1 断货
+rawFlg: 0           // 是否原料品 0 非 1 是
+rangeType: PART     // 销售区域类型 ALL 全部区域 PART 指定区域 EXCLUDE 排除区域
+attrId: 1           // 属性ID
+hasBusinessType: 1  // 是否配置业态 0 否 1 是
+buttonPermissionFlg: 1 
+pageNo:1 // 页码 默认1
+pageSize: 25 // 页面条数 默认25
+</code></pre> <h4 id="响应"><a href="#响应" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissionPage&quot;: {       // 页面级权限控制
+            @@&quot;exportProductButton&quot;: false,   // 是否显示导出产品按钮
+            @@&quot;exportProductUnitButton&quot;: false, // 是否显示按规格导出产品按钮
+            &quot;priceColumn&quot;: false        // 是否显示价格列
+        },
+        &quot;buttonPermissions&quot;: [
+             {
+                 &quot;contentButton&quot;: false,    // 内容
+                 &quot;deleteButton&quot;: false,     // 删除
+                 &quot;detailButton&quot;: true,      // 查看
+                 &quot;editButton&quot;: false,       // 信息
+                 &quot;upButton&quot;: false,         // 下架
+                 &quot;downButton&quot;: false,       // 上架
+                 &quot;logButton&quot;: false         // 日志
+             }
+         ],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;businessTypeIds&quot;: [        // 业态ID列表
+                    86
+                ],
+                &quot;businessTypes&quot;: [          // 业态列表
+                    {
+                        &quot;code&quot;: &quot;-34-0511-&quot;,    // 编码
+                        &quot;deleteFlg&quot;: 0,
+                        &quot;gIcon&quot;: &quot;http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/0511.png&quot;,
+                        &quot;hasProductCnt&quot;: 44,
+                        &quot;id&quot;: 86,
+                        &quot;level&quot;: 2,
+                        &quot;mIcon&quot;: &quot;&quot;,
+                        &quot;miniFlg&quot;: 0,
+                        &quot;name&quot;: &quot;宴席必备&quot;,     // 名称
+                        &quot;parentId&quot;: 34,         // 上级ID
+                        &quot;parentName&quot;: &quot;农贸市集&quot;,   // 上级名称
+                        &quot;pyCode&quot;: &quot;&quot;,
+                        &quot;sIcon&quot;: &quot;http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/0511.png&quot;,
+                        &quot;showFlg&quot;: 1,  
+                        &quot;styleUrl&quot;: &quot;&quot;,
+                        &quot;wIcon&quot;: &quot;http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/0511.png&quot;
+                    }
+                ],
+                &quot;businessunit&quot;: [],             // 定制事业部
+                &quot;cookBookLites&quot;: null,
+                &quot;createTime&quot;: &quot;2019-04-16 15:31:43&quot;,    
+                &quot;custom&quot;: [                     // 定制列表
+                    {
+                        &quot;id&quot;: 2935,
+                        &quot;productId&quot;: 4780,
+                        &quot;rangeId&quot;: 32937,       // 客户ID 、 事业部ID
+                        &quot;type&quot;: &quot;CUSTOMER&quot;      // CUSTOMER 定制客户   BUSINESSUNIT 定制事业部
+                    },
+                    {
+                        &quot;id&quot;: 2936,
+                        &quot;productId&quot;: 4780,
+                        &quot;rangeId&quot;: 32938,
+                        &quot;type&quot;: &quot;CUSTOMER&quot;
+                    }
+                ],
+                &quot;certType&quot;:&quot;MSC/ASC&quot;,       // 认证类型 MSC ASC MSC/ASC
+                &quot;customFlg&quot;: 1,                 
+                &quot;customFlgMore&quot;: 2,         // 0 普通品  1 普通定制品  2 专属定制品
+                &quot;customers&quot;: [],                // 定制客户
+                &quot;deleteFlg&quot;: 0,
+                &quot;followFlg&quot;: 0,
+                &quot;id&quot;: 4780,
+                &quot;longName&quot;: &quot;摩加迪沙&quot;,         // 带广告词的名称
+                &quot;mainBgImg&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/ANET20190416153230824-8642.jpg&quot;,  // 包装图
+                &quot;mainImg&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/ANET20190416153234594-8939.jpg&quot;,    // 主图
+                &quot;marketActive&quot;: null,
+                &quot;name&quot;: &quot;测试产品&quot;,                 // 产品名
+                &quot;newHotFlg&quot;: &quot;&quot;,
+                &quot;nowFutureFlg&quot;: &quot;&quot;,                 // 新品热销标识   NEW 新品  HOT 热销
+                &quot;pno&quot;: &quot;8888&quot;,                  // 品号
+                &quot;process&quot;: 2,                   // 完善度
+                &quot;processContent&quot;: 1,            // 内容是否完善 0 未完善 1 完善
+                &quot;processInvoice&quot;: 0,            // 发票是否完善 0 未完善 1 完善
+                &quot;processPrice&quot;: 0,              // 价格是否完善 0 未完善 1 完善
+                &quot;productAttrs&quot;: [               // 产品属性列表
+                    {
+                        &quot;categoryId&quot;: 1,                // 属性所属分类ID
+                        &quot;categoryName&quot;: &quot;属性分类一&quot;,    // 属性所属分类名
+                        &quot;createTime&quot;: &quot;&quot;,   
+                        &quot;deleteFlg&quot;: 0,
+                        &quot;depotSafeFlg&quot;: 0,
+                        &quot;id&quot;: 3,                        // 属性ID
+                        &quot;isDepotSafe&quot;: &quot;&quot;,
+                        &quot;name&quot;: &quot;特性图&quot;,              // 属性名
+                        &quot;productId&quot;: 4780
+                    }
+                ],
+                &quot;productExtra&quot;: null,
+                &quot;productImgs&quot;: null,
+                &quot;productLack&quot;: {                    // 断货   null 非断货 
+                       &quot;endTime&quot;: &quot;2019-04-30&quot;,
+                       &quot;productId&quot;: 4780,
+                       &quot;startTime&quot;: &quot;2019-04-16&quot;
+                    },
+                &quot;productSaleRange&quot;: [               // 销售范围
+                    {
+                        &quot;businessunit&quot;: {
+                            &quot;bcFlg&quot;: 0,
+                            &quot;groupId&quot;: 17,
+                            &quot;groupName&quot;: &quot;测试专用&quot;,
+                            &quot;id&quot;: 80,               // 事业部ID
+                            &quot;name&quot;: &quot;测试专用&quot;,     // 事业部名
+                            &quot;platformId&quot;: 1,
+                            &quot;sort&quot;: 0
+                        },
+                        &quot;customer&quot;: {
+                            &quot;businessunit&quot;: 72,
+                            &quot;businessunitName&quot;: &quot;P2P-YJ&quot;,
+                            &quot;companyName&quot;: &quot;菠萝蜜&quot;,
+                            &quot;customerId&quot;: 32937,        // 客户ID
+                            &quot;isParent&quot;: 1,
+                            &quot;isStockLimit&quot;: 0,
+                            &quot;platformId&quot;: 1,
+                            &quot;shortName&quot;: &quot;大菠萝&quot;,     // 客户名
+                            &quot;srRoleId&quot;: 40,
+                            &quot;srRoleName&quot;: &quot;高成举&quot;,
+                            &quot;ssRoleId&quot;: 2196,
+                            &quot;ssRoleName&quot;: &quot;解冰&quot;,
+                            &quot;type&quot;: &quot;A&quot;
+                        },
+                        &quot;id&quot;: 57,
+                        &quot;ownerId&quot;: 32937,       // 客户ID 、 事业部ID
+                        &quot;pathid&quot;: &quot;030401&quot;,     // 排除区域
+                        &quot;productId&quot;: 4780,
+                        &quot;type&quot;: &quot;CUSTOMER&quot;      // CUSTOMER 客户排除在外   BUSINESSUNIT  事业部排除在外
+                    }
+                ],
+                &quot;productUnits&quot;: [           // 产品规格
+                    {
+                        &quot;createTime&quot;: &quot;&quot;,
+                        &quot;cubage&quot;: 1,
+                        &quot;grossweight&quot;: 0.2,
+                        &quot;guige&quot;: &quot;200g（10枚）/盒&quot;,
+                        &quot;height&quot;: 3.3,
+                        &quot;id&quot;: 8375,
+                        &quot;length&quot;: 20.4,
+                        &quot;marketActive&quot;: null,
+                        &quot;minimum&quot;: 0,
+                        &quot;minimumType&quot;: &quot;NONE&quot;,
+                        &quot;modifyTime&quot;: &quot;&quot;,
+                        &quot;netweight&quot;: 0.2,
+                        &quot;perunit&quot;: 1,
+                        &quot;price&quot;: {              // 价格信息
+                            &quot;aPrice&quot;: 0,                // a价
+                            &quot;areaPrice&quot;: 0,             // 区域价
+                            &quot;decideType&quot;: &quot;A&quot;,          // 最终价格由什么价决定  T 特价 S 签约价 Q 区域价 A A价 P P价 
+                            &quot;finallyPrice&quot;: 0,          // 最终价格
+                            &quot;pPrice&quot;: 0,                // p价
+                            &quot;productUnitId&quot;: 8375,
+                            &quot;rate&quot;: 0,                  // 折算比率
+                            &quot;rawFlg&quot;: &quot;NO&quot;,             // 是否原材料
+                            &quot;signPrice&quot;: 0,             // 签约价
+                            &quot;specialPrice&quot;: 0           // 特价
+                        },
+                        &quot;product&quot;: null,
+                        &quot;productCart&quot;: null,
+                        &quot;productId&quot;: 4780,
+                        &quot;stock&quot;: null,
+                        &quot;unit&quot;: &quot;盒&quot;,
+                        &quot;unitId&quot;: 2,
+                        &quot;width&quot;: 14.5
+                    }
+                ],
+                &quot;pyAll&quot;: &quot;&quot;,
+                &quot;pyCode&quot;: &quot;&quot;,
+                &quot;rangeType&quot;: &quot;EXCLUDE&quot;,     // ALL 全部区域 PART 指定区域 EXCLUDE 排除区域
+                &quot;relatePnos&quot;: null,
+                &quot;saleRange&quot;: &quot;1省1市&quot;,
+                &quot;status&quot;: &quot;LOCK&quot;,           // NORMAL 上架 LOCK 下架
+                &quot;stock&quot;: null,
+                &quot;taxRate&quot;: 0.17                // 税率
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: 0
+    }
+}
+</code></pre> <h3 id="cp-2-产品新增"><a href="#cp-2-产品新增" aria-hidden="true" class="header-anchor">#</a> CP-2. 产品新增</h3> <h4 id="模块负责人-2"><a href="#模块负责人-2" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-2"><a href="#请求-2" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /v2/product
+</code></pre> <h4 id="参数-2"><a href="#参数-2" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    &quot;custom&quot;: [                   // 专属定制时，需要传递
+        {
+            &quot;type&quot;: &quot;BUSINESSUNIT&quot;, // BUSINESSUNIT 事业部  CUSTOMER 客户
+            &quot;rangeId&quot;: 1            // 事业部id 或 客户id
+        },
+        {
+            &quot;type&quot;: &quot;BUSINESSUNIT&quot;,
+            &quot;rangeId&quot;: 2
+        }
+    ],
+    *&quot;product&quot;:{ // 产品信息
+        *&quot;name&quot;:&quot;测试01&quot;, // 产品名
+        *&quot;pno&quot;:&quot;pnotest01&quot;, // 品号 不可重复
+        *&quot;taxRate&quot;:0.1, // 税率
+        *&quot;customFlg&quot;:1, // 是否定制 0 未定制 1 常规定制 2 专属定制
+        &quot;certType&quot;:&quot;MSC/ASC&quot;       // 认证类型 MSC ASC MSC/ASC
+    },
+    *&quot;productExtra&quot;:{ // 产品扩展信息
+        &quot;material&quot;:&quot;meterial&quot;, // 配料
+        &quot;cookWay&quot;:&quot;cookWay&quot;, // 烹饪方式
+        &quot;barCode&quot;:&quot;barCode&quot;, // 条码
+        &quot;place&quot;:&quot;place&quot;, // 产地
+        &quot;store&quot;:&quot;store&quot;, // 存储温度
+        &quot;saveType&quot;:&quot;NORMAL&quot;, // 存储方式 NORMAL 常温 FROZEN 冷冻
+        &quot;shelfLife&quot;:&quot;shelfLife&quot;, // 质保期
+        &quot;attribute&quot;: [  // 标准分类ID
+            {
+                &quot;dicId&quot;: 11
+            },
+            {
+                &quot;dicId&quot;: 13
+            }
+        ],
+        &quot;standard&quot;: [ // 标准号ID
+            {
+                &quot;dicId&quot;: 31
+            },
+            {
+                &quot;dicId&quot;: 35
+            }
+        ]
+    },
+    *&quot;productUnits&quot;:[// 产品规格列表
+        {
+            *&quot;guige&quot;:&quot;guige1&quot;, // 规格名
+            *&quot;unitId&quot;:&quot;1&quot;, // 规格单位ID
+            *&quot;unit&quot;:&quot;袋&quot;, // 规格单位名
+            *&quot;perunit&quot;:&quot;1&quot;, // 转化率
+            *&quot;grossweight&quot;:&quot;10.2&quot;, // 毛重
+            *&quot;netweight&quot;:&quot;9.2&quot;, // 净重
+            *&quot;length&quot;:&quot;10.2&quot;, // 长
+            *&quot;width&quot;:&quot;10.2&quot;, // 宽
+            *&quot;height&quot;:&quot;10.2&quot;, // 高
+            *&quot;minimum&quot;:&quot;10&quot;, // 起订量
+            *&quot;minimumType&quot;:&quot;NONE&quot; // 起订方式 NONE 不限制 BEGIN 递增 STEP 步增
+            
+        }
+    ]
+}
+</code></pre> <h4 id="响应-2"><a href="#响应-2" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: 1 // 新增产品ID
+}
+</code></pre> <h3 id="cp-18-产品明细"><a href="#cp-18-产品明细" aria-hidden="true" class="header-anchor">#</a> CP-18. 产品明细</h3> <h4 id="模块负责人-3"><a href="#模块负责人-3" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-3"><a href="#请求-3" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/product/{id}
+</code></pre> <h4 id="参数-3"><a href="#参数-3" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>id: 1 // 产品ID
+</code></pre> <h4 id="响应-3"><a href="#响应-3" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;businessTypeIds&quot;: [        // 业态ID列表
+            86
+        ],
+        &quot;businessTypes&quot;: [          // 业态列表
+            {
+                &quot;code&quot;: &quot;-34-0511-&quot;,    // 编码
+                &quot;deleteFlg&quot;: 0,
+                &quot;gIcon&quot;: &quot;http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/0511.png&quot;,
+                &quot;hasProductCnt&quot;: 44,
+                &quot;id&quot;: 86,
+                &quot;level&quot;: 2,
+                &quot;mIcon&quot;: &quot;&quot;,
+                &quot;miniFlg&quot;: 0,
+                &quot;name&quot;: &quot;宴席必备&quot;,     // 名称
+                &quot;parentId&quot;: 34,         // 上级ID
+                &quot;parentName&quot;: &quot;农贸市集&quot;,   // 上级名称
+                &quot;pyCode&quot;: &quot;&quot;,
+                &quot;sIcon&quot;: &quot;http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/0511.png&quot;,
+                &quot;showFlg&quot;: 1,  
+                &quot;styleUrl&quot;: &quot;&quot;,
+                &quot;wIcon&quot;: &quot;http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/0511.png&quot;
+            }
+        ],
+        &quot;businessunit&quot;: [],             // 定制事业部
+        &quot;certType&quot;:&quot;MSC/ASC&quot;,       // 认证类型 MSC ASC MSC/ASC
+        &quot;cookBookLites&quot;: null,
+        &quot;createTime&quot;: &quot;2019-04-16 15:31:43&quot;,    
+        &quot;custom&quot;: [                     // 定制列表
+            {
+                &quot;id&quot;: 2935,
+                &quot;productId&quot;: 4780,
+                &quot;rangeId&quot;: 32937,       // 客户ID 、 事业部ID
+                &quot;type&quot;: &quot;CUSTOMER&quot;      // CUSTOMER 定制客户   BUSINESSUNIT 定制事业部
+            },
+            {
+                &quot;id&quot;: 2936,
+                &quot;productId&quot;: 4780,
+                &quot;rangeId&quot;: 32938,
+                &quot;type&quot;: &quot;CUSTOMER&quot;
+            }
+        ],
+        &quot;customFlg&quot;: 1,                 
+        &quot;customFlgMore&quot;: 2,         // 0 普通品  1 普通定制品  2 专属定制品
+        &quot;customers&quot;: [],                // 定制客户
+        &quot;deleteFlg&quot;: 0,
+        &quot;followFlg&quot;: 0,
+        &quot;id&quot;: 4780,
+        &quot;longName&quot;: &quot;摩加迪沙&quot;,         // 带广告词的名称
+        &quot;mainBgImg&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/ANET20190416153230824-8642.jpg&quot;,  // 包装图
+        &quot;mainImg&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/ANET20190416153234594-8939.jpg&quot;,    // 主图
+        &quot;marketActive&quot;: null,
+        &quot;name&quot;: &quot;测试产品&quot;,                 // 产品名
+        &quot;newHotFlg&quot;: &quot;&quot;,
+        &quot;nowFutureFlg&quot;: &quot;&quot;,                 // 新品热销标识   NEW 新品  HOT 热销
+        &quot;pno&quot;: &quot;8888&quot;,                  // 品号
+        &quot;process&quot;: 2,                   // 完善度
+        &quot;processContent&quot;: 1,            // 内容是否完善 0 未完善 1 完善
+        &quot;processInvoice&quot;: 0,            // 发票是否完善 0 未完善 1 完善
+        &quot;processPrice&quot;: 0,              // 价格是否完善 0 未完善 1 完善
+        &quot;productAttrs&quot;: [               // 产品属性列表
+            {
+                &quot;categoryId&quot;: 1,                // 属性所属分类ID
+                &quot;categoryName&quot;: &quot;属性分类一&quot;,    // 属性所属分类名
+                &quot;createTime&quot;: &quot;&quot;,   
+                &quot;deleteFlg&quot;: 0,
+                &quot;depotSafeFlg&quot;: 0,
+                &quot;id&quot;: 3,                        // 属性ID
+                &quot;isDepotSafe&quot;: &quot;&quot;,
+                &quot;name&quot;: &quot;特性图&quot;,              // 属性名
+                &quot;productId&quot;: 4780
+            }
+        ],
+        &quot;productExtra&quot;: {                   // 产品扩展信息
+                &quot;attributeName&quot;: &quot;速冻生制&quot;,//产品标准号
+                &quot;attributes&quot;: 1,
+                &quot;barCode&quot;: &quot;阿斯蒂芬&quot;,//条码
+                &quot;cookWay&quot;: &quot;  撒旦法&quot;,//烹饪方法
+                &quot;description&quot;: &quot; &quot;,
+                &quot;id&quot;: 8299,
+                &quot;intro&quot;: &quot;&quot;,
+                &quot;material&quot;: &quot;阿斯蒂芬&quot;,
+                &quot;place&quot;: &quot;啊s'd'f&quot;,//产地
+                &quot;productId&quot;: 4779,
+                &quot;saveType&quot;: &quot;FROZEN&quot;,//存储方式 英文
+                &quot;saveTypeName&quot;: &quot;常温&quot;,//存储方式 中文
+                &quot;shelfLife&quot;: &quot; 阿斯蒂芬&quot;,//保质期
+                &quot;standards&quot;: 0,
+                &quot;standardsName&quot;: &quot;无&quot;,//标准类别
+                &quot;store&quot;: &quot;阿斯顿发&quot;, //存储温度
+                &quot;attribute&quot;: [      // 标准分类
+                    {
+                        &quot;dicId&quot;: 11,
+                        &quot;dicName&quot;: &quot;裹面制品 熟制冻结品&quot;,
+                        &quot;id&quot;: 0,
+                        &quot;productId&quot;: 5276,
+                        &quot;type&quot;: &quot;ATTRIBUTE&quot;
+                    },
+                    {
+                        &quot;dicId&quot;: 13,
+                        &quot;dicName&quot;: &quot;肉糜类制品 熟制冻结品&quot;,
+                        &quot;id&quot;: 0,
+                        &quot;productId&quot;: 5276,
+                        &quot;type&quot;: &quot;ATTRIBUTE&quot;
+                    }
+                ],
+                &quot;standard&quot;: [       // 标准号
+                    {
+                        &quot;dicId&quot;: 31,
+                        &quot;dicName&quot;: &quot;GB 10136&quot;,
+                        &quot;id&quot;: 0,
+                        &quot;productId&quot;: 5276,
+                        &quot;type&quot;: &quot;STANDARD&quot;
+                    },
+                    {
+                        &quot;dicId&quot;: 35,
+                        &quot;dicName&quot;: &quot;产品标准号测试&quot;,
+                        &quot;id&quot;: 0,
+                        &quot;productId&quot;: 5276,
+                        &quot;type&quot;: &quot;STANDARD&quot;
+                    }
+                ],
+            },
+        &quot;productImgs&quot;: {       // 产品图片
+               &quot;QUALITY&quot;: [     // 质检图
+                   {
+                       &quot;id&quot;: 21336,
+                       &quot;productId&quot;: 4779,
+                       &quot;type&quot;: &quot;QUALITY&quot;,
+                       &quot;url&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/ANET20190416110316045-4617.jpg&quot;
+                   }
+               ],
+               &quot;MAINBG&quot;: [      // 包装图
+                   {
+                       &quot;id&quot;: 0,
+                       &quot;productId&quot;: 4779,
+                       &quot;type&quot;: &quot;MAINBG&quot;,
+                       &quot;url&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/ANET20190416110336203-4543.jpg&quot;
+                   }
+               ],
+               &quot;MAIN&quot;: [        // 主图
+                   {
+                       &quot;id&quot;: 0,
+                       &quot;productId&quot;: 4779,
+                       &quot;type&quot;: &quot;MAIN&quot;,
+                       &quot;url&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/ANET20190416110332573-9021.jpg&quot;
+                   }
+               ],
+               &quot;PHOTO&quot;: [       // 产品图
+                   {
+                       &quot;id&quot;: 21338,
+                       &quot;productId&quot;: 4779,
+                       &quot;type&quot;: &quot;PHOTO&quot;,
+                       &quot;url&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/ANET20190416110431685-5502.jpg&quot;
+                   }
+               ],
+               &quot;DETAIL&quot;: [      // 详情图
+                   {
+                       &quot;id&quot;: 21337,
+                       &quot;productId&quot;: 4779,
+                       &quot;type&quot;: &quot;DETAIL&quot;,
+                       &quot;url&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/ANET20190416110327533-6891.jpg&quot;
+                   }
+               ]
+           },
+        &quot;productLack&quot;: {                    // 断货   null 非断货 
+               &quot;endTime&quot;: &quot;2019-04-30&quot;,
+               &quot;productId&quot;: 4780,
+               &quot;startTime&quot;: &quot;2019-04-16&quot;
+            },
+        &quot;productSaleRange&quot;: [               // 销售范围
+            {
+                &quot;area&quot;: &quot;回民区&quot;,
+                &quot;businessunit&quot;: {
+                    &quot;bcFlg&quot;: 0,
+                    &quot;groupId&quot;: 17,
+                    &quot;groupName&quot;: &quot;测试专用&quot;,
+                    &quot;id&quot;: 80,               // 事业部ID
+                    &quot;name&quot;: &quot;测试专用&quot;,     // 事业部名
+                    &quot;platformId&quot;: 1,
+                    &quot;sort&quot;: 0
+                },
+                &quot;customer&quot;: {
+                    &quot;businessunit&quot;: 72,
+                    &quot;businessunitName&quot;: &quot;P2P-YJ&quot;,
+                    &quot;companyName&quot;: &quot;菠萝蜜&quot;,
+                    &quot;customerId&quot;: 32937,        // 客户ID
+                    &quot;isParent&quot;: 1,
+                    &quot;isStockLimit&quot;: 0,
+                    &quot;platformId&quot;: 1,
+                    &quot;shortName&quot;: &quot;大菠萝&quot;,     // 客户名
+                    &quot;srRoleId&quot;: 40,
+                    &quot;srRoleName&quot;: &quot;高成举&quot;,
+                    &quot;ssRoleId&quot;: 2196,
+                    &quot;ssRoleName&quot;: &quot;解冰&quot;,
+                    &quot;type&quot;: &quot;A&quot;
+                },
+                &quot;city&quot;: &quot;呼和浩特市&quot;,
+                &quot;id&quot;: 57,
+                &quot;ownerId&quot;: 32937,       // 客户ID 、 事业部ID
+                &quot;pathid&quot;: &quot;030401&quot;,     // 排除区域
+                &quot;productId&quot;: 4780,
+                &quot;province&quot;: &quot;内蒙古&quot;,
+                &quot;type&quot;: &quot;CUSTOMER&quot;      // CUSTOMER 客户排除在外   BUSINESSUNIT  事业部排除在外
+            }
+        ],
+        &quot;productUnits&quot;: [           // 产品规格
+            {
+                &quot;createTime&quot;: &quot;&quot;,
+                &quot;cubage&quot;: 1,
+                &quot;grossweight&quot;: 0.2,
+                &quot;guige&quot;: &quot;200g（10枚）/盒&quot;,
+                &quot;height&quot;: 3.3,
+                &quot;id&quot;: 8375,
+                &quot;length&quot;: 20.4,
+                &quot;marketActive&quot;: null,
+                &quot;minimum&quot;: 0,
+                &quot;minimumType&quot;: &quot;NONE&quot;,
+                &quot;modifyTime&quot;: &quot;&quot;,
+                &quot;netweight&quot;: 0.2,
+                &quot;perunit&quot;: 1,
+                &quot;price&quot;: {              // 价格信息
+                    &quot;aPrice&quot;: 0,                // a价
+                    &quot;areaPrice&quot;: 0,             // 区域价
+                    &quot;decideType&quot;: &quot;A&quot;,          // 最终价格由什么价决定  T 特价 S 签约价 Q 区域价 A A价 P P价 
+                    &quot;finallyPrice&quot;: 0,          // 最终价格
+                    &quot;pPrice&quot;: 0,                // p价
+                    &quot;productUnitId&quot;: 8375,
+                    &quot;rate&quot;: 0,                  // 折算比率
+                    &quot;rawFlg&quot;: &quot;NO&quot;,             // 是否原材料
+                    &quot;signPrice&quot;: 0,             // 签约价
+                    &quot;specialPrice&quot;: 0           // 特价
+                },
+                &quot;product&quot;: null,
+                &quot;productCart&quot;: null,
+                &quot;productId&quot;: 4780,
+                &quot;stock&quot;: null,
+                &quot;unit&quot;: &quot;盒&quot;,
+                &quot;unitId&quot;: 2,
+                &quot;width&quot;: 14.5
+            }
+        ],
+        &quot;pyAll&quot;: &quot;&quot;,
+        &quot;pyCode&quot;: &quot;&quot;,
+        &quot;rangeType&quot;: &quot;EXCLUDE&quot;,     // ALL 全部区域 PART 指定区域 EXCLUDE 排除区域
+        &quot;relatePnos&quot;: null,
+        &quot;saleRange&quot;: &quot;1省1市&quot;,
+        &quot;status&quot;: &quot;LOCK&quot;,           // NORMAL 上架 LOCK 下架
+        &quot;stock&quot;: null,
+        &quot;taxRate&quot;: 0.17                // 税率
+    }
+}
+</code></pre> <h3 id="cp-3-查询产品生产信息"><a href="#cp-3-查询产品生产信息" aria-hidden="true" class="header-anchor">#</a> CP-3. 查询产品生产信息</h3> <h4 id="模块负责人-4"><a href="#模块负责人-4" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-4"><a href="#请求-4" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/product/info/{id}
+</code></pre> <h4 id="参数-4"><a href="#参数-4" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>id: 1 // 产品ID
+</code></pre> <h4 id="响应-4"><a href="#响应-4" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>同 CP-18
+</code></pre> <h3 id="cp-4-产品生产信息修改"><a href="#cp-4-产品生产信息修改" aria-hidden="true" class="header-anchor">#</a> CP-4. 产品生产信息修改</h3> <h4 id="模块负责人-5"><a href="#模块负责人-5" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-5"><a href="#请求-5" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/product/info/{id}
+</code></pre> <h4 id="参数-5"><a href="#参数-5" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>id:1 //产品ID
+{
+    &quot;custom&quot;: [                   // 专属定制时，需要传递
+        {
+            &quot;type&quot;: &quot;BUSINESSUNIT&quot;, // BUSINESSUNIT 事业部  CUSTOMER 客户
+            &quot;rangeId&quot;: 1            // 事业部id 或 客户id
+        },
+        {
+            &quot;type&quot;: &quot;BUSINESSUNIT&quot;,
+            &quot;rangeId&quot;: 2
+        }
+    ],
+    *&quot;product&quot;:{ // 产品信息
+        *&quot;name&quot;:&quot;测试01&quot;, // 产品名
+        *&quot;pno&quot;:&quot;pnotest01&quot;, // 品号 不可重复
+        *&quot;taxRate&quot;:0.1, // 税率
+        *&quot;customFlg&quot;:1, // 是否定制 0 未定制 1 定制
+        &quot;certType&quot;:&quot;MSC/ASC&quot;       // 认证类型 MSC ASC MSC/ASC
+    },
+    *&quot;productExtra&quot;:{ // 产品扩展信息
+        &quot;material&quot;:&quot;meterial&quot;, // 配料
+        &quot;cookWay&quot;:&quot;cookWay&quot;, // 烹饪方式
+        &quot;barCode&quot;:&quot;barCode&quot;, // 条码
+        &quot;place&quot;:&quot;place&quot;, // 产地
+        &quot;store&quot;:&quot;store&quot;, // 存储温度
+        &quot;saveType&quot;:&quot;NORMAL&quot;, // 存储方式 NORMAL 常温 FROZEN 冷冻
+        &quot;shelfLife&quot;:&quot;shelfLife&quot;, // 质保期
+        &quot;attribute&quot;: [  // 标准分类ID
+            {
+                &quot;dicId&quot;: 11
+            },
+            {
+                &quot;dicId&quot;: 13
+            }
+        ],
+        &quot;standard&quot;: [ // 标准号ID
+            {
+                &quot;dicId&quot;: 31
+            },
+            {
+                &quot;dicId&quot;: 35
+            }
+        ]
+        
+    }
+}
+</code></pre> <h4 id="响应-5"><a href="#响应-5" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cp-5-新增规格"><a href="#cp-5-新增规格" aria-hidden="true" class="header-anchor">#</a> CP-5. 新增规格</h3> <h4 id="模块负责人-6"><a href="#模块负责人-6" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-6"><a href="#请求-6" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /v2/product/guige
+</code></pre> <h4 id="参数-6"><a href="#参数-6" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    *&quot;productId&quot;: 1 // 产品ID
+    *&quot;guige&quot;:&quot;guige1&quot;, // 规格名
+    *&quot;unitId&quot;:&quot;1&quot;, // 规格单位ID
+    *&quot;unit&quot;:&quot;袋&quot;, // 规格单位名
+    *&quot;perunit&quot;:&quot;1&quot;, // 转化率
+    *&quot;grossweight&quot;:&quot;10.2&quot;, // 毛重
+    *&quot;netweight&quot;:&quot;9.2&quot;, // 净重
+    *&quot;length&quot;:&quot;10.2&quot;, // 长
+    *&quot;width&quot;:&quot;10.2&quot;, // 宽
+    *&quot;height&quot;:&quot;10.2&quot;, // 高
+    *&quot;minimum&quot;:&quot;10&quot;, // 起订量
+    *&quot;minimumType&quot;:&quot;NONE&quot; // 起订方式 NONE 不限制 BEGIN 递增 STEP 步增            
+}
+</code></pre> <h4 id="响应-6"><a href="#响应-6" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: 1 // 新增规格ID
+}
+</code></pre> <h3 id="cp-6-修改规格"><a href="#cp-6-修改规格" aria-hidden="true" class="header-anchor">#</a> CP-6. 修改规格</h3> <h4 id="模块负责人-7"><a href="#模块负责人-7" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-7"><a href="#请求-7" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/product/guige/{id}
+</code></pre> <h4 id="参数-7"><a href="#参数-7" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*&quot;id&quot;: 8092 // 规格ID
+{
+    *&quot;productId&quot;:&quot;1&quot;, // 产品ID
+    *&quot;guige&quot;:&quot;guige1&quot;, // 规格名
+    *&quot;unitId&quot;:&quot;1&quot;, // 规格单位ID
+    *&quot;unit&quot;:&quot;袋&quot;, // 规格单位名
+    *&quot;perunit&quot;:&quot;1&quot;, // 转化率
+    *&quot;grossweight&quot;:&quot;10.2&quot;, // 毛重
+    *&quot;netweight&quot;:&quot;9.2&quot;, // 净重
+    *&quot;length&quot;:&quot;10.2&quot;, // 长
+    *&quot;width&quot;:&quot;10.2&quot;, // 宽
+    *&quot;height&quot;:&quot;10.2&quot;, // 高
+    *&quot;minimum&quot;:&quot;10&quot;, // 起订量
+    *&quot;minimumType&quot;:&quot;NONE&quot; // 起订方式 NONE 不限制 BEGIN 递增 STEP 步增            
+}
+</code></pre> <h4 id="响应-7"><a href="#响应-7" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cp-7-修改产品内容信息"><a href="#cp-7-修改产品内容信息" aria-hidden="true" class="header-anchor">#</a> CP-7. 修改产品内容信息</h3> <h4 id="模块负责人-8"><a href="#模块负责人-8" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-8"><a href="#请求-8" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/product/content/{id}
+</code></pre> <h4 id="参数-8"><a href="#参数-8" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id: 1 // 产品ID
+{
+    &quot;longName&quot;:&quot;longName&quot;,
+    &quot;description&quot;: &quot;description&quot;,
+    &quot;businessTypeIds&quot;: [1,2,3],
+    &quot;productImgs&quot;:[
+	    {
+		    &quot;type&quot;:&quot;MAIN&quot;,
+		    &quot;url&quot;:&quot;http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201509/30/1443601932-tmAN.jpg&quot;
+	    },
+	    {
+		    &quot;type&quot;:&quot;MAINBG&quot;,
+		    &quot;url&quot;:&quot;http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201509/30/1443601932-tmAN.jpg&quot;
+	    },
+	    {
+		    &quot;type&quot;:&quot;QUALITY&quot;,
+		    &quot;url&quot;:&quot;http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201509/30/1443601932-tmAN.jpg&quot;
+	    },
+	    {
+		    &quot;type&quot;:&quot;DETAIL&quot;,
+		    &quot;url&quot;:&quot;http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201509/30/1443601932-tmAN.jpg&quot;
+	    },
+	    {
+		    &quot;type&quot;:&quot;PHOTO&quot;,
+		    &quot;url&quot;:&quot;http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201509/30/1443601932-tmAN.jpg&quot;
+	    }
+    ]
+}
+</code></pre> <h4 id="响应-8"><a href="#响应-8" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cp-8-查询产品内容信息"><a href="#cp-8-查询产品内容信息" aria-hidden="true" class="header-anchor">#</a> CP-8. 查询产品内容信息</h3> <h4 id="模块负责人-9"><a href="#模块负责人-9" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-9"><a href="#请求-9" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/product/content/{id}
+</code></pre> <h4 id="参数-9"><a href="#参数-9" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id: 1 // 产品ID
+</code></pre> <h4 id="响应-9"><a href="#响应-9" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>同CP-18
+</code></pre> <h3 id="cp-9-产品上架"><a href="#cp-9-产品上架" aria-hidden="true" class="header-anchor">#</a> CP-9.  产品上架</h3> <h4 id="模块负责人-10"><a href="#模块负责人-10" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-10"><a href="#请求-10" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/product/up/{id}
+</code></pre> <h4 id="参数-10"><a href="#参数-10" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id:1 // 产品ID
+</code></pre> <h4 id="响应-10"><a href="#响应-10" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cp-10-产品删除"><a href="#cp-10-产品删除" aria-hidden="true" class="header-anchor">#</a> CP-10. 产品删除</h3> <h4 id="模块负责人-11"><a href="#模块负责人-11" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-11"><a href="#请求-11" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>DELETE /v2/product/{id}
+</code></pre> <h4 id="参数-11"><a href="#参数-11" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id: 1 // 产品ID
+</code></pre> <h4 id="响应-11"><a href="#响应-11" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cp-11-查询产品日志"><a href="#cp-11-查询产品日志" aria-hidden="true" class="header-anchor">#</a> CP-11. 查询产品日志</h3> <h4 id="模块负责人-12"><a href="#模块负责人-12" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-12"><a href="#请求-12" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/product/log/{id}
+</code></pre> <h4 id="参数-12"><a href="#参数-12" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id: 1 // 产品ID
+pageNo: 1 // 页码 默认1
+pageSize: 25 // 页面条数 默认25
+</code></pre> <h4 id="响应-12"><a href="#响应-12" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: 0,
+        &quot;datas&quot;: [
+            {
+                &quot;id&quot;: 91,
+                &quot;opInfo&quot;: &quot;新增发票产品&quot;, // 日志信息
+                &quot;opRole&quot;: 1, // 操作角色ID
+                &quot;opTime&quot;: &quot;2018-12-06 15:28:06.0&quot;, // 操作时间
+                &quot;opUser&quot;: 101, // 操作人
+                &quot;opUserName&quot;: &quot;系统操作&quot;, // 操作人名
+                &quot;productId&quot;: 4708 // 产品ID
+            }
+        ]
+    }
+}
+</code></pre> <h3 id="cp-12-查询产品标准类别"><a href="#cp-12-查询产品标准类别" aria-hidden="true" class="header-anchor">#</a> CP-12. 查询产品标准类别</h3> <h4 id="模块负责人-13"><a href="#模块负责人-13" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-13"><a href="#请求-13" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/product/dic/attribute
+</code></pre> <h4 id="参数-13"><a href="#参数-13" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>无
+</code></pre> <h4 id="响应-13"><a href="#响应-13" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;dicId&quot;: 0, // 标准类别ID
+            &quot;dicName&quot;: &quot;无&quot;, // 标准类别名
+            &quot;id&quot;: 1,
+            &quot;type&quot;: &quot;ATTRIBUTE&quot;
+        }
+    ]
+}
+</code></pre> <h3 id="cp-13-查询产品标准号"><a href="#cp-13-查询产品标准号" aria-hidden="true" class="header-anchor">#</a> CP-13. 查询产品标准号</h3> <h4 id="模块负责人-14"><a href="#模块负责人-14" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-14"><a href="#请求-14" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/product/dic/standard
+</code></pre> <h4 id="参数-14"><a href="#参数-14" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>无
+</code></pre> <h4 id="响应-14"><a href="#响应-14" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;dicId&quot;: 0, // 标准号ID
+            &quot;dicName&quot;: &quot;无&quot;, // 标准号名
+            &quot;id&quot;: 1,
+            &quot;type&quot;: &quot;ATTRIBUTE&quot;
+        }
+    ]
+}
+</code></pre> <h3 id="cp-14-查询产品单位"><a href="#cp-14-查询产品单位" aria-hidden="true" class="header-anchor">#</a> CP-14. 查询产品单位</h3> <h4 id="模块负责人-15"><a href="#模块负责人-15" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-15"><a href="#请求-15" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/product/dic/unit
+</code></pre> <h4 id="参数-15"><a href="#参数-15" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>无
+</code></pre> <h4 id="响应-15"><a href="#响应-15" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;dicId&quot;: 1, // 单位ID
+            &quot;dicName&quot;: &quot;袋&quot;, // 单位名
+            &quot;id&quot;: 95,
+            &quot;type&quot;: &quot;UNIT&quot;
+        }
+    ]
+}
+</code></pre> <h3 id="cp-15-查询产品规格"><a href="#cp-15-查询产品规格" aria-hidden="true" class="header-anchor">#</a> CP-15. 查询产品规格</h3> <h4 id="模块负责人-16"><a href="#模块负责人-16" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-16"><a href="#请求-16" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/product/guige
+</code></pre> <h4 id="参数-16"><a href="#参数-16" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>keyword: &quot;&quot; // 模糊查询品名、品号
+status: &quot;NORMAL&quot; // 状态 NORMAL 上架 LOCK 下架
+customFlg: 0 // 客户定制 0 常规品 1 定制品
+customFlgMore: 0 // 客户定制 0 常规品 1 定制品 2 专属定制品
+customerId: 1 // 客户ID， 传递客户ID 是在进行产品定价的时候 需要带出产品的客户签约价格
+pathId: &quot;0101&quot; // 区域ID， 传递区域ID 是在进行产品定价的时候 需要带出产品的区域价格
+supplierId: 1 // 供应商ID， 传递供应商ID 是在进行产品定价的时候 需要带出产品的供应商价格
+depotId: 1 // 仓ID， 传递仓ID，是需要产品匹配库存存量
+productunitIds[]:1,2,7  // 产品规格
+excludeIds[]:1,27       // 排除的产品规格
+isAsign: 0              // 0 未签约 1 已签约
+contactId: 1 // 收货地址ID
+---------------------------以下三个has开头的参数决定是否查询价格和库存 ture查询 &amp; false不查询-----------------------------------------
+hasPrice:           // 客户某个区域产品价格
+	customerId
+	pathId
+hasStock:           // 客户某个区域产品库存, pathId &amp; depotId 二选一
+	customerId
+	pathId
+	depotId
+hasStock3:          // 供应商某个仓库产品库存
+	*supplierId
+	*depotId
+----------------------------------------------------------------------------------------------------------------------------------
+pageNo: 1 // 页码 默认 1 
+pageSize: 25 // 页面条数 默认 25
+</code></pre> <h4 id="响应-16"><a href="#响应-16" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;cubage&quot;: 1512, // 体积
+                &quot;grossweight&quot;: 0.55, // 毛重
+                &quot;guige&quot;: &quot;500g(23-25枚）/盒&quot;, // 规格名
+                &quot;height&quot;: 5, // 高度
+                &quot;id&quot;: 1, // 规格ID
+                &quot;length&quot;: 19.5, // 长度
+                &quot;minimum&quot;: 0, // 最小起订量
+                &quot;minimumType&quot;: &quot;NONE&quot;, // 起订方式 NONE 无限制 BEGIN 递增 STEP 步增
+                &quot;netweight&quot;: 0.5, // 净重
+                &quot;perunit&quot;: 1, // 转化率
+                &quot;price&quot;: {
+                    &quot;decideType&quot;: A // 决定价格类型 A A价格 P P价格 T 特价 S 签约价 Q 区域价
+                    &quot;finallyPrice&quot;:1.0, // 最终执行价
+                    &quot;aPrice&quot;: 1.0, // A 价格
+                    &quot;pPrice&quot;: 1.0, // P 价格
+                    &quot;specialPrice&quot;: 1.0, // 特价
+                    &quot;signPrice&quot;: 1.0, // 签约价
+                    &quot;areaPrice&quot;: 1.0, // 地区价
+                    &quot;productUnitId&quot;: 1 // 规格ID
+                }, 
+                &quot;product&quot;: {
+                    &quot;customFlg&quot;: 0, // 定制标识
+                    &quot;customFlgMore&quot;: 0, // 定制标志 0 非定制 1 普通定制 2 专属定制
+                    &quot;id&quot;: 1, // 产品ID
+                    &quot;longName&quot;: &quot;香草凤尾虾-专业开背，秘制加工，中西餐厅新食尚~&quot;, // 广告名
+                    &quot;mainBgImg&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/f9ce32e007fc796722466531c86d5cd9.jpg&quot;, // 主图背景图
+                    &quot;mainImg&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg&quot;, // 主图
+                    &quot;name&quot;: &quot;香草凤尾虾&quot;, // 产品名
+                    &quot;nowfuture&quot;: &quot;NOW&quot;,         // NOW 现货  FUTURE 期货
+                    &quot;pno&quot;: &quot;0151&quot;, // 品号
+                    &quot;productLack&quot;: { // 缺货标识，若未null 则不缺货
+                        &quot;productId&quot;: 1，
+                        &quot;startTime&quot;: &quot;2018-01-01&quot;, // 缺货开始时间 
+                        &quot;endTime&quot;: &quot;2018-01-20&quot; // 缺货结束时间
+                    },
+                    &quot;status&quot;: &quot;NORMAL&quot;
+                },
+                &quot;productCart&quot;: null,
+                &quot;productId&quot;: 1,
+                &quot;stock&quot;: {              // 实际库存
+                    &quot;amount&quot;: 1931,         
+                    &quot;amountJian&quot;: 97,       // 件
+                    &quot;amountSan&quot;: 11,        // 散
+                    &quot;productId&quot;: 4664
+                },
+                &quot;unit&quot;: &quot;盒&quot;, // 单位名
+                &quot;unitId&quot;: 2,  // 单位ID
+                &quot;width&quot;: 15.5 // 宽度
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: 0
+    }
+}
+</code></pre> <h3 id="cp-17-产品下架"><a href="#cp-17-产品下架" aria-hidden="true" class="header-anchor">#</a> CP-17.  产品下架</h3> <h4 id="模块负责人-17"><a href="#模块负责人-17" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-17"><a href="#请求-17" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/product/down/{id}
+</code></pre> <h4 id="参数-17"><a href="#参数-17" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id:1 // 产品ID
+</code></pre> <h4 id="响应-17"><a href="#响应-17" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cp-106-操作日志列表"><a href="#cp-106-操作日志列表" aria-hidden="true" class="header-anchor">#</a> CP-106. 操作日志列表</h3> <h4 id="模块负责人-18"><a href="#模块负责人-18" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-18"><a href="#请求-18" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET     /v2/product/lack/log
+</code></pre> <h4 id="参数-18"><a href="#参数-18" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id      // 断货id
+</code></pre> <h4 id="响应-18"><a href="#响应-18" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: null,
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;content&quot;: &quot;新增断货&quot;,  // 操作内容
+                &quot;id&quot;: 0,
+                &quot;lackIds&quot;: null,        // 断货id 
+                &quot;note&quot;: &quot;&quot;,
+                &quot;operTime&quot;: &quot;2018-09-12 10:55:58&quot;,  // 操作时间
+                &quot;operUser&quot;: 0,          
+                &quot;operUserName&quot;: &quot;樊嘉辉&quot;        // 操作人
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: 4
+    }
+} 
+</code></pre> <h3 id="cp-16-批量修改产品业态"><a href="#cp-16-批量修改产品业态" aria-hidden="true" class="header-anchor">#</a> CP-16.批量修改产品业态</h3> <h4 id="模块负责人-19"><a href="#模块负责人-19" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-19"><a href="#请求-19" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/product/businessType
+</code></pre> <h4 id="参数-19"><a href="#参数-19" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>[
+    {
+        &quot;productId&quot;: 1, // 产品ID
+        &quot;businessTypeId&quot;: 1, // 产品业态ID
+        &quot;businessTypeCode&quot;: &quot;-001-002-&quot; // 产品业态码
+    }
+]
+</code></pre> <h4 id="响应-19"><a href="#响应-19" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cp-50-产品业态查询"><a href="#cp-50-产品业态查询" aria-hidden="true" class="header-anchor">#</a> CP-50.产品业态查询</h3> <h4 id="模块负责人-20"><a href="#模块负责人-20" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-20"><a href="#请求-20" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET     /v2/product/businessType
+</code></pre> <h4 id="参数-20"><a href="#参数-20" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>parentId: 0 // 获取根分类传递0，获取全部业态时，什么都不传
+ids: [1, 2, 3] // 根据ID 获取餐饮业态 
+</code></pre> <h4 id="响应-20"><a href="#响应-20" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;code&quot;: &quot;-16-&quot;,          // 业态编码
+            &quot;deleteFlg&quot;: 0,
+            &quot;gIcon&quot;: &quot;http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g02.png&quot;,
+            &quot;wIcon&quot;: &quot;http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w02.png&quot;,
+            &quot;hasProductCnt&quot;: 6,     // 产品数
+            &quot;id&quot;: 16,               // 业态id
+            &quot;level&quot;: 1,             // 业态等级
+            &quot;name&quot;: &quot;西餐西快&quot;,     // 名称
+            &quot;parentId&quot;: 0,          // 上级业态id
+            &quot;pyCode&quot;: &quot;&quot;,           // 拼音编码
+            &quot;sIcon&quot;: &quot;http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png&quot;,
+            &quot;showFlg&quot;: 1,           // 是否显示 1 显示 0 隐藏
+            &quot;miniFlg&quot;: 1,         // 小程序开关 1 开启 0 关闭
+            // 小程序图标
+            &quot;mIcon&quot;: &quot;http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png&quot;,
+            // 风格入口图片
+            &quot;styleUrl&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/ANET20190121132417926-4745.png&quot;,
+            &quot;sort&quot;: 2
+        }
+    ]
+}
+</code></pre> <h3 id="cp-51-产品业态新增"><a href="#cp-51-产品业态新增" aria-hidden="true" class="header-anchor">#</a> CP-51.产品业态新增</h3> <h4 id="模块负责人-21"><a href="#模块负责人-21" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-21"><a href="#请求-21" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /v2/product/businessType
+</code></pre> <h4 id="参数-21"><a href="#参数-21" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    &quot;name&quot;: &quot;xx&quot;, // 餐饮业态名称
+    &quot;showFlg&quot;: 1, // 是否显示 0 不显示 1 显示
+    &quot;parentId&quot;: 1, // 父餐饮业态ID
+    &quot;sicon&quot;:&quot;http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png&quot;,
+    &quot;micon&quot;:&quot;http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png&quot;,
+    &quot;miniFlg&quot;:1,  // 小程序开关 1 开启 0 关闭
+    &quot;styleUrl&quot;:&quot;http://asae.oss-cn-beijing.aliyuncs.com/ANET20190121132417926-4745.png&quot;
+}
+</code></pre> <h4 id="响应-21"><a href="#响应-21" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: 1 // 新增后业态ID
+}
+</code></pre> <h3 id="cp-52-产品业态名称修改"><a href="#cp-52-产品业态名称修改" aria-hidden="true" class="header-anchor">#</a> CP-52.产品业态名称修改</h3> <h4 id="模块负责人-22"><a href="#模块负责人-22" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-22"><a href="#请求-22" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/product/businessType/name/{id}
+</code></pre> <h4 id="参数-22"><a href="#参数-22" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id: 1 // 餐饮业态ID
+{
+    *&quot;name&quot;:&quot;xxx&quot; // 餐饮业态名称
+}
+</code></pre> <h4 id="响应-22"><a href="#响应-22" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cp-52-产品业态显示隐藏"><a href="#cp-52-产品业态显示隐藏" aria-hidden="true" class="header-anchor">#</a> CP-52.产品业态显示隐藏</h3> <h4 id="模块负责人-23"><a href="#模块负责人-23" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-23"><a href="#请求-23" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/product/businessType/show/{id}
+</code></pre> <h4 id="参数-23"><a href="#参数-23" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id: 1 // 餐饮业态ID
+{
+    *&quot;show&quot;:1 // 显示隐藏状态 0 隐藏  1 显示
+}
+</code></pre> <h4 id="响应-23"><a href="#响应-23" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cp-53-产品业态删除"><a href="#cp-53-产品业态删除" aria-hidden="true" class="header-anchor">#</a> CP-53.产品业态删除</h3> <h4 id="模块负责人-24"><a href="#模块负责人-24" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-24"><a href="#请求-24" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>DELETE /v2/product/businessType/{delId}/{toId}
+</code></pre> <h4 id="参数-24"><a href="#参数-24" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*delId: 1 // 需要删除的餐饮业态ID
+toId: 2 // 移至的餐饮业态ID 无时，toId=0
+</code></pre> <h4 id="响应-24"><a href="#响应-24" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cp-54-产品业态修改"><a href="#cp-54-产品业态修改" aria-hidden="true" class="header-anchor">#</a> CP-54.产品业态修改</h3> <h4 id="模块负责人-25"><a href="#模块负责人-25" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-25"><a href="#请求-25" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/product/businessType/{id}
+</code></pre> <h4 id="参数-25"><a href="#参数-25" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id: 1 // 业态id
+{
+    &quot;name&quot;: &quot;xx&quot;, // 餐饮业态名称
+    &quot;showFlg&quot;: 1, // 是否显示 0 不显示 1 显示
+    &quot;parentId&quot;: 1, // 父餐饮业态ID
+    &quot;sicon&quot;:&quot;http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png&quot;,
+    &quot;micon&quot;:&quot;http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png&quot;,
+    &quot;miniFlg&quot;:1,  // 小程序开关 1 开启 0 关闭
+    &quot;styleUrl&quot;:&quot;http://asae.oss-cn-beijing.aliyuncs.com/ANET20190121132417926-4745.png&quot;
+}
+</code></pre> <h4 id="响应-25"><a href="#响应-25" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cp-55-产品业态详情"><a href="#cp-55-产品业态详情" aria-hidden="true" class="header-anchor">#</a> CP-55.产品业态详情</h3> <h4 id="模块负责人-26"><a href="#模块负责人-26" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-26"><a href="#请求-26" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/product/businessType/detail/{id}
+</code></pre> <h4 id="参数-26"><a href="#参数-26" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id: 1 // 业态id
+</code></pre> <h4 id="响应-26"><a href="#响应-26" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;code&quot;: &quot;-121-&quot;,
+        &quot;deleteFlg&quot;: 0,
+        &quot;gIcon&quot;: &quot;&quot;,
+        &quot;hasProductCnt&quot;: 0,
+        &quot;id&quot;: 121,                  // 业态id
+        &quot;level&quot;: 1,
+        &quot;name&quot;: &quot;小程序二级业态&quot;,      // 业态名  
+        &quot;parentId&quot;: 0,
+        &quot;pyCode&quot;: &quot;&quot;,
+        &quot;wIcon&quot;: &quot;&quot;
+        &quot;showFlg&quot;: 0,               // 业态是否前台显示
+        // App图标
+        &quot;sIcon&quot;: &quot;http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png&quot;,
+        &quot;miniFlg&quot;: 0,    // 小程序开关 1 开启  0 关闭 
+        // 小程序图标
+        &quot;mIcon&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/ANET20190121132417926-4745.png&quot;,
+        // 风格入口图片
+        &quot;styleUrl&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/ANET20190121132417926-4745.png&quot;,
+        &quot;sort&quot;: 2
+    }
+}
+</code></pre> <h3 id="cp-56-产品分类直接删除"><a href="#cp-56-产品分类直接删除" aria-hidden="true" class="header-anchor">#</a> CP-56. 产品分类直接删除</h3> <h4 id="模块负责人-27"><a href="#模块负责人-27" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-27"><a href="#请求-27" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>DELETE /v2/product/businessType/{delId}
+</code></pre> <h4 id="参数-27"><a href="#参数-27" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*delId: 1   //分类ID
+</code></pre> <h4 id="响应-27"><a href="#响应-27" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cp-57-产品分类修改排序"><a href="#cp-57-产品分类修改排序" aria-hidden="true" class="header-anchor">#</a> CP-57. 产品分类修改排序</h3> <h4 id="模块负责人-28"><a href="#模块负责人-28" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-28"><a href="#请求-28" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/product/businessType/sort/{id}/{sort}
+</code></pre> <h4 id="参数-28"><a href="#参数-28" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id: 1      //分类ID
+*sort: 1    // 排序值，大于0
+</code></pre> <h4 id="响应-28"><a href="#响应-28" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cp-101-新增断货"><a href="#cp-101-新增断货" aria-hidden="true" class="header-anchor">#</a> CP-101. 新增断货</h3> <h4 id="模块负责人-29"><a href="#模块负责人-29" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-29"><a href="#请求-29" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST    /v2/product/lack
+</code></pre> <h4 id="参数-29"><a href="#参数-29" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+	*&quot;productIds&quot;:[3182,3180,3176],      // 产品列表
+	*&quot;startTime&quot;:&quot;2018-09-12 10:10:10&quot;,  // 开始时间
+	*&quot;endTime&quot;:&quot;2018-09-22 10:10:10&quot;    // 结束时间
+}
+</code></pre> <h4 id="响应-29"><a href="#响应-29" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="cp-102-断货列表"><a href="#cp-102-断货列表" aria-hidden="true" class="header-anchor">#</a> CP-102. 断货列表</h3> <h4 id="模块负责人-30"><a href="#模块负责人-30" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-30"><a href="#请求-30" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET     /v2/product/lack
+</code></pre> <h4 id="求参数"><a href="#求参数" aria-hidden="true" class="header-anchor">#</a> 求参数</h4> <pre><code>keyword // 品名、品号
+state   // 状态 normal 正常 lock 锁定 delete 作废 invalid 失效
+buttonPermissionFlg // 操作按钮开关 0 带操作列表 1 无操作列
+pageNo      // 页码
+pageSize    // 页条数
+</code></pre> <h4 id="响应-30"><a href="#响应-30" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [
+            {
+                &quot;deleteButton&quot;: false, // 作废
+                &quot;lockButton&quot;: true, // 锁定
+                &quot;unlockButton&quot;: false, // 解锁
+                &quot;updateButton&quot;: true, // 修改
+                &quot;logButton&quot;: true // 日志
+            },
+            ......
+        ],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;endTime&quot;: &quot;2018-09-22&quot;,    // 结束时间
+                &quot;id&quot;: 43,                   // 断货id
+                &quot;note&quot;: &quot;&quot;,
+                &quot;pno&quot;: &quot;0990&quot;,              // 品号
+                &quot;productId&quot;: 3182,          // 产品id
+                &quot;productName&quot;: &quot;金丝榴莲酥&quot;,    // 品名
+                &quot;productStatus&quot;: &quot;&quot;,        // 产品状态
+                &quot;productType&quot;: &quot;&quot;,          // 产品类型
+                &quot;startTime&quot;: &quot;2018-09-12&quot;,      // 开始时间
+                &quot;state&quot;: &quot;NORMAL&quot;,              // 断货状态
+                &quot;unitGuige&quot;: &quot;袋：200g(10枚）/袋,件：200g(10枚）/袋*20袋&quot;   // 单位规格
+            },
+            ......
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: 5
+    }
+}
+</code></pre> <h3 id="cp-103-断货详细信息"><a href="#cp-103-断货详细信息" aria-hidden="true" class="header-anchor">#</a> CP-103. 断货详细信息</h3> <h4 id="模块负责人-31"><a href="#模块负责人-31" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-31"><a href="#请求-31" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET     /v2/product/lack/detail
+</code></pre> <h4 id="参数-30"><a href="#参数-30" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id      // 断货id
+</code></pre> <h4 id="响应-31"><a href="#响应-31" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;endTime&quot;: &quot;2018-09-22&quot;,        // 结束时间
+        &quot;id&quot;: 43,                   // 断货id
+        &quot;note&quot;: &quot;&quot;,
+        &quot;pno&quot;: &quot;0990&quot;,              // 品号
+        &quot;productId&quot;: 3182,          // 产品id
+        &quot;productName&quot;: &quot;金丝榴莲酥&quot;,    // 品名
+        &quot;productState&quot;: &quot;NORMAL&quot;,       // 产品状态
+        &quot;productType&quot;: &quot;&quot;,              // 产品类型
+        &quot;startTime&quot;: &quot;2018-09-12&quot;,      // 开始时间
+        &quot;state&quot;: &quot;NORMAL&quot;,          // 断货状态
+        &quot;unitGuige&quot;: &quot;&quot;             // 单位规格
+    }
+}
+</code></pre> <h3 id="cp-104-断货产品锁定、解锁、作废"><a href="#cp-104-断货产品锁定、解锁、作废" aria-hidden="true" class="header-anchor">#</a> CP-104.断货产品锁定、解锁、作废</h3> <h4 id="模块负责人-32"><a href="#模块负责人-32" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-32"><a href="#请求-32" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT    /v2/product/lack/state/{id}
+</code></pre> <h4 id="参数-31"><a href="#参数-31" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id //断货id
+{
+    *&quot;state&quot;:&quot;NORMAL&quot;    // NORMAL 解锁 LOCK 锁定  DELETE 作废
+}
+</code></pre> <h4 id="响应-32"><a href="#响应-32" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="cp-105-断货修改"><a href="#cp-105-断货修改" aria-hidden="true" class="header-anchor">#</a> CP-105. 断货修改</h3> <h4 id="模块负责人-33"><a href="#模块负责人-33" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-33"><a href="#请求-33" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT    /v2/product/lack/{id}
+</code></pre> <h4 id="参数-32"><a href="#参数-32" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id  // 断货id
+{
+	*&quot;startTime&quot;:&quot;2018-09-12 10:10:10&quot;,
+	*&quot;endTime&quot;:&quot;2018-09-22 10:10:10&quot;
+}
+</code></pre> <h4 id="响应-33"><a href="#响应-33" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="cp-56-产品属性分类新增"><a href="#cp-56-产品属性分类新增" aria-hidden="true" class="header-anchor">#</a> CP-56.产品属性分类新增</h3> <h4 id="模块负责人-34"><a href="#模块负责人-34" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-34"><a href="#请求-34" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /v2/product/attr/category
+</code></pre> <h4 id="参数-33"><a href="#参数-33" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    *&quot;name&quot;:&quot;特殊安全库存&quot;
+}
+</code></pre> <h4 id="响应-34"><a href="#响应-34" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="cp-57-产品属性分类列表"><a href="#cp-57-产品属性分类列表" aria-hidden="true" class="header-anchor">#</a> CP-57.产品属性分类列表</h3> <h4 id="模块负责人-35"><a href="#模块负责人-35" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-35"><a href="#请求-35" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/product/attr/category
+</code></pre> <h4 id="参数-34"><a href="#参数-34" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>无
+</code></pre> <h4 id="响应-35"><a href="#响应-35" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 1,                // 分类id
+            &quot;name&quot;: &quot;特殊安全库存&quot;,    // 分类名称
+            &quot;createTime&quot;: &quot;&quot;,
+            &quot;deleteFlg&quot;: 0
+        }
+    ]
+}
+</code></pre> <h3 id="cp-58-产品属性新增"><a href="#cp-58-产品属性新增" aria-hidden="true" class="header-anchor">#</a> CP-58.产品属性新增</h3> <h4 id="模块负责人-36"><a href="#模块负责人-36" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-36"><a href="#请求-36" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /v2/product/attr
+</code></pre> <h4 id="参数-35"><a href="#参数-35" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    &quot;categoryId&quot;:1,                     // 分类id
+    &quot;name&quot;:&quot;美团品&quot;,               // 属性名
+    &quot;meituanFlg&quot;:1            // 是否美团品 0 否 1 是
+}
+</code></pre> <h4 id="响应-36"><a href="#响应-36" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="cp-59-产品属性修改"><a href="#cp-59-产品属性修改" aria-hidden="true" class="header-anchor">#</a> CP-59.产品属性修改</h3> <h4 id="模块负责人-37"><a href="#模块负责人-37" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-37"><a href="#请求-37" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT /v2/product/attr/{id}
+</code></pre> <h4 id="参数-36"><a href="#参数-36" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id // 属性id
+{
+    &quot;categoryId&quot;:1,   // 分类id
+    &quot;name&quot;:&quot;美团品&quot;, // 属性名
+    &quot;meituanFlg&quot;:1   // 是否美团品 0 否 1 是
+}
+</code></pre> <h4 id="响应-37"><a href="#响应-37" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="cp-60-产品属性删除"><a href="#cp-60-产品属性删除" aria-hidden="true" class="header-anchor">#</a> CP-60.产品属性删除</h3> <h4 id="模块负责人-38"><a href="#模块负责人-38" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-38"><a href="#请求-38" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>DELETE /v2/product/attr/{id}
+</code></pre> <h4 id="参数-37"><a href="#参数-37" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id // 属性id
+</code></pre> <h4 id="响应-38"><a href="#响应-38" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+} 
+</code></pre> <h3 id="cp-61-产品属性列表"><a href="#cp-61-产品属性列表" aria-hidden="true" class="header-anchor">#</a> CP-61.产品属性列表</h3> <h4 id="模块负责人-39"><a href="#模块负责人-39" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-39"><a href="#请求-39" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/product/attr
+</code></pre> <h4 id="参数-38"><a href="#参数-38" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>keyword // 属性名称
+categoryId // 分类id
+</code></pre> <h4 id="响应-39"><a href="#响应-39" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 1,      
+            &quot;name&quot;: &quot;运输周期超过一周以上的产品&quot;,    // 属性名称      
+            &quot;categoryId&quot;: 0,
+            &quot;categoryName&quot;: &quot;特殊安全库存&quot;,       // 属性分类名
+            &quot;meituanFlg&quot;: 1,    // 是否美团品 0 否 1 是
+            &quot;productId&quot;: 0,
+            &quot;createTime&quot;: &quot;&quot;,
+            &quot;deleteFlg&quot;: 0
+        }
+    ]
+}
+</code></pre> <h3 id="cp-62-产品属性详情"><a href="#cp-62-产品属性详情" aria-hidden="true" class="header-anchor">#</a> CP-62.产品属性详情</h3> <h4 id="模块负责人-40"><a href="#模块负责人-40" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-40"><a href="#请求-40" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/product/attr/detail/{id}
+</code></pre> <h4 id="参数-39"><a href="#参数-39" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id // 属性id
+</code></pre> <h4 id="响应-40"><a href="#响应-40" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;id&quot;: 1,                // 属性id
+        &quot;name&quot;: &quot;美团品&quot;,         // 属性名称
+        &quot;categoryId&quot;: 1,        // 分类id
+        &quot;meituanFlg&quot;: 1,     // 是否美团品 0 否 1 是
+        &quot;createTime&quot;: &quot;&quot;,
+        &quot;deleteFlg&quot;: 0
+    }
+}  
+</code></pre> <h3 id="cp-108-产品属性查询"><a href="#cp-108-产品属性查询" aria-hidden="true" class="header-anchor">#</a> CP-108. 产品属性查询</h3> <h4 id="模块负责人-41"><a href="#模块负责人-41" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-41"><a href="#请求-41" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET     /v2/product/attr/group
+</code></pre> <h4 id="参数-40"><a href="#参数-40" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*attrId[]: 1   // 属性id 
+</code></pre> <h4 id="响应-41"><a href="#响应-41" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 2,                // 分类id
+            &quot;name&quot;: &quot;属性分类二&quot;,    // 分类名
+            &quot;productAttr&quot;: [
+                {
+                    &quot;id&quot;: 2,        // 属性id
+                    &quot;name&quot;: &quot;特惠&quot;,    // 属性名
+                    &quot;categoryId&quot;: 2,
+                    &quot;meituanFlg&quot;: 0,
+                    &quot;createTime&quot;: &quot;&quot;,
+                    &quot;deleteFlg&quot;: 0
+                }
+            ],
+            &quot;createTime&quot;: &quot;&quot;,
+            &quot;deleteFlg&quot;: 0
+        }
+    ]
+}
+</code></pre> <h3 id="cp-109-产品关联属性"><a href="#cp-109-产品关联属性" aria-hidden="true" class="header-anchor">#</a> CP-109. 产品关联属性</h3> <h4 id="模块负责人-42"><a href="#模块负责人-42" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-42"><a href="#请求-42" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT     /v2/product/attr/product2attr/{productIds}
+</code></pre> <h4 id="参数-41"><a href="#参数-41" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*productIds  // 1,2,3
+[
+    {
+        *&quot;categoryId&quot;: 1,
+        *&quot;attrId&quot;: 1
+    },
+    {
+        &quot;categoryId&quot;: 1,
+        &quot;attrId&quot;: 2
+    },
+    {
+        &quot;categoryId&quot;: 2,
+        &quot;attrId&quot;: 3
+    }
+]
+</code></pre> <h4 id="响应-42"><a href="#响应-42" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="cp-120-销售区域修改"><a href="#cp-120-销售区域修改" aria-hidden="true" class="header-anchor">#</a> CP-120. 销售区域修改</h3> <h4 id="模块负责人-43"><a href="#模块负责人-43" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-43"><a href="#请求-43" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT     /v2/product/salerange
+</code></pre> <h4 id="参数-42"><a href="#参数-42" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    &quot;productId&quot;: 4759,          // 产品ID
+    &quot;rangeType&quot;: &quot;EXCLUDE&quot;,    // 销售范围 ALL 全部区域 EXCLUDE 排除区域
+    &quot;range&quot;: [
+        {
+            &quot;pathid&quot;: &quot;060202&quot;, // 排除区域编码
+            &quot;type&quot;: &quot;NONE&quot;,     // NONE 不指定任何事业部或客户 BUSINESSUNIT 指定事业部 CUSTOMER 指定客户
+            &quot;ownerId&quot;: 0        // 事业部ID 或 客户ID 不指定任何事业部和客户时，传递 0
+        },
+        {
+            &quot;pathid&quot;: &quot;060202&quot;,
+            &quot;type&quot;: &quot;BUSINESSUNIT&quot;,
+            &quot;ownerId&quot;: 1
+        },
+        {
+            &quot;pathid&quot;: &quot;060202&quot;,
+            &quot;type&quot;: &quot;CUSTOMER&quot;,
+            &quot;ownerId&quot;: 32937
+        },
+        {
+            &quot;pathid&quot;: &quot;080201&quot;,
+            &quot;type&quot;: &quot;CUSTOMER&quot;,
+            &quot;ownerId&quot;: 32938
+        }
+    ]
+}
+</code></pre> <h4 id="响应-43"><a href="#响应-43" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="cp-151-期货现货新增"><a href="#cp-151-期货现货新增" aria-hidden="true" class="header-anchor">#</a> CP-151. 期货现货新增</h3> <h4 id="模块负责人-44"><a href="#模块负责人-44" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-44"><a href="#请求-44" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST     /nowfuture
+</code></pre> <h4 id="参数-43"><a href="#参数-43" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>[
+    {
+        &quot;depotId&quot;: 40,
+        &quot;productId&quot;: 4749,
+        &quot;type&quot;: &quot;NOW&quot;
+    },
+    {
+        &quot;depotId&quot;: 40,
+        &quot;productId&quot;: 4748,
+        &quot;type&quot;: &quot;FUTURE&quot;
+    },
+    {
+        &quot;depotId&quot;: 40,
+        &quot;productId&quot;: 4747,
+        &quot;type&quot;: &quot;NOW&quot;
+    }
+]
+</code></pre> <h4 id="响应-44"><a href="#响应-44" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cp-152-期货转现货"><a href="#cp-152-期货转现货" aria-hidden="true" class="header-anchor">#</a> CP-152. 期货转现货</h3> <h4 id="模块负责人-45"><a href="#模块负责人-45" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-45"><a href="#请求-45" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT     /nowfuture/now/{id}
+</code></pre> <h4 id="参数-44"><a href="#参数-44" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id // 期货现货id
+</code></pre> <h4 id="响应-45"><a href="#响应-45" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cp-153-现货转期货"><a href="#cp-153-现货转期货" aria-hidden="true" class="header-anchor">#</a> CP-153. 现货转期货</h3> <h4 id="模块负责人-46"><a href="#模块负责人-46" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-46"><a href="#请求-46" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT     /nowfuture/future/{id}
+</code></pre> <h4 id="参数-45"><a href="#参数-45" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id // 期货现货id
+</code></pre> <h4 id="响应-46"><a href="#响应-46" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}
+</code></pre> <h3 id="cp-154-期货现货取消手动"><a href="#cp-154-期货现货取消手动" aria-hidden="true" class="header-anchor">#</a> CP-154. 期货现货取消手动</h3> <h4 id="模块负责人-47"><a href="#模块负责人-47" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-47"><a href="#请求-47" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT     /nowfuture/cancel/{id}
+</code></pre> <h4 id="参数-46"><a href="#参数-46" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*id // 期货现货id
+</code></pre> <h4 id="响应-47"><a href="#响应-47" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null
+}  
+</code></pre> <h3 id="cp-155-期货现货列表"><a href="#cp-155-期货现货列表" aria-hidden="true" class="header-anchor">#</a> CP-155. 期货现货列表</h3> <h4 id="模块负责人-48"><a href="#模块负责人-48" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-48"><a href="#请求-48" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET     /nowfuture
+</code></pre> <h4 id="参数-47"><a href="#参数-47" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>keyword // 品名、品号
+type    // NOW 现货 FUTURE 期货
+pageNo      // 默认1
+pageSize    // 默认25
+</code></pre> <h4 id="响应-48"><a href="#响应-48" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;create_time&quot;: &quot;&quot;,
+                &quot;customFlg&quot;: 1,         // 0 非定制 1 普通定制 2 专属定制
+                &quot;depotId&quot;: 40,
+                &quot;fromType&quot;: &quot;AUTO&quot;,     // AUTO 自动  HANDWORK 手动
+                &quot;handworkType&quot;: null,
+                &quot;id&quot;: 8,                // 期货现货id
+                &quot;pno&quot;: &quot;1866&quot;,          // 品号
+                &quot;productId&quot;: 4748,
+                &quot;productName&quot;: &quot;唐扬鱿鱼圈&quot;, // 品名
+                &quot;type&quot;: &quot;FUTURE&quot;        // NOW 现货 FUTURE 期货
+            }
+        ],
+        &quot;pageNo&quot;: 0,
+        &quot;total&quot;: 0
+    }
+}
+</code></pre> <h3 id="cp-156-期货现货统计列表"><a href="#cp-156-期货现货统计列表" aria-hidden="true" class="header-anchor">#</a> CP-156. 期货现货统计列表</h3> <h4 id="模块负责人-49"><a href="#模块负责人-49" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-49"><a href="#请求-49" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET     /nowfuture/profile
+</code></pre> <h4 id="参数-48"><a href="#参数-48" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>depotId // 仓库id
+</code></pre> <h4 id="响应-49"><a href="#响应-49" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;allCount&quot;: 380,                // 全部产品
+            &quot;customerCount&quot;: 5735,          // 近三个月服务客户
+            &quot;depotId&quot;: 40,                  // 仓库id
+            &quot;depotName&quot;: &quot;DC（大连仓）ASA&quot;,      // 仓库名
+            &quot;futureCount&quot;: 199,             // 期货产品
+            &quot;nowCount&quot;: 181,                // 现货产品
+            &quot;outCategory&quot;: 297,             // 上月出库品类
+            &quot;outJian&quot;: 1100608              // 上月出库件数
+        }
+    ]
+}
+</code></pre> <h3 id="cp-157-期货现货日志"><a href="#cp-157-期货现货日志" aria-hidden="true" class="header-anchor">#</a> CP-157. 期货现货日志</h3> <h4 id="模块负责人-50"><a href="#模块负责人-50" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-50"><a href="#请求-50" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET     /nowfuture/log/{depotId}
+</code></pre> <h4 id="参数-49"><a href="#参数-49" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>*depotId    // 仓库ID
+pageNo      // 默认1
+pageSize    // 默认25
+</code></pre> <h4 id="响应-50"><a href="#响应-50" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;id&quot;: 0,
+                &quot;opInfo&quot;: &quot;仓库【DC（大连铁越仓）】产品【榴莲大福】现货 -&gt; 期货&quot;,  // 操作内容
+                &quot;opRole&quot;: 0,
+                &quot;opTime&quot;: &quot;2019-03-25 14:08:58&quot;,                          // 操作时间
+                &quot;opUser&quot;: 0,
+                &quot;opUserName&quot;: &quot;系统操作&quot;,                                   // 操作人
+                &quot;settingId&quot;: 4
+            }
+        ],
+        &quot;pageNo&quot;: 0,
+        &quot;total&quot;: 0
+    }
+}  
+</code></pre> <h3 id="cp-201-查询热搜信息"><a href="#cp-201-查询热搜信息" aria-hidden="true" class="header-anchor">#</a> CP-201. 查询热搜信息</h3> <h4 id="模块负责人-51"><a href="#模块负责人-51" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-51"><a href="#请求-51" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET /v2/product/keyword
+</code></pre> <h4 id="参数-50"><a href="#参数-50" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>keyword             // 热搜词
+type                // QUERY 关键词 DETAIL 关联产品 MARKET 关联活动
+businesstypeId      // 关联业态id
+deleteFlg           // 状态 0 正常 1 作废
+pageNo              // 页码
+pageSize            // 页条数
+</code></pre> <h4 id="响应-51"><a href="#响应-51" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {//此热搜关联活动数据，market里加载活动信息，product是null，relateInfo是market_id
+                &quot;businesstypeRange&quot;: &quot;PART&quot;,//热搜范围 ALL 全部业态 PART 部分业态
+                &quot;createRole&quot;: 1,
+                &quot;createTime&quot;: &quot;2019-03-25 13:18:19&quot;,//创建时间
+                &quot;createUser&quot;: 518,
+                &quot;createUsername&quot;: &quot;孙启萌&quot;,//创建人
+                &quot;deleteFlg&quot;: 0,
+                &quot;id&quot;: 7,
+                &quot;keyword&quot;: &quot;本季热卖鞋品3&quot;,//热搜词
+                &quot;market&quot;: {//关联活动
+                    &quot;accumulative&quot;: &quot;&quot;,//LADDER 阶梯, EACH: 每满
+                    &quot;activeConditionId&quot;: 0,
+                    &quot;bannerPic&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/ANET20190506164501365-9899.jpg&quot;,
+                    &quot;couponConditionId&quot;: 0,
+                    &quot;createTime&quot;: &quot;2019-05-06 16:45:05&quot;,
+                    &quot;createUser&quot;: 518,
+                    &quot;createUserName&quot;: &quot;孙启萌&quot;,
+                    &quot;customerRange&quot;: &quot;ALL&quot;,
+                    &quot;deleteFlg&quot;: 2,
+                    &quot;detailPic&quot;: null,
+                    &quot;effectEtime&quot;: &quot;2019-05-10 23:59:59&quot;,
+                    &quot;effectStime&quot;: &quot;2019-05-06 00:00:00&quot;,
+                    &quot;hasBusinessunitRange&quot;: 0,//指定事业部数量
+                    &quot;hasExcludeProductunitRange&quot;: 0,
+                    &quot;hasProductunitRange&quot;: 0,//指定产品数量
+                    &quot;id&quot;: 426,
+                    &quot;limitNum&quot;: 0,//领取规则: 最大1-仅领一次, 0-用完再领
+                    &quot;marketSpecialSkip&quot;: {//活动跳转
+                        &quot;extra&quot;: &quot;4697&quot;,//PRODUCT 产品ID，H5存入H5页面链接
+                        &quot;id&quot;: 15,
+                        &quot;marketId&quot;: 426,//活动id
+                        &quot;type&quot;: &quot;PRODUCT&quot;//类型  PRODUCT, H5
+                    },
+                    &quot;name&quot;: &quot;2019年5月上旬专题报告&quot;,//活动名称
+                    &quot;overdue&quot;: 1,
+                    &quot;popupPic&quot;: &quot;&quot;,
+                    &quot;remark&quot;: &quot;&quot;,
+                    &quot;saOrderIds&quot;: null,
+                    &quot;type&quot;: &quot;SPECIAL&quot;,//活动类型 COUPON领券 GIFT满赠 REDUCE满减 DISCOUNT满折 COLUMN专栏 SPECIAL专题
+                    &quot;unit&quot;: &quot;&quot;//执行单位 PRICE 价格，COUNT 数量
+                },
+                &quot;modifyTime&quot;: &quot;2019-03-25 13:18:19&quot;,
+                &quot;product&quot;: null,
+                &quot;productBusinessTypepArray&quot;: [//关联业态信息
+                    {
+                        &quot;code&quot;: &quot;-34-&quot;,
+                        &quot;deleteFlg&quot;: 0,
+                        &quot;gIcon&quot;: &quot;http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g05.png&quot;,
+                        &quot;hasProductCnt&quot;: 0,
+                        &quot;id&quot;: 34,
+                        &quot;level&quot;: 1,
+                        &quot;mIcon&quot;: &quot;&quot;,
+                        &quot;miniFlg&quot;: 0,
+                        &quot;name&quot;: &quot;农贸市集&quot;,
+                        &quot;parentId&quot;: 0,
+                        &quot;parentName&quot;: &quot;&quot;,
+                        &quot;pyCode&quot;: &quot;NSJ&quot;,
+                        &quot;sIcon&quot;: &quot;http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s05.png&quot;,
+                        &quot;showFlg&quot;: 1,
+                        &quot;styleUrl&quot;: &quot;&quot;,
+                        &quot;wIcon&quot;: &quot;http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w05.png&quot;
+                    }
+                ],
+                &quot;relateInfo&quot;: &quot;5&quot;,//关联信息 QUERY：模糊搜索词 DETAIL：产品ID MARKET：活动ID
+                &quot;type&quot;: &quot;MARKET&quot;//热搜类型 QUERY 关键词 DETAIL 关联产品 MARKET 关联活动
+            },
+            {//此热搜关联产品数据，market是null，product里加载产品数据，relateInfo是product_id
+                &quot;businesstypeRange&quot;: &quot;PART&quot;,
+                &quot;createRole&quot;: 1,
+                &quot;createTime&quot;: &quot;2019-03-25 13:16:19&quot;,
+                &quot;createUser&quot;: 518,
+                &quot;createUsername&quot;: &quot;孙启萌&quot;,
+                &quot;deleteFlg&quot;: 0,
+                &quot;id&quot;: 6,
+                &quot;keyword&quot;: &quot;本季热卖鞋品2&quot;,
+                &quot;market&quot;: null,
+                &quot;modifyTime&quot;: &quot;2019-03-25 13:16:19&quot;,
+                &quot;product&quot;: {//关联产品信息
+                    &quot;createTime&quot;: &quot;2014-06-21 11:26:58.0&quot;,
+                    &quot;customFlg&quot;: 0,
+                    &quot;deleteFlg&quot;: 0,
+                    &quot;id&quot;: 1,
+                    &quot;longName&quot;: &quot;香草凤尾虾-专业开背，秘制加工，中西餐厅新食尚~&quot;,
+                    &quot;mainBgImg&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/f9ce32e007fc796722466531c86d5cd9.jpg&quot;,
+                    &quot;mainImg&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/ec90940549d364b0982427f87dd86747.jpg&quot;,//产品图片
+                    &quot;name&quot;: &quot;香草凤尾虾&quot;,//产品名称
+                    &quot;pno&quot;: &quot;0151&quot;,//品号
+                    &quot;process&quot;: 4,
+                    &quot;processContent&quot;: 1,
+                    &quot;processInvoice&quot;: 1,
+                    &quot;processPrice&quot;: 1,
+                    &quot;pyAll&quot;: &quot;xiangcaofengweixia&quot;,
+                    &quot;pyCode&quot;: &quot;XCFWX&quot;,
+                    &quot;rangeType&quot;: &quot;ALL&quot;,
+                    &quot;status&quot;: &quot;NORMAL&quot;,////上架状态  NORMAL上架 LOCK下架
+                    &quot;taxRate&quot;: 0
+                },
+                &quot;productBusinessTypepArray&quot;: [
+                    {
+                        &quot;code&quot;: &quot;-16-&quot;,
+                        &quot;deleteFlg&quot;: 0,
+                        &quot;gIcon&quot;: &quot;http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g02.png&quot;,
+                        &quot;hasProductCnt&quot;: 0,
+                        &quot;id&quot;: 16,
+                        &quot;level&quot;: 1,
+                        &quot;mIcon&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/ANET20190304143700781-1981.png&quot;,
+                        &quot;miniFlg&quot;: 1,
+                        &quot;name&quot;: &quot;西餐西快&quot;,
+                        &quot;parentId&quot;: 0,
+                        &quot;parentName&quot;: &quot;&quot;,
+                        &quot;pyCode&quot;: &quot;XCXK&quot;,
+                        &quot;sIcon&quot;: &quot;http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png&quot;,
+                        &quot;showFlg&quot;: 1,
+                        &quot;styleUrl&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/ANET20190304143621318-3752.jpg&quot;,
+                        &quot;wIcon&quot;: &quot;http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w02.png&quot;
+                    }
+                ],
+                &quot;relateInfo&quot;: &quot;1&quot;,
+                &quot;type&quot;: &quot;DETAIL&quot;
+            },
+            {//此热搜是关键词类型，market是null，product是null，relateInfo是关键词信息
+                &quot;businesstypeRange&quot;: &quot;PART&quot;,
+                &quot;createRole&quot;: 1,
+                &quot;createTime&quot;: &quot;2019-03-25 12:01:00&quot;,
+                &quot;createUser&quot;: 518,
+                &quot;createUsername&quot;: &quot;孙启萌&quot;,
+                &quot;deleteFlg&quot;: 0,
+                &quot;id&quot;: 5,
+                &quot;keyword&quot;: &quot;本季热卖鞋品2&quot;,
+                &quot;market&quot;: null,
+                &quot;modifyTime&quot;: &quot;2019-03-25 12:01:00&quot;,
+                &quot;product&quot;: null,
+                &quot;productBusinessTypepArray&quot;: [
+                    {
+                        &quot;code&quot;: &quot;-16-&quot;,
+                        &quot;deleteFlg&quot;: 0,
+                        &quot;gIcon&quot;: &quot;http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g02.png&quot;,
+                        &quot;hasProductCnt&quot;: 0,
+                        &quot;id&quot;: 16,
+                        &quot;level&quot;: 1,
+                        &quot;mIcon&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/ANET20190304143700781-1981.png&quot;,
+                        &quot;miniFlg&quot;: 1,
+                        &quot;name&quot;: &quot;西餐西快&quot;,
+                        &quot;parentId&quot;: 0,
+                        &quot;parentName&quot;: &quot;&quot;,
+                        &quot;pyCode&quot;: &quot;XCXK&quot;,
+                        &quot;sIcon&quot;: &quot;http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/s02.png&quot;,
+                        &quot;showFlg&quot;: 1,
+                        &quot;styleUrl&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/ANET20190304143621318-3752.jpg&quot;,
+                        &quot;wIcon&quot;: &quot;http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w02.png&quot;
+                    }
+                ],
+                &quot;relateInfo&quot;: &quot;测试关键词&quot;,
+                &quot;type&quot;: &quot;QUERY&quot;
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: 3
+    }
+}
+</code></pre> <h3 id="cp-202-新增热搜信息"><a href="#cp-202-新增热搜信息" aria-hidden="true" class="header-anchor">#</a> CP-202. 新增热搜信息</h3> <h4 id="模块负责人-52"><a href="#模块负责人-52" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-52"><a href="#请求-52" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST v2/product/keyword
+</code></pre> <h4 id="参数-51"><a href="#参数-51" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    &quot;keyword&quot;:&quot;本季热卖鞋品&quot;,//热搜词
+    &quot;businesstypeRange&quot;:&quot;PART&quot;,//关联业态类型 ALL 全部 PART 部分
+    &quot;rangeId&quot;:[16,34],//关联业态id
+    &quot;type&quot;:&quot;MARKET&quot;,//热搜类型 QUERY 关键词 DETAIL 关联产品 MARKET 关联活动
+    &quot;relateInfo&quot;:&quot;5&quot;//如果是QUERY，此项内容是关键词。如果是DETAIL或MARKET，此项内容是数据id
+}
+</code></pre> <h4 id="响应-52"><a href="#响应-52" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{&quot;code&quot;:100000,&quot;msg&quot;:&quot;&quot;,&quot;data&quot;:null}
+</code></pre> <h3 id="cp-203-更新热搜信息"><a href="#cp-203-更新热搜信息" aria-hidden="true" class="header-anchor">#</a> CP-203. 更新热搜信息</h3> <h4 id="模块负责人-53"><a href="#模块负责人-53" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-53"><a href="#请求-53" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT v2/product/keyword/{id}
+</code></pre> <h4 id="参数-52"><a href="#参数-52" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+&quot;keyword&quot;:&quot;本季热卖鞋品5&quot;,
+&quot;businesstypeRange&quot;:&quot;PART&quot;,
+&quot;rangeId&quot;:[16,34],
+&quot;type&quot;:&quot;MARKET&quot;,
+&quot;relateInfo&quot;:&quot;5&quot;
+}
+</code></pre> <h4 id="响应-53"><a href="#响应-53" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{&quot;code&quot;:100000,&quot;msg&quot;:&quot;&quot;,&quot;data&quot;:null}
+</code></pre> <h3 id="cp-204-删除热搜信息"><a href="#cp-204-删除热搜信息" aria-hidden="true" class="header-anchor">#</a> CP-204. 删除热搜信息</h3> <h4 id="模块负责人-54"><a href="#模块负责人-54" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-54"><a href="#请求-54" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>DELETE v2/product/keyword/{id}
+</code></pre> <h4 id="参数-53"><a href="#参数-53" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>id  //热搜信息id
+</code></pre> <h4 id="响应-54"><a href="#响应-54" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{&quot;code&quot;:100000,&quot;msg&quot;:&quot;&quot;,&quot;data&quot;:null} 
+</code></pre> <h3 id="cp-205-查询热搜信息操作日志"><a href="#cp-205-查询热搜信息操作日志" aria-hidden="true" class="header-anchor">#</a> CP-205. 查询热搜信息操作日志</h3> <h4 id="模块负责人-55"><a href="#模块负责人-55" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-55"><a href="#请求-55" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET v2/product/keyword/log/{id}
+</code></pre> <h4 id="参数-54"><a href="#参数-54" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>id  //热搜信息id
+</code></pre> <h4 id="响应-55"><a href="#响应-55" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;id&quot;: 6,
+                &quot;keywordId&quot;: 5,
+                &quot;opInfo&quot;: &quot;删除热搜信息&quot;,//操作信息
+                &quot;opRole&quot;: 1,
+                &quot;opTime&quot;: &quot;2019-03-25 14:21:33&quot;,//操作时间
+                &quot;opUser&quot;: 518,
+                &quot;opUsername&quot;: &quot;孙启萌&quot;//操作人
+            },
+            {
+                &quot;id&quot;: 5,
+                &quot;keywordId&quot;: 5,
+                &quot;opInfo&quot;: &quot;更新热搜信息&quot;,
+                &quot;opRole&quot;: 1,
+                &quot;opTime&quot;: &quot;2019-03-25 14:02:46&quot;,
+                &quot;opUser&quot;: 518,
+                &quot;opUsername&quot;: &quot;孙启萌&quot;
+            },
+            {
+                &quot;id&quot;: 2,
+                &quot;keywordId&quot;: 5,
+                &quot;opInfo&quot;: &quot;新增热搜信息&quot;,
+                &quot;opRole&quot;: 1,
+                &quot;opTime&quot;: &quot;2019-03-25 12:01:00&quot;,
+                &quot;opUser&quot;: 518,
+                &quot;opUsername&quot;: &quot;孙启萌&quot;
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: 3
+    }
+}
+</code></pre> <h3 id="cp-206-热搜信息详情"><a href="#cp-206-热搜信息详情" aria-hidden="true" class="header-anchor">#</a> CP-206. 热搜信息详情</h3> <h4 id="模块负责人-56"><a href="#模块负责人-56" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-56"><a href="#请求-56" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET v2/product/keyword/{id}
+</code></pre> <h4 id="参数-55"><a href="#参数-55" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>id  //热搜信息id
+</code></pre> <h4 id="响应-56"><a href="#响应-56" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;businesstypeRange&quot;: &quot;PART&quot;,//热搜范围 ALL 全部业态 PART 部分业态
+        &quot;createRole&quot;: 1,
+        &quot;createTime&quot;: &quot;2019-03-25 13:18:19&quot;,//创建时间
+        &quot;createUser&quot;: 518,
+        &quot;createUsername&quot;: &quot;孙启萌&quot;,//创建人
+        &quot;deleteFlg&quot;: 0,
+        &quot;id&quot;: 7,
+        &quot;keyword&quot;: &quot;本季热卖鞋品3&quot;,//热搜词
+        &quot;market&quot;: {//关联活动信息
+            &quot;accumulative&quot;: &quot;&quot;,//LADDER 阶梯, EACH: 每满
+            &quot;activeConditionId&quot;: 0,
+            &quot;bannerPic&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/ANET20190506164501365-9899.jpg&quot;,
+            &quot;couponConditionId&quot;: 0,
+            &quot;createTime&quot;: &quot;2019-05-06 16:45:05&quot;,
+            &quot;createUser&quot;: 518,
+            &quot;createUserName&quot;: &quot;孙启萌&quot;,
+            &quot;customerRange&quot;: &quot;ALL&quot;,
+            &quot;deleteFlg&quot;: 2,
+            &quot;detailPic&quot;: null,
+            &quot;effectEtime&quot;: &quot;2019-05-10 23:59:59&quot;,
+            &quot;effectStime&quot;: &quot;2019-05-06 00:00:00&quot;,
+            &quot;hasBusinessunitRange&quot;: 0,//指定事业部数量
+            &quot;hasExcludeProductunitRange&quot;: 0,
+            &quot;hasProductunitRange&quot;: 0,//指定产品数量
+            &quot;id&quot;: 426,
+            &quot;limitNum&quot;: 0,//领取规则: 最大1-仅领一次, 0-用完再领
+            &quot;marketSpecialSkip&quot;: {//活动跳转
+                &quot;extra&quot;: &quot;4697&quot;,//PRODUCT 产品ID，H5存入H5页面链接
+                &quot;id&quot;: 15,
+                &quot;marketId&quot;: 426,//活动id
+                &quot;type&quot;: &quot;PRODUCT&quot;//类型  PRODUCT, H5
+            },
+            &quot;name&quot;: &quot;2019年5月上旬专题报告&quot;,//活动名称
+            &quot;overdue&quot;: 1,
+            &quot;popupPic&quot;: &quot;&quot;,
+            &quot;remark&quot;: &quot;&quot;,
+            &quot;saOrderIds&quot;: null,
+            &quot;type&quot;: &quot;SPECIAL&quot;,//活动类型 COUPON领券 GIFT满赠 REDUCE满减 DISCOUNT满折 COLUMN专栏 SPECIAL专题
+            &quot;unit&quot;: &quot;&quot;//执行单位 PRICE 价格，COUNT 数量
+        },
+        &quot;modifyTime&quot;: &quot;2019-03-25 13:18:19&quot;,
+        &quot;product&quot;: null,
+        &quot;productBusinessTypepArray&quot;: [//关联业态信息
+            {
+                &quot;code&quot;: &quot;-34-&quot;,
+                &quot;deleteFlg&quot;: 0,
+                &quot;gIcon&quot;: &quot;http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g05.png&quot;,
+                &quot;hasProductCnt&quot;: 0,
+                &quot;id&quot;: 34,
+                &quot;level&quot;: 1,
+                &quot;mIcon&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/ANET20190325174910768-2729.png&quot;,
+                &quot;miniFlg&quot;: 1,
+                &quot;name&quot;: &quot;农贸市集&quot;,
+                &quot;parentId&quot;: 0,
+                &quot;parentName&quot;: &quot;&quot;,
+                &quot;pyCode&quot;: &quot;NMSJ&quot;,
+                &quot;sIcon&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/ANET20190325174905224-8581.png&quot;,
+                &quot;showFlg&quot;: 1,
+                &quot;styleUrl&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/ANET20190325174918199-5987.jpg&quot;,
+                &quot;wIcon&quot;: &quot;http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w05.png&quot;
+            }
+        ],
+        &quot;relateInfo&quot;: &quot;5&quot;,//关联信息 QUERY：模糊搜索词 DETAIL：产品ID MARKET：活动ID
+        &quot;type&quot;: &quot;MARKET&quot;//热搜类型 QUERY 关键词 DETAIL 关联产品 MARKET 关联活动
+    }
+}
+</code></pre> <h3 id="cp-211-推荐信息列表查询"><a href="#cp-211-推荐信息列表查询" aria-hidden="true" class="header-anchor">#</a> CP-211. 推荐信息列表查询</h3> <h4 id="模块负责人-57"><a href="#模块负责人-57" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-57"><a href="#请求-57" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET v2/product/recommend
+</code></pre> <h4 id="参数-56"><a href="#参数-56" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>productKeyword  // 品名/品号   举例 海苔贝柱/0204
+</code></pre> <h4 id="响应-57"><a href="#响应-57" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;productBusinessType&quot;: {
+                &quot;code&quot;: &quot;-16-&quot;,
+                &quot;deleteFlg&quot;: 0,
+                &quot;gIcon&quot;: &quot;http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/g02.png&quot;,
+                &quot;hasProductCnt&quot;: 5,
+                &quot;id&quot;: 16,
+                &quot;level&quot;: 1,
+                &quot;mIcon&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/ANET20190325174758882-9387.png&quot;,
+                &quot;miniFlg&quot;: 1,
+                &quot;name&quot;: &quot;西餐西快&quot;,
+                &quot;parentId&quot;: 0,
+                &quot;parentName&quot;: &quot;&quot;,
+                &quot;pyCode&quot;: &quot;&quot;,
+                &quot;sIcon&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/ANET20190325174752832-7587.png&quot;,
+                &quot;showFlg&quot;: 1,
+                &quot;styleUrl&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/ANET20190304143621318-3752.jpg&quot;,
+                &quot;wIcon&quot;: &quot;http://asa-app.oss-cn-beijing.aliyuncs.com/businesstype/w02.png&quot;
+            },
+            &quot;productRecommends&quot;: [
+                {
+                    &quot;businesstypeId&quot;: 16,
+                    &quot;deleteFlg&quot;: 0,
+                    &quot;id&quot;: 27,
+                    &quot;productId&quot;: 16,
+                    &quot;productLite&quot;: {
+                        &quot;customFlg&quot;: 0,
+                        &quot;customFlgMore&quot;: 0,//定制状态  0是普通品，1是常规定制品，2是专属定制品
+                        &quot;id&quot;: 16,
+                        &quot;longName&quot;: &quot;&quot;,
+                        &quot;mainBgImg&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/a9aec32209f864aedcde19ada9e005ca.jpg&quot;,
+                        &quot;mainImg&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/53dd51a2fcde6a4c7d7692d7c836abfa.jpg&quot;,//产品图片
+                        &quot;name&quot;: &quot;虾米花（冻裹面包屑虾）&quot;,//品名
+                        &quot;nowfuture&quot;: &quot;&quot;,
+                        &quot;pno&quot;: &quot;0179&quot;,//品号
+                        &quot;productLack&quot;: null,
+                        &quot;status&quot;: &quot;NORMAL&quot; //上架状态  NORMAL上架 LOCK下架
+                    },
+                    &quot;remark&quot;: &quot;&quot;, //推荐说明
+                    &quot;sort&quot;: 0, //推荐序列
+                    &quot;tag&quot;: &quot;HOT&quot; //推荐标签  HOT 热销 NEW 新品  SALE 销售
+                }
+            ]
+        }
+    ]
+}
+</code></pre> <h3 id="cp-212-推荐新增信息"><a href="#cp-212-推荐新增信息" aria-hidden="true" class="header-anchor">#</a> CP-212. 推荐新增信息</h3> <h4 id="模块负责人-58"><a href="#模块负责人-58" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-58"><a href="#请求-58" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST v2/product/recommend
+</code></pre> <h4 id="参数-57"><a href="#参数-57" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+&quot;businesstypeId&quot;:&quot;16&quot;,//业态id
+&quot;productId&quot;:&quot;5&quot;,//产品id
+&quot;tag&quot;:&quot;HOT&quot;, //标签 HOT 热销 NEW 新品  SALE 销售
+&quot;sort&quot;:&quot;0&quot;, //排序
+&quot;remark&quot;:&quot;测试推荐说明&quot; //推荐说明
+}
+</code></pre> <h4 id="响应-58"><a href="#响应-58" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{&quot;code&quot;:100000,&quot;msg&quot;:&quot;&quot;,&quot;data&quot;:null}
+</code></pre> <h3 id="cp-213-推荐更新信息"><a href="#cp-213-推荐更新信息" aria-hidden="true" class="header-anchor">#</a> CP-213. 推荐更新信息</h3> <h4 id="模块负责人-59"><a href="#模块负责人-59" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-59"><a href="#请求-59" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT v2/product/recommend/{id}
+</code></pre> <h4 id="参数-58"><a href="#参数-58" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+&quot;tag&quot;:&quot;HOT&quot;, //标签 HOT 热销 NEW 新品 （非空）
+&quot;sort&quot;:&quot;7&quot;,//排序序号
+&quot;remark&quot;:&quot;12312312312&quot; //推荐说明
+}
+</code></pre> <h4 id="响应-59"><a href="#响应-59" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{&quot;code&quot;:100000,&quot;msg&quot;:&quot;&quot;,&quot;data&quot;:null}
+</code></pre> <h3 id="cp-214-推荐删除信息"><a href="#cp-214-推荐删除信息" aria-hidden="true" class="header-anchor">#</a> CP-214. 推荐删除信息</h3> <h4 id="模块负责人-60"><a href="#模块负责人-60" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-60"><a href="#请求-60" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>DELETE v2/product/recommend/{id}
+</code></pre> <h4 id="参数-59"><a href="#参数-59" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>    id   //推荐id
+</code></pre> <h4 id="响应-60"><a href="#响应-60" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{&quot;code&quot;:100000,&quot;msg&quot;:&quot;&quot;,&quot;data&quot;:null}
+</code></pre> <h3 id="cp-215-推荐信息批量删除"><a href="#cp-215-推荐信息批量删除" aria-hidden="true" class="header-anchor">#</a> CP-215. 推荐信息批量删除</h3> <h4 id="模块负责人-61"><a href="#模块负责人-61" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-61"><a href="#请求-61" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>DELETE v2/product/recommend/ALL/{id}
+</code></pre> <h4 id="参数-60"><a href="#参数-60" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>    id   //业态id
+</code></pre> <h4 id="响应-61"><a href="#响应-61" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{&quot;code&quot;:100000,&quot;msg&quot;:&quot;&quot;,&quot;data&quot;:null}
+</code></pre> <h3 id="cp-216-推荐操作日志信息"><a href="#cp-216-推荐操作日志信息" aria-hidden="true" class="header-anchor">#</a> CP-216. 推荐操作日志信息</h3> <h4 id="模块负责人-62"><a href="#模块负责人-62" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-62"><a href="#请求-62" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET v2/product/recommend/log/{id}
+</code></pre> <h4 id="参数-61"><a href="#参数-61" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>id //业态id
+</code></pre> <h4 id="响应-62"><a href="#响应-62" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;buttonPermissions&quot;: [],
+        &quot;dataSums&quot;: null,
+        &quot;datas&quot;: [
+            {
+                &quot;businesstypeId&quot;: 16,
+                &quot;id&quot;: 22,
+                &quot;opInfo&quot;: &quot;删除推荐信息:海苔贝柱&quot;,//操作信息
+                &quot;opRole&quot;: 1,
+                &quot;opTime&quot;: &quot;2019-03-27 09:13:20.0&quot;,//操作时间
+                &quot;opUser&quot;: 518,
+                &quot;opUsername&quot;: &quot;孙启萌&quot;,//操作人
+                &quot;productId&quot;: 0
+            },
+            {
+                &quot;businesstypeId&quot;: 16,
+                &quot;id&quot;: 21,
+                &quot;opInfo&quot;: &quot;删除推荐信息:海苔贝柱&quot;,
+                &quot;opRole&quot;: 1,
+                &quot;opTime&quot;: &quot;2019-03-27 07:55:28.0&quot;,
+                &quot;opUser&quot;: 518,
+                &quot;opUsername&quot;: &quot;孙启萌&quot;,
+                &quot;productId&quot;: 0
+            }
+        ],
+        &quot;pageNo&quot;: 1,
+        &quot;total&quot;: 22
+    }
+}
+</code></pre> <h3 id="cp-217-推荐详情信息"><a href="#cp-217-推荐详情信息" aria-hidden="true" class="header-anchor">#</a> CP-217. 推荐详情信息</h3> <h4 id="模块负责人-63"><a href="#模块负责人-63" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-63"><a href="#请求-63" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>GET v2/product/recommend/{id}
+</code></pre> <h4 id="参数-62"><a href="#参数-62" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>id //推荐id
+</code></pre> <h4 id="响应-63"><a href="#响应-63" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+    &quot;code&quot;: 100000,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;businesstypeId&quot;: 16,//业态id
+        &quot;deleteFlg&quot;: 0,
+        &quot;id&quot;: 36,
+        &quot;productId&quot;: 22,//产品id
+        &quot;productLite&quot;: {//产品信息
+            &quot;customFlg&quot;: 0,
+            &quot;customFlgMore&quot;: 0,
+            &quot;id&quot;: 22,
+            &quot;longName&quot;: &quot;&quot;,
+            &quot;mainBgImg&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/0027be91a8862ff23431ac2121df783d.jpg&quot;,
+            &quot;mainImg&quot;: &quot;http://asae.oss-cn-beijing.aliyuncs.com/uploads/product/201803/608c64c47c03871eae2cc34d6325d7c0.jpg&quot;,//产品图片
+            &quot;name&quot;: &quot;黄金蟹钳（裹屑模拟蟹肉）&quot;,//品名
+            &quot;nowfuture&quot;: &quot;&quot;,
+            &quot;pno&quot;: &quot;0033&quot;,//品号
+            &quot;productLack&quot;: null,
+            &quot;status&quot;: &quot;NORMAL&quot;//上架状态  NORMAL上架 LOCK下架
+        },
+        &quot;remark&quot;: &quot;&quot;,
+        &quot;sort&quot;: 8,//排序序号
+        &quot;tag&quot;: &quot;NEW&quot;////标签 HOT 热销 NEW 新品  SALE 销售
+    }
+}
+</code></pre> <h3 id="cp-218-为数据中心提供反向推送销量排序更新排序接口"><a href="#cp-218-为数据中心提供反向推送销量排序更新排序接口" aria-hidden="true" class="header-anchor">#</a> CP-218. 为数据中心提供反向推送销量排序更新排序接口</h3> <h4 id="模块负责人-64"><a href="#模块负责人-64" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>王子悦
+</code></pre> <h4 id="请求-64"><a href="#请求-64" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>PUT v2/product/recommend/productsort/ME0154uoR5rnnzEQ62c4Npz1hbqCS71T
+</code></pre> <h4 id="参数-63"><a href="#参数-63" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>    [//集合内容应该是同一业态下的产品信息
+    {&quot;businesstypeId&quot;:&quot;16&quot;,//业态id
+        &quot;productId&quot;:&quot;10&quot;,//产品id
+        &quot;salesort&quot;:&quot;23&quot;//销量排序
+    },
+    {&quot;businesstypeId&quot;:&quot;16&quot;,
+        &quot;productId&quot;:&quot;11&quot;,
+        &quot;salesort&quot;:&quot;56&quot;
+    }
+    ]
+</code></pre> <h4 id="响应-64"><a href="#响应-64" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{&quot;code&quot;:100000,&quot;msg&quot;:&quot;&quot;,&quot;data&quot;:null}
+</code></pre> <h3 id="cp-221-产品标准分类新增"><a href="#cp-221-产品标准分类新增" aria-hidden="true" class="header-anchor">#</a> CP-221. 产品标准分类新增</h3> <h4 id="模块负责人-65"><a href="#模块负责人-65" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-65"><a href="#请求-65" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /v2/product/attribute
+</code></pre> <h4 id="参数-64"><a href="#参数-64" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    &quot;dicName&quot;: &quot;产品分类标准测试&quot;
+}
+</code></pre> <h4 id="响应-65"><a href="#响应-65" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="cp-222-产品标准号新增"><a href="#cp-222-产品标准号新增" aria-hidden="true" class="header-anchor">#</a> CP-222. 产品标准号新增</h3> <h4 id="模块负责人-66"><a href="#模块负责人-66" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求-66"><a href="#请求-66" aria-hidden="true" class="header-anchor">#</a> 请求</h4> <pre><code>POST /v2/product/standard
+</code></pre> <h4 id="参数-65"><a href="#参数-65" aria-hidden="true" class="header-anchor">#</a> 参数</h4> <pre><code>{
+    &quot;dicName&quot;: &quot;产品标准号测试&quot;
+}
+</code></pre> <h4 id="响应-66"><a href="#响应-66" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>{
+	&quot;code&quot;: 100000,
+	&quot;msg&quot;: &quot;&quot;,
+	&quot;data&quot;: null
+}
+</code></pre> <h3 id="cp-231-产品列表导出"><a href="#cp-231-产品列表导出" aria-hidden="true" class="header-anchor">#</a> CP-231. 产品列表导出</h3> <h4 id="模块负责人-67"><a href="#模块负责人-67" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求url"><a href="#请求url" aria-hidden="true" class="header-anchor">#</a> 请求url</h4> <pre><code>GET /v2/product/product/export
+</code></pre> <h4 id="请求参数"><a href="#请求参数" aria-hidden="true" class="header-anchor">#</a> 请求参数</h4> <pre><code>*checkCode      // 下载码
+</code></pre> <h4 id="响应-67"><a href="#响应-67" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>流
+</code></pre> <h3 id="cp-232-产品规格列表导出"><a href="#cp-232-产品规格列表导出" aria-hidden="true" class="header-anchor">#</a> CP-232. 产品规格列表导出</h3> <h4 id="模块负责人-68"><a href="#模块负责人-68" aria-hidden="true" class="header-anchor">#</a> 模块负责人</h4> <pre><code>尹洪明
+</code></pre> <h4 id="请求url-2"><a href="#请求url-2" aria-hidden="true" class="header-anchor">#</a> 请求url</h4> <pre><code>GET /v2/product/product/unit/export
+</code></pre> <h4 id="请求参数-2"><a href="#请求参数-2" aria-hidden="true" class="header-anchor">#</a> 请求参数</h4> <pre><code>*checkCode      // 下载码
+</code></pre> <h4 id="响应-68"><a href="#响应-68" aria-hidden="true" class="header-anchor">#</a> 响应</h4> <pre><code>流
+</code></pre></div> <div class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">3/25/2020, 5:20:26 PM</span></div></div> <!----> </div> <!----></div></div>
+    <script src="/work-a-api-v2/assets/js/app.a6722e02.js" defer></script><script src="/work-a-api-v2/assets/js/26.2d5db294.js" defer></script>
+  </body>
+</html>
