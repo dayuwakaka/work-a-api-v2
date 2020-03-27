@@ -25,6 +25,7 @@
     source:                             // 客户来源 0 自主注册 1 后台添加 2 小程序
     saleArea:                           // 销区ID
     @@cusGroupKeyword                 // 客户组模糊匹配
+    @@signCusFLg                    // 关联客户时，过滤客户列表使用 所在客户组成员数大于1的客户不需要过滤出来，需要传signCusFlg=true, 默认false
 #### 响应
     {
         "code": 100000,
